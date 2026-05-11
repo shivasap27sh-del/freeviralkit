@@ -71,6 +71,11 @@ export const metadata: Metadata = {
         google: siteConfig.googleVerificationCode,
       }
     : undefined,
+  other: siteConfig.adsensePublisherId
+    ? {
+        'google-adsense-account': siteConfig.adsensePublisherId,
+      }
+    : undefined,
 };
 
 // JSON-LD structured data
