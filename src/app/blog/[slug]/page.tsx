@@ -54,14 +54,14 @@ export default async function BlogPostPage({ params }: Props) {
 
       if (trimmed.startsWith('### ')) {
         return (
-          <h3 key={i} className="font-display text-xl font-bold mt-8 mb-3 text-white">
+          <h3 key={i} className="font-display text-xl font-bold mt-8 mb-3 text-slate-900">
             {trimmed.replace('### ', '')}
           </h3>
         );
       }
       if (trimmed.startsWith('## ')) {
         return (
-          <h2 key={i} className="font-display text-2xl font-bold mt-10 mb-4 text-white">
+          <h2 key={i} className="font-display text-2xl font-bold mt-10 mb-4 text-slate-900">
             {trimmed.replace('## ', '')}
           </h2>
         );
@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
       if (trimmed.startsWith('```')) {
         const code = trimmed.replace(/```\w*/g, '').trim();
         return (
-          <pre key={i} className="bg-black/40 border border-white/10 rounded-xl p-5 my-4 overflow-x-auto">
+          <pre key={i} className="bg-black/40 border border-slate-200 rounded-xl p-5 my-4 overflow-x-auto">
             <code className="text-sm text-green-400 font-mono">{code}</code>
           </pre>
         );
@@ -79,14 +79,14 @@ export default async function BlogPostPage({ params }: Props) {
         return (
           <ul key={i} className="space-y-2 my-4">
             {items.map((item, j) => (
-              <li key={j} className="flex items-start gap-2 text-gray-300 leading-relaxed">
+              <li key={j} className="flex items-start gap-2 text-slate-700 leading-relaxed">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" />
                 <span
                   dangerouslySetInnerHTML={{
                     __html: item
                       .replace(/^- /, '')
-                      .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>')
-                      .replace(/`(.*?)`/g, '<code class="bg-white/10 px-1.5 py-0.5 rounded text-purple-300 text-sm">$1</code>'),
+                      .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')
+                      .replace(/`(.*?)`/g, '<code class="bg-slate-200 px-1.5 py-0.5 rounded text-purple-300 text-sm">$1</code>'),
                   }}
                 />
               </li>
@@ -101,11 +101,11 @@ export default async function BlogPostPage({ params }: Props) {
         <div key={i}>
           {adInsert}
           <p
-            className="text-gray-300 leading-relaxed my-4"
+            className="text-slate-700 leading-relaxed my-4"
             dangerouslySetInnerHTML={{
               __html: trimmed
-                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>')
-                .replace(/`(.*?)`/g, '<code class="bg-white/10 px-1.5 py-0.5 rounded text-purple-300 text-sm">$1</code>'),
+                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')
+                .replace(/`(.*?)`/g, '<code class="bg-slate-200 px-1.5 py-0.5 rounded text-purple-300 text-sm">$1</code>'),
             }}
           />
         </div>
@@ -148,7 +148,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Back */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-purple-400 transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-purple-400 transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Blog
         </Link>
@@ -159,11 +159,11 @@ export default async function BlogPostPage({ params }: Props) {
             <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">
               {post.category}
             </span>
-            <div className="flex items-center gap-1 text-xs text-gray-500">
+            <div className="flex items-center gap-1 text-xs text-slate-500">
               <Clock className="w-3 h-3" />
               {post.readTime}
             </div>
-            <div className="flex items-center gap-1 text-xs text-gray-500">
+            <div className="flex items-center gap-1 text-xs text-slate-500">
               <Calendar className="w-3 h-3" />
               {new Date(post.date).toLocaleDateString('en-US', {
                 month: 'long',
@@ -177,23 +177,23 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
 
-          <p className="text-gray-400 text-lg leading-relaxed">{post.description}</p>
+          <p className="text-slate-600 text-lg leading-relaxed">{post.description}</p>
         </header>
 
         {/* Content */}
         <article className="prose-custom">{renderContent(post.content)}</article>
 
         {/* Tags */}
-        <div className="mt-12 pt-8 border-t border-white/10">
+        <div className="mt-12 pt-8 border-t border-slate-200">
           <div className="flex items-center gap-2 mb-3">
-            <Tag className="w-4 h-4 text-gray-500" />
-            <span className="text-sm text-gray-500 font-medium">Tags</span>
+            <Tag className="w-4 h-4 text-slate-500" />
+            <span className="text-sm text-slate-500 font-medium">Tags</span>
           </div>
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-400 text-xs font-medium"
+                className="px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-600 text-xs font-medium"
               >
                 {tag}
               </span>
@@ -206,7 +206,7 @@ export default async function BlogPostPage({ params }: Props) {
           <h3 className="font-display text-2xl font-bold mb-3">
             Ready to <span className="text-gradient">Boost</span> Your Videos?
           </h3>
-          <p className="text-gray-400 mb-6">
+          <p className="text-slate-600 mb-6">
             Generate SEO-optimized titles, descriptions, hashtags, and tags in seconds.
           </p>
           <Link

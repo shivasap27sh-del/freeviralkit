@@ -34,14 +34,14 @@ export default function GamingTitleLandingPage() {
         <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
           YouTube Title Generator for <span className="text-gradient">Gaming</span>
         </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
           Generate high-CTR gaming titles for walkthroughs, shorts, ranked gameplay, and tutorial videos.
         </p>
       </section>
 
       <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
         <h2 className="font-display text-xl font-semibold mb-3">Gaming Title Examples</h2>
-        <ul className="space-y-2 text-gray-300">
+        <ul className="space-y-2 text-slate-700">
           {examples.map((example) => (
             <li key={example}>{example}</li>
           ))}
@@ -52,7 +52,7 @@ export default function GamingTitleLandingPage() {
 
       <section className="glass-card rounded-2xl p-6 md:p-8 mt-8">
         <h2 className="font-display text-xl font-semibold mb-3">Best Practices for Gaming SEO Titles</h2>
-        <ul className="space-y-2 text-gray-400">
+        <ul className="space-y-2 text-slate-600">
           <li>Put game name near the start of the title.</li>
           <li>Use specific hooks like update version, challenge type, or rank tier.</li>
           <li>Keep titles around 50-70 characters for clean mobile visibility.</li>

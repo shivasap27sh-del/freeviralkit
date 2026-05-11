@@ -46,7 +46,7 @@ export default function ToolsPage() {
         <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
           YouTube SEO <span className="text-gradient">Tools by Niche</span>
         </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
           Use these niche pages to get more specific results and better rankings in Google.
         </p>
       </section>
@@ -59,7 +59,7 @@ export default function ToolsPage() {
             className="glass-card rounded-2xl p-6 block hover:border-purple-500/30 transition-all"
           >
             <h2 className="font-display text-xl font-semibold mb-2">{page.title}</h2>
-            <p className="text-gray-400">{page.description}</p>
+            <p className="text-slate-600">{page.description}</p>
           </Link>
         ))}
       </section>

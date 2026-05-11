@@ -58,7 +58,7 @@ export default function AboutPage() {
         <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
           Helping Creators <span className="text-gradient">Go Viral</span>
         </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
           FreeViralKit is a free, AI-powered YouTube SEO tool that generates optimized titles,
           descriptions, hashtags, and tags — everything you need to rank higher and grow faster.
         </p>
@@ -67,16 +67,16 @@ export default function AboutPage() {
       {/* Mission */}
       <section className="glass-card rounded-2xl p-8 md:p-10 mb-12">
         <h2 className="font-display text-2xl font-bold mb-4">Our Mission</h2>
-        <p className="text-gray-300 leading-relaxed mb-4">
+        <p className="text-slate-700 leading-relaxed mb-4">
           We believe every creator deserves access to professional-grade SEO tools, regardless
           of budget. Most YouTube optimization tools charge $20-50/month for features that should
           be free. FreeViralKit changes that.
         </p>
-        <p className="text-gray-300 leading-relaxed mb-4">
+        <p className="text-slate-700 leading-relaxed mb-4">
           By leveraging cutting-edge AI through Groq&apos;s lightning-fast inference engine, we provide
           instant, high-quality YouTube optimization that rivals expensive paid tools — completely free.
         </p>
-        <p className="text-gray-300 leading-relaxed">
+        <p className="text-slate-700 leading-relaxed">
           Our AI understands every YouTube niche and generates human-quality titles with proper
           emoji placement, descriptions with strategic keyword placement, and tags that maximize
           your video&apos;s reach in search and suggested videos.
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 <feature.icon className="w-6 h-6" />
               </div>
               <h3 className="font-display text-lg font-bold mb-2">{feature.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+              <p className="text-slate-600 text-sm leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -111,12 +111,12 @@ export default function AboutPage() {
             { step: '5', title: 'Copy & Upload', desc: 'One-click copy everything directly into YouTube Studio.' },
           ].map((item) => (
             <div key={item.step} className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold shrink-0">
+              <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center text-slate-900 font-bold shrink-0">
                 {item.step}
               </div>
               <div>
                 <h3 className="font-display text-lg font-semibold">{item.title}</h3>
-                <p className="text-gray-400 text-sm">{item.desc}</p>
+                <p className="text-slate-600 text-sm">{item.desc}</p>
               </div>
             </div>
           ))}
@@ -128,7 +128,7 @@ export default function AboutPage() {
         <h2 className="font-display text-2xl font-bold mb-4">
           Ready to <span className="text-gradient">Supercharge</span> Your Channel?
         </h2>
-        <p className="text-gray-400 mb-6">Start generating optimized SEO content for your videos — it&apos;s free.</p>
+        <p className="text-slate-600 mb-6">Start generating optimized SEO content for your videos — it&apos;s free.</p>
         <Link
           href="/"
           className="inline-flex items-center gap-2 btn-primary rounded-xl px-8 py-4 font-semibold text-lg"

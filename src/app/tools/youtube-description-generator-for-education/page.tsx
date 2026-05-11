@@ -27,14 +27,14 @@ export default function EducationDescriptionLandingPage() {
         <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
           YouTube Description Generator for <span className="text-gradient">Education</span>
         </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
           Build clear educational descriptions with topic overview, learning outcomes, and calls to action.
         </p>
       </section>
 
       <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
         <h2 className="font-display text-xl font-semibold mb-3">Suggested Description Structure</h2>
-        <ul className="space-y-2 text-gray-400">
+        <ul className="space-y-2 text-slate-600">
           <li>Hook: what students will learn in this lesson.</li>
           <li>Concept summary with relevant keywords.</li>
           <li>Bullet list of chapter timestamps.</li>
@@ -46,7 +46,7 @@ export default function EducationDescriptionLandingPage() {
 
       <section className="glass-card rounded-2xl p-6 md:p-8 mt-8">
         <h2 className="font-display text-xl font-semibold mb-3">Why This Helps Search Rankings</h2>
-        <p className="text-gray-400">
+        <p className="text-slate-600">
           Educational descriptions with clear context help YouTube understand topic relevance and connect your
           content to student-focused searches.
         </p>

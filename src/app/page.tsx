@@ -71,7 +71,7 @@ export default function Home() {
         <h1 className="font-display text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
           Supercharge Your <br /><span className="text-gradient">YouTube Growth</span>
         </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
           Enter your video topic — get 10 SEO-optimized titles with emojis &amp; hashtags.
           Pick one to unlock description, hashtags &amp; tags.
         </p>
@@ -86,7 +86,7 @@ export default function Home() {
         <div className="relative mb-4">
           <input type="text" value={topic} onChange={e => setTopic(e.target.value)}
             placeholder="e.g., how to make pasta, iphone 16 review, minecraft survival ep 1..."
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
+            className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
             onKeyDown={e => e.key === 'Enter' && handleGenerateTitles()} />
         </div>
         <button onClick={handleGenerateTitles} disabled={!topic.trim() || isGeneratingTitles}
@@ -119,7 +119,7 @@ export default function Home() {
                 <div className="step-badge step-badge-blue"><Video className="w-5 h-5" /></div>
                 <h2 className="font-display text-xl font-semibold">2. Pick Your Title</h2>
               </div>
-              <button onClick={handleGenerateTitles} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-sm text-gray-400 hover:text-white transition-colors">
+              <button onClick={handleGenerateTitles} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors">
                 <RotateCcw className="w-3.5 h-3.5" /> Regenerate
               </button>
             </div>
@@ -130,10 +130,10 @@ export default function Home() {
                     className={`title-card w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3 group ${
                       (isGeneratingDetails && selectedTitle !== title) ? 'opacity-50 cursor-not-allowed ' : 'cursor-pointer '
                     }${
-                      selectedTitle === title ? 'bg-purple-500/15 border-purple-500/60 shadow-[0_0_20px_rgba(139,92,246,0.15)]' : 'bg-white/3 border-white/8 hover:bg-white/6 hover:border-white/15'
+                      selectedTitle === title ? 'bg-purple-500/15 border-purple-500/60 shadow-[0_0_20px_rgba(139,92,246,0.15)]' : 'bg-white border-slate-200 hover:bg-slate-50 hover:border-slate-300'
                     }`}>
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold mt-0.5 transition-all ${
-                      selectedTitle === title ? 'bg-purple-500 text-white' : 'bg-white/10 text-gray-400 group-hover:bg-white/15'
+                      selectedTitle === title ? 'bg-purple-500 text-slate-900' : 'bg-slate-200 text-slate-600 group-hover:bg-white/15'
                     }`}>
                       {selectedTitle === title && isGeneratingDetails ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
                         : selectedTitle === title ? <CheckCircle2 className="w-3.5 h-3.5" /> : idx + 1}
@@ -152,8 +152,8 @@ export default function Home() {
                       </div>
                     </div>
                     <button onClick={e => { e.stopPropagation(); copy(title, `title-${idx}`); }}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-white/10 shrink-0">
-                      {copiedStates[`title-${idx}`] ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-gray-500" />}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-slate-200 shrink-0">
+                      {copiedStates[`title-${idx}`] ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-slate-500" />}
                     </button>
                     <ChevronRight className={`w-4 h-4 shrink-0 mt-1 transition-colors ${selectedTitle === title ? 'text-purple-400' : 'text-gray-600'}`} />
                   </div>
@@ -176,11 +176,11 @@ export default function Home() {
                 <div className="step-badge step-badge-green"><Zap className="w-5 h-5" /></div>
                 <div>
                   <h2 className="font-display text-xl font-semibold">3. Your SEO Package</h2>
-                  <p className="text-sm text-gray-500 truncate max-w-md">For: <span className="text-gray-300 italic">&ldquo;{selectedTitle}&rdquo;</span></p>
+                  <p className="text-sm text-slate-500 truncate max-w-md">For: <span className="text-slate-700 italic">&ldquo;{selectedTitle}&rdquo;</span></p>
                 </div>
               </div>
               {details && (
-                <button onClick={copyFullPackage} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-primary text-white text-sm font-semibold hover:opacity-90 transition-all shadow-[0_4px_15px_rgba(139,92,246,0.3)]">
+                <button onClick={copyFullPackage} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-primary text-slate-900 text-sm font-semibold hover:opacity-90 transition-all shadow-[0_4px_15px_rgba(139,92,246,0.3)]">
                   {copiedStates['full-package'] ? <><CheckCircle2 className="w-4 h-4" /> Copied!</> : <><Package className="w-4 h-4" /> Copy Full Package</>}
                 </button>
               )}
@@ -204,15 +204,15 @@ export default function Home() {
                       <div className="w-9 h-9 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center shrink-0"><AlignLeft className="w-4 h-4" /></div>
                       <div>
                         <h3 className="font-display text-lg font-semibold">📝 Optimized Description</h3>
-                        <span className="text-xs text-gray-500">{details.description.split(/\s+/).length} words</span>
+                        <span className="text-xs text-slate-500">{details.description.split(/\s+/).length} words</span>
                       </div>
                     </div>
                     <button onClick={() => copy(details.description, 'desc')} className="copy-btn">
-                      {copiedStates['desc'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-gray-400" /> Copy</>}
+                      {copiedStates['desc'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy</>}
                     </button>
                   </div>
-                  <div className="bg-black/30 rounded-xl p-5 border border-white/5">
-                    <p className="whitespace-pre-wrap text-gray-300 leading-relaxed text-[0.95rem]">{details.description}</p>
+                  <div className="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                    <p className="whitespace-pre-wrap text-slate-700 leading-relaxed text-[0.95rem]">{details.description}</p>
                   </div>
                 </motion.div>
 
@@ -223,11 +223,11 @@ export default function Home() {
                       <div className="w-9 h-9 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center shrink-0"><Hash className="w-4 h-4" /></div>
                       <div>
                         <h3 className="font-display text-lg font-semibold"># Hashtags</h3>
-                        <span className="text-xs text-gray-500">⭐ First 3 appear above your video title</span>
+                        <span className="text-xs text-slate-500">⭐ First 3 appear above your video title</span>
                       </div>
                     </div>
                     <button onClick={() => copy(details.hashtags.join(' '), 'hash')} className="copy-btn">
-                      {copiedStates['hash'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-gray-400" /> Copy All</>}
+                      {copiedStates['hash'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy All</>}
                     </button>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -236,7 +236,7 @@ export default function Home() {
                         onClick={() => copy(ht, `ht-${idx}`)}
                         className={`px-4 py-2.5 rounded-xl font-medium transition-all hover:scale-105 cursor-pointer ${
                           idx < 3 ? 'bg-pink-500/15 border border-pink-500/30 text-pink-300 shadow-[0_0_10px_rgba(236,72,153,0.1)]'
-                            : 'bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10'
+                            : 'bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200'
                         }`}>
                         {copiedStates[`ht-${idx}`] ? <span className="text-green-400">Copied!</span> : (ht.startsWith('#') ? ht : `#${ht}`)}
                         {idx < 3 && <span className="ml-2 text-[10px] bg-pink-500/20 text-pink-300 px-1.5 py-0.5 rounded-full">TOP</span>}
@@ -252,22 +252,22 @@ export default function Home() {
                       <div className="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0"><Tag className="w-4 h-4" /></div>
                       <div>
                         <h3 className="font-display text-lg font-semibold">🏷️ Tags</h3>
-                        <span className="text-xs text-gray-500">Paste in YouTube Studio → Tags</span>
+                        <span className="text-xs text-slate-500">Paste in YouTube Studio → Tags</span>
                       </div>
                     </div>
                     <button onClick={() => copy(details.tags.join(', '), 'tags')} className="copy-btn">
-                      {copiedStates['tags'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-gray-400" /> Copy All</>}
+                      {copiedStates['tags'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy All</>}
                     </button>
                   </div>
                   {/* Tag character limit bar */}
-                  <div className="mb-4 bg-black/20 rounded-lg p-3 border border-white/5">
+                  <div className="mb-4 bg-slate-100 rounded-lg p-3 border border-slate-100">
                     <div className="flex justify-between text-xs mb-1.5">
-                      <span className="text-gray-400">Tag characters used</span>
+                      <span className="text-slate-600">Tag characters used</span>
                       <span className={tagsTotalChars(details.tags) <= 500 ? 'text-green-400' : 'text-red-400'}>
                         {tagsTotalChars(details.tags)} / 500
                       </span>
                     </div>
-                    <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                    <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                       <div className={`h-full rounded-full transition-all ${tagsTotalChars(details.tags) <= 400 ? 'bg-green-500' : tagsTotalChars(details.tags) <= 500 ? 'bg-yellow-500' : 'bg-red-500'}`}
                         style={{ width: `${Math.min((tagsTotalChars(details.tags) / 500) * 100, 100)}%` }} />
                     </div>
@@ -291,15 +291,15 @@ export default function Home() {
                         <div className="w-9 h-9 rounded-lg bg-yellow-500/10 text-yellow-400 flex items-center justify-center shrink-0"><MessageCircle className="w-4 h-4" /></div>
                         <div>
                           <h3 className="font-display text-lg font-semibold">📌 Pinned Comment</h3>
-                          <span className="text-xs text-gray-500">Pin this to boost engagement</span>
+                          <span className="text-xs text-slate-500">Pin this to boost engagement</span>
                         </div>
                       </div>
                       <button onClick={() => copy(details.pinnedComment, 'pinned')} className="copy-btn">
-                        {copiedStates['pinned'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-gray-400" /> Copy</>}
+                        {copiedStates['pinned'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy</>}
                       </button>
                     </div>
-                    <div className="bg-black/30 rounded-xl p-5 border border-white/5">
-                      <p className="whitespace-pre-wrap text-gray-300 leading-relaxed">{details.pinnedComment}</p>
+                    <div className="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                      <p className="whitespace-pre-wrap text-slate-700 leading-relaxed">{details.pinnedComment}</p>
                     </div>
                   </motion.div>
                 )}
@@ -314,7 +314,7 @@ export default function Home() {
         <h2 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-3">
           Individual <span className="text-gradient">SEO Tools</span>
         </h2>
-        <p className="text-gray-500 text-center mb-10 max-w-xl mx-auto">Need just one piece of the puzzle? Use our dedicated generators.</p>
+        <p className="text-slate-500 text-center mb-10 max-w-xl mx-auto">Need just one piece of the puzzle? Use our dedicated generators.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             { href: '/youtube-title-generator', icon: Wand2, label: 'YouTube Title Generator', desc: 'Get 10 viral, SEO-optimized titles', color: 'purple' },
@@ -329,7 +329,7 @@ export default function Home() {
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="font-display text-base font-bold group-hover:text-purple-400 transition-colors">{tool.label}</h3>
-                <p className="text-gray-500 text-sm">{tool.desc}</p>
+                <p className="text-slate-500 text-sm">{tool.desc}</p>
               </div>
               <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-purple-400 transition-colors shrink-0" />
             </Link>
@@ -349,7 +349,7 @@ export default function Home() {
           ].map((faq, i) => (
             <div key={i} className="glass-card rounded-xl p-5">
               <h3 className="font-display text-base font-semibold mb-2">{faq.q}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{faq.a}</p>
+              <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>

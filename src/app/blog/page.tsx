@@ -28,7 +28,7 @@ export default function BlogPage() {
         <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
           YouTube SEO <span className="text-gradient">Tips & Guides</span>
         </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
           Expert strategies, tutorials, and insights to help you rank higher on YouTube and grow your channel faster.
         </p>
       </section>
@@ -45,7 +45,7 @@ export default function BlogPage() {
               <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">
                 {post.category}
               </span>
-              <div className="flex items-center gap-1 text-xs text-gray-500">
+              <div className="flex items-center gap-1 text-xs text-slate-500">
                 <Clock className="w-3 h-3" />
                 {post.readTime}
               </div>
@@ -55,12 +55,12 @@ export default function BlogPage() {
               {post.title}
             </h2>
 
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            <p className="text-slate-600 text-sm leading-relaxed mb-4">
               {post.description}
             </p>
 
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1 text-xs text-gray-500">
+              <div className="flex items-center gap-1 text-xs text-slate-500">
                 <Calendar className="w-3 h-3" />
                 {new Date(post.date).toLocaleDateString('en-US', {
                   month: 'long',

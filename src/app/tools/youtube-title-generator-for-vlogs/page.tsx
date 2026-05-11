@@ -34,14 +34,14 @@ export default function VlogTitleLandingPage() {
         <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
           YouTube Title Generator for <span className="text-gradient">Vlogs</span>
         </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
           Make relatable vlog titles for daily routines, travel experiences, and personal updates.
         </p>
       </section>
 
       <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
         <h2 className="font-display text-xl font-semibold mb-3">Vlog Title Examples</h2>
-        <ul className="space-y-2 text-gray-300">
+        <ul className="space-y-2 text-slate-700">
           {examples.map((example) => (
             <li key={example}>{example}</li>
           ))}
@@ -52,7 +52,7 @@ export default function VlogTitleLandingPage() {
 
       <section className="glass-card rounded-2xl p-6 md:p-8 mt-8">
         <h2 className="font-display text-xl font-semibold mb-3">How to Improve Vlog Title CTR</h2>
-        <ul className="space-y-2 text-gray-400">
+        <ul className="space-y-2 text-slate-600">
           <li>Lead with emotion or transformation.</li>
           <li>Be specific with time, place, or challenge.</li>
           <li>Avoid generic words like daily vlog without a hook.</li>

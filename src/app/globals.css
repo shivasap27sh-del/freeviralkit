@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0a0a0f;
-  --color-foreground: #f0f0f5;
+  --color-background: #f8fafc;
+  --color-foreground: #0f172a;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-display: "Space Grotesk", "Inter", sans-serif;
 }
 
 @layer base {
   :root {
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #12121a;
-    --bg-card: rgba(18, 18, 30, 0.6);
-    --border-color: rgba(255, 255, 255, 0.06);
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --border-color: rgba(0, 0, 0, 0.08);
 
     --accent-purple: #8b5cf6;
     --accent-pink: #ec4899;
