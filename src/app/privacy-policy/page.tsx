@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — TubeBoost',
-  description: 'TubeBoost privacy policy. Learn how we handle your data, cookies, and advertising.',
-  alternates: { canonical: 'https://tubeboost.com/privacy-policy' },
+  title: 'Privacy Policy — FreeViralKit',
+  description: 'FreeViralKit privacy policy. Learn how we handle your data, cookies, and advertising.',
+  alternates: { canonical: 'https://freeviralkit.com/privacy-policy' },
 };
 
 export default function PrivacyPolicyPage() {
@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
       <div className="space-y-8 text-gray-300 leading-relaxed">
         <section>
           <h2 className="font-display text-xl font-bold text-white mb-3">1. Introduction</h2>
-          <p>Welcome to TubeBoost. This Privacy Policy explains how we collect, use, and protect your information when you use tubeboost.com.</p>
+          <p>Welcome to FreeViralKit. This Privacy Policy explains how we collect, use, and protect your information when you use freeviralkit.com.</p>
         </section>
 
         <section>

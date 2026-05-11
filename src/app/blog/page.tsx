@@ -4,16 +4,16 @@ import { blogPosts } from './data';
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'YouTube SEO Blog — Tips, Guides & Strategies | TubeBoost',
+  title: 'YouTube SEO Blog — Tips, Guides & Strategies | FreeViralKit',
   description: 'Expert YouTube SEO tips, guides, and strategies to grow your channel. Learn about tags, hashtags, descriptions, titles, and more.',
   openGraph: {
-    title: 'YouTube SEO Blog — Tips, Guides & Strategies | TubeBoost',
+    title: 'YouTube SEO Blog — Tips, Guides & Strategies | FreeViralKit',
     description: 'Expert YouTube SEO tips and strategies to grow your channel faster.',
     type: 'website',
-    url: 'https://tubeboost.com/blog',
+    url: 'https://freeviralkit.com/blog',
   },
   alternates: {
-    canonical: 'https://tubeboost.com/blog',
+    canonical: 'https://freeviralkit.com/blog',
   },
 };
 

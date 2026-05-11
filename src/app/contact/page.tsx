@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import { Mail, MessageSquare } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact Us — TubeBoost',
-  description: 'Have questions, feedback, or partnership inquiries? Get in touch with the TubeBoost team.',
+  title: 'Contact Us — FreeViralKit',
+  description: 'Have questions, feedback, or partnership inquiries? Get in touch with the FreeViralKit team.',
   openGraph: {
-    title: 'Contact Us — TubeBoost',
-    description: 'Get in touch with the TubeBoost team for support, feedback, or partnerships.',
+    title: 'Contact Us — FreeViralKit',
+    description: 'Get in touch with the FreeViralKit team for support, feedback, or partnerships.',
     type: 'website',
-    url: 'https://tubeboost.com/contact',
+    url: 'https://freeviralkit.com/contact',
   },
   alternates: {
-    canonical: 'https://tubeboost.com/contact',
+    canonical: 'https://freeviralkit.com/contact',
   },
 };
 
@@ -50,7 +50,7 @@ export default function ContactPage() {
         >
           {/* Anti-spam */}
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://tubeboost.com/contact" />
+          <input type="hidden" name="_next" value="https://freeviralkit.com/contact" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
@@ -116,15 +116,15 @@ export default function ContactPage() {
         <div className="space-y-4">
           {[
             {
-              q: 'Is TubeBoost really free?',
-              a: 'Yes! TubeBoost is 100% free to use. No signup, no credit card, no hidden fees.',
+              q: 'Is FreeViralKit really free?',
+              a: 'Yes! FreeViralKit is 100% free to use. No signup, no credit card, no hidden fees.',
             },
             {
               q: 'How does the AI generate titles?',
               a: 'We use Groq AI with advanced language models trained on millions of successful YouTube titles and SEO patterns.',
             },
             {
-              q: 'Can I use TubeBoost for any YouTube niche?',
+              q: 'Can I use FreeViralKit for any YouTube niche?',
               a: 'Absolutely. Our AI auto-detects your niche and generates content optimized for gaming, tech, cooking, vlogs, education, and more.',
             },
             {

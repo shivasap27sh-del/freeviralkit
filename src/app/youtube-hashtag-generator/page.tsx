@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Hash, Copy, CheckCircle2, Loader2, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
+import { adSlots } from '@/lib/ad-slots';
 
 export default function HashtagGeneratorPage() {
   const [topic, setTopic] = useState('');
@@ -85,7 +86,7 @@ export default function HashtagGeneratorPage() {
         )}
       </AnimatePresence>
 
-      <InContentAd slot="HASHTAG_GEN_BOTTOM" />
+      <InContentAd slot={adSlots.hashtagBottom} />
 
       <section className="mt-12 space-y-8">
         <h2 className="font-display text-2xl font-bold">How YouTube Hashtags Work</h2>

@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Wand2, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw } from 'lucide-react';
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
+import { adSlots } from '@/lib/ad-slots';
 
 export default function TitleGeneratorPage() {
   const [topic, setTopic] = useState('');
@@ -76,11 +77,20 @@ export default function TitleGeneratorPage() {
             <div className="flex flex-col gap-2.5">
               {titles.map((title, idx) => (
                 <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.05 }}
-                  className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-4 flex items-start gap-3 group hover:bg-white/[0.06] transition-all">
+                  className="bg-white/3 border border-white/8 rounded-xl p-4 flex items-start gap-3 group hover:bg-white/6 transition-all">
                   <div className="w-7 h-7 rounded-full bg-purple-500 text-white flex items-center justify-center shrink-0 text-sm font-bold">{idx + 1}</div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[1.02rem] leading-snug">{title}</p>
-                    <span className={`text-xs font-mono mt-1 inline-block ${charColor(title.length)}`}>{title.length} chars</span>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className={`text-xs font-mono ${charColor(title.length)}`}>{title.length} chars</span>
+                      {idx < 5 ? (
+                        <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/20">SEO</span>
+                      ) : idx < 8 ? (
+                        <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-orange-500/15 text-orange-400 border border-orange-500/20">VIRAL</span>
+                      ) : (
+                        <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-pink-500/15 text-pink-400 border border-pink-500/20">TRENDING</span>
+                      )}
+                    </div>
                   </div>
                   <button onClick={() => copy(title, `title-${idx}`)} className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-white/10 shrink-0">
                     {copiedStates[`title-${idx}`] ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-gray-500" />}
@@ -95,7 +105,7 @@ export default function TitleGeneratorPage() {
         )}
       </AnimatePresence>
 
-      <InContentAd slot="TITLE_GEN_BOTTOM" />
+      <InContentAd slot={adSlots.titleBottom} />
 
       {/* SEO Content */}
       <section className="mt-12 space-y-8">

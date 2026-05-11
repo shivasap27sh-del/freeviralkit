@@ -3,16 +3,16 @@ import Link from 'next/link';
 import { Zap, Target, Shield, Users, Sparkles, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About TubeBoost — Free AI YouTube SEO Tool',
-  description: 'TubeBoost is a free AI-powered YouTube SEO optimization tool that helps creators generate viral titles, descriptions, hashtags, and tags. Built by Shiva.',
+  title: 'About FreeViralKit — Free AI YouTube SEO Tool',
+  description: 'FreeViralKit is a free AI-powered YouTube SEO optimization tool that helps creators generate viral titles, descriptions, hashtags, and tags. Built by Shiva.',
   openGraph: {
-    title: 'About TubeBoost — Free AI YouTube SEO Tool',
-    description: 'Learn about TubeBoost and our mission to help YouTube creators grow faster with AI-powered SEO optimization.',
+    title: 'About FreeViralKit — Free AI YouTube SEO Tool',
+    description: 'Learn about FreeViralKit and our mission to help YouTube creators grow faster with AI-powered SEO optimization.',
     type: 'website',
-    url: 'https://tubeboost.com/about',
+    url: 'https://freeviralkit.com/about',
   },
   alternates: {
-    canonical: 'https://tubeboost.com/about',
+    canonical: 'https://freeviralkit.com/about',
   },
 };
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
           Helping Creators <span className="text-gradient">Go Viral</span>
         </h1>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-          TubeBoost is a free, AI-powered YouTube SEO tool that generates optimized titles,
+          FreeViralKit is a free, AI-powered YouTube SEO tool that generates optimized titles,
           descriptions, hashtags, and tags — everything you need to rank higher and grow faster.
         </p>
       </section>
@@ -70,7 +70,7 @@ export default function AboutPage() {
         <p className="text-gray-300 leading-relaxed mb-4">
           We believe every creator deserves access to professional-grade SEO tools, regardless
           of budget. Most YouTube optimization tools charge $20-50/month for features that should
-          be free. TubeBoost changes that.
+          be free. FreeViralKit changes that.
         </p>
         <p className="text-gray-300 leading-relaxed mb-4">
           By leveraging cutting-edge AI through Groq&apos;s lightning-fast inference engine, we provide
@@ -85,7 +85,7 @@ export default function AboutPage() {
 
       {/* Features Grid */}
       <section className="mb-12">
-        <h2 className="font-display text-2xl font-bold text-center mb-8">Why Creators Choose TubeBoost</h2>
+        <h2 className="font-display text-2xl font-bold text-center mb-8">Why Creators Choose FreeViralKit</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {features.map((feature) => (
             <div key={feature.title} className="glass-card rounded-2xl p-6 group hover:border-purple-500/20 transition-all">
@@ -101,7 +101,7 @@ export default function AboutPage() {
 
       {/* How It Works */}
       <section className="glass-card rounded-2xl p-8 md:p-10 mb-12">
-        <h2 className="font-display text-2xl font-bold mb-6">How TubeBoost Works</h2>
+        <h2 className="font-display text-2xl font-bold mb-6">How FreeViralKit Works</h2>
         <div className="space-y-6">
           {[
             { step: '1', title: 'Enter Your Topic', desc: 'Type your video topic or idea into the search box.' },
@@ -133,7 +133,7 @@ export default function AboutPage() {
           href="/"
           className="inline-flex items-center gap-2 btn-primary rounded-xl px-8 py-4 font-semibold text-lg"
         >
-          Try TubeBoost Free <ArrowRight className="w-5 h-5" />
+          Try FreeViralKit Free <ArrowRight className="w-5 h-5" />
         </Link>
       </section>
     </main>

@@ -4,15 +4,16 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { AdSenseScript } from '@/components/AdSense';
+import { buildAbsoluteUrl, getBaseUrl, siteConfig } from '@/lib/site';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tubeboost.com'),
+  metadataBase: getBaseUrl(),
   title: {
-    default: 'TubeBoost — Free AI YouTube SEO Optimizer | Titles, Tags, Descriptions',
-    template: '%s | TubeBoost',
+    default: 'FreeViralKit — Free AI YouTube SEO Optimizer | Titles, Tags, Descriptions',
+    template: '%s | FreeViralKit',
   },
   description:
     'Free AI-powered YouTube SEO tool. Generate viral titles, optimized descriptions, trending hashtags, and SEO tags for your YouTube videos. Boost views, subscribers, and rankings instantly.',
@@ -28,26 +29,26 @@ export const metadata: Metadata = {
     'video seo',
     'youtube growth',
     'youtube ranking',
-    'tubeboost',
+    'freeviralkit',
   ],
   authors: [{ name: 'Shiva' }],
   creator: 'Shiva',
-  publisher: 'TubeBoost',
+  publisher: 'FreeViralKit',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://tubeboost.com',
-    siteName: 'TubeBoost',
-    title: 'TubeBoost — Free AI YouTube SEO Optimizer',
+    url: buildAbsoluteUrl('/'),
+    siteName: 'FreeViralKit',
+    title: 'FreeViralKit — Free AI YouTube SEO Optimizer',
     description:
       'Generate viral YouTube titles, descriptions, hashtags & tags with AI. 100% free YouTube SEO tool.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TubeBoost — Free AI YouTube SEO Optimizer',
+    title: 'FreeViralKit — Free AI YouTube SEO Optimizer',
     description:
       'Generate viral YouTube titles, descriptions, hashtags & tags with AI. Free forever.',
-    creator: '@tubeboost',
+    creator: siteConfig.xHandle,
   },
   robots: {
     index: true,
@@ -61,11 +62,13 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://tubeboost.com',
+    canonical: buildAbsoluteUrl('/'),
   },
-  verification: {
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
-  },
+  verification: siteConfig.googleVerificationCode
+    ? {
+        google: siteConfig.googleVerificationCode,
+      }
+    : undefined,
 };
 
 // JSON-LD structured data
@@ -74,8 +77,8 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'WebApplication',
-      name: 'TubeBoost',
-      url: 'https://tubeboost.com',
+      name: 'FreeViralKit',
+      url: buildAbsoluteUrl('/'),
       applicationCategory: 'UtilitiesApplication',
       operatingSystem: 'Web',
       description:
@@ -92,8 +95,8 @@ const jsonLd = {
     },
     {
       '@type': 'Organization',
-      name: 'TubeBoost',
-      url: 'https://tubeboost.com',
+      name: 'FreeViralKit',
+      url: buildAbsoluteUrl('/'),
       description: 'Free AI YouTube SEO optimization tool',
     },
     {
@@ -101,26 +104,26 @@ const jsonLd = {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'Is TubeBoost free?',
+          name: 'Is FreeViralKit free?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes, TubeBoost is 100% free. No signup, no credit card, no hidden fees.',
+            text: 'Yes, FreeViralKit is 100% free. No signup, no credit card, no hidden fees.',
           },
         },
         {
           '@type': 'Question',
-          name: 'How does TubeBoost generate YouTube titles?',
+          name: 'How does FreeViralKit generate YouTube titles?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'TubeBoost uses Groq AI to analyze your video topic and generate 10 SEO-optimized titles with emojis and hashtags tailored to your niche.',
+            text: 'FreeViralKit uses Groq AI to analyze your video topic and generate 10 SEO-optimized titles with emojis and hashtags tailored to your niche.',
           },
         },
         {
           '@type': 'Question',
-          name: 'What does TubeBoost generate?',
+          name: 'What does FreeViralKit generate?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'TubeBoost generates optimized video titles, descriptions, hashtags, tags, and pinned comments — everything you need for YouTube SEO.',
+            text: 'FreeViralKit generates optimized video titles, descriptions, hashtags, tags, and pinned comments — everything you need for YouTube SEO.',
           },
         },
       ],

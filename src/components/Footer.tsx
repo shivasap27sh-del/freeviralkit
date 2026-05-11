@@ -4,6 +4,7 @@ import { Video } from 'lucide-react';
 const footerLinks = {
   Product: [
     { href: '/', label: 'YouTube SEO Tool' },
+    { href: '/tools', label: 'Tools by Niche' },
     { href: '/about', label: 'About Us' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
@@ -32,7 +33,7 @@ export default function Footer() {
                 <Video className="text-white w-4 h-4" />
               </div>
               <span className="font-display text-lg font-bold">
-                Tube<span className="text-transparent bg-clip-text bg-gradient-primary">Boost</span>
+                FreeViral<span className="text-transparent bg-clip-text bg-gradient-primary">Kit</span>
               </span>
             </div>
             <p className="text-sm text-gray-500 leading-relaxed">
@@ -65,7 +66,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} TubeBoost. Built with ❤️ by{' '}
+            © {new Date().getFullYear()} FreeViralKit. Built with ❤️ by{' '}
             <span className="text-purple-400 font-semibold">Shiva</span>
           </p>
           <p className="text-gray-600 text-xs">

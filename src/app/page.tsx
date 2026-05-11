@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
+import { adSlots } from '@/lib/ad-slots';
 
 type Details = { description: string; hashtags: string[]; tags: string[]; pinnedComment: string };
 
@@ -127,7 +128,7 @@ export default function Home() {
                 <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.05 }}>
                   <button onClick={() => handleSelectTitle(title)} disabled={isGeneratingDetails && selectedTitle !== title}
                     className={`title-card w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3 group ${
-                      selectedTitle === title ? 'bg-purple-500/15 border-purple-500/60 shadow-[0_0_20px_rgba(139,92,246,0.15)]' : 'bg-white/[0.03] border-white/[0.08] hover:bg-white/[0.06] hover:border-white/[0.15]'
+                      selectedTitle === title ? 'bg-purple-500/15 border-purple-500/60 shadow-[0_0_20px_rgba(139,92,246,0.15)]' : 'bg-white/3 border-white/8 hover:bg-white/6 hover:border-white/15'
                     }`}>
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold mt-0.5 transition-all ${
                       selectedTitle === title ? 'bg-purple-500 text-white' : 'bg-white/10 text-gray-400 group-hover:bg-white/15'
@@ -137,7 +138,16 @@ export default function Home() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-[1.02rem] leading-snug">{title}</p>
-                      <span className={`text-xs font-mono mt-1 inline-block ${charColor(title.length)}`}>{title.length} chars</span>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className={`text-xs font-mono ${charColor(title.length)}`}>{title.length} chars</span>
+                        {idx < 5 ? (
+                          <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/20">SEO</span>
+                        ) : idx < 8 ? (
+                          <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-orange-500/15 text-orange-400 border border-orange-500/20">VIRAL</span>
+                        ) : (
+                          <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-pink-500/15 text-pink-400 border border-pink-500/20">TRENDING</span>
+                        )}
+                      </div>
                     </div>
                     <button onClick={e => { e.stopPropagation(); copy(title, `title-${idx}`); }}
                       className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-white/10 shrink-0">
@@ -153,7 +163,7 @@ export default function Home() {
       </AnimatePresence>
 
       {/* In-content Ad between titles and SEO package */}
-      {titles.length > 0 && <InContentAd slot="HOME_MID_CONTENT" />}
+      {titles.length > 0 && <InContentAd slot={adSlots.homeMid} />}
 
       {/* Step 3: SEO Package — All Stacked */}
       <AnimatePresence>
@@ -330,10 +340,10 @@ export default function Home() {
         <h2 className="font-display text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {[
-            { q: 'Is TubeBoost really free?', a: 'Yes — 100% free, no signup, no credit card. Generate unlimited titles, descriptions, hashtags, and tags.' },
+            { q: 'Is FreeViralKit really free?', a: 'Yes — 100% free, no signup, no credit card. Generate unlimited titles, descriptions, hashtags, and tags.' },
             { q: 'How does the AI generate YouTube titles?', a: 'We use Groq AI with advanced language models trained on successful YouTube title patterns across every niche.' },
             { q: 'Will these tags and titles help me rank?', a: 'Yes — our AI generates content following YouTube SEO best practices: proper keyword placement, optimal character counts, and trending formats.' },
-            { q: 'Can I use TubeBoost for YouTube Shorts?', a: 'Absolutely! TubeBoost works for long-form videos and Shorts. The AI adapts its output to match your content type.' },
+            { q: 'Can I use FreeViralKit for YouTube Shorts?', a: 'Absolutely! FreeViralKit works for long-form videos and Shorts. The AI adapts its output to match your content type.' },
           ].map((faq, i) => (
             <div key={i} className="glass-card rounded-xl p-5">
               <h3 className="font-display text-base font-semibold mb-2">{faq.q}</h3>

@@ -24,7 +24,7 @@ YouTube is the world's second-largest search engine, processing over 3 billion s
 Before creating any video, you need to know what your audience is searching for. Use tools like:
 - **YouTube Search Suggest** — Type your topic and note autocomplete suggestions
 - **Google Trends** — Compare keyword popularity over time
-- **TubeBoost** — Our AI-powered tool generates SEO-optimized titles based on real search patterns
+- **FreeViralKit** — Our AI-powered tool generates SEO-optimized titles based on real search patterns
 
 ### 2. Title Optimization
 Your title is the single most important ranking factor. Here's what works:
@@ -78,7 +78,7 @@ Engagement signals (likes, comments, shares) directly impact rankings:
 - **Ask viewers to comment** their opinions
 - **Create polls** in the community tab
 
-## How TubeBoost Helps
+## How FreeViralKit Helps
 
 Our AI-powered tool automates the hardest parts of YouTube SEO:
 1. **Title Generation** — Get 10 SEO-optimized titles with emojis and hashtags
@@ -91,7 +91,7 @@ Our AI-powered tool automates the hardest parts of YouTube SEO:
 
 YouTube SEO isn't rocket science, but it does require consistency and strategy. By optimizing your titles, descriptions, tags, and hashtags for every video, you're giving the algorithm the signals it needs to recommend your content to more viewers.
 
-**Start optimizing your next video with TubeBoost** — it's free, powered by AI, and designed to help you grow faster.`,
+**Start optimizing your next video with FreeViralKit** — it's free, powered by AI, and designed to help you grow faster.`,
     date: '2026-05-01',
     readTime: '12 min read',
     category: 'YouTube SEO',
@@ -152,7 +152,7 @@ Adjacent topics that YouTube's algorithm connects:
 ❌ Using irrelevant trending tags  
 ❌ Not updating tags on older videos  
 
-## Use TubeBoost's Free Tag Generator
+## Use FreeViralKit's Free Tag Generator
 
 Our AI-powered tag generator creates **20-25 optimized tags** for any video topic, automatically balancing:
 - Exact match keywords
@@ -233,7 +233,7 @@ Go back and optimize descriptions on your older videos:
 
 ## Generate Perfect Descriptions with AI
 
-Writing optimized descriptions for every video is time-consuming. **TubeBoost generates complete, SEO-optimized descriptions** in seconds — with proper keyword placement, calls-to-action, and hashtags automatically included.`,
+Writing optimized descriptions for every video is time-consuming. **FreeViralKit generates complete, SEO-optimized descriptions** in seconds — with proper keyword placement, calls-to-action, and hashtags automatically included.`,
     date: '2026-04-25',
     readTime: '6 min read',
     category: 'Descriptions',
@@ -296,7 +296,7 @@ Ultra-specific hashtags where you can dominate:
 
 ## Automate Your Hashtag Research
 
-Stop guessing which hashtags work. **TubeBoost's AI analyzes your video topic** and generates the perfect mix of high-traffic, medium-competition, and low-competition hashtags — with the most important ones ranked first.`,
+Stop guessing which hashtags work. **FreeViralKit's AI analyzes your video topic** and generates the perfect mix of high-traffic, medium-competition, and low-competition hashtags — with the most important ones ranked first.`,
     date: '2026-04-22',
     readTime: '7 min read',
     category: 'Hashtags',
@@ -362,7 +362,7 @@ These broad tags work for almost any gaming video:
 
 ## Generate Custom Gaming Tags with AI
 
-Don't just copy-paste generic tags. Use TubeBoost's AI tag generator to create **custom tags tailored to your specific gaming video** — it understands every game and gaming sub-niche.`,
+Don't just copy-paste generic tags. Use FreeViralKit's AI tag generator to create **custom tags tailored to your specific gaming video** — it understands every game and gaming sub-niche.`,
     date: '2026-05-03',
     readTime: '9 min read',
     category: 'Gaming',
@@ -453,7 +453,7 @@ Adding 1-2 hashtags at the end helps with discoverability without hurting readab
 
 ## Generate Click-Worthy Titles with AI
 
-Writing great titles is hard. TubeBoost analyzes your topic, detects the niche, and generates 10 unique titles using these proven formulas — each with emojis and hashtags already included.`,
+Writing great titles is hard. FreeViralKit analyzes your topic, detects the niche, and generates 10 unique titles using these proven formulas — each with emojis and hashtags already included.`,
     date: '2026-05-05',
     readTime: '10 min read',
     category: 'Titles',
@@ -520,7 +520,7 @@ Hashtags help, but they're a supplement — not a strategy. Think of them as the
 
 Use hashtags as part of a complete SEO strategy. They're free, take 30 seconds, and can provide marginal improvements to discoverability. There's no reason NOT to use them — just use them correctly.
 
-**TubeBoost generates the perfect hashtags** for any topic — ranked by traffic potential with the strongest 3 automatically placed first.`,
+**FreeViralKit generates the perfect hashtags** for any topic — ranked by traffic potential with the strongest 3 automatically placed first.`,
     date: '2026-05-06',
     readTime: '8 min read',
     category: 'Hashtags',

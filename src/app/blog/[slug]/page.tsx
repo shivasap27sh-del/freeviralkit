@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   return {
-    title: `${post.title} | TubeBoost Blog`,
+    title: `${post.title} | FreeViralKit Blog`,
     description: post.description,
     keywords: post.tags.join(', '),
     openGraph: {
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       type: 'article',
       publishedTime: post.date,
-      url: `https://tubeboost.com/blog/${post.slug}`,
+      url: `https://freeviralkit.com/blog/${post.slug}`,
       tags: post.tags,
     },
     twitter: {
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
     },
     alternates: {
-      canonical: `https://tubeboost.com/blog/${post.slug}`,
+      canonical: `https://freeviralkit.com/blog/${post.slug}`,
     },
   };
 }
@@ -127,12 +127,12 @@ export default async function BlogPostPage({ params }: Props) {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'TubeBoost',
-      url: 'https://tubeboost.com',
+      name: 'FreeViralKit',
+      url: 'https://freeviralkit.com',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://tubeboost.com/blog/${post.slug}`,
+      '@id': `https://freeviralkit.com/blog/${post.slug}`,
     },
     keywords: post.tags.join(', '),
   };
@@ -213,7 +213,7 @@ export default async function BlogPostPage({ params }: Props) {
             href="/"
             className="inline-flex items-center gap-2 btn-primary rounded-xl px-8 py-4 font-semibold text-lg"
           >
-            Try TubeBoost Free →
+            Try FreeViralKit Free →
           </Link>
         </div>
 

@@ -1,9 +1,13 @@
 'use client';
 
 import { useEffect } from 'react';
+import { siteConfig } from '@/lib/site';
 
-// Replace with your actual AdSense Publisher ID
-const ADSENSE_PUB_ID = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID || 'ca-pub-XXXXXXXXXXXXXXXXX';
+const ADSENSE_PUB_ID = siteConfig.adsensePublisherId;
+
+const hasRealPubId = ADSENSE_PUB_ID.startsWith('ca-pub-');
+const isSlotConfigured = (slot: string) =>
+  !!slot && !slot.includes('_') && /^\d+$/.test(slot);
 
 /**
  * Google AdSense ad unit component.
@@ -22,7 +26,11 @@ export function AdUnit({
   className?: string;
   style?: React.CSSProperties;
 }) {
+  const canRenderRealAd = hasRealPubId && isSlotConfigured(slot);
+
   useEffect(() => {
+    if (!canRenderRealAd) return;
+
     try {
       // Push the ad after mount
       if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).adsbygoogle) {
@@ -31,7 +39,15 @@ export function AdUnit({
     } catch (err) {
       console.error('AdSense error:', err);
     }
-  }, []);
+  }, [canRenderRealAd]);
+
+  if (!canRenderRealAd) {
+    return (
+      <div className={`ad-container ${className}`} style={{ textAlign: 'center', overflow: 'hidden', ...style }}>
+        <div className="text-xs text-gray-600 py-4">Ad slot reserved</div>
+      </div>
+    );
+  }
 
   return (
     <div className={`ad-container ${className}`} style={{ textAlign: 'center', overflow: 'hidden', ...style }}>
@@ -75,7 +91,7 @@ export function BannerAd({ slot, className = '' }: { slot: string; className?: s
  * AdSense head script — inject into layout.
  */
 export function AdSenseScript() {
-  if (ADSENSE_PUB_ID === 'ca-pub-XXXXXXXXXXXXXXXXX') {
+  if (!hasRealPubId) {
     // Don't load AdSense script if no real pub ID is set
     return null;
   }

@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { AlignLeft, Copy, CheckCircle2, Loader2, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
+import { adSlots } from '@/lib/ad-slots';
 
 export default function DescriptionGeneratorPage() {
   const [topic, setTopic] = useState('');
@@ -77,7 +78,7 @@ export default function DescriptionGeneratorPage() {
         )}
       </AnimatePresence>
 
-      <InContentAd slot="DESC_GEN_BOTTOM" />
+      <InContentAd slot={adSlots.descriptionBottom} />
 
       <section className="mt-12 space-y-8">
         <h2 className="font-display text-2xl font-bold">Why YouTube Descriptions Matter for SEO</h2>

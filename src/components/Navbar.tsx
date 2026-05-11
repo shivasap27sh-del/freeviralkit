@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/tools', label: 'Tools' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
@@ -25,7 +26,7 @@ export default function Navbar() {
             <Video className="text-white w-5 h-5" />
           </div>
           <span className="font-display text-xl font-bold tracking-tight">
-            Tube<span className="text-transparent bg-clip-text bg-gradient-primary">Boost</span>
+            FreeViral<span className="text-transparent bg-clip-text bg-gradient-primary">Kit</span>
           </span>
         </Link>
 
