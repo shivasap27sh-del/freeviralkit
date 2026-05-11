@@ -64,11 +64,11 @@
   }
 
   .bg-gradient-primary {
-    background: var(--gradient-primary);
+    background-image: var(--gradient-primary);
   }
 
   .bg-gradient-secondary {
-    background: var(--gradient-secondary);
+    background-image: var(--gradient-secondary);
   }
 
   /* Step badges */
