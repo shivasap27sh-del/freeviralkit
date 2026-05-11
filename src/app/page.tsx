@@ -126,8 +126,10 @@ export default function Home() {
             <div className="flex flex-col gap-2.5">
               {titles.map((title, idx) => (
                 <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.05 }}>
-                  <button onClick={() => handleSelectTitle(title)} disabled={isGeneratingDetails && selectedTitle !== title}
+                  <div onClick={() => !(isGeneratingDetails && selectedTitle !== title) && handleSelectTitle(title)}
                     className={`title-card w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3 group ${
+                      (isGeneratingDetails && selectedTitle !== title) ? 'opacity-50 cursor-not-allowed ' : 'cursor-pointer '
+                    }${
                       selectedTitle === title ? 'bg-purple-500/15 border-purple-500/60 shadow-[0_0_20px_rgba(139,92,246,0.15)]' : 'bg-white/3 border-white/8 hover:bg-white/6 hover:border-white/15'
                     }`}>
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold mt-0.5 transition-all ${
@@ -154,7 +156,7 @@ export default function Home() {
                       {copiedStates[`title-${idx}`] ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-gray-500" />}
                     </button>
                     <ChevronRight className={`w-4 h-4 shrink-0 mt-1 transition-colors ${selectedTitle === title ? 'text-purple-400' : 'text-gray-600'}`} />
-                  </button>
+                  </div>
                 </motion.div>
               ))}
             </div>
