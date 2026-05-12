@@ -46,11 +46,20 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  // Simple markdown-to-HTML (handles ##, ###, **, ```, ❌, ✅, -, \n)
+  // Simple markdown-to-HTML
   const renderContent = (content: string) => {
-    const sections = content.split('\n\n');
+    // Normalize spacing to ensure headings and lists are separated by \n\n
+    const normalizedContent = content
+      .replace(/^(#{2,3} .*)$/gm, '\n\n$1\n\n')
+      .replace(/(?:^|\n)(-[^\n]*(?:\n-[^\n]*)*)/g, '\n\n$1\n\n')
+      .replace(/(?:^|\n)(❌[^\n]*(?:\n❌[^\n]*)*)/g, '\n\n$1\n\n')
+      .replace(/(?:^|\n)(✅[^\n]*(?:\n✅[^\n]*)*)/g, '\n\n$1\n\n')
+      .trim();
+
+    const sections = normalizedContent.split(/\n{2,}/);
     return sections.map((block, i) => {
       const trimmed = block.trim();
+      if (!trimmed) return null;
 
       if (trimmed.startsWith('### ')) {
         return (
@@ -75,7 +84,7 @@ export default async function BlogPostPage({ params }: Props) {
         );
       }
       if (trimmed.startsWith('- ') || trimmed.startsWith('❌') || trimmed.startsWith('✅')) {
-        const items = trimmed.split('\n');
+        const items = trimmed.split('\n').filter(item => item.trim() !== '');
         return (
           <ul key={i} className="space-y-2 my-4">
             {items.map((item, j) => (
@@ -84,7 +93,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <span
                   dangerouslySetInnerHTML={{
                     __html: item
-                      .replace(/^- /, '')
+                      .replace(/^(?:-\s*|❌\s*|✅\s*)/, '')
                       .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')
                       .replace(/`(.*?)`/g, '<code class="bg-slate-200 px-1.5 py-0.5 rounded text-purple-300 text-sm">$1</code>'),
                   }}
@@ -101,7 +110,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div key={i}>
           {adInsert}
           <p
-            className="text-slate-700 leading-relaxed my-4"
+            className="text-slate-700 leading-relaxed my-4 whitespace-pre-wrap"
             dangerouslySetInnerHTML={{
               __html: trimmed
                 .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')

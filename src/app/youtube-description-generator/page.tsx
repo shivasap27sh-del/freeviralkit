@@ -72,7 +72,7 @@ export default function DescriptionGeneratorPage() {
               </button>
             </div>
             <div className="bg-slate-50 rounded-xl p-5 border border-slate-100">
-              <p className="whitespace-pre-wrap text-slate-700 leading-relaxed text-[0.95rem]">{description}</p>
+              <p className="whitespace-pre-wrap text-slate-700 leading-relaxed text-[0.95rem]" dangerouslySetInnerHTML={{ __html: description.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>') }} />
             </div>
           </motion.div>
         )}
