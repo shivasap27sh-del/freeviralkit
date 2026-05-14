@@ -95,6 +95,7 @@ export default async function BlogPostPage({ params }: Props) {
                     __html: item
                       .replace(/^(?:-\s*|❌\s*|✅\s*)/, '')
                       .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')
+                      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-purple-500 hover:text-purple-600 underline underline-offset-2">$1</a>')
                       .replace(/`(.*?)`/g, '<code class="bg-slate-200 px-1.5 py-0.5 rounded text-purple-300 text-sm">$1</code>'),
                   }}
                 />
@@ -114,6 +115,7 @@ export default async function BlogPostPage({ params }: Props) {
             dangerouslySetInnerHTML={{
               __html: trimmed
                 .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')
+                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-purple-500 hover:text-purple-600 underline underline-offset-2">$1</a>')
                 .replace(/`(.*?)`/g, '<code class="bg-slate-200 px-1.5 py-0.5 rounded text-purple-300 text-sm">$1</code>'),
             }}
           />
