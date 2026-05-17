@@ -44,7 +44,7 @@ export default function ContactPage() {
         </div>
 
         <form
-          action="https://formsubmit.co/your-email@example.com"
+          action="https://formsubmit.co/shivasap27sh@gmail.com"
           method="POST"
           className="space-y-5"
         >
