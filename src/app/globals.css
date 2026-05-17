@@ -224,6 +224,7 @@
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
+  contain: strict;
 }
 
 .bg-orb {
@@ -232,6 +233,7 @@
   filter: blur(100px);
   opacity: 0.4;
   animation: orbFloat 20s ease-in-out infinite;
+  will-change: transform;
 }
 
 .bg-orb-1 {

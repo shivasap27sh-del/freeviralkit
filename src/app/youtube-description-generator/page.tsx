@@ -46,7 +46,7 @@ export default function DescriptionGeneratorPage() {
         </p>
       </section>
 
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
+      <div className="glass-card rounded-2xl p-6 md:p-8 mb-8">
         <div className="relative mb-4">
           <input type="text" value={topic} onChange={e => setTopic(e.target.value)}
             placeholder="Enter your video topic or title..."
@@ -57,7 +57,7 @@ export default function DescriptionGeneratorPage() {
           className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2">
           {isGenerating ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating Description...</> : <><Sparkles className="w-5 h-5" /> Generate Description</>}
         </button>
-      </motion.div>
+      </div>
 
       <AnimatePresence>
         {description && (

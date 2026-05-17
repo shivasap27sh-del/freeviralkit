@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* Step 1 */}
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
+      <div className="glass-card rounded-2xl p-6 md:p-8 mb-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="step-badge"><Sparkles className="w-5 h-5" /></div>
           <h2 className="font-display text-xl font-semibold">1. Enter Your Video Topic</h2>
@@ -93,7 +93,7 @@ export default function Home() {
           className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2">
           {isGeneratingTitles ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating 10 Titles...</> : <><Wand2 className="w-5 h-5" /> Generate Optimized Titles</>}
         </button>
-      </motion.div>
+      </div>
 
       {/* Skeleton */}
       <AnimatePresence>
