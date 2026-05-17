@@ -83,6 +83,27 @@ export default function AboutPage() {
         </p>
       </section>
 
+      {/* Creator Bio */}
+      <section className="glass-card rounded-2xl p-8 md:p-10 mb-12">
+        <h2 className="font-display text-2xl font-bold mb-4">Meet the Creator</h2>
+        <p className="text-slate-700 leading-relaxed mb-4">
+          Hi, I&apos;m <strong className="text-slate-900">Shiva Srivastava</strong> — a Computer Science student
+          (B.Tech, 8th semester) at Sharda University, India, and the solo developer behind FreeViralKit. I&apos;ve worked
+          as a Full Stack Developer at WooStudios and a Front End Developer at M2Cloud LLP, building production
+          applications with Next.js, React, TypeScript, and Node.js.
+        </p>
+        <p className="text-slate-700 leading-relaxed mb-4">
+          I built FreeViralKit because I saw creators paying $30-50/month for YouTube SEO tools that should be free.
+          With 450+ LeetCode problems solved and 2 production apps deployed with 99%+ uptime, I applied
+          my engineering skills to create a tool that&apos;s fast, reliable, and actually helps people grow on YouTube.
+        </p>
+        <p className="text-slate-700 leading-relaxed">
+          When I&apos;m not coding, you&apos;ll find me exploring scalable web architectures, optimizing database
+          performance, or working on my next side project. FreeViralKit is built with the same attention to
+          quality I bring to every project — no shortcuts, no compromises.
+        </p>
+      </section>
+
       {/* Features Grid */}
       <section className="mb-12">
         <h2 className="font-display text-2xl font-bold text-center mb-8">Why Creators Choose FreeViralKit</h2>
