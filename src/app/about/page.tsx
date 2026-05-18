@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Zap, Target, Shield, Users, Sparkles, ArrowRight, Github, Linkedin, Mail, Code2, Database, Globe, Star } from 'lucide-react';
+import { Zap, Target, Shield, Users, Sparkles, ArrowRight, GitFork, ExternalLink, Mail, Code2, Database, Globe, Star } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About FreeViralKit — Free AI YouTube SEO Tool',
@@ -200,7 +200,7 @@ export default function AboutPage() {
                   aria-label="Shiva's GitHub profile"
                   title="GitHub"
                 >
-                  <Github className="w-4 h-4" />
+                  <GitFork className="w-4 h-4" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/shiva-srivastava"
@@ -210,7 +210,7 @@ export default function AboutPage() {
                   aria-label="Shiva's LinkedIn profile"
                   title="LinkedIn"
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <ExternalLink className="w-4 h-4" />
                 </a>
                 <Link
                   href="/contact"
