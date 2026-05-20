@@ -51,7 +51,7 @@
     background: var(--bg-card);
     backdrop-filter: blur(20px) saturate(1.5);
     border: 1px solid var(--border-color);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   }
 
   .text-gradient {
@@ -141,9 +141,9 @@
     gap: 6px;
     padding: 6px 14px;
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.7);
+    background: rgba(15, 23, 42, 0.05);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    color: rgba(15, 23, 42, 0.7);
     font-size: 0.875rem;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -151,8 +151,8 @@
   }
 
   .copy-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: rgba(15, 23, 42, 0.1);
+    color: rgba(15, 23, 42, 0.9);
   }
 
   /* Title card hover */
@@ -184,9 +184,9 @@
     border-radius: 12px;
     background: linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.04) 0%,
-      rgba(255, 255, 255, 0.08) 50%,
-      rgba(255, 255, 255, 0.04) 100%
+      rgba(15, 23, 42, 0.03) 0%,
+      rgba(15, 23, 42, 0.08) 50%,
+      rgba(15, 23, 42, 0.03) 100%
     );
     background-size: 200% 100%;
     animation: shimmer 1.5s ease-in-out infinite;
@@ -276,7 +276,7 @@
   position: absolute;
   inset: 0;
   background-image:
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;
 }

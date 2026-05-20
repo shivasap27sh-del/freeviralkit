@@ -5,7 +5,7 @@ import { generateTitles, generateDetails } from './actions';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Wand2, Video, Copy, CheckCircle2, ChevronRight, Hash, Tag, AlignLeft,
-  Loader2, Sparkles, RotateCcw, Zap, Package, MessageCircle, ArrowRight
+  Loader2, Sparkles, RotateCcw, Zap, Package, MessageCircle, ArrowRight, User
 } from 'lucide-react';
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
@@ -133,7 +133,7 @@ export default function Home() {
                       selectedTitle === title ? 'bg-purple-500/15 border-purple-500/60 shadow-[0_0_20px_rgba(139,92,246,0.15)]' : 'bg-white border-slate-200 hover:bg-slate-50 hover:border-slate-300'
                     }`}>
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold mt-0.5 transition-all ${
-                      selectedTitle === title ? 'bg-purple-500 text-slate-900' : 'bg-slate-200 text-slate-600 group-hover:bg-white/15'
+                      selectedTitle === title ? 'bg-purple-500 text-white' : 'bg-slate-200 text-slate-600 group-hover:bg-slate-300'
                     }`}>
                       {selectedTitle === title && isGeneratingDetails ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
                         : selectedTitle === title ? <CheckCircle2 className="w-3.5 h-3.5" /> : idx + 1}
@@ -315,25 +315,39 @@ export default function Home() {
           Individual <span className="text-gradient">SEO Tools</span>
         </h2>
         <p className="text-slate-500 text-center mb-10 max-w-xl mx-auto">Need just one piece of the puzzle? Use our dedicated generators.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {[
-            { href: '/youtube-title-generator', icon: Wand2, label: 'YouTube Title Generator', desc: 'Get 10 viral, SEO-optimized titles', color: 'purple' },
-            { href: '/youtube-hashtag-generator', icon: Hash, label: 'YouTube Hashtag Generator', desc: 'Trending hashtags for any niche', color: 'pink' },
-            { href: '/youtube-tags-generator', icon: Tag, label: 'YouTube Tags Generator', desc: '20-25 SEO tags under 500 chars', color: 'cyan' },
-            { href: '/youtube-description-generator', icon: AlignLeft, label: 'YouTube Description Generator', desc: 'Keyword-rich descriptions in seconds', color: 'green' },
-          ].map((tool) => (
-            <Link key={tool.href} href={tool.href}
-              className="glass-card rounded-2xl p-5 group hover:border-purple-500/30 transition-all flex items-center gap-4">
-              <div className={`w-12 h-12 rounded-xl bg-${tool.color}-500/10 text-${tool.color}-400 flex items-center justify-center shrink-0`}>
-                <tool.icon className="w-6 h-6" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="font-display text-base font-bold group-hover:text-purple-400 transition-colors">{tool.label}</h3>
-                <p className="text-slate-500 text-sm">{tool.desc}</p>
-              </div>
-              <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-purple-400 transition-colors shrink-0" />
-            </Link>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {(() => {
+            const colorMap = {
+              purple: 'bg-purple-500/10 text-purple-400',
+              pink: 'bg-pink-500/10 text-pink-400',
+              cyan: 'bg-cyan-500/10 text-cyan-400',
+              green: 'bg-green-500/10 text-green-400',
+              blue: 'bg-blue-500/10 text-blue-400',
+              orange: 'bg-orange-500/10 text-orange-400',
+            };
+            return [
+              { href: '/youtube-title-generator', icon: Wand2, label: 'YouTube Title Generator', desc: 'Get 10 viral, SEO-optimized titles', color: 'purple' },
+              { href: '/youtube-hashtag-generator', icon: Hash, label: 'YouTube Hashtag Generator', desc: 'Trending hashtags for any niche', color: 'pink' },
+              { href: '/youtube-tags-generator', icon: Tag, label: 'YouTube Tags Generator', desc: '20-25 SEO tags under 500 chars', color: 'cyan' },
+              { href: '/youtube-description-generator', icon: AlignLeft, label: 'YouTube Description Generator', desc: 'Keyword-rich descriptions in seconds', color: 'green' },
+              { href: '/youtube-channel-name-generator', icon: User, label: 'Channel Name Generator', desc: 'Find catchy, SEO-friendly channel names', color: 'blue' },
+              { href: '/youtube-shorts-idea-generator', icon: Zap, label: 'Shorts Idea Generator', desc: 'Generate viral, high-retention Shorts concepts', color: 'orange' },
+            ].map((tool) => (
+              <Link key={tool.href} href={tool.href}
+                className="glass-card rounded-2xl p-5 group hover:border-purple-500/30 transition-all flex flex-col justify-between">
+                <div>
+                  <div className={`w-12 h-12 rounded-xl ${colorMap[tool.color as keyof typeof colorMap]} flex items-center justify-center shrink-0 mb-4`}>
+                    <tool.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-display text-base font-bold group-hover:text-purple-400 transition-colors mb-1">{tool.label}</h3>
+                  <p className="text-slate-500 text-sm mb-4">{tool.desc}</p>
+                </div>
+                <div className="flex items-center gap-1 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+                  Try Tool <ArrowRight className="w-4 h-4" />
+                </div>
+              </Link>
+            ));
+          })()}
         </div>
       </section>
 

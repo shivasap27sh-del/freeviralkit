@@ -43,11 +43,8 @@ export function AdUnit({
   }, [canRenderRealAd]);
 
   if (!canRenderRealAd) {
-    return (
-      <div className={`ad-container ${className}`} style={{ textAlign: 'center', overflow: 'hidden', ...style }}>
-        <div className="text-xs text-gray-600 py-4">Ad slot reserved</div>
-      </div>
-    );
+    // Return null to avoid rendering empty placeholders when ad slots are not set (e.g. when using Auto Ads)
+    return null;
   }
 
   return (
@@ -68,6 +65,9 @@ export function AdUnit({
  * In-content ad that blends between sections.
  */
 export function InContentAd({ slot, className = '' }: { slot: string; className?: string }) {
+  const canRender = hasRealPubId && isSlotConfigured(slot);
+  if (!canRender) return null;
+
   return (
     <div className={`my-8 ${className}`}>
       <p className="text-[10px] text-gray-600 text-center uppercase tracking-widest mb-1">Advertisement</p>
@@ -80,6 +80,9 @@ export function InContentAd({ slot, className = '' }: { slot: string; className?
  * Banner ad for header/footer areas.
  */
 export function BannerAd({ slot, className = '' }: { slot: string; className?: string }) {
+  const canRender = hasRealPubId && isSlotConfigured(slot);
+  if (!canRender) return null;
+
   return (
     <div className={`w-full py-2 ${className}`}>
       <p className="text-[10px] text-gray-600 text-center uppercase tracking-widest mb-1">Advertisement</p>

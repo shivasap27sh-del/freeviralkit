@@ -11,6 +11,8 @@ const ALL_URLS = [
   '/youtube-hashtag-generator',
   '/youtube-tags-generator',
   '/youtube-description-generator',
+  '/youtube-channel-name-generator',
+  '/youtube-shorts-idea-generator',
   '/tools',
   '/tools/youtube-title-generator-for-gaming',
   '/tools/youtube-title-generator-for-vlogs',

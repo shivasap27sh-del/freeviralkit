@@ -4,20 +4,21 @@ import { Video } from 'lucide-react';
 const footerLinks = {
   Product: [
     { href: '/', label: 'YouTube SEO Tool' },
-    { href: '/tools', label: 'Tools by Niche' },
+    { href: '/tools', label: 'Tools Directory' },
     { href: '/about', label: 'About Us' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
+  ],
+  'Niche Tools': [
+    { href: '/tools/youtube-title-generator-for-gaming', label: 'Gaming Title Generator' },
+    { href: '/tools/youtube-title-generator-for-vlogs', label: 'Vlog Title Generator' },
+    { href: '/tools/youtube-description-generator-for-education', label: 'Education Description Generator' },
   ],
   Resources: [
     { href: '/blog/youtube-seo-guide', label: 'YouTube SEO Guide' },
     { href: '/blog/best-youtube-tags', label: 'Best YouTube Tags' },
     { href: '/blog/youtube-description-tips', label: 'Description Tips' },
     { href: '/blog/youtube-hashtag-strategy', label: 'Hashtag Strategy' },
-  ],
-  Legal: [
-    { href: '/privacy-policy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms of Service' },
   ],
 };
 
@@ -65,11 +66,22 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-slate-200 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} FreeViralKit. Built with ❤️ by{' '}
-            <span className="text-purple-400 font-semibold">Shiva</span>
-          </p>
-          <p className="text-gray-600 text-xs">
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p className="text-slate-500 text-sm text-center md:text-left">
+              © {new Date().getFullYear()} FreeViralKit. Built with ❤️ by{' '}
+              <span className="text-purple-400 font-semibold">Shiva</span>
+            </p>
+            <span className="hidden md:inline text-slate-300">|</span>
+            <div className="flex gap-4 text-sm text-slate-500">
+              <Link href="/privacy-policy" className="hover:text-purple-400 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-purple-400 transition-colors">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+          <p className="text-gray-600 text-xs text-center md:text-right">
             Powered by Groq AI • Not affiliated with YouTube or Google
           </p>
         </div>

@@ -99,7 +99,7 @@ const features = [
 ];
 
 const techStack = [
-  { icon: Code2, name: 'Next.js 15', detail: 'App Router + SSG' },
+  { icon: Code2, name: 'Next.js 16', detail: 'App Router + SSG' },
   { icon: Globe, name: 'Groq AI', detail: 'LLM Inference' },
   { icon: Database, name: 'TypeScript', detail: 'Type-safe codebase' },
   { icon: Star, name: 'Vercel', detail: 'Edge deployment' },
@@ -109,7 +109,7 @@ const stats = [
   { value: '10+', label: 'Pages Indexed by Google' },
   { value: '100%', label: 'Free — No Signup Required' },
   { value: '<5s', label: 'AI Generation Speed' },
-  { value: '4', label: 'SEO Tools in One Place' },
+  { value: '7', label: 'SEO Tools in One Place' },
 ];
 
 export default function AboutPage() {

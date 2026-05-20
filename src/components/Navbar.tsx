@@ -18,6 +18,8 @@ const toolsDropdown = [
   { href: '/youtube-hashtag-generator', label: 'Hashtag Generator' },
   { href: '/youtube-tags-generator', label: 'Tags Generator' },
   { href: '/youtube-description-generator', label: 'Description Generator' },
+  { href: '/youtube-channel-name-generator', label: 'Channel Name Generator' },
+  { href: '/youtube-shorts-idea-generator', label: 'Shorts Idea Generator' },
   { href: '/tools/youtube-title-generator-for-gaming', label: 'Gaming Titles' },
   { href: '/tools/youtube-title-generator-for-vlogs', label: 'Vlog Titles' },
   { href: '/tools/youtube-description-generator-for-education', label: 'Education Descriptions' },

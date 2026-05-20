@@ -49,6 +49,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: buildAbsoluteUrl('/youtube-channel-name-generator'),
+      lastModified: new Date('2026-05-20'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.95,
+    },
+    {
+      url: buildAbsoluteUrl('/youtube-shorts-idea-generator'),
+      lastModified: new Date('2026-05-20'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.95,
+    },
+    {
       url: buildAbsoluteUrl('/tools'),
       lastModified: new Date('2026-05-10'),
       changeFrequency: 'monthly' as const,

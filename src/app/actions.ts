@@ -356,3 +356,88 @@ export async function generateDescriptionOnly(topic: string) {
     return { success: false, error: 'Failed to generate description. Please try again.' };
   }
 }
+
+// ======= Channel Name Generator =======
+
+export async function generateChannelNames(keyword: string) {
+  try {
+    const text = await generateWithFallback([
+      {
+        role: 'system',
+        content: 'You are a YouTube branding expert who helps creators choose catchy, memorable, and SEO-friendly channel names.'
+      },
+      {
+        role: 'user',
+        content: `Generate 15 creative YouTube channel name ideas for the keyword or niche: "${keyword}".
+        
+        Group them into exactly 4 categories:
+        - "catchy" (Modern, clever, and easy to remember - 4 ideas)
+        - "seo" (Includes relevant keywords for search ranking - 4 ideas)
+        - "brandable" (Unique, short, and punchy single-word or abstract names - 4 ideas)
+        - "shorts" (Simple, short, and energetic names for a Shorts channel - 3 ideas)
+
+        RULES:
+        - Keep names clean, professional, and easy to pronounce
+        - No numbers or special characters unless it fits perfectly
+        - Return ONLY a valid JSON object matching this structure:
+        {
+          "catchy": ["name1", "name2", "name3", "name4"],
+          "seo": ["name1", "name2", "name3", "name4"],
+          "brandable": ["name1", "name2", "name3", "name4"],
+          "shorts": ["name1", "name2", "name3"]
+        }
+        Do not include any explanation or markdown formatting.`
+      }
+    ], { temperature: 0.8, maxTokens: 400 });
+
+    const cleanJson = text.replace(/```json/g, '').replace(/```/g, '').trim();
+    const data = JSON.parse(cleanJson);
+    return { success: true, names: data };
+  } catch (error) {
+    console.error('Error generating channel names:', error);
+    return { success: false, error: 'Failed to generate channel names. Please try again.' };
+  }
+}
+
+// ======= Shorts Idea Generator =======
+
+export async function generateShortsIdeas(topic: string) {
+  try {
+    const text = await generateWithFallback([
+      {
+        role: 'system',
+        content: 'You are a YouTube Shorts growth strategist who specializes in creating high-retention vertical videos.'
+      },
+      {
+        role: 'user',
+        content: `Generate 5 viral YouTube Shorts ideas for the topic/niche: "${topic}".
+        
+        For each idea, provide:
+        - "title": A punchy working title for the concept
+        - "hook": A 1-sentence hook to capture attention in the first 3 seconds (bold, high-retention text)
+        - "visuals": Brief descriptions of visual transitions/actions to show on screen (B-roll, overlays, etc.)
+        - "audio": A quick voiceover script and background sound suggestions (energetic, trending audio guidance)
+
+        Return ONLY a JSON array containing 5 objects with "title", "hook", "visuals", and "audio" fields. 
+        Structure:
+        [
+          {
+            "title": "idea title",
+            "hook": "first 3 seconds hook",
+            "visuals": "on-screen action details",
+            "audio": "voiceover and audio guidance"
+          }
+        ]
+        Do not include any explanation or markdown formatting.`
+      }
+    ], { temperature: 0.8, maxTokens: 800 });
+
+    const cleanJson = text.replace(/```json/g, '').replace(/```/g, '').trim();
+    const data = JSON.parse(cleanJson);
+    return { success: true, ideas: Array.isArray(data) ? data : [] };
+  } catch (error) {
+    console.error('Error generating Shorts ideas:', error);
+    return { success: false, error: 'Failed to generate Shorts ideas. Please try again.' };
+  }
+}
+
