@@ -1,67 +1,196 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
+import {
+  Wand2,
+  Hash,
+  Tag,
+  AlignLeft,
+  User,
+  Zap,
+  ArrowRight,
+  Sparkles,
+  Gamepad2,
+  Tv,
+  GraduationCap
+} from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'YouTube SEO Tools by Niche | FreeViralKit',
+  title: 'Free YouTube SEO Tools & Niche Generators | FreeViralKit',
   description:
-    'Explore niche-specific YouTube SEO tools and guides for gaming, vlogs, education, and more. Find templates that improve reach and search traffic.',
+    'Boost your channel growth with our free suite of YouTube SEO tools. Generate viral titles, trending hashtags, search-optimized tags, descriptions, channel names, and more.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools'),
   },
   openGraph: {
-    title: 'YouTube SEO Tools by Niche | FreeViralKit',
+    title: 'Free YouTube SEO Tools & Niche Generators | FreeViralKit',
     description:
-      'Niche-ready YouTube SEO tools for creators who want more search traffic and views.',
+      'Explore our full suite of free YouTube SEO generators and niche-specific tools to optimize your videos and rank #1.',
     type: 'website',
     url: buildAbsoluteUrl('/tools'),
   },
 };
 
-const pages = [
+const colorMap = {
+  purple: 'bg-purple-500/10 text-purple-400',
+  pink: 'bg-pink-500/10 text-pink-400',
+  cyan: 'bg-cyan-500/10 text-cyan-400',
+  green: 'bg-green-500/10 text-green-400',
+  blue: 'bg-blue-500/10 text-blue-400',
+  orange: 'bg-orange-500/10 text-orange-400',
+};
+
+const coreTools = [
+  {
+    href: '/youtube-title-generator',
+    title: 'YouTube Title Generator',
+    description: 'Get 10 viral, click-worthy, and SEO-optimized video titles in seconds.',
+    icon: Wand2,
+    color: 'purple',
+  },
+  {
+    href: '/youtube-hashtag-generator',
+    title: 'YouTube Hashtag Generator',
+    description: 'Find trending and relevant hashtags to boost your video discoverability.',
+    icon: Hash,
+    color: 'pink',
+  },
+  {
+    href: '/youtube-tags-generator',
+    title: 'YouTube Tags Generator',
+    description: 'Generate 20-25 highly relevant SEO tags keeping under the 500 character limit.',
+    icon: Tag,
+    color: 'cyan',
+  },
+  {
+    href: '/youtube-description-generator',
+    title: 'YouTube Description Generator',
+    description: 'Structure keyword-rich descriptions with dynamic templates and CTAs.',
+    icon: AlignLeft,
+    color: 'green',
+  },
+  {
+    href: '/youtube-channel-name-generator',
+    title: 'YouTube Channel Name Generator',
+    description: 'Brainstorm memorable, catchy, and brandable channel names based on your niche.',
+    icon: User,
+    color: 'blue',
+  },
+  {
+    href: '/youtube-shorts-idea-generator',
+    title: 'YouTube Shorts Idea Generator',
+    description: 'Generate high-retention hook ideas and concept outlines for viral Shorts.',
+    icon: Zap,
+    color: 'orange',
+  },
+];
+
+const nicheTools = [
   {
     href: '/tools/youtube-title-generator-for-gaming',
     title: 'YouTube Title Generator for Gaming',
-    description:
-      'Generate gaming titles designed for walkthroughs, tips, and challenge videos.',
+    description: 'Generate gaming titles designed for walkthroughs, tips, and challenge videos.',
+    icon: Gamepad2,
+    color: 'purple',
   },
   {
     href: '/tools/youtube-title-generator-for-vlogs',
     title: 'YouTube Title Generator for Vlogs',
-    description:
-      'Create vlog titles that boost clicks for daily life, travel, and personal stories.',
+    description: 'Create vlog titles that boost clicks for daily life, travel, and personal stories.',
+    icon: Tv,
+    color: 'pink',
   },
   {
     href: '/tools/youtube-description-generator-for-education',
     title: 'YouTube Description Generator for Education',
-    description:
-      'Write clear educational descriptions with structured learning outcomes and CTAs.',
+    description: 'Write clear educational descriptions with structured learning outcomes and CTAs.',
+    icon: GraduationCap,
+    color: 'green',
   },
 ];
 
 export default function ToolsPage() {
   return (
     <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
-      <section className="text-center mb-10">
-        <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-          YouTube SEO <span className="text-gradient">Tools by Niche</span>
+      {/* Header */}
+      <section className="text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 mb-6 uppercase tracking-wider">
+          <Sparkles className="w-4 h-4 animate-pulse" /> Complete SEO Suite
+        </div>
+        <h1 className="font-display text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+          YouTube SEO <br /><span className="text-gradient">Tools &amp; Generators</span>
         </h1>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-          Use these niche pages to get more specific results and better rankings in Google.
+          Explore our suite of free generators designed to optimize your metadata, find trending keywords, and boost channel growth.
         </p>
       </section>
 
-      <section className="space-y-4">
-        {pages.map((page) => (
-          <Link
-            key={page.href}
-            href={page.href}
-            className="glass-card rounded-2xl p-6 block hover:border-purple-500/30 transition-all"
-          >
-            <h2 className="font-display text-xl font-semibold mb-2">{page.title}</h2>
-            <p className="text-slate-600">{page.description}</p>
-          </Link>
-        ))}
+      {/* Core Tools Section */}
+      <section className="mb-16">
+        <h2 className="font-display text-2xl font-bold mb-8 flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-800">
+          <Sparkles className="w-5 h-5 text-purple-400" /> Core SEO Tools
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {coreTools.map((tool) => {
+            const Icon = tool.icon;
+            return (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="glass-card rounded-2xl p-6 group hover:border-purple-500/30 transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className={`w-12 h-12 rounded-xl ${colorMap[tool.color as keyof typeof colorMap]} flex items-center justify-center shrink-0 mb-4`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-display text-lg font-bold group-hover:text-purple-400 transition-colors mb-2">
+                    {tool.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+                    {tool.description}
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors mt-auto">
+                  Use Tool <ArrowRight className="w-4 h-4" />
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Niche-Specific Tools Section */}
+      <section className="mb-12">
+        <h2 className="font-display text-2xl font-bold mb-8 flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-800">
+          <Gamepad2 className="w-5 h-5 text-purple-400" /> Niche-Specific Generators
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {nicheTools.map((tool) => {
+            const Icon = tool.icon;
+            return (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="glass-card rounded-2xl p-6 group hover:border-purple-500/30 transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className={`w-12 h-12 rounded-xl ${colorMap[tool.color as keyof typeof colorMap]} flex items-center justify-center shrink-0 mb-4`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-display text-lg font-bold group-hover:text-purple-400 transition-colors mb-2">
+                    {tool.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+                    {tool.description}
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors mt-auto">
+                  Use Tool <ArrowRight className="w-4 h-4" />
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </section>
     </main>
   );
