@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-background: #f8fafc;
   --color-foreground: #0f172a;
@@ -25,6 +27,83 @@
     --gradient-primary: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
     --gradient-secondary: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
     --gradient-hero: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-pink) 50%, var(--accent-orange) 100%);
+  }
+
+  .dark {
+    --bg-primary: #090d16;
+    --bg-secondary: #0f172a;
+    --bg-card: rgba(15, 23, 42, 0.85);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --color-foreground: #f8fafc;
+    --color-background: #090d16;
+
+    .bg-white {
+      background-color: #0f172a;
+    }
+    .bg-white\/80 {
+      background-color: rgba(15, 23, 42, 0.8);
+    }
+    .bg-white\/95 {
+      background-color: rgba(15, 23, 42, 0.95);
+    }
+    .text-slate-900 {
+      color: #f8fafc;
+    }
+    .text-slate-700 {
+      color: #cbd5e1;
+    }
+    .text-slate-600 {
+      color: #94a3b8;
+    }
+    .text-slate-500 {
+      color: #64748b;
+    }
+    .border-slate-200 {
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .border-slate-100 {
+      border-color: rgba(255, 255, 255, 0.04);
+    }
+    .bg-slate-50 {
+      background-color: #090d16;
+    }
+    .bg-slate-100 {
+      background-color: rgba(255, 255, 255, 0.04);
+    }
+    .hover\:bg-slate-50:hover {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+    .hover\:bg-slate-100:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    .hover\:bg-slate-200:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+    .hover\:text-slate-900:hover {
+      color: #ffffff;
+    }
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .bg-grid {
+      background-image:
+          linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    }
+    .skeleton-line {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.02) 0%,
+        rgba(255, 255, 255, 0.06) 50%,
+        rgba(255, 255, 255, 0.02) 100%
+      );
+    }
   }
 
   body {

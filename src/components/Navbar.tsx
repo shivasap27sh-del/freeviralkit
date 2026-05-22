@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Video, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { Video, Menu, X, Sun, Moon } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -29,6 +29,34 @@ export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const localTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (localTheme === 'dark' || (!localTheme && systemPrefersDark)) {
+      setTheme('dark');
+      document.documentElement.classList.add('dark');
+    } else {
+      setTheme('light');
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      setTheme('light');
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 py-3 backdrop-blur-xl bg-white/80 border-b border-slate-200">
@@ -74,16 +102,44 @@ export default function Navbar() {
           <span className="ml-3 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-purple-500/10 border border-purple-500/20 text-purple-400">
             Groq AI
           </span>
+          <button
+            onClick={toggleTheme}
+            className="ml-3 p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500 hover:text-slate-900 flex items-center justify-center cursor-pointer animate-fade-in"
+            aria-label="Toggle Theme"
+          >
+            {!mounted ? (
+              <div className="w-5 h-5" />
+            ) : theme === 'dark' ? (
+              <Sun className="w-5 h-5 text-amber-400" />
+            ) : (
+              <Moon className="w-5 h-5 text-slate-600" />
+            )}
+          </button>
         </nav>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden p-2 rounded-lg hover:bg-slate-200 transition-colors"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        {/* Mobile Controls */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500 hover:text-slate-900 flex items-center justify-center cursor-pointer"
+            aria-label="Toggle Theme"
+          >
+            {!mounted ? (
+              <div className="w-5 h-5" />
+            ) : theme === 'dark' ? (
+              <Sun className="w-5 h-5 text-amber-400" />
+            ) : (
+              <Moon className="w-5 h-5 text-slate-600" />
+            )}
+          </button>
+          <button
+            className="p-2 rounded-lg hover:bg-slate-200 transition-colors flex items-center justify-center"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
