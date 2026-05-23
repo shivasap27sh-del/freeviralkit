@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { blogPosts } from './data';
+import { getPublishedPosts } from './data';
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
+
+/** Force dynamic rendering so scheduled posts appear on their publish date */
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'YouTube SEO Blog — Tips, Guides & Strategies | FreeViralKit',
@@ -18,6 +21,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const publishedPosts = getPublishedPosts();
+
   return (
     <main className="container mx-auto px-6 py-12 max-w-6xl relative z-10 min-h-screen">
       {/* Hero */}
@@ -35,7 +40,7 @@ export default function BlogPage() {
 
       {/* Blog Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {blogPosts.map((post) => (
+        {publishedPosts.map((post) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}

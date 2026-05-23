@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { blogPosts, getPostBySlug, getAllSlugs } from '../data';
-import { Calendar, Clock, ArrowLeft, Tag } from 'lucide-react';
+import { getPublishedPosts, getPublishedPostBySlug, getPostBySlug, getAllSlugs } from '../data';
+import { Calendar, Clock, ArrowLeft, Tag, User } from 'lucide-react';
 import { InContentAd } from '@/components/AdSense';
+
+/** Force dynamic rendering so scheduled posts respect their publish date */
+export const dynamic = 'force-dynamic';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -43,7 +46,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  // Use published check — returns 404 for scheduled posts that aren't live yet
+  const post = getPublishedPostBySlug(slug);
   if (!post) notFound();
 
   // Simple markdown-to-HTML
@@ -52,6 +56,7 @@ export default async function BlogPostPage({ params }: Props) {
     const normalizedContent = content
       .replace(/^(#{2,3} .*)$/gm, '\n\n$1\n\n')
       .replace(/(?:^|\n)(-[^\n]*(?:\n-[^\n]*)*)/g, '\n\n$1\n\n')
+      .replace(/(?:^|\n)(\* [^\n]*(?:\n\* [^\n]*)*)/g, '\n\n$1\n\n')
       .replace(/(?:^|\n)(❌[^\n]*(?:\n❌[^\n]*)*)/g, '\n\n$1\n\n')
       .replace(/(?:^|\n)(✅[^\n]*(?:\n✅[^\n]*)*)/g, '\n\n$1\n\n')
       .trim();
@@ -83,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
           </pre>
         );
       }
-      if (trimmed.startsWith('- ') || trimmed.startsWith('❌') || trimmed.startsWith('✅')) {
+      if (trimmed.startsWith('- ') || trimmed.startsWith('* ') || trimmed.startsWith('❌') || trimmed.startsWith('✅')) {
         const items = trimmed.split('\n').filter(item => item.trim() !== '');
         return (
           <ul key={i} className="space-y-2 my-4">
@@ -93,7 +98,8 @@ export default async function BlogPostPage({ params }: Props) {
                 <span
                   dangerouslySetInnerHTML={{
                     __html: item
-                      .replace(/^(?:-\s*|❌\s*|✅\s*)/, '')
+                      .replace(/^(?:-\s*|\*\s+|❌\s*|✅\s*)/, '')
+                      .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="rounded-xl my-6 w-full max-h-[400px] object-cover border border-slate-200" />')
                       .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')
                       .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-purple-500 hover:text-purple-600 underline underline-offset-2">$1</a>')
                       .replace(/`(.*?)`/g, '<code class="bg-slate-200 px-1.5 py-0.5 rounded text-purple-300 text-sm">$1</code>'),
@@ -114,6 +120,7 @@ export default async function BlogPostPage({ params }: Props) {
             className="text-slate-700 leading-relaxed my-4 whitespace-pre-wrap"
             dangerouslySetInnerHTML={{
               __html: trimmed
+                .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="rounded-xl my-6 w-full max-h-[400px] object-cover border border-slate-200" />')
                 .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')
                 .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-purple-500 hover:text-purple-600 underline underline-offset-2">$1</a>')
                 .replace(/`(.*?)`/g, '<code class="bg-slate-200 px-1.5 py-0.5 rounded text-purple-300 text-sm">$1</code>'),
@@ -170,6 +177,10 @@ export default async function BlogPostPage({ params }: Props) {
             <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">
               {post.category}
             </span>
+            <div className="flex items-center gap-1 text-xs text-slate-500">
+              <User className="w-3 h-3" />
+              <span>By Shiva</span>
+            </div>
             <div className="flex items-center gap-1 text-xs text-slate-500">
               <Clock className="w-3 h-3" />
               {post.readTime}
@@ -232,7 +243,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="mt-12">
           <h3 className="font-display text-xl font-bold mb-6">More Articles</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {blogPosts
+            {getPublishedPosts()
               .filter((p) => p.slug !== post.slug)
               .slice(0, 2)
               .map((related) => (
