@@ -3,123 +3,122 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Title Generator for Gaming | FreeViralKit',
+  title: 'YouTube Title Generator for Travel Vlogs | FreeViralKit',
   description:
-    'Free AI-powered YouTube title generator for gaming channels. Create click-worthy titles for gameplay walkthroughs, reviews, Minecraft, GTA, Fortnite, and challenge videos. Boost CTR and views instantly.',
+    'Free AI-powered YouTube title generator for travel channels. Create engaging titles for destination guides, budget travel, solo travel, food travel, and adventure vlogs that boost clicks and views.',
   alternates: {
-    canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-gaming'),
+    canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-travel'),
   },
   openGraph: {
-    title: 'YouTube Title Generator for Gaming | FreeViralKit',
+    title: 'YouTube Title Generator for Travel Vlogs | FreeViralKit',
     description:
-      'Generate gaming YouTube titles that improve CTR and discoverability. Free AI tool for gaming creators.',
+      'Generate travel vlog titles that get clicks and rank in search. Destination guides, budget tips, solo travel stories — all optimized by AI.',
     type: 'website',
-    url: buildAbsoluteUrl('/tools/youtube-title-generator-for-gaming'),
+    url: buildAbsoluteUrl('/tools/youtube-title-generator-for-travel'),
   },
   keywords: [
-    'youtube title generator gaming',
-    'gaming youtube title ideas',
-    'gaming video title generator',
-    'minecraft title generator',
-    'fortnite title ideas',
-    'gta title generator',
-    'gaming seo',
-    'youtube gaming titles',
+    'travel youtube title',
+    'travel vlog title ideas',
+    'travel video title generator',
+    'destination guide title',
+    'budget travel youtube title',
+    'solo travel video title',
+    'travel vlog seo',
+    'adventure vlog title ideas',
   ],
 };
 
 const examplesByCategory = [
   {
-    category: 'Survival & Challenge',
+    category: 'Destination Guides',
     examples: [
-      'I Survived 100 Days in Hardcore Minecraft (No Mods)',
-      'Can I Beat GTA 5 Without Getting Hit ONCE?',
-      'I Played the Hardest Roblox Obby Ever Made',
+      'First Time in Bali — 7 Days, $500 Budget (Complete Guide)',
+      'Tokyo Travel Guide 2026: Everything You Need to Know Before Going',
+      '48 Hours in Istanbul — The Perfect Itinerary',
     ],
   },
   {
-    category: 'Tips & Tutorials',
+    category: 'Budget Travel',
     examples: [
-      'BGMI Sensitivity Settings That Instantly Improve Aim',
-      '5 Valorant Tips I Wish I Knew as a Beginner',
-      'How to Build Like a Pro in Fortnite (Step-by-Step)',
+      'How I Traveled Southeast Asia for $30 a Day (Full Breakdown)',
+      'Europe on a Budget: 10 Countries in 30 Days for Under $2,000',
     ],
   },
   {
-    category: 'Rankings & Reviews',
+    category: 'Solo Travel',
     examples: [
-      'I Tried Every Weapon in GTA 5 — Here Is the Best One',
-      'Top 10 Hidden Tricks in Roblox You Missed',
-      'Ranking Every Minecraft Biome from Worst to Best',
+      'I Traveled Solo Through South America for 3 Months — Here Is What Happened',
+      'Solo Female Travel in Morocco: Is It Safe? (Honest Review)',
+      'Why Traveling Alone Changed My Life — 1 Year Update',
     ],
   },
   {
-    category: 'Let\'s Plays & Series',
+    category: 'Food & Culture Travel',
     examples: [
-      'Starting a New Minecraft Survival World — Day 1',
-      'My First Time Playing Elden Ring (This Game Is BRUTAL)',
+      'I Tried Every Street Food in Bangkok — Rating the Best and Worst',
+      'Italian Food Tour: 10 Dishes You MUST Try in Rome',
     ],
   },
 ];
 
 const tips = [
   {
-    title: 'Put the game name first',
+    title: 'Include the destination name',
     description:
-      'Start your title with the game name so YouTube immediately categorizes your video. Viewers scanning search results recognize the game instantly.',
+      'Always put the country, city, or region name in your title. Travelers search for specific destinations like "Thailand travel guide" or "things to do in Paris." This is your primary SEO keyword.',
   },
   {
-    title: 'Use specific hooks',
+    title: 'Add specific numbers',
     description:
-      'Mention the challenge type, update version, rank tier, or time constraint. "I Survived 100 Days" is far more clickable than "Playing Minecraft".',
+      'Numbers create clear expectations and boost CTR. "7 Days in Japan" is more clickable than "My Japan Trip." Mention days, budget amounts, number of places, or costs — viewers love concrete details.',
   },
   {
-    title: 'Keep it under 60-70 characters',
+    title: 'Use a personal angle',
     description:
-      'Titles longer than 70 characters get cut off on mobile. Aim for 50-65 characters to keep the full title visible in search results and recommendations.',
+      'First-person titles like "I Spent 30 Days in India" outperform generic ones like "India Travel Guide" because they promise a unique perspective and authentic experience.',
   },
   {
-    title: 'Add numbers when possible',
+    title: 'Create urgency or stakes',
     description:
-      'Titles with numbers get 36% more clicks on average. "Top 10", "5 Tips", "100 Days" — numbers create clear expectations and draw the eye.',
+      'Titles with stakes get more clicks. "Can I Survive Japan on $10 a Day?" or "I Got Lost in the Amazon Rainforest" create tension that makes viewers need to click.',
   },
   {
-    title: 'Create an information gap',
+    title: 'Keep it under 65 characters',
     description:
-      'Phrases like "What Happened Next Shocked Me" or "You Won\'t Believe This" create curiosity. But always deliver on the promise — misleading clickbait kills watch time.',
+      'Travel titles tend to run long because of destination names. Fight the urge — titles over 70 characters get cut off on mobile, where most travel content is consumed.',
   },
   {
-    title: 'Match trending search terms',
+    title: 'Include the year for evergreen content',
     description:
-      'When a new season, update, or DLC drops, use those keywords immediately. Fresh search terms have high volume and low competition.',
+      'Adding "2026" to destination guides signals freshness. Travelers want current information — prices, visa rules, and safety conditions change yearly. A dated title gets more clicks from search.',
   },
 ];
 
 const faqs = [
   {
-    question: 'What makes a good gaming YouTube title?',
+    question: 'What makes a good travel YouTube title?',
     answer:
-      'A good gaming YouTube title includes the game name, uses a specific hook (challenge, tip, review), stays under 70 characters, and creates curiosity. It should be clear about what the viewer will see while making them want to click.',
+      'A great travel title includes the destination name, uses specific numbers (days, budget, places), creates curiosity or stakes, and stays under 65 characters. It should make viewers feel like they\'ll miss out if they don\'t watch.',
   },
   {
-    question: 'How long should my gaming video title be?',
+    question: 'Should I include the year in my travel video title?',
     answer:
-      'Keep gaming video titles between 50-65 characters for optimal display on both desktop and mobile. Titles over 70 characters get truncated in search results and recommendations.',
+      'Yes, for destination guides and travel tips videos. Adding the year (e.g., "2026") signals that your information is current and accurate. This significantly boosts CTR from Google and YouTube search results.',
   },
   {
-    question: 'Should I include the game name in my title?',
+    question: 'How do I make my travel vlogs rank on YouTube?',
     answer:
-      'Absolutely. Always include the game name near the beginning of your title. This helps YouTube categorize your video correctly and ensures it appears in searches for that specific game.',
+      'Use destination-specific keywords in your title, description, and tags. Create detailed timestamps, add location tags, and use the YouTube location feature. Pair strong titles with eye-catching thumbnails showing the destination.',
   },
   {
-    question: 'Is this gaming title generator free?',
+    question: 'Is this travel title generator free?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, and no hidden fees. Generate unlimited gaming video titles powered by AI.',
+      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, no hidden fees. Generate unlimited travel vlog titles powered by AI.',
   },
   {
-    question: 'Can I use this for Minecraft, Fortnite, and GTA videos?',
+    question: 'Can I use this for food travel and adventure vlogs?',
     answer:
-      'Yes! The AI title generator works for all gaming niches including Minecraft, Fortnite, GTA, Roblox, Valorant, Call of Duty, and any other game. Just enter your topic and get optimized titles instantly.',
+      'Absolutely! The AI generates titles for all travel sub-niches including food tours, adventure travel, solo backpacking, luxury travel, cultural experiences, road trips, and digital nomad content.',
   },
 ];
 
@@ -139,12 +138,12 @@ const faqJsonLd = {
 const toolJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'YouTube Title Generator for Gaming — FreeViralKit',
-  url: 'https://freeviralkit.com/tools/youtube-title-generator-for-gaming',
+  name: 'YouTube Title Generator for Travel Vlogs — FreeViralKit',
+  url: 'https://freeviralkit.com/tools/youtube-title-generator-for-travel',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
   description:
-    'Free AI-powered YouTube title generator specifically designed for gaming channels. Generate optimized titles for gameplay, walkthroughs, reviews, and challenge videos.',
+    'Free AI-powered YouTube title generator for travel vloggers. Create engaging titles for destination guides, budget travel, solo travel, food travel, and adventure content.',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -152,7 +151,7 @@ const toolJsonLd = {
   },
 };
 
-export default function GamingTitleLandingPage() {
+export default function TravelTitleLandingPage() {
   return (
     <>
       <script
@@ -168,32 +167,32 @@ export default function GamingTitleLandingPage() {
         {/* Hero */}
         <section className="text-center mb-12">
           <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Title Generator for <span className="text-gradient">Gaming</span>
+            YouTube Title Generator for <span className="text-gradient">Travel</span>
           </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
-            Generate high-CTR gaming titles for walkthroughs, shorts, ranked gameplay, tutorials, and challenge videos. Powered by AI, built for gamers.
+            Create engaging titles for destination guides, budget travel, solo adventures, and food travel vlogs. Optimized for clicks, powered by AI.
           </p>
           <Link
             href="/youtube-title-generator"
             className="btn-primary inline-flex rounded-xl px-6 py-3.5 font-semibold text-lg"
           >
-            Generate Gaming Titles Free →
+            Generate Travel Titles Free →
           </Link>
         </section>
 
-        {/* Why gaming titles matter */}
+        {/* Why travel titles matter */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
-            Why Your Gaming Title Makes or Breaks Your Video
+            Why Your Travel Title Is Your Most Important SEO Asset
           </h2>
           <p className="text-slate-600 mb-4">
-            Gaming is the largest category on YouTube by watch time, and also the most competitive. Millions of gaming videos go up every single day. The difference between 50 views and 50,000 often comes down to one thing: the title.
+            Travel is one of the most searched categories on YouTube. Millions of people plan their trips by watching YouTube videos — and your title is what determines whether they click on your video or a competitor&apos;s.
           </p>
           <p className="text-slate-600 mb-4">
-            Your title is the first thing viewers see in search results and the recommended feed. A vague title like &ldquo;Gaming Video #12&rdquo; tells the viewer nothing. But &ldquo;I Survived 100 Days in Hardcore Minecraft (No Mods)&rdquo; immediately tells them the game, the challenge, and the stakes.
+            A generic title like &ldquo;My Trip to Thailand&rdquo; competes with millions of similar videos. But &ldquo;First Time in Thailand — 10 Days, $800 Budget (Complete Guide)&rdquo; immediately tells the viewer the destination, duration, cost, and value they&apos;ll get.
           </p>
           <p className="text-slate-600">
-            Great gaming titles combine <strong className="text-slate-900">the game name</strong>, a <strong className="text-slate-900">specific hook</strong>, and <strong className="text-slate-900">curiosity</strong>. That&apos;s exactly what our AI generates for you.
+            The best travel titles combine a <strong className="text-slate-900">specific destination</strong>, <strong className="text-slate-900">concrete numbers</strong>, and <strong className="text-slate-900">a compelling hook</strong>. Our AI crafts these for you in seconds.
           </p>
         </section>
 
@@ -215,7 +214,7 @@ export default function GamingTitleLandingPage() {
         {/* Best practices */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
-            6 Best Practices for Gaming SEO Titles
+            6 Best Practices for Travel Video Titles
           </h2>
           <div className="space-y-5">
             {tips.map((tip, i) => (
@@ -232,16 +231,16 @@ export default function GamingTitleLandingPage() {
         {/* How it works */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
-            How Our Gaming Title Generator Works
+            How Our Travel Title Generator Works
           </h2>
           <ol className="space-y-3 text-slate-600">
             <li className="flex items-start gap-3">
               <span className="w-7 h-7 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-sm font-bold text-purple-500 shrink-0">1</span>
-              <span><strong className="text-slate-900">Enter your gaming topic</strong> — describe your gameplay, challenge, or tutorial.</span>
+              <span><strong className="text-slate-900">Enter your travel topic</strong> — describe the destination, trip style, or travel experience.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="w-7 h-7 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-sm font-bold text-purple-500 shrink-0">2</span>
-              <span><strong className="text-slate-900">AI generates 10 titles</strong> — each optimized with SEO keywords, emojis, and hooks specific to gaming.</span>
+              <span><strong className="text-slate-900">AI generates 10 optimized titles</strong> — each crafted with destination keywords, hooks, and SEO best practices.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="w-7 h-7 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-sm font-bold text-purple-500 shrink-0">3</span>
@@ -284,21 +283,21 @@ export default function GamingTitleLandingPage() {
               className="block p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 transition-all"
             >
               <span className="font-semibold text-slate-900">🎬 Title Generator for Vlogs</span>
-              <p className="text-slate-600 text-sm mt-1">Create relatable vlog titles for daily routines, travel, and lifestyle content.</p>
+              <p className="text-slate-600 text-sm mt-1">Create relatable vlog titles for daily routines, lifestyle, and personal content.</p>
             </Link>
             <Link
-              href="/tools/youtube-description-generator-for-education"
+              href="/youtube-description-generator"
               className="block p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 transition-all"
             >
-              <span className="font-semibold text-slate-900">📚 Description Generator for Education</span>
-              <p className="text-slate-600 text-sm mt-1">Write structured educational descriptions with learning outcomes and CTAs.</p>
+              <span className="font-semibold text-slate-900">📝 YouTube Description Generator</span>
+              <p className="text-slate-600 text-sm mt-1">Write SEO-optimized descriptions with timestamps, links, and CTAs for your travel videos.</p>
             </Link>
             <Link
-              href="/youtube-tags-generator"
+              href="/youtube-hashtag-generator"
               className="block p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 transition-all"
             >
-              <span className="font-semibold text-slate-900">🏷️ YouTube Tags Generator</span>
-              <p className="text-slate-600 text-sm mt-1">Generate optimized tags for your gaming videos to boost discoverability.</p>
+              <span className="font-semibold text-slate-900">#️⃣ YouTube Hashtag Generator</span>
+              <p className="text-slate-600 text-sm mt-1">Find trending travel hashtags to boost your video&apos;s discoverability.</p>
             </Link>
           </div>
         </section>
@@ -306,16 +305,16 @@ export default function GamingTitleLandingPage() {
         {/* Related blog posts */}
         <section className="mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
-            Learn More About Gaming SEO
+            Learn More About Travel Video SEO
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link
-              href="/blog/best-youtube-tags-for-gaming"
+              href="/blog/how-to-start-a-vlog-channel"
               className="glass-card rounded-xl p-5 group hover:border-purple-500/30 transition-all"
             >
-              <span className="text-xs text-purple-400 font-medium">Gaming</span>
+              <span className="text-xs text-purple-400 font-medium">Vlogs</span>
               <h3 className="font-display text-sm font-bold mt-1 group-hover:text-purple-400 transition-colors leading-snug">
-                Best YouTube Tags for Gaming Videos in 2026
+                How to Start a Vlog Channel: Complete Beginner Guide
               </h3>
             </Link>
             <Link

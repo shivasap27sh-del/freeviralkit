@@ -9,5 +9,10 @@ export const adSlots = {
   educationLanding: process.env.NEXT_PUBLIC_AD_SLOT_EDUCATION_LANDING || '',
   channelNameBottom: process.env.NEXT_PUBLIC_AD_SLOT_CHANNEL_NAME_BOTTOM || '',
   shortsIdeaBottom: process.env.NEXT_PUBLIC_AD_SLOT_SHORTS_IDEA_BOTTOM || '',
+  shortsHashtagLanding: process.env.NEXT_PUBLIC_AD_SLOT_SHORTS_HASHTAG_LANDING || '',
+  techDescLanding: process.env.NEXT_PUBLIC_AD_SLOT_TECH_DESC_LANDING || '',
+  gamingChannelNameLanding: process.env.NEXT_PUBLIC_AD_SLOT_GAMING_CHANNEL_NAME_LANDING || '',
+  travelTitleLanding: process.env.NEXT_PUBLIC_AD_SLOT_TRAVEL_TITLE_LANDING || '',
+  beautyTitleLanding: process.env.NEXT_PUBLIC_AD_SLOT_BEAUTY_TITLE_LANDING || '',
 };
 

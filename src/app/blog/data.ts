@@ -37,6 +37,16 @@ import { post as youtubeShortsViralSecrets } from './posts/youtube-shorts-viral-
 import { post as howToFindYoutubeNiche } from './posts/how-to-find-youtube-niche';
 import { post as increaseYoutubeAudienceRetention } from './posts/increase-youtube-audience-retention';
 import { post as howToPromoteYoutubeVideos } from './posts/how-to-promote-youtube-videos';
+import { post as youtubeCookingChannelTips } from './posts/youtube-cooking-channel-tips';
+import { post as bestYoutubeTagsForMusic } from './posts/best-youtube-tags-for-music';
+import { post as youtubeShortsVsLongForm } from './posts/youtube-shorts-vs-long-form';
+import { post as youtubeTechReviewSeo } from './posts/youtube-tech-review-seo';
+import { post as howToGetYoutubeMonetizedFast } from './posts/how-to-get-youtube-monetized-fast';
+import { post as youtubeFitnessChannelGuide } from './posts/youtube-fitness-channel-guide';
+import { post as youtubeTravelVlogTips } from './posts/youtube-travel-vlog-tips';
+import { post as freeviralkitVsVidiqVsTubebuddy } from './posts/freeviralkit-vs-vidiq-vs-tubebuddy';
+import { post as youtubeBeautyChannelSeo } from './posts/youtube-beauty-channel-seo';
+import { post as youtubeCollaborationStrategy } from './posts/youtube-collaboration-strategy';
 
 export const blogPosts: BlogPost[] = [
   youtubeSeoGuide,
@@ -64,7 +74,17 @@ export const blogPosts: BlogPost[] = [
   youtubeShortsViralSecrets,
   howToFindYoutubeNiche,
   increaseYoutubeAudienceRetention,
-  howToPromoteYoutubeVideos
+  howToPromoteYoutubeVideos,
+  youtubeCookingChannelTips,
+  bestYoutubeTagsForMusic,
+  youtubeShortsVsLongForm,
+  youtubeTechReviewSeo,
+  howToGetYoutubeMonetizedFast,
+  youtubeFitnessChannelGuide,
+  youtubeTravelVlogTips,
+  freeviralkitVsVidiqVsTubebuddy,
+  youtubeBeautyChannelSeo,
+  youtubeCollaborationStrategy,
 ];
 
 /** Check if a post is currently published (no publishDate, or publishDate <= today) */

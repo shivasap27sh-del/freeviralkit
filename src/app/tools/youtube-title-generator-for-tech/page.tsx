@@ -3,123 +3,123 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Title Generator for Gaming | FreeViralKit',
+  title: 'YouTube Title Generator for Tech | FreeViralKit',
   description:
-    'Free AI-powered YouTube title generator for gaming channels. Create click-worthy titles for gameplay walkthroughs, reviews, Minecraft, GTA, Fortnite, and challenge videos. Boost CTR and views instantly.',
+    'Free AI-powered YouTube title generator for tech channels. Create click-worthy titles for product reviews, unboxing videos, tech comparisons, and how-to tutorials. Boost CTR and views instantly.',
   alternates: {
-    canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-gaming'),
+    canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-tech'),
   },
   openGraph: {
-    title: 'YouTube Title Generator for Gaming | FreeViralKit',
+    title: 'YouTube Title Generator for Tech | FreeViralKit',
     description:
-      'Generate gaming YouTube titles that improve CTR and discoverability. Free AI tool for gaming creators.',
+      'Generate tech YouTube titles that improve CTR and discoverability. Free AI tool for tech reviewers and creators.',
     type: 'website',
-    url: buildAbsoluteUrl('/tools/youtube-title-generator-for-gaming'),
+    url: buildAbsoluteUrl('/tools/youtube-title-generator-for-tech'),
   },
   keywords: [
-    'youtube title generator gaming',
-    'gaming youtube title ideas',
-    'gaming video title generator',
-    'minecraft title generator',
-    'fortnite title ideas',
-    'gta title generator',
-    'gaming seo',
-    'youtube gaming titles',
+    'tech youtube title',
+    'tech review title generator',
+    'unboxing title',
+    'tech comparison title ideas',
+    'product review title generator',
+    'how to tutorial title',
+    'tech channel title ideas',
+    'youtube tech seo',
   ],
 };
 
 const examplesByCategory = [
   {
-    category: 'Survival & Challenge',
+    category: 'Product Reviews',
     examples: [
-      'I Survived 100 Days in Hardcore Minecraft (No Mods)',
-      'Can I Beat GTA 5 Without Getting Hit ONCE?',
-      'I Played the Hardest Roblox Obby Ever Made',
+      'iPhone 17 Pro Max Review — Is It Actually Worth $1,200?',
+      'I Used the Galaxy S26 for 30 Days — Here Is My Honest Opinion',
+      'The Best Budget Laptop of 2026 (Under $500)',
     ],
   },
   {
-    category: 'Tips & Tutorials',
+    category: 'Unboxing Videos',
     examples: [
-      'BGMI Sensitivity Settings That Instantly Improve Aim',
-      '5 Valorant Tips I Wish I Knew as a Beginner',
-      'How to Build Like a Pro in Fortnite (Step-by-Step)',
+      'Unboxing the Most Expensive Gaming Setup on Amazon ($10,000)',
+      'Apple Vision Pro 2 Unboxing — First Impressions and Setup',
+      'I Bought Every Gadget Under $50 on Amazon — Are They Worth It?',
     ],
   },
   {
-    category: 'Rankings & Reviews',
+    category: 'Comparison & Versus',
     examples: [
-      'I Tried Every Weapon in GTA 5 — Here Is the Best One',
-      'Top 10 Hidden Tricks in Roblox You Missed',
-      'Ranking Every Minecraft Biome from Worst to Best',
+      'iPhone 17 vs Samsung S26 — Which One Should You Actually Buy?',
+      'MacBook Air M5 vs Dell XPS 15 — The REAL Difference',
+      'Best Wireless Earbuds 2026: AirPods Pro 3 vs Galaxy Buds 4 vs Sony WF',
     ],
   },
   {
-    category: 'Let\'s Plays & Series',
+    category: 'How-To Tutorials',
     examples: [
-      'Starting a New Minecraft Survival World — Day 1',
-      'My First Time Playing Elden Ring (This Game Is BRUTAL)',
+      'How to Speed Up Your PC in 5 Minutes (Free, No Downloads)',
+      'Set Up a Home Server for FREE — Complete Beginner Guide',
     ],
   },
 ];
 
 const tips = [
   {
-    title: 'Put the game name first',
+    title: 'Lead with the product or brand name',
     description:
-      'Start your title with the game name so YouTube immediately categorizes your video. Viewers scanning search results recognize the game instantly.',
+      'Start your title with the specific product, brand, or technology. "iPhone 17 Pro Review" is instantly searchable, while "My New Phone Review" is vague and gets buried in results.',
   },
   {
-    title: 'Use specific hooks',
+    title: 'Use definitive language',
     description:
-      'Mention the challenge type, update version, rank tier, or time constraint. "I Survived 100 Days" is far more clickable than "Playing Minecraft".',
+      'Words like "best", "ultimate", "honest", "real", and "actual" signal authority. Tech viewers want confident, informed opinions — not wishy-washy takes. "The BEST Budget Laptop" outperforms "A Good Budget Laptop".',
   },
   {
-    title: 'Keep it under 60-70 characters',
+    title: 'Include the year or model number',
     description:
-      'Titles longer than 70 characters get cut off on mobile. Aim for 50-65 characters to keep the full title visible in search results and recommendations.',
+      'Tech content has a short shelf life. Adding "2026" or the model number ("M5", "S26", "RTX 5090") signals fresh content and captures time-specific searches that peak around launch windows.',
   },
   {
-    title: 'Add numbers when possible',
+    title: 'Add a price point or budget angle',
     description:
-      'Titles with numbers get 36% more clicks on average. "Top 10", "5 Tips", "100 Days" — numbers create clear expectations and draw the eye.',
+      'Budget-conscious viewers search for price-specific content. "Best Laptop Under $500" or "Is This $200 Phone Worth It?" immediately qualifies the audience and drives higher CTR.',
   },
   {
-    title: 'Create an information gap',
+    title: 'Create versus and comparison hooks',
     description:
-      'Phrases like "What Happened Next Shocked Me" or "You Won\'t Believe This" create curiosity. But always deliver on the promise — misleading clickbait kills watch time.',
+      'Comparison titles like "X vs Y" are among the highest-searched tech queries. Viewers deciding between products actively search these terms and have high engagement rates.',
   },
   {
-    title: 'Match trending search terms',
+    title: 'Ask a question the viewer wants answered',
     description:
-      'When a new season, update, or DLC drops, use those keywords immediately. Fresh search terms have high volume and low competition.',
+      'Titles like "Is It Worth It?" or "Should You Buy This?" mirror exactly what viewers type into YouTube search. Question-based titles align with search intent and boost click-through rates.',
   },
 ];
 
 const faqs = [
   {
-    question: 'What makes a good gaming YouTube title?',
+    question: 'What makes a good tech YouTube title?',
     answer:
-      'A good gaming YouTube title includes the game name, uses a specific hook (challenge, tip, review), stays under 70 characters, and creates curiosity. It should be clear about what the viewer will see while making them want to click.',
+      'A good tech YouTube title includes the product or brand name, specifies the content type (review, unboxing, comparison, tutorial), adds a hook or opinion, and stays under 65 characters. It should clearly tell viewers what they will learn or see.',
   },
   {
-    question: 'How long should my gaming video title be?',
+    question: 'How do I title an unboxing video for maximum views?',
     answer:
-      'Keep gaming video titles between 50-65 characters for optimal display on both desktop and mobile. Titles over 70 characters get truncated in search results and recommendations.',
+      'For unboxing videos, include the product name, add a price or exclusivity angle, and hint at your reaction. "Unboxing the $3,000 Gaming PC — Was It Worth It?" is more clickable than "New PC Unboxing".',
   },
   {
-    question: 'Should I include the game name in my title?',
+    question: 'Should I include the year in my tech video titles?',
     answer:
-      'Absolutely. Always include the game name near the beginning of your title. This helps YouTube categorize your video correctly and ensures it appears in searches for that specific game.',
+      'Yes, especially for reviews and comparisons. Adding the year or model number signals fresh content and catches viewers searching for the latest information. "Best Phones 2026" gets more clicks than evergreen-only titles.',
   },
   {
-    question: 'Is this gaming title generator free?',
+    question: 'Is this tech title generator free?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, and no hidden fees. Generate unlimited gaming video titles powered by AI.',
+      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, and no hidden fees. Generate unlimited tech video titles powered by AI.',
   },
   {
-    question: 'Can I use this for Minecraft, Fortnite, and GTA videos?',
+    question: 'Can I use this for software tutorials and how-to videos?',
     answer:
-      'Yes! The AI title generator works for all gaming niches including Minecraft, Fortnite, GTA, Roblox, Valorant, Call of Duty, and any other game. Just enter your topic and get optimized titles instantly.',
+      'Absolutely! The AI title generator works for all tech content including product reviews, unboxing, comparisons, software tutorials, coding guides, setup guides, and troubleshooting videos.',
   },
 ];
 
@@ -139,12 +139,12 @@ const faqJsonLd = {
 const toolJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'YouTube Title Generator for Gaming — FreeViralKit',
-  url: 'https://freeviralkit.com/tools/youtube-title-generator-for-gaming',
+  name: 'YouTube Title Generator for Tech — FreeViralKit',
+  url: 'https://freeviralkit.com/tools/youtube-title-generator-for-tech',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
   description:
-    'Free AI-powered YouTube title generator specifically designed for gaming channels. Generate optimized titles for gameplay, walkthroughs, reviews, and challenge videos.',
+    'Free AI-powered YouTube title generator specifically designed for tech channels. Generate optimized titles for product reviews, unboxing, comparisons, and how-to tutorial videos.',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -152,7 +152,7 @@ const toolJsonLd = {
   },
 };
 
-export default function GamingTitleLandingPage() {
+export default function TechTitleLandingPage() {
   return (
     <>
       <script
@@ -168,32 +168,32 @@ export default function GamingTitleLandingPage() {
         {/* Hero */}
         <section className="text-center mb-12">
           <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Title Generator for <span className="text-gradient">Gaming</span>
+            YouTube Title Generator for <span className="text-gradient">Tech</span>
           </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
-            Generate high-CTR gaming titles for walkthroughs, shorts, ranked gameplay, tutorials, and challenge videos. Powered by AI, built for gamers.
+            Generate high-CTR titles for product reviews, unboxing videos, tech comparisons, and how-to tutorials. Powered by AI, built for tech creators.
           </p>
           <Link
             href="/youtube-title-generator"
             className="btn-primary inline-flex rounded-xl px-6 py-3.5 font-semibold text-lg"
           >
-            Generate Gaming Titles Free →
+            Generate Tech Titles Free →
           </Link>
         </section>
 
-        {/* Why gaming titles matter */}
+        {/* Why tech titles matter */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
-            Why Your Gaming Title Makes or Breaks Your Video
+            Why Your Tech Title Determines Your Video&apos;s Success
           </h2>
           <p className="text-slate-600 mb-4">
-            Gaming is the largest category on YouTube by watch time, and also the most competitive. Millions of gaming videos go up every single day. The difference between 50 views and 50,000 often comes down to one thing: the title.
+            Tech is one of the most competitive niches on YouTube. Every product launch triggers hundreds of review, unboxing, and comparison videos — all fighting for the same audience. The title is what separates a 500-view video from a 500K-view video.
           </p>
           <p className="text-slate-600 mb-4">
-            Your title is the first thing viewers see in search results and the recommended feed. A vague title like &ldquo;Gaming Video #12&rdquo; tells the viewer nothing. But &ldquo;I Survived 100 Days in Hardcore Minecraft (No Mods)&rdquo; immediately tells them the game, the challenge, and the stakes.
+            A bland title like &ldquo;Phone Review&rdquo; gets completely lost. But &ldquo;iPhone 17 Pro Max Review — Is It Actually Worth $1,200?&rdquo; immediately tells the viewer the product, the format, and raises a question they need answered.
           </p>
           <p className="text-slate-600">
-            Great gaming titles combine <strong className="text-slate-900">the game name</strong>, a <strong className="text-slate-900">specific hook</strong>, and <strong className="text-slate-900">curiosity</strong>. That&apos;s exactly what our AI generates for you.
+            Effective tech titles combine <strong className="text-slate-900">the product name</strong>, a <strong className="text-slate-900">clear content format</strong>, and a <strong className="text-slate-900">compelling hook or question</strong>. That&apos;s exactly what our AI generates for you.
           </p>
         </section>
 
@@ -215,7 +215,7 @@ export default function GamingTitleLandingPage() {
         {/* Best practices */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
-            6 Best Practices for Gaming SEO Titles
+            6 Best Practices for Tech Video SEO Titles
           </h2>
           <div className="space-y-5">
             {tips.map((tip, i) => (
@@ -232,16 +232,16 @@ export default function GamingTitleLandingPage() {
         {/* How it works */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
-            How Our Gaming Title Generator Works
+            How Our Tech Title Generator Works
           </h2>
           <ol className="space-y-3 text-slate-600">
             <li className="flex items-start gap-3">
               <span className="w-7 h-7 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-sm font-bold text-purple-500 shrink-0">1</span>
-              <span><strong className="text-slate-900">Enter your gaming topic</strong> — describe your gameplay, challenge, or tutorial.</span>
+              <span><strong className="text-slate-900">Enter your tech topic</strong> — describe your product review, unboxing, or tutorial.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="w-7 h-7 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-sm font-bold text-purple-500 shrink-0">2</span>
-              <span><strong className="text-slate-900">AI generates 10 titles</strong> — each optimized with SEO keywords, emojis, and hooks specific to gaming.</span>
+              <span><strong className="text-slate-900">AI generates 10 titles</strong> — each optimized with SEO keywords, emojis, and hooks specific to tech content.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="w-7 h-7 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-sm font-bold text-purple-500 shrink-0">3</span>
@@ -280,11 +280,11 @@ export default function GamingTitleLandingPage() {
           </h2>
           <div className="space-y-3">
             <Link
-              href="/tools/youtube-title-generator-for-vlogs"
+              href="/tools/youtube-title-generator-for-gaming"
               className="block p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 transition-all"
             >
-              <span className="font-semibold text-slate-900">🎬 Title Generator for Vlogs</span>
-              <p className="text-slate-600 text-sm mt-1">Create relatable vlog titles for daily routines, travel, and lifestyle content.</p>
+              <span className="font-semibold text-slate-900">🎮 Title Generator for Gaming</span>
+              <p className="text-slate-600 text-sm mt-1">Create click-worthy titles for gameplay walkthroughs, challenges, and reviews.</p>
             </Link>
             <Link
               href="/tools/youtube-description-generator-for-education"
@@ -298,7 +298,7 @@ export default function GamingTitleLandingPage() {
               className="block p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 transition-all"
             >
               <span className="font-semibold text-slate-900">🏷️ YouTube Tags Generator</span>
-              <p className="text-slate-600 text-sm mt-1">Generate optimized tags for your gaming videos to boost discoverability.</p>
+              <p className="text-slate-600 text-sm mt-1">Generate optimized tags for your tech review and tutorial videos.</p>
             </Link>
           </div>
         </section>
@@ -306,18 +306,9 @@ export default function GamingTitleLandingPage() {
         {/* Related blog posts */}
         <section className="mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
-            Learn More About Gaming SEO
+            Learn More About YouTube SEO for Tech Channels
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link
-              href="/blog/best-youtube-tags-for-gaming"
-              className="glass-card rounded-xl p-5 group hover:border-purple-500/30 transition-all"
-            >
-              <span className="text-xs text-purple-400 font-medium">Gaming</span>
-              <h3 className="font-display text-sm font-bold mt-1 group-hover:text-purple-400 transition-colors leading-snug">
-                Best YouTube Tags for Gaming Videos in 2026
-              </h3>
-            </Link>
             <Link
               href="/blog/youtube-titles-that-get-clicks"
               className="glass-card rounded-xl p-5 group hover:border-purple-500/30 transition-all"
@@ -325,6 +316,15 @@ export default function GamingTitleLandingPage() {
               <span className="text-xs text-purple-400 font-medium">Titles</span>
               <h3 className="font-display text-sm font-bold mt-1 group-hover:text-purple-400 transition-colors leading-snug">
                 How to Write YouTube Titles That Actually Get Clicks
+              </h3>
+            </Link>
+            <Link
+              href="/blog/youtube-seo-guide"
+              className="glass-card rounded-xl p-5 group hover:border-purple-500/30 transition-all"
+            >
+              <span className="text-xs text-purple-400 font-medium">SEO</span>
+              <h3 className="font-display text-sm font-bold mt-1 group-hover:text-purple-400 transition-colors leading-snug">
+                The Complete YouTube SEO Guide for Creators
               </h3>
             </Link>
           </div>

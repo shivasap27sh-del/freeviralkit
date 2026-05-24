@@ -12,7 +12,14 @@ import {
   Sparkles,
   Gamepad2,
   Tv,
-  GraduationCap
+  GraduationCap,
+  UtensilsCrossed,
+  Music,
+  Cpu,
+  Dumbbell,
+  Compass,
+  Palette,
+  Clapperboard,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -106,6 +113,76 @@ const nicheTools = [
     description: 'Write clear educational descriptions with structured learning outcomes and CTAs.',
     icon: GraduationCap,
     color: 'green',
+  },
+  {
+    href: '/tools/youtube-title-generator-for-cooking',
+    title: 'YouTube Title Generator for Cooking',
+    description: 'Generate recipe and cooking video titles that attract food lovers and boost CTR.',
+    icon: UtensilsCrossed,
+    color: 'orange',
+  },
+  {
+    href: '/tools/youtube-title-generator-for-music',
+    title: 'YouTube Title Generator for Music',
+    description: 'Create titles for song covers, music production tutorials, beats, and album reviews.',
+    icon: Music,
+    color: 'cyan',
+  },
+  {
+    href: '/tools/youtube-title-generator-for-tech',
+    title: 'YouTube Title Generator for Tech',
+    description: 'Generate click-worthy titles for product reviews, unboxing, and tech comparisons.',
+    icon: Cpu,
+    color: 'blue',
+  },
+  {
+    href: '/tools/youtube-title-generator-for-fitness',
+    title: 'YouTube Title Generator for Fitness',
+    description: 'Create workout and fitness titles for routines, transformations, and challenges.',
+    icon: Dumbbell,
+    color: 'green',
+  },
+  {
+    href: '/tools/youtube-title-generator-for-travel',
+    title: 'YouTube Title Generator for Travel',
+    description: 'Generate travel vlog titles for destination guides, budget travel, and solo adventures.',
+    icon: Compass,
+    color: 'cyan',
+  },
+  {
+    href: '/tools/youtube-title-generator-for-beauty',
+    title: 'YouTube Title Generator for Beauty',
+    description: 'Create beauty and makeup titles for tutorials, GRWM, skincare, and product reviews.',
+    icon: Palette,
+    color: 'pink',
+  },
+  {
+    href: '/tools/youtube-tags-generator-for-gaming',
+    title: 'YouTube Tags Generator for Gaming',
+    description: 'Generate SEO-optimized tags specifically for FPS, RPG, mobile, and streaming content.',
+    icon: Tag,
+    color: 'purple',
+  },
+  {
+    href: '/tools/youtube-hashtag-generator-for-shorts',
+    title: 'YouTube Hashtag Generator for Shorts',
+    description: 'Find trending and viral hashtags designed specifically for YouTube Shorts content.',
+    icon: Hash,
+    color: 'orange',
+  },
+  {
+    href: '/tools/youtube-description-generator-for-tech',
+    title: 'YouTube Description Generator for Tech',
+    description: 'Write structured tech review descriptions with specs, comparisons, and affiliate links.',
+    icon: AlignLeft,
+    color: 'blue',
+  },
+  {
+    href: '/tools/youtube-channel-name-generator-for-gaming',
+    title: 'Channel Name Generator for Gaming',
+    description: 'Brainstorm memorable gaming channel names — clan-style, streamer-style, or brand-style.',
+    icon: Clapperboard,
+    color: 'purple',
   },
 ];
 

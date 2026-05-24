@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { InContentAd } from '@/components/AdSense';
-import { adSlots } from '@/lib/ad-slots';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -242,8 +240,6 @@ export default function EducationDescriptionLandingPage() {
             ))}
           </div>
         </section>
-
-        <InContentAd slot={adSlots.educationLanding} />
 
         {/* Example descriptions */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
