@@ -180,7 +180,7 @@ You need both thresholds met simultaneously. If you hit 1,000 subscribers but ar
 Getting monetized is not about luck or going viral. It is about consistent, strategic action: choosing a searchable niche, uploading regularly, optimizing every video for SEO, and creating content that keeps viewers watching. The 1,000 subscribers and 4,000 watch hours are not a lottery — they are a milestone you earn through deliberate effort.
 
 Start strong with optimized content from day one. Use our free [YouTube Title Generator](/youtube-title-generator) to create search-friendly, click-worthy titles for every upload — because every view counts when you are racing toward monetization!`,
-  publishdate: "2026-06-02",
+  publishDate: "2026-06-02",
   date: "2026-06-02",
   readTime: "12 min read",
   category: "YouTube Monetization",
