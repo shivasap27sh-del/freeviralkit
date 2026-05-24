@@ -1,9 +1,9 @@
 import type { MetadataRoute } from 'next';
-import { blogPosts, getAllSlugs } from './blog/data';
+import { blogPosts, getPublishedSlugs } from './blog/data';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const blogSlugs = getAllSlugs();
+  const blogSlugs = getPublishedSlugs();
 
   // Use the actual publish date from each post so Google can trust lastModified
   const blogUrls = blogSlugs.map((slug) => {
