@@ -1,28 +1,9 @@
 import { NextResponse } from 'next/server';
+import sitemap from '../../sitemap';
 
 // IndexNow key — matches the BingSiteAuth.xml user ID and the .txt file in /public
 const INDEXNOW_KEY = '1FA6B38A290761B175A968B85022B7A8';
 const SITE_URL = 'https://freeviralkit.com';
-
-// All URLs to submit to Bing via IndexNow
-const ALL_URLS = [
-  '/',
-  '/youtube-title-generator',
-  '/youtube-hashtag-generator',
-  '/youtube-tags-generator',
-  '/youtube-description-generator',
-  '/youtube-channel-name-generator',
-  '/youtube-shorts-idea-generator',
-  '/tools',
-  '/tools/youtube-title-generator-for-gaming',
-  '/tools/youtube-title-generator-for-vlogs',
-  '/tools/youtube-description-generator-for-education',
-  '/about',
-  '/blog',
-  '/contact',
-  '/privacy-policy',
-  '/terms',
-].map(path => `${SITE_URL}${path}`);
 
 export async function GET(request: Request) {
   // Simple secret check to prevent public abuse
@@ -34,11 +15,14 @@ export async function GET(request: Request) {
   }
 
   try {
+    // Get the dynamic list of current published URLs from the sitemap
+    const urls = sitemap().map((item) => item.url);
+
     const body = {
       host: 'freeviralkit.com',
       key: INDEXNOW_KEY,
       keyLocation: `${SITE_URL}/${INDEXNOW_KEY}.txt`,
-      urlList: ALL_URLS,
+      urlList: urls,
     };
 
     const response = await fetch('https://api.indexnow.org/indexnow', {
@@ -51,8 +35,8 @@ export async function GET(request: Request) {
     if (response.ok || response.status === 202) {
       return NextResponse.json({
         success: true,
-        message: `✅ Submitted ${ALL_URLS.length} URLs to Bing IndexNow`,
-        urls: ALL_URLS,
+        message: `✅ Submitted ${urls.length} URLs to Bing IndexNow`,
+        urls: urls,
         status: response.status,
       });
     }
@@ -68,3 +52,4 @@ export async function GET(request: Request) {
     return NextResponse.json({ success: false, error: msg }, { status: 500 });
   }
 }
+

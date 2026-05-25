@@ -40,6 +40,22 @@ export default function Footer() {
             <p className="text-sm text-slate-500 leading-relaxed">
               Free AI-powered YouTube SEO tool. Generate optimized titles, descriptions, hashtags, and tags to grow your channel faster.
             </p>
+            <div className="mt-4 hover:scale-105 transition-transform duration-200 inline-block">
+              <a
+                href="https://www.producthunt.com/products/freeviralkit?utm_source=badge-follow&utm_medium=badge&utm_campaign=badge-freeviralkit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1223625&theme=light&size=small"
+                  alt="FreeViralKit - 10x your YouTube views with AI-generated titles &amp; SEO | Product Hunt"
+                  width="86"
+                  height="32"
+                  className="w-[86px] h-[32px]"
+                />
+              </a>
+            </div>
           </div>
 
           {/* Links */}

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { generateShortsIdeas } from '../actions';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, Video, AlignLeft, MessageSquare } from 'lucide-react';
+import { Zap, Loader2, Sparkles, RotateCcw, Video, AlignLeft, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
 import { adSlots } from '@/lib/ad-slots';

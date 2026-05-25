@@ -33,14 +33,17 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const localTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (localTheme === 'dark' || (!localTheme && systemPrefersDark)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme('dark');
       document.documentElement.classList.add('dark');
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme('light');
       document.documentElement.classList.remove('dark');
     }
@@ -102,6 +105,21 @@ export default function Navbar() {
           <span className="ml-3 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-purple-500/10 border border-purple-500/20 text-purple-400">
             Groq AI
           </span>
+          <a
+            href="https://www.producthunt.com/products/freeviralkit?utm_source=badge-follow&utm_medium=badge&utm_campaign=badge-freeviralkit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-3 hover:scale-105 transition-transform duration-200 inline-flex items-center shrink-0"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1223625&theme=light&size=small"
+              alt="FreeViralKit - Product Hunt"
+              width="86"
+              height="32"
+              className="w-[86px] h-[32px]"
+            />
+          </a>
           <button
             onClick={toggleTheme}
             className="ml-3 p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500 hover:text-slate-900 flex items-center justify-center cursor-pointer animate-fade-in"
@@ -119,6 +137,21 @@ export default function Navbar() {
 
         {/* Mobile Controls */}
         <div className="flex items-center gap-2 md:hidden">
+          <a
+            href="https://www.producthunt.com/products/freeviralkit?utm_source=badge-follow&utm_medium=badge&utm_campaign=badge-freeviralkit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform duration-200 inline-flex items-center shrink-0"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1223625&theme=light&size=small"
+              alt="FreeViralKit - Product Hunt"
+              width="86"
+              height="32"
+              className="w-[86px] h-[32px]"
+            />
+          </a>
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500 hover:text-slate-900 flex items-center justify-center cursor-pointer"
