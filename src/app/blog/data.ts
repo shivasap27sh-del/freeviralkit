@@ -48,7 +48,7 @@ import { post as freeviralkitVsVidiqVsTubebuddy } from './posts/freeviralkit-vs-
 import { post as youtubeBeautyChannelSeo } from './posts/youtube-beauty-channel-seo';
 import { post as youtubeCollaborationStrategy } from './posts/youtube-collaboration-strategy';
 
-export const blogPosts: BlogPost[] = [
+const rawBlogPosts: BlogPost[] = [
   youtubeSeoGuide,
   bestYoutubeTags,
   youtubeDescriptionTips,
@@ -87,13 +87,28 @@ export const blogPosts: BlogPost[] = [
   youtubeCollaborationStrategy,
 ];
 
-/** Check if a post is currently published (no publishDate, or publishDate <= today) */
+const getTodayStr = () => {
+  try {
+    return new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
+  } catch (e) {
+    return new Date().toISOString().split('T')[0];
+  }
+};
+
+export const blogPosts: BlogPost[] = rawBlogPosts.map((post) => {
+  const todayStr = getTodayStr();
+  const date = post.date > todayStr ? todayStr : post.date;
+  const publishDate = post.publishDate && post.publishDate > todayStr ? todayStr : post.publishDate;
+  return {
+    ...post,
+    date,
+    publishDate,
+  };
+});
+
+/** Check if a post is currently published (all posts are live immediately for indexation and crawl error avoidance) */
 function isPublished(post: BlogPost): boolean {
-  if (!post.publishDate) return true;
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const pub = new Date(post.publishDate + 'T00:00:00');
-  return pub <= today;
+  return true;
 }
 
 /** Returns only posts whose publishDate has arrived (or have no publishDate) */
