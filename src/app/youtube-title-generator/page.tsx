@@ -15,12 +15,13 @@ export default function TitleGeneratorPage() {
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
   const [selectedIdx, setSelectedIdx] = useState<number>(0);
 
-  const handleGenerate = async () => {
+  const handleGenerate = async (isRegenerate = false) => {
     if (!topic.trim()) return;
     setIsGenerating(true);
+    const exclude = isRegenerate ? titles : [];
     setTitles([]);
     setSelectedIdx(0);
-    const result = await generateTitles(topic);
+    const result = await generateTitles(topic, exclude);
     if (result.success && result.titles) setTitles(result.titles);
     else alert(result.error || 'Failed to generate titles');
     setIsGenerating(false);
@@ -104,7 +105,7 @@ export default function TitleGeneratorPage() {
             className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
             onKeyDown={e => e.key === 'Enter' && handleGenerate()} />
         </div>
-        <button onClick={handleGenerate} disabled={!topic.trim() || isGenerating}
+        <button onClick={() => handleGenerate(false)} disabled={!topic.trim() || isGenerating}
           className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2 cursor-pointer">
           {isGenerating ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating Titles...</> : <><Wand2 className="w-5 h-5" /> Generate 10 Titles</>}
         </button>
@@ -116,7 +117,7 @@ export default function TitleGeneratorPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6 mb-8">
             <div className="flex items-center justify-between">
               <h2 className="font-display text-xl font-semibold">Your Generated Titles</h2>
-              <button onClick={handleGenerate} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer">
+              <button onClick={() => handleGenerate(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer">
                 <RotateCcw className="w-3.5 h-3.5" /> Regenerate
               </button>
             </div>
@@ -131,17 +132,17 @@ export default function TitleGeneratorPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.04 }}
                     onClick={() => setSelectedIdx(idx)}
-                    className={`bg-white border rounded-xl p-4 flex items-start gap-3 group transition-all cursor-pointer hover:bg-slate-50 ${
-                      selectedIdx === idx ? 'border-purple-500 ring-1 ring-purple-500/30' : 'border-slate-200'
+                    className={`bg-white dark:bg-slate-900 border dark:border-slate-800 rounded-xl p-4 flex items-start gap-3 group transition-all cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 ${
+                      selectedIdx === idx ? 'border-purple-500 ring-1 ring-purple-500/30 dark:ring-purple-500/40' : 'border-slate-200'
                     }`}
                   >
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold ${
-                      selectedIdx === idx ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-600'
+                      selectedIdx === idx ? 'bg-purple-500 text-white' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400'
                     }`}>
                       {idx + 1}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[1.01rem] leading-snug font-medium text-slate-800">{title}</p>
+                      <p className="text-[1.01rem] leading-snug font-medium text-slate-800 dark:text-slate-100">{title}</p>
                       <div className="flex items-center gap-2 mt-1">
                         <span className={`text-xs font-mono ${charColor(title.length)}`}>{title.length} chars</span>
                         {idx < 5 ? (

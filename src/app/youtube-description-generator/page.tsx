@@ -145,7 +145,7 @@ export default function DescriptionGeneratorPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               {/* Description Output */}
               <div className="lg:col-span-7 space-y-4">
-                <div className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col group hover:border-slate-300 transition-all">
+                <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 flex flex-col group hover:border-slate-300 dark:hover:border-slate-700 transition-all">
                   <div className="flex justify-between items-center text-xs text-slate-500 mb-3 font-mono border-b pb-2">
                     <span>OUTPUT TEXT</span>
                     <span>{description.split(/\s+/).length} words • {description.length} chars</span>

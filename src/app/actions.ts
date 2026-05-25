@@ -14,7 +14,12 @@ interface AIProvider {
 }
 
 // --- Provider 1: Groq (Primary - Fastest) ---
-const groqClient = process.env.GROQ_API_KEY ? new Groq({ apiKey: process.env.GROQ_API_KEY }) : null;
+const groqClient = process.env.GROQ_API_KEY ? new Groq({
+  apiKey: process.env.GROQ_API_KEY,
+  fetchOptions: {
+    cache: 'no-store',
+  },
+}) : null;
 
 const groqProvider: AIProvider = {
   name: 'Groq',
@@ -57,6 +62,7 @@ function createOpenAICompatibleProvider(
           temperature: options.temperature,
           max_tokens: options.maxTokens,
         }),
+        cache: 'no-store',
       });
 
       if (!response.ok) {
@@ -152,7 +158,7 @@ async function generateWithFallback(
 
 // ======= Title Generation =======
 
-export async function generateTitles(topic: string) {
+export async function generateTitles(topic: string, excludeTitles: string[] = []) {
   try {
     const responseText = await generateWithFallback([
       {
@@ -167,29 +173,31 @@ You deeply understand every niche and tailor both styles to match the community.
       {
         role: 'user',
         content: `Generate exactly 10 YouTube video titles for this topic: "${topic}"
-
+ 
 STRUCTURE:
 - Titles 1-5: SEO-OPTIMIZED — keyword-rich, 50-70 chars, emojis + hashtags at end
 - Titles 6-8: SHORT & PUNCHY VIRAL — 20-45 chars MAX, emotional, curiosity-driven, NO hashtags
 - Titles 9-10: TRENDING FORMAT — mimic what's trending RIGHT NOW on YouTube, short and raw
-
+ 
 RULES:
 - Must feel like a REAL person wrote them
 - BANNED: "You Won't Believe", "Shocking Truth", "Game Changer", "Mind Blowing", "Changes Everything"
 - Each title MUST use a completely DIFFERENT angle/format
 - SEO titles: 1-2 emojis + 1-2 hashtags at END
 - Viral titles: under 45 chars, NO hashtags
-
-Return ONLY a JSON array of 10 strings. No explanation, no markdown.`
+${excludeTitles.length > 0 ? `- DO NOT generate any of these previous titles, and use different angles/concepts than: ${JSON.stringify(excludeTitles)}` : ''}
+ 
+Return ONLY a JSON array of 10 strings. No explanation, no markdown.
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`
       }
-    ], { temperature: 0.7, maxTokens: 800 });
+    ], { temperature: 0.8, maxTokens: 800 });
 
     const cleanJson = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
     const titles = JSON.parse(cleanJson);
     return { success: true, titles: Array.isArray(titles) ? titles : [] };
   } catch (error) {
     console.error('Error generating titles:', error);
-    return { success: false, error: 'Failed to generate titles. Please try again.' };
+    return { success: false, error: error instanceof Error ? error.message : 'Failed to generate titles.' };
   }
 }
 
@@ -204,19 +212,20 @@ async function generateTags(title: string): Promise<string[]> {
     {
       role: 'user',
       content: `Generate 25-30 YouTube tags for this video title: "${title}"
-
+ 
 STRUCTURE:
 - Tags 1-10: SEO TAGS — exact match keywords, broad niche terms, long-tail search phrases
 - Tags 11-18: SHORTS & VIRAL TAGS — "shorts", "youtube shorts", "viral", "trending", niche-specific viral tags
 - Tags 19-25+: TRENDING TAGS — casual/slang search terms real people type
-
+ 
 RULES:
 - All lowercase, NO # symbols
 - Vary length: single words + phrases + full search phrases
 - Stay under 500 total characters
 - Include: "shorts", "youtube shorts", "viral", "trending"
-
-Return ONLY a JSON array of strings. No markdown.`
+ 
+Return ONLY a JSON array of strings. No markdown.
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`
     }
   ], { temperature: 0.7, maxTokens: 500 });
 
@@ -232,18 +241,19 @@ async function generateHashtags(title: string): Promise<string[]> {
     {
       role: 'user',
       content: `Generate 10-12 YouTube hashtags for this video title: "${title}"
-
+ 
 STRUCTURE:
 - First 3: STRONGEST high-traffic hashtags (shown above the title on YouTube)
 - Next 4-5: Niche-specific SEO hashtags
 - Last 3-4: Shorts/Viral hashtags — include #Shorts, #Viral, #Trending
-
+ 
 RULES:
 - CamelCase for multi-word (#HowToCook not #howtocook)
 - Order by importance: highest traffic first
 - ALWAYS include #Shorts if content could work as a Short
-
-Return ONLY a JSON array of strings with # symbol. No markdown.`
+ 
+Return ONLY a JSON array of strings with # symbol. No markdown.
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`
     }
   ], { temperature: 0.7, maxTokens: 300 });
 
@@ -259,7 +269,7 @@ async function generateDescription(title: string): Promise<string> {
     {
       role: 'user',
       content: `Generate a complete YouTube description for this video title: "${title}"
-
+ 
 Structure:
 1. HOOK (2-3 lines): Bold, engaging opening
 2. CALL TO ACTION:
@@ -268,12 +278,13 @@ Structure:
    🔔 SUBSCRIBE for more content like this
 3. SEO BODY (3-4 sentences): Natural keywords woven into readable sentences
 4. HASHTAGS: Exactly 5 relevant hashtags at the end
-
+ 
 RULES:
 - Auto-detect niche and match tone
 - Total under 250 words
 - No keyword stuffing
-- Return ONLY the description as plain text. No JSON.`
+- Return ONLY the description as plain text. No JSON.
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`
     }
   ], { temperature: 0.7, maxTokens: 600 });
 }
@@ -287,7 +298,7 @@ async function generatePinnedComment(title: string): Promise<string> {
     {
       role: 'user',
       content: `Write a pinned comment for a YouTube video titled: "${title}"
-
+ 
 RULES:
 - Start with a hook or question that makes people REPLY
 - Keep it 2-4 lines max
@@ -296,8 +307,9 @@ RULES:
 - Use 1-2 relevant emojis
 - Feel authentic, like the creator wrote it
 - Do NOT say "pin this" or "pinned comment"
-
-Return ONLY the comment as plain text.`
+ 
+Return ONLY the comment as plain text.
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`
     }
   ], { temperature: 0.8, maxTokens: 200 });
 }
@@ -323,7 +335,7 @@ export async function generateDetails(selectedTitle: string) {
     };
   } catch (error) {
     console.error('Error generating details:', error);
-    return { success: false, error: 'Failed to generate details. Please try again.' };
+    return { success: false, error: error instanceof Error ? error.message : 'Failed to generate details.' };
   }
 }
 
@@ -333,7 +345,7 @@ export async function generateHashtagsOnly(topic: string) {
     return { success: true, hashtags: Array.isArray(hashtags) ? hashtags : [] };
   } catch (error) {
     console.error('Error generating hashtags:', error);
-    return { success: false, error: 'Failed to generate hashtags. Please try again.' };
+    return { success: false, error: error instanceof Error ? error.message : 'Failed to generate hashtags.' };
   }
 }
 
@@ -343,7 +355,7 @@ export async function generateTagsOnly(topic: string) {
     return { success: true, tags: Array.isArray(tags) ? tags : [] };
   } catch (error) {
     console.error('Error generating tags:', error);
-    return { success: false, error: 'Failed to generate tags. Please try again.' };
+    return { success: false, error: error instanceof Error ? error.message : 'Failed to generate tags.' };
   }
 }
 
@@ -353,7 +365,7 @@ export async function generateDescriptionOnly(topic: string) {
     return { success: true, description };
   } catch (error) {
     console.error('Error generating description:', error);
-    return { success: false, error: 'Failed to generate description. Please try again.' };
+    return { success: false, error: error instanceof Error ? error.message : 'Failed to generate description.' };
   }
 }
 
@@ -369,13 +381,13 @@ export async function generateChannelNames(keyword: string) {
       {
         role: 'user',
         content: `Generate 15 creative YouTube channel name ideas for the keyword or niche: "${keyword}".
-        
+         
         Group them into exactly 4 categories:
         - "catchy" (Modern, clever, and easy to remember - 4 ideas)
         - "seo" (Includes relevant keywords for search ranking - 4 ideas)
         - "brandable" (Unique, short, and punchy single-word or abstract names - 4 ideas)
         - "shorts" (Simple, short, and energetic names for a Shorts channel - 3 ideas)
-
+ 
         RULES:
         - Keep names clean, professional, and easy to pronounce
         - No numbers or special characters unless it fits perfectly
@@ -386,7 +398,8 @@ export async function generateChannelNames(keyword: string) {
           "brandable": ["name1", "name2", "name3", "name4"],
           "shorts": ["name1", "name2", "name3"]
         }
-        Do not include any explanation or markdown formatting.`
+        Do not include any explanation or markdown formatting.
+        [Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`
       }
     ], { temperature: 0.8, maxTokens: 400 });
 
@@ -395,7 +408,7 @@ export async function generateChannelNames(keyword: string) {
     return { success: true, names: data };
   } catch (error) {
     console.error('Error generating channel names:', error);
-    return { success: false, error: 'Failed to generate channel names. Please try again.' };
+    return { success: false, error: error instanceof Error ? error.message : 'Failed to generate channel names.' };
   }
 }
 
@@ -411,13 +424,13 @@ export async function generateShortsIdeas(topic: string) {
       {
         role: 'user',
         content: `Generate 5 viral YouTube Shorts ideas for the topic/niche: "${topic}".
-        
+         
         For each idea, provide:
         - "title": A punchy working title for the concept
         - "hook": A 1-sentence hook to capture attention in the first 3 seconds (bold, high-retention text)
         - "visuals": Brief descriptions of visual transitions/actions to show on screen (B-roll, overlays, etc.)
         - "audio": A quick voiceover script and background sound suggestions (energetic, trending audio guidance)
-
+ 
         Return ONLY a JSON array containing 5 objects with "title", "hook", "visuals", and "audio" fields. 
         Structure:
         [
@@ -428,7 +441,8 @@ export async function generateShortsIdeas(topic: string) {
             "audio": "voiceover and audio guidance"
           }
         ]
-        Do not include any explanation or markdown formatting.`
+        Do not include any explanation or markdown formatting.
+        [Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`
       }
     ], { temperature: 0.8, maxTokens: 800 });
 
@@ -437,7 +451,7 @@ export async function generateShortsIdeas(topic: string) {
     return { success: true, ideas: Array.isArray(data) ? data : [] };
   } catch (error) {
     console.error('Error generating Shorts ideas:', error);
-    return { success: false, error: 'Failed to generate Shorts ideas. Please try again.' };
+    return { success: false, error: error instanceof Error ? error.message : 'Failed to generate Shorts ideas.' };
   }
 }
 

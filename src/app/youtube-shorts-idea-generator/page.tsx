@@ -146,7 +146,7 @@ export default function ShortsIdeaGeneratorPage() {
                       <span className="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-pink-500/15 text-pink-400 border border-pink-500/20">
                         Concept #{idx + 1}
                       </span>
-                      <h3 className="font-display text-lg font-bold text-slate-800 mt-1">{idea.title}</h3>
+                      <h3 className="font-display text-lg font-bold text-slate-800 dark:text-slate-100 mt-1">{idea.title}</h3>
                     </div>
                     <button
                       onClick={() => copyFullIdea(idea, idx)}
@@ -166,7 +166,7 @@ export default function ShortsIdeaGeneratorPage() {
                       <h4 className="text-xs font-bold uppercase tracking-wider text-pink-400 flex items-center gap-1.5 mb-2">
                         <MessageSquare className="w-3.5 h-3.5" /> Hook (First 3s)
                       </h4>
-                      <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                      <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 leading-relaxed italic">
                         &ldquo;{idea.hook}&rdquo;
                       </p>
                     </div>

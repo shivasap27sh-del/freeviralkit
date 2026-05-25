@@ -5,7 +5,7 @@ import { generateTitles, generateDetails } from './actions';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Wand2, Video, Copy, CheckCircle2, ChevronRight, Hash, Tag, AlignLeft,
-  Loader2, Sparkles, RotateCcw, Zap, Package, MessageCircle, ArrowRight, User
+  Loader2, Sparkles, RotateCcw, Zap, Package, MessageCircle, ArrowRight, User, AlertTriangle
 } from 'lucide-react';
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
@@ -21,24 +21,29 @@ export default function Home() {
   const [isGeneratingDetails, setIsGeneratingDetails] = useState(false);
   const [details, setDetails] = useState<Details | null>(null);
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
+  const [error, setError] = useState<string | null>(null);
+  const [showDebug, setShowDebug] = useState(false);
 
-  const handleGenerateTitles = async () => {
+  const handleGenerateTitles = async (isRegenerate = false) => {
     if (!topic.trim()) return;
     setIsGeneratingTitles(true);
+    setError(null);
+    const exclude = isRegenerate ? titles : [];
     setTitles([]); setSelectedTitle(null); setDetails(null);
-    const result = await generateTitles(topic);
+    const result = await generateTitles(topic, exclude);
     if (result.success && result.titles) setTitles(result.titles);
-    else alert(result.error || 'Failed to generate titles');
+    else setError(result.error || 'Failed to generate titles');
     setIsGeneratingTitles(false);
   };
 
   const handleSelectTitle = async (title: string) => {
     setSelectedTitle(title);
     setIsGeneratingDetails(true);
+    setError(null);
     setDetails(null);
     const result = await generateDetails(title);
     if (result.success && result.details) setDetails(result.details);
-    else alert(result.error || 'Failed to generate details');
+    else setError(result.error || 'Failed to generate details');
     setIsGeneratingDetails(false);
   };
 
@@ -89,11 +94,33 @@ export default function Home() {
             className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
             onKeyDown={e => e.key === 'Enter' && handleGenerateTitles()} />
         </div>
-        <button onClick={handleGenerateTitles} disabled={!topic.trim() || isGeneratingTitles}
+        <button onClick={() => handleGenerateTitles(false)} disabled={!topic.trim() || isGeneratingTitles}
           className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2">
           {isGeneratingTitles ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating 10 Titles...</> : <><Wand2 className="w-5 h-5" /> Generate Optimized Titles</>}
         </button>
       </div>
+
+      {error && (
+        <div className="bg-red-500/10 border border-red-500/20 rounded-2xl p-5 mb-8">
+          <div className="flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+            <div className="flex-1">
+              <h3 className="font-display font-semibold text-red-400 mb-1">AI Generation Error</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                The AI system encountered an issue while generating content. Please verify your API keys and try again.
+              </p>
+              <button onClick={() => setShowDebug(!showDebug)} className="text-xs text-red-400/80 hover:text-red-400 underline mt-3 block cursor-pointer">
+                {showDebug ? 'Hide Technical Details' : 'Show Technical Details'}
+              </button>
+              {showDebug && (
+                <pre className="mt-3 p-4 bg-slate-900 text-red-300 rounded-xl text-xs font-mono whitespace-pre-wrap leading-normal border border-slate-800">
+                  {error}
+                </pre>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Skeleton */}
       <AnimatePresence>
@@ -119,7 +146,7 @@ export default function Home() {
                 <div className="step-badge step-badge-blue"><Video className="w-5 h-5" /></div>
                 <h2 className="font-display text-xl font-semibold">2. Pick Your Title</h2>
               </div>
-              <button onClick={handleGenerateTitles} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors">
+              <button onClick={() => handleGenerateTitles(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors">
                 <RotateCcw className="w-3.5 h-3.5" /> Regenerate
               </button>
             </div>
@@ -130,16 +157,16 @@ export default function Home() {
                     className={`title-card w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3 group ${
                       (isGeneratingDetails && selectedTitle !== title) ? 'opacity-50 cursor-not-allowed ' : 'cursor-pointer '
                     }${
-                      selectedTitle === title ? 'bg-purple-500/15 border-purple-500/60 shadow-[0_0_20px_rgba(139,92,246,0.15)]' : 'bg-white border-slate-200 hover:bg-slate-50 hover:border-slate-300'
+                      selectedTitle === title ? 'bg-purple-500/15 border-purple-500/60 dark:border-purple-500/40 shadow-[0_0_20px_rgba(139,92,246,0.15)]' : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-300 dark:hover:border-slate-700'
                     }`}>
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold mt-0.5 transition-all ${
-                      selectedTitle === title ? 'bg-purple-500 text-white' : 'bg-slate-200 text-slate-600 group-hover:bg-slate-300'
+                      selectedTitle === title ? 'bg-purple-500 text-white' : 'bg-slate-200 text-slate-600 group-hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-400'
                     }`}>
                       {selectedTitle === title && isGeneratingDetails ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
                         : selectedTitle === title ? <CheckCircle2 className="w-3.5 h-3.5" /> : idx + 1}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[1.02rem] leading-snug">{title}</p>
+                      <p className="text-[1.02rem] leading-snug text-slate-800 dark:text-slate-100">{title}</p>
                       <div className="flex items-center gap-2 mt-1">
                         <span className={`text-xs font-mono ${charColor(title.length)}`}>{title.length} chars</span>
                         {idx < 5 ? (

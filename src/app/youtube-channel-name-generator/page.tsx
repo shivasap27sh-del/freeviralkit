@@ -153,9 +153,9 @@ export default function ChannelNameGeneratorPage() {
                         {list.map((name, idx) => (
                           <div
                             key={idx}
-                            className="bg-white border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group hover:border-slate-300 transition-all"
+                            className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 flex items-center justify-between group hover:border-slate-300 dark:hover:border-slate-700 transition-all"
                           >
-                            <span className="font-medium text-slate-800 text-sm">{name}</span>
+                            <span className="font-medium text-slate-800 dark:text-slate-100 text-sm">{name}</span>
                             <button
                               onClick={() => copy(name, `${catKey}-${idx}`)}
                               className="p-1 rounded hover:bg-slate-100 transition-colors"
