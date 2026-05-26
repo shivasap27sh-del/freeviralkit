@@ -18,11 +18,11 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space
 export const metadata: Metadata = {
   metadataBase: getBaseUrl(),
   title: {
-    default: 'FreeViralKit — Free AI YouTube SEO Optimizer | Titles, Tags, Descriptions',
+    default: 'FreeViralKit — Free AI YouTube SEO Optimizer',
     template: '%s | FreeViralKit',
   },
   description:
-    'Free AI-powered YouTube SEO tool. Generate viral titles, optimized descriptions, trending hashtags, and SEO tags for your YouTube videos. Boost views, subscribers, and rankings instantly.',
+    'Free AI YouTube SEO tool — generate viral titles, descriptions, hashtags & tags. Boost views and rankings instantly.',
   keywords: [
     'youtube seo tool',
     'youtube title generator',

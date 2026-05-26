@@ -67,10 +67,13 @@ export default function Home() {
   const tagsTotalChars = (tags: string[]) => tags.join(', ').length;
 
   const homepageFaqs = [
-    { q: 'Is FreeViralKit really free?', a: 'Yes — 100% free, no signup, no credit card. Generate unlimited titles, descriptions, hashtags, and tags.' },
-    { q: 'How does the AI generate YouTube titles?', a: 'We use Groq AI with advanced language models trained on successful YouTube title patterns across every niche.' },
-    { q: 'Will these tags and titles help me rank?', a: 'Yes — our AI generates content following YouTube SEO best practices: proper keyword placement, optimal character counts, and trending formats.' },
-    { q: 'Can I use FreeViralKit for YouTube Shorts?', a: 'Absolutely! FreeViralKit works for long-form videos and Shorts. The AI adapts its output to match your content type.' },
+    { q: 'Is FreeViralKit really free?', a: 'Yes — 100% free, no signup, no credit card. Generate unlimited titles, descriptions, hashtags, and tags for all your YouTube videos without any hidden costs.' },
+    { q: 'How does the AI generate YouTube titles?', a: 'We use Groq AI with advanced language models trained on successful YouTube title patterns across every niche. The AI analyzes top-performing videos to craft titles that drive clicks while staying SEO-friendly.' },
+    { q: 'Will these tags and titles help me rank?', a: 'Yes — our AI generates content following YouTube SEO best practices: proper keyword placement, optimal character counts, and trending formats. Many creators see improved search rankings within days of optimizing their metadata.' },
+    { q: 'Can I use FreeViralKit for YouTube Shorts?', a: 'Absolutely! FreeViralKit works for long-form videos and Shorts. The AI adapts its output to match your content type, generating punchy titles and trending hashtags perfect for short-form content.' },
+    { q: 'How many titles can I generate at once?', a: 'FreeViralKit generates 10 optimized titles per request. You can regenerate as many times as you want to find the perfect title for your video. Each batch includes SEO-focused, viral, and trending title styles.' },
+    { q: 'What makes FreeViralKit different from other YouTube tools?', a: 'FreeViralKit is the only tool that gives you a complete SEO package in one click — title, description, hashtags, tags, and a pinned comment — all optimized together for maximum YouTube visibility.' },
+    { q: 'Do I need a YouTube channel to use FreeViralKit?', a: 'No — anyone can use FreeViralKit. Whether you are planning your first video or managing a channel with thousands of subscribers, our AI tools help you create better metadata for every upload.' },
   ];
 
   return (
@@ -400,6 +403,52 @@ export default function Home() {
               </Link>
             ));
           })()}
+        </div>
+      </section>
+      {/* Why FreeViralKit — SEO Content Section */}
+      <section className="mt-20 mb-12">
+        <h2 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-3">
+          Why Choose <span className="text-gradient">FreeViralKit</span>?
+        </h2>
+        <p className="text-slate-500 text-center mb-10 max-w-2xl mx-auto">
+          The complete YouTube SEO toolkit trusted by creators worldwide.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="glass-card rounded-2xl p-6">
+            <h3 className="font-display text-lg font-bold mb-2">🚀 Grow Faster with AI-Powered SEO</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              YouTube is the second largest search engine in the world. To get discovered, your videos need
+              optimized metadata — the right title, description, tags, and hashtags. FreeViralKit uses advanced
+              AI to analyze what works on YouTube right now and generates SEO-optimized content tailored to your
+              video topic. Stop guessing and start ranking.
+            </p>
+          </div>
+          <div className="glass-card rounded-2xl p-6">
+            <h3 className="font-display text-lg font-bold mb-2">🎯 Complete SEO Package in One Click</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Most YouTube SEO tools only generate titles or tags. FreeViralKit gives you everything in a single
+              workflow — 10 clickable titles, a keyword-rich description, trending hashtags, SEO-optimized tags
+              under the 500-character limit, and even a pinned comment to boost engagement. Copy the full package
+              with one click and paste it directly into YouTube Studio.
+            </p>
+          </div>
+          <div className="glass-card rounded-2xl p-6">
+            <h3 className="font-display text-lg font-bold mb-2">💡 Built for Every Creator</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Whether you are a beginner uploading your first video or a seasoned creator with thousands of
+              subscribers, FreeViralKit adapts to your needs. Our AI understands every niche — gaming, tech reviews,
+              cooking tutorials, vlogs, educational content, fitness, and more. Just enter your topic and let the
+              AI do the heavy lifting.
+            </p>
+          </div>
+          <div className="glass-card rounded-2xl p-6">
+            <h3 className="font-display text-lg font-bold mb-2">⚡ 100% Free, No Limits</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              No signup required. No credit card. No usage limits. FreeViralKit is completely free to use and always
+              will be. Generate as many titles, descriptions, hashtags, and tags as you need. We believe every
+              creator deserves access to professional-grade YouTube SEO tools without paying for expensive subscriptions.
+            </p>
+          </div>
         </div>
       </section>
 
