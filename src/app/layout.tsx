@@ -110,35 +110,6 @@ const jsonLd = {
       url: buildAbsoluteUrl('/'),
       description: 'Free AI YouTube SEO optimization tool',
     },
-    {
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'Is FreeViralKit free?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes, FreeViralKit is 100% free. No signup, no credit card, no hidden fees.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How does FreeViralKit generate YouTube titles?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'FreeViralKit uses Groq AI to analyze your video topic and generate 10 SEO-optimized titles with emojis and hashtags tailored to your niche.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What does FreeViralKit generate?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'FreeViralKit generates optimized video titles, descriptions, hashtags, tags, and pinned comments — everything you need for YouTube SEO.',
-          },
-        },
-      ],
-    },
   ],
 };
 

@@ -66,7 +66,32 @@ export default function Home() {
 
   const tagsTotalChars = (tags: string[]) => tags.join(', ').length;
 
+  const homepageFaqs = [
+    { q: 'Is FreeViralKit really free?', a: 'Yes — 100% free, no signup, no credit card. Generate unlimited titles, descriptions, hashtags, and tags.' },
+    { q: 'How does the AI generate YouTube titles?', a: 'We use Groq AI with advanced language models trained on successful YouTube title patterns across every niche.' },
+    { q: 'Will these tags and titles help me rank?', a: 'Yes — our AI generates content following YouTube SEO best practices: proper keyword placement, optimal character counts, and trending formats.' },
+    { q: 'Can I use FreeViralKit for YouTube Shorts?', a: 'Absolutely! FreeViralKit works for long-form videos and Shorts. The AI adapts its output to match your content type.' },
+  ];
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: homepageFaqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.q,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
     <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
       {/* Hero */}
       <section className="text-center mb-16">
@@ -382,12 +407,7 @@ export default function Home() {
       <section className="mt-12 mb-8">
         <h2 className="font-display text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
         <div className="space-y-4">
-          {[
-            { q: 'Is FreeViralKit really free?', a: 'Yes — 100% free, no signup, no credit card. Generate unlimited titles, descriptions, hashtags, and tags.' },
-            { q: 'How does the AI generate YouTube titles?', a: 'We use Groq AI with advanced language models trained on successful YouTube title patterns across every niche.' },
-            { q: 'Will these tags and titles help me rank?', a: 'Yes — our AI generates content following YouTube SEO best practices: proper keyword placement, optimal character counts, and trending formats.' },
-            { q: 'Can I use FreeViralKit for YouTube Shorts?', a: 'Absolutely! FreeViralKit works for long-form videos and Shorts. The AI adapts its output to match your content type.' },
-          ].map((faq, i) => (
+          {homepageFaqs.map((faq, i) => (
             <div key={i} className="glass-card rounded-xl p-5">
               <h3 className="font-display text-base font-semibold mb-2">{faq.q}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
@@ -396,5 +416,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </>
   );
 }
