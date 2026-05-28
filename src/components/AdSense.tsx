@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import Script from 'next/script';
 import { siteConfig } from '@/lib/site';
 
 const ADSENSE_PUB_ID = siteConfig.adsensePublisherId;
@@ -101,11 +100,10 @@ export function AdSenseScript() {
   }
 
   return (
-    <Script
+    <script
       async
       src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUB_ID}`}
       crossOrigin="anonymous"
-      strategy="afterInteractive"
     />
   );
 }
