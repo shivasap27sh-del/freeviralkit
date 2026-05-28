@@ -7,21 +7,25 @@ import { Hash, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw } from 'lucide-r
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
 import { adSlots } from '@/lib/ad-slots';
+import ErrorBanner from '@/components/ErrorBanner';
 
 export default function HashtagGeneratorPage() {
   const [topic, setTopic] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [hashtags, setHashtags] = useState<string[]>([]);
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
+  const [error, setError] = useState<string | null>(null);
 
-  const handleGenerate = async (val?: string) => {
+  const handleGenerate = async (val?: string, isRegenerate = false) => {
     const inputVal = val !== undefined ? val : topic;
     if (!inputVal.trim()) return;
     setIsGenerating(true);
+    const exclude = isRegenerate ? hashtags : [];
     setHashtags([]);
-    const result = await generateHashtagsOnly(inputVal);
+    setError(null);
+    const result = await generateHashtagsOnly(inputVal, exclude);
     if (result.success && result.hashtags) setHashtags(result.hashtags);
-    else alert(result.error || 'Failed to generate hashtags');
+    else setError(result.error || 'Failed to generate hashtags');
     setIsGenerating(false);
   };
 
@@ -80,13 +84,15 @@ export default function HashtagGeneratorPage() {
         </button>
       </div>
 
+      <ErrorBanner error={error} onClear={() => setError(null)} />
+
       <AnimatePresence>
         {hashtags.length > 0 && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <h2 className="font-display text-xl font-semibold"># Your Hashtags</h2>
-                <button onClick={() => handleGenerate()} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer">
+                <button onClick={() => handleGenerate(undefined, true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer">
                   <RotateCcw className="w-3.5 h-3.5" /> Regenerate
                 </button>
               </div>

@@ -61,6 +61,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: buildAbsoluteUrl('/youtube-script-generator'),
+      lastModified: new Date('2026-05-28'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+    },
+    {
+      url: buildAbsoluteUrl('/youtube-topic-researcher'),
+      lastModified: new Date('2026-05-28'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+    },
+    {
+      url: buildAbsoluteUrl('/creator-gear'),
+      lastModified: new Date('2026-05-28'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
       url: buildAbsoluteUrl('/tools'),
       lastModified: new Date('2026-05-10'),
       changeFrequency: 'monthly' as const,

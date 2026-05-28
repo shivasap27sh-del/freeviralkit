@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Zap, Target, Shield, Users, Sparkles, ArrowRight, GitFork, ExternalLink, Mail, Code2, Database, Globe, Star } from 'lucide-react';
+import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About FreeViralKit — Free AI YouTube SEO Tool',
@@ -11,10 +12,10 @@ export const metadata: Metadata = {
     description:
       'Learn about FreeViralKit and our mission to help YouTube creators grow faster with AI-powered SEO optimization. Built by Shiva Srivastava.',
     type: 'website',
-    url: 'https://freeviralkit.com/about',
+    url: buildAbsoluteUrl('/about'),
   },
   alternates: {
-    canonical: 'https://freeviralkit.com/about',
+    canonical: buildAbsoluteUrl('/about'),
   },
 };
 
@@ -43,7 +44,7 @@ const jsonLd = {
         'AI/ML Integration',
         'Web Development',
       ],
-      url: 'https://freeviralkit.com/about',
+      url: buildAbsoluteUrl('/about'),
       sameAs: [
         'https://github.com/shivasap27sh-del',
         'https://www.linkedin.com/in/shiva-srivastava',
@@ -54,7 +55,7 @@ const jsonLd = {
       name: 'About FreeViralKit',
       description:
         'About page for FreeViralKit — Free AI YouTube SEO Tool built by Shiva Srivastava.',
-      url: 'https://freeviralkit.com/about',
+      url: buildAbsoluteUrl('/about'),
       author: {
         '@type': 'Person',
         name: 'Shiva Srivastava',

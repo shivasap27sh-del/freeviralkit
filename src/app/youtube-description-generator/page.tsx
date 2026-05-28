@@ -7,21 +7,25 @@ import { AlignLeft, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, Eye, Award
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
 import { adSlots } from '@/lib/ad-slots';
+import ErrorBanner from '@/components/ErrorBanner';
 
 export default function DescriptionGeneratorPage() {
   const [topic, setTopic] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [description, setDescription] = useState('');
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
+  const [error, setError] = useState<string | null>(null);
 
-  const handleGenerate = async (val?: string) => {
+  const handleGenerate = async (val?: string, isRegenerate = false) => {
     const inputVal = val !== undefined ? val : topic;
     if (!inputVal.trim()) return;
     setIsGenerating(true);
+    const exclude = isRegenerate ? description : '';
     setDescription('');
-    const result = await generateDescriptionOnly(inputVal);
+    setError(null);
+    const result = await generateDescriptionOnly(inputVal, exclude);
     if (result.success && result.description) setDescription(result.description);
-    else alert(result.error || 'Failed to generate description');
+    else setError(result.error || 'Failed to generate description');
     setIsGenerating(false);
   };
 
@@ -31,6 +35,17 @@ export default function DescriptionGeneratorPage() {
       setCopiedStates(p => ({ ...p, [key]: true }));
       setTimeout(() => setCopiedStates(p => ({ ...p, [key]: false })), 2000);
     } catch (err) { console.error('Failed to copy', err); }
+  };
+
+  const renderFormattedText = (text: string) => {
+    if (!text) return null;
+    const parts = text.split(/\*\*(.*?)\*\*/g);
+    return parts.map((part, index) => {
+      if (index % 2 === 1) {
+        return <strong key={index} className="text-slate-900 font-bold dark:text-white">{part}</strong>;
+      }
+      return part;
+    });
   };
 
   const analyzeDescription = (desc: string) => {
@@ -127,13 +142,15 @@ export default function DescriptionGeneratorPage() {
         </button>
       </div>
 
+      <ErrorBanner error={error} onClear={() => setError(null)} />
+
       <AnimatePresence>
         {description && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6 mb-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <h2 className="font-display text-xl font-semibold">📝 Your Description</h2>
-                <button onClick={() => handleGenerate()} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer">
+                <button onClick={() => handleGenerate(undefined, true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer">
                   <RotateCcw className="w-3.5 h-3.5" /> Regenerate
                 </button>
               </div>
@@ -150,7 +167,9 @@ export default function DescriptionGeneratorPage() {
                     <span>OUTPUT TEXT</span>
                     <span>{description.split(/\s+/).length} words • {description.length} chars</span>
                   </div>
-                  <p className="whitespace-pre-wrap text-slate-700 leading-relaxed text-[0.95rem]" dangerouslySetInnerHTML={{ __html: description.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>') }} />
+                  <p className="whitespace-pre-wrap text-slate-700 dark:text-slate-300 leading-relaxed text-[0.95rem]">
+                    {renderFormattedText(description)}
+                  </p>
                 </div>
               </div>
 
@@ -211,7 +230,7 @@ export default function DescriptionGeneratorPage() {
                 </div>
 
                 {/* YouTube Search Result Live Mockup */}
-                <div className="glass-card rounded-2xl p-5 border border-slate-200/60 shadow-lg bg-slate-950 text-white">
+                <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg text-white">
                   <div className="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-3 mb-4">
                     <span className="font-semibold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Search Snippet Preview</span>
                     <span className="bg-slate-800 px-2 py-0.5 rounded text-[10px]">Snippet</span>

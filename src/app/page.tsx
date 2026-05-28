@@ -5,7 +5,8 @@ import { generateTitles, generateDetails } from './actions';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Wand2, Video, Copy, CheckCircle2, ChevronRight, Hash, Tag, AlignLeft,
-  Loader2, Sparkles, RotateCcw, Zap, Package, MessageCircle, ArrowRight, User, AlertTriangle
+  Loader2, Sparkles, RotateCcw, Zap, Package, MessageCircle, ArrowRight, User, AlertTriangle,
+  BookOpen, Search, Laptop
 } from 'lucide-react';
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
@@ -64,6 +65,17 @@ export default function Home() {
   const charColor = (len: number) =>
     len >= 50 && len <= 70 ? 'text-green-400' : len < 50 ? 'text-yellow-400' : 'text-red-400';
 
+  const renderFormattedText = (text: string) => {
+    if (!text) return null;
+    const parts = text.split(/\*\*(.*?)\*\*/g);
+    return parts.map((part, index) => {
+      if (index % 2 === 1) {
+        return <strong key={index} className="text-slate-900 font-bold dark:text-white">{part}</strong>;
+      }
+      return part;
+    });
+  };
+
   const tagsTotalChars = (tags: string[]) => tags.join(', ').length;
 
   const homepageFaqs = [
@@ -119,7 +131,7 @@ export default function Home() {
         <div className="relative mb-4">
           <input type="text" value={topic} onChange={e => setTopic(e.target.value)}
             placeholder="e.g., how to make pasta, iphone 16 review, minecraft survival ep 1..."
-            className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
+            className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
             onKeyDown={e => e.key === 'Enter' && handleGenerateTitles()} />
         </div>
         <button onClick={() => handleGenerateTitles(false)} disabled={!topic.trim() || isGeneratingTitles}
@@ -174,7 +186,7 @@ export default function Home() {
                 <div className="step-badge step-badge-blue"><Video className="w-5 h-5" /></div>
                 <h2 className="font-display text-xl font-semibold">2. Pick Your Title</h2>
               </div>
-              <button onClick={() => handleGenerateTitles(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors">
+              <button onClick={() => handleGenerateTitles(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
                 <RotateCcw className="w-3.5 h-3.5" /> Regenerate
               </button>
             </div>
@@ -266,8 +278,10 @@ export default function Home() {
                       {copiedStates['desc'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy</>}
                     </button>
                   </div>
-                  <div className="bg-slate-50 rounded-xl p-5 border border-slate-100">
-                    <p className="whitespace-pre-wrap text-slate-700 leading-relaxed text-[0.95rem]" dangerouslySetInnerHTML={{ __html: details.description.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>') }} />
+                  <div className="bg-slate-50 rounded-xl p-5 border border-slate-100 dark:bg-slate-900/40 dark:border-slate-800">
+                    <p className="whitespace-pre-wrap text-slate-700 dark:text-slate-300 leading-relaxed text-[0.95rem]">
+                      {renderFormattedText(details.description)}
+                    </p>
                   </div>
                 </motion.div>
 
@@ -315,14 +329,14 @@ export default function Home() {
                     </button>
                   </div>
                   {/* Tag character limit bar */}
-                  <div className="mb-4 bg-slate-100 rounded-lg p-3 border border-slate-100">
+                  <div className="mb-4 bg-slate-100 dark:bg-slate-800/50 rounded-lg p-3 border border-slate-100 dark:border-slate-700">
                     <div className="flex justify-between text-xs mb-1.5">
-                      <span className="text-slate-600">Tag characters used</span>
+                      <span className="text-slate-600 dark:text-slate-400">Tag characters used</span>
                       <span className={tagsTotalChars(details.tags) <= 500 ? 'text-green-400' : 'text-red-400'}>
                         {tagsTotalChars(details.tags)} / 500
                       </span>
                     </div>
-                    <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                       <div className={`h-full rounded-full transition-all ${tagsTotalChars(details.tags) <= 400 ? 'bg-green-500' : tagsTotalChars(details.tags) <= 500 ? 'bg-yellow-500' : 'bg-red-500'}`}
                         style={{ width: `${Math.min((tagsTotalChars(details.tags) / 500) * 100, 100)}%` }} />
                     </div>
@@ -382,11 +396,14 @@ export default function Home() {
             };
             return [
               { href: '/youtube-title-generator', icon: Wand2, label: 'YouTube Title Generator', desc: 'Get 10 viral, SEO-optimized titles', color: 'purple' },
-              { href: '/youtube-hashtag-generator', icon: Hash, label: 'YouTube Hashtag Generator', desc: 'Trending hashtags for any niche', color: 'pink' },
-              { href: '/youtube-tags-generator', icon: Tag, label: 'YouTube Tags Generator', desc: '20-25 SEO tags under 500 chars', color: 'cyan' },
+              { href: '/youtube-script-generator', icon: BookOpen, label: 'AI Script Outline', desc: 'Generate high-retention video script structures', color: 'pink' },
+              { href: '/youtube-topic-researcher', icon: Search, label: 'AI Niche Researcher', desc: 'Analyze competition and topic suggestions', color: 'cyan' },
               { href: '/youtube-description-generator', icon: AlignLeft, label: 'YouTube Description Generator', desc: 'Keyword-rich descriptions in seconds', color: 'green' },
               { href: '/youtube-channel-name-generator', icon: User, label: 'Channel Name Generator', desc: 'Find catchy, SEO-friendly channel names', color: 'blue' },
               { href: '/youtube-shorts-idea-generator', icon: Zap, label: 'Shorts Idea Generator', desc: 'Generate viral, high-retention Shorts concepts', color: 'orange' },
+              { href: '/youtube-tags-generator', icon: Tag, label: 'YouTube Tags Generator', desc: '20-25 SEO tags under 500 chars', color: 'purple' },
+              { href: '/youtube-hashtag-generator', icon: Hash, label: 'YouTube Hashtag Generator', desc: 'Trending hashtags for any niche', color: 'pink' },
+              { href: '/creator-gear', icon: Laptop, label: 'Creator Gear & Tools', desc: 'Best equipment & software recommendation', color: 'cyan' },
             ].map((tool) => (
               <Link key={tool.href} href={tool.href}
                 className="glass-card rounded-2xl p-5 group hover:border-purple-500/30 transition-all flex flex-col justify-between">

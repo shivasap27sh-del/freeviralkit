@@ -47,6 +47,14 @@ import { post as youtubeTravelVlogTips } from './posts/youtube-travel-vlog-tips'
 import { post as freeviralkitVsVidiqVsTubebuddy } from './posts/freeviralkit-vs-vidiq-vs-tubebuddy';
 import { post as youtubeBeautyChannelSeo } from './posts/youtube-beauty-channel-seo';
 import { post as youtubeCollaborationStrategy } from './posts/youtube-collaboration-strategy';
+import { post as youtubeShortsLoopStrategy } from './posts/youtube-shorts-loop-strategy';
+import { post as bestYoutubeTagsForTech } from './posts/best-youtube-tags-for-tech';
+import { post as youtubeSeoChecklist2026 } from './posts/youtube-seo-checklist-2026';
+import { post as howToWriteYoutubeScriptsWithAi } from './posts/how-to-write-youtube-scripts-with-ai';
+import { post as youtubeScriptOutlineFormula } from './posts/youtube-script-outline-formula';
+import { post as youtubeTopicResearchStrategies } from './posts/youtube-topic-research-strategies';
+import { post as lowCompetitionHighVolumeYoutubeIdeas } from './posts/low-competition-high-volume-youtube-ideas';
+import { post as ultimateYoutubeEquipmentGuide2026 } from './posts/ultimate-youtube-equipment-guide-2026';
 
 const rawBlogPosts: BlogPost[] = [
   youtubeSeoGuide,
@@ -85,6 +93,14 @@ const rawBlogPosts: BlogPost[] = [
   freeviralkitVsVidiqVsTubebuddy,
   youtubeBeautyChannelSeo,
   youtubeCollaborationStrategy,
+  youtubeShortsLoopStrategy,
+  bestYoutubeTagsForTech,
+  youtubeSeoChecklist2026,
+  howToWriteYoutubeScriptsWithAi,
+  youtubeScriptOutlineFormula,
+  youtubeTopicResearchStrategies,
+  lowCompetitionHighVolumeYoutubeIdeas,
+  ultimateYoutubeEquipmentGuide2026,
 ];
 
 const getTodayStr = () => {

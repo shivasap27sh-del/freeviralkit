@@ -7,6 +7,7 @@ import { Wand2, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, Eye, Award, Ch
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
 import { adSlots } from '@/lib/ad-slots';
+import ErrorBanner from '@/components/ErrorBanner';
 
 export default function TitleGeneratorPage() {
   const [topic, setTopic] = useState('');
@@ -14,16 +15,18 @@ export default function TitleGeneratorPage() {
   const [titles, setTitles] = useState<string[]>([]);
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
   const [selectedIdx, setSelectedIdx] = useState<number>(0);
+  const [error, setError] = useState<string | null>(null);
 
   const handleGenerate = async (isRegenerate = false) => {
     if (!topic.trim()) return;
     setIsGenerating(true);
+    setError(null);
     const exclude = isRegenerate ? titles : [];
     setTitles([]);
     setSelectedIdx(0);
     const result = await generateTitles(topic, exclude);
     if (result.success && result.titles) setTitles(result.titles);
-    else alert(result.error || 'Failed to generate titles');
+    else setError(result.error || 'Failed to generate titles');
     setIsGenerating(false);
   };
 
@@ -110,6 +113,8 @@ export default function TitleGeneratorPage() {
           {isGenerating ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating Titles...</> : <><Wand2 className="w-5 h-5" /> Generate 10 Titles</>}
         </button>
       </div>
+
+      <ErrorBanner error={error} onClear={() => setError(null)} />
 
       {/* Results */}
       <AnimatePresence>
@@ -228,7 +233,7 @@ export default function TitleGeneratorPage() {
                 </div>
 
                 {/* YouTube Search Result Live Mockup */}
-                <div className="glass-card rounded-2xl p-5 border border-slate-200/60 shadow-lg bg-slate-950 text-white">
+                <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg text-white">
                   <div className="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-3 mb-4">
                     <span className="font-semibold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> YouTube Feed Preview</span>
                     <span className="bg-slate-800 px-2 py-0.5 rounded text-[10px]">Mobile</span>

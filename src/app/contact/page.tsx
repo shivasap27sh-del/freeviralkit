@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Mail, MessageSquare } from 'lucide-react';
+import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Contact Us — FreeViralKit',
@@ -8,10 +9,10 @@ export const metadata: Metadata = {
     title: 'Contact Us — FreeViralKit',
     description: 'Get in touch with the FreeViralKit team for support, feedback, or partnerships.',
     type: 'website',
-    url: 'https://freeviralkit.com/contact',
+    url: buildAbsoluteUrl('/contact'),
   },
   alternates: {
-    canonical: 'https://freeviralkit.com/contact',
+    canonical: buildAbsoluteUrl('/contact'),
   },
 };
 
@@ -50,7 +51,7 @@ export default function ContactPage() {
         >
           {/* Anti-spam */}
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://freeviralkit.com/contact" />
+          <input type="hidden" name="_next" value={buildAbsoluteUrl('/contact')} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>

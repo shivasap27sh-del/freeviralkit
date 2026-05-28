@@ -7,6 +7,7 @@ import { Zap, Loader2, Sparkles, RotateCcw, Video, AlignLeft, MessageSquare } fr
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
 import { adSlots } from '@/lib/ad-slots';
+import ErrorBanner from '@/components/ErrorBanner';
 
 type ShortsIdea = {
   title: string;
@@ -20,17 +21,20 @@ export default function ShortsIdeaGeneratorPage() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [ideas, setIdeas] = useState<ShortsIdea[]>([]);
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
+  const [error, setError] = useState<string | null>(null);
 
-  const handleGenerate = async (val?: string) => {
+  const handleGenerate = async (val?: string, isRegenerate = false) => {
     const inputVal = val !== undefined ? val : topic;
     if (!inputVal.trim()) return;
     setIsGenerating(true);
+    const exclude = isRegenerate ? ideas.map(i => i.title) : [];
     setIdeas([]);
-    const result = await generateShortsIdeas(inputVal);
+    setError(null);
+    const result = await generateShortsIdeas(inputVal, exclude);
     if (result.success && result.ideas) {
       setIdeas(result.ideas as ShortsIdea[]);
     } else {
-      alert(result.error || 'Failed to generate Shorts ideas');
+      setError(result.error || 'Failed to generate Shorts ideas');
     }
     setIsGenerating(false);
   };
@@ -114,6 +118,8 @@ export default function ShortsIdeaGeneratorPage() {
         </button>
       </div>
 
+      <ErrorBanner error={error} onClear={() => setError(null)} />
+
       {/* Results */}
       <AnimatePresence>
         {ideas.length > 0 && (
@@ -125,7 +131,7 @@ export default function ShortsIdeaGeneratorPage() {
             <div className="flex items-center justify-between">
               <h2 className="font-display text-xl font-semibold">Your Generated Shorts Concepts</h2>
               <button
-                onClick={() => handleGenerate()}
+                onClick={() => handleGenerate(undefined, true)}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5" /> Regenerate

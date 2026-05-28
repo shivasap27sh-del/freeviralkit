@@ -48,6 +48,14 @@ export const metadata: Metadata = {
     title: 'FreeViralKit — Free AI YouTube SEO Optimizer',
     description:
       'Generate viral YouTube titles, descriptions, hashtags & tags with AI. 100% free YouTube SEO tool.',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit — Free AI YouTube SEO Optimizer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -55,6 +63,7 @@ export const metadata: Metadata = {
     description:
       'Generate viral YouTube titles, descriptions, hashtags & tags with AI. Free forever.',
     creator: siteConfig.xHandle,
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   robots: {
     index: true,
