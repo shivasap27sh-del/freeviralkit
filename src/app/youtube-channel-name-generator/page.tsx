@@ -94,7 +94,7 @@ export default function ChannelNameGeneratorPage() {
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
               placeholder="Enter your niche or keyword (e.g. gaming, vegan cooking, tech reviews...)"
-              className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
+              className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
               onKeyDown={e => e.key === 'Enter' && handleGenerate()}
             />
           </div>
@@ -102,7 +102,7 @@ export default function ChannelNameGeneratorPage() {
             <select
               value={style}
               onChange={e => setStyle(e.target.value)}
-              className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg h-full cursor-pointer"
+              className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-slate-900 dark:text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg h-full cursor-pointer"
             >
               {styles.map(s => (
                 <option key={s.value} value={s.value}>{s.label}</option>
@@ -121,7 +121,7 @@ export default function ChannelNameGeneratorPage() {
                 setKeyword(ex);
                 handleGenerate(ex);
               }}
-              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-950 hover:bg-slate-200 transition-all cursor-pointer"
+              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer"
             >
               {ex}
             </button>
@@ -159,7 +159,7 @@ export default function ChannelNameGeneratorPage() {
               <h2 className="font-display text-xl font-semibold">Your Generated Channel Names</h2>
               <button
                 onClick={() => handleGenerate(undefined, true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5" /> Regenerate
               </button>
@@ -172,7 +172,7 @@ export default function ChannelNameGeneratorPage() {
                   <div key={catKey} className="glass-card rounded-2xl p-6 flex flex-col justify-between">
                     <div>
                       <div className="flex justify-between items-center mb-4">
-                        <h3 className="font-display font-bold text-slate-800">{categoryTitles[catKey]}</h3>
+                        <h3 className="font-display font-bold text-slate-800 dark:text-slate-200">{categoryTitles[catKey]}</h3>
                         <button
                           onClick={() => copy(list.join('\n'), `all-${catKey}`)}
                           className="text-xs text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-1"
@@ -192,18 +192,18 @@ export default function ChannelNameGeneratorPage() {
                               <div className="flex items-center gap-1">
                                 <button
                                   onClick={() => toggleSave(name)}
-                                  className="p-1 rounded hover:bg-slate-100 transition-colors cursor-pointer"
+                                  className="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                                 >
                                   <Star className={`w-3.5 h-3.5 ${isSaved ? 'text-yellow-500 fill-yellow-500' : 'text-slate-400'}`} />
                                 </button>
                                 <button
                                   onClick={() => copy(name, `${catKey}-${idx}`)}
-                                  className="p-1 rounded hover:bg-slate-100 transition-colors cursor-pointer"
+                                  className="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                                 >
                                   {copiedStates[`${catKey}-${idx}`] ? (
                                     <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
                                   ) : (
-                                    <Copy className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600" />
+                                    <Copy className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-350" />
                                   )}
                                 </button>
                               </div>
@@ -225,12 +225,12 @@ export default function ChannelNameGeneratorPage() {
                 className="glass-card rounded-2xl p-6 border border-yellow-400/20 bg-yellow-500/5 mt-6"
               >
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="font-display font-bold text-slate-800 flex items-center gap-1.5">
+                  <h3 className="font-display font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
                     ⭐ Saved Favorites ({savedNames.length})
                   </h3>
                   <button
                     onClick={() => copy(savedNames.join('\n'), 'saved-names-all')}
-                    className="text-xs text-purple-500 hover:text-purple-600 font-semibold cursor-pointer"
+                    className="text-xs text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300 font-semibold cursor-pointer"
                   >
                     {copiedStates['saved-names-all'] ? 'Copied!' : 'Copy All'}
                   </button>
@@ -239,12 +239,12 @@ export default function ChannelNameGeneratorPage() {
                   {savedNames.map((n, idx) => (
                     <div
                       key={idx}
-                      className="bg-white border border-slate-200 rounded-xl px-3.5 py-2 flex items-center gap-2"
+                      className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 flex items-center gap-2"
                     >
-                      <span className="font-medium text-slate-800 text-sm">{n}</span>
+                      <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{n}</span>
                       <button
                         onClick={() => toggleSave(n)}
-                        className="text-red-400 hover:text-red-600 text-xs font-semibold ml-1 cursor-pointer"
+                        className="text-red-400 hover:text-red-600 dark:hover:text-red-300 text-xs font-semibold ml-1 cursor-pointer"
                       >
                         Remove
                       </button>
@@ -259,7 +259,7 @@ export default function ChannelNameGeneratorPage() {
               <h4 className="font-display font-semibold text-purple-400 mb-1 flex items-center gap-1.5">
                 💡 Pro Tip for Choosing Names
               </h4>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 Choose a channel name that is easy to pronounce, spell, and remember. Make sure to check YouTube search and social media channels to ensure the handle/username is available before final decision.
               </p>
             </div>

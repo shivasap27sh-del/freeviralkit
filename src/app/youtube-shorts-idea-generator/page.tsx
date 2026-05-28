@@ -79,7 +79,7 @@ export default function ShortsIdeaGeneratorPage() {
             value={topic}
             onChange={e => setTopic(e.target.value)}
             placeholder="Enter your topic (e.g. daily habits, productivity apps, coding tips, travel secrets...)"
-            className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
+            className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
             onKeyDown={e => e.key === 'Enter' && handleGenerate()}
           />
         </div>
@@ -94,7 +94,7 @@ export default function ShortsIdeaGeneratorPage() {
                 setTopic(ex);
                 handleGenerate(ex);
               }}
-              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-950 hover:bg-slate-200 transition-all cursor-pointer"
+              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer"
             >
               {ex}
             </button>
@@ -132,7 +132,7 @@ export default function ShortsIdeaGeneratorPage() {
               <h2 className="font-display text-xl font-semibold">Your Generated Shorts Concepts</h2>
               <button
                 onClick={() => handleGenerate(undefined, true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5" /> Regenerate
               </button>
@@ -147,7 +147,7 @@ export default function ShortsIdeaGeneratorPage() {
                   transition={{ delay: idx * 0.1 }}
                   className="glass-card rounded-2xl p-6 md:p-8"
                 >
-                  <div className="flex justify-between items-start gap-4 mb-5 pb-4 border-b border-slate-200/50">
+                  <div className="flex justify-between items-start gap-4 mb-5 pb-4 border-b border-slate-200/50 dark:border-slate-800/50">
                     <div>
                       <span className="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-pink-500/15 text-pink-400 border border-pink-500/20">
                         Concept #{idx + 1}
@@ -168,7 +168,7 @@ export default function ShortsIdeaGeneratorPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     {/* Hook */}
-                    <div className="bg-slate-100/50 border border-slate-200/60 rounded-xl p-4">
+                    <div className="bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200/60 dark:border-slate-800/60 rounded-xl p-4">
                       <h4 className="text-xs font-bold uppercase tracking-wider text-pink-400 flex items-center gap-1.5 mb-2">
                         <MessageSquare className="w-3.5 h-3.5" /> Hook (First 3s)
                       </h4>
@@ -178,19 +178,19 @@ export default function ShortsIdeaGeneratorPage() {
                     </div>
 
                     {/* Visuals */}
-                    <div className="bg-slate-100/50 border border-slate-200/60 rounded-xl p-4">
+                    <div className="bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200/60 dark:border-slate-800/60 rounded-xl p-4">
                       <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5 mb-2">
                         <Video className="w-3.5 h-3.5" /> Visuals (B-Roll)
                       </h4>
-                      <p className="text-sm text-slate-600 leading-relaxed">{idea.visuals}</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{idea.visuals}</p>
                     </div>
 
                     {/* Audio */}
-                    <div className="bg-slate-100/50 border border-slate-200/60 rounded-xl p-4">
+                    <div className="bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200/60 dark:border-slate-800/60 rounded-xl p-4">
                       <h4 className="text-xs font-bold uppercase tracking-wider text-green-400 flex items-center gap-1.5 mb-2">
                         <AlignLeft className="w-3.5 h-3.5" /> Audio / Script
                       </h4>
-                      <p className="text-sm text-slate-600 leading-relaxed">{idea.audio}</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{idea.audio}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -202,7 +202,7 @@ export default function ShortsIdeaGeneratorPage() {
               <h4 className="font-display font-semibold text-pink-400 mb-1 flex items-center gap-1.5">
                 ⚡ Shorts Retention Secret
               </h4>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 On YouTube Shorts, retention is everything. Keep visual changes happening every 2-3 seconds, synchronize edits to fast background beats, and leave a micro-pause at the end of the script to create a seamless looping effect that gains extra repeat views.
               </p>
             </div>

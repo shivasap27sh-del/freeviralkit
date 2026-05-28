@@ -95,7 +95,7 @@ export default function TitleGeneratorPage() {
         <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
           Free YouTube <span className="text-gradient">Title Generator</span>
         </h1>
-        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
           Generate 10 viral, SEO-optimized YouTube titles with emojis and hashtags. Powered by AI — crafted for every niche.
         </p>
       </section>
@@ -105,7 +105,7 @@ export default function TitleGeneratorPage() {
         <div className="relative mb-4">
           <input type="text" value={topic} onChange={e => setTopic(e.target.value)}
             placeholder="Enter your video topic (e.g. how to edit videos, fitness routine, gaming tips...)"
-            className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
+            className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
             onKeyDown={e => e.key === 'Enter' && handleGenerate()} />
         </div>
         <button onClick={() => handleGenerate(false)} disabled={!topic.trim() || isGenerating}
@@ -122,7 +122,7 @@ export default function TitleGeneratorPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6 mb-8">
             <div className="flex items-center justify-between">
               <h2 className="font-display text-xl font-semibold">Your Generated Titles</h2>
-              <button onClick={() => handleGenerate(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer">
+              <button onClick={() => handleGenerate(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">
                 <RotateCcw className="w-3.5 h-3.5" /> Regenerate
               </button>
             </div>
@@ -138,7 +138,7 @@ export default function TitleGeneratorPage() {
                     transition={{ delay: idx * 0.04 }}
                     onClick={() => setSelectedIdx(idx)}
                     className={`bg-white dark:bg-slate-900 border dark:border-slate-800 rounded-xl p-4 flex items-start gap-3 group transition-all cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 ${
-                      selectedIdx === idx ? 'border-purple-500 ring-1 ring-purple-500/30 dark:ring-purple-500/40' : 'border-slate-200'
+                      selectedIdx === idx ? 'border-purple-500 ring-1 ring-purple-500/30 dark:ring-purple-500/40' : 'border-slate-200 dark:border-slate-800'
                     }`}
                   >
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold ${
@@ -164,14 +164,14 @@ export default function TitleGeneratorPage() {
                         e.stopPropagation();
                         copy(title, `title-${idx}`);
                       }}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-slate-200 shrink-0 cursor-pointer"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 shrink-0 cursor-pointer"
                     >
-                      {copiedStates[`title-${idx}`] ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-slate-500" />}
+                      {copiedStates[`title-${idx}`] ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-slate-500 dark:text-slate-400" />}
                     </button>
                   </motion.div>
                 ))}
 
-                <button onClick={() => copy(titles.join('\n'), 'all-titles')} className="w-full py-3 rounded-xl bg-slate-100 border border-slate-200 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-all cursor-pointer">
+                <button onClick={() => copy(titles.join('\n'), 'all-titles')} className="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer">
                   {copiedStates['all-titles'] ? '✓ All Titles Copied!' : 'Copy All Titles'}
                 </button>
               </div>
@@ -179,17 +179,17 @@ export default function TitleGeneratorPage() {
               {/* Sidebar with Mockup & SEO Analyzer */}
               <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
                 {/* SEO Score Gauge */}
-                <div className="glass-card rounded-2xl p-6 border border-slate-200/60 shadow-lg">
+                <div className="glass-card rounded-2xl p-6 border border-slate-200/60 dark:border-slate-800/60 shadow-lg">
                   <div className="flex items-center gap-2 mb-4">
                     <Award className="w-5 h-5 text-purple-400" />
-                    <h3 className="font-display font-bold text-slate-800">SEO & CTR Analyzer</h3>
+                    <h3 className="font-display font-bold text-slate-800 dark:text-slate-200">SEO & CTR Analyzer</h3>
                   </div>
 
-                  <div className="flex items-center gap-5 mb-5 pb-4 border-b border-slate-100">
+                  <div className="flex items-center gap-5 mb-5 pb-4 border-b border-slate-100 dark:border-slate-800">
                     {/* Circle Score Gauge */}
                     <div className="relative w-16 h-16 shrink-0 flex items-center justify-center">
                       <svg className="w-full h-full transform -rotate-90">
-                        <circle cx="32" cy="32" r="28" stroke="#f1f5f9" strokeWidth="6" fill="transparent" />
+                        <circle cx="32" cy="32" r="28" stroke="#f1f5f9" strokeWidth="6" fill="transparent" className="dark:stroke-slate-800" />
                         <circle cx="32" cy="32" r="28" stroke="url(#purpleGrad)" strokeWidth="6" fill="transparent"
                           strokeDasharray={175} strokeDashoffset={175 - (175 * score) / 100} strokeLinecap="round" />
                         <defs>
@@ -199,14 +199,14 @@ export default function TitleGeneratorPage() {
                           </linearGradient>
                         </defs>
                       </svg>
-                      <span className="absolute font-mono text-base font-bold text-slate-800">{score}</span>
+                      <span className="absolute font-mono text-base font-bold text-slate-800 dark:text-slate-100">{score}</span>
                     </div>
 
                     <div>
-                      <div className="text-sm font-bold text-slate-800">
+                      <div className="text-sm font-bold text-slate-800 dark:text-slate-100">
                         {score >= 80 ? '🔥 Great Title!' : score >= 65 ? '👍 Good Potential' : '⚠️ Optimize Recommended'}
                       </div>
-                      <p className="text-xs text-slate-500">Based on metrics matching high-CTR search templates.</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Based on metrics matching high-CTR search templates.</p>
                     </div>
                   </div>
 
@@ -222,7 +222,7 @@ export default function TitleGeneratorPage() {
                             ) : (
                               <AlertTriangle className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
                             )}
-                            <span className={check.passed ? 'text-slate-700 font-medium' : 'text-slate-500'}>
+                            <span className={check.passed ? 'text-slate-700 dark:text-slate-300 font-medium' : 'text-slate-500 dark:text-slate-400'}>
                               {check.text}
                             </span>
                           </div>
@@ -287,22 +287,22 @@ export default function TitleGeneratorPage() {
       {/* SEO Content */}
       <section className="mt-12 space-y-8">
         <h2 className="font-display text-2xl font-bold">How to Write the Perfect YouTube Title</h2>
-        <div className="text-slate-600 leading-relaxed space-y-4">
+        <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
           <p>Your YouTube title is the most important ranking factor for your videos. It determines whether viewers click on your video in search results, suggested videos, and their home feed.</p>
-          <p>A great YouTube title should be <strong className="text-slate-900">50-70 characters</strong>, include your primary keyword, use power words that trigger curiosity, and match the search intent of your target audience.</p>
+          <p>A great YouTube title should be <strong className="text-slate-900 dark:text-white">50-70 characters</strong>, include your primary keyword, use power words that trigger curiosity, and match the search intent of your target audience.</p>
           <p>Our AI YouTube title generator analyzes your topic, detects the niche, and creates 10 unique titles using proven formats that real successful creators use — not generic clickbait.</p>
         </div>
         <h3 className="font-display text-xl font-bold">Tips for YouTube Titles That Get Clicks</h3>
         <ul className="space-y-2 text-slate-600">
-          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span>Include your main keyword in the first 50 characters</span></li>
-          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span>Use numbers and specific details (e.g. &quot;in 5 minutes&quot;)</span></li>
-          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span>Add 1-2 relevant emojis to increase CTR by up to 33%</span></li>
-          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span>Append 1-2 hashtags at the end for discoverability</span></li>
-          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span>Avoid misleading clickbait — it hurts watch time</span></li>
+          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Include your main keyword in the first 50 characters</span></li>
+          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Use numbers and specific details (e.g. &quot;in 5 minutes&quot;)</span></li>
+          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Add 1-2 relevant emojis to increase CTR by up to 33%</span></li>
+          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Append 1-2 hashtags at the end for discoverability</span></li>
+          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Avoid misleading clickbait — it hurts watch time</span></li>
         </ul>
 
         <div className="glass-card rounded-2xl p-6 text-center">
-          <p className="text-slate-600 mb-4">Need the full SEO package? Get titles + descriptions + hashtags + tags all at once.</p>
+          <p className="text-slate-600 dark:text-slate-400 mb-4">Need the full SEO package? Get titles + descriptions + hashtags + tags all at once.</p>
           <Link href="/" className="inline-flex items-center gap-2 btn-primary rounded-xl px-6 py-3 font-semibold">
             Try Full SEO Optimizer →
           </Link>
