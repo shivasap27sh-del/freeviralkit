@@ -124,33 +124,35 @@ const faqs = [
   },
 ];
 
-const faqJsonLd = {
+const pageJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
     },
-  })),
-};
-
-const toolJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'YouTube Channel Name Generator for Gaming — FreeViralKit',
-  url: 'https://freeviralkit.com/tools/youtube-channel-name-generator-for-gaming',
-  applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'Web',
-  description:
-    'Free AI-powered channel name generator for gaming YouTube channels. Get unique, brandable name ideas in clan-style, streamer-style, brand-style, and funny formats.',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
-  },
+    {
+      '@type': 'WebApplication',
+      name: 'YouTube Channel Name Generator for Gaming \u2014 FreeViralKit',
+      url: 'https://freeviralkit.com/tools/youtube-channel-name-generator-for-gaming',
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Web',
+      description:
+        'Free AI-powered channel name generator for gaming YouTube channels. Get unique, brandable name ideas in clan-style, streamer-style, brand-style, and funny formats.',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+    },
+  ],
 };
 
 export default function GamingChannelNameLandingPage() {
@@ -158,11 +160,7 @@ export default function GamingChannelNameLandingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
 
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">

@@ -5,8 +5,7 @@ import { getPublishedPosts, getPublishedPostBySlug, getPostBySlug, getAllSlugs }
 import { Calendar, Clock, ArrowLeft, Tag, User } from 'lucide-react';
 import { InContentAd } from '@/components/AdSense';
 
-/** Force dynamic rendering so scheduled posts respect their publish date */
-export const dynamic = 'force-dynamic';
+
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -159,7 +158,7 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
 
       <main className="container mx-auto px-6 py-12 max-w-3xl relative z-10 min-h-screen">

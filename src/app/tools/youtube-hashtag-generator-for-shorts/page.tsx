@@ -121,33 +121,35 @@ const faqs = [
   },
 ];
 
-const faqJsonLd = {
+const pageJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
     },
-  })),
-};
-
-const toolJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'YouTube Shorts Hashtag Generator — FreeViralKit',
-  url: 'https://freeviralkit.com/tools/youtube-hashtag-generator-for-shorts',
-  applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'Web',
-  description:
-    'Free AI-powered hashtag generator specifically designed for YouTube Shorts. Generate trending, viral hashtags to boost Shorts shelf placement and views.',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
-  },
+    {
+      '@type': 'WebApplication',
+      name: 'YouTube Shorts Hashtag Generator — FreeViralKit',
+      url: 'https://freeviralkit.com/tools/youtube-hashtag-generator-for-shorts',
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Web',
+      description:
+        'Free AI-powered hashtag generator specifically designed for YouTube Shorts. Generate trending, viral hashtags to boost Shorts shelf placement and views.',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+    },
+  ],
 };
 
 export default function ShortsHashtagLandingPage() {
@@ -155,11 +157,7 @@ export default function ShortsHashtagLandingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
 
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">

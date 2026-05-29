@@ -123,33 +123,35 @@ const faqs = [
   },
 ];
 
-const faqJsonLd = {
+const pageJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
     },
-  })),
-};
-
-const toolJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'YouTube Title Generator for Fitness — FreeViralKit',
-  url: 'https://freeviralkit.com/tools/youtube-title-generator-for-fitness',
-  applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'Web',
-  description:
-    'Free AI-powered YouTube title generator specifically designed for fitness and health channels. Generate optimized titles for workout routines, transformation videos, nutrition tips, and gym challenges.',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
-  },
+    {
+      '@type': 'WebApplication',
+      name: 'YouTube Title Generator for Fitness \u2014 FreeViralKit',
+      url: 'https://freeviralkit.com/tools/youtube-title-generator-for-fitness',
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Web',
+      description:
+        'Free AI-powered YouTube title generator specifically designed for fitness and health channels. Generate optimized titles for workout routines, transformation videos, nutrition tips, and gym challenges.',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+    },
+  ],
 };
 
 export default function FitnessTitleLandingPage() {
@@ -157,11 +159,7 @@ export default function FitnessTitleLandingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
 
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">

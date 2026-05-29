@@ -142,33 +142,35 @@ const faqs = [
   },
 ];
 
-const faqJsonLd = {
+const pageJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
     },
-  })),
-};
-
-const toolJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'YouTube Description Generator for Education — FreeViralKit',
-  url: 'https://freeviralkit.com/tools/youtube-description-generator-for-education',
-  applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'Web',
-  description:
-    'Free AI-powered YouTube description generator for education channels. Create structured, SEO-optimized descriptions for lectures, tutorials, and exam prep videos.',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
-  },
+    {
+      '@type': 'WebApplication',
+      name: 'YouTube Description Generator for Education — FreeViralKit',
+      url: 'https://freeviralkit.com/tools/youtube-description-generator-for-education',
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Web',
+      description:
+        'Free AI-powered YouTube description generator for education channels. Create structured, SEO-optimized descriptions for lectures, tutorials, and exam prep videos.',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+    },
+  ],
 };
 
 export default function EducationDescriptionLandingPage() {
@@ -176,11 +178,7 @@ export default function EducationDescriptionLandingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
 
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">

@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { getPublishedPosts } from './data';
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
 
-/** Force dynamic rendering so scheduled posts appear on their publish date */
-export const dynamic = 'force-dynamic';
+
 
 export const metadata: Metadata = {
   title: 'YouTube SEO Blog — Tips, Guides & Strategies | FreeViralKit',

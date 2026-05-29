@@ -55,6 +55,11 @@ import { post as youtubeScriptOutlineFormula } from './posts/youtube-script-outl
 import { post as youtubeTopicResearchStrategies } from './posts/youtube-topic-research-strategies';
 import { post as lowCompetitionHighVolumeYoutubeIdeas } from './posts/low-competition-high-volume-youtube-ideas';
 import { post as ultimateYoutubeEquipmentGuide2026 } from './posts/ultimate-youtube-equipment-guide-2026';
+import { post as youtubeSponsorshipsSmallChannels } from './posts/youtube-sponsorships-small-channels';
+import { post as facelessYoutubeChannelGuide } from './posts/faceless-youtube-channel-guide';
+import { post as youtubeCommunityTabStrategy } from './posts/youtube-community-tab-strategy';
+import { post as recoverDyingYoutubeChannel } from './posts/recover-dying-youtube-channel';
+import { post as youtubeAudioOptimization } from './posts/youtube-audio-optimization';
 
 const rawBlogPosts: BlogPost[] = [
   youtubeSeoGuide,
@@ -101,6 +106,11 @@ const rawBlogPosts: BlogPost[] = [
   youtubeTopicResearchStrategies,
   lowCompetitionHighVolumeYoutubeIdeas,
   ultimateYoutubeEquipmentGuide2026,
+  youtubeSponsorshipsSmallChannels,
+  facelessYoutubeChannelGuide,
+  youtubeCommunityTabStrategy,
+  recoverDyingYoutubeChannel,
+  youtubeAudioOptimization,
 ];
 
 const getTodayStr = () => {
