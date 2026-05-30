@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Title Generator for Music | FreeViralKit',
+  title: 'YouTube Title Generator for Music',
   description:
     'Free AI-powered YouTube title generator for music channels. Create viral titles for song covers, music production tutorials, beat making, album reviews, and music videos. Boost views instantly.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-music'),
   },
   openGraph: {
-    title: 'YouTube Title Generator for Music | FreeViralKit',
+    title: 'YouTube Title Generator for Music',
     description:
       'Generate music YouTube titles that improve CTR and discoverability. Free AI tool for musicians and music creators.',
     type: 'website',

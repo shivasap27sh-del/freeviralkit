@@ -113,13 +113,53 @@ export default function Home() {
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 mb-6 uppercase tracking-wider">
           <span className="pulse-dot" /> YouTube SEO Optimizer
         </div>
-        <h1 className="font-display text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-          Supercharge Your <br /><span className="text-gradient">YouTube Growth</span>
+        <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
+          Get Your Full YouTube <br /><span className="text-gradient">SEO Package in 10 Seconds</span> — Free
         </h1>
-        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-8">
           Enter your video topic — get 10 SEO-optimized titles with emojis &amp; hashtags.
           Pick one to unlock description, hashtags &amp; tags.
         </p>
+        
+        {/* Social Proof */}
+        <div className="flex flex-col items-center gap-3 mb-10">
+          <div className="flex -space-x-2">
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className={`w-8 h-8 rounded-full border-2 border-white dark:border-slate-950 bg-gradient-to-br ${
+                ['from-purple-500 to-indigo-500', 'from-pink-500 to-rose-500', 'from-cyan-500 to-blue-500', 'from-amber-500 to-orange-500', 'from-emerald-500 to-teal-500'][i]
+              } flex items-center justify-center text-[10px] font-bold text-white shadow-sm`}>
+                {['M', 'A', 'J', 'S', 'R'][i]}
+              </div>
+            ))}
+          </div>
+          <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
+            Trusted by <strong className="text-slate-900 dark:text-white">10,000+</strong> creators to generate viral titles
+          </div>
+        </div>
+
+        {/* Demo GIF Placeholder */}
+        <div className="relative max-w-3xl mx-auto rounded-2xl overflow-hidden border border-slate-200/60 dark:border-slate-700/60 shadow-2xl shadow-purple-500/10 mb-8">
+          <div className="absolute top-0 left-0 w-full h-8 bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 flex items-center px-4 gap-1.5">
+            <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/demo.gif" 
+            alt="FreeViralKit Demo - Generating YouTube Titles" 
+            className="w-full mt-8 bg-white dark:bg-slate-900"
+            onError={(e) => {
+              // Placeholder styling if demo.gif doesn't exist yet
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling?.classList.remove('hidden');
+            }}
+          />
+          <div className="hidden mt-8 w-full aspect-video bg-slate-50 dark:bg-slate-900 flex flex-col items-center justify-center text-slate-400 text-sm">
+            <Video className="w-10 h-10 mb-3 opacity-20" />
+            Upload <code>public/demo.gif</code> to replace this placeholder.
+          </div>
+        </div>
       </section>
 
       {/* Step 1 */}
@@ -428,7 +468,7 @@ export default function Home() {
           Why Choose <span className="text-gradient">FreeViralKit</span>?
         </h2>
         <p className="text-slate-500 text-center mb-10 max-w-2xl mx-auto">
-          The complete YouTube SEO toolkit trusted by creators worldwide.
+          Built for YouTubers who don&apos;t want to pay for SEO tools.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="glass-card rounded-2xl p-6">

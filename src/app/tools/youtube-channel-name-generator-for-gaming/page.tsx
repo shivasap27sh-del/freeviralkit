@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Channel Name Generator for Gaming | FreeViralKit',
+  title: 'YouTube Channel Name Generator for Gaming',
   description:
     'Free AI-powered gaming channel name generator. Get unique, brandable name ideas for your gaming YouTube channel — clan-style, streamer names, funny gamer tags, and more.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-channel-name-generator-for-gaming'),
   },
   openGraph: {
-    title: 'YouTube Channel Name Generator for Gaming | FreeViralKit',
+    title: 'YouTube Channel Name Generator for Gaming',
     description:
       'Generate unique gaming YouTube channel names instantly. Clan-style, streamer, brand, and funny name ideas — all free.',
     type: 'website',

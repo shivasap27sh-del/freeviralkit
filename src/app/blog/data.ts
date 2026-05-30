@@ -60,6 +60,7 @@ import { post as facelessYoutubeChannelGuide } from './posts/faceless-youtube-ch
 import { post as youtubeCommunityTabStrategy } from './posts/youtube-community-tab-strategy';
 import { post as recoverDyingYoutubeChannel } from './posts/recover-dying-youtube-channel';
 import { post as youtubeAudioOptimization } from './posts/youtube-audio-optimization';
+import { post as youtubeTagGeneratorFree } from './posts/youtube-tag-generator-free';
 
 const rawBlogPosts: BlogPost[] = [
   youtubeSeoGuide,
@@ -111,6 +112,7 @@ const rawBlogPosts: BlogPost[] = [
   youtubeCommunityTabStrategy,
   recoverDyingYoutubeChannel,
   youtubeAudioOptimization,
+  youtubeTagGeneratorFree,
 ];
 
 const getTodayStr = () => {

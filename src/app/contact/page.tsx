@@ -45,13 +45,11 @@ export default function ContactPage() {
         </div>
 
         <form
-          action="https://formsubmit.co/shivasap27sh@gmail.com"
-          method="POST"
+          action="mailto:shivasap27sh@gmail.com"
+          method="GET"
           className="space-y-5"
         >
-          {/* Anti-spam */}
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value={buildAbsoluteUrl('/contact')} />
+          {/* Anti-spam (not needed for mailto, but kept for structure) */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
@@ -94,7 +92,7 @@ export default function ContactPage() {
             <label htmlFor="message" className="block text-sm font-medium text-slate-600 mb-2">Message</label>
             <textarea
               id="message"
-              name="message"
+              name="body"
               required
               rows={5}
               className="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-gray-600 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none"

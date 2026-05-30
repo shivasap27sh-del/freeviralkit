@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Description Generator for Tech Videos | FreeViralKit',
+  title: 'YouTube Description Generator for Tech Videos',
   description:
     'Free AI-powered YouTube description generator for tech channels. Create SEO-optimized descriptions for product reviews, unboxings, comparisons, tutorials, and tech news videos.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-description-generator-for-tech'),
   },
   openGraph: {
-    title: 'YouTube Description Generator for Tech Videos | FreeViralKit',
+    title: 'YouTube Description Generator for Tech Videos',
     description:
       'Generate structured, SEO-friendly descriptions for tech YouTube videos. Cover specs, timestamps, affiliate links, and CTAs — all free.',
     type: 'website',

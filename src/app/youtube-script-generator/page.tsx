@@ -57,6 +57,17 @@ export default function ScriptGeneratorPage() {
     copy(full, 'full-outline');
   };
 
+  const renderFormattedText = (text: string) => {
+    if (!text) return null;
+    const parts = text.split(/\*\*(.*?)\*\*/g);
+    return parts.map((part, index) => {
+      if (index % 2 === 1) {
+        return <strong key={index} className="font-bold text-slate-900 dark:text-white">{part}</strong>;
+      }
+      return part;
+    });
+  };
+
   const examples = [
     'How to Edit Videos 10x Faster',
     'iPhone 16 Pro Max First 48 Hours Review',
@@ -208,7 +219,7 @@ export default function ScriptGeneratorPage() {
                   <MessageSquare className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Spoken Script (Hook)</h4>
-                    <p className="text-sm font-bold text-slate-800 italic leading-relaxed">&ldquo;{outline.hook}&rdquo;</p>
+                    <p className="text-sm font-bold text-slate-800 italic leading-relaxed">&ldquo;{renderFormattedText(outline.hook)}&rdquo;</p>
                   </div>
                 </div>
               </div>
@@ -232,8 +243,8 @@ export default function ScriptGeneratorPage() {
                           {copiedStates[`body-${idx}`] ? 'Copied!' : 'Copy'}
                         </button>
                       </div>
-                      <p className="text-sm text-slate-600 leading-relaxed bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl p-4">
-                        {item}
+                      <p className="text-sm text-slate-600 leading-relaxed bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl p-4 whitespace-pre-wrap">
+                        {renderFormattedText(item)}
                       </p>
                     </div>
                   ))}
@@ -254,7 +265,7 @@ export default function ScriptGeneratorPage() {
                       </button>
                     </div>
                     <p className="text-sm text-slate-600 leading-relaxed italic bg-slate-50 border border-slate-100 rounded-xl p-4">
-                      &ldquo;{outline.cta}&rdquo;
+                      &ldquo;{renderFormattedText(outline.cta)}&rdquo;
                     </p>
                   </div>
                 </div>
@@ -271,7 +282,7 @@ export default function ScriptGeneratorPage() {
                       </button>
                     </div>
                     <p className="text-sm text-slate-600 leading-relaxed italic bg-slate-50 border border-slate-100 rounded-xl p-4">
-                      &ldquo;{outline.outro}&rdquo;
+                      &ldquo;{renderFormattedText(outline.outro)}&rdquo;
                     </p>
                   </div>
                 </div>

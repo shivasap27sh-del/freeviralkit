@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   return {
-    title: `${post.title} | FreeViralKit Blog`,
+    title: `${post.title} Blog`,
     description: post.description,
     keywords: post.tags.join(', '),
     openGraph: {
@@ -31,11 +31,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.date,
       url: `https://freeviralkit.com/blog/${post.slug}`,
       tags: post.tags,
+      images: [
+        {
+          url: `https://og.tailgraph.com/og?fontFamily=Inter&title=${encodeURIComponent(post.title)}&text=${encodeURIComponent(post.description.substring(0, 120) + '...')}&bg=1e293b&titleColor=ffffff&textColor=cbd5e1`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
+      images: [`https://og.tailgraph.com/og?fontFamily=Inter&title=${encodeURIComponent(post.title)}&text=${encodeURIComponent(post.description.substring(0, 120) + '...')}&bg=1e293b&titleColor=ffffff&textColor=cbd5e1`],
     },
     alternates: {
       canonical: `https://freeviralkit.com/blog/${post.slug}`,

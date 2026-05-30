@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Tags Generator — AI-Powered | FreeViralKit',
-  description: 'Generate 20-25 SEO-optimized YouTube tags for any video topic. Free AI tag generator with character count tracking. Boost discoverability instantly.',
+  title: 'Free YouTube Tags Generator — AI-Powered',
+  description: 'Free YouTube tag generator — get 20+ SEO-optimized tags under 500 characters instantly. No signup required. 100% free forever. Trusted by creators worldwide.',
   keywords: ['youtube tags generator', 'youtube tag generator', 'free youtube tags', 'video tags', 'youtube seo tags'],
   openGraph: {
-    title: 'Free YouTube Tags Generator — AI-Powered | FreeViralKit',
-    description: 'Generate optimized YouTube tags with AI. Free, instant, under 500 characters.',
+    title: 'Free YouTube Tags Generator — AI-Powered',
+    description: 'Free YouTube tag generator — get 20+ SEO-optimized tags under 500 characters instantly. No signup required. 100% free forever. Trusted by creators worldwide.',
     url: buildAbsoluteUrl('/youtube-tags-generator'),
     type: 'website',
   },

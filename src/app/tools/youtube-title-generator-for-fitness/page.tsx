@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Title Generator for Fitness | FreeViralKit',
+  title: 'YouTube Title Generator for Fitness',
   description:
     'Free AI-powered YouTube title generator for fitness and health channels. Create viral titles for workout routines, transformation videos, nutrition tips, and gym challenges. Boost CTR and views instantly.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-fitness'),
   },
   openGraph: {
-    title: 'YouTube Title Generator for Fitness | FreeViralKit',
+    title: 'YouTube Title Generator for Fitness',
     description:
       'Generate fitness YouTube titles that improve CTR and discoverability. Free AI tool for fitness creators and personal trainers.',
     type: 'website',

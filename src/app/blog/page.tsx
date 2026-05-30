@@ -6,10 +6,10 @@ import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
 
 
 export const metadata: Metadata = {
-  title: 'YouTube SEO Blog — Tips, Guides & Strategies | FreeViralKit',
+  title: 'YouTube SEO Blog — Tips, Guides & Strategies',
   description: 'Expert YouTube SEO tips, guides, and strategies to grow your channel. Learn about tags, hashtags, descriptions, titles, and more.',
   openGraph: {
-    title: 'YouTube SEO Blog — Tips, Guides & Strategies | FreeViralKit',
+    title: 'YouTube SEO Blog — Tips, Guides & Strategies',
     description: 'Expert YouTube SEO tips and strategies to grow your channel faster.',
     type: 'website',
     url: 'https://freeviralkit.com/blog',

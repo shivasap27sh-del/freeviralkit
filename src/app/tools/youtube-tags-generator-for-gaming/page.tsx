@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Tags Generator for Gaming | FreeViralKit',
+  title: 'YouTube Tags Generator for Gaming',
   description:
     'Free AI-powered YouTube tags generator for gaming videos. Generate optimized tags for FPS, RPG, mobile gaming, streaming, Minecraft, GTA, Fortnite, and more. Boost discoverability instantly.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-tags-generator-for-gaming'),
   },
   openGraph: {
-    title: 'YouTube Tags Generator for Gaming | FreeViralKit',
+    title: 'YouTube Tags Generator for Gaming',
     description:
       'Generate gaming-specific YouTube tags that improve search rankings and discoverability. Free AI tool for gaming creators.',
     type: 'website',

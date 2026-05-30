@@ -47,10 +47,10 @@ export default function TagsGeneratorPage() {
           <Tag className="w-4 h-4" /> AI Tag Generator
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-          Free YouTube <span className="text-gradient">Tags Generator</span>
+          Free YouTube Tag Generator — <span className="text-gradient">Get 20+ SEO Tags Instantly</span>
         </h1>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-          Generate 20-25 SEO-optimized tags mixing exact match, broad, and long-tail keywords. Stays under YouTube&apos;s 500 character limit.
+          The best free YouTube tag generator powered by AI. Enter your video topic and instantly get 20-25 highly relevant, SEO-optimized tags formatted perfectly for YouTube Studio. No account needed, completely free.
         </p>
       </section>
 
@@ -140,8 +140,8 @@ export default function TagsGeneratorPage() {
       <section className="mt-12 space-y-8">
         <h2 className="font-display text-2xl font-bold">Why YouTube Tags Still Matter</h2>
         <div className="text-slate-600 leading-relaxed space-y-4">
-          <p>While YouTube has said tags are a minor ranking factor, they still play a key role in <strong className="text-slate-900">helping the algorithm categorize your content</strong> and serving it to the right audience through related/suggested videos.</p>
-          <p>Tags also help you rank for misspelled search queries and appear in YouTube&apos;s &quot;related videos&quot; sidebar — which accounts for a massive portion of views on the platform.</p>
+          <p>If you&apos;re looking for a <strong>youtube tag generator free</strong> of charge, you already know that tags matter. While YouTube has said tags are a minor ranking factor, they still play a key role in <strong className="text-slate-900">helping the algorithm categorize your content</strong> and serving it to the right audience through related/suggested videos.</p>
+          <p>Our <strong>free tag generator for youtube</strong> ensures you use the right keywords. Tags help you rank for misspelled search queries and appear in YouTube&apos;s &quot;related videos&quot; sidebar — which accounts for a massive portion of views on the platform. Using a dedicated <strong>youtube tags generator</strong> is the fastest way to get them.</p>
         </div>
         <h3 className="font-display text-xl font-bold">Tag Strategy Tips</h3>
         <ul className="space-y-2 text-slate-600">

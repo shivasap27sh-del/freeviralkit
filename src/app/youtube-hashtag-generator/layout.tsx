@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Hashtag Generator — AI-Powered | FreeViralKit',
-  description: 'Generate trending YouTube hashtags ranked by traffic. Free AI hashtag generator for gaming, tech, cooking, vlogs and every niche. First 3 show above your title.',
+  title: 'Free YouTube Hashtag Generator — AI-Powered',
+  description: 'Free YouTube hashtag generator — find trending hashtags for any niche in seconds. The first 3 appear above your video title. No signup, 100% free forever.',
   keywords: ['youtube hashtag generator', 'youtube hashtags', 'trending hashtags youtube', 'free hashtag generator', 'video hashtags'],
   openGraph: {
-    title: 'Free YouTube Hashtag Generator — AI-Powered | FreeViralKit',
-    description: 'Generate trending YouTube hashtags ranked by traffic potential. Free and instant.',
+    title: 'Free YouTube Hashtag Generator — AI-Powered',
+    description: 'Free YouTube hashtag generator — find trending hashtags for any niche in seconds. The first 3 appear above your video title. No signup, 100% free forever.',
     url: buildAbsoluteUrl('/youtube-hashtag-generator'),
     type: 'website',
   },

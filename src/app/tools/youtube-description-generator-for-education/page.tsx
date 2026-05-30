@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Description Generator for Education | FreeViralKit',
+  title: 'YouTube Description Generator for Education',
   description:
     'Free AI-powered YouTube description generator for education channels. Create structured, keyword-rich descriptions for lectures, tutorials, exam prep, and online courses. Boost SEO and student engagement.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-description-generator-for-education'),
   },
   openGraph: {
-    title: 'YouTube Description Generator for Education | FreeViralKit',
+    title: 'YouTube Description Generator for Education',
     description:
       'Create education-focused YouTube descriptions that rank in search. Free AI tool for educators and online course creators.',
     type: 'website',

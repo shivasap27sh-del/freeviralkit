@@ -23,14 +23,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Free YouTube SEO Tools & Niche Generators | FreeViralKit',
+  title: 'Free YouTube SEO Tools & Niche Generators',
   description:
     'Boost your channel growth with our free suite of YouTube SEO tools. Generate viral titles, trending hashtags, search-optimized tags, descriptions, channel names, and more.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools'),
   },
   openGraph: {
-    title: 'Free YouTube SEO Tools & Niche Generators | FreeViralKit',
+    title: 'Free YouTube SEO Tools & Niche Generators',
     description:
       'Explore our full suite of free YouTube SEO generators and niche-specific tools to optimize your videos and rank #1.',
     type: 'website',

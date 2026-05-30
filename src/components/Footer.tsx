@@ -82,7 +82,7 @@ export default function Footer() {
               💡 Algorithm Tips
             </h3>
             <p className="text-xs text-slate-500 mb-4 leading-relaxed">
-              Get weekly YouTube growth hacks, monetization guides, and video SEO strategies directly to your inbox.
+              Get weekly YouTube tips.
             </p>
             <form
               onSubmit={(e) => {

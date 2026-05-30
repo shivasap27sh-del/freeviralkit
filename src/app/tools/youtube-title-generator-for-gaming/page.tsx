@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Title Generator for Gaming | FreeViralKit',
+  title: 'YouTube Title Generator for Gaming',
   description:
     'Free AI-powered YouTube title generator for gaming channels. Create click-worthy titles for gameplay walkthroughs, reviews, Minecraft, GTA, Fortnite, and challenge videos. Boost CTR and views instantly.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-gaming'),
   },
   openGraph: {
-    title: 'YouTube Title Generator for Gaming | FreeViralKit',
+    title: 'YouTube Title Generator for Gaming',
     description:
       'Generate gaming YouTube titles that improve CTR and discoverability. Free AI tool for gaming creators.',
     type: 'website',

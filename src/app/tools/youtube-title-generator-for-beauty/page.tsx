@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Title Generator for Beauty & Makeup | FreeViralKit',
+  title: 'YouTube Title Generator for Beauty & Makeup',
   description:
     'Free AI-powered YouTube title generator for beauty and makeup channels. Create viral titles for GRWM, skincare routines, product reviews, makeup tutorials, and transformation videos.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-beauty'),
   },
   openGraph: {
-    title: 'YouTube Title Generator for Beauty & Makeup | FreeViralKit',
+    title: 'YouTube Title Generator for Beauty & Makeup',
     description:
       'Generate beauty YouTube titles that get clicks and views. GRWM, tutorials, reviews, skincare, and transformations — optimized by AI.',
     type: 'website',

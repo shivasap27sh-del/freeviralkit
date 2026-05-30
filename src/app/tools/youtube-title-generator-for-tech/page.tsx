@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Title Generator for Tech | FreeViralKit',
+  title: 'YouTube Title Generator for Tech',
   description:
     'Free AI-powered YouTube title generator for tech channels. Create click-worthy titles for product reviews, unboxing videos, tech comparisons, and how-to tutorials. Boost CTR and views instantly.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-tech'),
   },
   openGraph: {
-    title: 'YouTube Title Generator for Tech | FreeViralKit',
+    title: 'YouTube Title Generator for Tech',
     description:
       'Generate tech YouTube titles that improve CTR and discoverability. Free AI tool for tech reviewers and creators.',
     type: 'website',

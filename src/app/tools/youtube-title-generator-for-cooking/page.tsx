@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'YouTube Title Generator for Cooking | FreeViralKit',
+  title: 'YouTube Title Generator for Cooking',
   description:
     'Free AI-powered YouTube title generator for cooking and recipe channels. Create click-worthy titles for recipe videos, ASMR cooking, mukbang, meal prep, and food challenges. Boost CTR instantly.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-cooking'),
   },
   openGraph: {
-    title: 'YouTube Title Generator for Cooking | FreeViralKit',
+    title: 'YouTube Title Generator for Cooking',
     description:
       'Generate cooking YouTube titles that improve CTR and discoverability. Free AI tool for food creators.',
     type: 'website',

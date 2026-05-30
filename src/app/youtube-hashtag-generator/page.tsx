@@ -46,10 +46,10 @@ export default function HashtagGeneratorPage() {
           <Hash className="w-4 h-4" /> AI Hashtag Generator
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-          Free YouTube <span className="text-gradient">Hashtag Generator</span>
+          Free YouTube Hashtag Generator — <span className="text-gradient">Trending Hashtags Instantly</span>
         </h1>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-          Generate trending, niche-specific YouTube hashtags ranked by traffic potential. The first 3 appear above your video title.
+          Generate trending YouTube hashtags instantly with our free AI hashtag generator. Enter your video topic and get 15+ niche-specific hashtags ranked by traffic potential — completely free, no account required.
         </p>
       </section>
 
@@ -133,8 +133,8 @@ export default function HashtagGeneratorPage() {
       <section className="mt-12 space-y-8">
         <h2 className="font-display text-2xl font-bold">How YouTube Hashtags Work</h2>
         <div className="text-slate-600 leading-relaxed space-y-4">
-          <p>YouTube hashtags are clickable tags that help categorize your video and boost discoverability. When you add hashtags to your description, the <strong className="text-slate-900">first 3 hashtags appear as clickable links above your video title</strong> — prime real estate.</p>
-          <p>Using the right mix of high-traffic broad hashtags and niche-specific ones can significantly increase your video&apos;s reach in search and suggested videos.</p>
+          <p>Using a <strong>youtube hashtag generator free</strong> of charge is the best way to get the <strong>best hashtags for youtube</strong>. YouTube hashtags are clickable tags that help categorize your video and boost discoverability. When you add hashtags to your description, the <strong className="text-slate-900">first 3 hashtags appear as clickable links above your video title</strong> — prime real estate.</p>
+          <p>Using the right mix of high-traffic broad hashtags and niche-specific ones from a <strong>youtube hashtags generator</strong> can significantly increase your video&apos;s reach in search and suggested videos.</p>
         </div>
         <h3 className="font-display text-xl font-bold">Hashtag Best Practices</h3>
         <ul className="space-y-2 text-slate-600">
