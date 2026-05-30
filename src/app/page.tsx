@@ -137,29 +137,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Demo GIF Placeholder */}
-        <div className="relative max-w-3xl mx-auto rounded-2xl overflow-hidden border border-slate-200/60 dark:border-slate-700/60 shadow-2xl shadow-purple-500/10 mb-8">
-          <div className="absolute top-0 left-0 w-full h-8 bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 flex items-center px-4 gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-            <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-            <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-          </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/demo.gif" 
-            alt="FreeViralKit Demo - Generating YouTube Titles" 
-            className="w-full mt-8 bg-white dark:bg-slate-900"
-            onError={(e) => {
-              // Placeholder styling if demo.gif doesn't exist yet
-              e.currentTarget.style.display = 'none';
-              e.currentTarget.nextElementSibling?.classList.remove('hidden');
-            }}
-          />
-          <div className="hidden mt-8 w-full aspect-video bg-slate-50 dark:bg-slate-900 flex flex-col items-center justify-center text-slate-400 text-sm">
-            <Video className="w-10 h-10 mb-3 opacity-20" />
-            Upload <code>public/demo.gif</code> to replace this placeholder.
-          </div>
-        </div>
+
       </section>
 
       {/* Step 1 */}
