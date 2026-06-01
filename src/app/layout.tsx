@@ -149,6 +149,16 @@ export default function RootLayout({
           }}
         />
         <AdSenseScript />
+
+        {/* Yandex.RTB Ad Loader */}
+        <Script id="yandex-rtb-init" strategy="afterInteractive">
+          {`window.yaContextCb=window.yaContextCb||[]`}
+        </Script>
+        <Script 
+          src="https://yandex.ru/ads/system/context.js" 
+          strategy="afterInteractive" 
+          async 
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}

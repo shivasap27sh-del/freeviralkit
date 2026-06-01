@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { InContentAd } from '@/components/AdSense';
+import { YandexAdUnit } from '@/components/YandexAdUnit';
 import { adSlots } from '@/lib/ad-slots';
 
 type Details = { description: string; hashtags: string[]; tags: string[]; pinnedComment: string };
@@ -250,7 +251,12 @@ export default function Home() {
       </AnimatePresence>
 
       {/* In-content Ad between titles and SEO package */}
-      {titles.length > 0 && <InContentAd slot={adSlots.homeMid} />}
+      {titles.length > 0 && (
+        <>
+          <InContentAd slot={adSlots.homeMid} />
+          <YandexAdUnit blockId="R-A-19368329-1" />
+        </>
+      )}
 
       {/* Step 3: SEO Package — All Stacked */}
       <AnimatePresence>
