@@ -27,6 +27,10 @@ If you are camera-shy, introverted, or simply want to build a scalable media ass
 
 ---
 
+![Microphone and editing software on a dark desk representing a faceless creator setup](https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=800&auto=format&fit=crop)
+
+---
+
 ## Why Faceless Channels Are the Ultimate Passive Income
 
 Before we dive into the ideas, let's talk about *why* faceless channels (also known as "Cash Cow" channels) are the secret weapon of the creator economy.
