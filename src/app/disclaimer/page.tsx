@@ -48,7 +48,23 @@ export default function DisclaimerPage() {
           best choice for you.
         </p>
 
-        <h2 className="font-display text-2xl font-bold mt-8 mb-4 text-slate-900 dark:text-white">4. External Links Disclaimer</h2>
+        <h2 className="font-display text-2xl font-bold mt-8 mb-4 text-slate-900 dark:text-white">4. AI-Generated Content Disclaimer</h2>
+        <p>
+          Some of the tools, outputs, suggestions, and blog posts on FreeViralKit may be generated, assisted, or optimized using artificial intelligence (AI) technologies. 
+          While we strive for high-quality and accurate outputs, AI-generated content can occasionally produce incorrect, outdated, or irrelevant information. 
+          You agree to review and verify any AI-generated metadata (titles, descriptions, tags, etc.) before publishing it on your YouTube channel. 
+          We accept no liability for any negative impact on your channel resulting from the use of AI-generated content.
+        </p>
+
+        <h2 className="font-display text-2xl font-bold mt-8 mb-4 text-slate-900 dark:text-white">5. No Professional Advice</h2>
+        <p>
+          The information contained on this Site does not constitute professional advice (including, but not limited to, legal, financial, or tax advice). 
+          The content is provided for informational and educational purposes only. You should not rely solely on our guides or tools to make important 
+          business or financial decisions regarding your YouTube channel. Always consult with a certified professional in the relevant field before making 
+          decisions that could have legal or financial consequences.
+        </p>
+
+        <h2 className="font-display text-2xl font-bold mt-8 mb-4 text-slate-900 dark:text-white">6. External Links Disclaimer</h2>
         <p>
           The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from 
           third parties. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, 
@@ -56,7 +72,7 @@ export default function DisclaimerPage() {
           reliability of any information offered by third-party websites linked through the site.
         </p>
 
-        <h2 className="font-display text-2xl font-bold mt-8 mb-4 text-slate-900 dark:text-white">5. Contact Us</h2>
+        <h2 className="font-display text-2xl font-bold mt-8 mb-4 text-slate-900 dark:text-white">7. Contact Us</h2>
         <p>
           If you have any questions about this Disclaimer, please <Link href="/contact" className="text-purple-500 hover:text-purple-600 underline">contact us</Link>.
         </p>
