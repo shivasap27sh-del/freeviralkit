@@ -1,31 +1,56 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getPublishedPosts } from './data';
+import { notFound } from 'next/navigation';
+import { getPublishedPosts } from '../../data';
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
 import Pagination from '@/components/Pagination';
 
 const POSTS_PER_PAGE = 10;
 
-
-
-export const metadata: Metadata = {
-  title: 'YouTube SEO Blog — Tips, Guides & Strategies',
-  description: 'Expert YouTube SEO tips, guides, and strategies to grow your channel. Learn about tags, hashtags, descriptions, titles, and more.',
-  openGraph: {
-    title: 'YouTube SEO Blog — Tips, Guides & Strategies',
-    description: 'Expert YouTube SEO tips and strategies to grow your channel faster.',
-    type: 'website',
-    url: 'https://freeviralkit.com/blog',
-  },
-  alternates: {
-    canonical: 'https://freeviralkit.com/blog',
-  },
+type Props = {
+  params: Promise<{ page: string }>;
 };
 
-export default function BlogPage() {
+export async function generateStaticParams() {
   const publishedPosts = getPublishedPosts();
   const totalPages = Math.ceil(publishedPosts.length / POSTS_PER_PAGE);
-  const currentPosts = publishedPosts.slice(0, POSTS_PER_PAGE);
+  
+  // We only generate params for page 2 and onwards, since page 1 is the main /blog route
+  const params = [];
+  for (let i = 2; i <= totalPages; i++) {
+    params.push({ page: i.toString() });
+  }
+  return params;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { page } = await params;
+  return {
+    title: `Blog Page ${page} — FreeViralKit`,
+    description: `Read page ${page} of our YouTube SEO and growth guides.`,
+    alternates: {
+      canonical: `https://freeviralkit.com/blog/page/${page}`,
+    },
+  };
+}
+
+export default async function BlogPaginationPage({ params }: Props) {
+  const { page } = await params;
+  const currentPage = parseInt(page, 10);
+
+  if (isNaN(currentPage) || currentPage < 2) {
+    notFound();
+  }
+
+  const publishedPosts = getPublishedPosts();
+  const totalPages = Math.ceil(publishedPosts.length / POSTS_PER_PAGE);
+
+  if (currentPage > totalPages) {
+    notFound();
+  }
+
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const currentPosts = publishedPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   return (
     <main className="container mx-auto px-6 py-12 max-w-6xl relative z-10 min-h-screen">
@@ -38,7 +63,7 @@ export default function BlogPage() {
           YouTube SEO <span className="text-gradient">Tips & Guides</span>
         </h1>
         <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-          Expert strategies, tutorials, and insights to help you rank higher on YouTube and grow your channel faster.
+          Expert strategies, tutorials, and insights to help you rank higher on YouTube and grow your channel faster. Page {currentPage}.
         </p>
       </section>
 
@@ -86,7 +111,7 @@ export default function BlogPage() {
       </div>
 
       <Pagination
-        currentPage={1}
+        currentPage={currentPage}
         totalPages={totalPages}
         basePath="/blog"
       />
