@@ -231,6 +231,21 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
 
+        {/* Author Bio */}
+        <div className="mt-12 p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+          <div className="w-20 h-20 shrink-0 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white font-display font-bold text-2xl shadow-lg">
+            S
+          </div>
+          <div>
+            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-2 text-center sm:text-left">
+              Shiva
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed text-center sm:text-left">
+              Shiva is a YouTube growth expert and the creator of FreeViralKit. With years of experience decoding the YouTube algorithm, Shiva builds free AI tools to help creators optimize their metadata, rank higher in search results, and turn their passion into a full-time career.
+            </p>
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="mt-12 glass-card rounded-2xl p-8 text-center">
           <h3 className="font-display text-2xl font-bold mb-3">

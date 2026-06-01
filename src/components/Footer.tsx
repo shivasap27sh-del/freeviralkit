@@ -123,6 +123,9 @@ export default function Footer() {
               <Link href="/terms" className="hover:text-purple-400 transition-colors">
                 Terms of Service
               </Link>
+              <Link href="/disclaimer" className="hover:text-purple-400 transition-colors">
+                Disclaimer
+              </Link>
             </div>
           </div>
           <p className="text-gray-600 dark:text-gray-500 text-xs text-center md:text-right">
