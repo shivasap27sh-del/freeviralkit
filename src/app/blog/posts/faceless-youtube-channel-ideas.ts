@@ -7,6 +7,7 @@ export const post: BlogPost = {
   date: new Date().toISOString(),
   readTime: "8 min read",
   category: "Monetization",
+  tags: ["Faceless Channel", "YouTube Monetization", "Content Ideas"],
   content: `
 ## The Day I Realized I Didn't Need a Ring Light
 
