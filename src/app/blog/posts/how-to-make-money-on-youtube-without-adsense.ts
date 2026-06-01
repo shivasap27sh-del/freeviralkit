@@ -27,6 +27,10 @@ If you have less than 1,000 subscribers, or if you are tired of relying on fract
 
 ---
 
+![Creator workspace with laptop, camera, and coffee on a desk](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop)
+
+---
+
 ## 1. Affiliate Marketing (The Easiest Starting Point)
 
 Affiliate marketing is the absolute best way for a channel with 0 subscribers to make money on day one. 

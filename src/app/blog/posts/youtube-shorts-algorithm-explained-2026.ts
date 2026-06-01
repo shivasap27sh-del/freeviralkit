@@ -27,6 +27,10 @@ Here is the exact breakdown of the YouTube Shorts algorithm, and how to finally 
 
 ---
 
+![Person scrolling through vertical videos on a smartphone](https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop)
+
+---
+
 ## The Two Algorithms of YouTube
 
 The first thing you must understand is that YouTube does not have *one* algorithm. It has several distinct recommendation engines. 

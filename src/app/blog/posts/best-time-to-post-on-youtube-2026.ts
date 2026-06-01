@@ -27,6 +27,10 @@ Here is the exact, data-driven strategy for deciding when to post on YouTube in 
 
 ---
 
+![Close up of a smart watch face showing the time](https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800&auto=format&fit=crop)
+
+---
+
 ## Why Posting Time Still Matters in 2026
 
 Many "YouTube Gurus" claim that posting time doesn't matter because "good content always wins eventually." This is a half-truth.
