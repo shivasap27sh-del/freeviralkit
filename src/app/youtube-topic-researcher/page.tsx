@@ -1,5 +1,7 @@
 'use client';
 
+import type { Metadata } from 'next';
+
 import { useState } from 'react';
 import { researchTopic } from '../actions';
 import { motion, AnimatePresence } from 'framer-motion';

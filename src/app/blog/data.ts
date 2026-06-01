@@ -61,8 +61,9 @@ import { post as youtubeCommunityTabStrategy } from './posts/youtube-community-t
 import { post as recoverDyingYoutubeChannel } from './posts/recover-dying-youtube-channel';
 import { post as youtubeAudioOptimization } from './posts/youtube-audio-optimization';
 import { post as youtubeTagGeneratorFree } from './posts/youtube-tag-generator-free';
-
+import { post as facelessYoutubeChannelIdeas } from './posts/faceless-youtube-channel-ideas';
 const rawBlogPosts: BlogPost[] = [
+  facelessYoutubeChannelIdeas,
   youtubeSeoGuide,
   bestYoutubeTags,
   youtubeDescriptionTips,
