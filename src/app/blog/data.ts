@@ -63,7 +63,15 @@ import { post as youtubeAudioOptimization } from './posts/youtube-audio-optimiza
 import { post as youtubeTagGeneratorFree } from './posts/youtube-tag-generator-free';
 import { post as facelessYoutubeChannelIdeas } from './posts/faceless-youtube-channel-ideas';
 import { post as howToGet1000Subscribers } from './posts/how-to-get-1000-subscribers-in-a-week';
+import { post as doesChangingTitleRuinAlgorithm } from './posts/does-changing-youtube-video-title-ruin-algorithm';
+import { post as howToMakeMoneyWithoutAdsense } from './posts/how-to-make-money-on-youtube-without-adsense';
+import { post as youtubeShortsAlgorithm2026 } from './posts/youtube-shorts-algorithm-explained-2026';
+import { post as bestTimeToPost2026 } from './posts/best-time-to-post-on-youtube-2026';
 const rawBlogPosts: BlogPost[] = [
+  doesChangingTitleRuinAlgorithm,
+  howToMakeMoneyWithoutAdsense,
+  youtubeShortsAlgorithm2026,
+  bestTimeToPost2026,
   howToGet1000Subscribers,
   facelessYoutubeChannelIdeas,
   youtubeSeoGuide,
