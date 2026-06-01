@@ -63,7 +63,7 @@ export function BlogList({ posts }: BlogListProps) {
         <div className="mt-12 text-center">
           <button
             onClick={() => setVisibleCount((prev) => prev + 10)}
-            className="inline-flex items-center gap-2 btn-secondary rounded-xl px-8 py-3 font-semibold text-sm"
+            className="inline-flex items-center gap-2 btn-primary rounded-xl px-8 py-3 font-semibold text-sm cursor-pointer shadow-md hover:shadow-lg transition-all"
           >
             Load More Posts
           </button>
