@@ -62,7 +62,9 @@ import { post as recoverDyingYoutubeChannel } from './posts/recover-dying-youtub
 import { post as youtubeAudioOptimization } from './posts/youtube-audio-optimization';
 import { post as youtubeTagGeneratorFree } from './posts/youtube-tag-generator-free';
 import { post as facelessYoutubeChannelIdeas } from './posts/faceless-youtube-channel-ideas';
+import { post as howToGet1000Subscribers } from './posts/how-to-get-1000-subscribers-in-a-week';
 const rawBlogPosts: BlogPost[] = [
+  howToGet1000Subscribers,
   facelessYoutubeChannelIdeas,
   youtubeSeoGuide,
   bestYoutubeTags,
