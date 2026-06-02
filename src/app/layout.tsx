@@ -130,6 +130,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-7893678534155164" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7893678534155164" crossOrigin="anonymous"></script>
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
