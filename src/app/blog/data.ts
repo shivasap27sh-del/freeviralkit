@@ -67,7 +67,18 @@ import { post as doesChangingTitleRuinAlgorithm } from './posts/does-changing-yo
 import { post as howToMakeMoneyWithoutAdsense } from './posts/how-to-make-money-on-youtube-without-adsense';
 import { post as youtubeShortsAlgorithm2026 } from './posts/youtube-shorts-algorithm-explained-2026';
 import { post as bestTimeToPost2026 } from './posts/best-time-to-post-on-youtube-2026';
+import { post as mrbeastEffect } from './posts/mrbeast-effect-ruining-youtube';
+import { post as whyDemonetizedFail } from './posts/why-demonetized-youtube-channels-fail';
+import { post as youtubeReplacingNetflix } from './posts/youtube-replacing-netflix-for-gen-z';
+import { post as shortsBubbleBursting } from './posts/youtube-shorts-bubble-bursting';
+import { post as howMuchYoutubePays } from './posts/how-much-youtube-pays-for-1-million-views';
+
 const rawBlogPosts: BlogPost[] = [
+  mrbeastEffect,
+  whyDemonetizedFail,
+  youtubeReplacingNetflix,
+  shortsBubbleBursting,
+  howMuchYoutubePays,
   doesChangingTitleRuinAlgorithm,
   howToMakeMoneyWithoutAdsense,
   youtubeShortsAlgorithm2026,
