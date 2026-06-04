@@ -173,7 +173,7 @@ export default function ShortsIdeaGeneratorPage() {
                         <MessageSquare className="w-3.5 h-3.5" /> Hook (First 3s)
                       </h4>
                       <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 leading-relaxed italic">
-                        &ldquo;{idea.hook}&rdquo;
+                        &ldquo;{idea.hook.replace(/\*/g, '')}&rdquo;
                       </p>
                     </div>
 
@@ -182,7 +182,7 @@ export default function ShortsIdeaGeneratorPage() {
                       <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5 mb-2">
                         <Video className="w-3.5 h-3.5" /> Visuals (B-Roll)
                       </h4>
-                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{idea.visuals}</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{idea.visuals.replace(/\*/g, '')}</p>
                     </div>
 
                     {/* Audio */}
@@ -190,7 +190,7 @@ export default function ShortsIdeaGeneratorPage() {
                       <h4 className="text-xs font-bold uppercase tracking-wider text-green-400 flex items-center gap-1.5 mb-2">
                         <AlignLeft className="w-3.5 h-3.5" /> Audio / Script
                       </h4>
-                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{idea.audio}</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{idea.audio.replace(/\*/g, '')}</p>
                     </div>
                   </div>
                 </motion.div>
