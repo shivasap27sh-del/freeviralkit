@@ -90,6 +90,34 @@ const coreTools = [
     icon: Zap,
     color: 'orange',
   },
+  {
+    href: '/youtube-hook-generator',
+    title: 'YouTube Hook Generator',
+    description: 'Generate 5 high-retention script hooks to grab attention in the first 5 seconds.',
+    icon: Wand2,
+    color: 'pink',
+  },
+  {
+    href: '/youtube-chapter-generator',
+    title: 'YouTube Chapter Generator',
+    description: 'Automatically generate SEO-optimized timestamps and chapters from your video script.',
+    icon: Tag,
+    color: 'cyan',
+  },
+  {
+    href: '/youtube-thumbnail-generator',
+    title: 'Thumbnail Concept Generator',
+    description: 'Generate 3 high-CTR visual concepts and text overlays based on psychology.',
+    icon: User,
+    color: 'purple',
+  },
+  {
+    href: '/youtube-seo-grader',
+    title: 'YouTube SEO Score Grader',
+    description: 'Analyze your title, description, and tags together and get an instant SEO score out of 100.',
+    icon: AlignLeft,
+    color: 'blue',
+  },
 ];
 
 const nicheTools = [

@@ -5,10 +5,8 @@ import type { Metadata } from 'next';
 import { useState } from 'react';
 import { researchTopic } from '../actions/research';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, AlertCircle, BarChart3, ShieldAlert, Award } from 'lucide-react';
+import { Search, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, AlertCircle, BarChart3, ShieldAlert, Award, Compass } from 'lucide-react';
 import Link from 'next/link';
-import { InContentAd } from '@/components/AdSense';
-import { adSlots } from '@/lib/ad-slots';
 import ErrorBanner from '@/components/ErrorBanner';
 
 type TopicIdea = {
@@ -241,7 +239,7 @@ export default function TopicResearcherPage() {
         )}
       </AnimatePresence>
 
-      <InContentAd slot={adSlots.tagsBottom} />
+
 
       {/* SEO Content */}
       <section className="mt-12 space-y-8">

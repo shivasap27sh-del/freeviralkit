@@ -4,8 +4,6 @@ import HashtagGeneratorClient from '@/components/tools/HashtagGeneratorClient';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Hash, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw } from 'lucide-react';
 import Link from 'next/link';
-import { InContentAd } from '@/components/AdSense';
-import { adSlots } from '@/lib/ad-slots';
 import ErrorBanner from '@/components/ErrorBanner';
 
 export default function HashtagGeneratorPage() {
@@ -24,7 +22,7 @@ export default function HashtagGeneratorPage() {
       </section>
 
       <HashtagGeneratorClient />
-      <InContentAd slot={adSlots.hashtagBottom} />
+
 
       <section className="mt-12 space-y-8">
         <h2 className="font-display text-2xl font-bold">How YouTube Hashtags Work</h2>

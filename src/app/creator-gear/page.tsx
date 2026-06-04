@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 import { Camera, Mic, Sparkles, Video, ExternalLink, Settings, BookOpen, Heart, Laptop } from 'lucide-react';
-import { InContentAd } from '@/components/AdSense';
-import { adSlots } from '@/lib/ad-slots';
 
 type GearItem = {
   id: string;
@@ -365,10 +363,6 @@ export default function CreatorGearPage() {
             </section>
           );
         })}
-      </div>
-
-      <div className="my-12">
-        <InContentAd slot={adSlots.homeMid} />
       </div>
 
       {/* Affiliate Disclosure */}

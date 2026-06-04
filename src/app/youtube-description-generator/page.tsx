@@ -4,8 +4,6 @@ import DescriptionGeneratorClient from '@/components/tools/DescriptionGeneratorC
 import { motion, AnimatePresence } from 'framer-motion';
 import { AlignLeft, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, Eye, Award, Check, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
-import { InContentAd } from '@/components/AdSense';
-import { adSlots } from '@/lib/ad-slots';
 import ErrorBanner from '@/components/ErrorBanner';
 
 export default function DescriptionGeneratorPage() {
@@ -24,7 +22,7 @@ export default function DescriptionGeneratorPage() {
       </section>
 
       <DescriptionGeneratorClient />
-      <InContentAd slot={adSlots.descriptionBottom} />
+
 
       <section className="mt-12 space-y-8">
         <h2 className="font-display text-2xl font-bold">Why YouTube Descriptions Matter for SEO</h2>

@@ -5,8 +5,6 @@ import { generateScriptOutline } from '../actions/scripts';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FileText, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, Clock, Volume2, Video, ArrowRight, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
-import { InContentAd } from '@/components/AdSense';
-import { adSlots } from '@/lib/ad-slots';
 import ErrorBanner from '@/components/ErrorBanner';
 
 type ScriptOutline = {
@@ -302,7 +300,7 @@ export default function ScriptGeneratorPage() {
         )}
       </AnimatePresence>
 
-      <InContentAd slot={adSlots.titleBottom} />
+
 
       {/* SEO Content */}
       <section className="mt-12 space-y-8">

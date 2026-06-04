@@ -14,5 +14,8 @@ export const adSlots = {
   gamingChannelNameLanding: process.env.NEXT_PUBLIC_AD_SLOT_GAMING_CHANNEL_NAME_LANDING || '',
   travelTitleLanding: process.env.NEXT_PUBLIC_AD_SLOT_TRAVEL_TITLE_LANDING || '',
   beautyTitleLanding: process.env.NEXT_PUBLIC_AD_SLOT_BEAUTY_TITLE_LANDING || '',
+  hookBottom: process.env.NEXT_PUBLIC_AD_SLOT_HOOK_BOTTOM || '',
+  chapterBottom: process.env.NEXT_PUBLIC_AD_SLOT_CHAPTER_BOTTOM || '',
+  thumbnailBottom: process.env.NEXT_PUBLIC_AD_SLOT_THUMBNAIL_BOTTOM || '',
+  seoGraderBottom: process.env.NEXT_PUBLIC_AD_SLOT_SEO_GRADER_BOTTOM || '',
 };
-

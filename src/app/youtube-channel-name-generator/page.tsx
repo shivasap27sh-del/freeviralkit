@@ -4,8 +4,6 @@ import ChannelNameGeneratorClient from '@/components/tools/ChannelNameGeneratorC
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, ArrowRight, Star } from 'lucide-react';
 import Link from 'next/link';
-import { InContentAd } from '@/components/AdSense';
-import { adSlots } from '@/lib/ad-slots';
 import ErrorBanner from '@/components/ErrorBanner';
 
 export default function ChannelNameGeneratorPage() {
@@ -26,7 +24,7 @@ export default function ChannelNameGeneratorPage() {
 
       <ChannelNameGeneratorClient />
 
-      <InContentAd slot={adSlots.channelNameBottom} />
+
 
       {/* SEO Content */}
       <section className="mt-12 space-y-8">

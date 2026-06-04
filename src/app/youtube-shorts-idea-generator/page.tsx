@@ -5,8 +5,6 @@ import { generateShortsIdeas } from '../actions/shorts';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Loader2, Sparkles, RotateCcw, Video, AlignLeft, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
-import { InContentAd } from '@/components/AdSense';
-import { adSlots } from '@/lib/ad-slots';
 import ErrorBanner from '@/components/ErrorBanner';
 
 type ShortsIdea = {
@@ -210,7 +208,7 @@ export default function ShortsIdeaGeneratorPage() {
         )}
       </AnimatePresence>
 
-      <InContentAd slot={adSlots.shortsIdeaBottom} />
+
 
       {/* SEO Content */}
       <section className="mt-12 space-y-8">

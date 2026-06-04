@@ -73,6 +73,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: buildAbsoluteUrl('/youtube-hook-generator'),
+      lastModified: new Date('2026-06-04'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.95,
+    },
+    {
+      url: buildAbsoluteUrl('/youtube-chapter-generator'),
+      lastModified: new Date('2026-06-04'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.95,
+    },
+    {
+      url: buildAbsoluteUrl('/youtube-thumbnail-generator'),
+      lastModified: new Date('2026-06-04'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.95,
+    },
+    {
+      url: buildAbsoluteUrl('/youtube-seo-grader'),
+      lastModified: new Date('2026-06-04'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+    },
+    {
       url: buildAbsoluteUrl('/creator-gear'),
       lastModified: new Date('2026-05-28'),
       changeFrequency: 'monthly' as const,

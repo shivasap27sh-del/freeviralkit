@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getPublishedPosts, getPublishedPostBySlug, getPostBySlug, getAllSlugs } from '../data';
 import { Calendar, Clock, ArrowLeft, Tag, User } from 'lucide-react';
-import { InContentAd } from '@/components/AdSense';
 
 
 
@@ -120,7 +119,7 @@ export default async function BlogPostPage({ params }: Props) {
         );
       }
       // Insert ad after every 3rd section
-      const adInsert = i > 0 && i % 4 === 0 ? <InContentAd key={`ad-${i}`} slot="BLOG_IN_CONTENT" /> : null;
+      const adInsert = null;
 
       return (
         <div key={i}>

@@ -4,8 +4,6 @@ import TagsGeneratorClient from '@/components/tools/TagsGeneratorClient';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Tag, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw } from 'lucide-react';
 import Link from 'next/link';
-import { InContentAd } from '@/components/AdSense';
-import { adSlots } from '@/lib/ad-slots';
 import ErrorBanner from '@/components/ErrorBanner';
 
 export default function TagsGeneratorPage() {
@@ -24,7 +22,7 @@ export default function TagsGeneratorPage() {
       </section>
 
       <TagsGeneratorClient />
-      <InContentAd slot={adSlots.tagsBottom} />
+
 
       <section className="mt-12 space-y-8">
         <h2 className="font-display text-2xl font-bold">Why YouTube Tags Still Matter</h2>

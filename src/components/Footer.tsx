@@ -11,15 +11,19 @@ const footerLinks = {
     { href: '/about', label: 'About Us' },
     { href: '/contact', label: 'Contact' },
   ],
-  'AI Generators': [
+  'Metadata Generators': [
     { href: '/youtube-title-generator', label: 'Title Generator' },
     { href: '/youtube-description-generator', label: 'Description Generator' },
     { href: '/youtube-tags-generator', label: 'Tags Generator' },
     { href: '/youtube-hashtag-generator', label: 'Hashtag Generator' },
+    { href: '/youtube-seo-grader', label: 'SEO Score Grader' },
   ],
-  'Next-Gen AI': [
+  'Advanced AI Tools': [
     { href: '/youtube-script-generator', label: 'AI Script Outline' },
     { href: '/youtube-topic-researcher', label: 'AI Niche Researcher' },
+    { href: '/youtube-hook-generator', label: 'Video Hook Generator' },
+    { href: '/youtube-chapter-generator', label: 'Chapter Generator' },
+    { href: '/youtube-thumbnail-generator', label: 'Thumbnail Ideas' },
     { href: '/creator-gear', label: 'Creator Gear & Tools' },
   ],
 };

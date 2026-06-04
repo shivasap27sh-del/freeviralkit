@@ -3,8 +3,6 @@
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import { InContentAd } from '@/components/AdSense';
-import { adSlots } from '@/lib/ad-slots';
 
 export default function TitleGeneratorPage() {
 
@@ -25,7 +23,7 @@ export default function TitleGeneratorPage() {
 
       <TitleGeneratorClient />
 
-      <InContentAd slot={adSlots.titleBottom} />
+
 
       {/* SEO Content */}
       <section className="mt-12 space-y-8">
