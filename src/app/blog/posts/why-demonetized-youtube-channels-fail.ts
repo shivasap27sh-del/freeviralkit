@@ -89,7 +89,7 @@ Your YouTube channel is a digital asset. Treat it with the respect it deserves.
 
 Trying to trick a multi-billion dollar tech company with low-effort, mass-produced AI spam is a losing game. They have better AI than you do, and they will catch you. 
 
-Build a real brand. Add real human value. And strictly relegate your AI tools to the backend—optimizing your titles, descriptions, and tags to ensure your hard work actually gets seen by the world.
+Build a real brand. Add real human value. And strictly relegate your AI tools to the backend - optimizing your titles, descriptions, and tags to ensure your hard work actually gets seen by the world.
 
 
 ## Frequently Asked Questions (FAQs)

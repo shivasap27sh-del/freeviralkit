@@ -49,7 +49,7 @@ This pitch fails because it is vague, self-serving, and gives the other creator 
 
 ### The Effective Collab Pitch Template
 
-> **Subject**: Collab Idea — [Specific Video Concept]
+> **Subject**: Collab Idea - [Specific Video Concept]
 >
 > Hey [Name],
 >
@@ -61,12 +61,12 @@ This pitch fails because it is vague, self-serving, and gives the other creator 
 >
 > **Why it works for your audience**: [Explain the specific value for their viewers]
 >
-> **Logistics**: I am flexible on format — we can film together via Zoom, meet in person if local, or each film our own halves. I handle my own editing.
+> **Logistics**: I am flexible on format - we can film together via Zoom, meet in person if local, or each film our own halves. I handle my own editing.
 >
 > My channel: [Link]
 > My latest video: [Link to your best recent video]
 >
-> No pressure at all — I appreciate your time either way!
+> No pressure at all - I appreciate your time either way!
 >
 > [Your Name]
 

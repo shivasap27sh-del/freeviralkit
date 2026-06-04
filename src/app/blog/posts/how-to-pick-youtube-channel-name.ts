@@ -42,7 +42,7 @@ If your desired name is already taken, do not resort to adding numbers. Instead,
 *   Instead of *ChefJohn*, try: *JohnCooks*, *KitchenWithJohn*, or *JohnsBites*.
 
 
-## Rule 3: The Big Decision—Real Name vs. Brand Name
+## Rule 3: The Big Decision - Real Name vs. Brand Name
 
 This is the biggest debate among new YouTubers. Should you use your actual name or build a custom brand name? The answer depends entirely on your long-term goals for the channel.
 
@@ -104,7 +104,7 @@ Instead of searching dictionaries and playing word games, try our free [YouTube 
 
 Just enter your target niche, select the general vibe you want (like professional, funny, gaming, or minimalist), and specify any key terms you'd like to include. The AI will instantly generate dozens of unique, catchy, and brandable channel names optimized for memorability and search indexing. 
 
-Pick your favorite, register your handles, and start making videos. The name is just the label—your content is what makes it legendary.`,
+Pick your favorite, register your handles, and start making videos. The name is just the label - your content is what makes it legendary.`,
 "date": "2026-05-21",
   "readTime": "6 min read",
   "category": "Channel Growth",

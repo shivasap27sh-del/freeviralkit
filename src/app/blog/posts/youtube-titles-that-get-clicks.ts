@@ -23,7 +23,7 @@ After studying what actually works across hundreds of successful videos, I have 
 Before you hit publish, run your title through this checklist:
 
 1. **Clarity:** Can someone immediately understand what this video is about? Titles like "You Need to See This" or "I Tried Something New" tell the viewer nothing. "How I Doubled My Income in 6 Months" is crystal clear.
-2. **Curiosity:** Create an "information gap"—the space between what your viewer knows and what they want to know. "I Tested 5 Budget Cameras. One Shocked Me" works because the viewer *must* click to find out which camera it was.
+2. **Curiosity:** Create an "information gap" - the space between what your viewer knows and what they want to know. "I Tested 5 Budget Cameras. One Shocked Me" works because the viewer *must* click to find out which camera it was.
 3. **Value:** Answer the viewer's unspoken question: *"What do I get from watching this?"* A title like "How to Edit Videos 3x Faster" promises a direct, actionable benefit.
 
 
@@ -51,7 +51,7 @@ Avoid these common blunders that hurt your CTR and video categorization:
 
 * **ALL CAPS TITLES:** Writing titles in all caps looks desperate, loud, and spammy. Use sentence case or title case.
 * **Misleading Clickbait:** Creating titles that lie to the viewer will get you clicks initially, but viewers will leave within the first 10 seconds. This destroys your Average View Duration (AVD), and the algorithm will stop recommending your video.
-* **Going Over 70 Characters:** YouTube truncates titles on mobile devices if they are too long. Keep your main keywords within the first 50–60 characters.
+* **Going Over 70 Characters:** YouTube truncates titles on mobile devices if they are too long. Keep your main keywords within the first 50 - 60 characters.
 * **No Keywords:** If you want to rank for "pasta recipe," you must include those exact words in the title.
 * **Generic Titles:** "Vlog #12" or "Cooking Video" will never rank in search because nobody is looking for them.
 

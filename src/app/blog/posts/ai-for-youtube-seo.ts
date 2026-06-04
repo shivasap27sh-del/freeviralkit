@@ -17,7 +17,7 @@ But here is the straight, no-BS truth from someone who builds SEO tools and watc
 
 In fact, Google (which owns YouTube) has put this in writing. Their official search guidance says they reward high-quality content, *however it is produced*. They don't care if a human, an AI, or a team of trained squirrels wrote your description. They care about one thing and one thing only: **Does it provide value to the viewer?**
 
-But here's the catch—and it's a big one. While YouTube won't ban you for using AI, they absolutely *will* bury your videos if your AI content is lazy, robotic, and boring. If you just copy-paste raw, generic output from a basic chatbot, you are setting yourself up for failure. 
+But here's the catch - and it's a big one. While YouTube won't ban you for using AI, they absolutely *will* bury your videos if your AI content is lazy, robotic, and boring. If you just copy-paste raw, generic output from a basic chatbot, you are setting yourself up for failure. 
 
 Let's talk about why that happens and how you can use AI the right way to rank #1.
 
@@ -115,7 +115,7 @@ If you want to start optimizing your channel faster using AI, here is the exact 
 5. **Add your links:** Paste your social handles and standard channel links into the generated template.
 6. **Publish and review:** Watch your analytics in YouTube Studio. If your search impressions grow, your SEO is working!
 
-Stop spending hours writing metadata by hand. Let us do the boring work so you can focus on what actually matters—making great videos.
+Stop spending hours writing metadata by hand. Let us do the boring work so you can focus on what actually matters - making great videos.
 
 Ready to save hours of manual typing and rank higher in search results? Use our free [YouTube Description Generator](/youtube-description-generator) to generate a complete, search-optimized, and highly humanised description for your next video in under five seconds.`,
 "date": "2026-05-20",

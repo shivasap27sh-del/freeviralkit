@@ -36,7 +36,7 @@ Affiliate marketing is the absolute best way for a channel with 0 subscribers to
 **How it works:** You sign up for an affiliate program (like Amazon Associates), grab a special tracking link for a product, and put that link in your YouTube video description. If a viewer clicks the link and buys the product, you get a 3% to 10% commission.
 
 **Why it works for small channels:**
-If you make a highly specific video—like "Best Budget Microphone for Podcasting 2026"—the people watching that video have extremely high "buyer intent." They aren't watching for entertainment; they are watching because they have their credit card out and are ready to buy a microphone. 
+If you make a highly specific video - like "Best Budget Microphone for Podcasting 2026" - the people watching that video have extremely high "buyer intent." They aren't watching for entertainment; they are watching because they have their credit card out and are ready to buy a microphone. 
 
 Even if that video only gets 100 views, if 10 people buy a $100 microphone, you just made $50 in commissions. AdSense would have paid you $0.40 for those same 100 views.
 
@@ -88,7 +88,7 @@ If you have a professional-looking channel, good audio, and a clear niche, you w
 
 ## 5. Channel Memberships and Patreon
 
-If you build a community—rather than just a viewership—people will pay simply to support you and get closer access to you.
+If you build a community - rather than just a viewership - people will pay simply to support you and get closer access to you.
 
 Platforms like Patreon, or YouTube's native "Channel Memberships" feature (which now unlocks at 500 subscribers), allow your most hardcore fans to pay $5 a month for exclusive perks.
 

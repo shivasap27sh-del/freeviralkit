@@ -22,12 +22,12 @@ Let me walk you through exactly how to build a fitness channel from zero, based 
 
 "Fitness" is far too broad. You need a sub-niche that positions you as a specialist. Here are some of the most searchable and profitable fitness sub-niches in 2026:
 
-* **Home workouts (no equipment)** — Enormous search volume, massive audience of beginners
-* **Calisthenics and bodyweight training** — Growing trend, passionate community
-* **Powerlifting and strength training** — Loyal, highly engaged audience
-* **Yoga and mobility** — Great for female creators, excellent CPM rates
-* **Running and cardio** — Seasonal spikes, strong product affiliate potential
-* **Fitness for specific demographics** — Over 40, postpartum, wheelchair fitness
+* **Home workouts (no equipment)** - Enormous search volume, massive audience of beginners
+* **Calisthenics and bodyweight training** - Growing trend, passionate community
+* **Powerlifting and strength training** - Loyal, highly engaged audience
+* **Yoga and mobility** - Great for female creators, excellent CPM rates
+* **Running and cardio** - Seasonal spikes, strong product affiliate potential
+* **Fitness for specific demographics** - Over 40, postpartum, wheelchair fitness
 
 The narrower you go initially, the faster YouTube's algorithm understands your content and recommends it to the right viewers. You can always broaden later once you have an established audience. For more on choosing the right focus, read our guide on [how to find your YouTube niche](/blog/how-to-find-youtube-niche).
 
@@ -38,10 +38,10 @@ This is where most fitness creators fail. They film *their* workout and upload i
 
 Instead, start with keyword research. What are people actually typing into YouTube search? Here are title formulas that consistently perform well for **workout video tips**:
 
-* **"X-Minute [Body Part] Workout — No Equipment"** (e.g., "15-Minute Ab Workout — No Equipment")
-* **"[Goal] in [Timeframe] — Full Plan"** (e.g., "Lose Belly Fat in 30 Days — Full Plan")
-* **"I Tried [Trend/Challenge] for 30 Days — Results"** (transformation content)
-* **"[Exercise] — STOP Making This Mistake"** (educational/corrective content)
+* **"X-Minute [Body Part] Workout - No Equipment"** (e.g., "15-Minute Ab Workout - No Equipment")
+* **"[Goal] in [Timeframe] - Full Plan"** (e.g., "Lose Belly Fat in 30 Days - Full Plan")
+* **"I Tried [Trend/Challenge] for 30 Days - Results"** (transformation content)
+* **"[Exercise] - STOP Making This Mistake"** (educational/corrective content)
 
 Each of these formulas targets a specific search intent. The first two attract beginners searching for solutions. The third leverages curiosity. The fourth targets people who already exercise but want to improve.
 
@@ -54,9 +54,9 @@ Nothing grows a **fitness content creator** channel faster than transformation c
 
 Why do they work? They combine three psychological triggers:
 
-1. **Curiosity** — "What will happen?"
-2. **Relatability** — "I could do that too"
-3. **Proof** — Before and after photos create undeniable social proof
+1. **Curiosity** - "What will happen?"
+2. **Relatability** - "I could do that too"
+3. **Proof** - Before and after photos create undeniable social proof
 
 When you film a transformation series, document everything. Film your starting measurements, show grocery hauls, record daily check-ins, and present final results with data. The more transparent and data-driven you are, the more trust you build.
 
@@ -67,7 +67,7 @@ I personally gained my first 1,000 subscribers almost entirely from a single 30-
 
 Your content is only as good as the metadata wrapped around it. Here is my fitness SEO checklist for every upload:
 
-* **Title**: Include your primary keyword naturally (e.g., "Full Body Home Workout for Beginners — 20 Minutes, No Equipment")
+* **Title**: Include your primary keyword naturally (e.g., "Full Body Home Workout for Beginners - 20 Minutes, No Equipment")
 * **Description**: Write 200+ words. Include your workout breakdown, timestamps, related keywords, and links to your other videos. Our [YouTube Description Generator](/youtube-description-generator) makes this effortless
 * **Tags**: Use a mix of broad tags ("fitness," "workout") and long-tail tags ("15 minute ab workout no equipment at home")
 * **Hashtags**: Use 3-5 targeted hashtags above your title. For fitness, tags like #HomeWorkout, #FitnessMotivation, and #GymTips consistently perform. Generate optimized ones with our [YouTube Hashtag Generator](/youtube-hashtag-generator)
@@ -83,9 +83,9 @@ Here is what most creators do not realize: you do not need 100K subscribers to g
 
 To attract sponsors, do these things:
 
-* **Create a media kit** — a one-page PDF showing your channel stats, demographics, and engagement rates
-* **Reach out proactively** — Do not wait for brands to find you. Email their marketing departments directly
-* **Demonstrate product integration naturally** — Film yourself actually using the product in your workouts before you even have a deal. This shows brands you know how to integrate products without sounding like a commercial
+* **Create a media kit** - a one-page PDF showing your channel stats, demographics, and engagement rates
+* **Reach out proactively** - Do not wait for brands to find you. Email their marketing departments directly
+* **Demonstrate product integration naturally** - Film yourself actually using the product in your workouts before you even have a deal. This shows brands you know how to integrate products without sounding like a commercial
 
 
 ## Step 6: Build a Consistent Upload Schedule

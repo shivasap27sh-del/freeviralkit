@@ -33,7 +33,7 @@ This tells both the user and the algorithm exactly what the video delivers from 
 
 I know, writing descriptions feels like homework. But YouTube's search crawlers cannot watch your video; they rely on text to index your content. 
 
-Aim to write a detailed summary of at least 200 to 300 words. Describe the problems you discuss, the solutions you offer, and the key takeaways. Write in a natural, conversational tone. Do not just list your keywords (keyword stuffing)—this is spammy and can get your video suppressed. Instead, write naturally and let your keywords flow organically.
+Aim to write a detailed summary of at least 200 to 300 words. Describe the problems you discuss, the solutions you offer, and the key takeaways. Write in a natural, conversational tone. Do not just list your keywords (keyword stuffing) - this is spammy and can get your video suppressed. Instead, write naturally and let your keywords flow organically.
 
 
 ## 3. Implement Interactive Timestamps
@@ -62,7 +62,7 @@ Limit your description to 2 or 3 primary CTAs. If you ask people to follow your 
 
 ## 5. Embed Related Video Links
 
-One of the best ways to grow a channel is by increasing your **session duration**—getting a viewer to watch multiple videos on your channel in a row. 
+One of the best ways to grow a channel is by increasing your **session duration** - getting a viewer to watch multiple videos on your channel in a row. 
 
 Use your description to link to related uploads. If you are posting a video on "How to edit videos," link to your previous video on "How to record clean audio." Use text like: *"If you enjoyed this, watch my guide on recording clean audio here: [Link]."*
 

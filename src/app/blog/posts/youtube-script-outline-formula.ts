@@ -12,7 +12,7 @@ It feels like a punch in the gut. You spend all weekend researching, setting up 
 
 I almost quit YouTube because of this. I thought my camera presence was bad, or maybe my voice was too monotone. 
 
-But then I realized something crucial: **it wasn't my voice—it was my structure.**
+But then I realized something crucial: **it wasn't my voice - it was my structure.**
 
 I was treating YouTube videos like school presentations. I would introduce myself, explain what I was going to talk about, give a long introduction, and then read out facts. It was dry, boring, and had zero emotional stakes.
 
@@ -21,7 +21,7 @@ Once I changed my script outline to a high-retention, psychology-based framework
 
 ## The Master High-Retention Script Blueprint
 
-Here is the exact visual map of how a high-retention video flows. Think of it as a slide down a hill—once the viewer starts, you want the momentum to carry them all the way to the bottom.
+Here is the exact visual map of how a high-retention video flows. Think of it as a slide down a hill - once the viewer starts, you want the momentum to carry them all the way to the bottom.
 
 \`\`\`
 [ 0:00 - 0:30 ]   THE HOOK
@@ -91,7 +91,7 @@ Yes, absolutely. In fact, I co-write all my outlines now. I use our free [AI Scr
 If you are starting out or get nervous on camera, scripting word-for-word will save you from rambling. If you are more experienced, writing a detailed bullet-point outline is better because it allows you to sound more natural and spontaneous.
 
 ### How do I plan B-Roll in my scripts?
-Create a simple two-column document. In the left column, write what you are saying (Audio). In the right column, write what the viewer is seeing (Visuals—like screenshots, product close-ups, or text overlays). Plan a visual change every 4 to 6 seconds to keep the video visually interesting.`,
+Create a simple two-column document. In the left column, write what you are saying (Audio). In the right column, write what the viewer is seeing (Visuals - like screenshots, product close-ups, or text overlays). Plan a visual change every 4 to 6 seconds to keep the video visually interesting.`,
   "date": "2026-05-28",
   "readTime": "7 min read",
   "category": "Content Creation",

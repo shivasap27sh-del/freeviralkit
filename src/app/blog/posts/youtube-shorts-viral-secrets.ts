@@ -24,7 +24,7 @@ Here is the first thing you need to understand: the Shorts algorithm and the reg
 
 With long-form videos, your thumbnail and title do the heavy lifting. A viewer sees your video in their feed, reads the title, looks at the thumbnail, and decides whether to click. The algorithm measures click-through rate (CTR) and average view duration (AVD).
 
-Shorts work nothing like that. There is no thumbnail in the Shorts feed. There is no moment of decision. The algorithm simply drops your Short into a viewer's endless swipe feed, and you have exactly one second — maybe two — before they swipe up to the next video.
+Shorts work nothing like that. There is no thumbnail in the Shorts feed. There is no moment of decision. The algorithm simply drops your Short into a viewer's endless swipe feed, and you have exactly one second - maybe two - before they swipe up to the next video.
 
 You are not competing against other creators. You are competing against the viewer's thumb. And that thumb has zero patience.
 
@@ -45,7 +45,7 @@ Every viral Short I have studied follows a surprisingly rigid three-part structu
 
 This is the most important part of your entire Short. You must stop the swipe within the first frame.
 
-Never — and I mean never — start with a greeting. Do not say "Hey guys, today I am going to show you..." That sentence is a death warrant for your video. By the time you finish saying "Hey," the viewer has already swiped.
+Never - and I mean never - start with a greeting. Do not say "Hey guys, today I am going to show you..." That sentence is a death warrant for your video. By the time you finish saying "Hey," the viewer has already swiped.
 
 Instead, start in the middle of the action. Make a bold claim. Show a shocking visual. Flash large, colorful text on screen that creates an instant question in the viewer's mind.
 
@@ -74,7 +74,7 @@ Your script should be punchy and dense. Edit out every breath, every pause, ever
 
 ### Part 3: The Loop (12 to 15 Seconds)
 
-This is the secret weapon that separates viral Shorts from average ones. If you can make your ending seamlessly transition back into your opening hook, viewers will watch your video twice — sometimes three times — without even realizing it.
+This is the secret weapon that separates viral Shorts from average ones. If you can make your ending seamlessly transition back into your opening hook, viewers will watch your video twice - sometimes three times - without even realizing it.
 
 When the Shorts feed auto-replays your video and a viewer watches it again, your retention shoots past 100%. That is the single strongest signal you can send to the algorithm. It tells YouTube that your content is so addictive that people cannot stop watching.
 
@@ -89,7 +89,7 @@ To optimize the metadata around your Shorts, use our free [YouTube Hashtag Gener
 
 ## The Editing Secrets That Trigger Dopamine
 
-Viral Shorts are not just well-structured — they are carefully engineered to trigger micro-dopamine hits in the viewer's brain. Here are the specific editing techniques that keep viewers glued:
+Viral Shorts are not just well-structured - they are carefully engineered to trigger micro-dopamine hits in the viewer's brain. Here are the specific editing techniques that keep viewers glued:
 
 **The Zoom Reset**: Every 1.5 to 2 seconds, slightly zoom in or zoom out on your face or footage. This resets the viewer's visual attention and keeps them alert. You can achieve this with simple keyframing in any video editor.
 
@@ -112,7 +112,7 @@ Creating a great Short is only half the battle. How and when you upload matters 
 
 **Batch create**: Trying to create one Short per day from scratch leads to burnout. Instead, dedicate one day per week to filming 7 to 10 Shorts in a single session. Edit them in batches and schedule them throughout the week.
 
-**Repurpose long-form content**: Your existing long-form videos are a goldmine of Shorts content. Take the best 15-second moment from each video — the most shocking stat, the funniest moment, the most actionable tip — and turn it into a standalone Short. You can generate ideas for this using our [YouTube Shorts Idea Generator](/youtube-shorts-idea-generator).
+**Repurpose long-form content**: Your existing long-form videos are a goldmine of Shorts content. Take the best 15-second moment from each video - the most shocking stat, the funniest moment, the most actionable tip - and turn it into a standalone Short. You can generate ideas for this using our [YouTube Shorts Idea Generator](/youtube-shorts-idea-generator).
 
 
 ## Frequently Asked Questions
@@ -121,13 +121,13 @@ Creating a great Short is only half the battle. How and when you upload matters 
 The sweet spot is 13 to 22 seconds for most creators. Shorter videos are much easier to optimize for 100%+ retention, which is the primary signal the algorithm uses. However, storytelling Shorts can work well at 45 to 58 seconds if the pacing is fast enough to maintain at least 70% retention throughout.
 
 ### How long does it take for a Short to go viral?
-Most viral Shorts show their potential within the first 2 to 4 hours. If you see rapid view acceleration in that window — going from 100 to 1,000 to 10,000 views — the algorithm is testing your content with increasingly larger audiences. However, some Shorts experience a delayed viral push days or even weeks after uploading, when the algorithm finds a new audience segment that resonates.
+Most viral Shorts show their potential within the first 2 to 4 hours. If you see rapid view acceleration in that window - going from 100 to 1,000 to 10,000 views - the algorithm is testing your content with increasingly larger audiences. However, some Shorts experience a delayed viral push days or even weeks after uploading, when the algorithm finds a new audience segment that resonates.
 
 ### Can YouTube Shorts help grow my long-form channel?
 Yes, but only if you intentionally bridge the two formats. End your Shorts with a verbal or text CTA that directs viewers to a specific long-form video. Pin a comment with the link. The key is making the transition feel natural: your Short should feel like a teaser or highlight reel for the deeper content on your channel.
 
 ### Do I need a professional camera to make viral Shorts?
-Absolutely not. Most viral Shorts in 2026 are filmed on smartphones. What matters is your hook, pacing, and editing quality — not camera resolution. A well-structured Short filmed on an iPhone will outperform a poorly structured one filmed on a $3,000 camera every single time.
+Absolutely not. Most viral Shorts in 2026 are filmed on smartphones. What matters is your hook, pacing, and editing quality - not camera resolution. A well-structured Short filmed on an iPhone will outperform a poorly structured one filmed on a $3,000 camera every single time.
 
 ### Should I use trending audio in my Shorts?
 Trending audio can boost discovery, but it is not a magic bullet. The algorithm weighs retention and engagement far more heavily than audio trends. Use trending sounds when they naturally fit your content, but never force a trending audio into a video where it does not make sense. Authenticity always wins over trend-chasing.

@@ -19,7 +19,7 @@ They are watching a 3-hour video essay about the lore of a video game. They are 
 
 They are not watching Netflix. They are watching YouTube.
 
-For years, Hollywood executives viewed YouTube as a "lesser" platform—a place for cat videos, unboxing toys, and amateur hour. But the data from 2026 paints a terrifying picture for traditional streaming services: YouTube has officially won the living room.
+For years, Hollywood executives viewed YouTube as a "lesser" platform - a place for cat videos, unboxing toys, and amateur hour. But the data from 2026 paints a terrifying picture for traditional streaming services: YouTube has officially won the living room.
 
 Here is the data-driven breakdown of why Gen Z has abandoned traditional streaming, and exactly how small creators can position themselves to ride this massive wave of viewership.
 

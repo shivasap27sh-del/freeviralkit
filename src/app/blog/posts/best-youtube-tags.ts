@@ -8,7 +8,7 @@ export const post: BlogPost = {
 
 Let me be completely straight with you. YouTube tags are not going to save a bad video. 
 
-I've watched countless new creators spend 45 minutes obsessing over their video tags while completely ignoring their title and thumbnail—which are easily ten times more important. If your thumbnail looks like a blurry screenshot and your title is boring, nobody is clicking. And if nobody clicks, your tags don't even get a chance to do their job.
+I've watched countless new creators spend 45 minutes obsessing over their video tags while completely ignoring their title and thumbnail - which are easily ten times more important. If your thumbnail looks like a blurry screenshot and your title is boring, nobody is clicking. And if nobody clicks, your tags don't even get a chance to do their job.
 
 But here is the flip side: once you have nailed your title, thumbnail, and content, tags are a free and easy win. They act as the "supporting cast" that helps the algorithm categorize your content. In fact, tags are a major factor in getting your videos shown in the "Related Videos" sidebar. For newer channels that aren't ranking high in search results yet, that sidebar is where your first wave of consistent views will come from.
 

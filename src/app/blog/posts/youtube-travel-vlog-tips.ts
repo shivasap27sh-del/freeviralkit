@@ -23,10 +23,10 @@ Let me share the exact framework I wish someone had given me before I started.
 Here is the uncomfortable truth about **travel vlog equipment**: 90% of gear review videos are made by people trying to sell you affiliate links. You do not need a $3,000 setup to film compelling travel content. Here is what I actually carry in my daypack:
 
 ### The Essentials (Under $500 Total)
-* **Smartphone (your primary camera)** — Modern phones like the iPhone 15 or Pixel 8 shoot 4K video with excellent stabilization. For most travel vloggers, this is genuinely all you need for video
-* **DJI Osmo Pocket 3 or DJI Action 5 Pro** — If you want a dedicated camera, these are the gold standard for travel. Tiny, stabilized, and weather-resistant
-* **Wireless lavalier mic (Rode Wireless GO or DJI Mic Mini)** — Audio is where amateur travel vlogs instantly sound professional. Wind noise and crowd noise will destroy your footage without a dedicated mic
-* **GorillaPod or mini tripod** — For stable timelapses, talking-head segments, and group shots
+* **Smartphone (your primary camera)** - Modern phones like the iPhone 15 or Pixel 8 shoot 4K video with excellent stabilization. For most travel vloggers, this is genuinely all you need for video
+* **DJI Osmo Pocket 3 or DJI Action 5 Pro** - If you want a dedicated camera, these are the gold standard for travel. Tiny, stabilized, and weather-resistant
+* **Wireless lavalier mic (Rode Wireless GO or DJI Mic Mini)** - Audio is where amateur travel vlogs instantly sound professional. Wind noise and crowd noise will destroy your footage without a dedicated mic
+* **GorillaPod or mini tripod** - For stable timelapses, talking-head segments, and group shots
 
 ### What You Do NOT Need
 * A full-frame mirrorless camera (too heavy, too conspicuous, draws unwanted attention)
@@ -78,11 +78,11 @@ Here is where most travel vloggers leave massive amounts of views on the table. 
 
 Instead, target keywords people are actually searching for. The highest-performing **travel video SEO** title formats include:
 
-* **"[Destination] Travel Guide — Top Things To Do in 2026"**
-* **"[Destination] on a Budget — How Much Does It Really Cost?"**
+* **"[Destination] Travel Guide - Top Things To Do in 2026"**
+* **"[Destination] on a Budget - How Much Does It Really Cost?"**
 * **"Is [Destination] Worth Visiting? Honest Review"**
-* **"[Destination] — Things I Wish I Knew Before Going"**
-* **"48 Hours in [Destination] — The Perfect Itinerary"**
+* **"[Destination] - Things I Wish I Knew Before Going"**
+* **"48 Hours in [Destination] - The Perfect Itinerary"**
 
 Each of these targets a specific search query that travelers type into YouTube before booking trips. These are evergreen titles that continue generating views for years after upload.
 
@@ -95,11 +95,11 @@ New travel vloggers spend 20 hours editing a single video. That is not sustainab
 
 Here is my fast editing workflow:
 
-1. **Film with intention** — Plan your shots around your narrative. This reduces the amount of unusable footage you have to sort through
-2. **Use jump cuts aggressively** — Cut every pause, "um," and dead moment. Travel content should feel fast-paced
-3. **Add music that matches the energy** — Use royalty-free music libraries like Epidemic Sound or Artlist. Match upbeat tracks to exploration segments and mellow tracks to reflection segments
-4. **Use text overlays for context** — Location names, prices, travel times, and tips as on-screen text add production value and informational depth
-5. **Color grade subtly** — A slight warmth and contrast boost makes travel footage look cinematic without requiring advanced skills
+1. **Film with intention** - Plan your shots around your narrative. This reduces the amount of unusable footage you have to sort through
+2. **Use jump cuts aggressively** - Cut every pause, "um," and dead moment. Travel content should feel fast-paced
+3. **Add music that matches the energy** - Use royalty-free music libraries like Epidemic Sound or Artlist. Match upbeat tracks to exploration segments and mellow tracks to reflection segments
+4. **Use text overlays for context** - Location names, prices, travel times, and tips as on-screen text add production value and informational depth
+5. **Color grade subtly** - A slight warmth and contrast boost makes travel footage look cinematic without requiring advanced skills
 
 Mobile editing apps like CapCut or LumaFusion on iPad are genuinely powerful enough for professional travel vlogs. I edited an entire 10-video Japan series on my iPad during flights and train rides.
 

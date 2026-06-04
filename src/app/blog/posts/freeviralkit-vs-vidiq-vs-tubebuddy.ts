@@ -26,15 +26,15 @@ Let us start with the most important factor for small creators: cost.
 
 ### VidIQ
 * **Free tier**: Limited to basic keyword scores, 3 daily AI title suggestions, and basic analytics
-* **Pro plan**: $7.50/month — unlocks keyword research tools, competitor tracking, and more AI credits
-* **Boost plan**: $39/month — full suite with trend alerts, bulk research, and priority support
+* **Pro plan**: $7.50/month - unlocks keyword research tools, competitor tracking, and more AI credits
+* **Boost plan**: $39/month - full suite with trend alerts, bulk research, and priority support
 * **Enterprise**: Custom pricing
 
 ### TubeBuddy
 * **Free tier**: Very limited. Basic tag explorer and a few browser extension features
-* **Pro plan**: $3.99/month — keyword explorer, tag suggestions, A/B testing (limited)
-* **Star plan**: $15.99/month — advanced analytics, competitor scorecards
-* **Legend plan**: $49.99/month — full feature access including bulk processing
+* **Pro plan**: $3.99/month - keyword explorer, tag suggestions, A/B testing (limited)
+* **Star plan**: $15.99/month - advanced analytics, competitor scorecards
+* **Legend plan**: $49.99/month - full feature access including bulk processing
 
 **Verdict**: If you are a creator on a budget, and most beginners are, paying $8-50 per month for YouTube tools is a real expense. FreeViralKit eliminates this cost entirely. You get professional-grade SEO tools without spending a cent.
 

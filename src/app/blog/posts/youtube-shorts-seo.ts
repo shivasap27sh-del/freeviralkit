@@ -21,9 +21,9 @@ Regular YouTube videos rely heavily on **watch time**, **click-through rate**, a
 
 The Shorts algorithm asks a fundamentally different question: **"Did people swipe past this, or did they watch it?"**
 
-That's it. The core metric is **swipe-away rate** — the percentage of people who see your Short and swipe to the next one within the first 1-2 seconds. If most people swipe away, your Short dies. If most people stay, YouTube pushes it to more people.
+That's it. The core metric is **swipe-away rate** - the percentage of people who see your Short and swipe to the next one within the first 1-2 seconds. If most people swipe away, your Short dies. If most people stay, YouTube pushes it to more people.
 
-Secondary signals matter too — likes, comments, shares, and whether someone visits your channel after watching. But the swipe-away rate is king.
+Secondary signals matter too - likes, comments, shares, and whether someone visits your channel after watching. But the swipe-away rate is king.
 
 ## The First Second Is Everything
 
@@ -123,7 +123,7 @@ Yes, the Shorts algorithm reads the description text to understand the context a
 
 ## The Bottom Line
 
-Shorts SEO is simpler than long-form SEO, but it's not optional. The creators who optimize their titles, hashtags, tags, and descriptions — even briefly — consistently outperform the ones who just upload and hope for the best.
+Shorts SEO is simpler than long-form SEO, but it's not optional. The creators who optimize their titles, hashtags, tags, and descriptions - even briefly - consistently outperform the ones who just upload and hope for the best.
 
 The algorithm needs signals to understand your content. Give it those signals, nail your first-second hook, post consistently, and the views will come.`,
 "date": "2026-05-17",

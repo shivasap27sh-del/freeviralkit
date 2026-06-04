@@ -47,7 +47,7 @@ Your smartphone is the ultimate **vlog camera and gear** because it allows you t
 
 A vlog title like *"Vlog #12: Fun Day in New York!"* is a death sentence for your CTR. Nobody is searching for that, and strangers scrolling their homepage will not click it.
 
-Your title needs to create a "curiosity gap"—a reason for the viewer to want to know what happens next. It must work alongside your thumbnail to promise a specific narrative.
+Your title needs to create a "curiosity gap" - a reason for the viewer to want to know what happens next. It must work alongside your thumbnail to promise a specific narrative.
 
 * **Boring Title**: *"Going to a thrift store in London"*
 * **High-CTR Title**: *"I Found a $1,000 Designer Jacket for $5 at a Thrift Store"*
@@ -64,7 +64,7 @@ Yes, but you cannot grow by vlogging about "nothing". Your vlogs must be centere
 It takes practice. Start by filming in quiet, less crowded spaces like parks or in your car. Remember that most people in public are too focused on their own lives to care about what you are doing. Using a small smartphone instead of a giant camera rig also helps you blend in.
 
 ### How long should my first vlogs be?
-For beginners, aim for 8 to 12 minutes. This is long enough to tell a complete story with good pacing, but short enough to edit without getting overwhelmed. Keep your editing tight—cut out any dead air, stuttering, or repetitive footage.
+For beginners, aim for 8 to 12 minutes. This is long enough to tell a complete story with good pacing, but short enough to edit without getting overwhelmed. Keep your editing tight - cut out any dead air, stuttering, or repetitive footage.
 
 ### Do I need to show my face to start a vlog channel?
 Vlogging is generally a personality-driven medium, so showing your face is highly recommended for building a connection with your audience. However, there are successful "aesthetic" or "silent" vloggers who use beautiful cinematography, text overlays, and music to tell their stories without showing their face or speaking.

@@ -40,7 +40,7 @@ This is the part most new creators completely underestimate. You could make the 
 
 Spend at least 15-20 minutes on your title. Use proven formulas: "How To...", "X Things You Need to Know...", "I Tried... for 30 Days". Include your main keyword so YouTube knows what the video is about.
 
-For thumbnails: use high-contrast colors, large readable text (3-4 words max), and expressive faces if you're on camera. Look at what successful creators in your niche are doing—not to copy, but to understand the visual language of your category.
+For thumbnails: use high-contrast colors, large readable text (3-4 words max), and expressive faces if you're on camera. Look at what successful creators in your niche are doing - not to copy, but to understand the visual language of your category.
 
 
 ## Step 4: SEO Is Your Best Friend at Zero Subscribers
@@ -61,7 +61,7 @@ The creators who grow fastest aren't the ones who upload daily for 3 weeks then 
 
 ## Step 6: Engage Like Your Channel Depends on It
 
-Because it does. Reply to every single comment in your first year. Pin a question as your first comment to start discussions. Ask viewers to share their thoughts at the end of every video. Join communities where your target audience hangs out—Reddit, Discord, Facebook groups—and genuinely participate (not just spam your videos).
+Because it does. Reply to every single comment in your first year. Pin a question as your first comment to start discussions. Ask viewers to share their thoughts at the end of every video. Join communities where your target audience hangs out - Reddit, Discord, Facebook groups - and genuinely participate (not just spam your videos).
 
 The creators who build loyal audiences are the ones who treat their viewers like people, not numbers.
 

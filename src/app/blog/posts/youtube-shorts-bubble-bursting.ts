@@ -36,7 +36,7 @@ RPM (Revenue Per Mille) is how much money you make per 1,000 views.
 
 For a high-quality, long-form finance or tech video, a creator might earn a $15.00 RPM. If that video gets 100,000 views, the creator makes $1,500. 
 
-For a YouTube Short, the RPM is astronomically lower—often sitting around $0.05 to $0.10. To make that same $1,500 on a Short, you would need roughly 15 to 30 MILLION views. 
+For a YouTube Short, the RPM is astronomically lower - often sitting around $0.05 to $0.10. To make that same $1,500 on a Short, you would need roughly 15 to 30 MILLION views. 
 
 When the Shorts feed first launched, hitting 10 million views was relatively easy because YouTube was artificially inflating reach to compete with TikTok. Today, the feed is oversaturated. Getting 10 million views is a monumental task. Creators who built massive teams relying on Shorts AdSense are suddenly realizing the math no longer works.
 

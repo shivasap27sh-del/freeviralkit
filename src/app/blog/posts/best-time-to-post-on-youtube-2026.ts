@@ -35,7 +35,7 @@ Many "YouTube Gurus" claim that posting time doesn't matter because "good conten
 
 Yes, a truly viral masterpiece might eventually gain traction months later through YouTube Search. But the YouTube Home Page (Browse Features) relies heavily on **Velocity**. 
 
-When you publish a video, YouTube shows it to a small percentage of your subscribers and regular viewers. It then measures the *Velocity* of those views—how fast they are clicking and watching. If the Velocity is extremely high in the first 2 to 4 hours, YouTube accelerates the distribution to a wider, non-subscribed audience.
+When you publish a video, YouTube shows it to a small percentage of your subscribers and regular viewers. It then measures the *Velocity* of those views - how fast they are clicking and watching. If the Velocity is extremely high in the first 2 to 4 hours, YouTube accelerates the distribution to a wider, non-subscribed audience.
 
 If you publish your video at 3:00 AM when your core audience is asleep, your initial Velocity will be zero. By the time your audience wakes up at 8:00 AM, the video is already 5 hours old. It has lost its "New" tag momentum, and it will be buried underneath the dozens of other videos that their favorite creators published at 7:30 AM.
 

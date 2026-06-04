@@ -43,7 +43,7 @@ Choose 3-5 high-traffic hashtags and format them in CamelCase (e.g., #HowToGrowO
 Do not rely on YouTube's auto-generated captions if you want search crawlers to scan your content accurately. Upload clean SRT files containing your keywords.
 
 ### 9. Organize Videos into Custom Playlists
-Playlists keep viewers on your channel longer, boosting your overall "Session Watch Time"—a massive algorithmic ranking signal.
+Playlists keep viewers on your channel longer, boosting your overall "Session Watch Time" - a massive algorithmic ranking signal.
 
 ### 10. Design Thumbnails for CTR
 No matter how good your SEO is, you won't rank if nobody clicks. Design clean, readable thumbnails with 3-5 words of bold text that complement (but don't repeat) your title.

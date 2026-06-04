@@ -25,7 +25,7 @@ You get **3 seconds**. That is it.
 In those 3 seconds, your thumbnail needs to communicate three things:
 
 * **What is this video about?** The viewer should instantly understand the topic.
-* **Why should I care?** There needs to be an emotional hook — shock, curiosity, excitement, or fear.
+* **Why should I care?** There needs to be an emotional hook - shock, curiosity, excitement, or fear.
 * **Is this high quality?** A blurry, low-effort thumbnail signals a blurry, low-effort video.
 
 If your thumbnail cannot pass all three of those checks in a quick glance, it is time to go back to the drawing board. Pull up your channel on your phone right now, hold it at arm's length, and scroll through your videos. If any thumbnail is hard to read or understand at that distance, it needs work.
@@ -33,7 +33,7 @@ If your thumbnail cannot pass all three of those checks in a quick glance, it is
 
 ## Color Psychology: Which Colors Actually Pop on YouTube
 
-Here is the thing most creators completely overlook: YouTube has two background modes — white and dark grey. Your thumbnail needs to stand out against both of them.
+Here is the thing most creators completely overlook: YouTube has two background modes - white and dark grey. Your thumbnail needs to stand out against both of them.
 
 Colors like **yellow, orange, and red** are the strongest attention-grabbers on the platform. They create high contrast against both the light and dark interface, which is why you see top creators like MrBeast and MKBHD use them constantly. It is not an accident. It is strategy.
 
@@ -59,7 +59,7 @@ Here are the rules that actually work:
 * **High contrast is non-negotiable.** White text with a dark stroke, or bold colored text on a contrasting background. If the text does not jump off the image, it is failing.
 * **Never repeat your title word-for-word.** Your thumbnail text and your video title are a team. They should complement each other, not say the same thing twice.
 
-For example, if your video title is *"I Tested Every Budget Camera Under $300"*, your thumbnail text should not say the same thing. Instead, it should say something like **"$50 vs $300"** or **"SHOCKED ME"** — something short, punchy, and emotionally charged that works alongside the title.
+For example, if your video title is *"I Tested Every Budget Camera Under $300"*, your thumbnail text should not say the same thing. Instead, it should say something like **"$50 vs $300"** or **"SHOCKED ME"** - something short, punchy, and emotionally charged that works alongside the title.
 
 
 ## Faces and Emotions: The Secret Weapon
@@ -68,7 +68,7 @@ If there is one single tip that will instantly improve your CTR, it is this: **p
 
 This is not an opinion. It is backed by data. YouTube channels that consistently use close-up, expressive faces in their thumbnails see CTR increases of **30% or more** compared to thumbnails without faces. The human brain is hardwired to look at faces before anything else. It is an evolutionary survival instinct that marketers and creators have been exploiting for decades.
 
-But here is the key — the face needs to show **real emotion**. A neutral, blank expression does almost nothing. You want exaggerated reactions:
+But here is the key - the face needs to show **real emotion**. A neutral, blank expression does almost nothing. You want exaggerated reactions:
 
 * **Wide eyes and open mouth** for shock or surprise
 * **A big genuine smile** for excitement or positivity
@@ -83,7 +83,7 @@ Match the emotion on your face to the emotion in your title. If your title promi
 Let me walk through the biggest offenders I see constantly:
 
 * **Too cluttered.** If your thumbnail has more than 3 visual elements (a face, text, and one prop or graphic), it is probably too busy. Simplicity wins every single time.
-* **Too dark.** Dark, underexposed thumbnails disappear into YouTube's dark mode. Brighten your images and bump up the contrast and saturation slightly beyond what looks natural. Thumbnails are not photos — they are tiny advertisements.
+* **Too dark.** Dark, underexposed thumbnails disappear into YouTube's dark mode. Brighten your images and bump up the contrast and saturation slightly beyond what looks natural. Thumbnails are not photos - they are tiny advertisements.
 * **Misleading thumbnails.** Using a thumbnail that has nothing to do with your video might get you clicks initially, but viewers will bounce within seconds. YouTube tracks that drop-off rate, and it will destroy your video's algorithmic reach.
 * **Using a random video frame.** Auto-generated thumbnails from YouTube are almost always terrible. Every single video needs a custom-designed thumbnail. No exceptions.
 * **Tiny text or too many words.** If it cannot be read on a phone in under 2 seconds, delete half the words and double the font size.

@@ -10,7 +10,7 @@ I started my beauty channel in late 2023 with a GRWM video that I thought was ge
 
 It got 22 views in two weeks.
 
-The frustrating part? A creator with half my skill level posted a nearly identical video a week later and got 15,000 views. The difference was not talent or even production quality. It was SEO. Her title was "Everyday Makeup Tutorial for Beginners — Natural Glam in 10 Minutes." Her description was 300 words of keyword-rich content. She had optimized hashtags. The algorithm knew exactly who to show her video to.
+The frustrating part? A creator with half my skill level posted a nearly identical video a week later and got 15,000 views. The difference was not talent or even production quality. It was SEO. Her title was "Everyday Makeup Tutorial for Beginners - Natural Glam in 10 Minutes." Her description was 300 words of keyword-rich content. She had optimized hashtags. The algorithm knew exactly who to show her video to.
 
 That experience taught me a hard lesson: in the beauty niche, **beauty YouTube SEO** is not optional. It is the difference between 22 views and 22,000 views. Let me show you exactly how to optimize your beauty content for search in 2026.
 
@@ -51,22 +51,22 @@ The key insight is that beauty viewers search with high specificity. They do not
 Your title is the single most important SEO element. Here are proven title formulas that I have seen consistently outperform generic titles in the beauty niche:
 
 ### For Tutorials
-* **"[Look Type] Makeup Tutorial — [Qualifier]"**
-  * Example: "Soft Glam Makeup Tutorial — Perfect for Date Night"
-* **"[Specific Feature] Makeup — Step by Step for Beginners"**
-  * Example: "Hooded Eyes Makeup — Step by Step for Beginners"
+* **"[Look Type] Makeup Tutorial - [Qualifier]"**
+  * Example: "Soft Glam Makeup Tutorial - Perfect for Date Night"
+* **"[Specific Feature] Makeup - Step by Step for Beginners"**
+  * Example: "Hooded Eyes Makeup - Step by Step for Beginners"
 
 ### For GRWM Content
-* **"GRWM for [Event/Occasion] — [Unique Angle]"**
-  * Example: "GRWM for My Best Friend's Wedding — Emotional"
-* **"Chatty GRWM — [Topic People Care About]"**
-  * Example: "Chatty GRWM — Why I Quit My Corporate Job"
+* **"GRWM for [Event/Occasion] - [Unique Angle]"**
+  * Example: "GRWM for My Best Friend's Wedding - Emotional"
+* **"Chatty GRWM - [Topic People Care About]"**
+  * Example: "Chatty GRWM - Why I Quit My Corporate Job"
 
 ### For Reviews and Comparisons
-* **"[Product] — Honest Review After [Timeframe]"**
-  * Example: "Rare Beauty Blush — Honest Review After 6 Months"
-* **"[Product A] vs [Product B] — Which is Actually Better?"**
-  * Example: "Dior Lip Oil vs Clarins Lip Oil — Which is Actually Better?"
+* **"[Product] - Honest Review After [Timeframe]"**
+  * Example: "Rare Beauty Blush - Honest Review After 6 Months"
+* **"[Product A] vs [Product B] - Which is Actually Better?"**
+  * Example: "Dior Lip Oil vs Clarins Lip Oil - Which is Actually Better?"
 
 Generate dozens of optimized beauty titles instantly with our [YouTube Title Generator for Beauty](/tools/youtube-title-generator-for-beauty). It creates niche-specific variations designed to maximize both click-through rate and search visibility.
 
@@ -78,7 +78,7 @@ Hashtags on YouTube work differently from Instagram. On YouTube, hashtags appear
 ### Rules for Beauty Hashtags
 * Use exactly **3-5 hashtags** (YouTube officially recommends no more than 15, but 3-5 is the sweet spot for appearing above your title)
 * Combine one broad hashtag (#MakeupTutorial), one niche hashtag (#DrugstoreMakeup), and one trending hashtag (#SummerGlam2026)
-* Avoid hashtags with billions of uses like #Makeup — your video will drown. Target hashtags with 50K-500K video count
+* Avoid hashtags with billions of uses like #Makeup - your video will drown. Target hashtags with 50K-500K video count
 
 ### Top-Performing Beauty Hashtags in 2026
 * #GRWM
@@ -118,7 +118,7 @@ Writing all of this manually for every video is exhausting. Our free [YouTube De
 
 ## Skincare Content: The Hidden Growth Lever
 
-Here is a tip many beauty creators overlook: **skincare YouTube content** has exploded in the last two years and often gets higher engagement than makeup content. Videos like "My Skincare Routine — Acne-Prone Skin" or "Dermatologist-Approved Morning Routine" attract viewers who are intensely motivated to find solutions, which means longer watch times and more engagement.
+Here is a tip many beauty creators overlook: **skincare YouTube content** has exploded in the last two years and often gets higher engagement than makeup content. Videos like "My Skincare Routine - Acne-Prone Skin" or "Dermatologist-Approved Morning Routine" attract viewers who are intensely motivated to find solutions, which means longer watch times and more engagement.
 
 If you currently only post makeup content, consider adding a skincare series. The audience overlap is enormous, and skincare keywords often have less competition than saturated makeup terms.
 

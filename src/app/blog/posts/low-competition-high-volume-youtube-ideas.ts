@@ -14,7 +14,7 @@ It feels like shouting into an empty canyon.
 
 I remember hitting that wall. I had uploaded 15 videos, put my heart and soul into editing them, and my subscriber count was stuck at 87 (and honestly, 20 of those were my close friends and family members). I felt like giving up.
 
-But then, I changed my strategy. I stopped targeting big, flashy topics like *"How to edit videos"* and started searching for **unserved, highly specific questions**—topics with moderate search volume but almost zero competition.
+But then, I changed my strategy. I stopped targeting big, flashy topics like *"How to edit videos"* and started searching for **unserved, highly specific questions** - topics with moderate search volume but almost zero competition.
 
 Within three months of changing my focus, my views started growing organically, and I finally hit my first 1,000 subscribers. Here is the exact blueprint I used, and how you can do it too.
 

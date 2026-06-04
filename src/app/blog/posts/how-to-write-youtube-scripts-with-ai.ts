@@ -8,7 +8,7 @@ export const post: BlogPost = {
 
 I remember sitting in my room, staring at a blank Google Doc for four hours. The cursor was flashing at me like a tiny, mocking heartbeat. I had this amazing video idea in my head, but every time I tried to write it down, it came out sounding stiff, boring, or just plain weird. 
 
-If you've ever felt that pit of frustration in your stomach—feeling like you have so much to say but no idea how to say it—I want you to know you're not alone. Writing is hard. Writing for the camera is even harder.
+If you've ever felt that pit of frustration in your stomach - feeling like you have so much to say but no idea how to say it - I want you to know you're not alone. Writing is hard. Writing for the camera is even harder.
 
 When ChatGPT first came out, I thought my problems were solved. I typed: *"Write a YouTube script about YouTube SEO."* 
 
@@ -94,7 +94,7 @@ Absolutely not. YouTube cares about one thing: **viewer satisfaction**. If your 
 Use negative prompting. Tell the AI: *"Do not use words like 'revolutionize', 'testament', 'delve', 'moreover', or 'furthermore'. Write at an 8th-grade reading level. Use contractions like 'don't', 'it's', and 'you've'."*
 
 ### Should I script my videos word-for-word?
-If you get nervous in front of the camera and tend to ramble, yes—scripting word-for-word is a lifesaver. However, if you prefer a more natural, improvised vibe, use the AI to generate a detailed bullet-point outline with key hooks and let your personality shine through.
+If you get nervous in front of the camera and tend to ramble, yes - scripting word-for-word is a lifesaver. However, if you prefer a more natural, improvised vibe, use the AI to generate a detailed bullet-point outline with key hooks and let your personality shine through.
 
 ### What is the best free tool to help me script?
 For structuring hooks, angles, and full outlines, you can try our free [AI Script Outline Generator](/youtube-script-generator) to get a high-retention conversational template in one click.`,

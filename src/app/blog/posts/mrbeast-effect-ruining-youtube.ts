@@ -38,7 +38,7 @@ Here is the dirty secret nobody tells you: **MrBeast does not do this alone.**
 He has a massive team of Hollywood-tier editors, writers, and retention analysts. He spends hundreds of thousands of dollars on a single video. When a solo creator in their bedroom tries to replicate this, they enter the "100-Hour Editing Prison." 
 
 ### Why You Will Burn Out
-If it takes you 100 hours to edit a 10-minute video, you can only publish once a month (assuming you have a full-time job or school). If that video flops—and on a new channel, it likely will—you have wasted an entire month of your life. 
+If it takes you 100 hours to edit a 10-minute video, you can only publish once a month (assuming you have a full-time job or school). If that video flops - and on a new channel, it likely will - you have wasted an entire month of your life. 
 
 You cannot iterate. You cannot test new ideas. You cannot build a backlog of content. You are putting all your chips on a single hand of roulette. 
 
@@ -72,7 +72,7 @@ The second massive flaw in the MrBeast effect is the loss of parasocial connecti
 
 When a video cuts every 1.5 seconds, the viewer never gets to look into your eyes. They never get to see your authentic reaction. They are watching a Michael Bay movie, not a YouTube vlog. 
 
-In 2026, viewers are incredibly fatigued by hyper-edited, fast-paced content. TikTok and Shorts have fried their dopamine receptors. There is a massive, growing demand for "Slow YouTube"—long, unedited, conversational videos where a creator just sits down and talks to the camera like a human being.
+In 2026, viewers are incredibly fatigued by hyper-edited, fast-paced content. TikTok and Shorts have fried their dopamine receptors. There is a massive, growing demand for "Slow YouTube" - long, unedited, conversational videos where a creator just sits down and talks to the camera like a human being.
 
 ### Build a Cult, Not an Audience
 If a viewer watches a MrBeast video, they are there for the spectacle. If they watch a 20-minute unedited video of you talking about your struggles with video editing, they are there for *you*. 

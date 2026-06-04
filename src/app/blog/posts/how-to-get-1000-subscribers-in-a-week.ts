@@ -19,7 +19,7 @@ And every time, I got 12 views. Ten of them were probably me, and two were my mo
 
 I was exhausted, demoralized, and incredibly close to quitting. The requirement for the YouTube Partner Program (1,000 subscribers and 4,000 watch hours) felt like climbing Mount Everest without oxygen. I watched other creators launch their channels and hit 10k subs in a month, and I couldn't figure out what they knew that I didn't.
 
-Then, I stopped making content and started studying the algorithm. I realized I was making "selfish" content—videos I wanted to make, rather than videos the audience was actively searching for. I changed my entire strategy. I built a system. 
+Then, I stopped making content and started studying the algorithm. I realized I was making "selfish" content - videos I wanted to make, rather than videos the audience was actively searching for. I changed my entire strategy. I built a system. 
 
 Exactly 8 days later, I broke the 1,000 subscriber mark.
 

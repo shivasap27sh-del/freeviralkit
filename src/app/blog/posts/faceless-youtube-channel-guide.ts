@@ -86,7 +86,7 @@ In 2026, AI voice generators (like ElevenLabs) are incredibly realistic. The tem
 
 While the technology is good, YouTube viewers still crave human connection. Channels that use entirely AI-generated scripts and AI voices often struggle to build a loyal community because the content lacks soul and unique perspective. Furthermore, YouTube's monetization policies occasionally scrutinize heavily automated "repetitive" content.
 
-If you must use an AI voice, ensure the script is 100% written by you and infused with your unique humor, opinions, and research. However, using your own voice—even if you think it sounds weird—is almost always the better long-term strategy. It builds a unique brand identity that cannot be replicated.
+If you must use an AI voice, ensure the script is 100% written by you and infused with your unique humor, opinions, and research. However, using your own voice - even if you think it sounds weird - is almost always the better long-term strategy. It builds a unique brand identity that cannot be replicated.
 
 
 ## Frequently Asked Questions
@@ -101,7 +101,7 @@ You can start for under $100. All you need is a decent USB microphone ($60-$80) 
 No, but you do need to be willing to learn. Modern editing software is highly intuitive. You don't need to know advanced 3D animation; you just need to understand basic cuts, pacing, keyframe zooming, and how to mix audio levels. There are thousands of free tutorials on YouTube to teach you these specific skills.
 
 ### How long should faceless YouTube videos be?
-For documentary or essay-style content, 10 to 20 minutes is the sweet spot. For software tutorials, they should be exactly as long as it takes to solve the user's problem. Focus on information density—never pad a video just to make it longer, as this will destroy your audience retention.
+For documentary or essay-style content, 10 to 20 minutes is the sweet spot. For software tutorials, they should be exactly as long as it takes to solve the user's problem. Focus on information density - never pad a video just to make it longer, as this will destroy your audience retention.
 
 ### How do I build a community if I am anonymous?
 You build community through your channel's unique voice and perspective. Engage heavily in the comments section. Create a consistent visual brand (colors, fonts, editing style) so your videos are instantly recognizable. You can also use a persona, avatar, or consistent voiceover style that viewers feel a connection to.

@@ -43,7 +43,7 @@ Let's look at the difference:
 *   **Low CTR Title:** *"I Spent 30 Days Eating Organic Food and Felt Slightly Better"* (Borring. You already told me the ending).
 *   **High CTR Title:** *"I Only Ate Organic Food for 30 Days. This Happened..."* (Creates an open loop. What happened? Did they get sick? Did they lose weight? The only way to find out is to click).
 
-Don't resort to dirty clickbait or lie to your audience—your video must deliver on its promise. But always leave an open question in the viewer's mind that can only be answered by hitting the play button.
+Don't resort to dirty clickbait or lie to your audience - your video must deliver on its promise. But always leave an open question in the viewer's mind that can only be answered by hitting the play button.
 
 
 ## Tactic 3: Align Thumbnail Emotion with Title Energy
@@ -68,7 +68,7 @@ Look at how these titles compare in a crowded sidebar:
 *   **Optimized Title:** *How to Edit Videos 3x Faster [Premiere Pro Tutorial]*
 *   **High CTR Title:** *How to Edit Videos 3x FASTER 🚀 (in 5 Minutes!)*
 
-The brackets break up the line of text, making it easier for the brain to scan. The capitalization of "FASTER" creates emphasis, and the single rocket emoji adds a splash of color that breaks the monochrome pattern of the feed. Use emojis sparingly—one or two max—so your title doesn't look like search spam.
+The brackets break up the line of text, making it easier for the brain to scan. The capitalization of "FASTER" creates emphasis, and the single rocket emoji adds a splash of color that breaks the monochrome pattern of the feed. Use emojis sparingly - one or two max - so your title doesn't look like search spam.
 
 
 ## Tactic 5: The "24-Hour Pivot" (Save Your Dead Videos)

@@ -53,7 +53,7 @@ You have two options for placing hashtags on your videos:
 
 YouTube has strict metadata guidelines. If you try to spam the system, the algorithm will actively suppress your videos:
 
-*   **The 60-Hashtag Limit (The Trap):** YouTube's official policy states that if a video has more than 60 hashtags, it will ignore **all** of them. Not just the extras—every single hashtag on your video will be completely deactivated. To play it safe, never use more than 15 hashtags in a single description.
+*   **The 60-Hashtag Limit (The Trap):** YouTube's official policy states that if a video has more than 60 hashtags, it will ignore **all** of them. Not just the extras - every single hashtag on your video will be completely deactivated. To play it safe, never use more than 15 hashtags in a single description.
 *   **Irrelevant Tagging (Clickbaiting):** Adding tags like #MrBeast or #PewDiePie to your coding tutorial in an attempt to steal traffic is a fast way to get flagged. When the algorithm realizes viewers who click the tag leave your video immediately, it stops recommending your content entirely.
 *   **CamelCase Formatting:** Always capitalize the first letter of each word in a multi-word hashtag (e.g., use #HowToCook instead of #howtocook). It makes your tags vastly easier for human eyes to read when they show up above your title, increasing the likelihood of clicks.
 
@@ -85,7 +85,7 @@ YouTube allows up to 60 hashtags, but if you use more than 15, YouTube will igno
 ### Can I use hashtags in the title?
 Yes, putting one hashtag in the title is common for Shorts, but keep them in the description for long-form.
 
-## Stop Typing by Hand—Automate Your Optimization
+## Stop Typing by Hand - Automate Your Optimization
 
 Manually researching which hashtags are trending, checking their search volume, formatting them, and copying them into your descriptions takes time that you should be spending making better videos.
 

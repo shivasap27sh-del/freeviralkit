@@ -61,7 +61,7 @@ Not all views are created equal. A viewer in the United States, Canada, the Unit
 
 ### 2. Structure Videos to Exceed 8 Minutes (Mid-Roll Ads)
 YouTube allows you to place mid-roll ads on videos that are 8 minutes or longer. If your video is under 8 minutes, you only get an ad at the beginning and the end.
-*   **Action Step:** Don't stretch your videos artificially with filler content—viewers will swipe away, hurting your retention score. Instead, design comprehensive, step-by-step guides that naturally take 9 to 12 minutes to explain. Placing just one or two well-timed mid-roll ads can boost your earnings by 50% to 100% on a single video.
+*   **Action Step:** Don't stretch your videos artificially with filler content - viewers will swipe away, hurting your retention score. Instead, design comprehensive, step-by-step guides that naturally take 9 to 12 minutes to explain. Placing just one or two well-timed mid-roll ads can boost your earnings by 50% to 100% on a single video.
 
 ### 3. Inject High-Intent Keywords Into Your Titles & Descriptions
 Think like an advertiser. If you are an advertiser selling a high-end blender, what keywords would you bid on? You'd want your ads on videos that contain words like "best blender review," "Vitamix comparison," or "how to buy a blender."

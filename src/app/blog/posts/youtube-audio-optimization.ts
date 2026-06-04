@@ -44,7 +44,7 @@ The enemy of good audio is **reverb** (echo). Sound waves bounce off hard, flat 
 *   **The Closet Trick:** If you are doing voiceovers without being on camera, record in a closet full of clothes. The soft fabrics absorb sound waves perfectly.
 *   **Moving Blankets:** Hang heavy moving blankets just off-camera on the walls in front of and behind you.
 *   **Soft Furnishings:** Bring rugs, pillows, and a couch into your recording space. 
-*   **Proximity:** The closer you are to the microphone, the less room echo it picks up. Get the mic as close to your mouth as possible without it being in the shot (or just leave it in the shot—viewers don't care!).
+*   **Proximity:** The closer you are to the microphone, the less room echo it picks up. Get the mic as close to your mouth as possible without it being in the shot (or just leave it in the shot - viewers don't care!).
 
 ## Step 2: The Budget Microphone Setup
 

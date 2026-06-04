@@ -24,10 +24,10 @@ Your competitors have already done the testing for you. By looking at their chan
 ### 1. Finding the "Outliers"
 This is my favorite technique. Find 5 to 10 channels in your niche that have between 5,000 and 50,000 subscribers. Go to their **Videos** tab and sort by **Popular**.
 
-Look for the "Outlier Videos"—videos that have significantly more views than the channel has subscribers. 
+Look for the "Outlier Videos" - videos that have significantly more views than the channel has subscribers. 
 
 * If a channel with 8,000 subscribers has a video with 120,000 views, it means that **topic** is in massive demand.
-* Create your own version of that video. Don't copy it—make it better, update the information, or share your own personal twist.
+* Create your own version of that video. Don't copy it - make it better, update the information, or share your own personal twist.
 
 ### 2. Search Autocomplete (Direct Viewer Intent)
 When you start typing into the YouTube search bar, it suggests phrases. These aren't random; they are actual queries typed by real people.

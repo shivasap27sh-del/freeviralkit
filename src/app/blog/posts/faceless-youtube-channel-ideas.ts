@@ -161,7 +161,7 @@ Take footage of public figures (celebrities in interviews, politicians in debate
 Woodworking, pottery, restoring rusty old tools, or even satisfying power-washing videos. 
 
 **How to execute it:**
-Set up a tripod, point the camera *only at your hands*, and film the incredibly satisfying process of building or cleaning something. You don't even need a voiceover—just the natural ASMR sounds of the tools.
+Set up a tripod, point the camera *only at your hands*, and film the incredibly satisfying process of building or cleaning something. You don't even need a voiceover - just the natural ASMR sounds of the tools.
 
 
 ## The Golden Rule of Faceless Channels

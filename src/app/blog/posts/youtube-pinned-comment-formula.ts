@@ -62,7 +62,7 @@ Use this when you want to get as many replies as possible to signal to the algor
 💬 QUICK QUESTION FOR THE CREATORS:
 What is the biggest thing holding your channel back right now? 
 
-Reply below—I'm reading and replying to every single comment for the next hour! 👇
+Reply below - I'm reading and replying to every single comment for the next hour! 👇
 \`\`\`
 
 ### Template 3: The Video Loop (Increasing Session Watch Time)

@@ -12,7 +12,7 @@ Every single day, thousands of creators upload their raw, unedited Let's Plays, 
 
 Let me be real with you. Unless you are already famous or possess world-class professional gaming skills, nobody is going to search for *"Minecraft Let's Play Part 1"* and click on your video. 
 
-If you want to grow a gaming channel today, you have to work smarter. You need to leverage **youtube gaming SEO 2026** tactics, understand what gaming video keywords actually bring search traffic, and design your channel around providing value to the viewer—whether that value is entertainment, information, or community. Let's break down the exact blueprint you need to stand out from the noise.
+If you want to grow a gaming channel today, you have to work smarter. You need to leverage **youtube gaming SEO 2026** tactics, understand what gaming video keywords actually bring search traffic, and design your channel around providing value to the viewer - whether that value is entertainment, information, or community. Let's break down the exact blueprint you need to stand out from the noise.
 
 
 ![YouTube gaming setup and screen](https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?q=80&w=800&auto=format&fit=crop)
@@ -35,7 +35,7 @@ This is where you need to research **gaming video keywords** before you even rec
 
 When you are starting from zero subscribers, the YouTube algorithm will not push your videos to the homepage. You have to go out and get search views. This is where gaming SEO comes in.
 
-To get search traffic, your video metadata—title, description, and tags—needs to tell the algorithm exactly what your video is about.
+To get search traffic, your video metadata - title, description, and tags - needs to tell the algorithm exactly what your video is about.
 
 * **The Title**: Put your target keyword at the very beginning of the title. If you are doing a guide on Elden Ring build optimization, start with *"Elden Ring Best Build"* instead of *"My Favorite Build in Elden Ring"*.
 * **The Description**: Write a natural, human-friendly summary of the video in the first two lines. Do not just paste keywords. Write like a human but make sure your main keywords are in there. For more tips on this, check out our [YouTube Description Tips](/blog/youtube-description-tips) guide.
