@@ -130,6 +130,11 @@ function withTimeout<T>(promise: Promise<T>, ms: number, providerName: string): 
   ]);
 }
 
+// --- Circuit Breaker System ---
+// Tracks when a provider is allowed to be tried again (Unix timestamp in ms)
+// This prevents the system from being slow by constantly retrying exhausted APIs
+const providerTimeouts = new Map<string, number>();
+
 export async function generateWithFallback(
   messages: ChatMessage[],
   options: GenerateOptions
@@ -137,6 +142,13 @@ export async function generateWithFallback(
   const errors: string[] = [];
 
   for (const provider of providers) {
+    // Check Circuit Breaker: If this provider recently failed, skip it instantly to save time
+    const timeoutUntil = providerTimeouts.get(provider.name) || 0;
+    if (Date.now() < timeoutUntil) {
+      console.log(`[AI] ⚡ Skipping ${provider.name} (Circuit Breaker active for ${Math.round((timeoutUntil - Date.now()) / 1000)}s)`);
+      continue;
+    }
+
     try {
       console.log(`[AI] Routing request to ${provider.name}...`);
       const result = await withTimeout(
@@ -150,6 +162,10 @@ export async function generateWithFallback(
       const msg = error instanceof Error ? error.message : String(error);
       console.warn(`[AI] ❌ ${provider.name} failed: ${msg}`);
       errors.push(`${provider.name}: ${msg}`);
+      
+      // Activate Circuit Breaker: Put this provider in "timeout" for 60 seconds
+      // This ensures the NEXT user doesn't have to wait for this API to fail again
+      providerTimeouts.set(provider.name, Date.now() + 60000);
     }
   }
   throw new Error(`All AI providers failed:\n${errors.join('\n')}`);
