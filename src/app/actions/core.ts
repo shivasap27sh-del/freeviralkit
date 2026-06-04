@@ -115,11 +115,10 @@ const openRouterProvider = createOpenAICompatibleProvider(
 
 const providers: AIProvider[] = [
   groqProvider,
-  geminiProvider,
   nvidiaProvider,
-  cerebrasProvider,
-  togetherProvider,
   openRouterProvider,
+  geminiProvider,
+  cerebrasProvider,
 ].filter(p => p.isConfigured);
 
 function withTimeout<T>(promise: Promise<T>, ms: number, providerName: string): Promise<T> {
@@ -136,13 +135,10 @@ export async function generateWithFallback(
   options: GenerateOptions
 ): Promise<string> {
   const errors: string[] = [];
-  
-  // Load Balancing: Randomly shuffle the active providers for each request
-  const shuffledProviders = [...providers].sort(() => Math.random() - 0.5);
 
-  for (const provider of shuffledProviders) {
+  for (const provider of providers) {
     try {
-      console.log(`[AI LoadBalancer] Routing request to ${provider.name}...`);
+      console.log(`[AI] Routing request to ${provider.name}...`);
       const result = await withTimeout(
         provider.generate(messages, options),
         15000,
