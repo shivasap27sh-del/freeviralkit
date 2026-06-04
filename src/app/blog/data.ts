@@ -72,8 +72,11 @@ import { post as whyDemonetizedFail } from './posts/why-demonetized-youtube-chan
 import { post as youtubeReplacingNetflix } from './posts/youtube-replacing-netflix-for-gen-z';
 import { post as shortsBubbleBursting } from './posts/youtube-shorts-bubble-bursting';
 import { post as howMuchYoutubePays } from './posts/how-much-youtube-pays-for-1-million-views';
-
+import { post as youtubeAlgorithmUpdate2026 } from './posts/youtube-algorithm-update-2026';
+import { post as youtubeSyntheticContentPolicy } from './posts/youtube-synthetic-content-policy';
 const rawBlogPosts: BlogPost[] = [
+  youtubeAlgorithmUpdate2026,
+  youtubeSyntheticContentPolicy,
   mrbeastEffect,
   whyDemonetizedFail,
   youtubeReplacingNetflix,

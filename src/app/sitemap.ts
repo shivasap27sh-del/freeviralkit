@@ -170,7 +170,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: buildAbsoluteUrl('/blog'),
-      lastModified: new Date('2026-06-02'),
+      lastModified: new Date('2026-06-04'),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
