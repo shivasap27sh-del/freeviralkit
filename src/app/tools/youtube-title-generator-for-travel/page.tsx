@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
+import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Travel Vlogs',
@@ -170,12 +171,9 @@ export default function TravelTitleLandingPage() {
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Create engaging titles for destination guides, budget travel, solo adventures, and food travel vlogs. Optimized for clicks, powered by AI.
           </p>
-          <Link
-            href="/youtube-title-generator"
-            className="btn-primary inline-flex rounded-xl px-6 py-3.5 font-semibold text-lg"
-          >
-            Generate Travel Titles Free →
-          </Link>
+          <div className="text-left mt-8">
+            <TitleGeneratorClient niche="travel" />
+          </div>
         </section>
 
         {/* Why travel titles matter */}

@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { generateTitles, generateDetails } from './actions';
+import { generateTitles } from './actions/titles';
+import { generateDetails } from './actions/details';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Wand2, Video, Copy, CheckCircle2, ChevronRight, Hash, Tag, AlignLeft,

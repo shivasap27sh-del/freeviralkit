@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
+import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Vlogs',
@@ -179,12 +180,9 @@ export default function VlogTitleLandingPage() {
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Make relatable, click-worthy vlog titles for daily routines, travel experiences, lifestyle content, and personal stories. Powered by AI, built for vloggers.
           </p>
-          <Link
-            href="/youtube-title-generator"
-            className="btn-primary inline-flex rounded-xl px-6 py-3.5 font-semibold text-lg"
-          >
-            Generate Vlog Titles Free →
-          </Link>
+          <div className="text-left mt-8">
+            <TitleGeneratorClient niche="vlogs" />
+          </div>
         </section>
 
         {/* Why vlog titles matter */}

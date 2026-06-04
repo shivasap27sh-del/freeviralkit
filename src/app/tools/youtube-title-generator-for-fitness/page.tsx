@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
+import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Fitness',
@@ -171,12 +172,9 @@ export default function FitnessTitleLandingPage() {
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Generate high-CTR titles for workout routines, body transformations, nutrition guides, and gym challenge videos. Powered by AI, built for fitness creators.
           </p>
-          <Link
-            href="/youtube-title-generator"
-            className="btn-primary inline-flex rounded-xl px-6 py-3.5 font-semibold text-lg"
-          >
-            Generate Fitness Titles Free →
-          </Link>
+          <div className="text-left mt-8">
+            <TitleGeneratorClient niche="fitness" />
+          </div>
         </section>
 
         {/* Why fitness titles matter */}

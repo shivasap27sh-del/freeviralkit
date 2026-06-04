@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { generateScriptOutline } from '../actions';
+import { generateScriptOutline } from '../actions/scripts';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FileText, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, Clock, Volume2, Video, ArrowRight, MessageSquare } from 'lucide-react';
 import Link from 'next/link';

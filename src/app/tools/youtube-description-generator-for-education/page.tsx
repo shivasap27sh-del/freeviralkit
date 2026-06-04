@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
+import DescriptionGeneratorClient from '@/components/tools/DescriptionGeneratorClient';
 
 export const metadata: Metadata = {
   title: 'YouTube Description Generator for Education',
@@ -190,12 +191,9 @@ export default function EducationDescriptionLandingPage() {
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Build clear, SEO-optimized descriptions for educational videos with topic summaries, learning outcomes, timestamps, and calls to action. Built for educators.
           </p>
-          <Link
-            href="/youtube-description-generator"
-            className="btn-primary inline-flex rounded-xl px-6 py-3.5 font-semibold text-lg"
-          >
-            Generate Education Descriptions Free →
-          </Link>
+          <div className="text-left mt-8">
+            <DescriptionGeneratorClient niche="education" />
+          </div>
         </section>
 
         {/* Why it matters */}

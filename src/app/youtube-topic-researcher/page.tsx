@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 
 import { useState } from 'react';
-import { researchTopic } from '../actions';
+import { researchTopic } from '../actions/research';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, AlertCircle, BarChart3, ShieldAlert, Award } from 'lucide-react';
 import Link from 'next/link';

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
+import ChannelNameGeneratorClient from '@/components/tools/ChannelNameGeneratorClient';
 
 export const metadata: Metadata = {
   title: 'YouTube Channel Name Generator for Gaming',
@@ -172,12 +173,9 @@ export default function GamingChannelNameLandingPage() {
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Generate unique, brandable gaming channel names instantly. Clan-style, streamer names, professional brands, or funny gamer tags — all powered by AI.
           </p>
-          <Link
-            href="/youtube-channel-name-generator"
-            className="btn-primary inline-flex rounded-xl px-6 py-3.5 font-semibold text-lg"
-          >
-            Generate Gaming Names Free →
-          </Link>
+          <div className="text-left mt-8">
+            <ChannelNameGeneratorClient niche="gaming" />
+          </div>
         </section>
 
         {/* Why your channel name matters */}

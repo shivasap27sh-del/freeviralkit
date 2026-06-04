@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { generateShortsIdeas } from '../actions';
+import { generateShortsIdeas } from '../actions/shorts';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Loader2, Sparkles, RotateCcw, Video, AlignLeft, MessageSquare } from 'lucide-react';
 import Link from 'next/link';

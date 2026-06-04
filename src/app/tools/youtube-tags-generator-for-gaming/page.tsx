@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
+import TagsGeneratorClient from '@/components/tools/TagsGeneratorClient';
 
 export const metadata: Metadata = {
   title: 'YouTube Tags Generator for Gaming',
@@ -171,12 +172,9 @@ export default function GamingTagsLandingPage() {
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Generate optimized tags for FPS, RPG, mobile gaming, streaming, and every genre. Maximize discoverability with AI-powered gaming tags.
           </p>
-          <Link
-            href="/youtube-tags-generator"
-            className="btn-primary inline-flex rounded-xl px-6 py-3.5 font-semibold text-lg"
-          >
-            Generate Gaming Tags Free →
-          </Link>
+          <div className="text-left mt-8">
+            <TagsGeneratorClient niche="gaming" />
+          </div>
         </section>
 
         {/* Why gaming tags matter */}

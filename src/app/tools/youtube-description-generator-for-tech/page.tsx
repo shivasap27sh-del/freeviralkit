@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
+import DescriptionGeneratorClient from '@/components/tools/DescriptionGeneratorClient';
 
 export const metadata: Metadata = {
   title: 'YouTube Description Generator for Tech Videos',
@@ -168,12 +169,9 @@ export default function TechDescriptionLandingPage() {
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Create structured, SEO-optimized descriptions for product reviews, unboxings, comparisons, and tech tutorials. Powered by AI, always free.
           </p>
-          <Link
-            href="/youtube-description-generator"
-            className="btn-primary inline-flex rounded-xl px-6 py-3.5 font-semibold text-lg"
-          >
-            Generate Tech Descriptions Free →
-          </Link>
+          <div className="text-left mt-8">
+            <DescriptionGeneratorClient niche="tech" />
+          </div>
         </section>
 
         {/* Why tech descriptions matter */}
