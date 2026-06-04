@@ -23,11 +23,9 @@ Two different creators can hit 1 million views on the exact same day. One might 
 
 Today, we are going to pull back the curtain. No guessing. No "penny a view" myths. Here is the exact, data-backed breakdown of how much YouTube actually pays for 1 million views in 2026.
 
----
 
 ![A glowing neon dollar sign sitting on top of a stack of gold coins and analytics charts](https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## Understanding the Math: RPM vs. CPM
 
@@ -112,7 +110,6 @@ If your video is over 8 minutes long, YouTube allows you to place "Mid-Roll" ads
 
 Hitting 1 million views is a monumental milestone. But in 2026, working smart is just as important as working hard. Pick a profitable niche, optimize your mid-rolls, and target the right geography. 
 
----
 
 ## Frequently Asked Questions (FAQs)
 

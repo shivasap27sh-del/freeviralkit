@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Digital hashtag representation](https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?q=80&w=800&auto=format&fit=crop)
 
----
 
 If you are coming to YouTube from Instagram, TikTok, or Twitter, you need to leave everything you know about hashtags at the door. 
 
@@ -22,7 +21,6 @@ Crucially, **the first three hashtags you put in your video description show up 
 
 Here is the exact YouTube hashtag blueprint for 2026 to help you grow your reach without getting penalized.
 
----
 
 ## The 3-5-2 Hashtag System: How to Structure Your Tags
 
@@ -42,7 +40,6 @@ These are niche-specific tags that represent the actual core topic of your speci
 These are ultra-specific keywords that describe the exact angle or question your video answers. Because these tags are so specific, you can easily rank at the top of their search feeds almost instantly.
 *   *Examples:* #PythonForBeginners, #iPhone16ProMaxReview, #EasyGlutenFreeBread, #HowToGrowOnYouTube
 
----
 
 ## Where to Place Your Hashtags (And Where NOT To)
 
@@ -51,7 +48,6 @@ You have two options for placing hashtags on your videos:
 *   **At the Bottom of the Description (Recommended):** Put your block of 8-10 hashtags at the very end of your description box. This keeps your main description text clean and easy for humans to read, while still allowing the search bots to index the tags and displaying the first three tags as clickable blue links above your video title.
 *   **In the Video Title:** You can add one or two hashtags directly to the end of your title. However, we advise against this for 95% of videos. Title character space is limited to 100 characters, and you want to use that space for high-CTR hooks, not hashtags. Only put hashtags in your title if you are targeting a massive trending tag like #Shorts or #GTA6.
 
----
 
 ## Common Hashtag Pitfalls That Can Kill Your Reach
 
@@ -61,7 +57,6 @@ YouTube has strict metadata guidelines. If you try to spam the system, the algor
 *   **Irrelevant Tagging (Clickbaiting):** Adding tags like #MrBeast or #PewDiePie to your coding tutorial in an attempt to steal traffic is a fast way to get flagged. When the algorithm realizes viewers who click the tag leave your video immediately, it stops recommending your content entirely.
 *   **CamelCase Formatting:** Always capitalize the first letter of each word in a multi-word hashtag (e.g., use #HowToCook instead of #howtocook). It makes your tags vastly easier for human eyes to read when they show up above your title, increasing the likelihood of clicks.
 
----
 
 ## Recommended Hashtags for Major Niches
 
@@ -73,15 +68,11 @@ If you are looking for a place to start, here are the most effective baseline ta
 *   **Health & Fitness:** #Fitness, #Workout, #GymLife, #HomeWorkout, #HealthyLifestyle, #FitFam
 *   **Education & Code:** #LearnOnYouTube, #HowTo, #Tutorial, #StudyTips, #CodingTips
 
----
-
-
 
 For a deeper analysis of the exact math behind hashtags and whether they move the needle, read [Do YouTube Hashtags Actually Help](/blog/do-youtube-hashtags-actually-help).
 
 
 
----
 
 ## Frequently Asked Questions
 

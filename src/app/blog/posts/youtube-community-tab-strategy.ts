@@ -16,11 +16,9 @@ That is when I realized the YouTube Community Tab is not an afterthought. It is 
 
 If you are only communicating with your audience when you upload a video, you are leaving massive growth on the table. Here is the definitive **YouTube Community Tab strategy** to boost engagement, hack the algorithm with **YouTube polls**, and master **audience engagement techniques**.
 
----
 
 ![Close up of a smartphone screen showing a YouTube Community Tab poll](https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## Why the Community Tab is an Algorithmic Cheat Code
 
@@ -78,7 +76,6 @@ For more strategies on keeping your audience hooked when they do click your vide
 2. **Off-Topic Posting:** If you run a finance channel, do not post a poll about your favorite Marvel movie. It confuses the algorithm's understanding of your audience demographics. Stay in your niche.
 3. **Ignoring the Comments:** The Community Tab comments section is the best place to build super-fans. Reply to the first 20 comments on every post. It encourages those people to comment again next time.
 
----
 
 ## Frequently Asked Questions
 
@@ -97,7 +94,6 @@ For standard image posts, use a 1:1 (square) ratio (1080x1080 pixels). This ensu
 ### Should I delete old Community posts?
 Generally, no. Old polls and posts act as an archive of your channel's community interaction. The only time you should delete a post is if it contains time-sensitive information (like a giveaway that has ended) or if it severely underperformed and you want to clean up your feed.
 
----
 
 ## Turn Your Viewers Into a Community
 

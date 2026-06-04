@@ -12,11 +12,9 @@ Here is what most music creators get wrong: they think tags are irrelevant becau
 
 This guide covers the exact tag strategies for **music video SEO**, song covers, and beat production channels — plus how to cross-promote with Spotify for maximum reach.
 
----
 
 ![Music production setup with headphones, keyboard, and monitor showing audio waveforms](https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## The Tag Formula for Music Videos
 
@@ -48,7 +46,6 @@ This is where most artists fall short. You need to tag the *vibe*, not just the 
 
 The key is covering every angle someone might use to find music like yours. Use our [YouTube Tags Generator](/youtube-tags-generator) to rapidly expand your tag lists with AI-powered suggestions tailored to your genre.
 
----
 
 ## Best Tags for Song Covers
 
@@ -79,7 +76,6 @@ For each genre, there are additional high-volume tags:
 
 A well-tagged cover of a trending song can generate thousands of views in the first week from search alone. Pair your tags with an optimized title using the [Music Title Generator](/tools/youtube-title-generator-for-music) for maximum discoverability.
 
----
 
 ## Best Tags for Beat Producers and Instrumentals
 
@@ -110,7 +106,6 @@ Your title should contain one type beat reference, but your tags should contain 
 
 For a deeper dive into general tag strategy, our guide on [best YouTube tags](/blog/best-youtube-tags) covers the fundamentals that apply across all niches.
 
----
 
 ## Cross-Promoting YouTube Music with Spotify
 
@@ -131,7 +126,6 @@ When someone discovers your music on Spotify and then searches your name on YouT
 
 Learn more about leveraging short-form content for cross-promotion in our [YouTube Shorts SEO guide](/blog/youtube-shorts-seo).
 
----
 
 ## Common Tagging Mistakes Music Creators Make
 
@@ -144,7 +138,6 @@ After analyzing hundreds of music channels, here are the mistakes I see repeated
 
 For a comprehensive overview of how hashtags complement your tag strategy, check out our [YouTube hashtag strategy guide](/blog/youtube-hashtag-strategy).
 
----
 
 ## Frequently Asked Questions
 
@@ -157,7 +150,6 @@ No. While some tags will repeat (your artist name, your genre), each video shoul
 ### Do tags help YouTube Shorts for music?
 Tags have a minimal effect on Shorts because Shorts are primarily distributed through the Shorts shelf algorithm, which relies more on engagement signals (likes, shares, replays) than metadata. However, adding relevant tags to Shorts does not hurt, and it helps if your Short appears in regular search results.
 
----
 
 ## Start Tagging Smarter — Not Harder
 

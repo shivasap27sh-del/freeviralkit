@@ -16,7 +16,6 @@ By designing your video so that the end connects perfectly with the beginning, v
 
 Here is exactly how to script and edit seamless loops.
 
----
 
 ## 3 Creative Ways to Script a Seamless Loop
 
@@ -46,7 +45,6 @@ Start with a general rule and end with a phrase that introduces the example at t
 
 The transition reads: *"If you're tired of writing YouTube tags and descriptions manually, you need to use... This simple AI tool saves me 10 hours a week."*
 
----
 
 ## Technical Editing Tips for Perfect Loops
 
@@ -63,7 +61,6 @@ The visual frame at the very last millisecond of your video must match the very 
 * If you are showing your face on camera, use the exact same position, posture, and lighting.
 * **Pro Tip:** Record the intro and outro of the loop in a single continuous take without moving your head or body. Cut the middle parts, and place the start and end of that take at the edges of your timeline.
 
----
 
 ## Your Action Plan for Looping Shorts
 

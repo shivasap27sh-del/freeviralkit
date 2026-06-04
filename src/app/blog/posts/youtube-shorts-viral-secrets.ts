@@ -14,11 +14,9 @@ Then I changed three things about how I structured my Shorts, and everything shi
 
 The difference was not better equipment or fancier editing. It was understanding how the Shorts algorithm actually decides which videos to push and which ones to bury. Let me break down every single thing I learned.
 
----
 
 ![Creator filming a YouTube Short on their phone with ring light](https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## The Shorts Algorithm Is Not the YouTube Algorithm
 
@@ -38,7 +36,6 @@ The metrics that matter for Shorts are completely different:
 
 If you want to understand how hashtags play into Shorts discoverability, read our analysis on [whether YouTube hashtags actually help](/blog/do-youtube-hashtags-actually-help).
 
----
 
 ## The Perfect Anatomy of a Viral Short
 
@@ -89,7 +86,6 @@ To create a perfect loop:
 
 To optimize the metadata around your Shorts, use our free [YouTube Hashtag Generator](/youtube-hashtag-generator) to find trending, niche-relevant hashtags.
 
----
 
 ## The Editing Secrets That Trigger Dopamine
 
@@ -105,7 +101,6 @@ Viral Shorts are not just well-structured — they are carefully engineered to t
 
 For a deeper dive into how pacing affects viewer retention across all video formats, read our breakdown of [audience retention strategies](/blog/increase-youtube-audience-retention).
 
----
 
 ## The Upload Strategy That Changed Everything
 
@@ -119,7 +114,6 @@ Creating a great Short is only half the battle. How and when you upload matters 
 
 **Repurpose long-form content**: Your existing long-form videos are a goldmine of Shorts content. Take the best 15-second moment from each video — the most shocking stat, the funniest moment, the most actionable tip — and turn it into a standalone Short. You can generate ideas for this using our [YouTube Shorts Idea Generator](/youtube-shorts-idea-generator).
 
----
 
 ## Frequently Asked Questions
 
@@ -138,7 +132,6 @@ Absolutely not. Most viral Shorts in 2026 are filmed on smartphones. What matter
 ### Should I use trending audio in my Shorts?
 Trending audio can boost discovery, but it is not a magic bullet. The algorithm weighs retention and engagement far more heavily than audio trends. Use trending sounds when they naturally fit your content, but never force a trending audio into a video where it does not make sense. Authenticity always wins over trend-chasing.
 
----
 
 ## Stop Guessing, Start Creating
 

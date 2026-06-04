@@ -18,11 +18,9 @@ What I eventually learned — and what changed everything — is that waiting fo
 
 Here are the 9 strategies I used to break out of the zero-views cycle — all completely free, no paid ads required.
 
----
 
 ![Creator promoting YouTube video on laptop with social media apps open](https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## Strategy 1: Become the Most Helpful Person in Your Niche's Communities
 
@@ -36,7 +34,6 @@ Once you have established credibility, you can naturally reference your videos w
 
 The difference in reception is night and day. Self-promoters get banned. Genuine helpers who occasionally share relevant content get subscribers.
 
----
 
 ## Strategy 2: Optimize for YouTube Search, Not the Browse Feed
 
@@ -54,7 +51,6 @@ To dominate search:
 
 Our [YouTube Tags Generator](/youtube-tags-generator) can help you identify the right keyword combinations, and our [YouTube Description Generator](/youtube-description-generator) creates search-optimized descriptions in seconds.
 
----
 
 ## Strategy 3: The Strategic Collaboration
 
@@ -64,7 +60,6 @@ Instead, target creators at your level or slightly above (1.5x to 3x your subscr
 
 The best collaboration format is a "value exchange" video where each creator appears on the other's channel. You interview them on your channel, and they interview you on theirs. Both audiences discover a new creator they trust, because the recommendation comes from someone they already follow. For a deep dive into collaboration strategy, read our comprehensive guide on [YouTube collaboration strategies](/blog/youtube-collaboration-strategy).
 
----
 
 ## Strategy 4: Repurpose Into Short-Form Content
 
@@ -76,7 +71,6 @@ This strategy works because short-form algorithms are much more generous to smal
 
 For ideas on what type of Shorts to create, use our [YouTube Shorts Idea Generator](/youtube-shorts-idea-generator).
 
----
 
 ## Strategy 5: Write Long-Form Blog Posts Around Your Videos
 
@@ -90,7 +84,6 @@ Why this works:
 
 You do not need a fancy website. A free WordPress blog or Medium account works fine to start.
 
----
 
 ## Strategy 6: Master the Art of the Pinned Comment
 
@@ -104,7 +97,6 @@ Instead, use your pinned comment strategically:
 
 High comment engagement signals to the algorithm that your video is generating active conversation, which increases its recommendation potential. For more pinned comment strategies, read our guide on [YouTube pinned comment formulas](/blog/youtube-pinned-comment-formula).
 
----
 
 ## Strategy 7: Leverage Your Existing Social Media — Even If It Is Small
 
@@ -117,7 +109,6 @@ The key is how you share. Do not just post a link with "New video out!" Instead:
 
 This approach provides value to your social media audience while creating curiosity that drives them to YouTube.
 
----
 
 ## Strategy 8: Create Playlists That Keep Viewers on Your Channel
 
@@ -128,7 +119,6 @@ Playlists are criminally underused by small creators. A well-organized playlist 
 
 Create playlists organized by topic, difficulty level, or series order. Name your playlists with SEO keywords: "Python for Beginners — Complete Course" is far better than "My Python Videos." For advanced playlist strategies, check out our guide on [YouTube playlist optimization](/blog/youtube-playlist-strategy).
 
----
 
 ## Strategy 9: Cross-Pollinate with Email (Even with 50 Subscribers)
 
@@ -138,7 +128,6 @@ Add a simple call-to-action in every video description: "Get my free [relevant r
 
 Even with 50 email subscribers, you have 50 people you can notify every time you upload. Those 50 views, likes, and comments within the first hour send powerful signals to the algorithm.
 
----
 
 ## Frequently Asked Questions
 
@@ -157,7 +146,6 @@ Only if you do it wrong. Dropping links with no context in unrelated communities
 ### Can I pay for promotion instead of doing it manually?
 Paid promotion (YouTube ads) can work, but it is expensive and rarely profitable for small channels. Your money is better spent on equipment or tools. Free organic promotion builds a more engaged, loyal audience because viewers chose to find you — they were not served an ad.
 
----
 
 ## The Algorithm Rewards Those Who Help Themselves
 

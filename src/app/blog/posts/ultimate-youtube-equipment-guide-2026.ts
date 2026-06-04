@@ -18,7 +18,6 @@ Even worse, I was so stressed about setting up the equipment that it took me thr
 
 If you are starting out or looking to upgrade your setup, I want to save you from making the same expensive mistakes. You do not need a Hollywood setup to make great videos. You need gear that is functional, easy to use, and focused on what actually keeps viewers watching. Here is my honest, personal guide to YouTube creator equipment in 2026.
 
----
 
 ## 1. Audio: The One Upgrade You Cannot Ignore
 
@@ -32,7 +31,6 @@ Here is what I recommend depending on your budget:
 * **The On-The-Go Shotgun Mic:** The [Rode VideoMic Pro+](/creator-gear) is my favorite camera-mounted microphone. It is highly directional, meaning it captures your voice while blocking out surrounding street or room noise.
 * **The Studio XLR Combo:** The [Shure SM7B Cardioid Dynamic Microphone](/creator-gear) paired with a [Focusrite Scarlett 2i2 USB Audio Interface](/creator-gear) is the setup I use now. It rejects background noise and room echo perfectly, delivering a warm, professional radio voice.
 
----
 
 ## 2. Cameras: Stop Buying Expensive DSLRs Too Early
 
@@ -42,7 +40,6 @@ Do not buy a full-frame camera if you don't know what aperture or ISO means. Sta
 * **The Best Value Vlog Camera:** The [Sony ZV-E10](/creator-gear) is the camera I recommend to most creators. It has a flip-out screen, interchangeable lenses, and perfect autofocus that tracks your eyes automatically.
 * **The Professional Standard:** The [Sony A7 IV Full-Frame Mirrorless Camera](/creator-gear) is a beast. If you are doing professional client work or want the absolute best cinematic depth-of-field, this is the industry standard.
 
----
 
 ## 3. Lighting: A Cheap Camera with Good Light Beats an Expensive Camera in the Dark
 
@@ -52,7 +49,6 @@ If you record in a dark room using overhead house lights, your video will look g
 * **Cinematic Key Light:** The [Amaran 60x LED Video Light](/creator-gear) is a compact COB studio light. Mount a softbox to it, and you'll get that soft, cinematic key lighting you see on top commentary channels.
 * **The Dimmable Ring Light:** The [Neewer 18-inch LED Ring Light](/creator-gear) is an affordable all-in-one kit with stands and mounts, perfect for makeup, fashion, or simple front-facing tutorials.
 
----
 
 ## 4. Setup Accessories & Production Software
 
@@ -66,7 +62,6 @@ To keep your workflow fast and organized, these are the setup items and editing 
 | **AI Video Editor** | [Descript](/creator-gear) | I use this to transcribe my script and remove all my "ums" and "uhs" automatically. |
 | **Video Editor Suite** | [Adobe Premiere Pro](/creator-gear) | The industry standard. Great color tools, but has a steeper learning curve. |
 
----
 
 ## Frequently Asked Questions (FAQ)
 

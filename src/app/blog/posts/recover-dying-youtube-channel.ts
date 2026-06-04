@@ -16,11 +16,9 @@ I spent the next two months trying everything—changing upload times, changing 
 
 If your views are dropping, your subscribers are inactive, and every upload feels like a failure, take a deep breath. Your channel is not dead. It is just misaligned. Here is the exact diagnostic process and recovery plan to **recover a dying YouTube channel**, fix **dead subscribers**, and execute a successful **channel pivot strategy**.
 
----
 
 ![A frustrated creator looking at a downward trending analytics graph on a laptop](https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## Phase 1: Diagnose the Disease (Why Channels Die)
 
@@ -76,7 +74,6 @@ To accelerate this process:
 *   **Leverage YouTube Shorts:** Shorts are served to massive, broad audiences and can act as a defibrillator for a dead channel, bringing in fresh viewers who never knew your old content. (Learn more in our [YouTube Shorts SEO guide](/blog/youtube-shorts-seo)).
 *   **Pin Strategic Comments:** Drive viewers from your new videos into a playlist of your best content to rack up session watch time.
 
----
 
 ## Frequently Asked Questions
 
@@ -95,7 +92,6 @@ If you consistently upload high-quality, search-optimized content with modernize
 ### Can deleting old videos help the algorithm?
 Do not mass-delete old videos. It removes total watch time from your channel and can hurt your overall authority. If old videos are genuinely embarrassing or totally off-brand for your pivot, change their visibility to "Unlisted." This hides them from your channel page but preserves their analytics history.
 
----
 
 ## The Comeback Story Starts Now
 

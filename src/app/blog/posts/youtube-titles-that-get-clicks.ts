@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Titles headlines reading laptop](https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=800&auto=format&fit=crop)
 
----
 
 I used to spend two hours editing a video, another hour designing a thumbnail, and then about 30 seconds writing the title. Then, I sat there staring at my YouTube Studio app, wondering why the views were sitting at double digits. 
 
@@ -18,7 +17,6 @@ Here is the cold, hard reality: your title and thumbnail are your video's entire
 
 After studying what actually works across hundreds of successful videos, I have found that writing high-CTR titles comes down to three core pillars: Clarity, Curiosity, and Value.
 
----
 
 ## The Three Pillars of High-CTR Titles
 
@@ -28,7 +26,6 @@ Before you hit publish, run your title through this checklist:
 2. **Curiosity:** Create an "information gap"—the space between what your viewer knows and what they want to know. "I Tested 5 Budget Cameras. One Shocked Me" works because the viewer *must* click to find out which camera it was.
 3. **Value:** Answer the viewer's unspoken question: *"What do I get from watching this?"* A title like "How to Edit Videos 3x Faster" promises a direct, actionable benefit.
 
----
 
 ## 12 Proven Title Formulas That Actually Work
 
@@ -47,7 +44,6 @@ Here are the 12 most effective formulas used by top creators. You can adapt thes
 * **The Time Challenge:** "I Built a Business in 24 Hours". Adds urgency and drama.
 * **The Ultimate Guide:** "The Ultimate Guide to YouTube SEO". Positions your video as the single resource they need.
 
----
 
 ## Title Mistakes That Are Killing Your Views
 
@@ -59,7 +55,6 @@ Avoid these common blunders that hurt your CTR and video categorization:
 * **No Keywords:** If you want to rank for "pasta recipe," you must include those exact words in the title.
 * **Generic Titles:** "Vlog #12" or "Cooking Video" will never rank in search because nobody is looking for them.
 
----
 
 ## The Emoji and Visual Hook Advantage
 
@@ -68,9 +63,6 @@ One simple trick that can boost your CTR by 10-15% is adding visual contrast. Em
 * **High CTR Title:** How to Edit Videos 3x Faster 🚀 (in 5 Minutes!)
 
 The rocket emoji adds a pop of color, and the bracketed text adds urgency. Keep it to one emoji so it stays professional.
-
----
-
 
 
 ### The Psychology of Curiosity Gaps
@@ -83,7 +75,6 @@ To see how your titles interact with click-through-rates on a structural level, 
 
 
 
----
 
 ## Frequently Asked Questions
 

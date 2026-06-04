@@ -16,11 +16,9 @@ I had spent 12 hours creating that video. The research was solid. The informatio
 
 That painful experience sent me down a rabbit hole of studying how top creators structure their videos. What I discovered was humbling: retention is not about flashy editing or expensive equipment. It is about the invisible architecture of how you structure information, manage expectations, and create psychological tension that makes it impossible for the viewer to click away.
 
----
 
 ![YouTube Studio analytics showing audience retention graph on a monitor](https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## Why the Algorithm Cares About Retention More Than Anything Else
 
@@ -38,7 +36,6 @@ Here is the critical insight most creators miss: YouTube cares about *absolute* 
 
 But there is a catch — longer videos are exponentially harder to retain viewers through. Every additional minute is another opportunity for the viewer to get bored and leave. That is why mastering retention tactics is essential. For insights on crafting the initial click that sets up your retention strategy, read our breakdown of [YouTube CTR secrets](/blog/youtube-ctr-secrets).
 
----
 
 ## The First 30 Seconds: Where Most Videos Die
 
@@ -56,7 +53,6 @@ Here are the three deadliest intro mistakes:
 
 Instead, your opening should establish what I call the "Curiosity Gap" — a question, mystery, or teaser that makes the viewer need to keep watching. More on this below.
 
----
 
 ## Open Loops: The Most Powerful Retention Technique
 
@@ -72,7 +68,6 @@ Now the viewer has a burning question they can only answer by watching until the
 
 The best creators stack multiple open loops throughout their video. They close one loop (delivering the promised reveal) while simultaneously opening a new one. This creates a chain of curiosity that pulls the viewer through the entire video. To learn more about structuring this kind of narrative in your scripts, check out our guide on [YouTube script outline formulas](/blog/youtube-script-outline-formula).
 
----
 
 ## Pattern Interrupts: Resetting the Brain Every 15 Seconds
 
@@ -94,7 +89,6 @@ The solution is **pattern interrupts**: deliberate changes in the visual or audi
 
 The rhythm matters. Aim for a pattern interrupt every 10 to 15 seconds. This is not about bombarding the viewer with chaos — it is about creating a cadence that keeps the brain engaged without overwhelming it.
 
----
 
 ## Pacing: The Hidden Variable Nobody Talks About
 
@@ -110,7 +104,6 @@ Pacing is the rhythm at which you deliver information. Too fast, and viewers fee
 
 **Cut ruthlessly**: Watch your finished video and ask yourself for every single sentence: "Does this NEED to be here?" If the answer is no, cut it. A tight 8-minute video will always outperform a bloated 15-minute video with the same information.
 
----
 
 ## Frequently Asked Questions
 
@@ -129,7 +122,6 @@ Yes, when used correctly. Background music creates emotional tone and fills audi
 ### How important are subtitles for retention?
 Extremely important. Over 50% of mobile viewers watch with sound off, especially on public transportation, in bed, or during work breaks. Dynamic on-screen captions keep these viewers engaged. Even for viewers with sound on, captions improve comprehension and make your content more accessible.
 
----
 
 ## The Retention-CTR Flywheel
 

@@ -25,11 +25,9 @@ The Shorts algorithm is a completely different beast than the long-form Search o
 
 Here is the exact breakdown of the YouTube Shorts algorithm, and how to finally break past the 400-view flatline.
 
----
 
 ![Person scrolling through vertical videos on a smartphone](https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## The Two Algorithms of YouTube
 
@@ -47,7 +45,6 @@ Instead, the Shorts algorithm relies on two primary metrics to judge the quality
 
 Let's break down exactly what these mean and the targets you need to hit.
 
----
 
 ## Metric 1: Viewed vs. Swiped Away (The "Hook" Test)
 
@@ -67,7 +64,6 @@ To fix this metric, you must optimize the first 3 seconds of your video. You nee
 
 > **Need a better hook?** Text hooks are everything in Shorts. If you need highly engaging phrasing, run your topic through our **[Free YouTube Title Generator](/youtube-title-generator)** and use those generated titles as the bold text on screen in the first 3 seconds of your Short.
 
----
 
 ## Metric 2: Average Percentage Viewed (The "Retention" Test)
 
@@ -87,7 +83,6 @@ If your APV is failing, your video has dead space. You must edit aggressively. R
 
 The most powerful tactic to boost APV is the "Loop Trick." Structure the final sentence of your Short so that it naturally flows perfectly back into the first sentence of the video. The viewer will accidentally watch the first 3 seconds of the video again before realizing it restarted, massively boosting your APV.
 
----
 
 ## Why Videos "Flatline" at 400 Views
 
@@ -107,7 +102,6 @@ If the answer is **Yes**, YouTube pushes it to a larger "Test Group B" of 5,000 
 
 The 400-view flatline is simply the algorithm concluding that, based on the initial sample size, your video is not engaging enough to keep users on the platform.
 
----
 
 ## The Seed Audience Trap (Hashtags Matter)
 
@@ -121,7 +115,6 @@ You MUST tell the algorithm exactly who your video is for using metadata.
 
 Stop blaming the algorithm. Start looking at your VVSA and APV metrics in the Studio app. Find where the viewers are dropping off, edit your next video to fix that specific leak, and eventually, you will break the 400-view barrier and go viral.
 
----
 
 ## Frequently Asked Questions (FAQs)
 

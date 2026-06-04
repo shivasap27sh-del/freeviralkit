@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Hashtag representation](https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop)
 
----
 
 If you spend any time reading YouTube growth guides or watching SEO tutorials, you will see the exact same advice repeated everywhere: *"Make sure you use hashtags on your videos!"* 
 
@@ -18,7 +17,6 @@ So, I decided to dig into it. We analyzed view patterns, searched index director
 
 Here is the honest, data-backed truth about hashtags, how the algorithm uses them, and how you should use them in 2026.
 
----
 
 ## What the Data Says: The Pros of Hashtags
 
@@ -33,7 +31,6 @@ YouTube's primary goal is to keep viewers on the platform by showing them videos
 ### 3. The Above-Title Links Drive Clicks
 By default, the first three hashtags you put in your video description are displayed above your title as clickable blue labels. In a sea of plain text, these colored links provide visual interest. They make your video page look more polished and draw the viewer's eye.
 
----
 
 ## The Cons: Why Hashtags Won't Save a Bad Video
 
@@ -43,7 +40,6 @@ While hashtags have benefits, you need to have realistic expectations. Here is w
 * **Overuse is Penalized:** If you use more than 60 hashtags on a single video, YouTube will ignore **every single one of them**. The algorithm flags this as spam and deactivates all hashtags on the post.
 * **Misleading Hashtags Can Kill Your Channel:** If you tag your gaming video with #TaylorSwift just to hijack trending search traffic, the algorithm gets confused. If it shows your gaming video to music fans and they immediately swipe away, your retention score drops, and YouTube stops promoting your content entirely.
 
----
 
 ## The Verdict: Should You Use Them?
 
@@ -51,7 +47,6 @@ While hashtags have benefits, you need to have realistic expectations. Here is w
 
 Think of hashtags as the last 5% of video optimization. They take 30 seconds to write, they are 100% free, and they provide a small but measurable boost to your search discoverability and categorization. There is no logical reason *not* to use them. Just make sure you nail your title, thumbnail, and content first.
 
----
 
 ## How to Implement a Clean Hashtag Setup
 
@@ -61,9 +56,6 @@ To get the maximum benefit from hashtags without looking spammy, follow these gu
 2. **Prioritize Your First Three Tags:** Since the first three hashtags in your description appear above your title, make sure they are your strongest, most descriptive terms.
 3. **Use CamelCase:** Capitalize the first letter of each word (e.g., #VideoEditing instead of #videoediting) to make them readable.
 4. **Put Them at the Bottom:** Place your hashtags at the very end of your video description to keep the main text clean and readable.
-
----
-
 
 
 ### The Direct Value of Hashtag Landing Pages
@@ -76,7 +68,6 @@ To ensure your hashtags work in tandem with other metadata, check out our guide 
 
 
 
----
 
 ## Frequently Asked Questions
 

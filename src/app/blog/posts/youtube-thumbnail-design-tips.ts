@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Digital design canvas screen](https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=800&auto=format&fit=crop)
 
----
 
 Here is the straight truth: your thumbnail is the single most important piece of content you create for every video. Not your script. Not your b-roll. Not your color grading. Your thumbnail.
 
@@ -16,7 +15,6 @@ Think about it this way. Every single day, YouTube surfaces your video to hundre
 
 The difference between a 2% CTR and a 7% CTR is not luck. It is design. And the best part? You do not need to be a professional graphic designer to nail this. You just need to understand a handful of proven principles that separate clickable thumbnails from forgettable ones.
 
----
 
 ## The 3-Second Rule: You Get One Glance
 
@@ -32,7 +30,6 @@ In those 3 seconds, your thumbnail needs to communicate three things:
 
 If your thumbnail cannot pass all three of those checks in a quick glance, it is time to go back to the drawing board. Pull up your channel on your phone right now, hold it at arm's length, and scroll through your videos. If any thumbnail is hard to read or understand at that distance, it needs work.
 
----
 
 ## Color Psychology: Which Colors Actually Pop on YouTube
 
@@ -50,7 +47,6 @@ Here is a quick breakdown:
 
 The worst thing you can do is use muted, pastel colors or dark grey backgrounds. They vanish into YouTube's interface and your thumbnail becomes invisible. If your thumbnail blends in, it might as well not exist.
 
----
 
 ## Text on Thumbnails: Less Is Always More
 
@@ -65,7 +61,6 @@ Here are the rules that actually work:
 
 For example, if your video title is *"I Tested Every Budget Camera Under $300"*, your thumbnail text should not say the same thing. Instead, it should say something like **"$50 vs $300"** or **"SHOCKED ME"** — something short, punchy, and emotionally charged that works alongside the title.
 
----
 
 ## Faces and Emotions: The Secret Weapon
 
@@ -82,7 +77,6 @@ But here is the key — the face needs to show **real emotion**. A neutral, blan
 
 Match the emotion on your face to the emotion in your title. If your title promises something shocking, your face better look shocked. If it promises something exciting, you better look excited. A mismatch between the two feels fake, and viewers will scroll right past it.
 
----
 
 ## Common Thumbnail Mistakes That Are Destroying Your CTR
 
@@ -95,7 +89,6 @@ Let me walk through the biggest offenders I see constantly:
 * **Tiny text or too many words.** If it cannot be read on a phone in under 2 seconds, delete half the words and double the font size.
 * **Ignoring mobile.** Over 70% of YouTube watch time happens on mobile devices. Always preview your thumbnail at mobile size before publishing.
 
----
 
 ## Tools for Creating Killer Thumbnails
 
@@ -109,7 +102,6 @@ You do not need a $600 Photoshop subscription to make professional thumbnails. H
 
 My recommendation? Start with Canva if you are new to design. Move to Photoshop or Photopea once you want more creative control. The tool matters far less than understanding the principles above.
 
----
 
 ## The Thumbnail + Title Combo: They Are a Package Deal
 
@@ -127,15 +119,11 @@ The thumbnail creates the visual intrigue. The title explains the concept and cr
 
 This is exactly why spending time on your title is just as critical as spending time on your thumbnail. They are two halves of the same click.
 
----
-
-
 
 Great thumbnails feed directly into your click-through-rate. To discover how they work together, read [YouTube CTR Secrets](/blog/youtube-ctr-secrets).
 
 
 
----
 
 ## Frequently Asked Questions
 

@@ -16,7 +16,6 @@ It didn't. Hard work without research is just wasted energy.
 
 The day I stopped guessing and started doing proper topic research was the day my channel finally began to grow. Here is the exact competitor research and keyword validation system I use to ensure every video I make has an audience waiting for it.
 
----
 
 ## The Competitor Analysis Strategies That Changed Everything
 
@@ -45,7 +44,6 @@ Read the comment section of the top-performing videos in your niche. You'll find
 
 These comments represent **unmet needs**. Write them down and make a video addressing those exact questions.
 
----
 
 ## My Topic Validation Checklist
 
@@ -58,7 +56,6 @@ Before I film any video, I run the topic through this validation checklist to ma
 | **Affiliate Potential** | High. I can link to products (e.g., equipment guides) to make money even with small views. | Low. No clear products or sponsorships fit the topic. |
 | **Search Intent** | Specific troubleshooting or guides (e.g., *"how to remove microphone echo"*). | Broad, generic terms (e.g., *"microphones"*). |
 
----
 
 ## Leveraging AI for Rapid Topic Research
 
@@ -69,7 +66,6 @@ I use our free [AI Niche Researcher](/youtube-topic-researcher) to input a gener
 When prompting AI, keep it specific and human:
 > *"Act as my YouTube SEO coach. I run a gardening channel. Give me 10 specific, long-tail questions that beginners ask about growing tomatoes indoors. I want topics where the competition is low but the search intent is high. Write them in a conversational, helpful tone."*
 
----
 
 ## Frequently Asked Questions (FAQ)
 

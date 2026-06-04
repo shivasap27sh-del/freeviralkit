@@ -14,11 +14,9 @@ That experience completely changed how I think about **YouTube collaboration**. 
 
 Let me walk you through exactly how to find partners, pitch effectively, execute great collabs, and measure your results.
 
----
 
 ![Two content creators filming a video together](https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## How to Find the Right Collaboration Partners
 
@@ -40,7 +38,6 @@ Not all collabs are created equal. The wrong partner can waste your time or even
 
 Having a strong, memorable channel identity helps you stand out when reaching out to potential partners. Our [YouTube Channel Name Generator](/youtube-channel-name-generator) can help you create a professional, brandable name that makes a great first impression.
 
----
 
 ## How to Write a Collab Pitch That Gets a Response
 
@@ -75,7 +72,6 @@ This pitch fails because it is vague, self-serving, and gives the other creator 
 
 The key elements are: **specificity** (a concrete video idea), **value proposition** (why their audience benefits), and **low friction** (you handle your own logistics).
 
----
 
 ## 5 Collaboration Formats That Work
 
@@ -96,7 +92,6 @@ A friendly comparison or debate between two creators on a topic they both care a
 ### 5. The Guest Appearance
 Simply appear in each other's videos as a supporting character or co-host for a single episode. This is the lowest-friction option and works well for a first collaboration with someone you do not know well yet.
 
----
 
 ## Cross-Promotion: Maximizing Collab Impact
 
@@ -111,7 +106,6 @@ Filming the video is only half the equation. How you **cross-promote on YouTube*
 
 For more strategies on promoting your content externally, check out our guide on [how to promote YouTube videos](/blog/how-to-promote-youtube-videos).
 
----
 
 ## Measuring Collaboration Results
 
@@ -128,7 +122,6 @@ Keep a simple spreadsheet tracking each collab: partner name, subscriber count, 
 
 For a deeper dive into analytics, read our complete [YouTube Analytics Guide](/blog/youtube-analytics-guide). For strategies on growing from scratch, our guide on [how to grow a YouTube channel from zero](/blog/how-to-grow-youtube-channel-from-zero) covers the full roadmap.
 
----
 
 ## Frequently Asked Questions
 
@@ -144,7 +137,6 @@ Rarely, but it is possible. If you collaborate with a creator whose audience has
 ### Should I collaborate with competitors?
 In most cases, yes. YouTube is not a zero-sum game. Viewers subscribe to multiple channels in the same niche. Collaborating with a "competitor" often benefits both channels because it introduces each audience to a fresh perspective on topics they already care about.
 
----
 
 ## Start Building Collaborative Growth
 

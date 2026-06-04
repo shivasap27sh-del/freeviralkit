@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Typing description on laptop](https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800&auto=format&fit=crop)
 
----
 
 Here is a pattern I see all the time: a creator spends ten hours scripting, filming, and editing a video. They write a killer title, design a highly clickable thumbnail, and then, right before hitting publish, they copy and paste "check out my video lol" into the description box and call it a day. 
 
@@ -18,7 +17,6 @@ Your video description is one of the most powerful tools in your SEO arsenal. It
 
 If you want to turn your descriptions from an afterthought into a traffic engine, here are 7 proven tips to write descriptions that actually get views in 2026.
 
----
 
 ## 1. Your First Two Lines Are Everything
 
@@ -30,7 +28,6 @@ Nobody cares about your greeting in the search results. Instead, lead with a str
 
 This tells both the user and the algorithm exactly what the video delivers from the very first frame.
 
----
 
 ## 2. Write a "Mini-Blog Post" (200-300 Words)
 
@@ -38,7 +35,6 @@ I know, writing descriptions feels like homework. But YouTube's search crawlers 
 
 Aim to write a detailed summary of at least 200 to 300 words. Describe the problems you discuss, the solutions you offer, and the key takeaways. Write in a natural, conversational tone. Do not just list your keywords (keyword stuffing)—this is spammy and can get your video suppressed. Instead, write naturally and let your keywords flow organically.
 
----
 
 ## 3. Implement Interactive Timestamps
 
@@ -53,7 +49,6 @@ Format them clearly like this:
 * \`7:25 - Troubleshooting Tips\`
 * \`9:10 - Final Reveal\`
 
----
 
 ## 4. Include Clear Calls to Action (CTAs)
 
@@ -64,7 +59,6 @@ Do not assume your viewers know what you want them to do next. Ask them directly
 
 Limit your description to 2 or 3 primary CTAs. If you ask people to follow your Instagram, subscribe to your channel, buy your course, join your Discord, and visit your blog, they will get overwhelmed and do none of them.
 
----
 
 ## 5. Embed Related Video Links
 
@@ -72,27 +66,21 @@ One of the best ways to grow a channel is by increasing your **session duration*
 
 Use your description to link to related uploads. If you are posting a video on "How to edit videos," link to your previous video on "How to record clean audio." Use text like: *"If you enjoyed this, watch my guide on recording clean audio here: [Link]."*
 
----
 
 ## 6. Place Hashtags at the Very End
 
 Drop 3 to 5 relevant hashtags at the bottom of your description. The first three hashtags you include will automatically appear as clickable blue links above your video title. This helps viewers find your content when exploring specific topics. Always use CamelCase (e.g., #VideoEditing instead of #videoediting) to make them readable.
 
----
 
 ## 7. Update Your Old Descriptions
 
 This is the easiest growth hack that nobody talks about. If you have older videos that are still getting some views, go back and rewrite their descriptions. Add timestamps, update outdated links, and optimize the keywords. It takes 5 minutes per video and can give old content a 20-30% bump in search impressions.
-
----
-
 
 
 To see how description optimization fits into the overall metadata strategy, view our [YouTube SEO Guide](/blog/youtube-seo-guide).
 
 
 
----
 
 ## Frequently Asked Questions
 

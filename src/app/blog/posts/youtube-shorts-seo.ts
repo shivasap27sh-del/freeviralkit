@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Vertical mobile gameplay representing shorts](https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop)
 
----
 
 Shorts are weird. They play by completely different rules than regular YouTube videos, and most creators either don't know that or pretend the same strategies work for both. They don't.
 
@@ -110,7 +109,6 @@ Hashtags play a major role in Short-form indexing. See our full study on this in
 
 
 
----
 
 ## Frequently Asked Questions
 

@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Video playlist queue screen](https://images.unsplash.com/photo-1614680376593-902f74fa0d41?q=80&w=800&auto=format&fit=crop)
 
----
 
 Let me be real with you. If you're spending hours perfecting your thumbnails and titles but you haven't touched your playlists in months, you're leaving massive watch time on the table.
 
@@ -18,7 +17,6 @@ Here is the thing: YouTube's algorithm doesn't just care about how long someone 
 
 Let me walk you through exactly how to build a playlist strategy that turns casual viewers into binge-watchers.
 
----
 
 ## How Playlists Boost Session Watch Time
 
@@ -30,7 +28,6 @@ Here's a real-world example. Say your average video gets 5 minutes of watch time
 
 That single behavior change — a viewer watching a playlist instead of a standalone video — can **3x your effective watch time** with zero additional production effort.
 
----
 
 ## Playlist SEO: Titles, Descriptions, and Keywords
 
@@ -48,7 +45,6 @@ A few quick rules:
 *   Include related long-tail keywords naturally throughout
 *   Update old playlist descriptions when you add new videos
 
----
 
 ## Series Playlists vs Regular Playlists
 
@@ -65,7 +61,6 @@ Here's when to use each:
 
 Series playlists get preferential treatment in the algorithm. If you have any content that follows a logical sequence, convert those playlists to series playlists immediately. You can do this in YouTube Studio under the playlist settings by checking the "Set as official series" option.
 
----
 
 ## The Playlist Funnel: Guide Viewers Strategically
 
@@ -81,7 +76,6 @@ The idea is simple: structure your playlists so each video naturally leads into 
 
 Think of it like this: broad topic → specific topic → advanced topic. You're guiding casual browsers into becoming invested viewers, one autoplay at a time.
 
----
 
 ## How Playlists Appear in Search Results
 
@@ -94,7 +88,6 @@ Playlists show up in YouTube search in multiple ways, and each one is a free vis
 
 The more keyword-optimized your playlists are, the more often they'll appear in these high-visibility spots. This is basically free real estate that most creators aren't competing for.
 
----
 
 ## Common Playlist Mistakes That Kill Watch Time
 
@@ -110,7 +103,6 @@ Let me call out the mistakes I see constantly:
 
 **Duplicate content across too many playlists.** While a video *can* exist in multiple playlists, adding every video to every playlist dilutes their focus. Be intentional about which videos belong where.
 
----
 
 ## Playlist Linking Strategy: Drive Traffic Into Your Playlists
 
@@ -126,15 +118,11 @@ Creating great playlists is only half the battle. You need to actively push view
 
 **Community tab:** Post about your playlists periodically. Something like "I just updated my Beginner Photography playlist with 5 new tutorials" gives subscribers a reason to revisit your content.
 
----
-
-
 
 Playlists are amazing for raising AVD, but you must know how to hook viewers first. Check out [How to Grow YouTube Channel from Zero](/blog/how-to-grow-youtube-channel-from-zero).
 
 
 
----
 
 ## Frequently Asked Questions
 

@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Computer mouse click conversion](https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=800&auto=format&fit=crop)
 
----
 
 Let's look at a common scenario. You spend 40 hours editing the most perfect video of your life. You've color-graded every frame, polished the audio until it's studio-quality, and written a script that flows perfectly. You hit upload, sit back, and wait for the views to roll in.
 
@@ -20,7 +19,6 @@ On YouTube, CTR is the absolute gatekeeper of your success. It is the percentage
 
 If you want to stop making videos for empty rooms, you need to understand the psychology of the click. Here are 5 proven tactics to double your CTR in 2026 and get your content the attention it deserves.
 
----
 
 ## Tactic 1: The \"Three-Word Rule\" for Thumbnail Text
 
@@ -36,7 +34,6 @@ Make the font bold, high-contrast, and large enough to read on the smallest phon
 *   If your title is: *"How to Grow a Brand New Channel in 2026"*
 *   Your thumbnail text should say: *"0 TO 100K"* or *"FAST VIEWS."*
 
----
 
 ## Tactic 2: Create a Powerful Curiosity Gap in Your Titles
 
@@ -48,7 +45,6 @@ Let's look at the difference:
 
 Don't resort to dirty clickbait or lie to your audience—your video must deliver on its promise. But always leave an open question in the viewer's mind that can only be answered by hitting the play button.
 
----
 
 ## Tactic 3: Align Thumbnail Emotion with Title Energy
 
@@ -62,7 +58,6 @@ Your thumbnail and your title must share the same emotional frequency.
 
 Match the visual energy to the verbal message.
 
----
 
 ## Tactic 4: Use Brackets and Visual Anchors for Contrast
 
@@ -75,7 +70,6 @@ Look at how these titles compare in a crowded sidebar:
 
 The brackets break up the line of text, making it easier for the brain to scan. The capitalization of "FASTER" creates emphasis, and the single rocket emoji adds a splash of color that breaks the monochrome pattern of the feed. Use emojis sparingly—one or two max—so your title doesn't look like search spam.
 
----
 
 ## Tactic 5: The "24-Hour Pivot" (Save Your Dead Videos)
 
@@ -85,15 +79,11 @@ When you publish a video, YouTube's algorithm gives it a temporary boost in impr
 
 Many creators have turned videos that launched with 2% CTR into viral sensations by swapping out a weak thumbnail for a cleaner, high-contrast version after day one.
 
----
-
-
 
 Your thumbnail is only half the battle. To pair it with a title that hooks curiosity, read our guide on [YouTube Titles That Get Clicks](/blog/youtube-titles-that-get-clicks).
 
 
 
----
 
 ## Frequently Asked Questions
 

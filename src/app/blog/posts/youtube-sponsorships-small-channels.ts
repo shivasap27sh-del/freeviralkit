@@ -14,11 +14,9 @@ Three weeks later, I published a video with a 60-second integrated ad read, and 
 
 If you are waiting until you hit 50,000 or 100,000 subscribers to start pitching brands, you are leaving thousands of dollars on the table. Here is the exact blueprint for securing **YouTube sponsorships for small channels**, crafting the perfect **brand deal pitch**, and understanding **micro-influencer marketing** on YouTube.
 
----
 
 ![Person typing on a laptop crafting an email pitch for a brand deal](https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## Why Brands Secretly Love Small Channels
 
@@ -106,7 +104,6 @@ Set a minimum floor for your time—for example, $200 or $300. Pitch this as a "
 
 To ensure your sponsored videos perform well and deliver results for the brand, use our [YouTube Title Generator](/youtube-title-generator) to maximize organic reach.
 
----
 
 ## Frequently Asked Questions
 
@@ -125,7 +122,6 @@ Dedicated videos (where the entire video is about the product) require significa
 ### What do I do if a brand rejects my pitch?
 Do not take it personally. Brand marketing budgets are cyclical. Reply politely, thank them for their time, and ask if you can follow up in next quarter. Keep an organized spreadsheet of your contacts, and reach out again in 3-4 months when your channel has grown and they might have new budget allocations.
 
----
 
 ## Your First Deal Changes Everything
 

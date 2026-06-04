@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Data analysis charts analytics screen](https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=800&auto=format&fit=crop)
 
----
 
 Let me be real with you — most creators open YouTube Studio, glance at their subscriber count, maybe check total views on their latest video, and call that "analytics." That is not analytics. That is vanity math.
 
@@ -18,7 +17,6 @@ The creators who actually grow in 2026 are the ones who understand the **input m
 
 Here is the straight truth: if you spend 10 minutes a week reading the right data, you will outgrow creators who spend 10 hours a week guessing.
 
----
 
 ## The 5 Metrics That Actually Matter
 
@@ -65,7 +63,6 @@ Each source tells a different story. If 80% of your traffic is search, you have 
 
 This is the single most important chart in YouTube Studio and almost nobody talks about it properly.
 
----
 
 ## How to Read the Audience Retention Graph
 
@@ -83,7 +80,6 @@ Here is what to look for:
 
 The best creators film their next video based on what the retention graph told them about their last one. That is the feedback loop that compounds growth.
 
----
 
 ## Real-Time Analytics vs 28-Day View
 
@@ -103,7 +99,6 @@ YouTube Studio gives you two main analytics views and they serve completely diff
 
 The mistake most creators make is checking real-time obsessively and ignoring the 28-day view entirely. Real-time is for reacting. 28-day is for planning. You need both, but the 28-day view is where the real insights live.
 
----
 
 ## Revenue Analytics for Monetized Channels
 
@@ -117,7 +112,6 @@ If you are in the YouTube Partner Program, you have access to revenue data. Here
 
 If your RPM is trending up over 6 months, you are building a more valuable audience. If it is trending down, you might be attracting viewers who are less valuable to advertisers, or your content mix is shifting.
 
----
 
 ## Using Analytics to Find Your Winners
 
@@ -134,7 +128,6 @@ Now do the same thing but sort by CTR. Your top CTR videos tell you what packagi
 
 This is not guesswork. This is data telling you exactly what to do next.
 
----
 
 ## The 30-Day Analytics Audit Routine
 
@@ -149,15 +142,11 @@ Set a calendar reminder. Once a month, sit down for 30 minutes and do this:
 
 That is it. Thirty minutes, once a month. Most creators never do this even once. The ones who do it consistently are the ones who seem to "magically" grow faster than everyone else. There is no magic. It is just paying attention to what the data is already telling you.
 
----
-
-
 
 Improving your click rates is the natural next step once you understand analytics. Read our guide on [YouTube CTR Secrets](/blog/youtube-ctr-secrets).
 
 
 
----
 
 ## Frequently Asked Questions
 

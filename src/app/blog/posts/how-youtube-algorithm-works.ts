@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Algorithm network connection connections](https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop)
 
----
 
 Here is the thing most creators get completely wrong: they talk about "the algorithm" like it is a single robot sitting in a dark room deciding who wins and who loses. It is not. YouTube actually runs **multiple recommendation systems**, and each one plays by slightly different rules.
 
@@ -21,7 +20,6 @@ There are four main surfaces where your video can show up:
 
 Understanding how each one works is the difference between uploading into the void and actually getting your content in front of real people. Let me break every single one down.
 
----
 
 ## How YouTube Search Works
 
@@ -37,7 +35,6 @@ Let me be real — Search is the one place where **traditional SEO still works o
 
 A video with solid metadata and 60% average view duration will consistently outrank a video with zero optimization and 40% retention, even if that second video has more subscribers behind it.
 
----
 
 ## How Suggested Videos Work
 
@@ -51,7 +48,6 @@ Here is how it decides what to suggest:
 
 The practical takeaway? Your thumbnail and title are doing the heavy lifting here. The algorithm is constantly testing your video against others, and if viewers click and stay, you keep getting suggested. If they click and bounce, YouTube pulls back.
 
----
 
 ## How the Home Feed Works
 
@@ -67,7 +63,6 @@ So what does that mean for you? It means making a video that gets clicks but dis
 
 The creators who win on Home are the ones who deliver on the promise of their thumbnail and title, every single time.
 
----
 
 ## The Real Metrics YouTube Cares About
 
@@ -80,7 +75,6 @@ Forget vanity numbers. Here are the metrics that actually move the needle:
 
 Here is the straight truth: **CTR gets you the click, AVD keeps you in the game, and session time makes the algorithm fall in love with you.** All three working together is how videos go from 100 views to 100,000.
 
----
 
 ## Myths That Need to Die
 
@@ -102,7 +96,6 @@ Not true. What wins is **longer watch time**, which is different. A tight 8-minu
 
 This one is partially true — tags are not the powerhouse they were in 2018. But they still help YouTube **understand your content**, especially for newer or niche topics where the algorithm needs extra context. Skipping tags entirely is leaving a free signal on the table for no reason.
 
----
 
 ## How to Work WITH the Algorithm
 
@@ -119,15 +112,11 @@ Here is what that looks like in practice:
 
 The creators who consistently grow are not the ones who "hack" the algorithm. They are the ones who **understand what the algorithm is optimizing for** and align their content strategy with it.
 
----
-
-
 
 To align your metadata with what the algorithm searches for, review our core [YouTube SEO Guide](/blog/youtube-seo-guide).
 
 
 
----
 
 ## Frequently Asked Questions
 

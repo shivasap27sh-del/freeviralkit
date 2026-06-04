@@ -18,7 +18,6 @@ I was treating YouTube videos like school presentations. I would introduce mysel
 
 Once I changed my script outline to a high-retention, psychology-based framework, everything changed. My watch time doubled, and my videos actually started getting suggested. Here is the exact blueprint I used to save my channel.
 
----
 
 ## The Master High-Retention Script Blueprint
 
@@ -72,7 +71,6 @@ The moment you say *"Thanks for watching,"* the viewer leaves.
 
 Instead of wrapping up, bridge directly to another video: *"Now that you have the scripting blueprint, you need to write titles that actually get people to click. Click on this video here where I break down the emotional title hacks I used to double my CTR."*
 
----
 
 ## Outline Structure: High vs. Low Retention
 
@@ -83,7 +81,6 @@ Instead of wrapping up, bridge directly to another video: *"Now that you have th
 | **Middle** | Reading a script like a school essay. | Delivering value in Point-Proof-Action cycles. |
 | **End** | "Thanks for watching, see you next week!" | Seamless transition to another video on screen. |
 
----
 
 ## Frequently Asked Questions (FAQ)
 

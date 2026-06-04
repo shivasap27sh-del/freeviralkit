@@ -14,11 +14,9 @@ What I learned over the next two years of **travel vlogging** completely changed
 
 Let me share the exact framework I wish someone had given me before I started.
 
----
 
 ![Travel vlogger filming scenic landscape with camera](https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## Portable Equipment That Actually Matters
 
@@ -37,7 +35,6 @@ Here is the uncomfortable truth about **travel vlog equipment**: 90% of gear rev
 
 Travel light. The lighter your setup, the more you actually film. I have noticed I create twice as much content when I carry less gear because I do not dread pulling it out.
 
----
 
 ## Filming in Public: Tips and Etiquette
 
@@ -52,7 +49,6 @@ Here are rules I follow:
 
 The more natural and confident you appear, the less people notice or care. I have filmed in crowded markets, busy subway stations, and packed restaurants, and 99% of the time, nobody even glances at me.
 
----
 
 ## Storytelling Structure: The 3-Act Travel Vlog
 
@@ -75,7 +71,6 @@ Wrap up with a personal reflection. What surprised you? What would you do differ
 
 For more on structuring vlogs, our guide on [how to start a vlog channel](/blog/how-to-start-a-vlog-channel) covers the fundamentals in depth.
 
----
 
 ## Travel SEO Keywords: How to Get Found
 
@@ -93,7 +88,6 @@ Each of these targets a specific search query that travelers type into YouTube b
 
 Use our [YouTube Title Generator for Travel](/tools/youtube-title-generator-for-travel) to instantly create dozens of SEO-optimized titles for any destination. Pair those titles with rich, keyword-dense descriptions using the [YouTube Description Generator](/youtube-description-generator), and your travel content will have a genuine competitive advantage in search.
 
----
 
 ## Editing Travel Vlogs: Speed Over Perfection
 
@@ -109,7 +103,6 @@ Here is my fast editing workflow:
 
 Mobile editing apps like CapCut or LumaFusion on iPad are genuinely powerful enough for professional travel vlogs. I edited an entire 10-video Japan series on my iPad during flights and train rides.
 
----
 
 ## Frequently Asked Questions
 
@@ -122,7 +115,6 @@ Consistency matters more than frequency. If you travel full-time, 1-2 videos per
 ### Can I monetize a travel YouTube channel?
 Absolutely. Travel is one of the highest-CPM niches on YouTube because travel advertisers (airlines, hotels, booking platforms) pay premium ad rates. Beyond AdSense, travel creators earn through affiliate links for travel gear and booking platforms, brand sponsorships, and selling travel guides or presets.
 
----
 
 ## Start Filming Smarter, Not Just More
 

@@ -12,7 +12,6 @@ To rank your videos in 2026, you cannot just rely on tags or generic keywords. T
 
 This 10-step checklist combines **on-page metadata optimization** with **retention strategies** to give your videos the best chance of ranking #1.
 
----
 
 ## The 10-Step YouTube SEO Checklist
 
@@ -49,7 +48,6 @@ Playlists keep viewers on your channel longer, boosting your overall "Session Wa
 ### 10. Design Thumbnails for CTR
 No matter how good your SEO is, you won't rank if nobody clicks. Design clean, readable thumbnails with 3-5 words of bold text that complement (but don't repeat) your title.
 
----
 
 ## Action Plan: Automate Your Video SEO
 

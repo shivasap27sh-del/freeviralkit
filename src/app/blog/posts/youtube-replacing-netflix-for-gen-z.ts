@@ -23,11 +23,9 @@ For years, Hollywood executives viewed YouTube as a "lesser" platform—a place 
 
 Here is the data-driven breakdown of why Gen Z has abandoned traditional streaming, and exactly how small creators can position themselves to ride this massive wave of viewership.
 
----
 
 ![A teenager sitting on a couch pointing a TV remote at a large screen showing the YouTube interface](https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## The Data: Why Netflix is Losing the Battle
 
@@ -82,7 +80,6 @@ If you are a creator in 2026, you are no longer just a "YouTuber." You are a med
 
 Stop thinking of your channel as a hobby. Treat your content like the next great television series, optimize your metadata, and claim your real estate in the living room.
 
----
 
 ## Frequently Asked Questions (FAQs)
 

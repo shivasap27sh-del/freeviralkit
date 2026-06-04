@@ -16,7 +16,6 @@ The result? It was awful. It sounded like a dry textbook written by a corporate 
 
 But over the last two years, after writing hundreds of scripts and generating millions of views, I figured out the secret. You *can* use AI to co-write your scripts. You just have to learn how to keep the soul, the emotion, and the human connection. Here is my personal step-by-step framework.
 
----
 
 ## Why Most AI Scripts Fail the "Camera Test"
 
@@ -29,7 +28,6 @@ Most AI models are trained to write essays, not scripts. Here is the difference 
 
 See the difference? The second one has stakes. It has emotion. It feels like a real creator talking to a friend. 
 
----
 
 ## The Hook-Story-Offer Script Outline
 
@@ -72,7 +70,6 @@ The best way to make AI sound like you is to give it your own raw thoughts first
 ### Step 3: The Read-Aloud Edit
 Once the AI gives you a script, you must read it out loud. If you trip over a word, delete it. If a sentence feels too long, split it in half. If you find yourself speaking in a flat, monotone voice, rewrite the section to add an exclamation of excitement or a pause of reflection. 
 
----
 
 ## The E-E-A-T Ranking Strategy for Google & AdSense
 
@@ -87,7 +84,6 @@ Here is how I structure my content to satisfy Google and keep human readers hook
 | **Authoritativeness** | Write in-depth articles on related topics (like linking this script guide to our topic researcher article). |
 | **Trustworthiness** | Be honest about what doesn't work. Share your failures alongside your successes. |
 
----
 
 ## Frequently Asked Questions (FAQ)
 

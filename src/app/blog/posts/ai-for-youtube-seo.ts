@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![AI tools for YouTube SEO](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop)
 
----
 
 Let's start with the question that keeps a lot of creators up at night: *Will YouTube shadowban my channel if I use AI to write my titles, descriptions, and tags?* 
 
@@ -22,7 +21,6 @@ But here's the catch—and it's a big one. While YouTube won't ban you for using
 
 Let's talk about why that happens and how you can use AI the right way to rank #1.
 
----
 
 ## Why Copy-Pasting Raw ChatGPT Output Is Channel Suicide
 
@@ -40,7 +38,6 @@ When you use raw, unoptimized AI output, you run into three massive problems tha
 
 So how do we fix this? We use the "Hybrid Approach."
 
----
 
 ## The Hybrid Approach: 3 Rules for AI YouTube SEO
 
@@ -78,7 +75,6 @@ When you generate your description, make sure to include links that prove you ar
 
 AI can help you format these links cleanly, but you must ensure they are present. These links serve as "trust signals" that protect your channel from being flagged as low-value automation.
 
----
 
 ## The Difference Between Generic AI and Creator-First AI
 
@@ -91,15 +87,11 @@ We didn't just wrap a generic chatbot. We engineered our tools to write like rea
 * **The conversational tone:** It avoids words like "multifaceted," "delve," and "testament" that scream "AI-written."
 * **Keyword density:** It places your keywords naturally so they read well to humans while ranking high in search.
 
----
-
-
 
 If you want to understand how all these metadata elements tie together, head over to our comprehensive [YouTube SEO Guide](/blog/youtube-seo-guide) to get the full picture.
 
 
 
----
 
 ## Frequently Asked Questions
 

@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Comments screen and chat bubbles](https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop)
 
----
 
 When you publish a new YouTube video, where do you focus your energy? 
 
@@ -24,7 +23,6 @@ What a wasted opportunity.
 
 Here is the exact step-by-step formula to turn your pinned comments into traffic-driving, algorithm-feeding machines.
 
----
 
 ## Anatomy of the Perfect Pinned Comment
 
@@ -46,7 +44,6 @@ Choose **one** primary goal for your video. If you want to drive traffic to a pr
 If your goal is to trigger the YouTube algorithm, you need comment velocity. The algorithm tracks how fast a video gets comments immediately after it is published. 
 *   *Tip:* Ask a simple, binary or low-friction question. Don't ask: *"What are your thoughts on global economic shifts?"* (Too hard to answer). Instead, ask: *"Are you focused on Shorts or long-form videos right now? Let's settle this below! 👇"*
 
----
 
 ## 3 Pinned Comment Templates You Can Copy Today
 
@@ -77,7 +74,6 @@ Use this to keep viewers on your channel by suggesting their next video, which s
 If you enjoyed this guide, that video covers the exact step-by-step editing style we used!
 \`\`\`
 
----
 
 ## The Golden Rules of Pinning Comments
 
@@ -85,15 +81,11 @@ If you enjoyed this guide, that video covers the exact step-by-step editing styl
 *   **Heart the Best Replies:** When viewers reply to your pinned comment, hit the heart icon and reply back. This sends a push notification directly to their phone, bringing them back to your video for a second viewing session (which the algorithm absolutely loves).
 *   **Keep Links Clean:** Never use long, ugly affiliate links that look like spam. Use clean, direct domains.
 
----
-
-
 
 Pinning comments is a great engagement boost, but it works best when your video description is also fully optimized. Learn how in [YouTube Description Tips](/blog/youtube-description-tips).
 
 
 
----
 
 ## Frequently Asked Questions
 

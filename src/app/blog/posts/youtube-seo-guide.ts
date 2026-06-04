@@ -14,11 +14,9 @@ This is why **YouTube SEO** is your secret weapon. By targeting search traffic, 
 
 Here is the step-by-step guide to ranking your videos #1 in search.
 
----
 
 ![SEO search bar and data analytics screen](https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## Step 1: Find Low-Competition Keywords
 
@@ -27,7 +25,6 @@ SEO starts with keyword research. If you target keywords that are too competitiv
 *   **Use Autocomplete:** Type your topic into the YouTube search bar and look at the suggestions. These are real search terms that people are looking for. E.g., instead of "how to edit videos," target "how to edit videos in DaVinci Resolve 18 for beginners."
 *   **Target Long-Tail Queries:** Long-tail keywords (3+ words) have much lower competition, allowing newer channels to rank #1 easily.
 
----
 
 ## Step 2: Write Search-Optimized Titles
 
@@ -36,7 +33,6 @@ Your title is the most important metadata element. It must tell the search engin
 *   **Put Keywords First:** Place your main target keyword at the very beginning of the title. E.g., *"DaVinci Resolve Tutorial: How to Edit Videos Fast"* is much better than *"Here's My New Video on How to Edit in DaVinci Resolve."*
 *   **Keep it Under 60 Characters:** Longer titles get truncated on mobile devices, which hurts your click-through rate.
 
----
 
 ## Step 3: Write Rich Video Descriptions
 
@@ -46,7 +42,6 @@ Your description box tells YouTube's search crawlers about the contextual meanin
 *   **Add Timestamps/Chapters:** Break down your video into clear sections. This helps search indexing and enables Google's "Key Moments" feature in organic search.
 *   **Include Internal Links:** Link to other relevant videos on your channel to pass authority. Refer to our [YouTube Description Tips](/blog/youtube-description-tips) guide for details on how to write description copies that rank.
 
----
 
 ## Step 4: Add Structured Tags and Hashtags
 
@@ -58,7 +53,6 @@ While tags are less important than they used to be, they are still a key ranking
 
 Add 3 relevant hashtags at the bottom of your description so they show up as blue clickable links above your title.
 
----
 
 ## Step 5: Track Your Rankings and Pivot
 
@@ -71,7 +65,6 @@ Go to YouTube Studio and check your traffic sources after 48 hours. If you are n
 
 If your CTR is low, change your thumbnail or title immediately. If you are ranking but viewers leave quickly, audit your video's first 30 seconds. Pacing and hooks are critical to keeping the search algorithm pushing your video high up in the search results.
 
----
 
 ## Frequently Asked Questions
 
@@ -84,7 +77,6 @@ Audience retention (how long people watch) and CTR (how many people click) are t
 ### Does editing filename before uploading help SEO?
 It is a minor ranking signal, but naming your file how-to-do-seo.mp4 instead of video_draft_1.mp4 is a good practice.
 
----
 
 ## Automate Your SEO Workflow
 

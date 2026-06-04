@@ -10,11 +10,9 @@ I started filming recipe videos in my tiny apartment kitchen back in 2022. My fi
 
 But here is the thing most people get wrong: they think you need a professional studio kitchen, a $3,000 camera, and a culinary degree. You don't. What you need is a plan. This guide is the plan I wish I had when I started — covering everything from **cooking YouTube channel** setup and gear to filming techniques, recipe video structure, and the SEO strategies that actually get your food videos discovered.
 
----
 
 ![Kitchen counter with fresh ingredients and cooking utensils ready for filming](https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop)
 
----
 
 ## Step 1: Define Your Cooking Niche (Don't Be "Just Another Food Channel")
 
@@ -30,7 +28,6 @@ Pick a lane and own it. Here are some high-performing cooking sub-niches in 2026
 
 Whatever you choose, commit to it for at least 30 videos before you pivot. The algorithm rewards consistency, and your channel identity takes time to solidify. If you are struggling to find your angle, our guide on [how to find your YouTube niche](/blog/how-to-find-youtube-niche) breaks down the process step by step.
 
----
 
 ## Step 2: Equipment You Actually Need (And What You Don't)
 
@@ -51,7 +48,6 @@ Let me save you hundreds of dollars right now. Here is the gear hierarchy for co
 
 The point is: do not let gear anxiety stop you from starting. My first 50 videos were shot on an iPhone 12 propped up on a stack of cookbooks. They performed fine.
 
----
 
 ## Step 3: How to Structure a Recipe Video That Keeps People Watching
 
@@ -71,7 +67,6 @@ Plate the dish beautifully. Show a close-up. Take a bite and react genuinely. Th
 
 This structure works because it front-loads the payoff and keeps curiosity high throughout. For more on keeping viewers engaged, read our deep-dive on [increasing YouTube audience retention](/blog/increase-youtube-audience-retention).
 
----
 
 ## Step 4: SEO for Cooking Videos — Getting Discovered
 
@@ -94,7 +89,6 @@ Use 8–15 tags that mix broad terms (*"pasta recipe"*) with specific long-tail 
 ### Thumbnails
 Food thumbnails should be bright, warm-toned, and show the finished dish. Use a close-up shot with steam if possible. Add minimal text — 3 words maximum. Viewers scroll fast; your thumbnail needs to trigger hunger at a glance. Our [thumbnail design tips guide](/blog/youtube-thumbnail-design-tips) covers the psychology behind clicks.
 
----
 
 ## Step 5: Growing Your Cooking Channel — The First 1,000 Subscribers
 
@@ -108,7 +102,6 @@ The hardest phase of any YouTube channel is the first 1,000 subscribers. Here ar
 
 If you are also thinking about the business side, check out our [YouTube SEO guide](/blog/youtube-seo-guide) for a broader overview of how to make every video searchable.
 
----
 
 ## Common Mistakes That Kill Cooking Channels
 
@@ -119,7 +112,6 @@ After watching hundreds of cooking channels grow (and stall), here are the patte
 3. **No personality** — The recipe is not enough. Viewers subscribe to people, not dishes. Share stories, opinions, and mistakes. Be human.
 4. **Overly long intros** — If you spend 2 minutes talking about your day before showing any food, viewers will leave. Hook them in the first 5 seconds.
 
----
 
 ## Frequently Asked Questions
 
@@ -135,7 +127,6 @@ Data from multiple creator analytics tools suggests that food content performs b
 ### Can I use copyrighted music in my cooking videos?
 No, not without a license. YouTube's Content ID system will flag copyrighted music and either mute your video, run ads you don't earn from, or take the video down entirely. Use royalty-free music from YouTube's own Audio Library, Epidemic Sound, or Artlist.
 
----
 
 ## Start Creating Today — Your Kitchen Is Your Studio
 

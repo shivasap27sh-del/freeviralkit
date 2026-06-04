@@ -8,7 +8,6 @@ export const post: BlogPost = {
 
 ![Branding signature on screen](https://images.unsplash.com/photo-1508962914676-134849a727f0?q=80&w=800&auto=format&fit=crop)
 
----
 
 Let's talk about the absolute nightmare of picking a YouTube channel name. 
 
@@ -20,7 +19,6 @@ Here is the honest truth: a brilliant name will not save a boring video, but a b
 
 In 2026, YouTube branding is all about simplicity, memorability, and scalability. Here are the 5 golden rules to help you pick the perfect name and start your channel today.
 
----
 
 ## Rule 1: Keep It Short, Sharp, and Easy to Spell
 
@@ -32,7 +30,6 @@ Does it roll off the tongue naturally? Or do you stumble over the syllables? If 
 
 Also, avoid weird spelling variations. If you name your channel *KreativeKooking*, you will spend the rest of your life explaining to people: *"That's cooking with a K, and creative with a K."* Keep it simple. If they can't spell it, they can't search for it.
 
----
 
 ## Rule 2: Say Goodbye to Numbers and Special Characters
 
@@ -44,7 +41,6 @@ If your desired name is already taken, do not resort to adding numbers. Instead,
 *   Instead of *TechReview*, try: *TechReviewDaily*, *TheTechReview*, *TechReviewLab*, or *TechReviewSpace*.
 *   Instead of *ChefJohn*, try: *JohnCooks*, *KitchenWithJohn*, or *JohnsBites*.
 
----
 
 ## Rule 3: The Big Decision—Real Name vs. Brand Name
 
@@ -59,7 +55,6 @@ This is the biggest debate among new YouTubers. Should you use your actual name 
 *   Your niche is highly specific and you want viewers to know exactly what they are getting immediately (e.g., *The Guitar Academy*, *CodeDecoded*).
 *   You plan to hire other hosts, editors, or scriptwriters in the future, or you eventually want to sell the channel as a business asset.
 
----
 
 ## Rule 4: Do the "Social Media Sweep"
 
@@ -72,7 +67,6 @@ Go to YouTube, TikTok, Instagram, Twitter (X), and a domain registrar. You want 
 
 Having matching handles across the internet makes your brand look established and professional from day one.
 
----
 
 ## Rule 5: Don't Box Yourself In
 
@@ -83,15 +77,11 @@ Be careful not to pick a name that is too narrow. You might love a specific game
 
 Choose a name that gives you room to pivot. Instead of *MinecraftSurvivalHacks*, use *SurvivalCraft* or *DavePlays*. Give your channel space to grow as your interests and target audience evolve.
 
----
-
-
 
 Once you have picked the perfect name, make sure you know how to build your channel's traffic using our checklist in [How to Grow YouTube Channel from Zero](/blog/how-to-grow-youtube-channel-from-zero).
 
 
 
----
 
 ## Frequently Asked Questions
 
