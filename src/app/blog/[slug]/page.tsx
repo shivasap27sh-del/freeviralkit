@@ -109,6 +109,7 @@ export default async function BlogPostPage({ params }: Props) {
                       .replace(/^(?:-\s*|\*\s+|❌\s*|✅\s*)/, '')
                       .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="rounded-xl my-6 w-full max-h-[400px] object-cover border border-slate-200 dark:border-slate-800" />')
                       .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white">$1</strong>')
+                      .replace(/\*(.*?)\*/g, '<em>$1</em>')
                       .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-purple-500 hover:text-purple-600 underline underline-offset-2">$1</a>')
                       .replace(/`(.*?)`/g, '<code class="bg-slate-200 dark:bg-slate-800 px-1.5 py-0.5 rounded text-purple-300 dark:text-purple-400 text-sm">$1</code>'),
                   }}
@@ -130,6 +131,7 @@ export default async function BlogPostPage({ params }: Props) {
               __html: trimmed
                 .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="rounded-xl my-6 w-full max-h-[400px] object-cover border border-slate-200 dark:border-slate-800" />')
                 .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white">$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
                 .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-purple-500 hover:text-purple-600 underline underline-offset-2">$1</a>')
                 .replace(/`(.*?)`/g, '<code class="bg-slate-200 dark:bg-slate-800 px-1.5 py-0.5 rounded text-purple-300 dark:text-purple-400 text-sm">$1</code>'),
             }}
