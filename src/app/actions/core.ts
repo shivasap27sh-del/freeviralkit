@@ -96,7 +96,7 @@ const cerebrasProvider = createOpenAICompatibleProvider(
   'Cerebras',
   'CEREBRAS_API_KEY',
   'https://api.cerebras.ai/v1/chat/completions',
-  'llama-3.3-70b'
+  'gpt-oss-120b'
 );
 
 const togetherProvider = createOpenAICompatibleProvider(
@@ -106,12 +106,20 @@ const togetherProvider = createOpenAICompatibleProvider(
   'meta-llama/Llama-3.3-70B-Instruct-Turbo'
 );
 
+const openRouterProvider = createOpenAICompatibleProvider(
+  'OpenRouter',
+  'OPENROUTER_API_KEY',
+  'https://openrouter.ai/api/v1/chat/completions',
+  'openrouter/free'
+);
+
 const providers: AIProvider[] = [
   groqProvider,
   geminiProvider,
   nvidiaProvider,
   cerebrasProvider,
   togetherProvider,
+  openRouterProvider,
 ].filter(p => p.isConfigured);
 
 function withTimeout<T>(promise: Promise<T>, ms: number, providerName: string): Promise<T> {
@@ -128,9 +136,13 @@ export async function generateWithFallback(
   options: GenerateOptions
 ): Promise<string> {
   const errors: string[] = [];
-  for (const provider of providers) {
+  
+  // Load Balancing: Randomly shuffle the active providers for each request
+  const shuffledProviders = [...providers].sort(() => Math.random() - 0.5);
+
+  for (const provider of shuffledProviders) {
     try {
-      console.log(`[AI] Trying ${provider.name}...`);
+      console.log(`[AI LoadBalancer] Routing request to ${provider.name}...`);
       const result = await withTimeout(
         provider.generate(messages, options),
         15000,
