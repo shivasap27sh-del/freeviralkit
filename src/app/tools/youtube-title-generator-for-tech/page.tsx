@@ -98,29 +98,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What makes a good tech YouTube title?',
+    question: 'How do I title a review for a product that everyone else is reviewing?',
     answer:
-      'A good tech YouTube title includes the product or brand name, specifies the content type (review, unboxing, comparison, tutorial), adds a hook or opinion, and stays under 65 characters. It should clearly tell viewers what they will learn or see.',
+      'Instead of a standard review title, find a highly specific angle or a contrarian take. If everyone is saying "The iPhone 17 is Amazing", title your video "Why I\'m Returning the iPhone 17". Strong opinions drive far more clicks than neutral reviews.',
   },
   {
-    question: 'How do I title an unboxing video for maximum views?',
+    question: 'Should I include the price of the tech product in the title?',
     answer:
-      'For unboxing videos, include the product name, add a price or exclusivity angle, and hint at your reaction. "Unboxing the $3,000 Gaming PC — Was It Worth It?" is more clickable than "New PC Unboxing".',
+      'Yes, especially for budget or extremely premium items. Putting the price in the title (e.g., "$50 vs $500 Microphone") creates immediate context and anchors the viewer\'s expectations. It\'s one of the strongest hooks for tech content.',
   },
   {
-    question: 'Should I include the year in my tech video titles?',
+    question: 'What is the best format for a tech comparison title?',
     answer:
-      'Yes, especially for reviews and comparisons. Adding the year or model number signals fresh content and catches viewers searching for the latest information. "Best Phones 2026" gets more clicks than evergreen-only titles.',
+      'The "Versus" format is king. Use "[Product A] vs [Product B] - Which Should You Buy?" or "Stop Buying [Product A]! Get [Product B] Instead." This targets users who are in the purchasing decision phase, which is highly lucrative for affiliate links.',
   },
   {
-    question: 'Is this tech title generator free?',
+    question: 'How do I make a software tutorial sound exciting?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, and no hidden fees. Generate unlimited tech video titles powered by AI.',
+      'Focus on the end result or the time saved, not just the software name. "How to Use Photoshop Pen Tool" is boring. "Master the Photoshop Pen Tool in 5 Minutes (Stop Doing It Wrong!)" creates urgency and promises value.',
   },
   {
-    question: 'Can I use this for software tutorials and how-to videos?',
+    question: 'Do thumbnails matter more than titles in the tech niche?',
     answer:
-      'Absolutely! The AI title generator works for all tech content including product reviews, unboxing, comparisons, software tutorials, coding guides, setup guides, and troubleshooting videos.',
+      'They work together. In tech, the thumbnail usually shows the high-quality product shot or a shocked reaction, while the title provides the specific model number and the review angle. If your title is vague, a great thumbnail won\'t save the video.',
   },
 ];
 

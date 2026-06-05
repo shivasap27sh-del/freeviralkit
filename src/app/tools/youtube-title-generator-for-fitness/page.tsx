@@ -98,29 +98,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What makes a good fitness YouTube title?',
+    question: 'How do I title a transformation video without sounding fake?',
     answer:
-      'A good fitness YouTube title specifies the workout type, mentions the duration or difficulty level, includes a results-based hook, and stays under 65 characters. It should clearly tell viewers what workout or fitness content they will get.',
+      'Focus on the timeframe and the starting point rather than just the end result. "How I Lost 20 lbs in 90 Days (Realistic Guide)" builds trust, whereas "Lose 20 lbs in 1 Week FAST!" sounds like a scam and may actually get flagged by YouTube\'s spam filters.',
   },
   {
-    question: 'How do I make my workout video titles stand out?',
+    question: 'Should I put "No Equipment" in the title of home workouts?',
     answer:
-      'Use specific numbers (duration, reps, days), add a challenge or transformation angle, and include qualifiers like "beginner", "no equipment", or "at home". Avoid generic titles — specificity drives clicks in the fitness niche.',
+      'Absolutely. "No Equipment" or "Bodyweight Only" are some of the highest-volume search modifiers in the fitness niche. It immediately removes the barrier to entry for beginners and increases your click-through rate.',
   },
   {
-    question: 'Should I include the exercise type in my title?',
+    question: 'How do I make my gym vlog titles more interesting?',
     answer:
-      'Yes, always include the specific exercise, workout style, or muscle group. Viewers search for terms like "HIIT workout", "glute exercises", or "yoga for beginners". These keywords are essential for YouTube SEO.',
+      'Don\'t just call it "Leg Day Vlog". Tie the workout to a specific challenge or emotional hook. For example, "Surviving the Hardest Leg Day of My Life" or "I Trained Like Chris Hemsworth for 24 Hours".',
   },
   {
-    question: 'Is this fitness title generator free to use?',
+    question: 'Is it better to use "Abs" or "Core" in a title?',
     answer:
-      'Yes, FreeViralKit is 100% free. No signup, no credit card, and no hidden fees. Generate unlimited fitness and workout video titles powered by AI.',
+      'It depends on your audience. "Abs" is a highly commercial, vanity-driven keyword that performs incredibly well for quick, 10-minute routines. "Core" appeals more to functional fitness, yoga, and physical therapy audiences.',
   },
   {
-    question: 'Can I use this for nutrition, yoga, and transformation content?',
+    question: 'How do I title a video about diet mistakes?',
     answer:
-      'Absolutely! The AI title generator works for all fitness content including workout routines, transformation videos, nutrition guides, yoga sessions, gym tips, and any other health and fitness content.',
+      'Use negative hooks. Psychology shows that people are more afraid of making mistakes than they are motivated to succeed. Titles like "5 Foods Secretly Ruining Your Diet" will almost always outperform "5 Foods to Help Your Diet".',
   },
 ];
 

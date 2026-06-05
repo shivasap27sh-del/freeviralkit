@@ -97,29 +97,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What makes a good travel YouTube title?',
+    question: 'How do I title a travel vlog if nobody knows who I am?',
     answer:
-      'A great travel title includes the destination name, uses specific numbers (days, budget, places), creates curiosity or stakes, and stays under 65 characters. It should make viewers feel like they\'ll miss out if they don\'t watch.',
+      'Avoid "My Trip to [City]" because strangers don\'t care about your personal trip yet. Focus on the objective value you can provide them. "I Survived 48 Hours in Tokyo on $50" or "The Only Paris Travel Guide You Need" focuses on the viewer\'s interest, not just your personal journal.',
   },
   {
-    question: 'Should I include the year in my travel video title?',
+    question: 'Is it better to use the city name or the country name in the title?',
     answer:
-      'Yes, for destination guides and travel tips videos. Adding the year (e.g., "2026") signals that your information is current and accurate. This significantly boosts CTR from Google and YouTube search results.',
+      'Always use the city or specific region if it\'s well-known (e.g., Tokyo, Bali, Paris). Use the country name if you are doing a broader trip or if the specific city is very obscure and won\'t get search traffic.',
   },
   {
-    question: 'How do I make my travel vlogs rank on YouTube?',
+    question: 'Should I include the cost of my trip in the title?',
     answer:
-      'Use destination-specific keywords in your title, description, and tags. Create detailed timestamps, add location tags, and use the YouTube location feature. Pair strong titles with eye-catching thumbnails showing the destination.',
+      'Yes! Budget and cost are the #1 things people search for when planning travel. Including exact dollar amounts (e.g., "Maldives on $100/Day") creates an irresistible hook because it proves the trip is attainable.',
   },
   {
-    question: 'Is this travel title generator free?',
+    question: 'How do I avoid making my travel guide title sound boring?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, no hidden fees. Generate unlimited travel vlog titles powered by AI.',
+      'Add a modifier that speaks to a specific pain point or desire. "Rome Travel Guide" is boring. "Rome Travel Guide for FIRST TIMERS" or "Rome Travel Guide (Avoid These Tourist Traps!)" gives the viewer a compelling reason to click your guide over the hundreds of others.',
   },
   {
-    question: 'Can I use this for food travel and adventure vlogs?',
+    question: 'Do thumbnails with airplanes perform better than scenic shots?',
     answer:
-      'Absolutely! The AI generates titles for all travel sub-niches including food tours, adventure travel, solo backpacking, luxury travel, cultural experiences, road trips, and digital nomad content.',
+      'Thumbnails that show "Transit" (airplanes, trains, walking with a backpack) often perform extremely well for the first episode of a travel series because they imply the *start* of a journey. However, for a dedicated guide video, a stunning scenic shot with clear text works best.',
   },
 ];
 

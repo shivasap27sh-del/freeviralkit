@@ -97,29 +97,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What makes a good beauty YouTube title?',
+    question: 'How do I title a makeup review so it ranks in YouTube Search?',
     answer:
-      'A strong beauty title names the specific look, technique, or product, uses trending format keywords (GRWM, Tutorial, Review), stays under 65 characters, and creates curiosity through constraints or results. Authenticity matters — beauty viewers prefer conversational, honest titles over clickbait.',
+      'Always use the exact product name, shade, and brand. Don\'t just say "New Foundation Review". Say "Fenty Beauty Pro Filt\'r Soft Matte Foundation Review (Shade 290)". This captures the exact long-tail search intent of a buyer.',
   },
   {
-    question: 'How do I make my makeup tutorial titles stand out?',
+    question: 'Should I put my skin type in the title?',
     answer:
-      'Add a unique angle: a time constraint ("5-Minute Glam"), a budget constraint ("Drugstore ONLY"), a specific occasion ("Wedding Guest Makeup"), or a challenge element ("Using My Least Popular Products"). Generic titles like "Makeup Tutorial" get lost in the algorithm.',
+      'Yes, especially for skincare and foundation reviews. Including "For Oily Skin" or "Acne Prone Skin" creates an immediate connection with viewers who share your skin type, significantly boosting click-through rates and watch time.',
   },
   {
-    question: 'Should I include brand names in my beauty video titles?',
+    question: 'How do I title a GRWM (Get Ready With Me) video?',
     answer:
-      'Yes, especially for reviews, hauls, and product-focused content. Many viewers search for specific brands like "Rare Beauty review" or "Charlotte Tilbury dupes." Brand names capture high-intent search traffic and signal that your video has the info they need.',
+      'A GRWM title needs a secondary hook—usually the occasion or a topic you discuss. "GRWM: First Date Makeup + Storytime" or "GRWM: My 10-Minute Morning Routine for College" performs much better than just "GRWM".',
   },
   {
-    question: 'Is this beauty title generator free?',
+    question: 'Do negative titles work well in the beauty community?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, no hidden fees. Generate unlimited beauty and makeup video titles powered by AI.',
+      'Yes, "Anti-Hauls" or "Products I Regret Buying" are incredibly popular because they save the viewer money and offer a refreshing break from constant sponsorships. Just ensure you are honest and constructive.',
   },
   {
-    question: 'Can I use this for skincare and haircare content too?',
+    question: 'How do I title a "dupes" video?',
     answer:
-      'Absolutely! The AI generates titles for all beauty sub-niches — skincare routines, haircare tutorials, nail art, fragrance reviews, self-care vlogs, and more. Just describe your video topic and get optimized titles instantly.',
+      'Clearly state the expensive product and the cheap alternative. "Charlotte Tilbury Flawless Filter DUPE? (Only $6!)" creates massive curiosity by promising luxury results at a drugstore price.',
   },
 ];
 

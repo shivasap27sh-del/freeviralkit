@@ -98,29 +98,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What makes a good gaming YouTube title?',
+    question: 'How do I title a Let\'s Play video without being boring?',
     answer:
-      'A good gaming YouTube title includes the game name, uses a specific hook (challenge, tip, review), stays under 70 characters, and creates curiosity. It should be clear about what the viewer will see while making them want to click.',
+      'Instead of generic titles like "Minecraft Survival Part 4", use the title to highlight the most exciting moment or challenge from that specific episode. For example, "I Survived 100 Days in Hardcore Minecraft" or "The Creepers Destroyed My Entire Base".',
   },
   {
-    question: 'How long should my gaming video title be?',
+    question: 'Should I put the game name at the start or end of the title?',
     answer:
-      'Keep gaming video titles between 50-65 characters for optimal display on both desktop and mobile. Titles over 70 characters get truncated in search results and recommendations.',
+      'If you are a smaller channel relying on search traffic, putting the game name closer to the beginning can help with YouTube SEO. However, if you are focusing on Browse features and CTR, put your emotional hook first and the game name at the end (e.g., "I Built an IMPOSSIBLE Rollercoaster - Planet Coaster").',
   },
   {
-    question: 'Should I include the game name in my title?',
+    question: 'Are clickbait titles acceptable in the gaming niche?',
     answer:
-      'Absolutely. Always include the game name near the beginning of your title. This helps YouTube categorize your video correctly and ensures it appears in searches for that specific game.',
+      'Clickbait that lies to the viewer will ruin your Audience Retention and kill your channel. However, "Click-worthy" titles that exaggerate a real event in the game (e.g., "This Boss Fight Broke My Controller") are highly encouraged in the gaming community.',
   },
   {
-    question: 'Is this gaming title generator free?',
+    question: 'How do I title a gaming tutorial or walkthrough?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, and no hidden fees. Generate unlimited gaming video titles powered by AI.',
+      'For tutorials, be extremely specific and use exact match keywords. Include the game version or year if relevant. For example, "How to Defeat Malenia in Elden Ring (Patch 1.09) - Easy Method" is much better than "Elden Ring Boss Guide".',
   },
   {
-    question: 'Can I use this for Minecraft, Fortnite, and GTA videos?',
+    question: 'Do all caps titles perform better for gaming videos?',
     answer:
-      'Yes! The AI title generator works for all gaming niches including Minecraft, Fortnite, GTA, Roblox, Valorant, Call of Duty, and any other game. Just enter your topic and get optimized titles instantly.',
+      'Using all caps for ONE or TWO emphasis words works incredibly well in gaming (e.g., "I Found the MOST RARE Item in Skyrim"). However, typing the entire title in all caps looks spammy and can actually reduce your click-through rate.',
   },
 ];
 

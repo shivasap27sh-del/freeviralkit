@@ -1,48 +1,282 @@
-'use client';
-
+import type { Metadata } from 'next';
+import { buildAbsoluteUrl } from '@/lib/site';
 import TagsGeneratorClient from '@/components/tools/TagsGeneratorClient';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Tag, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw } from 'lucide-react';
+import { Tag } from 'lucide-react';
 import Link from 'next/link';
-import ErrorBanner from '@/components/ErrorBanner';
+
+export const metadata: Metadata = {
+  title: 'Free YouTube Tag Generator — Get 20+ SEO Tags Instantly',
+  description:
+    'Generate 20-25 highly relevant, SEO-optimized YouTube tags instantly with our free AI tag generator. Formatted perfectly for YouTube Studio.',
+  openGraph: {
+    title: 'Free YouTube Tag Generator — Get 20+ SEO Tags Instantly',
+    description:
+      'Generate 20-25 highly relevant, SEO-optimized YouTube tags instantly. The best free YouTube tag generator powered by AI.',
+    url: buildAbsoluteUrl('/youtube-tags-generator'),
+    type: 'website',
+  },
+  alternates: {
+    canonical: buildAbsoluteUrl('/youtube-tags-generator'),
+  },
+  keywords: [
+    'youtube tags generator',
+    'free youtube tag generator',
+    'youtube tag generator free',
+    'youtube seo tags',
+    'best youtube tags',
+    'youtube keyword generator',
+    'tags for youtube videos',
+    'youtube tag finder',
+    'generate tags for youtube',
+    'youtube metadata tags',
+  ],
+};
+
+const faqItems = [
+  {
+    question: 'How many tags should I add to my YouTube video?',
+    answer:
+      'YouTube allows up to 500 characters total for all tags combined. We recommend using as much of this limit as possible, which usually translates to 15-25 tags depending on their length. Prioritize your most important keywords and phrases at the beginning of your tag list, as YouTube gives slightly more weight to the first few tags.',
+  },
+  {
+    question: 'Do YouTube tags still matter for SEO?',
+    answer:
+      'Yes, although their importance has shifted. While titles and descriptions are now the primary drivers for YouTube search ranking, tags still play a crucial role in two areas: helping your video appear in the "Up Next" or related videos sidebar alongside similar content, and catching common spelling mistakes that viewers might type when searching for your topic.',
+  },
+  {
+    question: 'Should I use single-word tags or long-tail phrases?',
+    answer:
+      'You should use a mix of both, but lean heavily towards long-tail phrases. Single-word tags (like "gaming" or "cooking") are too broad to rank for. Long-tail phrases (like "how to bake chocolate chip cookies" or "minecraft survival guide part 1") match exactly what viewers type into the search bar, making them much more effective for driving targeted traffic.',
+  },
+  {
+    question: 'Is it helpful to include misspellings in my YouTube tags?',
+    answer:
+      'Absolutely. Including common misspellings is actually one of the primary use cases YouTube officially recommends for tags. If your video is about "Arnold Schwarzenegger", including misspellings like "arnold swarzeneger" in your tags ensures that viewers who misspell the name in search will still find your video.',
+  },
+  {
+    question: 'Can I copy and paste competitor tags directly?',
+    answer:
+      'While you can see competitor tags using browser extensions, blindly copying them is a poor strategy. Competitors might be using tags that aren\'t strictly relevant to your specific video angle. Instead, use their tags as inspiration, but rely on an AI tag generator to build a customized, highly relevant tag list specifically tailored to your exact video topic and content.',
+  },
+  {
+    question: 'Does the order of my YouTube tags matter?',
+    answer:
+      'Yes, the order does matter. YouTube\'s algorithm places more emphasis on the first tag, and decreasing emphasis on subsequent tags. Your first tag should always be your exact primary target keyword. Follow it with variations of that keyword, then broader category tags towards the end of your 500-character limit.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
 
 export default function TagsGeneratorPage() {
   return (
-    <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
-      <section className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 mb-6 uppercase tracking-wider">
-          <Tag className="w-4 h-4" /> AI Tag Generator
-        </div>
-        <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-          Free YouTube Tag Generator — <span className="text-gradient">Get 20+ SEO Tags Instantly</span>
-        </h1>
-        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-          The best free YouTube tag generator powered by AI. Enter your video topic and instantly get 20-25 highly relevant, SEO-optimized tags formatted perfectly for YouTube Studio. No account needed, completely free.
-        </p>
-      </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
 
-      <TagsGeneratorClient />
+      <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
+        <section className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 mb-6 uppercase tracking-wider">
+            <Tag className="w-4 h-4" /> AI Tag Generator
+          </div>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
+            Free YouTube Tag Generator — <span className="text-gradient">Get 20+ SEO Tags Instantly</span>
+          </h1>
+          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+            The best free YouTube tag generator powered by AI. Enter your video topic and instantly get highly relevant, SEO-optimized tags formatted perfectly for YouTube Studio. No account needed, completely free.
+          </p>
+        </section>
 
+        <TagsGeneratorClient />
 
-      <section className="mt-12 space-y-8">
-        <h2 className="font-display text-2xl font-bold">Why YouTube Tags Still Matter</h2>
-        <div className="text-slate-600 leading-relaxed space-y-4">
-          <p>If you&apos;re looking for a <strong>youtube tag generator free</strong> of charge, you already know that tags matter. While YouTube has said tags are a minor ranking factor, they still play a key role in <strong className="text-slate-900">helping the algorithm categorize your content</strong> and serving it to the right audience through related/suggested videos.</p>
-          <p>Our <strong>free tag generator for youtube</strong> ensures you use the right keywords. Tags help you rank for misspelled search queries and appear in YouTube&apos;s &quot;related videos&quot; sidebar — which accounts for a massive portion of views on the platform. Using a dedicated <strong>youtube tags generator</strong> is the fastest way to get them.</p>
-        </div>
-        <h3 className="font-display text-xl font-bold">Tag Strategy Tips</h3>
-        <ul className="space-y-2 text-slate-600">
-          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" /><span>Put your most important tags first</span></li>
-          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" /><span>Stay under 500 characters total</span></li>
-          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" /><span>Mix single keywords with multi-word search phrases</span></li>
-          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" /><span>Include common misspellings of your topic</span></li>
-          <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" /><span>All tags should be lowercase, no # symbols</span></li>
-        </ul>
-        <div className="glass-card rounded-2xl p-6 text-center">
-          <p className="text-slate-600 mb-4">Need titles, descriptions, and hashtags too?</p>
-          <Link href="/" className="inline-flex items-center gap-2 btn-primary rounded-xl px-6 py-3 font-semibold">Try Full SEO Optimizer →</Link>
-        </div>
-      </section>
-    </main>
+        {/* Educational Content */}
+        <section className="mt-16 space-y-10">
+          <div>
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 text-slate-900 dark:text-white">
+              Why YouTube Tags Are Still a Vital SEO Tool
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                In the ever-evolving landscape of YouTube SEO, there is a persistent myth that tags no longer matter. While it is true that YouTube&apos;s algorithm has become incredibly sophisticated at understanding video content through audio analysis and machine learning, <strong className="text-slate-900 dark:text-white">tags remain a fundamental piece of your video&apos;s metadata</strong>. They serve as a direct communication line between you and the YouTube search algorithm.
+              </p>
+              <p>
+                When you use a <strong className="text-slate-900 dark:text-white">free YouTube tag generator</strong>, you are essentially building a bridge of vocabulary. Viewers use specific phrases, slang, or even misspelled words when searching for content. If those specific terms aren&apos;t in your title or description, tags are your safety net. They ensure your video surfaces for the exact terms your audience is typing, capturing search traffic that would otherwise go to competitors.
+              </p>
+              <p>
+                Beyond direct search, tags are a primary signal for the &quot;Suggested Videos&quot; algorithm. Have you ever wondered why certain videos always appear next to each other in the sidebar? It&apos;s often because they share a high percentage of overlapping tags. By using highly targeted, relevant tags, you signal to YouTube that your video belongs alongside the top-performing content in your niche, opening the door to passive, algorithmic traffic.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              The Anatomy of a Perfect Tag Strategy
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                A common mistake creators make is treating the tag box as a place to dump every related word they can think of. A successful tag strategy is intentional, structured, and prioritizes relevance over volume. Here is how to build a 500-character tag list that actually moves the needle on your views.
+              </p>
+              
+              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
+                1. The Primary Target Keyword (The Anchor)
+              </h3>
+              <p>
+                Your very first tag should be the exact phrase you want to rank for in YouTube search. If your video is about &quot;how to bake sourdough bread,&quot; that exact phrase must be your first tag. YouTube gives disproportionate weight to the first tag in your list, so don&apos;t waste that premium spot on a generic word like &quot;baking&quot; or &quot;bread.&quot;
+              </p>
+              
+              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
+                2. Long-Tail Keyword Variations (The Net)
+              </h3>
+              <p>
+                The next 5-10 tags should be logical variations of your primary keyword. Think about how different people might search for the same topic. Variations might include &quot;sourdough bread recipe for beginners,&quot; &quot;easy sourdough baking tutorial,&quot; or &quot;step by step sourdough bread.&quot; These long-tail phrases have lower search volume but much higher intent, meaning viewers who search these terms are highly likely to click and watch your entire video.
+              </p>
+              
+              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
+                3. Broad Category Tags (The Context)
+              </h3>
+              <p>
+                Once you have exhausted your specific variations, use the remaining character limit for broader category tags. These help YouTube understand the general neighborhood your video belongs in. For the sourdough example, you might use tags like &quot;baking tutorial,&quot; &quot;homemade bread,&quot; or &quot;cooking tips.&quot; While you won&apos;t rank for these highly competitive terms, they help categorize your content for the suggested algorithm.
+              </p>
+              
+              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
+                4. Strategic Misspellings (The Safety Net)
+              </h3>
+              <p>
+                YouTube explicitly states that tags are useful if the content of your video is commonly misspelled. If you are covering a difficult-to-spell topic, location, or name (e.g., &quot;Arnold Schwarzenegger&quot; or &quot;Massachusetts&quot;), including common typos in your tags is a smart, platform-approved tactic to capture lost search traffic.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              Why Use an AI YouTube Tag Generator?
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                Brainstorming 20-25 highly relevant tags manually for every video is tedious and prone to bias. You might miss obvious variations or waste characters on tags that have zero search volume. An <strong className="text-slate-900 dark:text-white">AI YouTube tags generator</strong> solves this by instantly analyzing your core topic and cross-referencing it with known search patterns and algorithmic preferences.
+              </p>
+              <p>
+                Our tool doesn&apos;t just spit out random words. It generates a cohesive list that includes the primary long-tail phrases, secondary variations, and necessary context tags — all formatted perfectly with commas so you can copy and paste them directly into YouTube Studio with a single click. This saves you 10-15 minutes of SEO research per upload, allowing you to focus on creating better content.
+              </p>
+            </div>
+          </div>
+
+          {/* Checklist */}
+          <div>
+            <h3 className="font-display text-xl font-bold mb-3 text-slate-900 dark:text-white">
+              Tag Optimization Checklist
+            </h3>
+            <ul className="space-y-2 text-slate-600">
+              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" /><span className="dark:text-slate-300">Is your exact primary keyword the very first tag?</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" /><span className="dark:text-slate-300">Have you used close to the 500-character maximum limit?</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" /><span className="dark:text-slate-300">Are you prioritizing long-tail phrases (3+ words) over single words?</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" /><span className="dark:text-slate-300">Did you include common misspellings related to your topic?</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" /><span className="dark:text-slate-300">Are all your tags genuinely relevant to the video content?</span></li>
+            </ul>
+          </div>
+
+          {/* Related Blog Posts */}
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              Level Up Your YouTube Metadata
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Link
+                href="/blog/best-youtube-tags"
+                className="glass-card rounded-xl p-5 hover:border-cyan-400/40 transition-colors group"
+              >
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-cyan-400 transition-colors mb-1">
+                  How to Find the Best YouTube Tags
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  A comprehensive guide to tag research, competitor analysis, and implementation.
+                </p>
+              </Link>
+              <Link
+                href="/blog/best-youtube-tags-for-gaming"
+                className="glass-card rounded-xl p-5 hover:border-cyan-400/40 transition-colors group"
+              >
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-cyan-400 transition-colors mb-1">
+                  Best YouTube Tags for Gaming Channels
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Niche-specific tag strategies for growing a gaming channel fast.
+                </p>
+              </Link>
+              <Link
+                href="/youtube-title-generator"
+                className="glass-card rounded-xl p-5 hover:border-cyan-400/40 transition-colors group"
+              >
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-cyan-400 transition-colors mb-1">
+                  YouTube Title Generator →
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Pair your tags with high-CTR, click-worthy video titles.
+                </p>
+              </Link>
+              <Link
+                href="/youtube-description-generator"
+                className="glass-card rounded-xl p-5 hover:border-cyan-400/40 transition-colors group"
+              >
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-cyan-400 transition-colors mb-1">
+                  YouTube Description Generator →
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Generate SEO descriptions that perfectly complement your tags.
+                </p>
+              </Link>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+              Frequently Asked Questions About YouTube Tags
+            </h2>
+            <div className="space-y-4">
+              {faqItems.map((item, index) => (
+                <details
+                  key={index}
+                  className="glass-card rounded-xl group"
+                >
+                  <summary className="cursor-pointer px-6 py-4 font-semibold text-slate-900 dark:text-white select-none list-none flex items-center justify-between gap-4">
+                    {item.question}
+                    <span className="text-cyan-400 text-xl leading-none group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <div className="px-6 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {item.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="glass-card rounded-2xl p-6 text-center">
+            <p className="text-slate-600 dark:text-slate-400 mb-4">Tags are just one piece of the puzzle. Get titles, descriptions, and hashtags too.</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/" className="inline-flex items-center gap-2 btn-primary rounded-xl px-6 py-3 font-semibold">
+                Try Full SEO Optimizer →
+              </Link>
+              <Link href="/youtube-hashtag-generator" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-cyan-400/40 transition-colors">
+                Hashtag Generator
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }

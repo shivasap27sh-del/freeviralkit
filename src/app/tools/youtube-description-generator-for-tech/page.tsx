@@ -95,29 +95,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What should a tech video description include?',
+    question: 'How do I legally disclose my tech affiliate links?',
     answer:
-      'A strong tech video description should include: a keyword-rich opening summary (150 characters), timestamps for chapters, product specs and model numbers, affiliate/purchase links, links to related videos, social media links, and a subscribe CTA.',
+      'The FTC requires clear and conspicuous disclosure. Simply putting "Affiliate links below" at the very bottom of a 500-word description is not enough. Place a clear statement like "As an Amazon Associate I earn from qualifying purchases" near the top of your links section, before any links are clicked.',
   },
   {
-    question: 'How long should a tech YouTube description be?',
+    question: 'Should I put the exact product specifications in the description?',
     answer:
-      'Aim for 200–500 words. YouTube indexes up to 5,000 characters, so longer descriptions with relevant keywords perform better in search. Include timestamps, specs, and links to fill the space meaningfully.',
+      'Yes, pasting a brief summary of the exact specs (e.g., RAM, Storage, Processor, Refresh Rate) is great for SEO. Many viewers search for specific hardware configurations (like "M4 Max 64GB review"), and having those exact terms in the description helps YouTube index your video.',
   },
   {
-    question: 'Do descriptions help tech videos rank better?',
+    question: 'Is it better to use Bitly or raw Amazon links?',
     answer:
-      'Absolutely. YouTube uses your description to understand video content and match it to search queries. Tech descriptions with specific model names, specs, and comparison keywords rank significantly higher than generic ones.',
+      'Raw Amazon "amzn.to" short links are generally trusted by viewers and YouTube alike. Third-party link shorteners like Bitly can sometimes be flagged by spam filters if used excessively, and some viewers avoid clicking them because they obscure the destination.',
   },
   {
-    question: 'Is this tech description generator free?',
+    question: 'Where should I put my sponsor read information?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, no hidden fees. Generate unlimited tech video descriptions powered by AI.',
+      'If your tech video is sponsored (e.g., by a VPN or software company), put their link and your discount code in the top 3 lines of the description (above the "Show More" fold). Sponsors track clicks, and burying their link guarantees poor performance.',
   },
   {
-    question: 'Can I use this for product reviews and unboxing videos?',
+    question: 'How do I do timestamps for a long PC build guide?',
     answer:
-      'Yes! The generator works for all tech content types — product reviews, unboxings, comparisons, tutorials, build guides, tech news, and more. Just describe your video topic and get an optimized description.',
+      'Break timestamps down by component installation. For example: "2:00 Installing CPU", "4:30 Mounting Motherboard", "8:15 Wiring the GPU", "12:00 First Boot". This structure is incredibly helpful for viewers who only need help with one specific part of the build.',
   },
 ];
 

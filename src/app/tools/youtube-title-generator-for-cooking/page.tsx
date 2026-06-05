@@ -98,29 +98,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What makes a good cooking YouTube title?',
+    question: 'How do I title a recipe video if the dish has multiple names?',
     answer:
-      'A good cooking YouTube title names the dish or cuisine, includes a sensory hook or challenge element, stays under 65 characters, and sets clear expectations. It should make viewers hungry and curious enough to click.',
+      'If a dish is known by multiple names (e.g., "Eggplant Parmesan" and "Aubergine Parmigiana"), use the most popular search term in the title, and include the secondary name in the first line of your description. This ensures you capture the maximum search volume without stuffing your title.',
   },
   {
-    question: 'How do I make my recipe video titles more clickable?',
+    question: 'Are adjectives important in food video titles?',
     answer:
-      'Use numbers, constraints, or comparisons. "5 Minute Breakfast Ideas" or "Can I Make Sushi at Home for Under $5?" create curiosity. Adding words like "easy", "best", or "ultimate" also helps with searchability.',
+      'Yes, sensory adjectives are critical. Words like "Crispy", "Gooey", "Spicy", or "Melt-in-your-mouth" trigger psychological cravings. A title like "Crispy Korean Fried Chicken" will always have a higher CTR than just "Korean Fried Chicken Recipe".',
   },
   {
-    question: 'Should I include the recipe name in the title?',
+    question: 'How do I title a "What I Eat in a Day" video?',
     answer:
-      'Yes, always include the dish or recipe name. This is essential for YouTube SEO — people search for specific recipes like "butter chicken recipe" or "sourdough bread tutorial". Put the dish name near the beginning.',
+      'Add a specific dietary goal, calorie limit, or lifestyle context. Titles like "What I Eat in a Day (High Protein, Vegan)" or "What I Eat in a Day to Lose Weight (1500 Calories)" target specific search intents and perform significantly better than generic titles.',
   },
   {
-    question: 'Is this cooking title generator completely free?',
+    question: 'Do food challenges still get views on YouTube?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, and no hidden fees. Generate unlimited cooking and recipe video titles powered by AI.',
+      'Yes, food challenges are incredibly popular, but the title must emphasize the scale or difficulty of the challenge. Use numbers to your advantage. "I Ate the World\'s Spiciest Ramen" or "Surviving on $1 a Day in Japan" are proven viral formulas.',
   },
   {
-    question: 'Can I use this for mukbang, ASMR cooking, and meal prep videos?',
+    question: 'Should I put "Recipe" at the end of my title?',
     answer:
-      'Absolutely! The AI title generator works for all food content niches including mukbang, ASMR cooking, meal prep, recipe tutorials, food challenges, restaurant reviews, and any other cooking content.',
+      'Only if you are specifically targeting search traffic for a "How-To" video. If your video is more about entertainment, tasting, or a vlog-style cooking experience, putting "Recipe" in the title can make it feel too much like a tutorial and hurt Browse CTR.',
   },
 ];
 

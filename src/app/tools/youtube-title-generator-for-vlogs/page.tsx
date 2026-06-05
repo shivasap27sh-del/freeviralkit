@@ -101,34 +101,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What makes a good vlog title?',
+    question: 'How do I write a vlog title that doesn\'t sound like clickbait?',
     answer:
-      'A good vlog title is personal, specific, and creates curiosity. It should hint at the story or experience in the video while giving viewers a clear reason to click. The best vlog titles use first-person language and mention specific details like location, time frame, or challenge.',
+      'The secret is to create an "Information Gap". State a true, compelling fact about your day or trip, but withhold the outcome. For example, "I got stranded in Tokyo at 3 AM" is a true event that naturally creates curiosity, whereas "YOU WONT BELIEVE WHAT HAPPENED IN TOKYO!!!" feels like cheap clickbait.',
   },
   {
-    question: 'How do I make my vlog titles more clickable?',
+    question: 'Should I number my daily vlogs (e.g., Vlog #45)?',
     answer:
-      'To increase vlog title CTR, use emotional hooks, specific numbers or time frames, and create an information gap. Titles like "I Tried X for 30 Days" or "What Nobody Tells You About X" naturally generate curiosity and drive clicks.',
+      'No, avoid numbering your vlogs in the title unless you are doing a very specific challenge (like "Day 12 of 30"). Numbering vlogs tells new viewers they are "behind" on a series they don\'t care about yet, which immediately kills your click-through rate.',
   },
   {
-    question: 'Should vlog titles include keywords for SEO?',
+    question: 'Is it better to use "I" and "My" in vlog titles?',
     answer:
-      'Yes. Including relevant keywords helps YouTube understand and recommend your vlog. For example, if your vlog is about a morning routine, include "morning routine" in the title so it appears in relevant searches.',
+      'Yes! Vlogs are inherently personal. Using first-person language creates an immediate parasocial connection. "How I Survived a 14 Hour Flight" performs much better than "Tips for Surviving a 14 Hour Flight".',
   },
   {
-    question: 'How long should a vlog title be?',
+    question: 'How do I title a "Day in the Life" video to get more views?',
     answer:
-      'Keep vlog titles between 50-65 characters. Titles over 70 characters get truncated on mobile devices. Short, punchy titles work especially well for vlogs since the format is personal and conversational.',
+      'Add a specific qualifier or role to the title. Generic titles like "A Day in My Life" only work if you are already famous. Instead, use titles like "A Realistic Day in the Life of a Software Engineer" or "A Day in My Life Living Alone in NYC". Specificity attracts viewers.',
   },
   {
-    question: 'Is this vlog title generator free?',
+    question: 'Do emojis actually help travel vlog titles?',
     answer:
-      'Yes! FreeViralKit is 100% free. No signup, no credit card, no hidden fees. Generate unlimited vlog title ideas powered by AI.',
-  },
-  {
-    question: 'Can I use this for travel vlogs and daily vlogs?',
-    answer:
-      'Absolutely. The AI title generator works for all vlog types including daily vlogs, travel vlogs, lifestyle content, college vlogs, routine videos, moving vlogs, and personal story content.',
+      'Yes, when used sparingly. A single relevant emoji (like ✈️ or 🌴) can add visual contrast to a feed full of black-and-white text. Just don\'t overdo it—more than two emojis makes the title look spammy.',
   },
 ];
 

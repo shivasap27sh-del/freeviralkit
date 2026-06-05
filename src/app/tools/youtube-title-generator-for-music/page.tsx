@@ -98,29 +98,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What makes a great music YouTube title?',
+    question: 'How do I title a beat or instrumental on YouTube?',
     answer:
-      'A great music YouTube title includes the song or artist name, specifies the format (cover, tutorial, review, reaction), uses an emotional hook, and stays under 65 characters. It should set clear expectations about what the viewer will hear or learn.',
+      'Producers should always use the "Type Beat" format because it has massive search volume. A good format is "[Artist] x [Artist] Type Beat 2026 - \\"[Beat Name]\\"". For example: "Travis Scott x Drake Type Beat 2026 - \\"NIGHTFALL\\"".',
   },
   {
-    question: 'How do I title a song cover on YouTube?',
+    question: 'Should I include the words "Official Music Video"?',
     answer:
-      'For song covers, use this formula: "[Song Name] — [Artist] ([Your Style/Instrument] Cover)". For example, "Blinding Lights — The Weeknd (Acoustic Guitar Cover)". This catches both the song search and the cover search.',
+      'Yes, if it is the official release. Putting (Official Music Video) or (Official Audio) in parentheses at the end of the title signals authenticity to both the algorithm and the viewer, leading to higher click-through rates.',
   },
   {
-    question: 'Should I put the song name or my channel name first?',
+    question: 'How do I title a music reaction video?',
     answer:
-      'Always put the song or topic name first. Viewers search for songs, not channel names. Your channel name already appears below the title in YouTube results, so use the title space for searchable keywords.',
+      'Focus on your musical expertise or your extreme emotional response. "Vocal Coach Reacts to Dimash (Speechless)" or "Classical Musician Hears Meshuggah for the First Time" works incredibly well because it promises a specific, expert perspective.',
   },
   {
-    question: 'Is the music title generator free to use?',
+    question: 'Should I put the original artist\'s name in my cover video title?',
     answer:
-      'Yes, FreeViralKit is 100% free. No signup, no credit card, and no hidden fees. Generate unlimited music video titles powered by AI.',
+      'Always. You are piggybacking off their search volume. If you just title your video "My Acoustic Cover", nobody will find it. You must title it "Blinding Lights - The Weeknd (Acoustic Cover)".',
   },
   {
-    question: 'Can I use this for beat-making, production, and tutorial videos?',
+    question: 'Are mashup titles different from standard covers?',
     answer:
-      'Absolutely! The AI title generator works for all music content — covers, original songs, beat-making, production tutorials, album reviews, music reactions, and instrument lessons.',
+      'Mashups should clearly state both songs and artists involved, and often include a catchy umbrella name. For example: "If [Song A] and [Song B] had a baby..." or "The Ultimate 2026 Pop Mashup (50 Songs in 3 Minutes)".',
   },
 ];
 

@@ -112,34 +112,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What should an educational YouTube description include?',
+    question: 'Should I put timestamps at the very top of my education description?',
     answer:
-      'A good educational YouTube description should include: a clear learning objective in the first line, a content summary with relevant keywords, timestamps for each section, links to resources and related lessons, a call to action, and 5-8 relevant hashtags.',
+      'No. The first 150 characters are your meta description for search results. If you put timestamps there, searchers just see a wall of numbers instead of a compelling reason to click. Write a strong 2-sentence intro first, then put your timestamps.',
   },
   {
-    question: 'How long should an education video description be?',
+    question: 'How do I link to my paid course without seeming spammy?',
     answer:
-      'Aim for 200-300 words minimum. Longer descriptions help YouTube understand your content better and improve search rankings. Include your topic keywords naturally, list learning outcomes, and provide timestamps.',
+      'Provide immense value first. Place your course link below your intro and timestamps, and frame it as a resource: "Want the full curriculum? Get the complete course here: [Link]". Viewers respect clear, non-deceptive upselling.',
   },
   {
-    question: 'Do timestamps help educational videos rank better?',
+    question: 'Can I just paste my entire script into the description?',
     answer:
-      'Yes! Timestamps improve user experience and also enable Google\'s "Key Moments" feature, which shows chapter markers directly in Google Search results. This significantly boosts visibility for educational content.',
+      'While YouTube can handle up to 5,000 characters, pasting a raw script looks messy and doesn\'t highlight key concepts. It\'s much better to write a 300-word structured summary with bullet points of the main takeaways.',
   },
   {
-    question: 'Is this education description generator free?',
+    question: 'Do external links to worksheets hurt my video\'s performance?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, no hidden fees. Generate unlimited educational video descriptions powered by AI.',
+      'No. While YouTube prefers keeping users on the platform, providing high-value resources (like a PDF worksheet) builds incredible audience loyalty and subscriber rates, which far outweighs the slight penalty of an external link.',
   },
   {
-    question: 'Can I use this for online courses and exam prep videos?',
+    question: 'How do I optimize a description for a multi-part lecture series?',
     answer:
-      'Absolutely. The AI description generator works for all educational content including lectures, tutorials, exam preparation, online courses, language learning, science experiments, and coding tutorials.',
-  },
-  {
-    question: 'How do descriptions help educational videos get more views?',
-    answer:
-      'YouTube\'s algorithm reads your description to understand what your video covers and who to recommend it to. A detailed, keyword-rich description helps YouTube match your video with relevant searches, driving more organic views from students actively looking for that topic.',
+      'Create a "Series Navigation" section in your description. Explicitly link to "Previous Episode: [Link]" and "Next Episode: [Link]", as well as the full playlist. This is critical for driving binge-sessions and massively increasing watch time.',
   },
 ];
 

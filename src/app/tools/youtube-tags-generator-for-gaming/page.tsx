@@ -98,29 +98,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What are the best YouTube tags for gaming videos?',
+    question: 'How many tags should I use for a Let\'s Play video?',
     answer:
-      'The best gaming YouTube tags include the game name, game genre (fps, rpg, battle royale), specific content type (walkthrough, review, tips), platform (PC, PS5, mobile), and trending keywords related to current updates or seasons.',
+      'For episodic content like Let\'s Plays, use about 15-20 highly relevant tags. Include the game name, episode number, the specific boss or zone you are in, and broad terms like "walkthrough" and "gameplay". Don\'t max out the 500 characters with irrelevant tags just to fill space.',
   },
   {
-    question: 'How many tags should I use for gaming videos?',
+    question: 'Are misspellings still useful in gaming tags?',
     answer:
-      'Use as many relevant tags as possible within YouTube\'s 500-character limit. Aim for 15-30 tags that mix broad gaming terms with specific tags for your video. Quality and relevance matter more than quantity.',
+      'Yes! Many games have complex names (e.g., "Genshin Impact") that users frequently misspell in search (e.g., "Genshin Imapct", "Gensin"). Adding common misspellings to your tags helps you capture that lost search traffic.',
   },
   {
-    question: 'Do YouTube tags still matter for gaming SEO in 2026?',
+    question: 'Should I tag other famous gaming YouTubers in my video?',
     answer:
-      'Yes, tags still matter as a secondary ranking signal. While titles, descriptions, and watch time are more important, tags help YouTube understand your content and can improve suggested video placement, especially for niche gaming searches.',
+      'Only if your video is actually about them. Tagging "PewDiePie" or "MrBeast Gaming" on a random Minecraft Let\'s Play is considered tag stuffing. It will hurt your click-through rate when their audience ignores your video, and it violates YouTube\'s spam policy.',
   },
   {
-    question: 'Is this gaming tags generator free?',
+    question: 'Do tags matter for YouTube Gaming Shorts?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, and no hidden fees. Generate unlimited gaming video tags powered by AI.',
+      'For Shorts, the title and hashtags are much more important than hidden tags. However, adding 5-10 highly relevant background tags (like the specific game and mode) still helps YouTube categorize the Short faster.',
   },
   {
-    question: 'Can I generate tags for specific games like Minecraft or Fortnite?',
+    question: 'Should I copy the tags from a viral gaming video?',
     answer:
-      'Absolutely! Enter any game name or topic and the AI will generate tags optimized for that specific game. It works for Minecraft, Fortnite, GTA, Valorant, Call of Duty, Roblox, and every other game.',
+      'Copying a viral video\'s tags won\'t make your video viral, because their video is ranking based on high watch time and channel authority. However, looking at their tags is a great way to discover long-tail keywords you might not have thought of.',
   },
 ];
 

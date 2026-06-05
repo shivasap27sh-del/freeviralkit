@@ -93,10 +93,10 @@ export default function Navbar() {
               </Link>
               {/* Dropdown Menu */}
               {link.label === 'Tools' && (
-                <div className={`absolute top-full left-0 pt-2 w-56 transition-all duration-200 ${toolsOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
-                  <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl overflow-hidden flex flex-col py-1">
+                <div className={`absolute top-full left-0 pt-2 w-[480px] transition-all duration-200 ${toolsOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
+                  <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl overflow-hidden grid grid-cols-2 p-2 gap-1">
                     {toolsDropdown.map(tool => (
-                      <Link key={tool.href} href={tool.href} className="px-4 py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                      <Link key={tool.href} href={tool.href} className="px-3 py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-lg line-clamp-1" title={tool.label}>
                         {tool.label}
                       </Link>
                     ))}

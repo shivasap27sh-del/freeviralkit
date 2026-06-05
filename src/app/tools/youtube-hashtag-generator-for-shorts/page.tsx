@@ -96,29 +96,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'Do hashtags actually help YouTube Shorts get more views?',
+    question: 'Why do my Shorts get stuck at 0 views despite using hashtags?',
     answer:
-      'Yes. Hashtags help YouTube categorize your Short and surface it on relevant hashtag landing pages and the Shorts shelf. Creators who use 3–5 targeted hashtags consistently see 15–30% more impressions compared to Shorts with no hashtags.',
+      'If a Short gets literally 0 views, it usually means YouTube hasn\'t indexed it into the Shorts Feed yet. This can take anywhere from 10 minutes to 24 hours. Hashtags help categorize the video, but they cannot force the algorithm to test the video instantly. Be patient and do not delete and re-upload.',
   },
   {
-    question: 'How many hashtags should I use on a YouTube Short?',
+    question: 'Should I use generic tags like #FYP or #Viral?',
     answer:
-      'Use 3–5 hashtags per Short for the best results. Always include #Shorts plus 2–4 niche-relevant tags. Adding more than 5 rarely helps and can actually hurt discoverability by diluting relevance signals.',
+      'Using one broad tag like #Viral is fine, but relying exclusively on generic tags tells the algorithm nothing about your specific content. The algorithm needs niche tags (e.g., #Woodworking, #TechReview) to find your seed audience. If your seed audience doesn\'t engage, the Short won\'t go viral anyway.',
   },
   {
-    question: 'Where should I put hashtags — title or description?',
+    question: 'Are hashtags case-sensitive on YouTube?',
     answer:
-      'For Shorts, putting hashtags in the title is most effective because they appear as clickable links above the video. You can place additional hashtags in the description, but the title placement gets the most visibility.',
+      'No, YouTube hashtags are not case-sensitive. #YouTubeShorts and #youtubeshorts will group together under the same hashtag landing page. However, using CamelCase (#LikeThis) makes them much easier for humans to read.',
   },
   {
-    question: 'Is the Shorts hashtag generator free?',
+    question: 'Do hashtags work differently on Shorts vs TikTok?',
     answer:
-      'Absolutely. FreeViralKit is 100% free — no signup, no credit card, no hidden fees. Generate unlimited hashtag sets for your Shorts powered by AI.',
+      'Yes. TikTok relies heavily on trending sounds and hyper-specific FYP tags. YouTube\'s algorithm leans more on search history and watch history. On YouTube, your hashtags should be more descriptive of the actual content rather than just chasing a temporary audio trend.',
   },
   {
-    question: 'Can I use the same hashtags on every Short?',
+    question: 'What happens if I use banned hashtags?',
     answer:
-      "You can, but you shouldn't. Rotating hashtags keeps your content fresh in YouTube's algorithm and lets you tap into different audience segments. Use a core set (like #Shorts) and rotate niche-specific tags.",
+      'YouTube doesn\'t explicitly publish a "banned" list, but tags associated with sensitive, mature, or dangerous content will cause your Short to be shadowbanned from the Shorts Feed. Always keep your tags advertiser-friendly and strictly relevant to your video.',
   },
 ];
 

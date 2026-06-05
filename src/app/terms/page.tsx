@@ -1,69 +1,159 @@
 import type { Metadata } from 'next';
+import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — FreeViralKit',
-  description: 'Read the FreeViralKit terms of service. Understand the rules and guidelines for using our free YouTube SEO tool.',
-  alternates: { canonical: 'https://freeviralkit.com/terms' },
+  title: 'Terms of Service | FreeViralKit',
+  description: 'Read the FreeViralKit Terms of Service governing the use of our free YouTube SEO tools, AI content generators, and platform.',
+  openGraph: {
+    title: 'Terms of Service | FreeViralKit',
+    description: 'Read the FreeViralKit Terms of Service governing the use of our free YouTube SEO tools, AI content generators, and platform.',
+    url: buildAbsoluteUrl('/terms'),
+    type: 'website',
+  },
+  alternates: {
+    canonical: buildAbsoluteUrl('/terms'),
+  },
 };
 
-export default function TermsPage() {
+export default function TermsOfServicePage() {
   return (
-    <main className="container mx-auto px-6 py-12 max-w-3xl relative z-10 min-h-screen">
-      <h1 className="font-display text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">Terms of Service</h1>
-      <p className="text-slate-500 text-sm mb-8">Last updated: May 7, 2026</p>
+    <main className="container mx-auto px-6 py-16 max-w-4xl min-h-screen">
+      <div className="mb-12">
+        <h1 className="font-display text-4xl md:text-5xl font-extrabold mb-4 text-slate-900 dark:text-white">Terms of Service</h1>
+        <p className="text-slate-500">Last Updated: June 4, 2026</p>
+      </div>
 
-      <div className="space-y-8 text-slate-700 leading-relaxed">
-        <section>
-          <h2 className="font-display text-xl font-bold text-slate-900 mb-3">1. Acceptance of Terms</h2>
-          <p>By accessing and using FreeViralKit (freeviralkit.com), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service.</p>
-        </section>
+      <div className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-purple-500 hover:prose-a:text-purple-600 prose-p:text-slate-600 dark:prose-p:text-slate-400 leading-loose">
+        <p>
+          Welcome to FreeViralKit ("Company," "we," "our," "us"). These Terms of Service ("Terms") constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you," "user"), and FreeViralKit, concerning your access to and use of the freeviralkit.com website as well as any other media form, media channel, mobile website, or mobile application related, linked, or otherwise connected thereto (collectively, the "Site").
+        </p>
+        <p>
+          We provide various artificial intelligence-powered tools designed to assist YouTube creators with search engine optimization (SEO), metadata generation, and content ideation, including but not limited to Title Generators, Description Generators, Tag Generators, and Script Outliners (collectively, the "Services").
+        </p>
+        <p>
+          By accessing the Site or using the Services, you agree that you have read, understood, and agreed to be bound by all of these Terms of Service. <strong>IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF SERVICE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</strong>
+        </p>
 
-        <section>
-          <h2 className="font-display text-xl font-bold text-slate-900 mb-3">2. Description of Service</h2>
-          <p>FreeViralKit is a free, AI-powered tool that generates YouTube video titles, descriptions, hashtags, tags, and pinned comments. The Service is provided &quot;as is&quot; without warranties of any kind.</p>
-        </section>
+        <h2>1. Intellectual Property Rights</h2>
+        <p>
+          Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the "Content") and the trademarks, service marks, and logos contained therein (the "Marks") are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and various other intellectual property rights and unfair competition laws of the United States, foreign jurisdictions, and international conventions.
+        </p>
+        <p>
+          The Content and the Marks are provided on the Site "AS IS" for your information and personal use only. Except as expressly provided in these Terms of Service, no part of the Site and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.
+        </p>
+        <p>
+          <strong>Output Content:</strong> Any text, titles, descriptions, tags, scripts, or ideas generated by our AI tools and provided to you (the "Output") is granted to you under a broad, royalty-free, perpetual, non-exclusive license. You are free to use the Output for commercial purposes on your YouTube channels, blogs, and other media without attribution to FreeViralKit. However, you acknowledge that AI-generated Output may not be entirely unique and similar Output may be generated for other users entering similar prompts. You may not claim copyright ownership over the raw, unedited AI Output.
+        </p>
 
-        <section>
-          <h2 className="font-display text-xl font-bold text-slate-900 mb-3">3. Acceptable Use</h2>
-          <p className="mb-3">You agree NOT to:</p>
-          <ul className="space-y-2 ml-4">
-            <li>Use the Service for any unlawful purpose</li>
-            <li>Attempt to reverse engineer, decompile, or hack the Service</li>
-            <li>Use automated bots or scrapers to access the Service</li>
-            <li>Generate content that violates YouTube&apos;s Community Guidelines</li>
-            <li>Overload the Service with excessive requests</li>
-          </ul>
-        </section>
+        <h2>2. User Representations</h2>
+        <p>
+          By using the Site, you represent and warrant that:
+        </p>
+        <ol>
+          <li>You have the legal capacity and you agree to comply with these Terms of Service;</li>
+          <li>You are not a minor in the jurisdiction in which you reside (generally under the age of 18), or if a minor, you have received parental permission to use the Site;</li>
+          <li>You will not access the Site through automated or non-human means, whether through a bot, script, or otherwise, without our express permission;</li>
+          <li>You will not use the Site for any illegal or unauthorized purpose;</li>
+          <li>Your use of the Site will not violate any applicable law or regulation.</li>
+        </ol>
+        <p>
+          If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your access and refuse any and all current or future use of the Site (or any portion thereof).
+        </p>
 
-        <section>
-          <h2 className="font-display text-xl font-bold text-slate-900 mb-3">4. AI-Generated Content</h2>
-          <p>Content generated by FreeViralKit is AI-generated and provided for informational purposes. You are responsible for reviewing and editing all generated content before using it on YouTube. We do not guarantee that generated content will result in views, subscribers, or rankings.</p>
-        </section>
+        <h2>3. Prohibited Activities</h2>
+        <p>
+          You may not access or use the Site for any purpose other than that for which we make the Site available. The Site may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.
+        </p>
+        <p>As a user of the Site, you agree not to:</p>
+        <ul>
+          <li>Systematically retrieve data or other content from the Site to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us.</li>
+          <li>Make any unauthorized use of the Site, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email.</li>
+          <li>Use a buying agent or purchasing agent to make purchases on the Site (if applicable).</li>
+          <li>Circumvent, disable, or otherwise interfere with security-related features of the Site.</li>
+          <li>Engage in unauthorized framing of or linking to the Site.</li>
+          <li>Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information.</li>
+          <li>Make improper use of our support services or submit false reports of abuse or misconduct.</li>
+          <li>Engage in any automated use of the system, such as using scripts to send comments or messages, or using any data mining, robots, or similar data gathering and extraction tools. Attempting to reverse engineer or scrape our internal API endpoints to bypass our frontend interface is strictly prohibited.</li>
+          <li>Interfere with, disrupt, or create an undue burden on the Site or the networks or services connected to the Site.</li>
+          <li>Attempt to impersonate another user or person.</li>
+          <li>Sell or otherwise transfer your profile (if applicable).</li>
+          <li>Use any information obtained from the Site in order to harass, abuse, or harm another person.</li>
+          <li>Use the Site as part of any effort to compete with us or otherwise use the Site and/or the Content for any revenue-generating endeavor or commercial enterprise (e.g., reselling our API access).</li>
+          <li>Decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up a part of the Site.</li>
+          <li>Attempt to bypass any measures of the Site designed to prevent or restrict access to the Site, or any portion of the Site.</li>
+          <li>Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion of the Site to you.</li>
+          <li>Delete the copyright or other proprietary rights notice from any Content.</li>
+          <li>Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, including excessive use of capital letters and spamming (continuous posting of repetitive text), that interferes with any party's uninterrupted use and enjoyment of the Site.</li>
+          <li>Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Site.</li>
+          <li>Use the Site in a manner inconsistent with any applicable laws or regulations.</li>
+        </ul>
 
-        <section>
-          <h2 className="font-display text-xl font-bold text-slate-900 mb-3">5. Intellectual Property</h2>
-          <p>You retain ownership of any content you create using our tool. The FreeViralKit brand, logo, and website design are our intellectual property.</p>
-        </section>
+        <h2>4. Third-Party Websites and Content</h2>
+        <p>
+          The Site may contain (or you may be sent via the Site) links to other websites ("Third-Party Websites") as well as articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications, software, and other content or items belonging to or originating from third parties ("Third-Party Content"). Such Third-Party Websites and Third-Party Content are not investigated, monitored, or checked for accuracy, appropriateness, or completeness by us, and we are not responsible for any Third-Party Websites accessed through the Site or any Third-Party Content posted on, available through, or installed from the Site.
+        </p>
+        <p>
+          Inclusion of, linking to, or permitting the use or installation of any Third-Party Websites or any Third-Party Content does not imply approval or endorsement thereof by us. If you decide to leave the Site and access the Third-Party Websites or to use or install any Third-Party Content, you do so at your own risk, and you should be aware these Terms of Service no longer govern. You should review the applicable terms and policies, including privacy and data gathering practices, of any website to which you navigate from the Site.
+        </p>
 
-        <section>
-          <h2 className="font-display text-xl font-bold text-slate-900 mb-3">6. Limitation of Liability</h2>
-          <p>FreeViralKit shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our Service, including but not limited to loss of revenue, rankings, or channel performance.</p>
-        </section>
+        <h2>5. Site Management</h2>
+        <p>
+          We reserve the right, but not the obligation, to: (1) monitor the Site for violations of these Terms of Service; (2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Terms of Service, including without limitation, reporting such user to law enforcement authorities; (3) in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your Contributions or any portion thereof; (4) in our sole discretion and without limitation, notice, or liability, to remove from the Site or otherwise disable all files and content that are excessive in size or are in any way burdensome to our systems; and (5) otherwise manage the Site in a manner designed to protect our rights and property and to facilitate the proper functioning of the Site.
+        </p>
 
-        <section>
-          <h2 className="font-display text-xl font-bold text-slate-900 mb-3">7. Advertising</h2>
-          <p>Our Service displays third-party advertisements through Google AdSense. We are not responsible for the content of these advertisements.</p>
-        </section>
+        <h2>6. Disclaimer of Warranties</h2>
+        <p>
+          THE SITE AND SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SITE AND OUR SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SITE AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+        </p>
+        <p>
+          WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE SITE'S CONTENT OR THE CONTENT OF ANY WEBSITES LINKED TO THE SITE AND WE WILL ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SITE, (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SITE, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE SITE BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SITE.
+        </p>
+        <p>
+          <strong>YouTube SEO Disclaimer:</strong> FreeViralKit provides tools to assist in generating metadata that aligns with best practices for YouTube SEO. However, we do not guarantee any specific results, views, subscriber growth, monetization approval, or search ranking improvements as a result of using our Services. YouTube's algorithm is complex and constantly changing, and video performance depends on numerous factors outside our control, including content quality, audience engagement, and market competition.
+        </p>
 
-        <section>
-          <h2 className="font-display text-xl font-bold text-slate-900 mb-3">8. Changes to Terms</h2>
-          <p>We reserve the right to modify these Terms at any time. Continued use of the Service after changes constitutes acceptance of the new Terms.</p>
-        </section>
+        <h2>7. Limitation of Liability</h2>
+        <p>
+          IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SITE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER AND REGARDLESS OF THE FORM OF THE ACTION, WILL AT ALL TIMES BE LIMITED TO THE AMOUNT PAID, IF ANY, BY YOU TO US DURING THE SIX (6) MONTH PERIOD PRIOR TO ANY CAUSE OF ACTION ARISING. CERTAIN US STATE LAWS AND INTERNATIONAL LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MAY HAVE ADDITIONAL RIGHTS.
+        </p>
 
-        <section>
-          <h2 className="font-display text-xl font-bold text-slate-900 mb-3">9. Contact</h2>
-          <p>Questions about these Terms? Visit our <a href="/contact" className="text-purple-400 hover:underline">contact page</a>.</p>
-        </section>
+        <h2>8. Indemnification</h2>
+        <p>
+          You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys' fees and expenses, made by any third party due to or arising out of: (1) your use of the Site; (2) breach of these Terms of Service; (3) any breach of your representations and warranties set forth in these Terms of Service; (4) your violation of the rights of a third party, including but not limited to intellectual property rights; or (5) any overt harmful act toward any other user of the Site with whom you connected via the Site. Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.
+        </p>
+
+        <h2>9. Modifications and Interruptions</h2>
+        <p>
+          We reserve the right to change, modify, or remove the contents of the Site at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on our Site. We also reserve the right to modify or discontinue all or part of the Site without notice at any time. We will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of the Site.
+        </p>
+        <p>
+          We cannot guarantee the Site will be available at all times. We may experience hardware, software, API quota limits, or other problems or need to perform maintenance related to the Site, resulting in interruptions, delays, or errors. We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Site at any time or for any reason without notice to you. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Site during any downtime or discontinuance of the Site. Nothing in these Terms of Service will be construed to obligate us to maintain and support the Site or to supply any corrections, updates, or releases in connection therewith.
+        </p>
+
+        <h2>10. Governing Law</h2>
+        <p>
+          These Terms shall be governed by and defined following the laws of the State of Delaware, United States. FreeViralKit and yourself irrevocably consent that the courts of Delaware shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.
+        </p>
+
+        <h2>11. Dispute Resolution</h2>
+        <h3>Informal Negotiations</h3>
+        <p>
+          To expedite resolution and control the cost of any dispute, controversy, or claim related to these Terms of Service (each "Dispute" and collectively, the "Disputes") brought by either you or us (individually, a "Party" and collectively, the "Parties"), the Parties agree to first attempt to negotiate any Dispute (except those Disputes expressly provided below) informally for at least thirty (30) days before initiating arbitration. Such informal negotiations commence upon written notice from one Party to the other Party.
+        </p>
+        
+        <h3>Binding Arbitration</h3>
+        <p>
+          If the Parties are unable to resolve a Dispute through informal negotiations, the Dispute (except those Disputes expressly excluded below) will be finally and exclusively resolved by binding arbitration. YOU UNDERSTAND THAT WITHOUT THIS PROVISION, YOU WOULD HAVE THE RIGHT TO SUE IN COURT AND HAVE A JURY TRIAL. The arbitration shall be commenced and conducted under the Commercial Arbitration Rules of the American Arbitration Association ("AAA") and, where appropriate, the AAA's Supplementary Procedures for Consumer Related Disputes ("AAA Consumer Rules"), both of which are available at the AAA website www.adr.org.
+        </p>
+
+        <h2>12. Contact Us</h2>
+        <p>
+          In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:
+        </p>
+        <p>
+          <strong>FreeViralKit</strong><br />
+          Email: legal@freeviralkit.com<br />
+        </p>
       </div>
     </main>
   );

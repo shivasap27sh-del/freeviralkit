@@ -19,10 +19,50 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD Person schema for strong E-E-A-T signal
+const faqs = [
+  {
+    question: 'Is FreeViralKit really 100% free?',
+    answer:
+      'Yes, absolutely. We don\'t believe in paywalling basic SEO tools. Everything from our title generator to our YouTube description builder is completely free to use without even needing to create an account. No subscriptions, no hidden fees, and no credit cards required.',
+  },
+  {
+    question: 'How does the AI optimize for YouTube SEO?',
+    answer:
+      'Our backend is powered by advanced Large Language Models (LLMs) running on Groq\'s ultra-fast inference engine. The AI is specifically prompted with deep YouTube SEO knowledge—such as character limits, high-CTR hook patterns, keyword front-loading, and algorithm preferences—to generate content that performs exceptionally well in search and suggested feeds.',
+  },
+  {
+    question: 'Do I need to worry about algorithmic penalties for using AI?',
+    answer:
+      'No. Our tools are designed to generate high-quality, human-sounding text that avoids the robotic, repetitive patterns that YouTube\'s spam filters penalize. By providing unique, highly relevant, and context-aware titles and descriptions, you actually align perfectly with YouTube\'s goal of serving high-quality content to viewers.',
+  },
+  {
+    question: 'Why did you build FreeViralKit?',
+    answer:
+      'I noticed a frustrating trend in the creator economy: basic metadata optimization tools were locked behind expensive monthly subscriptions ($20-$50/mo). I believe that understanding the YouTube algorithm shouldn\'t be a luxury reserved for massive channels. I built FreeViralKit to democratize access to top-tier SEO tools so independent creators can compete on a level playing field.',
+  },
+  {
+    question: 'Are my video ideas kept private?',
+    answer:
+      'Yes. We do not store or sell your queries or generated outputs. The prompts are processed statelessly by our AI provider, and once the generation is complete, the data is not retained on our servers.',
+  },
+];
+
+// JSON-LD Person, Organization, and FAQ schema for strong E-E-A-T signal
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'FreeViralKit',
+      url: buildAbsoluteUrl('/'),
+      logo: buildAbsoluteUrl('/icon.png'),
+      description: 'Free AI-powered YouTube SEO tools designed to help creators grow their channels by generating optimized titles, descriptions, and tags.',
+      founder: {
+        '@type': 'Person',
+        name: 'Shiva Srivastava',
+      },
+      foundingDate: '2024',
+    },
     {
       '@type': 'Person',
       name: 'Shiva Srivastava',
@@ -43,6 +83,7 @@ const jsonLd = {
         'Node.js',
         'AI/ML Integration',
         'Web Development',
+        'Algorithm Optimization',
       ],
       url: buildAbsoluteUrl('/about'),
       sameAs: [
@@ -54,12 +95,23 @@ const jsonLd = {
       '@type': 'WebPage',
       name: 'About FreeViralKit',
       description:
-        'About page for FreeViralKit — Free AI YouTube SEO Tool built by Shiva Srivastava.',
+        'About page for FreeViralKit — Free AI YouTube SEO Tool built by Shiva Srivastava. Discover our mission to democratize YouTube SEO.',
       url: buildAbsoluteUrl('/about'),
       author: {
         '@type': 'Person',
         name: 'Shiva Srivastava',
       },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
     },
   ],
 };
@@ -118,7 +170,7 @@ export default function AboutPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
 
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
@@ -136,7 +188,7 @@ export default function AboutPage() {
           <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
             FreeViralKit is a free, AI-powered YouTube SEO tool that generates optimized titles,
             descriptions, hashtags, and tags — everything you need to rank higher and grow faster,
-            completely free.
+            completely free without arbitrary paywalls.
           </p>
         </section>
 
@@ -157,22 +209,35 @@ export default function AboutPage() {
         {/* Mission */}
         <section className="glass-card rounded-2xl p-8 md:p-10 mb-12" aria-labelledby="mission-heading">
           <h2 id="mission-heading" className="font-display text-2xl font-bold mb-4">
-            Our Mission
+            Our Mission: Democratizing YouTube SEO
           </h2>
           <p className="text-slate-700 leading-relaxed mb-4">
             We believe every creator deserves access to professional-grade SEO tools, regardless of
-            budget. Most YouTube optimization tools charge $20–50/month for features that should be
-            free. FreeViralKit changes that.
+            budget. The creator economy is increasingly becoming a pay-to-play ecosystem where 
+            massive corporate channels with dedicated SEO teams dominate search results. Meanwhile, 
+            independent creators struggle to get discovered simply because they lack the technical 
+            knowledge to optimize their metadata.
           </p>
           <p className="text-slate-700 leading-relaxed mb-4">
+            Worse still, most YouTube optimization tools on the market charge $20–$50 per month for 
+            features that are functionally basic. FreeViralKit was built to disrupt this model. 
             By leveraging cutting-edge AI through Groq&apos;s lightning-fast inference engine, we
-            provide instant, high-quality YouTube optimization that rivals expensive paid tools —
+            provide instant, high-quality YouTube optimization that rivals or exceeds expensive paid tools —
             completely free, with no account required.
           </p>
+          <p className="text-slate-700 leading-relaxed mb-4">
+            Our primary goal is to <strong>help creators avoid algorithmic penalties</strong>. The YouTube 
+            algorithm actively demotes videos that use keyword stuffing, misleading tags, or robotic, 
+            repetitive descriptions. FreeViralKit&apos;s underlying AI prompts are strictly engineered to 
+            generate human-sounding, highly relevant content. We prioritize E-E-A-T (Experience, Expertise, 
+            Authoritativeness, Trustworthiness) in the generated copy, ensuring your videos are treated as 
+            high-value content by the algorithm.
+          </p>
           <p className="text-slate-700 leading-relaxed">
-            Our AI understands every YouTube niche and generates human-quality titles with proper
-            emoji placement, descriptions with strategic keyword placement, and tags that maximize
-            your video&apos;s reach in search and suggested videos.
+            Our AI understands every YouTube niche. Whether you are running a gaming channel, a cooking 
+            vlog, or an educational hub, FreeViralKit generates human-quality titles with proper
+            emoji placement, descriptions with strategic keyword integration, and tags that maximize
+            your video&apos;s reach in search and suggested feeds.
           </p>
         </section>
 
@@ -350,6 +415,21 @@ export default function AboutPage() {
                   <h3 className="font-display text-lg font-semibold">{item.title}</h3>
                   <p className="text-slate-600 text-sm">{item.desc}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="glass-card rounded-2xl p-8 md:p-10 mb-12" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" className="font-display text-2xl font-bold mb-6">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index}>
+                <h3 className="font-semibold text-slate-900 mb-2">{faq.question}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>

@@ -1,504 +1,235 @@
-'use client';
-
-import { useState } from 'react';
-import { generateTitles } from './actions/titles';
-import { generateDetails } from './actions/details';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Wand2, Video, Copy, CheckCircle2, ChevronRight, Hash, Tag, AlignLeft,
-  Loader2, Sparkles, RotateCcw, Zap, Package, MessageCircle, ArrowRight, User, AlertTriangle,
-  BookOpen, Search, Laptop
-} from 'lucide-react';
+import type { Metadata } from 'next';
+import { buildAbsoluteUrl } from '@/lib/site';
+import HomePageClient from '@/components/tools/HomePageClient';
+import { Wand2, AlignLeft, Search, User, Zap, Tag, Hash, Laptop, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-type Details = { description: string; hashtags: string[]; tags: string[]; pinnedComment: string };
+export const metadata: Metadata = {
+  title: 'FreeViralKit — Free AI YouTube SEO Optimizer & Title Generator',
+  description:
+    'The ultimate free YouTube SEO tool. Generate viral titles, optimized descriptions, trending hashtags, and YouTube tags instantly. No signup required.',
+  openGraph: {
+    title: 'FreeViralKit — Free AI YouTube SEO Optimizer & Title Generator',
+    description:
+      'The ultimate free YouTube SEO tool. Generate viral titles, optimized descriptions, trending hashtags, and YouTube tags instantly. No signup required.',
+    url: buildAbsoluteUrl('/'),
+    type: 'website',
+  },
+  alternates: {
+    canonical: buildAbsoluteUrl('/'),
+  },
+  keywords: [
+    'youtube seo tool',
+    'free youtube seo',
+    'youtube title generator',
+    'youtube description generator',
+    'youtube tags generator',
+    'youtube hashtag generator',
+    'youtube seo optimizer',
+    'how to rank on youtube',
+    'free viral kit',
+    'youtube channel tools',
+  ],
+};
+
+const homepageFaqs = [
+  {
+    q: 'Is FreeViralKit really free?',
+    a: 'Yes — 100% free, no signup, no credit card. Generate unlimited titles, descriptions, hashtags, and tags for all your YouTube videos without any hidden costs.',
+  },
+  {
+    q: 'How does the AI generate YouTube titles?',
+    a: 'We use advanced language models trained on successful YouTube title patterns across every niche. The AI analyzes top-performing videos to craft titles that drive clicks while staying SEO-friendly.',
+  },
+  {
+    q: 'Will these tags and titles help me rank?',
+    a: 'Yes — our AI generates content following YouTube SEO best practices: proper keyword placement, optimal character counts, and trending formats. Many creators see improved search rankings within days of optimizing their metadata.',
+  },
+  {
+    q: 'Can I use FreeViralKit for YouTube Shorts?',
+    a: 'Absolutely! FreeViralKit works for long-form videos and Shorts. The AI adapts its output to match your content type, generating punchy titles and trending hashtags perfect for short-form content.',
+  },
+  {
+    q: 'How many titles can I generate at once?',
+    a: 'FreeViralKit generates 10 optimized titles per request. You can regenerate as many times as you want to find the perfect title for your video. Each batch includes SEO-focused, viral, and trending title styles.',
+  },
+  {
+    q: 'What makes FreeViralKit different from other YouTube tools?',
+    a: 'FreeViralKit is the only tool that gives you a complete SEO package in one click — title, description, hashtags, tags, and a pinned comment — all optimized together for maximum YouTube visibility.',
+  },
+  {
+    q: 'Do I need a YouTube channel to use FreeViralKit?',
+    a: 'No — anyone can use FreeViralKit. Whether you are planning your first video or managing a channel with thousands of subscribers, our AI tools help you create better metadata for every upload.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homepageFaqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
 
 export default function Home() {
-  const [topic, setTopic] = useState('');
-  const [isGeneratingTitles, setIsGeneratingTitles] = useState(false);
-  const [titles, setTitles] = useState<string[]>([]);
-  const [selectedTitle, setSelectedTitle] = useState<string | null>(null);
-  const [isGeneratingDetails, setIsGeneratingDetails] = useState(false);
-  const [details, setDetails] = useState<Details | null>(null);
-  const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
-  const [error, setError] = useState<string | null>(null);
-  const [showDebug, setShowDebug] = useState(false);
-
-  const handleGenerateTitles = async (isRegenerate = false) => {
-    if (!topic.trim()) return;
-    setIsGeneratingTitles(true);
-    setError(null);
-    const exclude = isRegenerate ? titles : [];
-    setTitles([]); setSelectedTitle(null); setDetails(null);
-    const result = await generateTitles(topic, exclude);
-    if (result.success && result.titles) setTitles(result.titles);
-    else setError(result.error || 'Failed to generate titles');
-    setIsGeneratingTitles(false);
-  };
-
-  const handleSelectTitle = async (title: string) => {
-    setSelectedTitle(title);
-    setIsGeneratingDetails(true);
-    setError(null);
-    setDetails(null);
-    const result = await generateDetails(title);
-    if (result.success && result.details) setDetails(result.details);
-    else setError(result.error || 'Failed to generate details');
-    setIsGeneratingDetails(false);
-  };
-
-  const copy = async (text: string, key: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedStates(p => ({ ...p, [key]: true }));
-      setTimeout(() => setCopiedStates(p => ({ ...p, [key]: false })), 2000);
-    } catch (err) { console.error('Failed to copy', err); }
-  };
-
-  const copyFullPackage = () => {
-    if (!details || !selectedTitle) return;
-    const full = `TITLE:\n${selectedTitle}\n\nDESCRIPTION:\n${details.description}\n\nHASHTAGS:\n${details.hashtags.join(' ')}\n\nTAGS:\n${details.tags.join(', ')}\n\nPINNED COMMENT:\n${details.pinnedComment}`;
-    copy(full, 'full-package');
-  };
-
-  const charColor = (len: number) =>
-    len >= 50 && len <= 70 ? 'text-green-400' : len < 50 ? 'text-yellow-400' : 'text-red-400';
-
-  const renderFormattedText = (text: string) => {
-    if (!text) return null;
-    const parts = text.split(/\*\*(.*?)\*\*/g);
-    return parts.map((part, index) => {
-      if (index % 2 === 1) {
-        return <strong key={index} className="text-slate-900 font-bold dark:text-white">{part}</strong>;
-      }
-      return part;
-    });
-  };
-
-  const tagsTotalChars = (tags: string[]) => tags.join(', ').length;
-
-  const homepageFaqs = [
-    { q: 'Is FreeViralKit really free?', a: 'Yes — 100% free, no signup, no credit card. Generate unlimited titles, descriptions, hashtags, and tags for all your YouTube videos without any hidden costs.' },
-    { q: 'How does the AI generate YouTube titles?', a: 'We use Groq AI with advanced language models trained on successful YouTube title patterns across every niche. The AI analyzes top-performing videos to craft titles that drive clicks while staying SEO-friendly.' },
-    { q: 'Will these tags and titles help me rank?', a: 'Yes — our AI generates content following YouTube SEO best practices: proper keyword placement, optimal character counts, and trending formats. Many creators see improved search rankings within days of optimizing their metadata.' },
-    { q: 'Can I use FreeViralKit for YouTube Shorts?', a: 'Absolutely! FreeViralKit works for long-form videos and Shorts. The AI adapts its output to match your content type, generating punchy titles and trending hashtags perfect for short-form content.' },
-    { q: 'How many titles can I generate at once?', a: 'FreeViralKit generates 10 optimized titles per request. You can regenerate as many times as you want to find the perfect title for your video. Each batch includes SEO-focused, viral, and trending title styles.' },
-    { q: 'What makes FreeViralKit different from other YouTube tools?', a: 'FreeViralKit is the only tool that gives you a complete SEO package in one click — title, description, hashtags, tags, and a pinned comment — all optimized together for maximum YouTube visibility.' },
-    { q: 'Do I need a YouTube channel to use FreeViralKit?', a: 'No — anyone can use FreeViralKit. Whether you are planning your first video or managing a channel with thousands of subscribers, our AI tools help you create better metadata for every upload.' },
-  ];
-
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: homepageFaqs.map((faq) => ({
-              '@type': 'Question',
-              name: faq.q,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.a,
-              },
-            })),
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-    <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
-      {/* Hero */}
-      <section className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 mb-6 uppercase tracking-wider">
-          <span className="pulse-dot" /> YouTube SEO Optimizer
-        </div>
-        <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
-          Get Your Full YouTube <br /><span className="text-gradient">SEO Package in 10 Seconds</span> — Free
-        </h1>
-        <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-8">
-          Enter your video topic — get 10 SEO-optimized titles with emojis &amp; hashtags.
-          Pick one to unlock description, hashtags &amp; tags.
-        </p>
-        
-        {/* Social Proof */}
-        <div className="flex flex-col items-center gap-3 mb-10">
-          <div className="flex -space-x-2">
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className={`w-8 h-8 rounded-full border-2 border-white dark:border-slate-950 bg-gradient-to-br ${
-                ['from-purple-500 to-indigo-500', 'from-pink-500 to-rose-500', 'from-cyan-500 to-blue-500', 'from-amber-500 to-orange-500', 'from-emerald-500 to-teal-500'][i]
-              } flex items-center justify-center text-[10px] font-bold text-white shadow-sm`}>
-                {['M', 'A', 'J', 'S', 'R'][i]}
-              </div>
-            ))}
+      <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
+        {/* Hero */}
+        <section className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 mb-6 uppercase tracking-wider">
+            <span className="pulse-dot" /> YouTube SEO Optimizer
           </div>
-          <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
-            Trusted by <strong className="text-slate-900 dark:text-white">10,000+</strong> creators to generate viral titles
-          </div>
-        </div>
+          <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
+            Get Your Full YouTube <br /><span className="text-gradient">SEO Package in 10 Seconds</span> — Free
+          </h1>
+          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-8">
+            Enter your video topic — get 10 SEO-optimized titles with emojis &amp; hashtags.
+            Pick one to unlock your description, hashtags &amp; tags.
+          </p>
 
-
-      </section>
-
-      {/* Step 1 */}
-      <div className="glass-card rounded-2xl p-6 md:p-8 mb-8">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="step-badge"><Sparkles className="w-5 h-5" /></div>
-          <h2 className="font-display text-xl font-semibold">1. Enter Your Video Topic</h2>
-        </div>
-        <div className="relative mb-4">
-          <input type="text" value={topic} onChange={e => setTopic(e.target.value)}
-            placeholder="e.g., how to make pasta, iphone 16 review, minecraft survival ep 1..."
-            className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
-            onKeyDown={e => e.key === 'Enter' && handleGenerateTitles()} />
-        </div>
-        <button onClick={() => handleGenerateTitles(false)} disabled={!topic.trim() || isGeneratingTitles}
-          className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2">
-          {isGeneratingTitles ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating 10 Titles...</> : <><Wand2 className="w-5 h-5" /> Generate Optimized Titles</>}
-        </button>
-      </div>
-
-      {error && (
-        <div className="bg-red-500/10 border border-red-500/20 rounded-2xl p-5 mb-8">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-            <div className="flex-1">
-              <h3 className="font-display font-semibold text-red-400 mb-1">AI Generation Error</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                The AI system encountered an issue while generating content. Please verify your API keys and try again.
-              </p>
-              <button onClick={() => setShowDebug(!showDebug)} className="text-xs text-red-400/80 hover:text-red-400 underline mt-3 block cursor-pointer">
-                {showDebug ? 'Hide Technical Details' : 'Show Technical Details'}
-              </button>
-              {showDebug && (
-                <pre className="mt-3 p-4 bg-slate-900 text-red-300 rounded-xl text-xs font-mono whitespace-pre-wrap leading-normal border border-slate-800">
-                  {error}
-                </pre>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Skeleton */}
-      <AnimatePresence>
-        {isGeneratingTitles && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="step-badge step-badge-blue"><Video className="w-5 h-5" /></div>
-              <h2 className="font-display text-xl font-semibold">2. AI is crafting your titles...</h2>
-            </div>
-            <div className="flex flex-col gap-3">
-              {[...Array(5)].map((_, i) => <div key={i} className="skeleton-line" style={{ animationDelay: `${i * 0.15}s`, width: `${85 - i * 5}%` }} />)}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Step 2: Titles */}
-      <AnimatePresence>
-        {titles.length > 0 && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="step-badge step-badge-blue"><Video className="w-5 h-5" /></div>
-                <h2 className="font-display text-xl font-semibold">2. Pick Your Title</h2>
-              </div>
-              <button onClick={() => handleGenerateTitles(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
-                <RotateCcw className="w-3.5 h-3.5" /> Regenerate
-              </button>
-            </div>
-            <div className="flex flex-col gap-2.5">
-              {titles.map((title, idx) => (
-                <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.05 }}>
-                  <div onClick={() => !(isGeneratingDetails && selectedTitle !== title) && handleSelectTitle(title)}
-                    className={`title-card w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3 group ${
-                      (isGeneratingDetails && selectedTitle !== title) ? 'opacity-50 cursor-not-allowed ' : 'cursor-pointer '
-                    }${
-                      selectedTitle === title ? 'bg-purple-500/15 border-purple-500/60 dark:border-purple-500/40 shadow-[0_0_20px_rgba(139,92,246,0.15)]' : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-300 dark:hover:border-slate-700'
-                    }`}>
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold mt-0.5 transition-all ${
-                      selectedTitle === title ? 'bg-purple-500 text-white' : 'bg-slate-200 text-slate-600 group-hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-400'
-                    }`}>
-                      {selectedTitle === title && isGeneratingDetails ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                        : selectedTitle === title ? <CheckCircle2 className="w-3.5 h-3.5" /> : idx + 1}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-[1.02rem] leading-snug text-slate-800 dark:text-slate-100">{title}</p>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className={`text-xs font-mono ${charColor(title.length)}`}>{title.length} chars</span>
-                        {idx < 5 ? (
-                          <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/20">SEO</span>
-                        ) : idx < 8 ? (
-                          <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-orange-500/15 text-orange-400 border border-orange-500/20">VIRAL</span>
-                        ) : (
-                          <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-pink-500/15 text-pink-400 border border-pink-500/20">TRENDING</span>
-                        )}
-                      </div>
-                    </div>
-                    <button onClick={e => { e.stopPropagation(); copy(title, `title-${idx}`); }}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-slate-200 shrink-0">
-                      {copiedStates[`title-${idx}`] ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-slate-500" />}
-                    </button>
-                    <ChevronRight className={`w-4 h-4 shrink-0 mt-1 transition-colors ${selectedTitle === title ? 'text-purple-400' : 'text-gray-600'}`} />
-                  </div>
-                </motion.div>
+          {/* Social Proof */}
+          <div className="flex flex-col items-center gap-3 mb-10">
+            <div className="flex -space-x-2">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className={`w-8 h-8 rounded-full border-2 border-white dark:border-slate-950 bg-gradient-to-br ${
+                  ['from-purple-500 to-indigo-500', 'from-pink-500 to-rose-500', 'from-cyan-500 to-blue-500', 'from-amber-500 to-orange-500', 'from-emerald-500 to-teal-500'][i]
+                } flex items-center justify-center text-[10px] font-bold text-white shadow-sm`}>
+                  {['M', 'A', 'J', 'S', 'R'][i]}
+                </div>
               ))}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* In-content Ad between titles and SEO package */}
-
-
-      {/* Step 3: SEO Package — All Stacked */}
-      <AnimatePresence>
-        {(details || (isGeneratingDetails && selectedTitle)) && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="step-badge step-badge-green"><Zap className="w-5 h-5" /></div>
-                <div>
-                  <h2 className="font-display text-xl font-semibold">3. Your SEO Package</h2>
-                  <p className="text-sm text-slate-500 truncate max-w-md">For: <span className="text-slate-700 italic">&ldquo;{selectedTitle}&rdquo;</span></p>
-                </div>
-              </div>
-              {details && (
-                <button onClick={copyFullPackage} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-primary text-slate-900 text-sm font-semibold hover:opacity-90 transition-all shadow-[0_4px_15px_rgba(139,92,246,0.3)]">
-                  {copiedStates['full-package'] ? <><CheckCircle2 className="w-4 h-4" /> Copied!</> : <><Package className="w-4 h-4" /> Copy Full Package</>}
-                </button>
-              )}
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
+              Trusted by <strong className="text-slate-900 dark:text-white">10,000+</strong> creators to generate viral titles
             </div>
-
-            {/* Loading */}
-            {isGeneratingDetails && !details && (
-              <div className="glass-card rounded-2xl p-6 md:p-8">
-                <div className="space-y-3">
-                  {[...Array(6)].map((_, i) => <div key={i} className="skeleton-line" style={{ animationDelay: `${i * 0.12}s`, width: `${95 - i * 8}%` }} />)}
-                </div>
-              </div>
-            )}
-
-            {details && (
-              <>
-                {/* Description */}
-                <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-6 md:p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center shrink-0"><AlignLeft className="w-4 h-4" /></div>
-                      <div>
-                        <h3 className="font-display text-lg font-semibold">📝 Optimized Description</h3>
-                        <span className="text-xs text-slate-500">{details.description.split(/\s+/).length} words</span>
-                      </div>
-                    </div>
-                    <button onClick={() => copy(details.description, 'desc')} className="copy-btn">
-                      {copiedStates['desc'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy</>}
-                    </button>
-                  </div>
-                  <div className="bg-slate-50 rounded-xl p-5 border border-slate-100 dark:bg-slate-900/40 dark:border-slate-800">
-                    <p className="whitespace-pre-wrap text-slate-700 dark:text-slate-300 leading-relaxed text-[0.95rem]">
-                      {renderFormattedText(details.description)}
-                    </p>
-                  </div>
-                </motion.div>
-
-                {/* Hashtags */}
-                <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="glass-card rounded-2xl p-6 md:p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center shrink-0"><Hash className="w-4 h-4" /></div>
-                      <div>
-                        <h3 className="font-display text-lg font-semibold"># Hashtags</h3>
-                        <span className="text-xs text-slate-500">⭐ First 3 appear above your video title</span>
-                      </div>
-                    </div>
-                    <button onClick={() => copy(details.hashtags.join(' '), 'hash')} className="copy-btn">
-                      {copiedStates['hash'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy All</>}
-                    </button>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {details.hashtags.map((ht, idx) => (
-                      <motion.button key={idx} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: idx * 0.04 }}
-                        onClick={() => copy(ht, `ht-${idx}`)}
-                        className={`px-4 py-2.5 rounded-xl font-medium transition-all hover:scale-105 cursor-pointer ${
-                          idx < 3 ? 'bg-pink-500/15 border border-pink-500/30 text-pink-300 shadow-[0_0_10px_rgba(236,72,153,0.1)]'
-                            : 'bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200'
-                        }`}>
-                        {copiedStates[`ht-${idx}`] ? <span className="text-green-400">Copied!</span> : (ht.startsWith('#') ? ht : `#${ht}`)}
-                        {idx < 3 && <span className="ml-2 text-[10px] bg-pink-500/20 text-pink-300 px-1.5 py-0.5 rounded-full">TOP</span>}
-                      </motion.button>
-                    ))}
-                  </div>
-                </motion.div>
-
-                {/* Tags */}
-                <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="glass-card rounded-2xl p-6 md:p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0"><Tag className="w-4 h-4" /></div>
-                      <div>
-                        <h3 className="font-display text-lg font-semibold">🏷️ Tags</h3>
-                        <span className="text-xs text-slate-500">Paste in YouTube Studio → Tags</span>
-                      </div>
-                    </div>
-                    <button onClick={() => copy(details.tags.join(', '), 'tags')} className="copy-btn">
-                      {copiedStates['tags'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy All</>}
-                    </button>
-                  </div>
-                  {/* Tag character limit bar */}
-                  <div className="mb-4 bg-slate-100 dark:bg-slate-800/50 rounded-lg p-3 border border-slate-100 dark:border-slate-700">
-                    <div className="flex justify-between text-xs mb-1.5">
-                      <span className="text-slate-600 dark:text-slate-400">Tag characters used</span>
-                      <span className={tagsTotalChars(details.tags) <= 500 ? 'text-green-400' : 'text-red-400'}>
-                        {tagsTotalChars(details.tags)} / 500
-                      </span>
-                    </div>
-                    <div className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                      <div className={`h-full rounded-full transition-all ${tagsTotalChars(details.tags) <= 400 ? 'bg-green-500' : tagsTotalChars(details.tags) <= 500 ? 'bg-yellow-500' : 'bg-red-500'}`}
-                        style={{ width: `${Math.min((tagsTotalChars(details.tags) / 500) * 100, 100)}%` }} />
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {details.tags.map((tag, idx) => (
-                      <motion.button key={idx} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: idx * 0.03 }}
-                        onClick={() => copy(tag, `tag-${idx}`)}
-                        className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 hover:scale-105 transition-all cursor-pointer">
-                        {copiedStates[`tag-${idx}`] ? <span className="text-green-400">✓</span> : tag}
-                      </motion.button>
-                    ))}
-                  </div>
-                </motion.div>
-
-                {/* Pinned Comment */}
-                {details.pinnedComment && (
-                  <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass-card rounded-2xl p-6 md:p-8">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-yellow-500/10 text-yellow-400 flex items-center justify-center shrink-0"><MessageCircle className="w-4 h-4" /></div>
-                        <div>
-                          <h3 className="font-display text-lg font-semibold">📌 Pinned Comment</h3>
-                          <span className="text-xs text-slate-500">Pin this to boost engagement</span>
-                        </div>
-                      </div>
-                      <button onClick={() => copy(details.pinnedComment, 'pinned')} className="copy-btn">
-                        {copiedStates['pinned'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy</>}
-                      </button>
-                    </div>
-                    <div className="bg-slate-50 rounded-xl p-5 border border-slate-100">
-                      <p className="whitespace-pre-wrap text-slate-700 leading-relaxed">{details.pinnedComment}</p>
-                    </div>
-                  </motion.div>
-                )}
-              </>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Tool Links Section — SEO Internal Linking */}
-      <section className="mt-20 mb-12">
-        <h2 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-3">
-          Individual <span className="text-gradient">SEO Tools</span>
-        </h2>
-        <p className="text-slate-500 text-center mb-10 max-w-xl mx-auto">Need just one piece of the puzzle? Use our dedicated generators.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {(() => {
-            const colorMap = {
-              purple: 'bg-purple-500/10 text-purple-400',
-              pink: 'bg-pink-500/10 text-pink-400',
-              cyan: 'bg-cyan-500/10 text-cyan-400',
-              green: 'bg-green-500/10 text-green-400',
-              blue: 'bg-blue-500/10 text-blue-400',
-              orange: 'bg-orange-500/10 text-orange-400',
-            };
-            return [
-              { href: '/youtube-title-generator', icon: Wand2, label: 'YouTube Title Generator', desc: 'Get 10 viral, SEO-optimized titles', color: 'purple' },
-              { href: '/youtube-script-generator', icon: BookOpen, label: 'AI Script Outline', desc: 'Generate high-retention video script structures', color: 'pink' },
-              { href: '/youtube-topic-researcher', icon: Search, label: 'AI Niche Researcher', desc: 'Analyze competition and topic suggestions', color: 'cyan' },
-              { href: '/youtube-description-generator', icon: AlignLeft, label: 'YouTube Description Generator', desc: 'Keyword-rich descriptions in seconds', color: 'green' },
-              { href: '/youtube-channel-name-generator', icon: User, label: 'Channel Name Generator', desc: 'Find catchy, SEO-friendly channel names', color: 'blue' },
-              { href: '/youtube-shorts-idea-generator', icon: Zap, label: 'Shorts Idea Generator', desc: 'Generate viral, high-retention Shorts concepts', color: 'orange' },
-              { href: '/youtube-tags-generator', icon: Tag, label: 'YouTube Tags Generator', desc: '20-25 SEO tags under 500 chars', color: 'purple' },
-              { href: '/youtube-hashtag-generator', icon: Hash, label: 'YouTube Hashtag Generator', desc: 'Trending hashtags for any niche', color: 'pink' },
-              { href: '/creator-gear', icon: Laptop, label: 'Creator Gear & Tools', desc: 'Best equipment & software recommendation', color: 'cyan' },
-            ].map((tool) => (
-              <Link key={tool.href} href={tool.href}
-                className="glass-card rounded-2xl p-5 group hover:border-purple-500/30 transition-all flex flex-col justify-between">
-                <div>
-                  <div className={`w-12 h-12 rounded-xl ${colorMap[tool.color as keyof typeof colorMap]} flex items-center justify-center shrink-0 mb-4`}>
-                    <tool.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-display text-base font-bold group-hover:text-purple-400 transition-colors mb-1">{tool.label}</h3>
-                  <p className="text-slate-500 text-sm mb-4">{tool.desc}</p>
-                </div>
-                <div className="flex items-center gap-1 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
-                  Try Tool <ArrowRight className="w-4 h-4" />
-                </div>
-              </Link>
-            ));
-          })()}
-        </div>
-      </section>
-      {/* Why FreeViralKit — SEO Content Section */}
-      <section className="mt-20 mb-12">
-        <h2 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-3">
-          Why Choose <span className="text-gradient">FreeViralKit</span>?
-        </h2>
-        <p className="text-slate-500 text-center mb-10 max-w-2xl mx-auto">
-          Built for YouTubers who don&apos;t want to pay for SEO tools.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="glass-card rounded-2xl p-6">
-            <h3 className="font-display text-lg font-bold mb-2">🚀 Grow Faster with AI-Powered SEO</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              YouTube is the second largest search engine in the world. To get discovered, your videos need
-              optimized metadata — the right title, description, tags, and hashtags. FreeViralKit uses advanced
-              AI to analyze what works on YouTube right now and generates SEO-optimized content tailored to your
-              video topic. Stop guessing and start ranking.
-            </p>
           </div>
-          <div className="glass-card rounded-2xl p-6">
-            <h3 className="font-display text-lg font-bold mb-2">🎯 Complete SEO Package in One Click</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              Most YouTube SEO tools only generate titles or tags. FreeViralKit gives you everything in a single
-              workflow — 10 clickable titles, a keyword-rich description, trending hashtags, SEO-optimized tags
-              under the 500-character limit, and even a pinned comment to boost engagement. Copy the full package
-              with one click and paste it directly into YouTube Studio.
-            </p>
-          </div>
-          <div className="glass-card rounded-2xl p-6">
-            <h3 className="font-display text-lg font-bold mb-2">💡 Built for Every Creator</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              Whether you are a beginner uploading your first video or a seasoned creator with thousands of
-              subscribers, FreeViralKit adapts to your needs. Our AI understands every niche — gaming, tech reviews,
-              cooking tutorials, vlogs, educational content, fitness, and more. Just enter your topic and let the
-              AI do the heavy lifting.
-            </p>
-          </div>
-          <div className="glass-card rounded-2xl p-6">
-            <h3 className="font-display text-lg font-bold mb-2">⚡ 100% Free, No Limits</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              No signup required. No credit card. No usage limits. FreeViralKit is completely free to use and always
-              will be. Generate as many titles, descriptions, hashtags, and tags as you need. We believe every
-              creator deserves access to professional-grade YouTube SEO tools without paying for expensive subscriptions.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Section for SEO */}
-      <section className="mt-12 mb-8">
-        <h2 className="font-display text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-        <div className="space-y-4">
-          {homepageFaqs.map((faq, i) => (
-            <div key={i} className="glass-card rounded-xl p-5">
-              <h3 className="font-display text-base font-semibold mb-2">{faq.q}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+        {/* Client Side Generator Tool */}
+        <HomePageClient />
+
+        {/* Tool Links Section — SEO Internal Linking */}
+        <section className="mt-20 mb-12">
+          <h2 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-3 text-slate-900 dark:text-white">
+            Individual <span className="text-gradient">SEO Tools</span>
+          </h2>
+          <p className="text-slate-500 text-center mb-10 max-w-xl mx-auto">Need just one piece of the puzzle? Use our dedicated generators.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {(() => {
+              const colorMap = {
+                purple: 'bg-purple-500/10 text-purple-400',
+                pink: 'bg-pink-500/10 text-pink-400',
+                cyan: 'bg-cyan-500/10 text-cyan-400',
+                green: 'bg-green-500/10 text-green-400',
+                blue: 'bg-blue-500/10 text-blue-400',
+                orange: 'bg-orange-500/10 text-orange-400',
+              };
+              return [
+                { href: '/youtube-title-generator', icon: Wand2, label: 'YouTube Title Generator', desc: 'Get 10 viral, SEO-optimized titles', color: 'purple' },
+                { href: '/youtube-script-generator', icon: AlignLeft, label: 'AI Script Outline', desc: 'Generate high-retention video script structures', color: 'pink' },
+                { href: '/youtube-topic-researcher', icon: Search, label: 'AI Niche Researcher', desc: 'Analyze competition and topic suggestions', color: 'cyan' },
+                { href: '/youtube-description-generator', icon: AlignLeft, label: 'YouTube Description Generator', desc: 'Keyword-rich descriptions in seconds', color: 'green' },
+                { href: '/youtube-channel-name-generator', icon: User, label: 'Channel Name Generator', desc: 'Find catchy, SEO-friendly channel names', color: 'blue' },
+                { href: '/youtube-shorts-idea-generator', icon: Zap, label: 'Shorts Idea Generator', desc: 'Generate viral, high-retention Shorts concepts', color: 'orange' },
+                { href: '/youtube-tags-generator', icon: Tag, label: 'YouTube Tags Generator', desc: '20-25 SEO tags under 500 chars', color: 'purple' },
+                { href: '/youtube-hashtag-generator', icon: Hash, label: 'YouTube Hashtag Generator', desc: 'Trending hashtags for any niche', color: 'pink' },
+                { href: '/creator-gear', icon: Laptop, label: 'Creator Gear & Tools', desc: 'Best equipment & software recommendations', color: 'cyan' },
+              ].map((tool) => (
+                <Link key={tool.href} href={tool.href}
+                  className="glass-card rounded-2xl p-5 group hover:border-purple-500/30 transition-all flex flex-col justify-between">
+                  <div>
+                    <div className={`w-12 h-12 rounded-xl ${colorMap[tool.color as keyof typeof colorMap]} flex items-center justify-center shrink-0 mb-4`}>
+                      <tool.icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-display text-base font-bold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">{tool.label}</h3>
+                    <p className="text-slate-500 text-sm mb-4">{tool.desc}</p>
+                  </div>
+                  <div className="flex items-center gap-1 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+                    Try Tool <ArrowRight className="w-4 h-4" />
+                  </div>
+                </Link>
+              ));
+            })()}
+          </div>
+        </section>
+
+        {/* Why FreeViralKit — SEO Content Section */}
+        <section className="mt-20 mb-12">
+          <h2 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-3 text-slate-900 dark:text-white">
+            Why Choose <span className="text-gradient">FreeViralKit</span>?
+          </h2>
+          <p className="text-slate-500 text-center mb-10 max-w-2xl mx-auto">
+            Built for YouTubers who don&apos;t want to pay for expensive SEO tools.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="glass-card rounded-2xl p-6">
+              <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-2">🚀 Grow Faster with AI-Powered SEO</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                YouTube is the second largest search engine in the world. To get discovered, your videos need
+                optimized metadata — the right title, description, tags, and hashtags. FreeViralKit uses advanced
+                AI to analyze what works on YouTube right now and generates SEO-optimized content tailored to your
+                video topic. Stop guessing and start ranking.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
-    </main>
+            <div className="glass-card rounded-2xl p-6">
+              <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-2">🎯 Complete SEO Package in One Click</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                Most YouTube SEO tools only generate titles or tags. FreeViralKit gives you everything in a single
+                workflow — 10 clickable titles, a keyword-rich description, trending hashtags, SEO-optimized tags
+                under the 500-character limit, and even a pinned comment to boost engagement. Copy the full package
+                with one click and paste it directly into YouTube Studio.
+              </p>
+            </div>
+            <div className="glass-card rounded-2xl p-6">
+              <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-2">💡 Built for Every Creator</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                Whether you are a beginner uploading your first video or a seasoned creator with thousands of
+                subscribers, FreeViralKit adapts to your needs. Our AI understands every niche — gaming, tech reviews,
+                cooking tutorials, vlogs, educational content, fitness, and more. Just enter your topic and let the
+                AI do the heavy lifting.
+              </p>
+            </div>
+            <div className="glass-card rounded-2xl p-6">
+              <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-2">⚡ 100% Free, No Limits</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                No signup required. No credit card. No usage limits. FreeViralKit is completely free to use and always
+                will be. Generate as many titles, descriptions, hashtags, and tags as you need. We believe every
+                creator deserves access to professional-grade YouTube SEO tools without paying for expensive subscriptions.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section for SEO */}
+        <section className="mt-12 mb-8">
+          <h2 className="font-display text-2xl font-bold text-center mb-8 text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {homepageFaqs.map((faq, i) => (
+              <details
+                key={i}
+                className="glass-card rounded-xl group"
+              >
+                <summary className="cursor-pointer px-6 py-4 font-semibold text-slate-900 dark:text-white select-none list-none flex items-center justify-between gap-4">
+                  {faq.q}
+                  <span className="text-purple-400 text-xl leading-none group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div className="px-6 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+      </main>
     </>
   );
 }

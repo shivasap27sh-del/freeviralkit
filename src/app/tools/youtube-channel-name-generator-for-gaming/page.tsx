@@ -99,29 +99,29 @@ const tips = [
 
 const faqs = [
   {
-    question: 'What makes a good gaming channel name?',
+    question: 'Should I put "Gaming" or "Plays" in my channel name?',
     answer:
-      'A good gaming channel name is short (2–3 words), easy to spell, memorable, and not tied to a specific game. It should reflect your content personality — whether that\'s competitive, funny, educational, or chill — and be available across all major social platforms.',
+      'It depends on your long-term goals. Adding "Gaming" (e.g., MarkiplierGaming) makes your niche instantly clear to new viewers. However, dropping it (e.g., just "Markiplier") gives you more flexibility to pivot into vlogs or reaction content later without confusing your audience.',
   },
   {
-    question: 'Should I use my real name for a gaming channel?',
+    question: 'How do I pick a clan name for my esports team?',
     answer:
-      'It depends on your brand strategy. Using your real name (like "MarkiplierGaming") creates a personal brand. Using a creative name (like "GameGrumps") creates a studio brand. Personal brands are easier to start; studio brands are easier to scale or sell.',
+      'Esports clan names should sound authoritative and be easily abbreviated into a 2-4 letter prefix (like FaZe, TSM, or NRG). Avoid overly long words. Opt for sharp, aggressive, or futuristic themes like "Sentinels", "OpTic", or "Cloud9".',
   },
   {
-    question: 'Can I change my YouTube channel name later?',
+    question: 'Is it bad to have numbers in my gaming channel name?',
     answer:
-      'Yes, YouTube allows you to change your channel name. However, frequent changes confuse your audience and hurt brand recognition. It\'s best to choose a strong name from the start and stick with it.',
+      'Generally, yes. Names like "GamerDude99" look unprofessional and are hard for viewers to remember or type. The only exception is if the number is explicitly part of the brand identity (e.g., "LevelCapGaming" or "AchievementHunter").',
   },
   {
-    question: 'Is this gaming channel name generator free?',
+    question: 'What if the gaming name I want is taken on Xbox/PlayStation?',
     answer:
-      'Yes, FreeViralKit is 100% free to use. No signup, no credit card, no hidden fees. Generate unlimited gaming channel name ideas powered by AI.',
+      'If you plan to stream or record multiplayer gameplay where your gamertag is visible, having a mismatched YouTube name and gamertag can confuse viewers trying to add you. Try to secure a variation that matches across all platforms, like adding "TV" or "Live" to the end.',
   },
   {
-    question: 'How do I know if a gaming channel name is already taken?',
+    question: 'How do I come up with a funny gaming channel name?',
     answer:
-      'Search for the name on YouTube directly. Also check username availability on Twitter/X, Instagram, and TikTok. Tools like Namechk can check multiple platforms at once. Our generator focuses on unique combinations to minimize conflicts.',
+      'Combine a gaming term with an unexpected adjective or animal. E.g., "TacticalPotato", "SneakyTurtlePlays", or "CaffeinatedNoob". Self-deprecating names often perform very well in casual, non-competitive gaming niches.',
   },
 ];
 

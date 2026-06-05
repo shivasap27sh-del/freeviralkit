@@ -1,254 +1,270 @@
-'use client';
-
 import type { Metadata } from 'next';
-
-import { useState } from 'react';
-import { researchTopic } from '../actions/research';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, AlertCircle, BarChart3, ShieldAlert, Award, Compass } from 'lucide-react';
+import { buildAbsoluteUrl } from '@/lib/site';
+import TopicResearcherPageClient from '@/components/tools/TopicResearcherPageClient';
+import { Search } from 'lucide-react';
 import Link from 'next/link';
-import ErrorBanner from '@/components/ErrorBanner';
 
-type TopicIdea = {
-  title: string;
-  reason: string;
+export const metadata: Metadata = {
+  title: 'Free YouTube Niche & Topic Researcher — Find Low Competition Keywords',
+  description:
+    'Analyze search demand and competition levels for your YouTube niche. Discover high-potential, low-competition video topics to rank easily and grow your channel.',
+  openGraph: {
+    title: 'Free YouTube Niche & Topic Researcher — Find Low Competition Keywords',
+    description:
+      'Analyze search demand and competition levels for your YouTube niche. Discover high-potential, low-competition video topics to rank easily.',
+    url: buildAbsoluteUrl('/youtube-topic-researcher'),
+    type: 'website',
+  },
+  alternates: {
+    canonical: buildAbsoluteUrl('/youtube-topic-researcher'),
+  },
+  keywords: [
+    'youtube topic researcher',
+    'youtube niche finder',
+    'youtube keyword tool',
+    'low competition youtube topics',
+    'youtube video ideas',
+    'youtube search volume',
+    'best youtube niches',
+    'youtube analytics tool',
+    'youtube seo researcher',
+    'how to find youtube topics',
+  ],
 };
 
-type ResearchData = {
-  volume: 'High' | 'Medium' | 'Low';
-  competition: 'High' | 'Medium' | 'Low';
-  ideas: TopicIdea[];
+const faqItems = [
+  {
+    question: 'How do I know if a YouTube niche is profitable?',
+    answer:
+      'A profitable YouTube niche usually has high search volume and advertiser demand. Niches like personal finance, software tutorials, and real estate tend to have high CPMs (advertisers pay more per 1,000 views). However, the most profitable niche is one where you can consistently create high-quality content over a long period without burning out, regardless of the baseline CPM.',
+  },
+  {
+    question: 'What makes a YouTube keyword "Low Competition"?',
+    answer:
+      'A keyword is considered low competition when the top-ranking videos for that search term have relatively low view counts, are outdated (several years old), or come from channels with small subscriber bases. If a channel with 500 subscribers is ranking on the first page for a specific topic, that is a strong signal that you can rank for it too.',
+  },
+  {
+    question: 'Should I niche down or make broad content?',
+    answer:
+      'When starting a new channel, you must niche down. The YouTube algorithm needs to understand exactly who your target audience is so it knows who to recommend your videos to. If you make a cooking video on Monday and a gaming video on Wednesday, the algorithm gets confused. Once you have built a loyal audience (usually past 100k subscribers), you can slowly start broadening your topics.',
+  },
+  {
+    question: 'What is a "Long-Tail Keyword"?',
+    answer:
+      'A long-tail keyword is a highly specific search phrase containing three or more words. Instead of targeting "camera review" (which is broad and highly competitive), you target "Sony A7IV review for wedding photography." Long-tail keywords have lower overall search volume, but they have much lower competition and significantly higher viewer intent.',
+  },
+  {
+    question: 'How many video ideas should I brainstorm before starting a channel?',
+    answer:
+      'Before launching a channel, you should brainstorm at least 30 to 50 viable video topics within your niche. If you struggle to come up with even 20 ideas, your niche might be too narrow, or you might not be passionate enough about the subject to sustain a long-term YouTube career. Our AI topic researcher can help you quickly build this initial backlog.',
+  },
+  {
+    question: 'Does the YouTube algorithm prefer search traffic or suggested traffic?',
+    answer:
+      'Both are important, but they serve different purposes. Search traffic is crucial for new channels because it guarantees an audience is actively looking for your content. It provides a slow, steady stream of evergreen views. Suggested traffic (the homepage and "Up Next" sidebar) is what causes videos to go viral. The best strategy is to create search-optimized videos to build your initial audience, which will eventually trigger the suggested algorithm.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
 };
 
 export default function TopicResearcherPage() {
-  const [niche, setNiche] = useState('');
-  const [isGenerating, setIsGenerating] = useState(false);
-  const [data, setData] = useState<ResearchData | null>(null);
-  const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
-  const [error, setError] = useState<string | null>(null);
-
-  const handleGenerate = async (val?: string) => {
-    const inputVal = val !== undefined ? val : niche;
-    if (!inputVal.trim()) return;
-    setIsGenerating(true);
-    setData(null);
-    setError(null);
-    const result = await researchTopic(inputVal);
-    if (result.success && result.data) {
-      setData(result.data as ResearchData);
-    } else {
-      setError(result.error || 'Failed to analyze niche topics');
-    }
-    setIsGenerating(false);
-  };
-
-  const copy = async (text: string, key: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedStates(p => ({ ...p, [key]: true }));
-      setTimeout(() => setCopiedStates(p => ({ ...p, [key]: false })), 2000);
-    } catch (err) {
-      console.error('Failed to copy', err);
-    }
-  };
-
-  const getOpportunityScore = (vol: string, comp: string) => {
-    const v = vol.toLowerCase();
-    const c = comp.toLowerCase();
-    
-    if (v === 'high' && c === 'low') return { score: '🔥 Excellent Opportunity', color: 'text-green-400 bg-green-400/10 border-green-500/20' };
-    if (v === 'high' && c === 'medium') return { score: '👍 Great Opportunity', color: 'text-green-400 bg-green-400/10 border-green-500/20' };
-    if (v === 'medium' && c === 'low') return { score: '👍 Good Opportunity', color: 'text-cyan-400 bg-cyan-400/10 border-cyan-500/20' };
-    if (v === 'low' && c === 'low') return { score: '🌱 Niche Opportunity', color: 'text-cyan-400 bg-cyan-400/10 border-cyan-500/20' };
-    if (v === 'high' && c === 'high') return { score: '⚡ Very Competitive', color: 'text-yellow-400 bg-yellow-400/10 border-yellow-500/20' };
-    if (v === 'medium' && c === 'medium') return { score: '📊 Moderate Opportunity', color: 'text-yellow-400 bg-yellow-400/10 border-yellow-500/20' };
-    return { score: '⚠️ Highly Competitive', color: 'text-red-400 bg-red-400/10 border-red-500/20' };
-  };
-
-  const volumeColors = {
-    High: 'text-green-400 bg-green-400/10 border-green-500/20',
-    Medium: 'text-yellow-400 bg-yellow-400/10 border-yellow-500/20',
-    Low: 'text-red-400 bg-red-400/10 border-red-500/20',
-  };
-
-  const competitionColors = {
-    Low: 'text-green-400 bg-green-400/10 border-green-500/20',
-    Medium: 'text-yellow-400 bg-yellow-400/10 border-yellow-500/20',
-    High: 'text-red-400 bg-red-400/10 border-red-500/20',
-  };
-
-  const examples = ['Python Coding', 'Vegan Breakfasts', 'Budget Travel', 'Minecraft Building'];
-
   return (
-    <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
-      {/* Hero */}
-      <section className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-purple-400 bg-purple-400/10 border border-purple-400/20 mb-6 uppercase tracking-wider">
-          <Search className="w-4 h-4" /> AI Niche Researcher
-        </div>
-        <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-          Free YouTube <span className="text-gradient">Niche & Topic Researcher</span>
-        </h1>
-        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-          Analyze search demand and competition levels for your niche, and unlock high-potential video topics to rank easily.
-        </p>
-      </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
 
-      {/* Generator */}
-      <div className="glass-card rounded-2xl p-6 md:p-8 mb-8">
-        <div className="relative mb-4">
-          <input
-            type="text"
-            value={niche}
-            onChange={e => setNiche(e.target.value)}
-            placeholder="Enter your target niche or keyword (e.g. vegan baking, smartphone reviews, DIY room decor...)"
-            className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
-            onKeyDown={e => e.key === 'Enter' && handleGenerate()}
-          />
-        </div>
+      <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
+        {/* Hero */}
+        <section className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-purple-400 bg-purple-400/10 border border-purple-400/20 mb-6 uppercase tracking-wider">
+            <Search className="w-4 h-4" /> AI Niche Researcher
+          </div>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
+            Free YouTube <span className="text-gradient">Niche & Topic Researcher</span>
+          </h1>
+          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+            Analyze search demand and competition levels for your niche, and unlock high-potential video topics to rank easily.
+          </p>
+        </section>
 
-        {/* Clickable Examples */}
-        <div className="flex flex-wrap items-center gap-2 mb-6">
-          <span className="text-xs text-slate-500 font-medium">Examples:</span>
-          {examples.map(ex => (
-            <button
-              key={ex}
-              onClick={() => {
-                setNiche(ex);
-                handleGenerate(ex);
-              }}
-              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-950 hover:bg-slate-200 transition-all cursor-pointer"
-            >
-              {ex}
-            </button>
-          ))}
-        </div>
+        <TopicResearcherPageClient />
 
-        <button
-          onClick={() => handleGenerate()}
-          disabled={!niche.trim() || isGenerating}
-          className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2 cursor-pointer"
-        >
-          {isGenerating ? (
-            <>
-              <Loader2 className="w-5 h-5 animate-spin" /> Analyzing Niche...
-            </>
-          ) : (
-            <>
-              <Sparkles className="w-5 h-5" /> Analyze Niche & Find Topics
-            </>
-          )}
-        </button>
-      </div>
-
-      <ErrorBanner error={error} onClear={() => setError(null)} />
-
-      {/* Results */}
-      <AnimatePresence>
-        {data && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="space-y-6 mb-8"
-          >
-            <div className="flex items-center justify-between">
-              <h2 className="font-display text-xl font-semibold">Niche Metrics & Suggestions</h2>
-              <button
-                onClick={() => handleGenerate()}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
-              >
-                <RotateCcw className="w-3.5 h-3.5" /> Re-Analyze
-              </button>
-            </div>
-
-            {/* Metrics Row */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Search Volume */}
-              <div className="glass-card rounded-2xl p-6 flex flex-col justify-between items-center text-center">
-                <BarChart3 className="w-8 h-8 text-cyan-400 mb-3" />
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Search Demand</span>
-                <span className={`px-4 py-1.5 rounded-full border text-sm font-bold ${volumeColors[data.volume] || 'text-slate-500'}`}>
-                  {data.volume} Volume
-                </span>
-              </div>
-
-              {/* Competition */}
-              <div className="glass-card rounded-2xl p-6 flex flex-col justify-between items-center text-center">
-                <ShieldAlert className="w-8 h-8 text-red-400 mb-3" />
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Competition Level</span>
-                <span className={`px-4 py-1.5 rounded-full border text-sm font-bold ${competitionColors[data.competition] || 'text-slate-500'}`}>
-                  {data.competition} Competition
-                </span>
-              </div>
-
-              {/* Opportunity Score */}
-              <div className="glass-card rounded-2xl p-6 flex flex-col justify-between items-center text-center">
-                <Award className="w-8 h-8 text-purple-400 mb-3" />
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Opportunity Assessment</span>
-                <span className={`px-4 py-1.5 rounded-full border text-sm font-bold ${getOpportunityScore(data.volume, data.competition).color}`}>
-                  {getOpportunityScore(data.volume, data.competition).score}
-                </span>
-              </div>
-            </div>
-
-            {/* Trending Video Topics */}
-            <div className="glass-card rounded-2xl p-6 md:p-8 mt-6">
-              <h3 className="font-display font-bold text-slate-800 dark:text-slate-100 flex items-center gap-1.5 mb-6">
-                💡 High-Potential Video Topics
-              </h3>
-
-              <div className="space-y-4">
-                {data.ideas.map((idea, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl p-5 hover:border-purple-500/30 transition-all duration-200 group flex justify-between items-start gap-4"
-                  >
-                    <div>
-                      <h4 className="font-display font-bold text-slate-800 dark:text-slate-100 text-base mb-1.5">
-                        {idea.title}
-                      </h4>
-                      <p className="text-sm text-slate-500 leading-relaxed">
-                        {idea.reason}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => copy(idea.title, `idea-${idx}`)}
-                      className="copy-btn py-1 px-3 text-xs shrink-0 cursor-pointer"
-                    >
-                      {copiedStates[`idea-${idx}`] ? (
-                        <span className="text-green-400">Copied!</span>
-                      ) : (
-                        <span>Copy Title</span>
-                      )}
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Pro Tip */}
-            <div className="bg-purple-500/10 border border-purple-500/20 rounded-2xl p-5 mt-6">
-              <h4 className="font-display font-semibold text-purple-400 mb-1 flex items-center gap-1.5">
-                💡 Target Long-Tail for Low Competition
-              </h4>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                If the general competition for your niche is **High**, focus on creating videos that answer ultra-specific user queries (long-tail keywords). It is much easier to rank #1 for a specific tutorial than a general topic.
+        {/* SEO Content */}
+        <section className="mt-16 space-y-10">
+          <div>
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 text-slate-900 dark:text-white">
+              Why Niche Research is the Secret to YouTube Growth
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                Every day, millions of creators upload videos to YouTube hoping to go viral. The vast majority of these videos will never surpass 100 views. Why? Because the creator filmed what <strong className="italic">they</strong> wanted to film, rather than what the audience was actually searching for.
+              </p>
+              <p>
+                If you start a brand new channel and upload a video titled "My Morning Routine," you are competing against established influencers with millions of subscribers. The algorithm has no reason to surface your video over theirs. However, if you upload a video titled "Morning Routine for Night Shift Nurses Working 12-Hour Shifts," you are targeting a specific, highly engaged audience with very little competition.
+              </p>
+              <p>
+                This is the power of a <strong className="text-slate-900 dark:text-white">YouTube topic researcher</strong>. It removes the guesswork from content creation. By analyzing search volume (how many people are looking for a topic) versus competition (how many high-quality videos already exist for that topic), you can find the "sweet spot" where your new channel can actually gain traction.
               </p>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
 
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              Understanding the "Sweet Spot" Matrix
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                When you use our tool, you will receive two primary metrics: Search Volume and Competition Level. Here is how to interpret those results to plan your content calendar.
+              </p>
 
+              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
+                🟢 High Volume, Low Competition (The Golden Goose)
+              </h3>
+              <p>
+                If you find a topic in this quadrant, drop everything and make a video about it immediately. These opportunities are rare and usually occur when a new trend, product, or software is just breaking into the mainstream, but established creators haven&apos;t covered it yet. Ranking here can catapult a channel from 0 to 10,000 subscribers in a matter of weeks.
+              </p>
 
-      {/* SEO Content */}
-      <section className="mt-12 space-y-8">
-        <h2 className="font-display text-2xl font-bold">Why Niche Research is Crucial for YouTube Growth</h2>
-        <div className="text-slate-600 leading-relaxed space-y-4">
-          <p>Many creators fail because they upload videos on topics that are either too competitive or have zero search demand. If you review general tech or build general gaming channels, you are competing with multi-million subscriber channels.</p>
-          <p>Performing niche research helps you find the sweet spot: topics that have **High Search Volume** but **Low Competition**. Finding these low-competition keywords allows newer channels to rank high on the first page easily, generating passive watch time and subscribers.</p>
-        </div>
-      </section>
-    </main>
+              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
+                🟡 Medium Volume, Low Competition (The Foundation)
+              </h3>
+              <p>
+                This is where 80% of a new creator&apos;s content should live. These topics won&apos;t get you a million views overnight, but they will reliably generate 500 to 5,000 views every single month. By stacking dozens of these videos on your channel, you build a foundation of evergreen search traffic that generates passive AdSense revenue and slowly grows your subscriber base.
+              </p>
+
+              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
+                🔴 High Volume, High Competition (The Influencer Game)
+              </h3>
+              <p>
+                These are the broad topics (e.g., "iPhone 15 Review," "Minecraft Let's Play"). As a new creator, you will not rank in search for these terms. The only way to succeed here is to create a thumbnail and concept so incredibly unique that it triggers the "Suggested Video" algorithm to put you on the homepage. Unless you are a master of packaging and storytelling, avoid these topics until you have an established audience.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              How to Find Long-Tail Keywords in Saturated Niches
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                What if your dream niche (like fitness or personal finance) is already saturated? You don&apos;t have to give up; you just have to "niche down" until you find a sub-segment where the competition drops off.
+              </p>
+              <p>
+                For example, if you want to make a channel about "Weight Loss" (High Competition), try narrowing it down. 
+                <br /><br />
+                <span className="opacity-75">Step 1: Weight Loss for Men (Still High)</span><br />
+                <span className="opacity-75">Step 2: Weight Loss for Men Over 40 (Medium)</span><br />
+                <strong className="text-purple-400">Step 3: Kettlebell Workouts for Men Over 40 with Bad Knees (Low Competition)</strong>
+              </p>
+              <p>
+                By targeting that highly specific "long-tail" demographic, you become the undisputed authority in that micro-niche. The viewers who find your specific content are far more likely to subscribe, comment, and buy your products because the content speaks directly to their unique pain points.
+              </p>
+            </div>
+          </div>
+
+          {/* Checklist */}
+          <div>
+            <h3 className="font-display text-xl font-bold mb-3 text-slate-900 dark:text-white">
+              Before You Hit Record Checklist
+            </h3>
+            <ul className="space-y-2 text-slate-600">
+              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Have you verified there is actual search demand for this topic?</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Are there channels with under 10k subscribers ranking on page 1 for this term?</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Can you make a better thumbnail than the top 3 videos currently ranking?</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Does this topic align tightly with the rest of your channel&apos;s niche?</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Is this a long-tail keyword rather than a broad, generic category?</span></li>
+            </ul>
+          </div>
+
+          {/* Related Blog Posts */}
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              Learn More About YouTube Strategy
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Link
+                href="/blog/how-to-find-youtube-niche"
+                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
+              >
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
+                  How to Find Your YouTube Niche
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  A complete guide to balancing your passions with actual market demand.
+                </p>
+              </Link>
+              <Link
+                href="/blog/youtube-seo-guide"
+                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
+              >
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
+                  The Complete YouTube SEO Guide
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  How to optimize your videos to dominate YouTube search results.
+                </p>
+              </Link>
+              <Link
+                href="/youtube-title-generator"
+                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
+              >
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
+                  YouTube Title Generator →
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Found a great topic? Turn it into a highly clickable, optimized title.
+                </p>
+              </Link>
+              <Link
+                href="/youtube-script-generator"
+                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
+              >
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
+                  YouTube Script Generator →
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Use your new topic to generate a full, structured video outline.
+                </p>
+              </Link>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {faqItems.map((item, index) => (
+                <details
+                  key={index}
+                  className="glass-card rounded-xl group"
+                >
+                  <summary className="cursor-pointer px-6 py-4 font-semibold text-slate-900 dark:text-white select-none list-none flex items-center justify-between gap-4">
+                    {item.question}
+                    <span className="text-purple-400 text-xl leading-none group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <div className="px-6 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {item.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }

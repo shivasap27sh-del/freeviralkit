@@ -1,7 +1,20 @@
-'use client';
+import type { Metadata } from 'next';
+import { buildAbsoluteUrl } from '@/lib/site';
+import { Camera, Mic, Sparkles, Video, ExternalLink, Settings, BookOpen, Heart, Laptop, HelpCircle } from 'lucide-react';
 
-import { useState } from 'react';
-import { Camera, Mic, Sparkles, Video, ExternalLink, Settings, BookOpen, Heart, Laptop } from 'lucide-react';
+export const metadata: Metadata = {
+  title: 'Ultimate YouTube Creator Gear & Setup Guide (2026)',
+  description: 'Discover the best microphones, cameras, lighting, and software for YouTube creators. Tested and recommended gear for vlogging, streaming, and studio setups.',
+  openGraph: {
+    title: 'Ultimate YouTube Creator Gear & Setup Guide (2026)',
+    description: 'Discover the best microphones, cameras, lighting, and software for YouTube creators.',
+    url: buildAbsoluteUrl('/creator-gear'),
+    type: 'website',
+  },
+  alternates: {
+    canonical: buildAbsoluteUrl('/creator-gear'),
+  },
+};
 
 type GearItem = {
   id: string;
@@ -17,21 +30,61 @@ type GearItem = {
 type GearCategory = {
   title: string;
   icon: any;
+  categoryDesc: string;
   items: GearItem[];
 };
 
-export default function CreatorGearPage() {
-  const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
+const faqs = [
+  {
+    question: 'Should I upgrade my camera or my microphone first?',
+    answer: 'Always upgrade your audio first. Viewers will tolerate grainy 1080p footage if the audio is crisp and clear, but they will immediately click away from cinematic 4K footage if the audio is echoey, distorted, or hard to hear. A $100 microphone upgrade will improve your channel retention far more than a $1,000 camera upgrade.',
+  },
+  {
+    question: 'Do I really need a 4K camera for YouTube?',
+    answer: 'No. While 4K gives you flexibility in post-production (allowing you to crop in without losing quality), the vast majority of YouTube viewers watch on mobile devices at 1080p or lower. Great lighting on a 1080p camera will always look better than bad lighting on a 4K camera.',
+  },
+  {
+    question: 'What is the best lighting setup for beginners?',
+    answer: 'Start with a simple "Key Light" setup. Position a single, large, diffused light source at a 45-degree angle to your face. You don\'t need expensive studio lights immediately; a ring light or even a bright window with a sheer curtain can serve as an excellent starting point.',
+  },
+  {
+    question: 'Are USB microphones good enough for YouTube?',
+    answer: 'Yes, modern USB microphones like the Blue Yeti or Elgato Wave:3 are excellent for most YouTube formats (gaming, commentary, vlogging). You only need to upgrade to an XLR setup (like the Shure SM7B + Audio Interface) if you are doing professional podcasting, voiceover work, or want maximum control over your audio processing.',
+  },
+  {
+    question: 'How do I choose the right video editing software?',
+    answer: 'If you have a powerful PC/Mac and want industry-standard tools, Adobe Premiere Pro or DaVinci Resolve are best. If you prefer a simpler, faster workflow focused on social media and AI tools, CapCut or Descript are excellent choices for modern creators.',
+  },
+];
 
+const pageJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};
+
+export default function CreatorGearPage() {
   const gearCategories: GearCategory[] = [
     {
       title: '🎙️ Audio & Microphones',
       icon: Mic,
+      categoryDesc: 'Audio is the most critical component of your YouTube setup. Studies show viewers tolerate poor video quality, but they will abandon a video within seconds if the audio is muffled, echoed, or distorted. We recommend dynamic microphones for untreated rooms to minimize background noise, and wireless lavaliers for vlogging and mobility.',
       items: [
         {
           id: 'shure-sm7b',
           name: 'Shure SM7B Cardioid Dynamic Microphone',
-          desc: 'The gold standard for YouTube commentary, podcasting, and voiceovers. Delivers warm, smooth audio.',
+          desc: 'The gold standard for YouTube commentary, podcasting, and voiceovers. Delivers warm, smooth audio while heavily rejecting background room noise.',
           link: 'https://www.amazon.com/s?k=Shure+SM7B',
           price: '$$$$',
           tag: 'Professional Choice',
@@ -41,7 +94,7 @@ export default function CreatorGearPage() {
         {
           id: 'rode-wireless-pro',
           name: 'Rode Wireless PRO Wireless Mic System',
-          desc: 'Ultra-compact dual-channel wireless microphone system with 32-bit float on-board recording and high-quality lavaliers.',
+          desc: 'Ultra-compact dual-channel wireless microphone system with 32-bit float on-board recording (meaning your audio will never clip) and high-quality lavaliers.',
           link: 'https://www.amazon.com/s?k=Rode+Wireless+PRO',
           price: '$$$$',
           tag: 'Best for Vlogging',
@@ -50,7 +103,7 @@ export default function CreatorGearPage() {
         {
           id: 'focusrite-scarlett-2i2',
           name: 'Focusrite Scarlett 2i2 USB Audio Interface',
-          desc: 'The most popular studio preamp interface. High-headroom inputs, clean converters, and Auto Gain/Clip Safe features.',
+          desc: 'The most popular studio preamp interface required for XLR microphones. High-headroom inputs, clean converters, and Auto Gain/Clip Safe features.',
           link: 'https://www.amazon.com/s?k=Focusrite+Scarlett+2i2',
           price: '$$',
           tag: 'XLR Interface Standard',
@@ -59,7 +112,7 @@ export default function CreatorGearPage() {
         {
           id: 'rode-videomic',
           name: 'Rode VideoMic Pro+ Camera-Mount Mic',
-          desc: 'Best shotgun microphone for vlogging and run-and-gun videos. Superior directional audio capturing.',
+          desc: 'Best shotgun microphone for vlogging and run-and-gun videos. Superior directional audio capturing that rejects noise from the sides and rear.',
           link: 'https://www.amazon.com/s?k=Rode+VideoMic+Pro+Plus',
           price: '$$$',
           tag: 'Best Camera Mounted',
@@ -68,7 +121,7 @@ export default function CreatorGearPage() {
         {
           id: 'blue-yeti',
           name: 'Logitech G Blue Yeti USB Microphone',
-          desc: 'Perfect plug-and-play USB microphone for beginners. Multiple pickup patterns and great software support.',
+          desc: 'Perfect plug-and-play USB microphone for beginners. Multiple pickup patterns and great software support make it extremely versatile.',
           link: 'https://www.amazon.com/s?k=Blue+Yeti+Microphone',
           price: '$$',
           tag: 'Beginner Friendly',
@@ -79,11 +132,12 @@ export default function CreatorGearPage() {
     {
       title: '📷 Cameras & Lenses',
       icon: Camera,
+      categoryDesc: 'When upgrading to a dedicated camera, you aren\'t just paying for resolution—you are paying for color science, depth of field (that blurry background effect), and autofocus reliability. For YouTube, continuous autofocus tracking is often more important than raw 4K resolution, ensuring you stay sharp even when moving.',
       items: [
         {
           id: 'sony-zv-e10',
           name: 'Sony ZV-E10 Mirrorless Vlog Camera',
-          desc: 'Best value 4K camera for content creators. Interchangeable lenses, perfect autofocus, and product showcase modes.',
+          desc: 'Best value 4K camera for content creators. Features interchangeable lenses, perfect eye-autofocus, and a dedicated product showcase mode.',
           link: 'https://www.amazon.com/s?k=Sony+ZV-E10',
           price: '$$$$',
           tag: 'Best Value 4K',
@@ -93,7 +147,7 @@ export default function CreatorGearPage() {
         {
           id: 'sony-a7iv',
           name: 'Sony Alpha 7 IV Full-Frame Mirrorless Camera',
-          desc: 'The ultimate hybrid studio camera. 33MP sensor, incredible 10-bit 4K video, and top-tier real-time autofocus tracking.',
+          desc: 'The ultimate hybrid studio camera. 33MP full-frame sensor, incredible 10-bit 4K video, and top-tier real-time autofocus tracking.',
           link: 'https://www.amazon.com/s?k=Sony+A7+IV',
           price: '$$$$$',
           tag: 'Pro Studio Standard',
@@ -102,7 +156,7 @@ export default function CreatorGearPage() {
         {
           id: 'dji-osmo-pocket3',
           name: 'DJI Osmo Pocket 3 Creator Combo',
-          desc: 'Pocket-sized gimbal camera with 1-inch CMOS sensor. Perfect 4K120fps stabilization, face tracking, and wireless mic.',
+          desc: 'Pocket-sized gimbal camera with a 1-inch CMOS sensor. Perfect 4K120fps physical stabilization, active face tracking, and includes a wireless mic.',
           link: 'https://www.amazon.com/s?k=DJI+Osmo+Pocket+3',
           price: '$$$$',
           tag: 'Active Vlogger Pick',
@@ -111,7 +165,7 @@ export default function CreatorGearPage() {
         {
           id: 'canon-m50',
           name: 'Canon EOS M50 Mark II Content Creator Kit',
-          desc: 'Beginner-friendly mirrorless camera featuring legendary Dual Pixel autofocus and a flip-out screen.',
+          desc: 'Beginner-friendly mirrorless camera featuring Canon\'s legendary Dual Pixel autofocus, beautiful color science, and a fully articulating flip-out screen.',
           link: 'https://www.amazon.com/s?k=Canon+EOS+M50+Mark+II',
           price: '$$$',
           tag: 'Classic Pick',
@@ -120,7 +174,7 @@ export default function CreatorGearPage() {
         {
           id: 'elgato-facecam',
           name: 'Elgato Facecam Pro — True 4K60 Web Camera',
-          desc: 'World\'s first 4K60 webcam. Premium studio-quality lens with professional manual settings control.',
+          desc: 'World\'s first 4K60 webcam. Premium studio-quality lens with professional manual settings control, eliminating the need for a DSLR capture card setup.',
           link: 'https://www.amazon.com/s?k=Elgato+Facecam+Pro',
           price: '$$',
           tag: 'Best for Streaming',
@@ -131,11 +185,12 @@ export default function CreatorGearPage() {
     {
       title: '💡 Lighting & Accessories',
       icon: Video,
+      categoryDesc: 'Lighting is the secret to making a cheap camera look expensive. A smartphone camera in great lighting will out-perform a $3,000 cinema camera in a dark room. We strongly recommend investing in a large, soft "key light" before upgrading your camera body.',
       items: [
         {
           id: 'elgato-keylight',
           name: 'Elgato Key Light - Professional Studio Panel',
-          desc: 'App-controlled desk mount lighting. 2800 lumens, fully dimmable, and adjustable color temperature.',
+          desc: 'App-controlled desk mount lighting. 2800 lumens, fully dimmable, adjustable color temperature, and built-in diffusion for soft skin tones.',
           link: 'https://www.amazon.com/s?k=Elgato+Key+Light',
           price: '$$$',
           tag: 'Studio Essential',
@@ -145,7 +200,7 @@ export default function CreatorGearPage() {
         {
           id: 'aputure-amaran',
           name: 'Amaran 60x Bi-Color LED Video Light',
-          desc: 'Ultra-compact and powerful studio light. Bowens mount allows attaching giant softboxes for diffuse cinematic lighting.',
+          desc: 'Ultra-compact and powerful studio point-source light. The Bowens mount allows attaching giant softboxes for incredibly diffuse, cinematic lighting.',
           link: 'https://www.amazon.com/s?k=Amaran+60x',
           price: '$$$$',
           tag: 'Cinematic Light',
@@ -154,7 +209,7 @@ export default function CreatorGearPage() {
         {
           id: 'godox-sl60w',
           name: 'Godox SL60W 60W LED Video Light',
-          desc: 'Extremely popular and affordable continuous LED light source. Perfect starting point for video studio lighting setups.',
+          desc: 'Extremely popular and affordable continuous LED light source. The perfect starting point for building out a dedicated video studio lighting setup.',
           link: 'https://www.amazon.com/s?k=Godox+SL60W',
           price: '$$',
           tag: 'Best Budget Keylight',
@@ -163,7 +218,7 @@ export default function CreatorGearPage() {
         {
           id: 'ring-light-kit',
           name: 'Neewer 18-inch Outer Dimmable LED Ring Light',
-          desc: 'Affordable, shadowless lighting setup with stand and phone holder. Ideal for makeup, beauty, and tutorial channels.',
+          desc: 'Affordable, shadowless lighting setup with stand and phone holder. Creates a flat, flattering light ideal for makeup, beauty, and talking-head channels.',
           link: 'https://www.amazon.com/s?k=Neewer+18-inch+Ring+Light',
           price: '$',
           tag: 'Budget Option',
@@ -172,7 +227,7 @@ export default function CreatorGearPage() {
         {
           id: 'elgato-flex-arm',
           name: 'Elgato Multi Mount Flex Arm L',
-          desc: 'Four-pole steel articulating arm system. Allows overhead mounts, high angles, and quick studio equipment adjustments.',
+          desc: 'Four-pole steel articulating arm system. Allows overhead camera mounts, high angles, and quick studio equipment adjustments without cluttering your desk.',
           link: 'https://www.amazon.com/s?k=Elgato+Flex+Arm',
           price: '$',
           tag: 'Modular Studio Mount',
@@ -183,11 +238,12 @@ export default function CreatorGearPage() {
     {
       title: '🖥️ Setup & Streaming Gear',
       icon: Laptop,
+      categoryDesc: 'Workflow optimization gear saves you hours of production time. Capture cards ensure lag-free game recording, monitor headphones guarantee your audio mix is accurate, and macro pads like the Stream Deck let you trigger complex scene changes instantly.',
       items: [
         {
           id: 'elgato-stream-deck',
           name: 'Elgato Stream Deck MK.2 Control Console',
-          desc: '15 customizable LCD keys to trigger studio actions, switch scenes, launch media, and automate creator workflows.',
+          desc: '15 customizable LCD keys to trigger studio actions, switch scenes in OBS, launch media, and automate repetitive creator workflows.',
           link: 'https://www.amazon.com/s?k=Elgato+Stream+Deck',
           price: '$$',
           tag: 'Control Console',
@@ -197,7 +253,7 @@ export default function CreatorGearPage() {
         {
           id: 'elgato-hd60x',
           name: 'Elgato HD60 X External Capture Card',
-          desc: 'Capture console or camera footage in pristine 4K30 or 1080p60 HDR10 with ultra-low latency pass-through.',
+          desc: 'Capture console or camera footage in pristine 4K30 or 1080p60 HDR10 with ultra-low latency pass-through to your monitor.',
           link: 'https://www.amazon.com/s?k=Elgato+HD60+X',
           price: '$$$',
           tag: 'Capture Card',
@@ -206,7 +262,7 @@ export default function CreatorGearPage() {
         {
           id: 'audio-technica-athm50x',
           name: 'Audio-Technica ATH-M50x Monitor Headphones',
-          desc: 'Critically acclaimed studio headphones offering precise, balanced monitoring for audio editing and mastering.',
+          desc: 'Critically acclaimed studio headphones offering precise, flat frequency response monitoring for accurate audio editing and mastering.',
           link: 'https://www.amazon.com/s?k=Audio-Technica+ATH-M50x',
           price: '$$',
           tag: 'Studio Monitor Audio',
@@ -215,7 +271,7 @@ export default function CreatorGearPage() {
         {
           id: 'elgato-wave-arm-lp',
           name: 'Elgato Wave Mic Arm LP (Low Profile)',
-          desc: 'All-metal premium low-profile boom arm that sits under your shoulder line for an unobstructed, clean camera view.',
+          desc: 'All-metal premium low-profile boom arm that sits under your shoulder line for an unobstructed, clean camera view during streams.',
           link: 'https://www.amazon.com/s?k=Elgato+Wave+Mic+Arm+LP',
           price: '$$',
           tag: 'Low-Profile Boom Arm',
@@ -224,7 +280,7 @@ export default function CreatorGearPage() {
         {
           id: 'asus-proart-monitor',
           name: 'ASUS ProArt Display 27-inch PA278QV',
-          desc: 'Factory-calibrated professional monitor. sRGB 100% color accuracy, perfect for editing video and designing thumbnails.',
+          desc: 'Factory-calibrated professional monitor. 100% sRGB color accuracy ensures the colors you see while editing thumbnails are what your audience sees.',
           link: 'https://www.amazon.com/s?k=ASUS+ProArt+PA278QV',
           price: '$$$',
           tag: 'Thumbnails & Edit Screen',
@@ -235,11 +291,12 @@ export default function CreatorGearPage() {
     {
       title: '💻 Software & Creator Services',
       icon: Settings,
+      categoryDesc: 'Hardware captures the content, but software shapes it into a compelling story. Utilizing modern AI-assisted editing tools and reliable asset libraries can halve your editing time and prevent devastating copyright strikes.',
       items: [
         {
           id: 'epidemic-sound',
           name: 'Epidemic Sound - Royalty-Free Music Licensing',
-          desc: 'Premium catalog of 40,000+ tracks and 90,000+ sound effects. Safe from copyright strikes across all platforms.',
+          desc: 'Premium catalog of 40,000+ tracks and 90,000+ sound effects. Safe from copyright strikes across all platforms. An essential investment for monetization.',
           link: 'https://www.epidemicsound.com',
           price: 'Subscription',
           tag: 'Music License',
@@ -249,7 +306,7 @@ export default function CreatorGearPage() {
         {
           id: 'vidiq-pro',
           name: 'vidIQ Pro - YouTube Search & Competitor Analysis',
-          desc: 'Advanced keyword tools, trend alerts, and channel auditing to discover competitive advantages.',
+          desc: 'Advanced keyword research tools, trend alerts, and channel auditing to discover competitive advantages and optimize your metadata.',
           link: 'https://vidiq.com',
           price: 'Subscription',
           tag: 'SEO Tool',
@@ -258,7 +315,7 @@ export default function CreatorGearPage() {
         {
           id: 'canva-pro',
           name: 'Canva Pro — Thumbnail & Brand Assets Designer',
-          desc: 'Visual editor with thousands of premium templates, automatic background remover, and collaborator tools.',
+          desc: 'Visual editor with thousands of premium templates, automatic background remover, and cloud collaboration. The fastest way to design clickable thumbnails.',
           link: 'https://www.canva.com',
           price: 'Subscription',
           tag: 'Graphic Design',
@@ -267,7 +324,7 @@ export default function CreatorGearPage() {
         {
           id: 'descript',
           name: 'Descript - AI Audio & Video Text-Based Editor',
-          desc: 'Edit videos by editing the transcribed text document. Instant filler word removal ("um", "uh") and AI voice cloning.',
+          desc: 'Edit videos by editing the transcribed text document. Features instant filler word removal ("um", "uh") and incredibly realistic AI voice cloning (Overdub).',
           link: 'https://www.descript.com',
           price: 'Subscription',
           tag: 'AI Editing',
@@ -276,7 +333,7 @@ export default function CreatorGearPage() {
         {
           id: 'adobe-premiere',
           name: 'Adobe Premiere Pro Video Editor Suite',
-          desc: 'Industry standard non-linear video editing software with advanced Lumetri color tools and AI transcription features.',
+          desc: 'Industry standard non-linear video editing software with advanced Lumetri color tools, masking, and newly integrated AI transcription features.',
           link: 'https://www.adobe.com/products/premiere.html',
           price: 'Subscription',
           tag: 'Professional Editing',
@@ -286,94 +343,146 @@ export default function CreatorGearPage() {
     },
   ];
 
-
   return (
-    <main className="container mx-auto px-6 py-12 max-w-5xl relative z-10 min-h-screen">
-      {/* Hero */}
-      <section className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-purple-400 bg-purple-400/10 border border-purple-400/20 mb-6 uppercase tracking-wider">
-          <Heart className="w-4 h-4 text-purple-400" /> Creator Gear & Resources
-        </div>
-        <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-          Ultimate YouTube <span className="text-gradient">Creator Equipment & Tools</span>
-        </h1>
-        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-          We test and recommend the best microphones, cameras, lighting, and software to help you elevate your content quality.
-        </p>
-      </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
+      />
+      <main className="container mx-auto px-6 py-12 max-w-5xl relative z-10 min-h-screen">
+        {/* Hero */}
+        <section className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-purple-400 bg-purple-400/10 border border-purple-400/20 mb-6 uppercase tracking-wider">
+            <Heart className="w-4 h-4 text-purple-400" /> Creator Gear & Resources
+          </div>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white">
+            Ultimate YouTube <span className="text-gradient">Creator Equipment & Tools</span>
+          </h1>
+          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+            We test and recommend the best microphones, cameras, lighting, and software to help you elevate your content quality and optimize your workflow.
+          </p>
+        </section>
 
-      {/* Categories Grid */}
-      <div className="space-y-12">
-        {gearCategories.map((cat, catIdx) => {
-          const Icon = cat.icon;
-          return (
-            <section key={catIdx} className="space-y-6">
-              <div className="flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
-                <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
-                  <Icon className="w-5 h-5" />
-                </div>
-                <h2 className="font-display text-2xl font-bold text-slate-800 dark:text-slate-100">
-                  {cat.title}
-                </h2>
-              </div>
+        {/* Buyer's Guide - E-E-A-T Section */}
+        <section className="glass-card rounded-2xl p-8 md:p-10 mb-12" aria-labelledby="buyers-guide-heading">
+          <div className="flex items-center gap-3 mb-6">
+            <BookOpen className="w-6 h-6 text-purple-500" />
+            <h2 id="buyers-guide-heading" className="font-display text-2xl font-bold text-slate-800 dark:text-slate-100">
+              How to Choose Your Creator Gear (Buyer&apos;s Guide)
+            </h2>
+          </div>
+          <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p>
+              Building a YouTube studio can be overwhelming, but understanding the <strong>hierarchy of production value</strong> will save you thousands of dollars. As experienced creators and technical reviewers, our philosophy is simple: prioritize upgrades that retain viewer attention.
+            </p>
+            <p>
+              <strong className="text-slate-800 dark:text-slate-200">1. Audio is King:</strong> Viewers will watch a 720p video if the audio is excellent, but they will click away from a 4K video if the audio is echoed or distorted. Invest in a good dynamic or condenser microphone before buying a new camera lens.
+            </p>
+            <p>
+              <strong className="text-slate-800 dark:text-slate-200">2. Lighting Beats Sensors:</strong> A $1,000 camera in bad lighting looks worse than a $300 camera in great lighting. Proper three-point lighting (Key, Fill, and Backlight) creates depth, separates you from the background, and lowers image noise.
+            </p>
+            <p>
+              <strong className="text-slate-800 dark:text-slate-200">3. Avoid the "Resolution Trap":</strong> While 4K is nice for cropping in post-production, 1080p is still the standard for consumption. Instead of chasing resolution, focus on cameras with reliable continuous autofocus (like Sony&apos;s Real-Time Eye AF) so you never ruin a take by being out of focus.
+            </p>
+          </div>
+        </section>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {cat.items.map((item) => (
-                  <div
-                    key={item.id}
-                    className={`glass-card rounded-2xl p-6 flex flex-col justify-between relative transition-all duration-300 hover:border-purple-500/30 group hover:shadow-lg ${
-                      item.popular ? 'border-purple-500/30 ring-1 ring-purple-500/10' : ''
-                    }`}
-                  >
-                    {item.popular && (
-                      <span className="absolute -top-3 left-6 bg-purple-500 text-white text-[10px] uppercase tracking-wider font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
-                        <Sparkles className="w-3 h-3" /> Recommended
-                      </span>
-                    )}
-
-                    <div>
-                      <div className="flex justify-between items-start gap-2 mb-3">
-                        <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700">
-                          {item.tag}
-                        </span>
-                        <span className="text-xs font-semibold text-slate-400">{item.price}</span>
-                      </div>
-                      <h3 className="font-display font-bold text-slate-800 dark:text-slate-100 group-hover:text-purple-400 transition-colors line-clamp-2 min-h-[2.75rem] mb-2 leading-snug">
-                        {item.name}
-                      </h3>
-                      <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
-                        {item.desc}
-                      </p>
+        {/* Categories Grid */}
+        <div className="space-y-12">
+          {gearCategories.map((cat, catIdx) => {
+            const Icon = cat.icon;
+            return (
+              <section key={catIdx} className="space-y-6">
+                <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                      <Icon className="w-5 h-5" />
                     </div>
-
-                    <div className="flex items-center justify-between mt-auto border-t border-slate-100 dark:border-slate-800/80 pt-4">
-                      <span className="text-xs font-medium text-slate-400">Rating: <strong className="text-amber-500">{item.rating}</strong></span>
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-bold text-purple-400 group-hover:text-purple-300 transition-colors"
-                      >
-                        Check Price <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    </div>
+                    <h2 className="font-display text-2xl font-bold text-slate-800 dark:text-slate-100">
+                      {cat.title}
+                    </h2>
                   </div>
-                ))}
-              </div>
-            </section>
-          );
-        })}
-      </div>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-4xl">
+                    {cat.categoryDesc}
+                  </p>
+                </div>
 
-      {/* Affiliate Disclosure */}
-      <section className="bg-slate-100 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-800/60 rounded-2xl p-6 mt-12 text-center">
-        <h4 className="font-display font-bold text-slate-700 dark:text-slate-300 mb-1">
-          Disclosure & Support
-        </h4>
-        <p className="text-slate-500 text-xs leading-relaxed max-w-2xl mx-auto">
-          Some of the links on this page are affiliate links. If you make a purchase through them, we may receive a small commission at no additional cost to you. This support helps keep FreeViralKit 100% free and running without monthly fees for everyone!
-        </p>
-      </section>
-    </main>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {cat.items.map((item) => (
+                    <div
+                      key={item.id}
+                      className={`glass-card rounded-2xl p-6 flex flex-col justify-between relative transition-all duration-300 hover:border-purple-500/30 group hover:shadow-lg ${
+                        item.popular ? 'border-purple-500/30 ring-1 ring-purple-500/10' : ''
+                      }`}
+                    >
+                      {item.popular && (
+                        <span className="absolute -top-3 left-6 bg-purple-500 text-white text-[10px] uppercase tracking-wider font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
+                          <Sparkles className="w-3 h-3" /> Recommended
+                        </span>
+                      )}
+
+                      <div>
+                        <div className="flex justify-between items-start gap-2 mb-3">
+                          <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700">
+                            {item.tag}
+                          </span>
+                          <span className="text-xs font-semibold text-slate-400">{item.price}</span>
+                        </div>
+                        <h3 className="font-display font-bold text-slate-800 dark:text-slate-100 group-hover:text-purple-400 transition-colors line-clamp-2 min-h-[2.75rem] mb-2 leading-snug">
+                          {item.name}
+                        </h3>
+                        <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-4">
+                          {item.desc}
+                        </p>
+                      </div>
+
+                      <div className="flex items-center justify-between mt-auto border-t border-slate-100 dark:border-slate-800/80 pt-4">
+                        <span className="text-xs font-medium text-slate-400">Rating: <strong className="text-amber-500">{item.rating}</strong></span>
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-bold text-purple-400 group-hover:text-purple-300 transition-colors"
+                        >
+                          Check Price <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+
+        {/* FAQ Section */}
+        <section className="glass-card rounded-2xl p-8 md:p-10 mt-12" aria-labelledby="gear-faq-heading">
+          <div className="flex items-center gap-3 mb-6">
+            <HelpCircle className="w-6 h-6 text-purple-500" />
+            <h2 id="gear-faq-heading" className="font-display text-2xl font-bold text-slate-800 dark:text-slate-100">
+              Frequently Asked Questions About Creator Gear
+            </h2>
+          </div>
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index}>
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">{faq.question}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Affiliate Disclosure */}
+        <section className="bg-slate-100 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-800/60 rounded-2xl p-6 mt-12 text-center">
+          <h4 className="font-display font-bold text-slate-700 dark:text-slate-300 mb-1">
+            Disclosure & Support
+          </h4>
+          <p className="text-slate-500 text-xs leading-relaxed max-w-2xl mx-auto">
+            Some of the links on this page are affiliate links. As an Amazon Associate, we earn from qualifying purchases. This support helps keep FreeViralKit 100% free and running without monthly fees for everyone!
+          </p>
+        </section>
+      </main>
+    </>
   );
 }
