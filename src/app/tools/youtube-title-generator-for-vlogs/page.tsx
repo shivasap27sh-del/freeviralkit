@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
-
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Vlogs',
   description:
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     'best vlog titles',
   ],
 };
-
 const examplesByCategory = [
   {
     category: 'Daily Life & Routine',
@@ -66,7 +64,6 @@ const examplesByCategory = [
     ],
   },
 ];
-
 const tips = [
   {
     title: 'Lead with emotion or transformation',
@@ -99,7 +96,6 @@ const tips = [
       'A well-placed emoji adds visual contrast in a feed full of plain text titles. Don\'t overdo it — one or two is perfect for vlogs.',
   },
 ];
-
 const faqs = [
   {
     question: 'How do I write a vlog title that doesn\'t sound like clickbait?',
@@ -127,7 +123,6 @@ const faqs = [
       'Yes, when used sparingly. A single relevant emoji (like ✈️ or 🌴) can add visual contrast to a feed full of black-and-white text. Just don\'t overdo it—more than two emojis makes the title look spammy.',
   },
 ];
-
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -158,7 +153,6 @@ const pageJsonLd = {
     },
   ],
 };
-
 export default function VlogTitleLandingPage() {
   return (
     <>
@@ -166,7 +160,6 @@ export default function VlogTitleLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -180,7 +173,6 @@ export default function VlogTitleLandingPage() {
             <TitleGeneratorClient niche="vlogs" />
           </div>
         </section>
-
         {/* Why vlog titles matter */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -196,7 +188,6 @@ export default function VlogTitleLandingPage() {
             Our AI title generator understands these patterns and creates vlog-specific titles that actually get clicked. Not generic, SEO-stuffed titles — real titles that feel authentic to the vlog format.
           </p>
         </section>
-
         {/* Examples by category */}
         {examplesByCategory.map((cat) => (
           <section key={cat.category} className="glass-card rounded-2xl p-6 md:p-8 mb-4">
@@ -211,7 +202,6 @@ export default function VlogTitleLandingPage() {
             </ul>
           </section>
         ))}
-
         {/* Best practices */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -228,7 +218,6 @@ export default function VlogTitleLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Advanced Vlog SEO Deep Dive */}
         <section className="mt-16 mb-8 space-y-12">
           <div className="glass-card rounded-2xl p-6 md:p-8">
@@ -239,11 +228,8 @@ export default function VlogTitleLandingPage() {
               <p>
                 Of all the formats on YouTube, the daily lifestyle vlog is perhaps the hardest nut to crack for a new creator. If a viewer wants to fix their sink, they will search for a plumbing tutorial. If they want to buy a camera, they will search for a tech review. But nobody goes to the YouTube search bar and types, &quot;I want to watch a random stranger go to the grocery store and drink coffee.&quot; Because vlogs inherently lack direct search intent, relying purely on traditional SEO won&apos;t work. Instead, vloggers must rely on Browse Features and the Recommended feed. To dominate these traffic sources, your vlog titles must be a masterclass in human psychology, relatability, and curiosity.
               </p>
-
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/seo_dashboard.png" alt="YouTube Vlog Growth Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 The Death of the &quot;Day in the Life&quot; Format
               </h3>
@@ -253,7 +239,6 @@ export default function VlogTitleLandingPage() {
               <p>
                 To fix this, you must anchor your day to a specific archetype, challenge, or emotion that the viewer relates to. Instead of &quot;A Day in My Life,&quot; write &quot;A Realistic Day in the Life of a Broke College Student&quot; or &quot;What I ACTUALLY Do in a Day Working From Home.&quot; The addition of &quot;Realistic&quot; or &quot;Actually&quot; implies that other videos are fake and overly aesthetic, and you are offering the raw truth. You have transformed a boring vlog into an authentic peek behind the curtain of a specific lifestyle.
               </p>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Manufacturing Narrative Arcs Out of Mundane Events
               </h3>
@@ -263,11 +248,9 @@ export default function VlogTitleLandingPage() {
               <p>
                 Instead, manufacture an arc: &quot;Deep Cleaning My Depression Room (Extreme Makeover)&quot; or &quot;The Sunday Reset Routine That Saved My Week.&quot; Now, cleaning isn&apos;t just a chore; it is a mental health journey or a productivity hack. You are promising the viewer a transformation. They get to watch a messy room become clean, which is deeply satisfying, while also learning your routine. The title sells the emotional payoff, not just the physical action.
               </p>
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 The Power of First-Person Vulnerability
               </h3>
@@ -277,7 +260,6 @@ export default function VlogTitleLandingPage() {
               <p>
                 Consider the difference between &quot;Tips for Waking Up Early&quot; and &quot;I Tried Waking Up at 5AM for 30 Days (It Broke Me).&quot; The first is a generic, soulless tutorial. The second is a personal story of struggle. The bracketed text &quot;(It Broke Me)&quot; acts as an intense curiosity hook. The viewer must click to find out why waking up early was so disastrous. 
               </p>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Avoiding the &quot;Clickbait&quot; Trap
               </h3>
@@ -287,7 +269,6 @@ export default function VlogTitleLandingPage() {
               <p>
                 The best vlog titles utilize the &quot;Information Gap&quot; without lying. You state a true, compelling fact about your day, but withhold the resolution. &quot;I made a massive mistake in my new apartment...&quot; is a great title, provided you actually made a mistake (like buying the wrong sized couch or painting a wall the wrong color). The title is dramatic, but it delivers on its promise.
               </p>
-              
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Letting AI Do the Heavy Lifting
               </h3>
@@ -297,7 +278,6 @@ export default function VlogTitleLandingPage() {
             </div>
           </div>
         </section>
-
         {/* Vlog title formulas */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -326,7 +306,6 @@ export default function VlogTitleLandingPage() {
             </div>
           </div>
         </section>
-
         {/* How it works */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -355,7 +334,6 @@ export default function VlogTitleLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* FAQ */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -370,7 +348,6 @@ export default function VlogTitleLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Cross-links */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -400,7 +377,6 @@ export default function VlogTitleLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* Related blog posts */}
         <section className="mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">

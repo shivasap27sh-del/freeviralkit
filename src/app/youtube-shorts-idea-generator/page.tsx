@@ -113,9 +113,9 @@ export default function ShortsIdeaGeneratorPage() {
               <p>
                 Creating a YouTube Short is not simply about taking a 10-minute horizontal video, chopping it down to 60 seconds, and cropping it vertically. The psychology of a viewer scrolling the Shorts Feed is fundamentally different from a viewer browsing the YouTube homepage. In the Shorts Feed, viewers are in a highly impatient, dopamine-driven state. If your video does not hook them immediately, they will swipe away in literally less than a second. The environment is aggressively competitive, meaning every frame of your video must earn the viewer&apos;s continued attention.
               </p>
-              
+
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/seo_dashboard.png" alt="YouTube Shorts Growth Dashboard" width={1200} height={630} className="w-full h-auto object-cover" />
+
               </div>
 
               <p>
@@ -124,9 +124,9 @@ export default function ShortsIdeaGeneratorPage() {
               <p>
                 Using a <strong className="text-slate-900 dark:text-white">free YouTube Shorts idea generator</strong> allows you to bypass creator&apos;s block and instantly access frameworks that are proven to work on the platform. Our AI doesn&apos;t just give you a vague topic (like &quot;talk about finance&quot;); it provides a complete, actionable concept broken down into the three essential components of a viral Short: The Hook, The Visuals, and The Script. By starting with a proven structural framework, you eliminate the guesswork and dramatically increase your chances of triggering the algorithmic multiplier effect that turns 1,000 views into 1,000,000.
               </p>
-              
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+
               </div>
             </div>
           </div>
@@ -186,9 +186,9 @@ export default function ShortsIdeaGeneratorPage() {
               <p>
                 If you are struggling to come up with ideas, you can prompt our generator with specific proven formats. The platform moves fast, but certain psychological triggers consistently perform well across almost all niches. Here are the most consistently successful archetypes for YouTube Shorts:
               </p>
-              
+
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/metadata_funnel.png" alt="YouTube Content Strategy" width={1200} height={630} className="w-full h-auto object-cover" />
+
               </div>
 
               <ul className="space-y-6 mt-6">

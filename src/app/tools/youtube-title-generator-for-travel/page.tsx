@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
-
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Travel Vlogs',
   description:
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     'adventure vlog title ideas',
   ],
 };
-
 const examplesByCategory = [
   {
     category: 'Destination Guides',
@@ -62,7 +60,6 @@ const examplesByCategory = [
     ],
   },
 ];
-
 const tips = [
   {
     title: 'Include the destination name',
@@ -95,7 +92,6 @@ const tips = [
       'Adding "2026" to destination guides signals freshness. Travelers want current information — prices, visa rules, and safety conditions change yearly. A dated title gets more clicks from search.',
   },
 ];
-
 const faqs = [
   {
     question: 'How do I title a travel vlog if nobody knows who I am?',
@@ -123,7 +119,6 @@ const faqs = [
       'Thumbnails that show "Transit" (airplanes, trains, walking with a backpack) often perform extremely well for the first episode of a travel series because they imply the *start* of a journey. However, for a dedicated guide video, a stunning scenic shot with clear text works best.',
   },
 ];
-
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -154,7 +149,6 @@ const pageJsonLd = {
     },
   ],
 };
-
 export default function TravelTitleLandingPage() {
   return (
     <>
@@ -162,7 +156,6 @@ export default function TravelTitleLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -176,7 +169,6 @@ export default function TravelTitleLandingPage() {
             <TitleGeneratorClient niche="travel" />
           </div>
         </section>
-
         {/* Why travel titles matter */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -192,7 +184,6 @@ export default function TravelTitleLandingPage() {
             The best travel titles combine a <strong className="text-slate-900">specific destination</strong>, <strong className="text-slate-900">concrete numbers</strong>, and <strong className="text-slate-900">a compelling hook</strong>. Our AI crafts these for you in seconds.
           </p>
         </section>
-
         {/* Examples by category */}
         {examplesByCategory.map((cat) => (
           <section key={cat.category} className="glass-card rounded-2xl p-6 md:p-8 mb-4">
@@ -207,7 +198,6 @@ export default function TravelTitleLandingPage() {
             </ul>
           </section>
         ))}
-
         {/* Best practices */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -224,7 +214,6 @@ export default function TravelTitleLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Advanced Travel SEO Deep Dive */}
         <section className="mt-16 mb-8 space-y-12">
           <div className="glass-card rounded-2xl p-6 md:p-8">
@@ -235,11 +224,8 @@ export default function TravelTitleLandingPage() {
               <p>
                 The travel vlogging niche is a visual feast. Creators spend thousands of dollars on drones, mirrorless cameras, and plane tickets to capture breathtaking cinematic sequences of remote beaches, bustling cityscapes, and towering mountains. But here is the brutal reality of YouTube: the algorithm cannot see your beautiful 4K drone footage. The algorithm can only read data. If your title fails to communicate the value of your video, all that expensive footage will sit unwatched. Mastering the art of travel video titles is the only way to ensure your adventures actually find an audience.
               </p>
-
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/seo_dashboard.png" alt="YouTube Travel SEO Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Why Chronological Titles Ruin Your Channel
               </h3>
@@ -249,7 +235,6 @@ export default function TravelTitleLandingPage() {
               <p>
                 You must reframe your experience as a valuable asset for the viewer. Instead of &quot;Eurotrip Day 4,&quot; the title should be &quot;10 Things You MUST Know Before Visiting Rome in 2026.&quot; You can still use the exact same vlog footage from your trip, but the packaging has changed. You are no longer asking the viewer to care about your vacation; you are offering them free, valuable advice for their own future vacation. This psychological shift is the difference between 50 views and 500,000 views.
               </p>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 The Power of Budget and Numbers
               </h3>
@@ -259,11 +244,9 @@ export default function TravelTitleLandingPage() {
               <p>
                 Compare &quot;Traveling Around Japan&quot; to &quot;How I Survived 14 Days in Japan on $50 a Day.&quot; The second title is magnetic. It presents a seemingly impossible challenge (Japan is known for being expensive) and promises to reveal the secret of how to do it. Numbers provide concrete anchors. &quot;48 Hours in Paris,&quot; &quot;Top 5 Hidden Gems in Bali,&quot; or &quot;The $10 Street Food Tour of Bangkok.&quot; Specificity breeds curiosity and trust.
               </p>
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Leveraging the &quot;Expectation vs Reality&quot; Angle
               </h3>
@@ -273,7 +256,6 @@ export default function TravelTitleLandingPage() {
               <p>
                 &quot;The Ugly Truth About Traveling to the Maldives&quot; or &quot;Is Santorini Actually Worth the Hype? (Honest Review).&quot; These titles work because they break the mold of the overly positive, glossy travel vlog. By positioning yourself as the honest friend who is willing to expose tourist traps, you instantly build rapport with the viewer. The information gap is strong: &quot;What is the ugly truth? Is it really that bad? I need to watch this before I book my tickets.&quot;
               </p>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Evergreen SEO: The Importance of the Year
               </h3>
@@ -283,7 +265,6 @@ export default function TravelTitleLandingPage() {
               <p>
                 A title like &quot;Complete Travel Guide to Iceland 2026&quot; signals to the YouTube algorithm that your content is fresh and relevant. When a user searches for &quot;Iceland Travel Guide,&quot; they will instinctively click on the video with the current year in the title, even if an older video has more views. This strategy allows small creators to outrank massive, older videos simply by being the most up-to-date source of information.
               </p>
-              
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Safety and Solo Travel Hooks
               </h3>
@@ -296,7 +277,6 @@ export default function TravelTitleLandingPage() {
             </div>
           </div>
         </section>
-
         {/* How it works */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -325,7 +305,6 @@ export default function TravelTitleLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* FAQ */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -340,7 +319,6 @@ export default function TravelTitleLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Cross-links */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -370,7 +348,6 @@ export default function TravelTitleLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* Related blog posts */}
         <section className="mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">

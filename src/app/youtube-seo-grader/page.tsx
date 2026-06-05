@@ -100,9 +100,9 @@ export default function SEOGraderPage() {
               <p>
                 Uploading a video to YouTube without optimizing its metadata is like writing a bestselling novel and giving it a blank cover. The YouTube algorithm is a machine; it cannot &quot;watch&quot; your video to understand what it is about. It relies entirely on the text data you provide—your title, description, and tags—to categorize your content and decide who to serve it to. When you take the time to run your video through a dedicated grader, you ensure that you are sending the right signals directly to the search engine.
               </p>
-              
+
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/seo_dashboard.png" alt="YouTube Growth Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
+
               </div>
 
               <p>
@@ -111,9 +111,9 @@ export default function SEOGraderPage() {
               <p>
                 By using this tool before you hit &quot;Publish&quot;, you can catch costly SEO mistakes (like a title that is too long, or missing target keywords in your description) and fix them instantly, giving your video the best possible chance to rank on page one. It is not just about rankings, however. A strong SEO score correlates directly with higher Click-Through Rates (CTR) because optimized titles and descriptions naturally read better to human audiences. When viewers see exactly what they searched for presented clearly in your title, they are far more likely to click.
               </p>
-              
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+
               </div>
 
               <p>
@@ -183,9 +183,9 @@ export default function SEOGraderPage() {
               <p>
                 If you scored below a 70, don&apos;t panic. A low score simply means your metadata is not currently aligned with YouTube&apos;s best practices. The fix is usually straightforward and highly systematic. The most common reason for a low score is a lack of <strong>Keyword Consistency</strong>. This means you are sending mixed signals to the algorithm about what your video is actually covering.
               </p>
-              
+
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/metadata_funnel.png" alt="YouTube Metadata Optimization Funnel" width={1200} height={630} className="w-full h-auto object-cover" />
+
               </div>
 
               <p>

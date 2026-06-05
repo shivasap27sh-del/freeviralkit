@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
-
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Beauty & Makeup',
   description:
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     'beauty youtube seo',
   ],
 };
-
 const examplesByCategory = [
   {
     category: 'GRWM (Get Ready With Me)',
@@ -62,7 +60,6 @@ const examplesByCategory = [
     ],
   },
 ];
-
 const tips = [
   {
     title: 'Name the specific look or technique',
@@ -95,7 +92,6 @@ const tips = [
       'The beauty community thrives on authenticity. Titles like "My Honest Foundation Routine" or "Why I Stopped Using This Product" feel more genuine than corporate-sounding alternatives.',
   },
 ];
-
 const faqs = [
   {
     question: 'How do I title a makeup review so it ranks in YouTube Search?',
@@ -123,7 +119,6 @@ const faqs = [
       'Clearly state the expensive product and the cheap alternative. "Charlotte Tilbury Flawless Filter DUPE? (Only $6!)" creates massive curiosity by promising luxury results at a drugstore price.',
   },
 ];
-
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -154,7 +149,6 @@ const pageJsonLd = {
     },
   ],
 };
-
 export default function BeautyTitleLandingPage() {
   return (
     <>
@@ -162,7 +156,6 @@ export default function BeautyTitleLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -176,7 +169,6 @@ export default function BeautyTitleLandingPage() {
             <TitleGeneratorClient niche="beauty" />
           </div>
         </section>
-
         {/* Huge SEO Content Expansion */}
         <section className="mt-16 mb-16 space-y-12">
           <div className="prose prose-slate max-w-none text-slate-700">
@@ -189,11 +181,8 @@ export default function BeautyTitleLandingPage() {
             <p>
               Unlike gaming or tech, where viewers are often looking for objective facts or walkthroughs, beauty content is deeply personal, aspirational, and emotional. Viewers are searching for transformations, honest opinions, and relatable struggles. A great beauty title doesn&apos;t just describe what happens in the video; it promises an experience, a solution, or a revelation. Understanding this subtle difference is the key to elevating your channel from a hobbyist level to a professional brand.
             </p>
-
             <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 shadow-xl">
-              <Image src="/images/seo_dashboard.png" alt="YouTube Title CTR Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
             </div>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               The Power of the &quot;Curiosity Gap&quot;
             </h3>
@@ -203,11 +192,6 @@ export default function BeautyTitleLandingPage() {
             <p>
               For example, a title like <strong>&quot;Reviewing Drugstore Foundations&quot;</strong> provides information, but it lacks a curiosity gap. It is boring and predictable. Contrast that with <strong>&quot;I Wore a $5 Foundation for 24 Hours (And I&apos;m Shocked).&quot;</strong> This title immediately poses several questions in the viewer&apos;s mind: Which foundation is it? Did it melt off? Did it outperform a luxury brand? The viewer must click to find out. By hinting at a surprising outcome without giving away the answer, you leverage the curiosity gap to drive massive click-through rates (CTR).
             </p>
-
-            <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="How to Write YouTube Titles That Get Clicks" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            </div>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               Specificity Sells: Naming Brands and Shades
             </h3>
@@ -217,7 +201,6 @@ export default function BeautyTitleLandingPage() {
             <p>
               If you are reviewing the latest launch from Rare Beauty or Fenty, your title must include the exact brand name, the specific product name, and ideally, the shade or skin type. A title like <strong>&quot;Fenty Beauty Pro Filt&apos;r Soft Matte Foundation Review | Shade 290 on Oily Skin&quot;</strong> is an SEO goldmine. It captures the exact long-tail search query of a highly motivated viewer. These specific titles might not get a million views overnight, but they will generate a consistent, evergreen stream of highly engaged views and potentially lucrative affiliate link clicks for months or years to come.
             </p>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               The Emotional Resonance of Constraints and Challenges
             </h3>
@@ -227,7 +210,6 @@ export default function BeautyTitleLandingPage() {
             <p>
               Titles that incorporate time limits, budget restrictions, or product limitations consistently outperform standard tutorials. Examples include <strong>&quot;5-Minute College Makeup Routine (For When You Overslept),&quot;</strong> <strong>&quot;Full Face of Makeup Using ONLY Liquid Products,&quot;</strong> or <strong>&quot;Testing the Worst-Rated Makeup at Sephora.&quot;</strong> These titles instantly convey the premise of the video and promise a unique viewing experience that sets your content apart from the endless sea of traditional &quot;Get Ready With Me&quot; videos. They demonstrate creativity and skill, which helps build authority and trust with your audience.
             </p>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               Avoiding the Clickbait Trap: Delivering on the Promise
             </h3>
@@ -239,7 +221,6 @@ export default function BeautyTitleLandingPage() {
             </p>
           </div>
         </section>
-
         {/* Why beauty titles matter */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -255,7 +236,6 @@ export default function BeautyTitleLandingPage() {
             Great beauty titles combine a <strong className="text-slate-900">specific look or technique</strong>, a <strong className="text-slate-900">relatable constraint</strong>, and <strong className="text-slate-900">authentic language</strong>. That&apos;s exactly what our AI generates for you.
           </p>
         </section>
-
         {/* Examples by category */}
         {examplesByCategory.map((cat) => (
           <section key={cat.category} className="glass-card rounded-2xl p-6 md:p-8 mb-4">
@@ -270,7 +250,6 @@ export default function BeautyTitleLandingPage() {
             </ul>
           </section>
         ))}
-
         {/* Best practices */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -287,7 +266,6 @@ export default function BeautyTitleLandingPage() {
             ))}
           </div>
         </section>
-
         {/* How it works */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -316,7 +294,6 @@ export default function BeautyTitleLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* FAQ */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -331,7 +308,6 @@ export default function BeautyTitleLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Cross-links */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -361,7 +337,6 @@ export default function BeautyTitleLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* Related blog posts */}
         <section className="mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">

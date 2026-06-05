@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TagsGeneratorClient from '@/components/tools/TagsGeneratorClient';
-
 export const metadata: Metadata = {
   title: 'YouTube Tags Generator for Gaming',
   description:
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     'gaming channel tags generator',
   ],
 };
-
 const examplesByCategory = [
   {
     category: 'FPS & Shooter Games',
@@ -63,7 +61,6 @@ const examplesByCategory = [
     ],
   },
 ];
-
 const tips = [
   {
     title: 'Always include the game name as a tag',
@@ -96,7 +93,6 @@ const tips = [
       'Look at the tags used by top gaming channels in your niche. Tools and browser extensions can reveal competitor tags. Use similar high-performing tags adapted to your specific content.',
   },
 ];
-
 const faqs = [
   {
     question: 'How many tags should I use for a Let\'s Play video?',
@@ -124,7 +120,6 @@ const faqs = [
       'Copying a viral video\'s tags won\'t make your video viral, because their video is ranking based on high watch time and channel authority. However, looking at their tags is a great way to discover long-tail keywords you might not have thought of.',
   },
 ];
-
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -155,7 +150,6 @@ const pageJsonLd = {
     },
   ],
 };
-
 export default function GamingTagsLandingPage() {
   return (
     <>
@@ -163,7 +157,6 @@ export default function GamingTagsLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -177,7 +170,6 @@ export default function GamingTagsLandingPage() {
             <TagsGeneratorClient niche="gaming" />
           </div>
         </section>
-
         {/* Huge SEO Content Expansion */}
         <section className="mt-16 mb-16 space-y-12">
           <div className="prose prose-slate max-w-none text-slate-700">
@@ -190,11 +182,8 @@ export default function GamingTagsLandingPage() {
             <p>
               Many creators mistakenly believe that tags are a relic of the past, but in the gaming niche, they serve a very specific and powerful purpose. When a viewer is deep down the rabbit hole of an RPG walkthrough or searching for specific high-level competitive strategies in an FPS, they often use highly specific, long-tail search queries. Tags help bridge the gap between what the viewer is typing into the search bar and the content you have created. They provide the context that the algorithm needs to confidently serve your video as the solution to the viewer&apos;s query.
             </p>
-
             <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 shadow-xl">
-              <Image src="/images/metadata_funnel.png" alt="YouTube Gaming Metadata Funnel" width={1200} height={630} className="w-full h-auto object-cover" />
             </div>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               Understanding the Gaming Video Lifecycle
             </h3>
@@ -204,11 +193,6 @@ export default function GamingTagsLandingPage() {
             <p>
               In this early phase, your tags need to be aggressively targeted toward the game&apos;s title, release year, and specific terms like &quot;gameplay,&quot; &quot;review,&quot; and &quot;walkthrough.&quot; However, as the game ages, the search volume naturally decays. The video&apos;s lifecycle shifts from being search-driven to being recommendation-driven. YouTube will start suggesting your video alongside other related content. This is where broad tags and genre tags become crucial. They help the algorithm group your video with similar games, ensuring that even months later, your content is being suggested to viewers who enjoy that specific genre, whether it&apos;s survival crafting, fast-paced shooters, or cozy farming simulators.
             </p>
-
-            <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="How to Grow on YouTube" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            </div>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               Short-Tail vs. Long-Tail Gaming Keywords
             </h3>
@@ -218,7 +202,6 @@ export default function GamingTagsLandingPage() {
             <p>
               Long-tail keywords are where small and medium-sized channels can truly thrive and capture highly engaged audiences. These are longer, more specific phrases that viewers search for when they have a distinct problem or intent. Instead of just tagging &quot;Elden Ring,&quot; a long-tail tag would be <strong>&quot;Elden Ring Malenia boss fight guide melee build.&quot;</strong> While the overall search volume for this specific phrase is much lower, the competition is also significantly reduced. More importantly, the viewer searching for this phrase knows exactly what they want. If your video provides that specific solution, your click-through rate (CTR) and average view duration (AVD) will be exceptional, which signals to the algorithm that your video is high quality.
             </p>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               The Importance of Variations and Misspellings
             </h3>
@@ -228,7 +211,6 @@ export default function GamingTagsLandingPage() {
             <p>
               Furthermore, misspellings are incredibly common in gaming searches. Games with complex or foreign names, such as <em>Genshin Impact</em> or <em>Sekiro: Shadows Die Twice</em>, are routinely misspelled by users typing quickly on mobile devices. Including common misspellings in your tags (e.g., &quot;Genshin Imapct&quot; or &quot;Gensin&quot;) can help you capture traffic that other creators are ignoring. Since tags are invisible to the viewer, adding these misspelled variations won&apos;t make your channel look unprofessional; it simply acts as a safety net to ensure your video surfaces regardless of typos.
             </p>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               Leveraging Trending Updates and Seasons
             </h3>
@@ -240,7 +222,6 @@ export default function GamingTagsLandingPage() {
             </p>
           </div>
         </section>
-
         {/* Why gaming tags matter */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -256,7 +237,6 @@ export default function GamingTagsLandingPage() {
             The best gaming tag strategies combine <strong className="text-slate-900">game-specific keywords</strong>, <strong className="text-slate-900">genre tags</strong>, and <strong className="text-slate-900">trending terms</strong>. That&apos;s exactly what our AI generates for you.
           </p>
         </section>
-
         {/* Examples by category */}
         {examplesByCategory.map((cat) => (
           <section key={cat.category} className="glass-card rounded-2xl p-6 md:p-8 mb-4">
@@ -271,7 +251,6 @@ export default function GamingTagsLandingPage() {
             </ul>
           </section>
         ))}
-
         {/* Best practices */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -288,7 +267,6 @@ export default function GamingTagsLandingPage() {
             ))}
           </div>
         </section>
-
         {/* How it works */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -317,7 +295,6 @@ export default function GamingTagsLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* FAQ */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -332,7 +309,6 @@ export default function GamingTagsLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Cross-links */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -362,7 +338,6 @@ export default function GamingTagsLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* Related blog posts */}
         <section className="mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">

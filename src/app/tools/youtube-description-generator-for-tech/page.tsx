@@ -187,7 +187,7 @@ export default function TechDescriptionLandingPage() {
               </p>
 
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/seo_dashboard.png" alt="Tech YouTube Channel Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
+
               </div>
 
               <h3 className="text-xl font-semibold mt-8 mb-4 text-slate-900">Dominating Search with Exact Model Numbers</h3>
@@ -205,10 +205,6 @@ export default function TechDescriptionLandingPage() {
               <p>
                 The most successful tech reviewers place their primary affiliate links immediately after the first paragraph (the SEO hook). They use clear, transparent calls to action like <em>&quot;Check the current price of the Samsung S24 Ultra here: [Link]&quot;</em>. Transparency builds trust, and placing the link above the timestamps ensures it is seen by everyone, even viewers who don&apos;t expand the full description.
               </p>
-
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 bg-slate-100">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-              </div>
 
               <h3 className="text-xl font-semibold mt-8 mb-4 text-slate-900">Timestamps: The UX and SEO Cheat Code</h3>
               <p>

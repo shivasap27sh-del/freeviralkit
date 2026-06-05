@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
-
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Cooking',
   description:
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     'food vlog title generator',
   ],
 };
-
 const examplesByCategory = [
   {
     category: 'Recipe Challenge',
@@ -63,7 +61,6 @@ const examplesByCategory = [
     ],
   },
 ];
-
 const tips = [
   {
     title: 'Name the dish or cuisine upfront',
@@ -96,7 +93,6 @@ const tips = [
       'Viral food trends, new restaurant openings, celebrity recipes, and TikTok food hacks create huge search spikes. Create titles around these trends while they are still hot.',
   },
 ];
-
 const faqs = [
   {
     question: 'How do I title a recipe video if the dish has multiple names?',
@@ -124,7 +120,6 @@ const faqs = [
       'Only if you are specifically targeting search traffic for a "How-To" video. If your video is more about entertainment, tasting, or a vlog-style cooking experience, putting "Recipe" in the title can make it feel too much like a tutorial and hurt Browse CTR.',
   },
 ];
-
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -155,7 +150,6 @@ const pageJsonLd = {
     },
   ],
 };
-
 export default function CookingTitleLandingPage() {
   return (
     <>
@@ -163,7 +157,6 @@ export default function CookingTitleLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -177,7 +170,6 @@ export default function CookingTitleLandingPage() {
             <TitleGeneratorClient niche="cooking" />
           </div>
         </section>
-
         <section className="mt-16 space-y-12">
           {/* Why cooking titles matter */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
@@ -196,11 +188,8 @@ export default function CookingTitleLandingPage() {
               </p>
             </div>
           </div>
-
           <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-            <Image src="/images/seo_dashboard.png" alt="YouTube Growth Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
           </div>
-
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               The Psychology of Clicks in the Culinary Niche
@@ -226,12 +215,10 @@ export default function CookingTitleLandingPage() {
               </p>
             </div>
           </div>
-
           {/* Video Embed */}
-          <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4N3C9TnNCmc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-          </div>
+          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
+              </div>
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               Mastering the &quot;Ingredient Hook&quot; Strategy
@@ -260,7 +247,6 @@ export default function CookingTitleLandingPage() {
               </p>
             </div>
           </div>
-
           {/* Examples by category */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {examplesByCategory.map((cat) => (
@@ -277,7 +263,6 @@ export default function CookingTitleLandingPage() {
               </div>
             ))}
           </div>
-
           {/* Best practices */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -294,7 +279,6 @@ export default function CookingTitleLandingPage() {
               ))}
             </div>
           </div>
-
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               Optimizing Beyond the Title: Descriptions, Tags, and Chapters
@@ -316,7 +300,6 @@ export default function CookingTitleLandingPage() {
               </p>
             </div>
           </div>
-
           {/* How it works */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -354,7 +337,6 @@ export default function CookingTitleLandingPage() {
               </Link>
             </div>
           </div>
-
           {/* FAQ */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -369,7 +351,6 @@ export default function CookingTitleLandingPage() {
               ))}
             </div>
           </div>
-
           {/* Cross-links */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -406,7 +387,6 @@ export default function CookingTitleLandingPage() {
               </Link>
             </div>
           </div>
-
           {/* Related blog posts */}
           <div>
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -440,4 +420,3 @@ export default function CookingTitleLandingPage() {
     </>
   );
 }
-

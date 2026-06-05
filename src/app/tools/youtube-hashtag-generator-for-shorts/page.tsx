@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import HashtagGeneratorClient from '@/components/tools/HashtagGeneratorClient';
-
 export const metadata: Metadata = {
   title: 'YouTube Shorts Hashtag Generator | Free Viral Hashtags — FreeViralKit',
   description:
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     'short video hashtags',
   ],
 };
-
 const examplesByCategory = [
   {
     category: 'Trending & Viral',
@@ -61,7 +59,6 @@ const examplesByCategory = [
     ],
   },
 ];
-
 const tips = [
   {
     title: 'Always include #Shorts',
@@ -94,7 +91,6 @@ const tips = [
       'Hashtags like #FollowForFollow or misleading tags can trigger YouTube spam filters. Stick to relevant, descriptive hashtags that accurately represent your content.',
   },
 ];
-
 const faqs = [
   {
     question: 'Why do my Shorts get stuck at 0 views despite using hashtags?',
@@ -122,7 +118,6 @@ const faqs = [
       'YouTube doesn\'t explicitly publish a "banned" list, but tags associated with sensitive, mature, or dangerous content will cause your Short to be shadowbanned from the Shorts Feed. Always keep your tags advertiser-friendly and strictly relevant to your video.',
   },
 ];
-
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -153,7 +148,6 @@ const pageJsonLd = {
     },
   ],
 };
-
 export default function ShortsHashtagLandingPage() {
   return (
     <>
@@ -161,7 +155,6 @@ export default function ShortsHashtagLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -175,7 +168,6 @@ export default function ShortsHashtagLandingPage() {
             <HashtagGeneratorClient niche="shorts" />
           </div>
         </section>
-
         {/* Huge SEO Content Expansion */}
         <section className="mt-16 mb-16 space-y-12">
           <div className="prose prose-slate max-w-none text-slate-700">
@@ -188,11 +180,8 @@ export default function ShortsHashtagLandingPage() {
             <p>
               The architecture of the YouTube Shorts algorithm is fundamentally different from traditional, long-form YouTube search and discovery. Long-form video discovery relies heavily on search intent, browse features, and session time. In contrast, the Shorts feed operates on a rapid-fire, high-volume recommendation engine that acts much like a slot machine. When you publish a new Short, YouTube doesn&apos;t immediately push it to a million people. Instead, it pushes it to a small, targeted &quot;seed audience.&quot; This is where hashtags perform their most vital function.
             </p>
-            
             <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 shadow-xl">
-              <Image src="/images/seo_dashboard.png" alt="YouTube Shorts Analytics Dashboard" width={1200} height={630} className="w-full h-auto object-cover" />
             </div>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               The Seed Audience Phase: Why Context is King
             </h3>
@@ -202,7 +191,6 @@ export default function ShortsHashtagLandingPage() {
             <p>
               However, if you use targeted hashtags like <strong>#programmerhumor</strong> or <strong>#dndmemes</strong>, the algorithm has a much clearer picture of who will appreciate the joke. It serves the video to viewers with a history of engaging with coding jokes or tabletop RPG content. Because the audience is highly targeted, the viewed vs. swiped away ratio will likely be much higher, and the APV will be stronger. This positive data signals to the algorithm that the video is engaging, prompting it to test the Short with a slightly larger, slightly broader audience. This concentric circle of testing is the exact mechanism of going viral.
             </p>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               The &quot;Viewed vs. Swiped Away&quot; Metric
             </h3>
@@ -212,11 +200,6 @@ export default function ShortsHashtagLandingPage() {
             <p>
               How do hashtags influence this? By ensuring your video lands in front of the right eyes in the first place. If your video is about high-level chess strategies and you tag it with <strong>#gaming</strong> and <strong>#viral</strong>, it might be served to someone expecting a Minecraft Let&apos;s Play. They will instantly swipe away, hurting your metrics. If you use <strong>#chesstok</strong>, <strong>#chessmaster</strong>, and <strong>#magnuscarlsen</strong>, you get served to chess enthusiasts who will actually watch the video, thereby preserving your Viewed vs. Swiped Away percentage.
             </p>
-
-            <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube Shorts Algorithm Explained" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            </div>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               The Three-Tiered Hashtag Strategy for Shorts
             </h3>
@@ -234,7 +217,6 @@ export default function ShortsHashtagLandingPage() {
                 <strong>Tier 3: The Niche Specific Tags.</strong> This is where the magic happens. These tags describe exactly what is happening in the video. If your broad tag is #Cooking, your niche tags might be <strong>#SourdoughBread</strong>, <strong>#BakingTips</strong>, or <strong>#VeganDesserts</strong>. These are the tags that help the algorithm find your seed audience. Use 2-3 of these per Short.
               </li>
             </ul>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               Trending vs. Evergreen Hashtags on Shorts
             </h3>
@@ -244,7 +226,6 @@ export default function ShortsHashtagLandingPage() {
             <p>
               Evergreen hashtags, on the other hand, represent consistent, long-term interest. Tags like <strong>#ExcelTips</strong>, <strong>#WeightLossJourney</strong>, or <strong>#GuitarTutorial</strong> will get searched for and watched year-round. These Shorts might not get a million views in their first 24 hours, but they will generate a slow, steady stream of views, subscribers, and potentially ad revenue over months or even years. A healthy YouTube Shorts strategy utilizes both trending tags to capture immediate attention and evergreen tags to build a sustainable, searchable library of content.
             </p>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               Common Mistakes Creators Make with Shorts Hashtags
             </h3>
@@ -256,7 +237,6 @@ export default function ShortsHashtagLandingPage() {
             </p>
           </div>
         </section>
-
         {/* Why Shorts hashtags matter */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -272,7 +252,6 @@ export default function ShortsHashtagLandingPage() {
             The right combination of <strong className="text-slate-900">trending hashtags</strong>, <strong className="text-slate-900">niche-specific tags</strong>, and <strong className="text-slate-900">the #Shorts identifier</strong> can mean the difference between 100 views and 1 million views.
           </p>
         </section>
-
         {/* Examples by category */}
         {examplesByCategory.map((cat) => (
           <section key={cat.category} className="glass-card rounded-2xl p-6 md:p-8 mb-4">
@@ -287,7 +266,6 @@ export default function ShortsHashtagLandingPage() {
             </ul>
           </section>
         ))}
-
         {/* Best practices */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -304,7 +282,6 @@ export default function ShortsHashtagLandingPage() {
             ))}
           </div>
         </section>
-
         {/* How it works */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -333,7 +310,6 @@ export default function ShortsHashtagLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* FAQ */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -348,7 +324,6 @@ export default function ShortsHashtagLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Cross-links */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -378,7 +353,6 @@ export default function ShortsHashtagLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* Related blog posts */}
         <section className="mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">

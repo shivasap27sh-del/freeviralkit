@@ -106,7 +106,7 @@ export default function ChapterGeneratorPage() {
           </div>
 
           <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-            <Image src="/images/metadata_funnel.png" alt="YouTube Metadata SEO Funnel" width={1200} height={630} className="w-full h-auto object-cover" />
+
           </div>
 
           <div>
@@ -126,9 +126,9 @@ export default function ChapterGeneratorPage() {
             </div>
           </div>
 
-          <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/WvPOshC74Og" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-          </div>
+          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+
+              </div>
 
           {/* Article Section 2 */}
           <div className="glass-card rounded-2xl p-8 border-t-4 border-t-indigo-500">

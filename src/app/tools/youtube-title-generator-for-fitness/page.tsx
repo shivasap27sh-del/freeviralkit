@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
-
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Fitness',
   description:
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     'health youtube title generator',
   ],
 };
-
 const examplesByCategory = [
   {
     category: 'Workout Routines',
@@ -63,7 +61,6 @@ const examplesByCategory = [
     ],
   },
 ];
-
 const tips = [
   {
     title: 'Specify the workout type and duration',
@@ -96,7 +93,6 @@ const tips = [
       'New workout trends, viral fitness challenges, and celebrity training programs create huge search spikes. Create titles around trending fitness topics within the first week for maximum search volume.',
   },
 ];
-
 const faqs = [
   {
     question: 'How do I title a transformation video without sounding fake?',
@@ -124,7 +120,6 @@ const faqs = [
       'Use negative hooks. Psychology shows that people are more afraid of making mistakes than they are motivated to succeed. Titles like "5 Foods Secretly Ruining Your Diet" will almost always outperform "5 Foods to Help Your Diet".',
   },
 ];
-
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -155,7 +150,6 @@ const pageJsonLd = {
     },
   ],
 };
-
 export default function FitnessTitleLandingPage() {
   return (
     <>
@@ -163,7 +157,6 @@ export default function FitnessTitleLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -177,7 +170,6 @@ export default function FitnessTitleLandingPage() {
             <TitleGeneratorClient niche="fitness" />
           </div>
         </section>
-
         <section className="mt-16 space-y-12">
           {/* Why fitness titles matter */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
@@ -196,11 +188,8 @@ export default function FitnessTitleLandingPage() {
               </p>
             </div>
           </div>
-
           <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-            <Image src="/images/metadata_funnel.png" alt="YouTube Fitness Metadata SEO" width={1200} height={630} className="w-full h-auto object-cover" />
           </div>
-
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               Understanding Viewer Intent in the Fitness Niche
@@ -232,12 +221,10 @@ export default function FitnessTitleLandingPage() {
               </p>
             </div>
           </div>
-
           {/* Video Embed */}
-          <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/RZ2YP04gHEU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-          </div>
+          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
+              </div>
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               Building Trust Through Authentic Titles
@@ -259,7 +246,6 @@ export default function FitnessTitleLandingPage() {
               </p>
             </div>
           </div>
-
           {/* Examples by category */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {examplesByCategory.map((cat) => (
@@ -276,7 +262,6 @@ export default function FitnessTitleLandingPage() {
               </div>
             ))}
           </div>
-
           {/* Best practices */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -293,7 +278,6 @@ export default function FitnessTitleLandingPage() {
               ))}
             </div>
           </div>
-
           {/* How it works */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -331,7 +315,6 @@ export default function FitnessTitleLandingPage() {
               </Link>
             </div>
           </div>
-
           {/* FAQ */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -346,7 +329,6 @@ export default function FitnessTitleLandingPage() {
               ))}
             </div>
           </div>
-
           {/* Cross-links */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -383,7 +365,6 @@ export default function FitnessTitleLandingPage() {
               </Link>
             </div>
           </div>
-
           {/* Related blog posts */}
           <div>
             <h2 className="font-display text-2xl font-semibold mb-6">

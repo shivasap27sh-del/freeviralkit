@@ -255,20 +255,12 @@ export default function Home() {
               <strong>3. The Hook (Retention Optimization):</strong> The moment a viewer clicks, you have approximately 5 to 10 seconds to convince them to stay. This is the &quot;Hook.&quot; Never start a video with a slow logo intro or a boring &quot;Hey guys, welcome back to my channel.&quot; Instead, immediately deliver on the promise of the title. Validate their decision to click by showing them the end result, asking a compelling question, or plunging them directly into the action.
             </p>
 
-            <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            </div>
-
             <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mt-12 mb-4">
               Why Description Formatting is Your Secret Weapon
             </h3>
             <p>
               While titles get all the glory, the YouTube description is the unsung hero of SEO. The first 150 characters of your description are the most critical real estate on your entire channel. Why? Because these characters are displayed directly in the YouTube search results, right below your title. If your target keyword is not naturally woven into the first two sentences of your description, you are losing out on a massive relevancy signal.
             </p>
-            
-            <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-              <Image src="/images/metadata_funnel.png" alt="YouTube SEO Metadata Funnel" width={1200} height={630} className="w-full h-auto object-cover" />
-            </div>
 
             <p>
               Furthermore, a well-formatted description enhances the viewer experience. By including timestamped Chapters, you allow viewers to navigate long-form content effortlessly. This prevents them from clicking away when they hit a slow segment. You should also strategically use your description to funnel traffic to your other videos using internal links, keeping viewers trapped in your &quot;ecosystem&quot; and racking up session watch time—the ultimate metric that YouTube rewards.

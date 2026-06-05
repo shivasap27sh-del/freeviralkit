@@ -102,7 +102,7 @@ export default function HookGeneratorPage() {
               </p>
 
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/seo_dashboard.png" alt="YouTube Growth Analytics showing high retention" width={1200} height={630} className="w-full h-auto object-cover" />
+
               </div>
 
               <p>
@@ -112,8 +112,8 @@ export default function HookGeneratorPage() {
                 And this is where the YouTube algorithm is merciless. Once the algorithm sees a pattern of people clicking your video and immediately ditching it, it concludes that your video is either low quality or clickbait. It immediately stops pushing it to new viewers. The initial 30-second retention metric is arguably the single most important metric on the entire platform. 
               </p>
 
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/mfvdXlE46ts" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+
               </div>
 
               <p>

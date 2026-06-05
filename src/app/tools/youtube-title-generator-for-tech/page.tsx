@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
-
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Tech',
   description:
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     'youtube tech seo',
   ],
 };
-
 const examplesByCategory = [
   {
     category: 'Product Reviews',
@@ -63,7 +61,6 @@ const examplesByCategory = [
     ],
   },
 ];
-
 const tips = [
   {
     title: 'Lead with the product or brand name',
@@ -96,7 +93,6 @@ const tips = [
       'Titles like "Is It Worth It?" or "Should You Buy This?" mirror exactly what viewers type into YouTube search. Question-based titles align with search intent and boost click-through rates.',
   },
 ];
-
 const faqs = [
   {
     question: 'How do I title a review for a product that everyone else is reviewing?',
@@ -124,7 +120,6 @@ const faqs = [
       'They work together. In tech, the thumbnail usually shows the high-quality product shot or a shocked reaction, while the title provides the specific model number and the review angle. If your title is vague, a great thumbnail won\'t save the video.',
   },
 ];
-
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -155,7 +150,6 @@ const pageJsonLd = {
     },
   ],
 };
-
 export default function TechTitleLandingPage() {
   return (
     <>
@@ -163,7 +157,6 @@ export default function TechTitleLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -177,7 +170,6 @@ export default function TechTitleLandingPage() {
             <TitleGeneratorClient niche="tech" />
           </div>
         </section>
-
         {/* Why tech titles matter */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -193,7 +185,6 @@ export default function TechTitleLandingPage() {
             Effective tech titles combine <strong className="text-slate-900">the product name</strong>, a <strong className="text-slate-900">clear content format</strong>, and a <strong className="text-slate-900">compelling hook or question</strong>. That&apos;s exactly what our AI generates for you.
           </p>
         </section>
-
         {/* Examples by category */}
         {examplesByCategory.map((cat) => (
           <section key={cat.category} className="glass-card rounded-2xl p-6 md:p-8 mb-4">
@@ -208,7 +199,6 @@ export default function TechTitleLandingPage() {
             </ul>
           </section>
         ))}
-
         {/* Best practices */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -225,7 +215,6 @@ export default function TechTitleLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Advanced Tech SEO Deep Dive */}
         <section className="mt-16 mb-8 space-y-12">
           <div className="glass-card rounded-2xl p-6 md:p-8">
@@ -236,11 +225,8 @@ export default function TechTitleLandingPage() {
               <p>
                 The tech niche is widely considered one of the most lucrative categories on YouTube. With high RPMs (Revenue Per Mille) and massive affiliate marketing potential, a single successful tech review can generate thousands of dollars in passive income for years. However, this profitability makes it incredibly saturated. When Apple releases a new iPhone, thousands of creators upload their reviews within hours of the embargo lifting. If you are a small or mid-sized tech channel, you cannot compete with giants like MKBHD or Mrwhosetheboss on production value alone. Your only weapon to steal clicks from the massive channels is a hyper-optimized, psychologically compelling YouTube title.
               </p>
-
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/seo_dashboard.png" alt="YouTube Tech Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Why Vanilla Reviews Are Dead
               </h3>
@@ -250,7 +236,6 @@ export default function TechTitleLandingPage() {
               <p>
                 Instead of a vanilla review, reframe the video around a burning question the consumer has. Before someone drops $1,200 on a phone, they want reassurance. Titles like &quot;I Used the Galaxy S26 Ultra for 30 Days - Don&apos;t Make My Mistake!&quot; or &quot;Is the S26 Ultra Actually Worth $1,200? (Honest Review)&quot; perform drastically better. They promise an authentic, long-term perspective that feels much more valuable than a day-one spec read. You are moving the premise from &quot;Here are the specs&quot; to &quot;Here is how this product will affect your daily life and your wallet.&quot;
               </p>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 The Power of the &quot;Versus&quot; Framework
               </h3>
@@ -260,11 +245,9 @@ export default function TechTitleLandingPage() {
               <p>
                 A strong versus title should force a definitive conclusion. &quot;MacBook Air M5 vs Dell XPS 15&quot; is okay, but &quot;MacBook Air M5 vs Dell XPS 15 - The Truth Apple Won&apos;t Tell You&quot; is far better. By implying that one product has a hidden flaw or that there is a secret the viewer needs to know, you spike the Click-Through Rate (CTR) through the roof. Additionally, comparison videos have incredibly high conversion rates for Amazon affiliate links, because the viewer is literally watching the video to decide which link to click.
               </p>
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Nailing the &quot;How-To&quot; Tutorial Title
               </h3>
@@ -274,7 +257,6 @@ export default function TechTitleLandingPage() {
               <p>
                 Your tutorial titles must promise speed, ease, and effectiveness. &quot;How to Build a PC in 2026&quot; is a solid base. But &quot;How to Build a PC in 2026 (Step-by-Step for ABSOLUTE Beginners)&quot; removes the friction. By adding &quot;Absolute Beginners,&quot; you eliminate the intimidation factor. If it&apos;s a software fix, adding timeframes is magical: &quot;Fix Windows 11 Blue Screen in 3 Minutes (No Data Loss).&quot; You have identified the pain point, offered a fast solution, and reassured them that their data is safe.
               </p>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 The Death of the Traditional Unboxing
               </h3>
@@ -284,7 +266,6 @@ export default function TechTitleLandingPage() {
               <p>
                 To make an unboxing title work today, you have to raise the stakes. &quot;Unboxing the CHEAPEST Gaming PC on Amazon&quot; works because the focus isn&apos;t the unboxing; it&apos;s the curiosity of whether the cheap PC is actually a scam. &quot;I Bought Every Apple Accessory Under $20&quot; transforms a boring unboxing into an exciting experiment. It&apos;s all about the framing.
               </p>
-              
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Leveraging Long-Tail Keywords
               </h3>
@@ -297,7 +278,6 @@ export default function TechTitleLandingPage() {
             </div>
           </div>
         </section>
-
         {/* How it works */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -326,7 +306,6 @@ export default function TechTitleLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* FAQ */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -341,7 +320,6 @@ export default function TechTitleLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Cross-links */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -371,7 +349,6 @@ export default function TechTitleLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* Related blog posts */}
         <section className="mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">

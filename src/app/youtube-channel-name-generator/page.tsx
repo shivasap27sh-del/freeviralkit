@@ -123,7 +123,7 @@ export default function ChannelNameGeneratorPage() {
           </div>
 
           <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-            <Image src="/images/seo_dashboard.png" alt="YouTube Growth Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
+
           </div>
 
           <div>
@@ -143,9 +143,9 @@ export default function ChannelNameGeneratorPage() {
             </div>
           </div>
 
-          <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/K9gF_3lt2nY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-          </div>
+          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+
+              </div>
 
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">

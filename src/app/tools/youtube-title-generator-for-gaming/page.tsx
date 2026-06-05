@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
-
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Gaming',
   description:
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     'youtube gaming titles',
   ],
 };
-
 const examplesByCategory = [
   {
     category: 'Survival & Challenge',
@@ -63,7 +61,6 @@ const examplesByCategory = [
     ],
   },
 ];
-
 const tips = [
   {
     title: 'Put the game name first',
@@ -96,7 +93,6 @@ const tips = [
       'When a new season, update, or DLC drops, use those keywords immediately. Fresh search terms have high volume and low competition.',
   },
 ];
-
 const faqs = [
   {
     question: 'How do I title a Let\'s Play video without being boring?',
@@ -124,7 +120,6 @@ const faqs = [
       'Using all caps for ONE or TWO emphasis words works incredibly well in gaming (e.g., "I Found the MOST RARE Item in Skyrim"). However, typing the entire title in all caps looks spammy and can actually reduce your click-through rate.',
   },
 ];
-
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -155,7 +150,6 @@ const pageJsonLd = {
     },
   ],
 };
-
 export default function GamingTitleLandingPage() {
   return (
     <>
@@ -163,7 +157,6 @@ export default function GamingTitleLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -177,7 +170,6 @@ export default function GamingTitleLandingPage() {
             <TitleGeneratorClient niche="gaming" />
           </div>
         </section>
-
         <section className="mt-16 space-y-12">
           {/* Why gaming titles matter */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
@@ -196,11 +188,8 @@ export default function GamingTitleLandingPage() {
               </p>
             </div>
           </div>
-
           <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-            <Image src="/images/seo_dashboard.png" alt="YouTube Gaming Video Analytics Dashboard" width={1200} height={630} className="w-full h-auto object-cover" />
           </div>
-
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               Escaping the &quot;Part 1&quot; Let&apos;s Play Trap
@@ -226,12 +215,10 @@ export default function GamingTitleLandingPage() {
               </p>
             </div>
           </div>
-
           {/* Video Embed */}
-          <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Gmmzkuq3qBw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-          </div>
+          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
+              </div>
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               High-Concept Challenges: The New Meta
@@ -254,7 +241,6 @@ export default function GamingTitleLandingPage() {
               </p>
             </div>
           </div>
-
           {/* Examples by category */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {examplesByCategory.map((cat) => (
@@ -271,7 +257,6 @@ export default function GamingTitleLandingPage() {
               </div>
             ))}
           </div>
-
           {/* Best practices */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -288,7 +273,6 @@ export default function GamingTitleLandingPage() {
               ))}
             </div>
           </div>
-
           {/* How it works */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -326,7 +310,6 @@ export default function GamingTitleLandingPage() {
               </Link>
             </div>
           </div>
-
           {/* FAQ */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -341,7 +324,6 @@ export default function GamingTitleLandingPage() {
               ))}
             </div>
           </div>
-
           {/* Cross-links */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
@@ -378,7 +360,6 @@ export default function GamingTitleLandingPage() {
               </Link>
             </div>
           </div>
-
           {/* Related blog posts */}
           <div>
             <h2 className="font-display text-2xl font-semibold mb-6">

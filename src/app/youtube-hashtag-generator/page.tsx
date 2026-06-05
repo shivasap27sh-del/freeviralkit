@@ -118,9 +118,9 @@ export default function HashtagGeneratorPage() {
               <p>
                 YouTube hashtags are one of the most underutilized discovery tools on the platform today. While the vast majority of creators pour all their energy into perfecting their titles, tweaking their thumbnails, and stuffing backend tags, hashtags remain a critical yet frequently ignored piece of the optimization puzzle. They offer an entirely unique advantage: they create <strong className="text-slate-900 dark:text-white">clickable, browsable topic pages</strong> that viewers actively explore when looking for specific content or trends. When someone clicks a hashtag on any video, they immediately land on a curated feed of all videos utilizing that exact hashtag. Your video could easily be among them, acting as a powerful secondary entry point to your channel.
               </p>
-              
+
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/seo_dashboard.png" alt="YouTube Hashtag SEO Funnel" width={1200} height={630} className="w-full h-auto object-cover" />
+
               </div>
 
               <p>
@@ -140,7 +140,7 @@ export default function HashtagGeneratorPage() {
               <p>
                 A truly effective, view-generating hashtag strategy is never just throwing random words into a description box and hoping for the best. It requires a balanced, deliberate approach that targets different levels of search intent. Specifically, it balances three distinct categories: <strong className="text-slate-900 dark:text-white">broad hashtags</strong> with massive global search volume, <strong className="text-slate-900 dark:text-white">niche hashtags</strong> that target your exact, hyper-specific demographic, and <strong className="text-slate-900 dark:text-white">branded hashtags</strong> that are entirely unique to your channel identity. Mastering this three-pronged mix is precisely what separates elite creators from everyone else.
               </p>
-              
+
               <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
                 Broad Hashtags for Maximum Theoretical Exposure
               </h3>
@@ -148,8 +148,8 @@ export default function HashtagGeneratorPage() {
                 Broad hashtags include massive, universally understood terms like #Cooking, #Gaming, #Fitness, or #Vlog. These terms naturally possess astronomical search volumes, sometimes numbering in the tens of millions of queries per month. Including them exposes your video to the widest possible theoretical audience. However, because they are so broad, the competition is extraordinarily fierce. If you only use broad hashtags, your video will be instantly buried under millions of other uploads. The correct approach is to use exactly 2 or 3 broad hashtags per video simply to cast a wide net and signal the general genre of your content to the algorithm, but you should never rely on them as your primary driver of traffic.
               </p>
 
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rvPkN0Otkns" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+
               </div>
 
               <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
@@ -158,7 +158,7 @@ export default function HashtagGeneratorPage() {
               <p>
                 Niche hashtags are the secret weapon of fast-growing channels. This is where the real algorithmic value lies. Instead of competing for a massive term like #Cooking, you should target hyper-specific phrases like #MealPrepForBeginners, #VeganKetoRecipes, or #30MinuteDinners. These specialized hashtags have significantly lower overall competition, meaning your video has a much higher chance of ranking at the top of the hashtag feed. More importantly, they attract viewers who are actively, specifically searching for the exact solution you provide. A viewer who finds your video through a niche hashtag is highly motivated; they are mathematically far more likely to watch the entire video, subscribe to your channel, and engage with your content. They are your ideal, high-retention audience.
               </p>
-              
+
               <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
                 Branded Hashtags for Channel Identity and Binge-Watching
               </h3>

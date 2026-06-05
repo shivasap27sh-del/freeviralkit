@@ -114,7 +114,7 @@ export default function TagsGeneratorPage() {
               </p>
 
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/metadata_funnel.png" alt="YouTube Metadata Optimization Funnel" width={1200} height={630} className="w-full h-auto object-cover" />
+
               </div>
 
               <p>
@@ -123,9 +123,9 @@ export default function TagsGeneratorPage() {
               <p>
                 Beyond direct search, tags are a primary signal for the &quot;Suggested Videos&quot; algorithm. Have you ever wondered why certain videos always appear next to each other in the sidebar? It&apos;s often because they share a high percentage of overlapping tags. By using highly targeted, relevant tags, you signal to YouTube that your video belongs alongside the top-performing content in your niche, opening the door to passive, algorithmic traffic that scales without you having to actively promote the video.
               </p>
-              
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+
               </div>
 
             </div>
@@ -139,7 +139,7 @@ export default function TagsGeneratorPage() {
               <p className="text-lg">
                 A common mistake creators make is treating the tag box as a place to dump every related word they can think of. A successful tag strategy is intentional, structured, and prioritizes relevance over volume. Here is how to build a 500-character tag list that actually moves the needle on your views.
               </p>
-              
+
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-3">
@@ -150,9 +150,9 @@ export default function TagsGeneratorPage() {
                     Your very first tag should be the exact phrase you want to rank for in YouTube search. If your video is about &quot;how to bake sourdough bread,&quot; that exact phrase must be your first tag. YouTube gives disproportionate weight to the first tag in your list, so don&apos;t waste that premium spot on a generic word like &quot;baking&quot; or &quot;bread.&quot;
                   </p>
                 </div>
-                
+
                 <div className="h-px bg-slate-200 dark:bg-slate-800 w-full" />
-                
+
                 <div>
                   <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-3">
                     <span className="flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-500 text-sm">2</span>
@@ -164,7 +164,7 @@ export default function TagsGeneratorPage() {
                 </div>
 
                 <div className="h-px bg-slate-200 dark:bg-slate-800 w-full" />
-                
+
                 <div>
                   <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-3">
                     <span className="flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-500 text-sm">3</span>
@@ -176,7 +176,7 @@ export default function TagsGeneratorPage() {
                 </div>
 
                 <div className="h-px bg-slate-200 dark:bg-slate-800 w-full" />
-                
+
                 <div>
                   <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-3">
                     <span className="flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-500 text-sm">4</span>
@@ -198,9 +198,9 @@ export default function TagsGeneratorPage() {
               <p>
                 Brainstorming 20-25 highly relevant tags manually for every video is tedious and prone to bias. You might miss obvious variations or waste characters on tags that have zero search volume. An <strong className="text-slate-900 dark:text-white">AI YouTube tags generator</strong> solves this by instantly analyzing your core topic and cross-referencing it with known search patterns and algorithmic preferences. It takes the emotional guesswork out of your SEO strategy.
               </p>
-              
+
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/seo_dashboard.png" alt="YouTube Growth Analytics Dashboard" width={1200} height={630} className="w-full h-auto object-cover" />
+
               </div>
 
               <p>

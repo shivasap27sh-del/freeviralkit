@@ -4,7 +4,6 @@ import ScriptGeneratorPageClient from '@/components/tools/ScriptGeneratorPageCli
 import { FileText } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-
 export const metadata: Metadata = {
   title: 'Free YouTube Script Generator — AI Video Outline Maker',
   description:
@@ -31,7 +30,6 @@ export const metadata: Metadata = {
     'youtube script AI',
   ],
 };
-
 const faqItems = [
   {
     question: 'How long should my YouTube script be?',
@@ -64,7 +62,6 @@ const faqItems = [
       'AI is an incredible tool for generating structures, outlines, and hooks, but it cannot replace your unique voice and expertise. If you use AI to write a script word-for-word, your video will likely sound generic and lack the personal anecdotes and emotional inflection that build a loyal audience. Use our AI script generator to build the skeleton, and then flesh it out with your own personality.',
   },
 ];
-
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -77,7 +74,6 @@ const faqJsonLd = {
     },
   })),
 };
-
 export default function ScriptGeneratorPage() {
   return (
     <>
@@ -85,7 +81,6 @@ export default function ScriptGeneratorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -99,9 +94,7 @@ export default function ScriptGeneratorPage() {
             Generate structured, high-retention script outlines for your videos. Complete with hook lines, B-roll recommendations, and loops.
           </p>
         </section>
-
         <ScriptGeneratorPageClient />
-
         {/* SEO Content */}
         <section className="mt-16 space-y-12">
           <div>
@@ -112,11 +105,8 @@ export default function ScriptGeneratorPage() {
               <p>
                 The biggest difference between an amateur YouTube channel that struggles to get 100 views and a professional channel driving millions of impressions isn&apos;t the camera gear, the lighting, or the editing software — it is entirely based on the underlying structure of the videos. When inexperienced creators turn on the camera and simply "wing it," the final result is almost universally rambling, repetitive, and horribly paced. On a platform where the algorithm relentlessly, ruthlessly measures <strong className="text-slate-900 dark:text-white">Audience Retention</strong> and <strong className="text-slate-900 dark:text-white">Average View Duration (AVD)</strong>, a poorly paced, unstructured video is an absolute death sentence for your organic reach.
               </p>
-
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/metadata_funnel.png" alt="YouTube Script Outline Structure" width={1200} height={630} className="w-full h-auto object-cover" />
               </div>
-
               <p>
                 Writing a script — or at the very least, a highly detailed bullet-point outline — solves this structural problem before you even hit record. It forces you to organize your thoughts logically, aggressively trim the fat, and consciously design specific moments that continually re-engage the viewer&apos;s attention. By using a <strong className="text-slate-900 dark:text-white">free YouTube script generator</strong>, you completely bypass the intimidating paralysis of the blank page. Instead, you instantly receive a proven, high-retention framework mathematically tailored to your specific video topic.
               </p>
@@ -125,7 +115,6 @@ export default function ScriptGeneratorPage() {
               </p>
             </div>
           </div>
-
           <div>
             <h2 className="font-display text-3xl font-bold mb-6 text-slate-900 dark:text-white">
               The 4 Unbreakable Pillars of a High-Retention YouTube Script
@@ -134,32 +123,27 @@ export default function ScriptGeneratorPage() {
               <p>
                 If you study any viral YouTube video, regardless of the niche, you will find that it follows a surprisingly similar underlying structure. Whether you are filming a high-end tech review, an energetic gaming let&apos;s play, or a calm educational tutorial, mastering these four foundational script pillars will dramatically and permanently improve your channel&apos;s metrics.
               </p>
-
               <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
                 1. The High-Stakes Hook (0:00 - 0:15)
               </h3>
               <p>
                 The first 15 seconds of your video dictate the algorithmic success of the entire upload. Viewers click your thumbnail with a specific, fragile expectation. Your hook must immediately, aggressively validate that expectation. If your title is &quot;How to Fix a Leaky Faucet in 3 Minutes,&quot; do not spend 30 seconds introducing yourself or playing a loud, animated 3D logo sequence. Start the video by immediately showing the leaky faucet, looking at the camera, and saying, &quot;This leak is costing you $100 a month in water bills, and I am going to show you exactly how to fix it in the next 3 minutes using one tool.&quot; Establish the stakes, make the promise, and move on.
               </p>
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FXGj-WVtxwM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
-
               <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
                 2. The Body & Aggressive Visual Pacing
               </h3>
               <p>
                 The middle of your video is a dangerous zone where viewer attention naturally sags and drifts. To combat this biological reality, your script must be broken into clear, distinct, highly digestible segments. More importantly, your script must include <strong className="text-slate-900 dark:text-white">Visual Pacing cues</strong>. In modern YouTube editing, you should plan to change the visual stimulus on the screen every 3 to 5 seconds. This could be a stark camera angle change, a text pop-up reinforcing your point, a sound effect, or relevant B-roll footage. Our script outline generator automatically suggests these visual pattern interrupts directly in the text to ensure you film enough coverage to keep the viewer&apos;s eye active.
               </p>
-
               <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
                 3. The Strategic, Value-Driven Call to Action (CTA)
               </h3>
               <p>
                 Asking viewers to subscribe at the very beginning of the video is a rookie mistake; it rarely works because you haven&apos;t provided any value to earn their trust yet. Asking at the very end is equally ineffective because most viewers have already clicked away the moment they sense the video is wrapping up. The optimal, mathematically proven place for a CTA is the <strong className="text-slate-900 dark:text-white">Mid-Roll</strong> — immediately after you have delivered a massive &quot;Aha!&quot; moment, solved a major problem, or delivered a highly entertaining sequence. The viewer is currently feeling grateful and entertained, making them exponentially more likely to hit the subscribe button when you briefly ask.
               </p>
-
               <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
                 4. The Seamless Outro Loop
               </h3>
@@ -168,7 +152,6 @@ export default function ScriptGeneratorPage() {
               </p>
             </div>
           </div>
-
           <div>
             <h2 className="font-display text-3xl font-bold mb-6 text-slate-900 dark:text-white">
               Why Bullet-Point Outlines Destroy Word-For-Word Scripts
@@ -182,7 +165,6 @@ export default function ScriptGeneratorPage() {
               </p>
             </div>
           </div>
-
           {/* Checklist */}
           <div className="glass-card rounded-2xl p-8 border-t-4 border-t-purple-400">
             <h3 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
@@ -197,7 +179,6 @@ export default function ScriptGeneratorPage() {
               <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Have you read the entire outline out loud while standing up to ensure the phrasing sounds natural and not like written prose?</span></li>
             </ul>
           </div>
-
           {/* Related Blog Posts */}
           <div>
             <h2 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
@@ -250,7 +231,6 @@ export default function ScriptGeneratorPage() {
               </Link>
             </div>
           </div>
-
           {/* FAQ Section */}
           <div>
             <h2 className="font-display text-3xl font-bold mb-8 text-slate-900 dark:text-white">
@@ -273,7 +253,6 @@ export default function ScriptGeneratorPage() {
               ))}
             </div>
           </div>
-
           {/* Bottom CTA */}
           <div className="glass-card rounded-3xl p-10 text-center mt-12 bg-gradient-to-br from-purple-500/10 via-pink-500/5 to-transparent border border-purple-500/20 shadow-2xl">
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-4 text-slate-900 dark:text-white">

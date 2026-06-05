@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
-
 export const metadata: Metadata = {
   title: 'YouTube Title Generator for Music',
   description:
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     'youtube music seo',
   ],
 };
-
 const examplesByCategory = [
   {
     category: 'Song Covers & Performances',
@@ -63,7 +61,6 @@ const examplesByCategory = [
     ],
   },
 ];
-
 const tips = [
   {
     title: 'Include the song or artist name',
@@ -96,7 +93,6 @@ const tips = [
       'Specify if it\'s a reaction, tutorial, one-take, mashup, or remix. Format keywords help YouTube recommend your video to the right audience and improve click-through rates.',
   },
 ];
-
 const faqs = [
   {
     question: 'How do I title a beat or instrumental on YouTube?',
@@ -124,7 +120,6 @@ const faqs = [
       'Mashups should clearly state both songs and artists involved, and often include a catchy umbrella name. For example: "If [Song A] and [Song B] had a baby..." or "The Ultimate 2026 Pop Mashup (50 Songs in 3 Minutes)".',
   },
 ];
-
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -155,7 +150,6 @@ const pageJsonLd = {
     },
   ],
 };
-
 export default function MusicTitleLandingPage() {
   return (
     <>
@@ -163,7 +157,6 @@ export default function MusicTitleLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
       />
-
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
@@ -177,7 +170,6 @@ export default function MusicTitleLandingPage() {
             <TitleGeneratorClient niche="music" />
           </div>
         </section>
-
         {/* Why music titles matter */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -193,7 +185,6 @@ export default function MusicTitleLandingPage() {
             Great music titles combine <strong className="text-slate-900">the song or artist name</strong>, a <strong className="text-slate-900">format indicator</strong>, and an <strong className="text-slate-900">emotional hook</strong>. That&apos;s exactly what our AI generates for you.
           </p>
         </section>
-
         {/* Examples by category */}
         {examplesByCategory.map((cat) => (
           <section key={cat.category} className="glass-card rounded-2xl p-6 md:p-8 mb-4">
@@ -208,7 +199,6 @@ export default function MusicTitleLandingPage() {
             </ul>
           </section>
         ))}
-
         {/* Best practices */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -225,7 +215,6 @@ export default function MusicTitleLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Advanced Music SEO Deep Dive */}
         <section className="mt-16 mb-8 space-y-12">
           <div className="glass-card rounded-2xl p-6 md:p-8">
@@ -236,11 +225,8 @@ export default function MusicTitleLandingPage() {
               <p>
                 Navigating the YouTube algorithm as a musician, producer, or singer-songwriter can often feel like playing to an empty room. You spend countless hours mixing your tracks, mastering the audio, setting up the perfect lighting, and editing your performance. Yet, when you finally hit publish, the video barely gets any views. Why does this happen? The harsh reality of YouTube is that your music&apos;s quality does not matter if people never click on your video in the first place. Your title is the billboard for your music. If that billboard isn&apos;t compelling, people will drive right past it.
               </p>
-              
               <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                <Image src="/images/seo_dashboard.png" alt="YouTube Growth Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Why Standard Titles Destroy Your Discoverability
               </h3>
@@ -250,7 +236,6 @@ export default function MusicTitleLandingPage() {
               <p>
                 To get discovered, you have to intercept the traffic that already exists. This is why song covers are the ultimate growth hack for aspiring singers. Instead of naming your video &quot;Acoustic Session Part 3,&quot; you need to target a massive search term: &quot;Blinding Lights - The Weeknd (Acoustic Cover).&quot; By putting the original artist and the massive hit song right at the front of your title, you are essentially hijacking their search traffic. When fans of The Weeknd look for live versions, acoustic versions, or reactions to his songs, your video has a chance to appear in their recommended feed.
               </p>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 The Anatomy of a Viral Music Reaction Title
               </h3>
@@ -260,11 +245,9 @@ export default function MusicTitleLandingPage() {
               <p>
                 If you are an instrumentalist, the formula is the same. &quot;Classical Pianist Hears Bohemian Rhapsody for the First Time&quot; creates an irresistible information gap. Viewers who love Queen want to see how a trained classical musician reacts to their favorite song. The title clearly defines the character (Classical Pianist), the subject (Bohemian Rhapsody), and the hook (First Time).
               </p>
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 SEO Strategies for Music Producers and Beatmakers
               </h3>
@@ -274,7 +257,6 @@ export default function MusicTitleLandingPage() {
               <p>
                 A well-optimized title for a beatmaker looks like this: &quot;[FREE] Travis Scott x Drake Type Beat 2026 - &apos;NIGHTFALL&apos; | Dark Trap Instrumental.&quot; Let&apos;s break down why this is effective. The word &quot;[FREE]&quot; is a massive psychological trigger that dramatically increases Click-Through Rate (CTR). The combination of two massive artists (&quot;Travis Scott x Drake&quot;) gives the rapper a precise understanding of the beat&apos;s tempo, mood, and style. Adding the current year (&quot;2026&quot;) signals to the algorithm and the creator that the beat sounds modern and isn&apos;t a leftover from five years ago. Finally, the name of the beat and the genre tag (&quot;Dark Trap Instrumental&quot;) provide secondary SEO keywords that help rank the video in broader searches.
               </p>
-              
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Avoiding the Truncation Trap
               </h3>
@@ -284,7 +266,6 @@ export default function MusicTitleLandingPage() {
               <p>
                 Imagine a title that reads: &quot;My Amazing Acoustic Cover of Someone Like You by Adele Featuring My Friend Sarah on the Cello.&quot; On a phone, the viewer might only see: &quot;My Amazing Acoustic Cover of Someone...&quot; They have no idea what song you are singing. The crucial information—Adele, Someone Like You, Cello—is completely hidden. Always front-load the most important keywords. A better version would be: &quot;Adele - Someone Like You (Acoustic Cello Cover).&quot; It is short, punchy, and instantly communicates the value of the video.
               </p>
-              
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 The Power of Emotional Trigger Words
               </h3>
@@ -297,7 +278,6 @@ export default function MusicTitleLandingPage() {
             </div>
           </div>
         </section>
-
         {/* How it works */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -326,7 +306,6 @@ export default function MusicTitleLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* FAQ */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-6">
@@ -341,7 +320,6 @@ export default function MusicTitleLandingPage() {
             ))}
           </div>
         </section>
-
         {/* Cross-links */}
         <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
@@ -371,7 +349,6 @@ export default function MusicTitleLandingPage() {
             </Link>
           </div>
         </section>
-
         {/* Related blog posts */}
         <section className="mb-8">
           <h2 className="font-display text-xl font-semibold mb-4">
