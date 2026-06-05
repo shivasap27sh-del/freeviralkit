@@ -3,6 +3,7 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import TopicResearcherPageClient from '@/components/tools/TopicResearcherPageClient';
 import { Search } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Free YouTube Niche & Topic Researcher — Find Low Competition Keywords',
@@ -113,17 +114,21 @@ export default function TopicResearcherPage() {
                 Every day, millions of creators upload videos to YouTube hoping to go viral. The vast majority of these videos will never surpass 100 views. Why? Because the creator filmed what <strong className="italic">they</strong> wanted to film, rather than what the audience was actually searching for.
               </p>
               <p>
-                If you start a brand new channel and upload a video titled "My Morning Routine," you are competing against established influencers with millions of subscribers. The algorithm has no reason to surface your video over theirs. However, if you upload a video titled "Morning Routine for Night Shift Nurses Working 12-Hour Shifts," you are targeting a specific, highly engaged audience with very little competition.
+                If you start a brand new channel and upload a video titled &quot;My Morning Routine,&quot; you are competing against established influencers with millions of subscribers. The algorithm has no reason to surface your video over theirs. However, if you upload a video titled &quot;Morning Routine for Night Shift Nurses Working 12-Hour Shifts,&quot; you are targeting a specific, highly engaged audience with very little competition.
               </p>
               <p>
-                This is the power of a <strong className="text-slate-900 dark:text-white">YouTube topic researcher</strong>. It removes the guesswork from content creation. By analyzing search volume (how many people are looking for a topic) versus competition (how many high-quality videos already exist for that topic), you can find the "sweet spot" where your new channel can actually gain traction.
+                This is the power of a <strong className="text-slate-900 dark:text-white">YouTube topic researcher</strong>. It removes the guesswork from content creation. By analyzing search volume (how many people are looking for a topic) versus competition (how many high-quality videos already exist for that topic), you can find the &quot;sweet spot&quot; where your new channel can actually gain traction.
               </p>
             </div>
           </div>
 
+          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+            <Image src="/images/metadata_funnel.png" alt="YouTube Growth Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
+          </div>
+
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              Understanding the "Sweet Spot" Matrix
+              Understanding the &quot;Sweet Spot&quot; Matrix
             </h2>
             <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
               <p>
@@ -148,7 +153,82 @@ export default function TopicResearcherPage() {
                 🔴 High Volume, High Competition (The Influencer Game)
               </h3>
               <p>
-                These are the broad topics (e.g., "iPhone 15 Review," "Minecraft Let's Play"). As a new creator, you will not rank in search for these terms. The only way to succeed here is to create a thumbnail and concept so incredibly unique that it triggers the "Suggested Video" algorithm to put you on the homepage. Unless you are a master of packaging and storytelling, avoid these topics until you have an established audience.
+                These are the broad topics (e.g., &quot;iPhone 15 Review,&quot; &quot;Minecraft Let&apos;s Play&quot;). As a new creator, you will not rank in search for these terms. The only way to succeed here is to create a thumbnail and concept so incredibly unique that it triggers the &quot;Suggested Video&quot; algorithm to put you on the homepage. Unless you are a master of packaging and storytelling, avoid these topics until you have an established audience.
+              </p>
+            </div>
+          </div>
+
+          <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/n-Nf5e3Z56g" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          </div>
+
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              The Power of Search Intent in YouTube Topic Selection
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                It is not enough to just find a keyword with high volume and low competition; you must deeply understand the <em>intent</em> behind that search. Why is the viewer typing this specific phrase into YouTube? What problem are they desperately trying to solve? 
+              </p>
+              <p>
+                There are four main types of search intent on YouTube: <strong>Informational</strong> (e.g., &quot;how to tie a tie&quot;), <strong>Navigational</strong> (e.g., &quot;MrBeast latest video&quot;), <strong>Commercial Investigation</strong> (e.g., &quot;Sony A7IV vs Canon R6&quot;), and <strong>Transactional</strong> (e.g., &quot;buy Final Cut Pro plugins&quot;). For the vast majority of creators, focusing on Informational and Commercial Investigation intent is where the magic happens. 
+              </p>
+              <p>
+                If your topic is &quot;Best Budget Microphones for Podcasting,&quot; the intent is commercial investigation. The viewer is close to making a purchase decision but needs guidance. If your video is instead just a vlog of you buying a microphone without actually reviewing its audio quality, you have failed to meet the search intent. The viewer will quickly exit the video, devastating your audience retention metrics and telling the algorithm that your video is poor quality. Always match your video format precisely to the psychological intent of the search query.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              Analyzing Competitor Channels to Find Content Gaps
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                One of the fastest ways to generate brilliant, low-competition topic ideas is to perform a &quot;Content Gap Analysis&quot; on your direct competitors. This involves looking at channels in your niche that are slightly larger than yours and identifying what they are <em>not</em> talking about, or where their content is lacking.
+              </p>
+              <p>
+                Start by finding 3 to 5 competitor channels. Sort their videos by &quot;Most Popular&quot; and look for common themes. More importantly, read their comment sections! Viewers will often leave comments like, &quot;Great video, but can you do a version of this for beginners?&quot; or &quot;This was helpful, but how does this apply to Mac users?&quot; These comments are literal goldmines. They are direct requests from a highly engaged audience for content that does not yet exist.
+              </p>
+              <p>
+                When you create a video that fills this specific gap, you immediately siphon traffic away from your competitors. Because you are answering the unaddressed questions of their audience, those viewers are highly likely to subscribe to you instead, viewing you as the more comprehensive and helpful authority in the space.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              Seasonal vs. Evergreen Topics: Building a Balanced Portfolio
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                As you build your content strategy using our topic researcher, you need to understand the difference between Seasonal (or Trending) topics and Evergreen topics. A healthy, rapidly growing YouTube channel relies on a calculated mix of both.
+              </p>
+              <p>
+                <strong>Evergreen Topics:</strong> These are videos that remain relevant year after year. &quot;How to boil an egg&quot; or &quot;Basic Excel formulas&quot; will have exactly the same search demand five years from now as they do today. These videos are the bedrock of your channel. They act like real estate, slowly accumulating views, subscribers, and ad revenue while you sleep. However, they rarely go viral.
+              </p>
+              <p>
+                <strong>Seasonal/Trending Topics:</strong> These are videos tied to a specific event, news cycle, or time of year. For example, &quot;iOS 18 Features Explained&quot; will see a massive spike in traffic during September but will receive almost zero views two years later. These videos are your growth engines. Because the topic is new, competition is temporarily low, giving smaller channels a chance to ride the wave and capture thousands of new subscribers quickly.
+              </p>
+              <p>
+                The optimal strategy is an 80/20 split. Dedicate 80% of your effort to building a massive library of highly targeted, low-competition Evergreen content to guarantee baseline traffic. Use the remaining 20% to take calculated risks on fast-moving Trends to orchestrate viral spikes in channel growth.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              Using Google Trends and YouTube Auto-Complete
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                While our AI Niche Researcher provides incredible data, pairing it with native tools can supercharge your ideation process. One of the most overlooked tools by new creators is YouTube&apos;s own Auto-Complete feature in the search bar. This is arguably the most accurate representation of what people are actively searching for <em>right now</em>.
+              </p>
+              <p>
+                When you type a broad seed keyword into the search bar, like &quot;Dog training,&quot; YouTube will drop down a list of predictions like &quot;Dog training for puppies,&quot; &quot;Dog training to stop barking,&quot; or &quot;Dog training tips for beginners.&quot; Every single one of these predictions is a proven long-tail keyword with high search intent. You can then plug these exact phrases into our Niche Researcher to evaluate their specific competition levels.
+              </p>
+              <p>
+                Google Trends is another phenomenal resource for topic validation. Before committing a week of your life to filming and editing a video, plug the core topic into Google Trends and set the filter to &quot;YouTube Search.&quot; If you see the graph steadily declining over the past 12 months, that niche is dying, and you should pivot. If the graph is pointing upwards, you have caught a rising trend just in time. Validating your ideas with data ensures you never waste time making videos nobody wants to watch.
               </p>
             </div>
           </div>
@@ -159,17 +239,17 @@ export default function TopicResearcherPage() {
             </h2>
             <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
               <p>
-                What if your dream niche (like fitness or personal finance) is already saturated? You don&apos;t have to give up; you just have to "niche down" until you find a sub-segment where the competition drops off.
+                What if your dream niche (like fitness or personal finance) is already saturated? You don&apos;t have to give up; you just have to &quot;niche down&quot; until you find a sub-segment where the competition drops off.
               </p>
               <p>
-                For example, if you want to make a channel about "Weight Loss" (High Competition), try narrowing it down. 
+                For example, if you want to make a channel about &quot;Weight Loss&quot; (High Competition), try narrowing it down. 
                 <br /><br />
                 <span className="opacity-75">Step 1: Weight Loss for Men (Still High)</span><br />
                 <span className="opacity-75">Step 2: Weight Loss for Men Over 40 (Medium)</span><br />
                 <strong className="text-purple-400">Step 3: Kettlebell Workouts for Men Over 40 with Bad Knees (Low Competition)</strong>
               </p>
               <p>
-                By targeting that highly specific "long-tail" demographic, you become the undisputed authority in that micro-niche. The viewers who find your specific content are far more likely to subscribe, comment, and buy your products because the content speaks directly to their unique pain points.
+                By targeting that highly specific &quot;long-tail&quot; demographic, you become the undisputed authority in that micro-niche. The viewers who find your specific content are far more likely to subscribe, comment, and buy your products because the content speaks directly to their unique pain points.
               </p>
             </div>
           </div>
@@ -186,59 +266,6 @@ export default function TopicResearcherPage() {
               <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Does this topic align tightly with the rest of your channel&apos;s niche?</span></li>
               <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Is this a long-tail keyword rather than a broad, generic category?</span></li>
             </ul>
-          </div>
-
-          {/* Related Blog Posts */}
-          <div>
-            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              Learn More About YouTube Strategy
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <Link
-                href="/blog/how-to-find-youtube-niche"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
-              >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
-                  How to Find Your YouTube Niche
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  A complete guide to balancing your passions with actual market demand.
-                </p>
-              </Link>
-              <Link
-                href="/blog/youtube-seo-guide"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
-              >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
-                  The Complete YouTube SEO Guide
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  How to optimize your videos to dominate YouTube search results.
-                </p>
-              </Link>
-              <Link
-                href="/youtube-title-generator"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
-              >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
-                  YouTube Title Generator →
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Found a great topic? Turn it into a highly clickable, optimized title.
-                </p>
-              </Link>
-              <Link
-                href="/youtube-script-generator"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
-              >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
-                  YouTube Script Generator →
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Use your new topic to generate a full, structured video outline.
-                </p>
-              </Link>
-            </div>
           </div>
 
           {/* FAQ Section */}

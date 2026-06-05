@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 
@@ -177,152 +178,239 @@ export default function FitnessTitleLandingPage() {
           </div>
         </section>
 
-        {/* Why fitness titles matter */}
-        <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
-          <h2 className="font-display text-xl font-semibold mb-4">
-            Why Your Fitness Title Determines Whether People Click or Scroll
-          </h2>
-          <p className="text-slate-600 mb-4">
-            Fitness is one of the most competitive categories on YouTube, with millions of workout and health videos uploaded every month. Your title is the make-or-break element that decides whether someone watches your video or your competitor&apos;s.
-          </p>
-          <p className="text-slate-600 mb-4">
-            A vague title like &ldquo;Workout Video&rdquo; tells the viewer nothing about what they will get. But &ldquo;30-Minute Full Body HIIT Workout — No Equipment, Beginner Friendly&rdquo; immediately communicates the duration, style, and accessibility.
-          </p>
-          <p className="text-slate-600">
-            Effective fitness titles combine <strong className="text-slate-900">the workout type</strong>, a <strong className="text-slate-900">specific outcome or hook</strong>, and <strong className="text-slate-900">audience qualifiers</strong>. That&apos;s exactly what our AI generates for you.
-          </p>
-        </section>
-
-        {/* Examples by category */}
-        {examplesByCategory.map((cat) => (
-          <section key={cat.category} className="glass-card rounded-2xl p-6 md:p-8 mb-4">
-            <h2 className="font-display text-lg font-semibold mb-3">{cat.category} Titles</h2>
-            <ul className="space-y-2 text-slate-700">
-              {cat.examples.map((example) => (
-                <li key={example} className="flex items-start gap-2">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" />
-                  {example}
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-
-        {/* Best practices */}
-        <section className="glass-card rounded-2xl p-6 md:p-8 mt-8 mb-8">
-          <h2 className="font-display text-xl font-semibold mb-6">
-            6 Best Practices for Fitness Video Titles
-          </h2>
-          <div className="space-y-5">
-            {tips.map((tip, i) => (
-              <div key={tip.title}>
-                <h3 className="font-semibold text-slate-900 mb-1">
-                  {i + 1}. {tip.title}
-                </h3>
-                <p className="text-slate-600 text-sm">{tip.description}</p>
-              </div>
-            ))}
+        <section className="mt-16 space-y-12">
+          {/* Why fitness titles matter */}
+          <div className="glass-card rounded-2xl p-6 md:p-8">
+            <h2 className="font-display text-2xl font-semibold mb-4">
+              Why Your Fitness Title Determines Whether People Click or Scroll
+            </h2>
+            <div className="prose prose-slate max-w-none">
+              <p>
+                Fitness is one of the most competitive categories on YouTube, with millions of workout and health videos uploaded every month. Your title is the make-or-break element that decides whether someone watches your video or your competitor&apos;s. When a user is searching for a workout, they are usually in a specific mindset—often motivated but pressed for time, or perhaps intimidated and looking for guidance. Your title must instantly address their mental state.
+              </p>
+              <p>
+                A vague title like &ldquo;Workout Video&rdquo; tells the viewer nothing about what they will get. But &ldquo;30-Minute Full Body HIIT Workout — No Equipment, Beginner Friendly&rdquo; immediately communicates the duration, style, and accessibility. It removes all friction. The viewer knows exactly what they are clicking into, which builds immediate trust and vastly improves your Click-Through Rate (CTR).
+              </p>
+              <p>
+                Effective fitness titles combine <strong>the workout type</strong>, a <strong>specific outcome or hook</strong>, and <strong>audience qualifiers</strong>. The AI title generator analyzes millions of successful fitness videos to apply these exact psychological triggers, ensuring your content stands out in a crowded search feed.
+              </p>
+            </div>
           </div>
-        </section>
 
-        {/* How it works */}
-        <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
-          <h2 className="font-display text-xl font-semibold mb-4">
-            How Our Fitness Title Generator Works
-          </h2>
-          <ol className="space-y-3 text-slate-600">
-            <li className="flex items-start gap-3">
-              <span className="w-7 h-7 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-sm font-bold text-purple-500 shrink-0">1</span>
-              <span><strong className="text-slate-900">Enter your fitness topic</strong> — describe your workout, transformation, or nutrition video.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-7 h-7 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-sm font-bold text-purple-500 shrink-0">2</span>
-              <span><strong className="text-slate-900">AI generates 10 titles</strong> — each optimized with SEO keywords, emojis, and hooks specific to fitness content.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-7 h-7 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-sm font-bold text-purple-500 shrink-0">3</span>
-              <span><strong className="text-slate-900">Copy and use</strong> — paste your favorite title directly into YouTube Studio.</span>
-            </li>
-          </ol>
-          <div className="mt-6">
-            <Link
-              href="/youtube-title-generator"
-              className="btn-primary inline-flex rounded-xl px-5 py-3 font-semibold"
-            >
-              Open Full Title Generator
-            </Link>
+          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+            <Image src="/images/metadata_funnel.png" alt="YouTube Fitness Metadata SEO" width={1200} height={630} className="w-full h-auto object-cover" />
           </div>
-        </section>
 
-        {/* FAQ */}
-        <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
-          <h2 className="font-display text-xl font-semibold mb-6">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-5">
-            {faqs.map((faq) => (
-              <div key={faq.question}>
-                <h3 className="font-semibold text-slate-900 mb-1">{faq.question}</h3>
-                <p className="text-slate-600 text-sm">{faq.answer}</p>
-              </div>
-            ))}
+          <div className="glass-card rounded-2xl p-6 md:p-8">
+            <h2 className="font-display text-2xl font-semibold mb-6">
+              Understanding Viewer Intent in the Fitness Niche
+            </h2>
+            <div className="prose prose-slate max-w-none">
+              <p>
+                To grow a fitness channel, you must deeply understand why people are watching your videos. The fitness audience is generally divided into three distinct buckets of intent: <strong>Education, Motivation, and Execution.</strong> Your title must signal which of these buckets your video belongs to.
+              </p>
+              <h3>1. The Execution Intent (Follow-Along Workouts)</h3>
+              <p>
+                When a viewer searches for a workout, they want to press play and start sweating. They don&apos;t want a 10-minute vlog intro. Titles targeting this intent must be hyper-specific and highly optimized for search. 
+              </p>
+              <p>
+                Use precise modifiers: <em>&quot;15 Min,&quot; &quot;Dumbbell Only,&quot; &quot;Low Impact,&quot; &quot;Knee Friendly.&quot;</em> A title like &ldquo;20 Min Low Impact Cardio Workout (No Jumping)&rdquo; perfectly targets older demographics or apartment dwellers, capturing a massive, specific search volume.
+              </p>
+              <h3>2. The Educational Intent (Form & Nutrition)</h3>
+              <p>
+                This viewer has a problem they need you to solve. They might be experiencing back pain during deadlifts or struggling to lose belly fat. Here, negative hooks and curiosity gaps work best.
+              </p>
+              <p>
+                Instead of &ldquo;How to Deadlift,&rdquo; use &ldquo;Stop Deadlifting Like This (Fix Lower Back Pain).&rdquo; People are far more motivated to click on a video to avoid a mistake or pain than they are to gain a positive outcome. This psychological principle—loss aversion—is incredibly powerful in fitness SEO.
+              </p>
+              <h3>3. The Motivational Intent (Transformations & Challenges)</h3>
+              <p>
+                These videos rely heavily on the browse feature rather than search. Viewers click these when they are lounging on the couch, looking for the inspiration to get up. These titles should focus on the journey, the extreme nature of the challenge, and the authenticity of the results. 
+              </p>
+              <p>
+                &ldquo;I Trained Like a Navy SEAL for 30 Days&rdquo; or &ldquo;My 1 Year Natural Body Transformation (Skinny to Ripped)&rdquo; are prime examples. The thumbnail proves the result, while the title promises the story of how it was achieved.
+              </p>
+            </div>
           </div>
-        </section>
 
-        {/* Cross-links */}
-        <section className="glass-card rounded-2xl p-6 md:p-8 mb-8">
-          <h2 className="font-display text-xl font-semibold mb-4">
-            Explore More YouTube SEO Tools
-          </h2>
-          <div className="space-y-3">
-            <Link
-              href="/tools/youtube-title-generator-for-cooking"
-              className="block p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 transition-all"
-            >
-              <span className="font-semibold text-slate-900">🍳 Title Generator for Cooking</span>
-              <p className="text-slate-600 text-sm mt-1">Generate mouthwatering titles for recipe tutorials and healthy meal prep content.</p>
-            </Link>
-            <Link
-              href="/tools/youtube-title-generator-for-vlogs"
-              className="block p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 transition-all"
-            >
-              <span className="font-semibold text-slate-900">🎬 Title Generator for Vlogs</span>
-              <p className="text-slate-600 text-sm mt-1">Create relatable vlog titles for daily routines, travel, and lifestyle content.</p>
-            </Link>
-            <Link
-              href="/youtube-shorts-idea-generator"
-              className="block p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 transition-all"
-            >
-              <span className="font-semibold text-slate-900">🎬 YouTube Shorts Idea Generator</span>
-              <p className="text-slate-600 text-sm mt-1">Get viral Shorts ideas for quick workout clips, fitness tips, and transformation teasers.</p>
-            </Link>
+          {/* Video Embed */}
+          <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/RZ2YP04gHEU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </div>
-        </section>
 
-        {/* Related blog posts */}
-        <section className="mb-8">
-          <h2 className="font-display text-xl font-semibold mb-4">
-            Learn More About YouTube SEO for Fitness Creators
-          </h2>
+          <div className="glass-card rounded-2xl p-6 md:p-8">
+            <h2 className="font-display text-2xl font-semibold mb-6">
+              Building Trust Through Authentic Titles
+            </h2>
+            <div className="prose prose-slate max-w-none">
+              <p>
+                The fitness industry is unfortunately saturated with snake oil, fake natural transformations, and clickbait that overpromises. While exaggeration might earn you a click today, it will destroy your channel&apos;s credibility tomorrow. YouTube&apos;s algorithm heavily favors channels with high audience retention and returning viewers. If your title promises a &ldquo;5 Minute Six Pack&rdquo; but the video delivers a generic plank routine, the viewer will click away instantly, tanking your retention metrics.
+              </p>
+              <h3>The Realistic Guide Framework</h3>
+              <p>
+                A proven strategy to stand out is to position yourself as the honest alternative. Use words like &ldquo;Realistic,&rdquo; &ldquo;Science-Based,&rdquo; &ldquo;Honest,&rdquo; and &ldquo;No BS.&rdquo;
+              </p>
+              <p>
+                For example, instead of titling a video &ldquo;Lose 10 Pounds This Week,&rdquo; a far better long-term strategy is &ldquo;How to Lose Belly Fat (A Realistic Science-Based Guide).&rdquo; This title attracts a more mature, dedicated viewer who is more likely to subscribe and watch your future content because they trust you aren&apos;t just feeding them hype.
+              </p>
+              <h3>Leveraging the &quot;Mistake&quot; Format</h3>
+              <p>
+                As mentioned earlier, the fear of doing something wrong is a potent motivator. Creating a series of &quot;mistake&quot; videos can rapidly grow your channel&apos;s authority. Titles like &ldquo;3 Diet Mistakes Keeping You Skinny Fat&rdquo; or &ldquo;The Biggest Squat Mistake You Are Making&rdquo; position you instantly as an expert who can diagnose and fix the viewer&apos;s problems.
+              </p>
+            </div>
+          </div>
+
+          {/* Examples by category */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link
-              href="/blog/youtube-titles-that-get-clicks"
-              className="glass-card rounded-xl p-5 group hover:border-purple-500/30 transition-all"
-            >
-              <span className="text-xs text-purple-400 font-medium">Titles</span>
-              <h3 className="font-display text-sm font-bold mt-1 group-hover:text-purple-400 transition-colors leading-snug">
-                How to Write YouTube Titles That Actually Get Clicks
-              </h3>
-            </Link>
-            <Link
-              href="/blog/youtube-ctr-secrets"
-              className="glass-card rounded-xl p-5 group hover:border-purple-500/30 transition-all"
-            >
-              <span className="text-xs text-purple-400 font-medium">CTR</span>
-              <h3 className="font-display text-sm font-bold mt-1 group-hover:text-purple-400 transition-colors leading-snug">
-                YouTube CTR Secrets — How to Get More Clicks on Every Video
-              </h3>
-            </Link>
+            {examplesByCategory.map((cat) => (
+              <div key={cat.category} className="glass-card rounded-2xl p-6">
+                <h3 className="font-display text-lg font-semibold mb-3">{cat.category} Titles</h3>
+                <ul className="space-y-2 text-slate-700">
+                  {cat.examples.map((example) => (
+                    <li key={example} className="flex items-start gap-2">
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" />
+                      {example}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Best practices */}
+          <div className="glass-card rounded-2xl p-6 md:p-8">
+            <h2 className="font-display text-2xl font-semibold mb-6">
+              6 Best Practices for Fitness Video Titles
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {tips.map((tip, i) => (
+                <div key={tip.title} className="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                  <h3 className="font-semibold text-slate-900 mb-2">
+                    {i + 1}. {tip.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{tip.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* How it works */}
+          <div className="glass-card rounded-2xl p-6 md:p-8">
+            <h2 className="font-display text-2xl font-semibold mb-6">
+              How Our Fitness Title Generator Works
+            </h2>
+            <ol className="space-y-4 text-slate-600 mb-8">
+              <li className="flex items-start gap-4 p-4 rounded-xl bg-slate-50">
+                <span className="w-8 h-8 rounded-full bg-purple-100 border border-purple-200 flex items-center justify-center text-sm font-bold text-purple-600 shrink-0">1</span>
+                <div>
+                  <strong className="text-slate-900 block mb-1">Enter your fitness topic</strong>
+                  <p className="text-sm">Describe your workout, transformation, or nutrition video concisely.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-4 p-4 rounded-xl bg-slate-50">
+                <span className="w-8 h-8 rounded-full bg-purple-100 border border-purple-200 flex items-center justify-center text-sm font-bold text-purple-600 shrink-0">2</span>
+                <div>
+                  <strong className="text-slate-900 block mb-1">AI generates 10 titles</strong>
+                  <p className="text-sm">We output variations tailored to high-intent searches, emotional hooks, and browse features.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-4 p-4 rounded-xl bg-slate-50">
+                <span className="w-8 h-8 rounded-full bg-purple-100 border border-purple-200 flex items-center justify-center text-sm font-bold text-purple-600 shrink-0">3</span>
+                <div>
+                  <strong className="text-slate-900 block mb-1">Copy and use</strong>
+                  <p className="text-sm">Paste the most compelling title directly into your YouTube Studio dashboard.</p>
+                </div>
+              </li>
+            </ol>
+            <div className="text-center md:text-left">
+              <Link
+                href="/youtube-title-generator"
+                className="btn-primary inline-flex rounded-xl px-6 py-3.5 font-semibold text-lg"
+              >
+                Open Full Title Generator
+              </Link>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="glass-card rounded-2xl p-6 md:p-8">
+            <h2 className="font-display text-2xl font-semibold mb-6">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-6">
+              {faqs.map((faq) => (
+                <div key={faq.question} className="border-b border-slate-100 last:border-0 pb-6 last:pb-0">
+                  <h3 className="font-semibold text-slate-900 mb-2 text-lg">{faq.question}</h3>
+                  <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Cross-links */}
+          <div className="glass-card rounded-2xl p-6 md:p-8">
+            <h2 className="font-display text-2xl font-semibold mb-6">
+              Explore More YouTube SEO Tools
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link
+                href="/tools/youtube-title-generator-for-cooking"
+                className="block p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 hover:shadow-md transition-all"
+              >
+                <span className="font-semibold text-slate-900 text-lg mb-1 block">🍳 Title Generator for Cooking</span>
+                <p className="text-slate-600 text-sm">Generate mouthwatering titles for recipe tutorials and healthy meal prep content.</p>
+              </Link>
+              <Link
+                href="/tools/youtube-title-generator-for-vlogs"
+                className="block p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 hover:shadow-md transition-all"
+              >
+                <span className="font-semibold text-slate-900 text-lg mb-1 block">🎬 Title Generator for Vlogs</span>
+                <p className="text-slate-600 text-sm">Create relatable vlog titles for daily routines, travel, and lifestyle content.</p>
+              </Link>
+              <Link
+                href="/youtube-shorts-idea-generator"
+                className="block p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 hover:shadow-md transition-all"
+              >
+                <span className="font-semibold text-slate-900 text-lg mb-1 block">📱 YouTube Shorts Idea Generator</span>
+                <p className="text-slate-600 text-sm">Get viral Shorts ideas for quick workout clips, fitness tips, and transformation teasers.</p>
+              </Link>
+              <Link
+                href="/youtube-tags-generator"
+                className="block p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-500/30 hover:shadow-md transition-all"
+              >
+                <span className="font-semibold text-slate-900 text-lg mb-1 block">🏷️ YouTube Tags Generator</span>
+                <p className="text-slate-600 text-sm">Generate optimized tags for your workouts to boost discoverability.</p>
+              </Link>
+            </div>
+          </div>
+
+          {/* Related blog posts */}
+          <div>
+            <h2 className="font-display text-2xl font-semibold mb-6">
+              Learn More About YouTube SEO for Fitness Creators
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link
+                href="/blog/youtube-titles-that-get-clicks"
+                className="glass-card rounded-2xl p-6 group hover:border-purple-500/30 transition-all hover:shadow-lg"
+              >
+                <span className="inline-block px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-xs font-bold mb-3">Titles</span>
+                <h3 className="font-display text-xl font-bold group-hover:text-purple-600 transition-colors leading-snug mb-2">
+                  How to Write YouTube Titles That Actually Get Clicks
+                </h3>
+                <p className="text-slate-600 text-sm">Learn the psychological elements behind viral titles that convert impressions into views.</p>
+              </Link>
+              <Link
+                href="/blog/youtube-ctr-secrets"
+                className="glass-card rounded-2xl p-6 group hover:border-purple-500/30 transition-all hover:shadow-lg"
+              >
+                <span className="inline-block px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-xs font-bold mb-3">CTR</span>
+                <h3 className="font-display text-xl font-bold group-hover:text-purple-600 transition-colors leading-snug mb-2">
+                  YouTube CTR Secrets — How to Get More Clicks on Every Video
+                </h3>
+                <p className="text-slate-600 text-sm">Discover how aligning your thumbnail, title, and topic can drastically improve your click-through rate.</p>
+              </Link>
+            </div>
           </div>
         </section>
       </main>

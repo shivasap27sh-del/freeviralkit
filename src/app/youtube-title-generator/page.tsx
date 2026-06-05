@@ -3,6 +3,7 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Free YouTube Title Generator — AI-Powered Viral Titles for More Clicks',
@@ -126,6 +127,10 @@ export default function TitleGeneratorPage() {
             </div>
           </div>
 
+          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+            <Image src="/images/seo_dashboard.png" alt="YouTube Growth Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
+          </div>
+
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
               The Anatomy of a High-CTR YouTube Title
@@ -161,120 +166,93 @@ export default function TitleGeneratorPage() {
             </div>
           </div>
 
+          <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/DvwO_pA0M6c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          </div>
+
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              Title Optimization Strategies by Content Type
+              Understanding YouTube&apos;s Semantic Search and AI Algorithms
             </h2>
             <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
               <p>
-                Different types of YouTube content benefit from different title approaches. A tutorial title should emphasize clarity and the end result. A vlog title should spark emotional curiosity. A product review should include the product name and a verdict hint. Here&apos;s how to adapt your strategy:
+                The days of exact-match keyword stuffing are long over. In the past, creators would try to write titles like &quot;How to Lose Weight Fast | Weight Loss Diet | Lose Weight Quick&quot;. This tactic is no longer effective because YouTube&apos;s algorithm now utilizes natural language processing (NLP) and semantic search. This means the algorithm understands the <em>context</em> and <em>meaning</em> behind your title, not just the individual words.
               </p>
-              <ul className="space-y-2 ml-1">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" />
-                  <span className="dark:text-slate-300"><strong className="text-slate-900 dark:text-white">Tutorials &amp; How-Tos:</strong> Lead with the outcome. &quot;How to Edit Videos Like a Pro in DaVinci Resolve&quot; beats &quot;DaVinci Resolve Tutorial.&quot;</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" />
-                  <span className="dark:text-slate-300"><strong className="text-slate-900 dark:text-white">Listicles:</strong> Always include the number. &quot;12 Budget Travel Hacks You Need to Know&quot; sets expectations and increases engagement.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" />
-                  <span className="dark:text-slate-300"><strong className="text-slate-900 dark:text-white">Reviews:</strong> Include the product name and a verdict hint. &quot;iPhone 16 Review — Is It Worth Upgrading?&quot; outperforms &quot;New iPhone Review.&quot;</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" />
-                  <span className="dark:text-slate-300"><strong className="text-slate-900 dark:text-white">Vlogs &amp; Entertainment:</strong> Lean into emotion and story. &quot;I Tried Living on $1 a Day for a Week&quot; creates immediate curiosity.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" />
-                  <span className="dark:text-slate-300"><strong className="text-slate-900 dark:text-white">Shorts:</strong> Keep it punchy — under 40 characters. The hook must be immediate since Shorts titles appear briefly.</span>
-                </li>
-              </ul>
+              <p>
+                For example, if someone searches for &quot;how to drop a few pounds before summer,&quot; YouTube understands that this means the same thing as &quot;quick weight loss tips.&quot; Your title should be written for a human first, and a search engine second. It needs to read naturally, sound conversational, and convey emotion. Our AI title generator inherently understands semantic search, ensuring the titles it outputs contain related latent semantic indexing (LSI) keywords that boost your relevance without looking spammy.
+              </p>
+              <p>
+                Furthermore, YouTube uses AI to analyze the visual contents of your video, your auto-generated subtitles, and your thumbnail image. Your title must perfectly align with all of these elements to create a cohesive package. If the algorithm detects a mismatch—for instance, a title promising a tutorial but a video consisting entirely of a vlog—it will rapidly suppress the video&apos;s reach.
+              </p>
             </div>
           </div>
 
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              Common Title Mistakes That Kill Your Views
+              The Difference Between Search Titles and Browse Titles
             </h2>
             <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
               <p>
-                Even experienced creators fall into title traps that silently suppress their reach. One of the most damaging mistakes is <strong className="text-slate-900 dark:text-white">keyword stuffing</strong> — cramming multiple keywords into a title so it reads like a search query instead of a compelling headline. YouTube&apos;s algorithm is sophisticated enough to understand context; you don&apos;t need to repeat variations of the same keyword.
+                A crucial concept that separates amateur creators from professionals is understanding the two primary traffic sources on YouTube: <strong>Search</strong> and <strong>Browse Features</strong> (the Home page and Suggested videos). You must decide which traffic source you are primarily targeting before you write your title, because they require completely different strategies.
               </p>
               <p>
-                Another common error is being too vague. A title like &quot;My Experience&quot; or &quot;This Was Crazy&quot; gives the viewer zero reason to click. Without context, even your subscribers won&apos;t know if the video is relevant to their interests. Always give the viewer enough information to understand what they&apos;ll gain from watching.
+                <strong>Search-Driven Titles:</strong> These are highly literal and specific. They target viewers who have a specific problem and are actively looking for a solution. Examples include &quot;How to Change a Tire on a 2018 Honda Civic&quot; or &quot;Best Budget Microphones for Podcasting.&quot; These titles might not go viral and get millions of views overnight, but they provide consistent, evergreen traffic that can last for years.
               </p>
               <p>
-                Finally, many creators write their title as an afterthought, typing whatever comes to mind right before hitting publish. This is backwards. Your title should be one of the first things you create — ideally before you even film — because it shapes the entire framing of your content. If you can&apos;t write a compelling title, it might be a signal that the video concept itself needs refining.
+                <strong>Browse-Driven Titles:</strong> These titles target broad appeal and human curiosity. The viewer wasn&apos;t actively searching for this topic, so the title has to convince them to stop scrolling and click. Examples include &quot;I Survived 50 Hours in Antarctica&quot; or &quot;Why Everyone is Quitting This Job.&quot; These titles are designed for virality and high initial velocity, leaning heavily into emotion, drama, and extreme outcomes.
+              </p>
+              <p>
+                When using our tool, consider your channel size. If you have under 10,000 subscribers, you should generally lean towards Search-Driven titles to build an initial audience base. Once you have a loyal following, you can pivot to Browse-Driven titles to reach a massive, broader audience.
               </p>
             </div>
           </div>
 
-          {/* Tips Section */}
-          <div>
-            <h3 className="font-display text-xl font-bold mb-3 text-slate-900 dark:text-white">
-              Quick Title Optimization Checklist
-            </h3>
-            <ul className="space-y-2 text-slate-600">
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Include your main keyword in the first 50 characters</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Use numbers and specific details (e.g. &quot;in 5 minutes&quot;)</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Add 1-2 relevant emojis to increase CTR by up to 33%</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Append 1-2 hashtags at the end for discoverability</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Avoid misleading clickbait — it hurts watch time and retention</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">A/B test your title within 24-48 hours if impressions are low</span></li>
-            </ul>
-          </div>
-
-          {/* Related Blog Posts */}
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              Learn More About YouTube SEO
+              A/B Testing Your Titles: The First 24 Hours
             </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <Link
-                href="/blog/youtube-titles-that-get-clicks"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
-              >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
-                  YouTube Titles That Get Clicks
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Deep dive into title formulas used by top creators to maximize CTR.
-                </p>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                The first 24 to 48 hours after publishing a video are the most critical for its long-term success. During this window, YouTube is pushing your video out to your core audience (subscribers and returning viewers) to test the waters. If your Click-Through Rate (CTR) is low during this initial test, the algorithm will assume the video is uninteresting and will stop recommending it to new people.
+              </p>
+              <p>
+                This is why you should always have at least 3 backup titles ready before you hit publish. If your video is underperforming your channel&apos;s average CTR after 3-4 hours, you should immediately swap out the title and thumbnail for a different variation. Many of MrBeast&apos;s most viral videos were technically &quot;flops&quot; in the first few hours until he changed the title and thumbnail to something more compelling, completely resurrecting the video&apos;s trajectory.
+              </p>
+              <p>
+                Use our generator to brainstorm multiple angles. If your first title is highly descriptive (e.g., &quot;How to Build a Custom PC&quot;), have a secondary title ready that leans into curiosity (e.g., &quot;The Biggest Mistake People Make Building PCs&quot;). Being agile and willing to adapt in real-time is a massive competitive advantage.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              How Click-Through Rate (CTR) and Audience Retention Work Together
+            </h2>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                It is a common misconception that a high Click-Through Rate alone will make a video go viral. In reality, CTR is just one half of the equation. The other half is <strong>Audience Retention</strong> (Average View Duration). Your title makes a promise; your video must deliver on that promise.
+              </p>
+              <p>
+                If you use an incredibly clickbaity title to artificially inflate your CTR to 15%, but viewers realize the video is unrelated and leave after 10 seconds, YouTube will penalize the video heavily. The algorithm views this as a negative viewer experience. Conversely, if you have a moderate CTR of 5% but viewers watch 70% of the video, YouTube recognizes this as highly satisfying content and will actively push it out to wider audiences.
+              </p>
+              <p>
+                The perfect title sits at the exact intersection of high curiosity and absolute honesty. It should tease the most exciting or valuable part of the video without misleading the viewer. When you generate titles using our AI, always review them and ask yourself: &quot;Can my video actually back this claim up?&quot; If the answer is yes, you have found a winning title.
+              </p>
+            </div>
+          </div>
+
+          {/* Related Tools CTA */}
+          <div className="glass-card rounded-2xl p-6 text-center mt-12">
+            <p className="text-slate-600 dark:text-slate-400 mb-4">Need the full SEO package? Get titles + descriptions + hashtags + tags all at once.</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/" className="inline-flex items-center gap-2 btn-primary rounded-xl px-6 py-3 font-semibold">
+                Try Full SEO Optimizer →
               </Link>
-              <Link
-                href="/blog/youtube-ctr-secrets"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
-              >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
-                  YouTube CTR Secrets
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  What actually moves the needle on click-through rate beyond titles.
-                </p>
+              <Link href="/youtube-hashtag-generator" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-purple-400/40 transition-colors">
+                Hashtag Generator
               </Link>
-              <Link
-                href="/blog/youtube-seo-guide"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
-              >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
-                  The Complete YouTube SEO Guide
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Everything you need to know about ranking videos in YouTube search.
-                </p>
-              </Link>
-              <Link
-                href="/youtube-description-generator"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
-              >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
-                  YouTube Description Generator →
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Generate SEO-optimized descriptions to complement your titles.
-                </p>
+              <Link href="/youtube-tags-generator" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-purple-400/40 transition-colors">
+                Tags Generator
               </Link>
             </div>
           </div>
@@ -302,21 +280,6 @@ export default function TitleGeneratorPage() {
             </div>
           </div>
 
-          {/* Related Tools CTA */}
-          <div className="glass-card rounded-2xl p-6 text-center">
-            <p className="text-slate-600 dark:text-slate-400 mb-4">Need the full SEO package? Get titles + descriptions + hashtags + tags all at once.</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/" className="inline-flex items-center gap-2 btn-primary rounded-xl px-6 py-3 font-semibold">
-                Try Full SEO Optimizer →
-              </Link>
-              <Link href="/youtube-hashtag-generator" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-purple-400/40 transition-colors">
-                Hashtag Generator
-              </Link>
-              <Link href="/youtube-tags-generator" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-purple-400/40 transition-colors">
-                Tags Generator
-              </Link>
-            </div>
-          </div>
         </section>
       </main>
     </>

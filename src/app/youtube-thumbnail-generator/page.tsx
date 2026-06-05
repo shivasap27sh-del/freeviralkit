@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import ThumbnailGeneratorClient from '@/components/tools/ThumbnailGeneratorClient';
 import { Image as ImageIcon, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -100,12 +101,16 @@ export default function ThumbnailGeneratorPage() {
                 Your thumbnail is arguably the most important part of your video. If nobody clicks, nobody watches. A common mistake new creators make is just taking a screenshot of their video and slapping their exact video title on it as text. <strong>This does not work.</strong>
               </p>
               <p>
-                A high-converting thumbnail doesn't just describe the video; it tells a visual story. It creates an information gap that forces the viewer's brain to ask a question. The only way the viewer can get the answer is by clicking on the video.
+                A high-converting thumbnail doesn&apos;t just describe the video; it tells a visual story. It creates an information gap that forces the viewer&apos;s brain to ask a question. The only way the viewer can get the answer is by clicking on the video. If they feel they already know the outcome just by looking at the thumbnail, there is zero incentive to actually invest their time. This is why the element of mystery is so closely guarded by top-tier creators.
               </p>
               <p>
                 Our <strong>YouTube Thumbnail Idea Generator</strong> uses data-backed psychology to give you visual layouts that create <em>contrast</em>, <em>emotion</em>, and <em>curiosity</em>. Instead of just generating an image, we provide the architectural blueprint: we separate the concept into the visual background elements, the facial expressions needed, and the precise text overlay.
               </p>
             </div>
+          </div>
+
+          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+            <Image src="/images/metadata_funnel.png" alt="YouTube Growth Analytics" width={1200} height={630} className="w-full h-auto object-cover" />
           </div>
 
           {/* Article Section 2 */}
@@ -124,10 +129,10 @@ export default function ThumbnailGeneratorPage() {
               </div>
               <div>
                 <h4 className="font-bold text-lg text-slate-900 dark:text-white flex items-center gap-2 mb-2">
-                  <CheckCircle2 className="w-5 h-5 text-amber-500" /> 2. Complement, Don't Repeat
+                  <CheckCircle2 className="w-5 h-5 text-amber-500" /> 2. Complement, Don&apos;t Repeat
                 </h4>
                 <p className="text-slate-600 dark:text-slate-400">
-                  Your thumbnail text should <em>add</em> context to your title, not repeat it. If the title explains what the video is about, the thumbnail text should provide the emotional hook. For example, if the title is "Testing Cheap Microphones", the thumbnail text should say "Don't Buy This!"
+                  Your thumbnail text should <em>add</em> context to your title, not repeat it. If the title explains what the video is about, the thumbnail text should provide the emotional hook. For example, if the title is &quot;Testing Cheap Microphones&quot;, the thumbnail text should say &quot;Don&apos;t Buy This!&quot;
                 </p>
               </div>
               <div>
@@ -144,14 +149,75 @@ export default function ThumbnailGeneratorPage() {
           {/* Article Section 3 */}
           <div>
             <h3 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
-              Using Faces and Emotion to Drive Clicks
+              The Psychology of Color in YouTube Thumbnails
             </h3>
             <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
               <p>
-                Humans are biologically programmed to look at faces and recognize emotions. This is why you see so many top YouTubers (like MrBeast) using highly exaggerated facial expressions in their thumbnails. It isn't just a trend; it's basic psychology.
+                Color theory is one of the most underutilized strategies among beginner YouTubers. When a user is scrolling through their subscription feed or the home page, you have roughly 0.25 seconds to capture their attention. Color is processed by the brain before shapes, text, or even faces. 
               </p>
               <p>
-                When designing your thumbnail based on our AI concepts, ensure that if a face is included, it is large, clear, and expressing a strong emotion (shock, fear, extreme joy, or confusion). A blank, staring expression will not generate the same click-through rate as an emotive one.
+                Because the YouTube interface is heavily reliant on White, Black, and Red, you want to avoid using these as the primary background colors for your thumbnails. If you use a white background in light mode, your thumbnail blends into the platform. If you use a black background in dark mode, it disappears. Instead, rely on vibrant colors that break the UI&apos;s pattern. Bright yellow, neon green, cyan, and deep purple are excellent choices because they create immediate visual disruption.
+              </p>
+              <p>
+                Furthermore, different colors evoke different psychological responses. Yellow and orange communicate high energy, excitement, and urgency—which is why they are heavily favored by gaming and challenge creators. Blue communicates trust and authority, making it the dominant choice for tech reviews, educational content, and personal finance videos. Green often implies money, growth, or a &quot;go&quot; signal. By intentionally selecting your color palette, you are subliminally communicating the vibe of your video before the viewer even reads a single word.
+              </p>
+            </div>
+          </div>
+
+          <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/f7kK29t2eXQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          </div>
+
+          {/* Article Section 4 */}
+          <div>
+            <h3 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+              A/B Testing Your Thumbnails: A Data-Driven Approach
+            </h3>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                The days of uploading a video and hoping for the best are long gone. Professional creators treat their thumbnails like a continuous experiment. YouTube now offers native A/B testing (often called &quot;Test &amp; Compare&quot;), which allows you to upload up to three different thumbnails for a single video. The algorithm will show these variations to different segments of your audience and determine a clear winner based on the highest Click-Through Rate (CTR) and overall watch time.
+              </p>
+              <p>
+                When conducting an A/B test, it is critical that you only change one major variable at a time. If you test three wildly different designs, you won&apos;t know why the winner actually won. Was it the face? The text? The background color? Instead, start by testing two different text overlays on the exact same background. Once you find the winning text, you can then test different background images or facial expressions. This scientific approach ensures that your channel improves incrementally over time.
+              </p>
+              <p>
+                Remember that a good CTR is relative to your niche. While gaming or entertainment channels might regularly see a 10% to 15% CTR, an educational or tutorial channel might be doing exceptionally well with a 5% to 7% CTR. The goal of A/B testing is not to hit an arbitrary number, but to consistently beat your own channel&apos;s average.
+              </p>
+            </div>
+          </div>
+
+          {/* Article Section 5 */}
+          <div>
+            <h3 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+              Mobile vs. Desktop: Designing for Different Screens
+            </h3>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                A thumbnail that looks incredible on your 27-inch 4K monitor might be completely illegible on a 6-inch smartphone screen. Since mobile devices account for the vast majority of YouTube viewership, you must adopt a &quot;mobile-first&quot; design philosophy. 
+              </p>
+              <p>
+                Before finalizing any design, zoom out until the thumbnail is the size of a postage stamp. Can you still read the text? Is the emotion on the face still recognizable? If the answer is no, you need to increase the size of your core elements and remove background clutter. Many creators fall into the trap of adding too many small details, Easter eggs, or complex backgrounds. While these might seem clever during the editing process, they just look like a blurry mess on a phone.
+              </p>
+              <p>
+                Additionally, you must be hyper-aware of YouTube&apos;s UI overlays. The bottom right corner of your thumbnail will always be covered by the video duration timestamp. Never place important text, a subject&apos;s face, or a crucial visual element in that corner, as it will be completely obscured. Similarly, the top right corner often features icons like the &quot;Watch Later&quot; clock or the playlist indicator. Keep your critical information centered or aligned to the left side of the frame to ensure it is always visible.
+              </p>
+            </div>
+          </div>
+
+          {/* Article Section 6 */}
+          <div>
+            <h3 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+              Faces and Eye Contact: The Human Connection
+            </h3>
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>
+                Humans are biologically programmed to look at faces and recognize emotions. This is why you see so many top YouTubers using highly exaggerated facial expressions in their thumbnails. It isn&apos;t just a trend; it&apos;s basic psychology. When we see someone expressing shock, fear, extreme joy, or confusion, our mirror neurons fire, and we naturally want to know the context behind that emotion.
+              </p>
+              <p>
+                Eye contact is particularly powerful. A subject looking directly into the camera lens creates an immediate sense of intimacy and connection with the viewer. It feels as though the person in the thumbnail is speaking directly to you. Alternatively, you can use the subject&apos;s eyeline to direct the viewer&apos;s attention. If the person in the thumbnail is looking off to the side, the viewer will naturally follow their gaze to see what they are looking at. This is a brilliant way to draw attention to a specific object, a text overlay, or a dramatic before-and-after comparison.
+              </p>
+              <p>
+                When designing your thumbnail based on our AI concepts, ensure that if a face is included, it is large, clear, and expressing a strong emotion. A blank, staring expression will not generate the same click-through rate as an emotive one. Don&apos;t be afraid to exaggerate your expressions; what feels silly in real life often translates perfectly to a small thumbnail on a crowded screen.
               </p>
             </div>
           </div>

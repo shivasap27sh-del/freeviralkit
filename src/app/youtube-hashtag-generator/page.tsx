@@ -3,6 +3,7 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import HashtagGeneratorClient from '@/components/tools/HashtagGeneratorClient';
 import { Hash } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Free YouTube Hashtag Generator — Trending Hashtags for More Views',
@@ -108,98 +109,109 @@ export default function HashtagGeneratorPage() {
         <HashtagGeneratorClient />
 
         {/* Educational Content */}
-        <section className="mt-16 space-y-10">
+        <section className="mt-16 space-y-12">
           <div>
-            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 text-slate-900 dark:text-white">
-              Understanding YouTube Hashtags and Why They Matter
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-white">
+              Understanding YouTube Hashtags and Why They Matter in 2024
             </h2>
-            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-6 text-lg">
               <p>
-                YouTube hashtags are one of the most underutilized discovery tools on the platform. While most creators focus heavily on titles, thumbnails, and tags, hashtags offer a unique advantage: they create <strong className="text-slate-900 dark:text-white">clickable, browsable topic pages</strong> that viewers actively explore. When someone clicks a hashtag on any video, they land on a curated feed of all videos using that hashtag — and your video could be among them.
+                YouTube hashtags are one of the most underutilized discovery tools on the platform today. While the vast majority of creators pour all their energy into perfecting their titles, tweaking their thumbnails, and stuffing backend tags, hashtags remain a critical yet frequently ignored piece of the optimization puzzle. They offer an entirely unique advantage: they create <strong className="text-slate-900 dark:text-white">clickable, browsable topic pages</strong> that viewers actively explore when looking for specific content or trends. When someone clicks a hashtag on any video, they immediately land on a curated feed of all videos utilizing that exact hashtag. Your video could easily be among them, acting as a powerful secondary entry point to your channel.
+              </p>
+              
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+                <Image src="/images/seo_dashboard.png" alt="YouTube Hashtag SEO Funnel" width={1200} height={630} className="w-full h-auto object-cover" />
+              </div>
+
+              <p>
+                To fully grasp why this is important, we must look at how YouTube organizes its massive library. With over 800 million videos currently hosted on the platform and millions more uploaded every single day, accurately categorizing content and helping viewers find what they actually want to watch is a monumental engineering challenge. Hashtags solve a piece of this puzzle by creating hyper-specific, topic-level groupings that cut across channel size, subscriber counts, and even upload dates. A relatively small, undiscovered channel using the right hashtag strategy can suddenly find their video sitting right alongside uploads from mega-creators with millions of subscribers. It levels the playing field in a way that standard search engine optimization sometimes struggles to achieve.
               </p>
               <p>
-                YouTube introduced hashtags to help organize the massive volume of content uploaded every day. With over 800 million videos on the platform, helping viewers find relevant content is a constant challenge. Hashtags solve this by creating topic-level groupings that cut across channels, subscriber counts, and upload dates. A small channel using the right hashtag can appear alongside videos from creators with millions of subscribers.
-              </p>
-              <p>
-                The most important thing to understand about YouTube hashtags is their placement. When you add hashtags to your video description, <strong className="text-slate-900 dark:text-white">the first three automatically appear as clickable blue links above your video title</strong>. This is premium real estate — it&apos;s visible before the viewer even reads your description, making those three slots critical for your hashtag strategy.
+                The absolute most crucial element to understand about YouTube hashtags is their physical placement on the screen and how viewers interact with them. When you add hashtags anywhere in your video description, <strong className="text-slate-900 dark:text-white">the first three automatically surface as clickable blue links positioned directly above your video title</strong>. This is incredibly premium real estate. It is visible before the viewer even has to click &quot;show more&quot; to read your description. Making sure those three slots are occupied by your most relevant, high-converting terms is non-negotiable if you want to maximize your organic reach.
               </p>
             </div>
           </div>
 
           <div>
-            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              How to Build an Effective Hashtag Strategy
+            <h2 className="font-display text-3xl font-bold mb-6 text-slate-900 dark:text-white">
+              How to Build an Unstoppable Hashtag Strategy
             </h2>
-            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-6 text-lg">
               <p>
-                A strong hashtag strategy balances three categories: <strong className="text-slate-900 dark:text-white">broad hashtags</strong> with high search volume, <strong className="text-slate-900 dark:text-white">niche hashtags</strong> targeting your specific audience, and <strong className="text-slate-900 dark:text-white">branded hashtags</strong> unique to your channel. Getting this mix right is what separates creators who gain traction from hashtags and those who see no results.
+                A truly effective, view-generating hashtag strategy is never just throwing random words into a description box and hoping for the best. It requires a balanced, deliberate approach that targets different levels of search intent. Specifically, it balances three distinct categories: <strong className="text-slate-900 dark:text-white">broad hashtags</strong> with massive global search volume, <strong className="text-slate-900 dark:text-white">niche hashtags</strong> that target your exact, hyper-specific demographic, and <strong className="text-slate-900 dark:text-white">branded hashtags</strong> that are entirely unique to your channel identity. Mastering this three-pronged mix is precisely what separates elite creators from everyone else.
               </p>
-              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
-                Broad Hashtags for Maximum Exposure
+              
+              <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
+                Broad Hashtags for Maximum Theoretical Exposure
               </h3>
               <p>
-                Broad hashtags like #Cooking, #Gaming, or #Fitness have enormous search volumes. They expose your video to the widest possible audience, but the competition is fierce. Use 2-3 broad hashtags per video to cast a wide net, but don&apos;t rely on them alone — your video will be competing with millions of others for visibility in those feeds.
+                Broad hashtags include massive, universally understood terms like #Cooking, #Gaming, #Fitness, or #Vlog. These terms naturally possess astronomical search volumes, sometimes numbering in the tens of millions of queries per month. Including them exposes your video to the widest possible theoretical audience. However, because they are so broad, the competition is extraordinarily fierce. If you only use broad hashtags, your video will be instantly buried under millions of other uploads. The correct approach is to use exactly 2 or 3 broad hashtags per video simply to cast a wide net and signal the general genre of your content to the algorithm, but you should never rely on them as your primary driver of traffic.
               </p>
-              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
-                Niche Hashtags for Targeted Discovery
+
+              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rvPkN0Otkns" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              </div>
+
+              <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
+                Niche Hashtags for Targeted, High-Retention Discovery
               </h3>
               <p>
-                Niche hashtags are where the real value lies. Instead of #Cooking, try #MealPrepForBeginners or #30MinuteDinners. These hashtags have lower competition but attract viewers who are actively searching for exactly what you offer. Viewers who find you through niche hashtags are more likely to watch the full video, subscribe, and return for more — they&apos;re your ideal audience.
+                Niche hashtags are the secret weapon of fast-growing channels. This is where the real algorithmic value lies. Instead of competing for a massive term like #Cooking, you should target hyper-specific phrases like #MealPrepForBeginners, #VeganKetoRecipes, or #30MinuteDinners. These specialized hashtags have significantly lower overall competition, meaning your video has a much higher chance of ranking at the top of the hashtag feed. More importantly, they attract viewers who are actively, specifically searching for the exact solution you provide. A viewer who finds your video through a niche hashtag is highly motivated; they are mathematically far more likely to watch the entire video, subscribe to your channel, and engage with your content. They are your ideal, high-retention audience.
               </p>
-              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
-                Branded Hashtags for Channel Identity
+              
+              <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
+                Branded Hashtags for Channel Identity and Binge-Watching
               </h3>
               <p>
-                Creating a unique hashtag for your channel or series builds a browsable library of your content. When viewers click your branded hashtag, they see only your videos — it&apos;s essentially a custom playlist that viewers create by clicking. This is especially powerful for series content, challenges, or recurring video formats.
+                Creating a completely unique hashtag for your channel name or a specific, ongoing series builds a beautifully browsable library of your content. When viewers click your branded hashtag (for example, #YourChannelNameCooks or #MyTechReviewSeries), they see absolutely nothing but your videos. It effectively functions as a custom, distraction-free playlist that viewers voluntarily enter. This is profoundly powerful for driving binge-watching sessions, which signals to the YouTube algorithm that your content keeps people on the platform for long periods. Every single video you upload should contain at least one branded hashtag.
               </p>
             </div>
           </div>
 
-          <div>
-            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              Hashtag Best Practices Every Creator Should Follow
+          <div className="glass-card rounded-2xl p-8 border-t-4 border-t-pink-400">
+            <h2 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+              The Ultimate Hashtag Best Practices Checklist
             </h2>
-            <ul className="space-y-2 text-slate-600">
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Use <strong className="text-slate-900 dark:text-white">8-15 hashtags</strong> per video — enough for coverage without looking spammy</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Put your 3 strongest hashtags first — they appear above the title as clickable links</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Use CamelCase for multi-word hashtags (#HowToCook) for better readability</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Mix popular broad hashtags with niche-specific ones for balanced discovery</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Never use irrelevant trending hashtags — YouTube may penalize your video</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Research hashtag competition — avoid oversaturated hashtags with millions of videos</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Update hashtags on older videos that aren&apos;t performing well in search</span></li>
+            <ul className="space-y-4 text-slate-600 text-lg">
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Target exactly <strong className="text-slate-900 dark:text-white">8 to 15 hashtags</strong> per upload. This provides enough algorithmic signals without triggering spam filters.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Stack your 3 absolute most critical hashtags at the very top of your list. These are the ones that will be visually displayed above your title.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Always use CamelCase formatting for multi-word phrases (e.g., #HowToCook instead of #howtocook) to improve accessibility and human readability.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Strategically mix high-volume broad hashtags with low-competition niche tags to create a diversified traffic portfolio.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Never, under any circumstances, use wildly irrelevant trending hashtags just to get views. YouTube&apos;s algorithm will detect this bounce rate and severely penalize the video&apos;s reach.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-pink-400 shrink-0" /><span className="dark:text-slate-300">Periodically audit and update the hashtags on your older, underperforming videos to align with current search trends.</span></li>
             </ul>
           </div>
 
           <div>
-            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              YouTube Shorts and Hashtags: A Special Relationship
+            <h2 className="font-display text-3xl font-bold mb-6 text-slate-900 dark:text-white">
+              YouTube Shorts and Hashtags: The Algorithmic Connection
             </h2>
-            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-6 text-lg">
               <p>
-                Hashtags play an outsized role in YouTube Shorts discovery. Unlike long-form videos where titles and thumbnails drive most clicks, Shorts rely heavily on the algorithm&apos;s ability to match content with interested viewers. Hashtags provide direct topic signals that help the Shorts algorithm understand and distribute your content more effectively.
+                If you are creating short-form content, you must understand that hashtags play a significantly outsized role in YouTube Shorts discovery compared to long-form content. On traditional videos, your thumbnail and your title do the heavy lifting of convincing a human being to click. However, the Shorts feed is a fundamentally different environment. Viewers do not click to watch a Short; the algorithm serves it to them directly in an endless, rapid-fire feed. Because of this, the algorithm relies incredibly heavily on backend metadata—specifically hashtags—to understand the exact context and target demographic for your Short.
               </p>
               <p>
-                The #Shorts hashtag itself has been a subject of debate. While YouTube has stated it&apos;s not required for a video to be treated as a Short, many creators report better initial distribution when including it. Beyond #Shorts, adding <strong className="text-slate-900 dark:text-white">3-5 topic-specific hashtags</strong> to your Short&apos;s description gives the algorithm clear signals about who should see your content.
+                The inclusion of the #Shorts hashtag itself has been the subject of endless debate within the creator community. While YouTube engineers have officially stated that the #Shorts tag is not strictly mandatory for a vertical video to be indexed properly in the Shorts shelf, thousands of creators consistently report slightly faster initial indexing and wider early distribution when they include it. It is generally considered a best practice to keep it.
               </p>
               <p>
-                For Shorts, trending hashtags become especially powerful. Because the Shorts feed is algorithmically curated and heavily influenced by trending topics, aligning your hashtags with current trends can dramatically boost your Short&apos;s reach. Our generator identifies trending hashtags in your niche so you can capitalize on what&apos;s hot right now.
+                Beyond simply tagging it as a Short, you must add <strong className="text-slate-900 dark:text-white">3 to 5 highly specific topical hashtags</strong> to the description of your Short. This provides the algorithm with the clear, unambiguous signals it needs to test your video with the right audience cohort. Because the Shorts feed is highly sensitive to real-time, viral trends, aligning your Shorts hashtags with current cultural moments or trending audio can result in explosive, exponential viewership growth. Our AI generator constantly monitors these micro-trends so you can capitalize on them before they fade.
               </p>
             </div>
           </div>
 
           <div>
-            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              Common Hashtag Mistakes That Limit Your Reach
+            <h2 className="font-display text-3xl font-bold mb-6 text-slate-900 dark:text-white">
+              Dangerous Hashtag Mistakes That Destroy Your Reach
             </h2>
-            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-6 text-lg">
               <p>
-                The most common mistake creators make is <strong className="text-slate-900 dark:text-white">using more than 15 hashtags</strong>. YouTube explicitly states that exceeding this limit causes all hashtags to be ignored — not just the extras, but every single one. This effectively removes a discovery channel from your video entirely.
+                The single most common, and most devastating, mistake creators make with hashtags is <strong className="text-slate-900 dark:text-white">exceeding the strict 15-hashtag limit</strong>. YouTube&apos;s official documentation explicitly states that if a video contains more than 15 hashtags, the algorithm will completely ignore every single one of them. It does not just ignore the 16th hashtag; it ignores all of them, completely stripping your video of this powerful discovery mechanism. Less is often more.
               </p>
               <p>
-                Another frequent error is using hashtags only in the title instead of the description. While title hashtags work, they consume valuable character space that could be used for keywords and hooks. The best practice is to place hashtags at the bottom of your description where they don&apos;t interfere with your description&apos;s readability, while still getting the first three displayed above the title.
+                Another incredibly frequent error is placing hashtags directly inside the title text instead of letting them live in the description. While title hashtags technically function as clickable links, they consume desperately needed character space that should be reserved for emotional hooks and high-impact SEO keywords. The superior, professional strategy is to craft a compelling, human-readable title, and place your hashtags at the very bottom of your video description. YouTube will automatically extract the first three and neatly display them above the title anyway, giving you the best of both worlds.
               </p>
               <p>
-                Using spaces or special characters within hashtags breaks them. #How To Cook becomes just #How, losing the full phrase. Always write multi-word hashtags as a single string: #HowToCook. Similarly, avoid hashtags that are too long — #HowToCookItalianPastaFromScratchForBeginners is unwieldy and unlikely to be searched. Keep hashtags concise and searchable.
+                Finally, many beginners make formatting errors that render their tags useless. Inserting spaces or punctuation inside a hashtag fundamentally breaks the link. For example, typing #How To Cook will result in only the word #How becoming a clickable link, completely destroying the search intent of the phrase. You must compress the phrase into a single, continuous string: #HowToCook. Furthermore, you should aggressively avoid overly long, complex hashtags. A tag like #HowToCookAuthenticItalianPastaFromScratchForAbsoluteBeginners is a grammatical nightmare and possesses precisely zero search volume. Keep your hashtags punchy, concise, and reflective of how actual human beings type queries into search bars.
               </p>
             </div>
           </div>
@@ -272,7 +284,7 @@ export default function HashtagGeneratorPage() {
                     {item.question}
                     <span className="text-pink-400 text-xl leading-none group-open:rotate-45 transition-transform">+</span>
                   </summary>
-                  <div className="px-6 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <div className="px-6 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
                     {item.answer}
                   </div>
                 </details>

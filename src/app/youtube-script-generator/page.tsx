@@ -3,6 +3,7 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import ScriptGeneratorPageClient from '@/components/tools/ScriptGeneratorPageClient';
 import { FileText } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Free YouTube Script Generator — AI Video Outline Maker',
@@ -102,138 +103,148 @@ export default function ScriptGeneratorPage() {
         <ScriptGeneratorPageClient />
 
         {/* SEO Content */}
-        <section className="mt-16 space-y-10">
+        <section className="mt-16 space-y-12">
           <div>
-            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 text-slate-900 dark:text-white">
-              Why Great YouTube Videos Start With a Script Outline
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-white">
+              Why Great YouTube Videos Always Start With a Structured Script Outline
             </h2>
-            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-6 text-lg">
               <p>
-                The biggest difference between an amateur YouTube channel and a professional one isn&apos;t the camera gear or the lighting — it is the structure of the videos. When creators turn on the camera and simply "wing it," the result is often rambling, repetitive, and poorly paced. On a platform where the algorithm relentlessly measures <strong className="text-slate-900 dark:text-white">Audience Retention</strong> and <strong className="text-slate-900 dark:text-white">Average View Duration (AVD)</strong>, a poorly paced video is a death sentence for your reach.
+                The biggest difference between an amateur YouTube channel that struggles to get 100 views and a professional channel driving millions of impressions isn&apos;t the camera gear, the lighting, or the editing software — it is entirely based on the underlying structure of the videos. When inexperienced creators turn on the camera and simply "wing it," the final result is almost universally rambling, repetitive, and horribly paced. On a platform where the algorithm relentlessly, ruthlessly measures <strong className="text-slate-900 dark:text-white">Audience Retention</strong> and <strong className="text-slate-900 dark:text-white">Average View Duration (AVD)</strong>, a poorly paced, unstructured video is an absolute death sentence for your organic reach.
+              </p>
+
+              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+                <Image src="/images/metadata_funnel.png" alt="YouTube Script Outline Structure" width={1200} height={630} className="w-full h-auto object-cover" />
+              </div>
+
+              <p>
+                Writing a script — or at the very least, a highly detailed bullet-point outline — solves this structural problem before you even hit record. It forces you to organize your thoughts logically, aggressively trim the fat, and consciously design specific moments that continually re-engage the viewer&apos;s attention. By using a <strong className="text-slate-900 dark:text-white">free YouTube script generator</strong>, you completely bypass the intimidating paralysis of the blank page. Instead, you instantly receive a proven, high-retention framework mathematically tailored to your specific video topic.
               </p>
               <p>
-                Writing a script — or at least a highly detailed outline — solves this problem. It forces you to organize your thoughts logically, trim the fat, and consciously design moments that re-engage the viewer&apos;s attention. By using a <strong className="text-slate-900 dark:text-white">free YouTube script generator</strong>, you bypass the intimidating blank page and instantly get a proven, high-retention framework tailored to your specific topic.
-              </p>
-              <p>
-                Our AI doesn&apos;t just spit out generic paragraphs. It builds a structural skeleton designed specifically for the YouTube format, complete with visual cues, precise pacing recommendations, and psychological hooks designed to minimize viewer drop-off.
+                Our AI doesn&apos;t just spit out generic blocks of text like ChatGPT might if you gave it a lazy prompt. It meticulously builds a structural skeleton designed specifically for the modern YouTube format. It includes psychological hooks designed to minimize viewer drop-off in the first 30 seconds, visual B-roll cues to keep the edit dynamic, precise pacing recommendations, and strategic transition points that carry the viewer effortlessly from one segment to the next.
               </p>
             </div>
           </div>
 
           <div>
-            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              The 4 Pillars of a High-Retention YouTube Script
+            <h2 className="font-display text-3xl font-bold mb-6 text-slate-900 dark:text-white">
+              The 4 Unbreakable Pillars of a High-Retention YouTube Script
             </h2>
-            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-6 text-lg">
               <p>
-                Every viral YouTube video follows a surprisingly similar underlying structure. Whether it is a tech review, a gaming let&apos;s play, or an educational tutorial, mastering these four pillars will dramatically improve your video metrics.
+                If you study any viral YouTube video, regardless of the niche, you will find that it follows a surprisingly similar underlying structure. Whether you are filming a high-end tech review, an energetic gaming let&apos;s play, or a calm educational tutorial, mastering these four foundational script pillars will dramatically and permanently improve your channel&apos;s metrics.
               </p>
 
-              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
-                1. The Hook (0:00 - 0:15)
+              <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
+                1. The High-Stakes Hook (0:00 - 0:15)
               </h3>
               <p>
-                The first 15 seconds of your video dictate the success of the entire upload. Viewers click your thumbnail with a specific expectation. Your hook must immediately validate that expectation. If your title is "How to Fix a Leaky Faucet," do not spend 30 seconds introducing yourself or playing an animated logo sequence. Start the video by showing the leaky faucet and saying, "This leak is costing you $100 a month, and I am going to show you how to fix it in 3 minutes." Establish the stakes, make the promise, and move on.
+                The first 15 seconds of your video dictate the algorithmic success of the entire upload. Viewers click your thumbnail with a specific, fragile expectation. Your hook must immediately, aggressively validate that expectation. If your title is &quot;How to Fix a Leaky Faucet in 3 Minutes,&quot; do not spend 30 seconds introducing yourself or playing a loud, animated 3D logo sequence. Start the video by immediately showing the leaky faucet, looking at the camera, and saying, &quot;This leak is costing you $100 a month in water bills, and I am going to show you exactly how to fix it in the next 3 minutes using one tool.&quot; Establish the stakes, make the promise, and move on.
               </p>
 
-              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
-                2. The Body & Visual Pacing
+              <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FXGj-WVtxwM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              </div>
+
+              <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
+                2. The Body & Aggressive Visual Pacing
               </h3>
               <p>
-                The middle of your video is where viewer attention naturally sags. To combat this, your script must be broken into clear, distinct segments. More importantly, your script must include <strong className="text-slate-900 dark:text-white">Visual Pacing cues</strong>. You should plan to change the visual on the screen every 3 to 5 seconds. This could be a camera angle change, a text pop-up, a sound effect, or B-roll footage. Our script generator automatically suggests these visual pattern interrupts to keep the viewer&apos;s eye active.
+                The middle of your video is a dangerous zone where viewer attention naturally sags and drifts. To combat this biological reality, your script must be broken into clear, distinct, highly digestible segments. More importantly, your script must include <strong className="text-slate-900 dark:text-white">Visual Pacing cues</strong>. In modern YouTube editing, you should plan to change the visual stimulus on the screen every 3 to 5 seconds. This could be a stark camera angle change, a text pop-up reinforcing your point, a sound effect, or relevant B-roll footage. Our script outline generator automatically suggests these visual pattern interrupts directly in the text to ensure you film enough coverage to keep the viewer&apos;s eye active.
               </p>
 
-              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
-                3. The Strategic Call to Action (CTA)
+              <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
+                3. The Strategic, Value-Driven Call to Action (CTA)
               </h3>
               <p>
-                Asking viewers to subscribe at the very beginning of the video rarely works because you haven&apos;t provided any value yet. Asking at the very end is also ineffective because most viewers have already clicked away. The optimal place for a CTA is the <strong className="text-slate-900 dark:text-white">Mid-Roll</strong> — immediately after you have delivered a massive "Aha!" moment or a highly entertaining sequence. The viewer is feeling grateful and entertained, making them much more likely to hit the subscribe button.
+                Asking viewers to subscribe at the very beginning of the video is a rookie mistake; it rarely works because you haven&apos;t provided any value to earn their trust yet. Asking at the very end is equally ineffective because most viewers have already clicked away the moment they sense the video is wrapping up. The optimal, mathematically proven place for a CTA is the <strong className="text-slate-900 dark:text-white">Mid-Roll</strong> — immediately after you have delivered a massive &quot;Aha!&quot; moment, solved a major problem, or delivered a highly entertaining sequence. The viewer is currently feeling grateful and entertained, making them exponentially more likely to hit the subscribe button when you briefly ask.
               </p>
 
-              <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">
-                4. The Outro Loop
+              <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
+                4. The Seamless Outro Loop
               </h3>
               <p>
-                Never say the words, "Well, that is all for today," or "In conclusion." These phrases trigger the viewer to click off the video before your end screen even appears, tanking your final retention numbers. Instead, use an "Outro Loop." Transition seamlessly from your final point directly into pitching your next video. "Now that you know how to fix the faucet, you need to make sure your pipes don&apos;t freeze this winter, which is exactly what I show you in this video right here."
+                Never, under any circumstances, say the words, &quot;Well, that is all for today,&quot; &quot;In conclusion,&quot; or &quot;Thanks for watching.&quot; These phrases are lethal poison to your analytics. They act as psychological triggers that explicitly tell the viewer to click off the video before your end screen elements even appear, tanking your final retention numbers and destroying your chances of driving binge sessions. Instead, use an &quot;Outro Loop.&quot; Transition seamlessly from your final educational point directly into pitching your next video without taking a breath. For example: &quot;Now that you know how to fix the faucet, you need to make sure your pipes don&apos;t freeze this winter, which is exactly what I show you how to prevent in this video right here on screen.&quot;
               </p>
             </div>
           </div>
 
           <div>
-            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              Why Bullet-Point Outlines Beat Word-For-Word Scripts
+            <h2 className="font-display text-3xl font-bold mb-6 text-slate-900 dark:text-white">
+              Why Bullet-Point Outlines Destroy Word-For-Word Scripts
             </h2>
-            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+            <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-6 text-lg">
               <p>
-                A common mistake new creators make is writing a massive block of text and trying to read it perfectly on camera. This almost always results in a stiff, robotic performance where the creator is clearly reading off a screen rather than talking <strong className="italic">to</strong> the audience.
+                A massive, critical mistake new creators make when scripting is writing a gigantic block of text and trying to read it perfectly on camera, line by line. Unless you are a professionally trained actor or a news anchor with a high-end teleprompter setup, this almost always results in a stiff, robotic, soulless performance. The creator&apos;s eyes dart back and forth reading off a screen, destroying eye contact, and they sound like they are reading an essay rather than talking <strong className="italic">to</strong> a friend.
               </p>
               <p>
-                Our AI script tool deliberately generates <strong className="text-slate-900 dark:text-white">structured outlines rather than verbatim essays</strong>. By providing the core talking points, the required visual cues, and the transition markers, the tool gives you the safety net of a script while forcing you to use your own natural vocabulary to connect the dots. This hybrid approach ensures your video is perfectly structured while retaining your authentic, human personality.
+                Our AI script generation tool is specifically calibrated to avoid this trap. It deliberately generates <strong className="text-slate-900 dark:text-white">structured, punchy outlines rather than verbatim essays</strong>. By providing the core talking points, the required visual cues, and the transition markers, the tool gives you the safety net and structural integrity of a professional script while simultaneously forcing you to use your own natural vocabulary, cadence, and emotion to connect the dots. This hybrid approach ensures your video is perfectly structured for the algorithm while fully retaining the authentic, human personality that builds a loyal community.
               </p>
             </div>
           </div>
 
           {/* Checklist */}
-          <div>
-            <h3 className="font-display text-xl font-bold mb-3 text-slate-900 dark:text-white">
-              Pre-Filming Script Checklist
+          <div className="glass-card rounded-2xl p-8 border-t-4 border-t-purple-400">
+            <h3 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+              The Pre-Filming Script Audit Checklist
             </h3>
-            <ul className="space-y-2 text-slate-600">
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Does the hook deliver on the promise of the title/thumbnail within 10 seconds?</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Are there B-roll or visual change notes at least every 15-20 seconds?</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Is the CTA placed after a moment of high value, not at the beginning?</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Does the script end abruptly with a pitch to another video (Outro Loop)?</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Did you read the outline out loud to ensure it sounds natural?</span></li>
+            <p className="text-slate-600 dark:text-slate-400 mb-6 text-lg">Never hit the record button until your script passes every single one of these checks:</p>
+            <ul className="space-y-4 text-slate-600 text-lg">
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Does the hook actively deliver on the exact promise made by the title/thumbnail within the first 10 seconds?</span></li>
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Are there explicit B-roll cues or visual change notes planned at least every 15-20 seconds to prevent visual fatigue?</span></li>
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Is the primary Call-To-Action (CTA) strategically placed immediately after a moment of high value, rather than at the very beginning?</span></li>
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Does the script intentionally avoid wrapping up, and instead end abruptly with a compelling pitch to click another specific video (The Outro Loop)?</span></li>
+              <li className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Have you read the entire outline out loud while standing up to ensure the phrasing sounds natural and not like written prose?</span></li>
             </ul>
           </div>
 
           {/* Related Blog Posts */}
           <div>
-            <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+            <h2 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
               Master the Art of Video Retention
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               <Link
                 href="/blog/youtube-script-outline-formula"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
+                className="glass-card rounded-xl p-6 hover:border-purple-400/40 transition-colors group"
               >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-2 text-lg">
                   The Viral YouTube Script Outline Formula
                 </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-slate-500 dark:text-slate-400">
                   Break down the exact script templates used by top creators to hold attention.
                 </p>
               </Link>
               <Link
                 href="/blog/increase-youtube-audience-retention"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
+                className="glass-card rounded-xl p-6 hover:border-purple-400/40 transition-colors group"
               >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-2 text-lg">
                   How to Increase YouTube Audience Retention
                 </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-slate-500 dark:text-slate-400">
                   Techniques for editing and scripting to keep viewers watching until the end.
                 </p>
               </Link>
               <Link
                 href="/youtube-hook-generator"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
+                className="glass-card rounded-xl p-6 hover:border-purple-400/40 transition-colors group"
               >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-2 text-lg">
                   YouTube Hook Generator →
                 </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-slate-500 dark:text-slate-400">
                   Need a stronger opening? Generate high-retention 15-second hooks.
                 </p>
               </Link>
               <Link
                 href="/youtube-chapter-generator"
-                className="glass-card rounded-xl p-5 hover:border-purple-400/40 transition-colors group"
+                className="glass-card rounded-xl p-6 hover:border-purple-400/40 transition-colors group"
               >
-                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-1">
+                <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors mb-2 text-lg">
                   YouTube Chapter Generator →
                 </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-slate-500 dark:text-slate-400">
                   Convert your script outline segments into YouTube timestamps.
                 </p>
               </Link>
@@ -242,7 +253,7 @@ export default function ScriptGeneratorPage() {
 
           {/* FAQ Section */}
           <div>
-            <h2 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+            <h2 className="font-display text-3xl font-bold mb-8 text-slate-900 dark:text-white">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">
@@ -251,11 +262,11 @@ export default function ScriptGeneratorPage() {
                   key={index}
                   className="glass-card rounded-xl group"
                 >
-                  <summary className="cursor-pointer px-6 py-4 font-semibold text-slate-900 dark:text-white select-none list-none flex items-center justify-between gap-4">
+                  <summary className="cursor-pointer px-6 py-5 font-semibold text-slate-900 dark:text-white select-none list-none flex items-center justify-between gap-4 text-lg">
                     {item.question}
-                    <span className="text-purple-400 text-xl leading-none group-open:rotate-45 transition-transform">+</span>
+                    <span className="text-purple-400 text-2xl leading-none group-open:rotate-45 transition-transform">+</span>
                   </summary>
-                  <div className="px-6 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <div className="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed text-lg border-t border-slate-100 dark:border-slate-800 pt-4 mt-2">
                     {item.answer}
                   </div>
                 </details>
@@ -264,10 +275,15 @@ export default function ScriptGeneratorPage() {
           </div>
 
           {/* Bottom CTA */}
-          <div className="glass-card rounded-2xl p-6 text-center">
-            <p className="text-slate-600 dark:text-slate-400 mb-4">Your script is ready. Now make sure your video is discoverable in search.</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/" className="inline-flex items-center gap-2 btn-primary rounded-xl px-6 py-3 font-semibold">
+          <div className="glass-card rounded-3xl p-10 text-center mt-12 bg-gradient-to-br from-purple-500/10 via-pink-500/5 to-transparent border border-purple-500/20 shadow-2xl">
+            <h3 className="font-display text-2xl md:text-3xl font-bold mb-4 text-slate-900 dark:text-white">
+              Your script is ready. Now maximize your reach.
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg max-w-2xl mx-auto">
+              A perfect script won&apos;t get views if nobody clicks on it. Make sure your video is fully optimized for YouTube search with our all-in-one suite of SEO tools.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/" className="inline-flex items-center gap-3 btn-primary rounded-xl px-8 py-4 font-bold text-lg shadow-lg shadow-purple-500/25 transition-transform hover:scale-105">
                 Try Full SEO Optimizer →
               </Link>
             </div>
