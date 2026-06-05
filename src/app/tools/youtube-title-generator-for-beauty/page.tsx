@@ -205,7 +205,7 @@ export default function BeautyTitleLandingPage() {
             </p>
 
             <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/D5oK9t1V5_Q" title="How to Write YouTube Titles That Get Clicks" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="How to Write YouTube Titles That Get Clicks" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
 
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">

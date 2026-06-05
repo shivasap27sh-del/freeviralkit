@@ -256,7 +256,7 @@ export default function Home() {
             </p>
 
             <div className="my-12 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cbJjI1rB8pM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbYcAMeI9JY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
 
             <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mt-12 mb-4">
