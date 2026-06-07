@@ -139,8 +139,9 @@ The hardest part of short-form video is coming up with fresh hooks and concepts 
 
 Use our free [YouTube Shorts Idea Generator](/youtube-shorts-idea-generator) to instantly generate viral hooks, video concepts, and Shorts outlines tailored to your specific niche. And if you need optimized titles for your Shorts, our [YouTube Title Generator](/youtube-title-generator) will craft click-worthy options in seconds.
 
-The algorithm rewards creators who show up consistently with quality content. Now you know exactly how to structure that content for maximum impact. The only thing left is to start creating.`,
-  publishDate: "2026-05-27",
+The algorithm rewards creators who show up consistently with quality content. Now you know exactly how to structure that content for maximum impact. The only thing left is to start creating.\`,
+  publishDate: "2026-05-27",`,
+
   date: "2026-05-27",
   readTime: "12 min read",
   category: "YouTube Shorts",

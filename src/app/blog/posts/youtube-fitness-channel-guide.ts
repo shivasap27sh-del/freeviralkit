@@ -119,8 +119,9 @@ No legal requirement exists to share fitness content on YouTube. However, having
 
 Growing a **gym YouTube channel** comes down to strategic content selection, proper SEO, and genuine consistency. You do not need a perfect body, a fancy gym, or expensive equipment. You need titles that get clicked, content that delivers value, and metadata that tells the algorithm exactly who should watch your videos.
 
-Stop guessing what titles will work. Use our free [YouTube Title Generator for Fitness](/tools/youtube-title-generator-for-fitness) to instantly create proven, click-worthy titles tailored to the fitness niche, and give your channel the SEO foundation it needs to grow!`,
-  publishDate: "2026-06-02",
+Stop guessing what titles will work. Use our free [YouTube Title Generator for Fitness](/tools/youtube-title-generator-for-fitness) to instantly create proven, click-worthy titles tailored to the fitness niche, and give your channel the SEO foundation it needs to grow!\`,
+  publishDate: "2026-06-02",`,
+
   date: "2026-06-02",
   readTime: "11 min read",
   category: "YouTube Growth",

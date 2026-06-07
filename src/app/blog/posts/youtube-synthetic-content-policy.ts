@@ -110,8 +110,9 @@ The path forward is transparency. Use AI to speed up your workflow, use it to ge
 
 If you want to use AI safely to actually grow your channel, start by optimizing your metadata. Use the [YouTube Title Generator](/youtube-title-generator) to craft human-sounding, high-CTR titles, and the [Free Tag Generator](/youtube-tags-generator) to ensure your backend metadata matches exactly what the algorithm is looking for. 
 
-Play by the new rules, and the algorithm will reward you.`,
-  publishDate: "2026-06-04",
+Play by the new rules, and the algorithm will reward you.\`,
+  publishDate: "2026-06-04",`,
+
   date: "2026-06-04",
   readTime: "9 min read",
   category: "YouTube Strategy",

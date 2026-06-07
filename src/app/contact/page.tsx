@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: buildAbsoluteUrl('/contact'),
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function ContactPage() {
@@ -45,11 +49,14 @@ export default function ContactPage() {
         </div>
 
         <form
-          action="mailto:shivasap27sh@gmail.com"
-          method="GET"
+          action="https://api.web3forms.com/submit"
+          method="POST"
           className="space-y-5"
         >
-          {/* Anti-spam (not needed for mailto, but kept for structure) */}
+          {/* Web3Forms required inputs */}
+          <input type="hidden" name="access_key" value="be47cc94-ae28-4ca2-9af6-6716d3150d5a" />
+          <input type="hidden" name="from_name" value="FreeViralKit Contact Form" />
+          <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
@@ -92,7 +99,7 @@ export default function ContactPage() {
             <label htmlFor="message" className="block text-sm font-medium text-slate-600 mb-2">Message</label>
             <textarea
               id="message"
-              name="body"
+              name="message"
               required
               rows={5}
               className="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-gray-600 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none"

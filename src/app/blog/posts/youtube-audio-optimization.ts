@@ -118,8 +118,9 @@ Once your audio is crisp, professional, and easy to listen to, your retention me
 
 Use our free [YouTube Title Generator](/youtube-title-generator) to craft hooks that get people in the door, and use our [YouTube Description Generator](/youtube-description-generator) to provide the SEO metadata that helps them find you in the first place. 
 
-Upgrade your sound, and watch your channel grow.`,
-  publishDate: "2026-06-03",
+Upgrade your sound, and watch your channel grow.\`,
+  publishDate: "2026-06-03",`,
+
   date: "2026-06-03",
   readTime: "10 min read",
   category: "Channel Setup",

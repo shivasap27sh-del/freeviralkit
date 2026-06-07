@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://freeviralkit.com/disclaimer',
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function DisclaimerPage() {

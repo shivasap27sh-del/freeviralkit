@@ -127,8 +127,9 @@ Extremely important. Over 50% of mobile viewers watch with sound off, especially
 
 Here is the beautiful truth about mastering retention: it creates a compounding growth loop. High retention tells the algorithm your content is worth recommending. More recommendations mean more views. More views mean more data for the algorithm to optimize your audience targeting. Better targeting means higher retention. And the cycle accelerates.
 
-But this flywheel only spins if viewers click in the first place. Use our free [YouTube Title Generator](/youtube-title-generator) to create titles that capture curiosity and set the perfect expectation for your high-retention content. When your title promises something specific and your video delivers - that is when exponential growth begins.`,
-  publishDate: "2026-05-29",
+But this flywheel only spins if viewers click in the first place. Use our free [YouTube Title Generator](/youtube-title-generator) to create titles that capture curiosity and set the perfect expectation for your high-retention content. When your title promises something specific and your video delivers - that is when exponential growth begins.\`,
+  publishDate: "2026-05-29",`,
+
   date: "2026-05-29",
   readTime: "13 min read",
   category: "Analytics",

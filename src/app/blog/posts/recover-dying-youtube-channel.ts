@@ -99,8 +99,9 @@ Reviving a dead YouTube channel is emotionally taxing, but it is entirely possib
 
 To execute this recovery plan, you need every tool at your disposal. Use our free [YouTube Title Generator](/youtube-title-generator) to craft hooks that bypass your dead subscribers and capture new audiences. Use our [YouTube Description Generator](/youtube-description-generator) to ensure your new search-focused videos rank at the top of Google and YouTube search.
 
-Stop mourning the views you used to have. The past is dead. Your new channel starts today.`,
-  publishDate: "2026-06-02",
+Stop mourning the views you used to have. The past is dead. Your new channel starts today.\`,
+  publishDate: "2026-06-02",`,
+
   date: "2026-06-02",
   readTime: "11 min read",
   category: "Analytics",

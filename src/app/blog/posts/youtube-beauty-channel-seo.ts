@@ -142,8 +142,9 @@ Yes, frequently. Many beauty brands, especially indie and DTC brands, actively s
 
 The beauty niche is competitive, but **makeup tutorial SEO** gives you a legitimate advantage over creators who rely on luck alone. Optimized titles, strategic hashtags, keyword-rich descriptions, and specific content targeting are what separate channels that grow from channels that stagnate.
 
-Stop leaving views on the table. Use our free [YouTube Title Generator for Beauty](/tools/youtube-title-generator-for-beauty) to create irresistible, SEO-optimized titles for your next tutorial, and watch how smart metadata transforms your channel's discoverability!`,
-  publishDate: "2026-06-05",
+Stop leaving views on the table. Use our free [YouTube Title Generator for Beauty](/tools/youtube-title-generator-for-beauty) to create irresistible, SEO-optimized titles for your next tutorial, and watch how smart metadata transforms your channel's discoverability!\`,
+  publishDate: "2026-06-05",`,
+
   date: "2026-06-05",
   readTime: "9 min read",
   category: "YouTube SEO",

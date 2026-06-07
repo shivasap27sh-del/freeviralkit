@@ -132,8 +132,9 @@ No, not without a license. YouTube's Content ID system will flag copyrighted mus
 
 You do not need a perfect kitchen, expensive equipment, or formal training to build a successful **cooking YouTube channel**. You need a clear niche, consistent uploads, solid recipe video structure, and smart SEO. The audience for food content is enormous and growing every year.
 
-Ready to create titles that make viewers hungry before they even click? Use our free [YouTube Title Generator for Cooking](/tools/youtube-title-generator-for-cooking) to generate optimized, click-worthy titles for your recipe videos in seconds - and start getting the views your food deserves!`,
-  publishDate: "2026-05-31",
+Ready to create titles that make viewers hungry before they even click? Use our free [YouTube Title Generator for Cooking](/tools/youtube-title-generator-for-cooking) to generate optimized, click-worthy titles for your recipe videos in seconds - and start getting the views your food deserves!\`,
+  publishDate: "2026-05-31",`,
+
   date: "2026-05-31",
   readTime: "11 min read",
   category: "YouTube Growth",

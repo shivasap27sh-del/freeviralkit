@@ -176,8 +176,9 @@ You do not compete with them head-on. They dominate *"iPhone 17 review"* - you w
 
 You already have the product knowledge and opinions. The missing piece is making sure YouTube and Google can find, understand, and recommend your content to the millions of people searching for buying advice every day.
 
-Ready to create search-optimized titles for your next tech review? Try our free [Tech Title Generator](/tools/youtube-title-generator-for-tech) - it combines proven title formulas with tech-specific keyword patterns to create titles that rank in search and get clicked in the feed!`,
-  publishDate: "2026-06-01",
+Ready to create search-optimized titles for your next tech review? Try our free [Tech Title Generator](/tools/youtube-title-generator-for-tech) - it combines proven title formulas with tech-specific keyword patterns to create titles that rank in search and get clicked in the feed!\`,
+  publishDate: "2026-06-01",`,
+
   date: "2026-06-01",
   readTime: "10 min read",
   category: "YouTube SEO",

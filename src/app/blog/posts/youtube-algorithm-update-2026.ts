@@ -122,8 +122,9 @@ If you get the human psychology right, the algorithm will take care of the rest.
 If you need help ensuring your metadata perfectly aligns with viewer intent so they don't bounce out of frustration, run your concepts through our [YouTube Tag Generator](/youtube-tags-generator) to make sure you are targeting the exact right audience for your content. And if you are struggling to find topic gaps that viewers actually care about, the [YouTube Keyword Research Tool](/youtube-topic-researcher) can reveal exactly what your niche is begging for. 
 
 Stop playing the 2023 game. Welcome to 2026.
-`,
-  publishDate: "2026-06-04",
+\`,
+  publishDate: "2026-06-04",`,
+
   date: "2026-06-04",
   readTime: "9 min read",
   category: "YouTube Strategy",

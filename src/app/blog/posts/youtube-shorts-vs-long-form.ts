@@ -149,8 +149,9 @@ YouTube has been gradually improving Shorts monetization, and the trend suggests
 
 The Shorts vs long-form debate is not really an either/or question. It is a question of **strategy and allocation**. Shorts are an incredible tool for reach and discovery. Long-form is where relationships, revenue, and real channel growth happen. Use both intentionally, measure what works, and adjust.
 
-Need help generating creative Shorts ideas that actually funnel viewers to your main content? Try our free [YouTube Shorts Idea Generator](/youtube-shorts-idea-generator) - it creates niche-specific, viral-optimized Short concepts in seconds, so you spend less time brainstorming and more time creating!`,
-  publishDate: "2026-06-01",
+Need help generating creative Shorts ideas that actually funnel viewers to your main content? Try our free [YouTube Shorts Idea Generator](/youtube-shorts-idea-generator) - it creates niche-specific, viral-optimized Short concepts in seconds, so you spend less time brainstorming and more time creating!\`,
+  publishDate: "2026-06-01",`,
+
   date: "2026-06-01",
   readTime: "10 min read",
   category: "YouTube Strategy",
