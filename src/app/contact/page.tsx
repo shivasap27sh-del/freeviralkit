@@ -38,13 +38,29 @@ export default function ContactPage() {
 
       {/* Contact Card */}
       <div className="glass-card rounded-2xl p-8 md:p-10">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
-            <Mail className="w-6 h-6" />
+        <div className="flex flex-col md:flex-row justify-between gap-6 mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-500 flex items-center justify-center shadow-inner">
+              <Mail className="w-7 h-7" />
+            </div>
+            <div>
+              <h2 className="font-display text-2xl font-bold text-slate-900 dark:text-white">Submit a Ticket</h2>
+              <p className="text-slate-500 dark:text-slate-400">Fill out the form below to reach our team.</p>
+            </div>
           </div>
-          <div>
-            <h2 className="font-display text-xl font-bold">Send Us a Message</h2>
-            <p className="text-sm text-slate-500">We typically respond within 24 hours</p>
+          <div className="flex flex-col gap-2 text-sm text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"></span>
+              <strong>Support Hours:</strong> Mon-Fri, 9am - 6pm
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+              <strong>Response Time:</strong> Under 24 hours
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+              <strong>Direct Email:</strong> support@freeviralkit.com
+            </div>
           </div>
         </div>
 
@@ -84,15 +100,21 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-slate-600 mb-2">Subject</label>
-            <input
-              type="text"
+            <label htmlFor="subject" className="block text-sm font-medium text-slate-600 mb-2">Reason for Contact</label>
+            <select
               id="subject"
               name="subject"
               required
-              className="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-gray-600 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
-              placeholder="What's this about?"
-            />
+              defaultValue=""
+              className="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder:text-gray-600 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all appearance-none cursor-pointer"
+            >
+              <option value="" disabled>Select a topic...</option>
+              <option value="General Support">General Support</option>
+              <option value="Bug Report">Report a Bug / Technical Issue</option>
+              <option value="Feature Request">Suggest a New Feature</option>
+              <option value="Business Partnership">Business Partnership</option>
+              <option value="Advertising">Advertising Inquiry</option>
+            </select>
           </div>
 
           <div>
