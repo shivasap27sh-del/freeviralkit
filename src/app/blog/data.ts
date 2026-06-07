@@ -74,7 +74,12 @@ import { post as shortsBubbleBursting } from './posts/youtube-shorts-bubble-burs
 import { post as howMuchYoutubePays } from './posts/how-much-youtube-pays-for-1-million-views';
 import { post as youtubeAlgorithmUpdate2026 } from './posts/youtube-algorithm-update-2026';
 import { post as youtubeSyntheticContentPolicy } from './posts/youtube-synthetic-content-policy';
+import { post as youtubeAutomationCashCowGuide } from './posts/youtube-automation-cash-cow-guide-2026';
+import { post as bestFreeAiToolsForYoutubers } from './posts/best-free-ai-tools-for-youtubers';
+
 const rawBlogPosts: BlogPost[] = [
+  youtubeAutomationCashCowGuide,
+  bestFreeAiToolsForYoutubers,
   youtubeAlgorithmUpdate2026,
   youtubeSyntheticContentPolicy,
   mrbeastEffect,
