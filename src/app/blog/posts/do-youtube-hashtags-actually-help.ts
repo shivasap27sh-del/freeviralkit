@@ -10,7 +10,7 @@ Let me paint a picture that I am almost positive you have experienced. When I fi
 
 *"Make sure you use hashtags on your videos! Hashtags are the secret to going viral and breaking the algorithm!"*
 
-Desperate for views and convinced that I was just one metadata trick away from YouTube fame, I took this advice to the extreme. I remember uploading a highly edited tech review video that took me a week to produce. Instead of just writing a good, human-readable description, I spent thirty agonizing minutes hunting down every single hashtag remotely related to technology. I crammed an absurd 45 hashtags into the bottom of my description box. I had \`#Tech`, \`#Gadgets`, \`#Apple`, \`#Review`, \`#Viral`, \`#Trending`, \`#PleaseWatch`, \`#FYP\`—you name it, I used it. I felt like an absolute genius. I had built the ultimate, algorithm-pleasing net to catch thousands of search views.
+Desperate for views and convinced that I was just one metadata trick away from YouTube fame, I took this advice to the extreme. I remember uploading a highly edited tech review video that took me a week to produce. Instead of just writing a good, human-readable description, I spent thirty agonizing minutes hunting down every single hashtag remotely related to technology. I crammed an absurd 45 hashtags into the bottom of my description box. I had \`#Tech\`, \`#Gadgets\`, \`#Apple\`, \`#Review\`, \`#Viral\`, \`#Trending\`, \`#PleaseWatch\`, \`#FYP\`—you name it, I used it. I felt like an absolute genius. I had built the ultimate, algorithm-pleasing net to catch thousands of search views.
 
 I woke up the next morning, grabbed my phone with trembling hands, and eagerly checked my YouTube Studio app. 
 
@@ -42,7 +42,7 @@ This creates a discovery pathway that literally does not exist without hashtags.
 ### 2. They Act as Crucial Categorization Signals
 YouTube's primary directive as a platform is brilliantly simple: keep viewers on the site as long as possible by showing them videos they will genuinely enjoy. To accomplish this, the recommendation algorithm needs to deeply and accurately understand exactly what your video is about. 
 
-Hashtags serve as powerful, explicit metadata signals that help the AI group your content with similar videos. If you use \`#Woodworking`, you are explicitly telling the AI to associate your video with the broader woodworking community. This direct categorization directly impacts how often your video is recommended in the "Up Next" sidebar alongside other popular woodworking content. It essentially helps the algorithm put your video in the correct "bucket."
+Hashtags serve as powerful, explicit metadata signals that help the AI group your content with similar videos. If you use \`#Woodworking\`, you are explicitly telling the AI to associate your video with the broader woodworking community. This direct categorization directly impacts how often your video is recommended in the "Up Next" sidebar alongside other popular woodworking content. It essentially helps the algorithm put your video in the correct "bucket."
 
 ### 3. Above-Title Links Drive Visual Clicks
 By default, the first three hashtags you place anywhere in your video description are ripped out by YouTube and displayed prominently above your video title as clickable blue labels. 

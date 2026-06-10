@@ -89,7 +89,7 @@ Instead of asking a lazy question like, "Did you enjoy the video?", ask somethin
 
 Hashtags serve as a secondary categorization tool, allowing your video to be discovered in hashtag-specific search feeds. Select 3 to 5 highly relevant hashtags and place them neatly at the very bottom of your description box. 
 
-Always utilize CamelCase formatting, which involves capitalizing the first letter of every single word within the hashtag. For instance, instead of typing \`#howtogrowonyoutube`, you must write \`#HowToGrowOnYouTube\`. 
+Always utilize CamelCase formatting, which involves capitalizing the first letter of every single word within the hashtag. For instance, instead of typing \`#howtogrowonyoutube\`, you must write \`#HowToGrowOnYouTube\`. 
 
 Not only does this make the hashtag significantly easier for the human eye to parse quickly, but it is also a vital accessibility metric. Screen readers used by visually impaired individuals rely on capital letters to dictate the words properly. Google actively rewards content that adheres to accessibility standards, so this small detail can give you a microscopic but meaningful edge.
 
