@@ -120,9 +120,7 @@ You now have the exact framework to find a YouTube niche that balances passion, 
 
 Once you have your niche locked in, use our [AI Niche Researcher](/youtube-topic-researcher) to analyze competition levels, find untapped video topics, and build your content strategy. And when you are ready to publish, our [YouTube Title Generator](/youtube-title-generator) will help you craft titles that actually get clicked.
 
-The hardest part is not finding the perfect niche - it is making the decision and starting. Your future audience is already searching for the content only you can create.\`,
-  publishDate: "2026-05-28",`,
-
+The hardest part is not finding the perfect niche - it is making the decision and starting. Your future audience is already searching for the content only you can create.`,
   date: "2026-05-28",
   readTime: "11 min read",
   category: "Channel Setup",

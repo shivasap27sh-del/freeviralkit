@@ -120,9 +120,7 @@ Absolutely. Travel is one of the highest-CPM niches on YouTube because travel ad
 
 **Travel vlogging in 2026** rewards creators who combine great storytelling with smart SEO. You do not need to visit 50 countries or own a cinema camera. You need structured narratives, searchable titles, optimized descriptions, and consistent uploads.
 
-Ready to optimize your next travel video? Use our free [YouTube Description Generator](/youtube-description-generator) to create professional, SEO-rich descriptions that help your travel content rank higher and reach the audience it deserves!\`,
-  publishDate: "2026-06-03",`,
-
+Ready to optimize your next travel video? Use our free [YouTube Description Generator](/youtube-description-generator) to create professional, SEO-rich descriptions that help your travel content rank higher and reach the audience it deserves!`,
   date: "2026-06-03",
   readTime: "10 min read",
   category: "Vlogging",

@@ -113,9 +113,7 @@ The beauty of a faceless channel is that the content speaks entirely for itself.
 
 To ensure your incredibly well-edited videos actually get clicked, you need powerful metadata. Use our free [YouTube Title Generator](/youtube-title-generator) to craft hooks that compel viewers to click, and generate the perfect tags with our [YouTube Tags Generator](/youtube-tags-generator). 
 
-Stop letting camera anxiety hold you back. Write that first script, plug in your microphone, and start building your channel in the shadows. The audience is waiting for your story.\`,
-  publishDate: "2026-05-31",`,
-
+Stop letting camera anxiety hold you back. Write that first script, plug in your microphone, and start building your channel in the shadows. The audience is waiting for your story.`,
   date: "2026-05-31",
   readTime: "12 min read",
   category: "Channel Setup",

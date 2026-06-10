@@ -153,9 +153,7 @@ Here is the truth nobody wants to hear: the algorithm is not ignoring your conte
 
 Start by using our free [YouTube Title Generator](/youtube-title-generator) to ensure your videos have click-worthy titles that convert when promotion traffic arrives. Then use our [YouTube Hashtag Generator](/youtube-hashtag-generator) to maximize discoverability. When promotion brings new viewers to your content, great titles and metadata ensure they actually click, watch, and subscribe.
 
-Stop waiting for the algorithm. Start promoting. Your content deserves to be seen.\`,
-  publishDate: "2026-05-27",`,
-
+Stop waiting for the algorithm. Start promoting. Your content deserves to be seen.`,
   date: "2026-05-27",
   readTime: "13 min read",
   category: "Channel Growth",

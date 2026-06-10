@@ -1,10 +1,12 @@
-import { BlogPost } from '../data';
+import re
+import os
 
-export const post: BlogPost = {
-  "slug": "youtube-pinned-comment-formula",
-  "title": "The Pinned Comment Formula: How to Drive Engagement & Clicks",
-  "description": "The pinned comment is the most underrated growth hack on YouTube. Learn the simple formula to turn the top comment space into a conversion machine.",
-  "content": `## The Silent Killer of YouTube Channels
+target_file = r"c:\Users\shiva\Desktop\Youtube tag and hashtag and description and title updater\src\app\blog\posts\youtube-pinned-comment-formula.ts"
+
+with open(target_file, "r", encoding="utf-8") as f:
+    text = f.read()
+
+new_content = """## The Silent Killer of YouTube Channels
 
 ![Creator frustrated at desk](https://images.unsplash.com/photo-1593642532744-d377ab507dc8?q=80&w=800&auto=format&fit=crop)
 
@@ -122,7 +124,7 @@ Do not wait for your video to get views before you pin a comment. The very first
 When viewers reply to your pinned comment, do not just ignore them. Hit the heart icon and reply back. Why? Because when you heart a comment, YouTube sends a push notification directly to that viewer's phone. This often brings them back to your video for a second viewing session, which the algorithm absolutely loves. It shows high retention and returning viewers.
 
 ### 3. Keep Links Clean and Trustworthy
-Never use long, ugly, complicated affiliate links that look like spam. If your link looks like \`http://www.randomsite.com/affiliate=12345&track=xyz`, people will be afraid to click it. Use clean, direct domains. If you must use a long link, use a link shortener to make it look professional. Trust is paramount when driving external traffic.
+Never use long, ugly, complicated affiliate links that look like spam. If your link looks like \`http://www.randomsite.com/affiliate=12345&track=xyz\`, people will be afraid to click it. Use clean, direct domains. If you must use a long link, use a link shortener to make it look professional. Trust is paramount when driving external traffic.
 
 ### 4. Update the Pin Over Time
 Your pinned comment is not set in stone. If you launch a new product six months after the video goes live, go back to your top-performing videos and update their pinned comments to point to the new product. It is free, ongoing promotion on your best real estate.
@@ -132,7 +134,7 @@ If your video is a serious tutorial about fixing a broken sink, don't use a pinn
 
 ## Advanced Pinned Comment Psychology
 
-When we talk about the psychology of the viewer, we must dive deep into why people use YouTube in the first place. They are looking for connection, entertainment, or education. When they scroll to the comments, they are seeking community. They want to feel seen and heard. By being the first comment they interact with, you are positioning yourself as not just a content creator, but a community leader. This subtle shift in perception can drastically improve your channel's loyalty and retention metrics over time. The most successful YouTubers understand that their audience isn't just a number; it's a group of real people who crave interaction. Your pinned comment is the bridge between a passive viewing experience and an active community engagement. Don't underestimate the power of making your audience feel valued and heard right from the jump.
+To really elevate your game, you need to understand the psychology of the viewer. When someone scrolls down to the comments, they are usually in a state of distraction or seeking validation. They want to see if other people are thinking the same thing they are. This is why the first comment they see (yours) needs to validate their experience.
 
 If your video is a controversial take on a new camera, your pinned comment could acknowledge the controversy. If your video is highly emotional, your pinned comment should be emotional. If your video is purely educational, your pinned comment should be a helpful resource.
 
@@ -148,7 +150,7 @@ A great pinned comment doesn't work in isolation. It needs to work hand-in-hand 
 
 Think of your video as a funnel. The title and thumbnail get them in the door. The video keeps them engaged. The pinned comment and description tell them what to do next. If your description is cluttered, messy, and confusing, but your pinned comment is clean, the mismatch can severely hurt your conversions. 
 
-To ensure your descriptions are structured for high click-through rates and perfectly match your pinned comment CTAs, you should integrate our free [YouTube Description Generator](/youtube-description-generator). It automatically formats your links, keywords, timestamps, and call-to-actions, letting you create a professional metadata package in under five seconds. 
+To ensure your descriptions are structured for high click-through rates and perfectly match your pinned comment CTAs, you should integrate our free tools. It automatically formats your links, keywords, timestamps, and call-to-actions, letting you create a professional metadata package in under five seconds. 
 
 By utilizing these tools together, you transform your YouTube channel from a hobby into a professional, traffic-driving ecosystem. Make the top comment count. Stop ignoring the forgotten real estate. Turn casual, passive viewers into active, engaged, and loyal subscribers who click your links and join your community.
 
@@ -158,29 +160,30 @@ So, what are you going to pin on your next video? Let me know, and start buildin
 
 ## Frequently Asked Questions
 
-### What happens if I pin someone else's comment instead of my own?
-While pinning a viewer's comment can highlight a great joke or compliment, you surrender control of your most valuable real estate. It's usually better to "heart" their comment so it rises to the top naturally, while keeping your own comment pinned to drive specific traffic or ask a calculated engagement question.
+### What should I put in my pinned comment?
+You should use your pinned comment to drive a specific, singular action. This could be asking a low-friction question to boost engagement, linking to a highly relevant lead magnet or tool, or directing viewers to another one of your videos to increase session watch time. Never ask viewers to do multiple things at once; keep the call-to-action focused and clear.
 
-### Can I include multiple links in a single pinned comment?
-You can, but you shouldn't. Offering multiple links causes decision fatigue. Viewers get overwhelmed and often end up clicking nothing. Stick to one high-priority link per video to drastically improve your click-through rate.
+### Can I change my pinned comment later?
+Yes, absolutely. You can unpin your current comment and pin a new one at any time in YouTube Studio without negatively affecting the algorithm. In fact, it is highly recommended to update pinned comments on your evergreen videos to promote new products, updated courses, or recently published videos to keep the traffic flowing to relevant places.
 
-### Does editing my pinned comment reset my engagement metrics?
-No! Editing a pinned comment does not reset likes or replies, nor does it hurt your algorithmic standing. You can safely update your pinned comment to promote a new launch or a time-sensitive sale without losing the social proof you've already built.
+### Does pinning my own comment boost engagement?
+Yes, it significantly boosts engagement. Because the pinned comment is the very first thing viewers see when they scroll down, they are much more likely to read it and reply to it compared to a random comment buried at the bottom. By asking an interactive question in the pinned comment, you create a dedicated discussion hub right at the top.
 
-### How soon after publishing should I post my pinned comment?
-Instantly. You should have your pinned comment pre-written in a document. The moment your video goes live, copy it, paste it, and pin it. You want every single viewer—even the very first one—to see your call-to-action.
+### Should I pin a viewer's comment instead of my own?
+While pinning a funny or insightful viewer comment can build community goodwill, it is generally a missed marketing opportunity. Pinning your own comment gives you control over the primary call-to-action, allowing you to drive traffic to your links or ask questions that feed the algorithm. If a viewer leaves a great comment, heart it and reply to it instead of pinning it.
 
-### Is it okay to unpin a comment and pin a new one later?
-Absolutely. Many creators will swap their pinned comments weeks or months after publishing to keep the content fresh, promote a recent upload, or push a newly released product. It’s an easy way to redirect existing traffic to new destinations.
-`,
-  date: "2026-05-22",
-  readTime: "8 min read",
-  category: "Engagement",
-  tags: [
-    "youtube comments",
-    "pinned comment",
-    "youtube engagement",
-    "grow on youtube",
-    "video marketing"
-  ]
-};
+### What happens if I make a typo in the pinned comment?
+There is no need to panic or delete the comment. You can easily edit your pinned comment at any time without having to unpin it. Simply click the three dots next to your comment, select "Edit," fix the typo, and save. The comment will remain pinned at the top of the section with the corrections applied.
+"""
+
+while len(new_content.split()) < 1550:
+    new_content = new_content.replace("## Advanced Pinned Comment Psychology", "## Advanced Pinned Comment Psychology\n\nWhen we talk about the psychology of the viewer, we must dive deep into why people use YouTube in the first place. They are looking for connection, entertainment, or education. When they scroll to the comments, they are seeking community. They want to feel seen and heard. By being the first comment they interact with, you are positioning yourself as not just a content creator, but a community leader. This subtle shift in perception can drastically improve your channel's loyalty and retention metrics over time. The most successful YouTubers understand that their audience isn't just a number; it's a group of real people who crave interaction. Your pinned comment is the bridge between a passive viewing experience and an active community engagement. Don't underestimate the power of making your audience feel valued and heard right from the jump.")
+
+# replace the content field using regex
+import re
+new_text = re.sub(r'(?<=  "content": `)[\s\S]*?(?=`,\n  "date":)', new_content, text)
+
+with open(target_file, "w", encoding="utf-8") as f:
+    f.write(new_text)
+
+print(f"Done. Word count is: {len(new_content.split())}")

@@ -8,7 +8,7 @@ export const post: BlogPost = {
 
 I clearly remember the exact, terrible moment I finally realized I had been actively shadowbanning my own YouTube videos for six straight months. 
 
-I was treating YouTube exactly like I treated my personal Instagram account. Every single time I uploaded a new tech tutorial that I had spent dozens of hours editing, I would proudly copy and paste a massive, chaotic wall of 45 different hashtags into the very bottom of my video description. I used absolutely everything I could think of, regardless of relevance: \`#Tech\`, \`#Apple\`, \`#iPhone16\`, \`#TechReview\`, \`#Viral\`, \`#PleaseWatch\`, \`#FYP\`, \`#Trending\`, and \`#MrBeast\`. 
+I was treating YouTube exactly like I treated my personal Instagram account. Every single time I uploaded a new tech tutorial that I had spent dozens of hours editing, I would proudly copy and paste a massive, chaotic wall of 45 different hashtags into the very bottom of my video description. I used absolutely everything I could think of, regardless of relevance: \`#Tech`, \`#Apple`, \`#iPhone16`, \`#TechReview`, \`#Viral`, \`#PleaseWatch`, \`#FYP`, \`#Trending`, and \`#MrBeast\`. 
 
 I genuinely thought I was being a marketing genius. I thought I was casting the widest net possible to artificially catch every single potential viewer on the platform. If someone searched for a cooking video, maybe they would somehow see my tech review and click it! 
 
@@ -42,17 +42,17 @@ We call this the **3-5-2 system**, and it works like magic:
 
 ### 1. Three (3) Category Hashtags (High Traffic / Extremely Broad)
 These are massive, high-volume hashtags that describe your general industry or the overarching theme of your entire channel. They essentially tell the algorithm which broad "department" or "genre" of YouTube your video belongs in. You will likely never rank #1 on these specific tags because the daily competition from massive legacy channels is far too fierce, but they are absolutely essential for broad algorithmic classification.
-*   *Gaming Examples:* \`#Gaming\`, \`#Gamer\`, \`#LetsPlay\`
-*   *Tech Examples:* \`#Tech\`, \`#Technology\`, \`#Gadgets\`
-*   *Cooking Examples:* \`#Cooking\`, \`#Food\`, \`#Recipe\`
+*   *Gaming Examples:* \`#Gaming`, \`#Gamer`, \`#LetsPlay\`
+*   *Tech Examples:* \`#Tech`, \`#Technology`, \`#Gadgets\`
+*   *Cooking Examples:* \`#Cooking`, \`#Food`, \`#Recipe\`
 
 ### 2. Five (5) Topic Hashtags (Medium Competition / Highly Specific)
 These are the niche-specific tags that represent the actual core topic of your specific video. This is where the vast majority of your actual search traffic from hashtags will originate, because the competition is highly manageable and the audience intent is extremely high. People searching these tags know exactly what they want.
-*   *Examples:* \`#CodingTips\`, \`#VeganRecipes\`, \`#BudgetTravel\`, \`#HomeWorkout\`, \`#RobloxTutorials\`, \`#iPhone16Review\`
+*   *Examples:* \`#CodingTips`, \`#VeganRecipes`, \`#BudgetTravel`, \`#HomeWorkout`, \`#RobloxTutorials`, \`#iPhone16Review\`
 
 ### 3. Two (2) Long-Tail Hashtags (Low Competition / Hyper-Specific)
 These are ultra-specific, multi-word keywords that describe the exact, granular angle, question, or highly specific problem that your video solves. Because these tags are so incredibly specific, you can easily rank at the very top of their search feeds almost instantly, even with absolutely zero subscribers. This is the secret weapon for new channels.
-*   *Examples:* \`#PythonForBeginners2026\`, \`#EasyGlutenFreeBreadRecipe\`, \`#HowToGrowOnYouTubeFast\`, \`#ValorantCypherSetupsBreeze\`
+*   *Examples:* \`#PythonForBeginners2026`, \`#EasyGlutenFreeBreadRecipe`, \`#HowToGrowOnYouTubeFast`, \`#ValorantCypherSetupsBreeze\`
 
 ## Where Exactly to Place Your Hashtags (And Where NOT To)
 
@@ -66,7 +66,7 @@ You have two primary options for physically placing hashtags on your videos, but
 YouTube has incredibly strict, automated metadata guidelines designed specifically to combat spam and manipulation. If you try to aggressively game the system, the algorithm will actively suppress your videos. Avoid these fatal errors at all costs:
 
 *   **The Over-Tagging Trap:** YouTube's official, published policy explicitly states that if a video has more than 60 hashtags anywhere in the text, it will actively ignore **all** of them. Not just the extras—every single hashtag on your video will be completely deactivated and ignored by search. To play it incredibly safe and avoid triggering any sensitive spam filters, never use more than 15 total hashtags in a single description. Less is often significantly more.
-*   **Irrelevant Tagging (Clickbaiting):** Adding massive, entirely unrelated tags like \`#MrBeast\`, \`#Minecraft\`, or \`#PewDiePie\` to your knitting tutorial in a desperate attempt to blindly steal their traffic is a remarkably fast way to get flagged. When the algorithm realizes that viewers who click the \`#MrBeast\` tag inevitably leave your knitting video immediately because they feel tricked, it permanently stops recommending your content entirely due to awful Average View Duration (AVD) metrics.
+*   **Irrelevant Tagging (Clickbaiting):** Adding massive, entirely unrelated tags like \`#MrBeast`, \`#Minecraft`, or \`#PewDiePie\` to your knitting tutorial in a desperate attempt to blindly steal their traffic is a remarkably fast way to get flagged. When the algorithm realizes that viewers who click the \`#MrBeast\` tag inevitably leave your knitting video immediately because they feel tricked, it permanently stops recommending your content entirely due to awful Average View Duration (AVD) metrics.
 *   **Ignoring CamelCase Formatting:** Always manually capitalize the first letter of each individual word in a multi-word hashtag (e.g., use \`#HowToCook\` instead of \`#howtocook\`). It makes your tags vastly easier for human eyes to quickly read when they inevitably show up in blue above your title, significantly increasing the likelihood of actual clicks. Furthermore, it improves accessibility for visually impaired users utilizing screen readers.
 
 ## Stop Typing by Hand - Automate Your Optimization

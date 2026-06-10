@@ -142,9 +142,7 @@ In most cases, yes. YouTube is not a zero-sum game. Viewers subscribe to multipl
 
 **YouTube collaboration strategy** is one of the fastest paths to channel growth, especially for creators under 10K subscribers. Find the right partners, pitch with specificity and value, execute creative formats, and measure your results.
 
-Before you reach out, make sure your channel identity is polished and professional. Use our free [YouTube Channel Name Generator](/youtube-channel-name-generator) to create a memorable, brandable channel name that makes potential collab partners take you seriously from the very first message!\`,
-  publishDate: "2026-06-06",`,
-
+Before you reach out, make sure your channel identity is polished and professional. Use our free [YouTube Channel Name Generator](/youtube-channel-name-generator) to create a memorable, brandable channel name that makes potential collab partners take you seriously from the very first message!`,
   date: "2026-06-06",
   readTime: "10 min read",
   category: "YouTube Growth",

@@ -76,8 +76,17 @@ import { post as youtubeAlgorithmUpdate2026 } from './posts/youtube-algorithm-up
 import { post as youtubeSyntheticContentPolicy } from './posts/youtube-synthetic-content-policy';
 import { post as youtubeAutomationCashCowGuide } from './posts/youtube-automation-cash-cow-guide-2026';
 import { post as bestFreeAiToolsForYoutubers } from './posts/best-free-ai-tools-for-youtubers';
-
+import { post as youtubeLiveStreamingSeoGuide } from './posts/youtube-live-streaming-seo-guide';
+import { post as youtubeVideoPodcastStrategy2026 } from './posts/youtube-video-podcast-strategy-2026';
+import { post as psychologyOfYoutubeThumbnailsColorsFaces } from './posts/psychology-of-youtube-thumbnails-colors-faces';
+import { post as youtubeVsTiktokCreatorFunds2026 } from './posts/youtube-vs-tiktok-creator-funds-2026';
+import { post as howToOutsourceYoutubeEditingBusiness } from './posts/how-to-outsource-youtube-editing-business';
 const rawBlogPosts: BlogPost[] = [
+  youtubeLiveStreamingSeoGuide,
+  youtubeVideoPodcastStrategy2026,
+  psychologyOfYoutubeThumbnailsColorsFaces,
+  youtubeVsTiktokCreatorFunds2026,
+  howToOutsourceYoutubeEditingBusiness,
   youtubeAutomationCashCowGuide,
   bestFreeAiToolsForYoutubers,
   youtubeAlgorithmUpdate2026,

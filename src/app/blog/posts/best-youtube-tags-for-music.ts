@@ -155,9 +155,7 @@ Tags have a minimal effect on Shorts because Shorts are primarily distributed th
 
 The difference between a music video that gets 50 views and one that gets 50,000 often comes down to discoverability. Your music might be incredible, but if YouTube cannot understand what it is and who it is for, the algorithm cannot recommend it to the right listeners.
 
-Stop guessing your tags. Use our free [YouTube Tags Generator](/youtube-tags-generator) to generate genre-specific, AI-optimized tag sets for your music videos, covers, and beats - and let the algorithm do what it does best: connect your music with the people who will love it.\`,
-  publishDate: "2026-05-31",`,
-
+Stop guessing your tags. Use our free [YouTube Tags Generator](/youtube-tags-generator) to generate genre-specific, AI-optimized tag sets for your music videos, covers, and beats - and let the algorithm do what it does best: connect your music with the people who will love it.`,
   date: "2026-05-31",
   readTime: "9 min read",
   category: "Tags & SEO",
