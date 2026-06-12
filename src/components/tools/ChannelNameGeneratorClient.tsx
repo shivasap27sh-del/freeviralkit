@@ -147,7 +147,7 @@ export default function ChannelNameGeneratorClient({ niche }: ChannelNameGenerat
             animate={{ opacity: 1, y: 0 }}
             className="space-y-6 mb-8"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <h2 className="font-display text-xl font-semibold">Your Generated Channel Names</h2>
               <button
                 onClick={() => handleGenerate(undefined, true)}

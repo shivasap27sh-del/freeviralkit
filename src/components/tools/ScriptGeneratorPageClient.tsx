@@ -167,7 +167,7 @@ export default function ScriptGeneratorPageClient() {
             animate={{ opacity: 1, y: 0 }}
             className="space-y-6 mb-8"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <h2 className="font-display text-xl font-semibold">Your High-Retention Script Outline</h2>
               <div className="flex items-center gap-2">
                 <button

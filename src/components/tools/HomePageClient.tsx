@@ -136,7 +136,7 @@ export default function HomePageClient() {
       <AnimatePresence>
         {titles.length > 0 && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
               <div className="flex items-center gap-3">
                 <div className="step-badge step-badge-blue"><Video className="w-5 h-5" /></div>
                 <h2 className="font-display text-xl font-semibold text-slate-900 dark:text-white">2. Pick Your Title</h2>
@@ -190,17 +190,17 @@ export default function HomePageClient() {
       <AnimatePresence>
         {(details || (isGeneratingDetails && selectedTitle)) && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="step-badge step-badge-green"><Zap className="w-5 h-5" /></div>
-                <div>
-                  <h2 className="font-display text-xl font-semibold text-slate-900 dark:text-white">3. Your SEO Package</h2>
-                  <p className="text-sm text-slate-500 truncate max-w-md">For: <span className="text-slate-700 dark:text-slate-300 italic">&ldquo;{selectedTitle}&rdquo;</span></p>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-3 min-w-0 w-full">
+                <div className="step-badge step-badge-green shrink-0"><Zap className="w-5 h-5" /></div>
+                <div className="min-w-0">
+                  <h2 className="font-display text-xl font-semibold text-slate-900 dark:text-white truncate">3. Your SEO Package</h2>
+                  <p className="text-sm text-slate-500 truncate max-w-full">For: <span className="text-slate-700 dark:text-slate-300 italic">&ldquo;{selectedTitle}&rdquo;</span></p>
                 </div>
               </div>
               {details && (
-                <button onClick={copyFullPackage} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-primary text-slate-900 text-sm font-semibold hover:opacity-90 transition-all shadow-[0_4px_15px_rgba(139,92,246,0.3)] cursor-pointer">
-                  {copiedStates['full-package'] ? <><CheckCircle2 className="w-4 h-4" /> Copied!</> : <><Package className="w-4 h-4" /> Copy Full Package</>}
+                <button onClick={copyFullPackage} className="w-full sm:w-auto shrink-0 flex justify-center items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-primary text-slate-900 text-sm font-semibold hover:opacity-90 transition-all shadow-[0_4px_15px_rgba(139,92,246,0.3)] cursor-pointer">
+                  {copiedStates['full-package'] ? <><CheckCircle2 className="w-4 h-4 shrink-0" /> Copied!</> : <><Package className="w-4 h-4 shrink-0" /> Copy Full Package</>}
                 </button>
               )}
             </div>
@@ -218,7 +218,7 @@ export default function HomePageClient() {
               <>
                 {/* Description */}
                 <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-6 md:p-8">
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center shrink-0"><AlignLeft className="w-4 h-4" /></div>
                       <div>
@@ -239,7 +239,7 @@ export default function HomePageClient() {
 
                 {/* Hashtags */}
                 <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="glass-card rounded-2xl p-6 md:p-8">
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center shrink-0"><Hash className="w-4 h-4" /></div>
                       <div>
@@ -268,7 +268,7 @@ export default function HomePageClient() {
 
                 {/* Tags */}
                 <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="glass-card rounded-2xl p-6 md:p-8">
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0"><Tag className="w-4 h-4" /></div>
                       <div>
@@ -307,7 +307,7 @@ export default function HomePageClient() {
                 {/* Pinned Comment */}
                 {details.pinnedComment && (
                   <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass-card rounded-2xl p-6 md:p-8">
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
                       <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-lg bg-yellow-500/10 text-yellow-400 flex items-center justify-center shrink-0"><MessageCircle className="w-4 h-4" /></div>
                         <div>
