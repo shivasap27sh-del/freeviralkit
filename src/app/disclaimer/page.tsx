@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: 'https://freeviralkit.com/disclaimer',
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };
