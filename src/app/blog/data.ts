@@ -81,7 +81,18 @@ import { post as youtubeVideoPodcastStrategy2026 } from './posts/youtube-video-p
 import { post as psychologyOfYoutubeThumbnailsColorsFaces } from './posts/psychology-of-youtube-thumbnails-colors-faces';
 import { post as youtubeVsTiktokCreatorFunds2026 } from './posts/youtube-vs-tiktok-creator-funds-2026';
 import { post as howToOutsourceYoutubeEditingBusiness } from './posts/how-to-outsource-youtube-editing-business';
+import { post as youtubeFirst100Subscribers } from './posts/youtube-first-100-subscribers';
+import { post as youtubeCommentModerationGuide } from './posts/youtube-comment-moderation-guide';
+import { post as youtubeLightingSetupBudget } from './posts/youtube-lighting-setup-budget';
+import { post as youtubeBurnoutCreatorMentalHealth } from './posts/youtube-burnout-creator-mental-health';
+import { post as youtubeCustomUrlHandleGuide } from './posts/youtube-custom-url-handle-guide';
+
 const rawBlogPosts: BlogPost[] = [
+  youtubeFirst100Subscribers,
+  youtubeCommentModerationGuide,
+  youtubeLightingSetupBudget,
+  youtubeBurnoutCreatorMentalHealth,
+  youtubeCustomUrlHandleGuide,
   youtubeLiveStreamingSeoGuide,
   youtubeVideoPodcastStrategy2026,
   psychologyOfYoutubeThumbnailsColorsFaces,
