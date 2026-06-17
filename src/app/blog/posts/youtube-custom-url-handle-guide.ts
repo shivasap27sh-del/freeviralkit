@@ -4,6 +4,10 @@ export const post: BlogPost = {
   slug: "youtube-custom-url-handle-guide",
   title: "The Ultimate Guide to YouTube Handles and Custom URLs",
   description: "Your channel name and handle are your digital real estate. Here is how to pick the perfect handle, rebrand your old channel, and secure your identity.",
+  date: "2026-06-17",
+  readTime: "7 min read",
+  category: "YouTube Strategy",
+  tags: ["youtube handle", "youtube url", "channel name"],
   content: `## The Mistake That Cost Me a Sponsorship
 
 In 2018, I started a channel dedicated entirely to reviewing vintage mechanical keyboards. I didn't think much about the branding. I just wanted to post videos. So, in a massive rush to upload my first review, I named the channel "TechGuy99_Reviewz" and accepted the completely random string of alphanumeric characters YouTube assigned as my channel URL.

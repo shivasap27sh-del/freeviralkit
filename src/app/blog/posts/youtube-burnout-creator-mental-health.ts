@@ -4,6 +4,10 @@ export const post: BlogPost = {
   slug: "youtube-burnout-creator-mental-health",
   title: "Avoiding Creator Burnout: Mental Health for YouTubers",
   description: "Are you a slave to the Sunday upload schedule? Learn how to detach your self-worth from view counts, batch content, and survive YouTube burnout.",
+  date: "2026-06-17",
+  readTime: "7 min read",
+  category: "Creator Health",
+  tags: ["creator burnout", "mental health", "youtube schedule"],
   content: `## The Thursday Night Panic Attack
 
 It was exactly 11:30 PM on a Thursday. I was staring blankly at an incredibly disorganized, half-finished Adobe Premiere Pro timeline. My eyes were burning, my neck was completely locked up in physical pain, and my heart was pounding out of my chest with raw, unfiltered anxiety. 

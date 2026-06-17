@@ -4,6 +4,10 @@ export const post: BlogPost = {
   slug: "youtube-comment-moderation-guide",
   title: "How to Deal with Hate Comments and Trolls on YouTube",
   description: "Getting your first hateful comment is terrifying, but it actually means the algorithm is working. Learn how to protect your mental health and moderate trolls effectively.",
+  date: "2026-06-17",
+  readTime: "7 min read",
+  category: "Creator Tools",
+  tags: ["youtube comments", "hate comments", "youtube moderation"],
   content: `## The Day My Heart Sank Over a Single Sentence
 
 I can vividly recall the exact moment I received my very first piece of genuine hate on YouTube. I was sitting at a coffee shop, casually checking my YouTube Studio app while waiting for my latte. My newest video had just crossed 500 views—a massive milestone for me at the time. I tapped the notification bell, excited to see a new comment.

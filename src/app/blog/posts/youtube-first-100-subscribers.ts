@@ -4,6 +4,10 @@ export const post: BlogPost = {
   slug: "youtube-first-100-subscribers",
   title: "The Exact Strategy to Get Your First 100 YouTube Subscribers",
   description: "Stop refreshing your zero subscriber count. Learn the emotional mindset shift and actionable tactics needed to escape the void and build your first loyal audience.",
+  date: "2026-06-17",
+  readTime: "7 min read",
+  category: "YouTube Strategy",
+  tags: ["youtube growth", "first 100 subscribers", "youtube strategy"],
   content: `## The Crushing Reality of the Zero Subscriber Void
 
 I will never forget the exact feeling of uploading my very first YouTube video. I spent an entire weekend agonizing over the script. I re-recorded the audio three times because I thought my voice sounded weird. I spent eight hours learning how to use Adobe Premiere Pro just to make a simple, five-minute video. I finally exported the file, nervously typed in the title, and hit publish.

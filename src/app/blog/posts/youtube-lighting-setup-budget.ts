@@ -4,6 +4,10 @@ export const post: BlogPost = {
   slug: "youtube-lighting-setup-budget",
   title: "How to Light Your YouTube Videos on a $50 Budget",
   description: "You don't need a $500 professional lighting kit. Discover how to use bounce boards, window light, and $50 hardware store gear to look cinematic on camera.",
+  date: "2026-06-17",
+  readTime: "7 min read",
+  category: "Creator Tools",
+  tags: ["youtube lighting", "budget lighting", "youtube setup"],
   content: `## The Mistake of the $1,500 Camera and the $0 Light
 
 When I first started taking YouTube seriously, I made the exact same catastrophic financial mistake that almost every beginner makes. I saved up for six months and dropped $1,500 on a brand new, highly reviewed mirrorless camera and an expensive lens with a blurry background effect. I rushed home, placed the camera on my desk, turned on my standard bedroom ceiling light, and hit record.
