@@ -3,14 +3,19 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import DescriptionGeneratorClient from '@/components/tools/DescriptionGeneratorClient';
 import { AlignLeft } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
+
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Description Generator — AI-Powered SEO Descriptions',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free AI YouTube Description Generator',
+    description: 'Generate SEO-optimized YouTube descriptions with keyword placement, timestamps, and CTAs instantly. Free AI description generator.',
+  },
+  title: 'Free AI YouTube Description Generator',
   description:
-    'Generate SEO-optimized YouTube descriptions with proper keyword placement, timestamps, and calls-to-action instantly using our free AI description generator.',
+    'Generate SEO-optimized YouTube descriptions with keyword placement, timestamps, and CTAs instantly. Free AI description generator.',
   openGraph: {
-    title: 'Free YouTube Description Generator — AI-Powered SEO Descriptions',
+    title: 'Free YouTube Description Generator — AI SEO Tool',
     description:
       'Generate SEO-optimized YouTube descriptions with proper keyword placement, timestamps, and calls-to-action instantly.',
     url: buildAbsoluteUrl('/youtube-description-generator'),
@@ -92,9 +97,7 @@ export default function DescriptionGeneratorPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-green-400 bg-green-400/10 border border-green-400/20 mb-6 uppercase tracking-wider">
             <AlignLeft className="w-4 h-4" /> AI Description Generator
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            Free YouTube <span className="text-gradient">Description Generator</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> Free YouTube Description Generator </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             Generate SEO-optimized YouTube descriptions instantly. Get proper keyword placement, timestamps, and calls-to-action tailored to your video content.
           </p>
@@ -121,9 +124,7 @@ export default function DescriptionGeneratorPage() {
             </div>
           </div>
 
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-          </div>
 
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
@@ -142,9 +143,7 @@ export default function DescriptionGeneratorPage() {
             </div>
           </div>
 
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">

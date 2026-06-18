@@ -110,9 +110,7 @@ If you have standard intro animations, specific custom sound effects, recurring 
 
 For more advanced strategies on running your channel professionally and keeping your audience warm while your editor works, you might enjoy our comprehensive guide on [how to use the YouTube Community tab](/blog/youtube-community-tab-strategy).
 
-## Frequently Asked Questions
-
-### Should I hire an editor per video or on a monthly retainer?
+## Should I hire an editor per video or on a monthly retainer?
 When you first start working with a brand new freelance editor, always hire them strictly per video for the first 3 to 5 projects. This acts as a crucial trial period to ensure your communication styles match, they hit deadlines, and their quality remains consistent. Once they consistently deliver excellent work and deeply understand your workflow, moving to a monthly retainer (e.g., $1,500 guaranteed for 4 videos a month) is highly recommended. It guarantees their availability, stabilizes your production schedule, and often gets you a slight bulk discount.
 
 ### What if my hired editor steals my unreleased footage or ideas?

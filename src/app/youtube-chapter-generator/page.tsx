@@ -6,7 +6,12 @@ import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Chapter Generator - Auto Timestamps | FreeViralKit',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free YouTube Chapter Generator',
+    description: 'Automatically generate YouTube video chapters and timestamps from your script or outline. Boost your video SEO with our free AI tool.',
+  },
+  title: 'Free YouTube Chapter Generator',
   description: 'Automatically generate YouTube video chapters and timestamps from your script or outline. Boost your video SEO with our free AI tool.',
   openGraph: {
     title: 'YouTube Chapter Generator - Auto Timestamps Free',
@@ -76,9 +81,7 @@ export default function ChapterGeneratorPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-indigo-500 bg-indigo-500/10 border border-indigo-500/20 mb-6 uppercase tracking-wider">
             <Clock className="w-4 h-4" /> AI Chapter Generator
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white">
-            Free YouTube Chapter Generator — <span className="text-gradient">Automate Timestamps</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white"> Free YouTube Chapter Generator — Automate Timestamps </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             YouTube chapters improve user experience and boost your video&apos;s search ranking on Google. Paste your script or bullet points below, and our AI will automatically generate perfectly formatted timestamps for your description.
           </p>
@@ -105,9 +108,7 @@ export default function ChapterGeneratorPage() {
             </div>
           </div>
 
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-          </div>
 
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
@@ -126,9 +127,7 @@ export default function ChapterGeneratorPage() {
             </div>
           </div>
 
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
           {/* Article Section 2 */}
           <div className="glass-card rounded-2xl p-8 border-t-4 border-t-indigo-500">

@@ -110,9 +110,7 @@ Hashtags play a major role in Short-form indexing. See our full study on this in
 
 
 
-## Frequently Asked Questions
-
-### Does SEO work for YouTube Shorts?
+## Does SEO work for YouTube Shorts?
 Yes, especially for search traffic. Many Shorts get consistent views for months through YouTube Search.
 
 ### Where should I put tags for Shorts?

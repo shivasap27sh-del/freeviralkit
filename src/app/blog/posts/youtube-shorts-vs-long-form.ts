@@ -130,9 +130,7 @@ I do not want to be unfair to Shorts. There are legitimate cases where a Shorts-
 But for the vast majority of creators who want to build a sustainable, monetizable YouTube channel, long-form must remain the backbone of your strategy, with **short form content** serving as the amplifier.
 
 
-## Frequently Asked Questions
-
-### Do YouTube Shorts subscribers watch long-form videos?
+## Do YouTube Shorts subscribers watch long-form videos?
 In my experience, only about 5 - 10% of subscribers gained from Shorts regularly watch long-form content. The reason is that Shorts viewers are in a different consumption mindset - they want fast, passive entertainment, not 15-minute deep dives. However, if your Shorts are directly related to your long-form topics and include strong CTAs, you can push that number higher.
 
 ### Can I repost TikToks as YouTube Shorts?

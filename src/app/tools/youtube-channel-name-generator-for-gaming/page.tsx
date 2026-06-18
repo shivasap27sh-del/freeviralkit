@@ -4,9 +4,14 @@ import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import ChannelNameGeneratorClient from '@/components/tools/ChannelNameGeneratorClient';
 export const metadata: Metadata = {
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Channel Name Generator for Gaming',
+    description: 'Free AI gaming channel name generator. Get unique, brandable name ideas — clan-style, streamer names, funny gamer tags, and more.',
+  },
   title: 'YouTube Channel Name Generator for Gaming',
   description:
-    'Free AI-powered gaming channel name generator. Get unique, brandable name ideas for your gaming YouTube channel — clan-style, streamer names, funny gamer tags, and more.',
+    'Free AI gaming channel name generator. Get unique, brandable name ideas — clan-style, streamer names, funny gamer tags, and more.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-channel-name-generator-for-gaming'),
   },
@@ -161,9 +166,7 @@ export default function GamingChannelNameLandingPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Channel Name Generator for <span className="text-gradient">Gaming</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> YouTube Channel Name Generator for Gaming </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Generate unique, brandable gaming channel names instantly. Clan-style, streamer names, professional brands, or funny gamer tags — all powered by AI.
           </p>

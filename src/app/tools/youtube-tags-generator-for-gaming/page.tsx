@@ -4,9 +4,14 @@ import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TagsGeneratorClient from '@/components/tools/TagsGeneratorClient';
 export const metadata: Metadata = {
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Tags Generator for Gaming',
+    description: 'Free AI YouTube tags generator for gaming. Optimized tags for FPS, RPG, Minecraft, GTA, Fortnite, and more. Boost discoverability.',
+  },
   title: 'YouTube Tags Generator for Gaming',
   description:
-    'Free AI-powered YouTube tags generator for gaming videos. Generate optimized tags for FPS, RPG, mobile gaming, streaming, Minecraft, GTA, Fortnite, and more. Boost discoverability instantly.',
+    'Free AI YouTube tags generator for gaming. Optimized tags for FPS, RPG, Minecraft, GTA, Fortnite, and more. Boost discoverability.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-tags-generator-for-gaming'),
   },
@@ -160,9 +165,7 @@ export default function GamingTagsLandingPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Tags Generator for <span className="text-gradient">Gaming</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> YouTube Tags Generator for Gaming </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Generate optimized tags for FPS, RPG, mobile gaming, streaming, and every genre. Maximize discoverability with AI-powered gaming tags.
           </p>

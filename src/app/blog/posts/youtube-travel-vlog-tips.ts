@@ -104,9 +104,7 @@ Here is my fast editing workflow:
 Mobile editing apps like CapCut or LumaFusion on iPad are genuinely powerful enough for professional travel vlogs. I edited an entire 10-video Japan series on my iPad during flights and train rides.
 
 
-## Frequently Asked Questions
-
-### How much does it cost to start a travel vlog channel?
+## How much does it cost to start a travel vlog channel?
 You can start for essentially free if you use your smartphone. A dedicated setup with a pocket camera, wireless mic, and mini tripod costs around $300-500. The biggest cost is actually the travel itself, but many successful travel vloggers start by documenting local day trips and road trips.
 
 ### How often should travel vloggers upload?

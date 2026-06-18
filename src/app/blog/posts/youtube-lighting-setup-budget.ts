@@ -109,27 +109,5 @@ When you set up your key light (the window or the diffused clamp lamp), sit in y
 Lower the light slightly or bring it closer to your face until that reflection appears. It immediately injects life, soul, and humanity back into your face, radically increasing the subconscious trust viewers feel when they watch your videos.
 
 ---
-
-## Frequently Asked Questions
-
-**Is a cheap ring light from Amazon good enough for YouTube?**
-Ring lights are acceptable for extreme close-up beauty tutorials or TikTok dances, but they are generally terrible for standard YouTube videos. They produce a very distinct, unnatural circular catchlight in your eyes, and because they are placed directly in front of your face around the camera lens, they create completely "flat" lighting that destroys all depth and cinematic dimension. A diffused light at a 45-degree angle is always vastly superior.
-
-**What color temperature should I use for my YouTube lighting?**
-For your main "key" light illuminating your face, you should aim for "Daylight" color temperature, which is roughly 5000K to 5600K. This perfectly mimics the clean, neutral color of the sun at noon. For your background "practical" lights (like desk lamps), you should use warm "Tungsten" color temperatures, which are roughly 2700K to 3200K. The contrast between the cool light on your face and the warm light in the background creates a highly professional, cinematic look.
-
-**Do I need to buy a three-point lighting kit?**
-No. The traditional "three-point lighting setup" (key light, fill light, hair light) is a relic of 1990s television studios. Modern YouTube aesthetics heavily favor a single, beautifully diffused key light paired with a subtle background practical light. It looks much more natural, relatable, and authentic than an overly manufactured three-point studio setup.
-
-**How do I light myself if I wear glasses and get terrible glare?**
-Lighting people with glasses is incredibly difficult because the lenses act like massive mirrors, reflecting the light source directly into the camera. To fix this, you must raise your primary light source significantly higher up toward the ceiling, pointing down at a steep angle. The light will hit your face, but the physical reflection will bounce downward toward the floor, completely missing the camera lens.
-
-**Why does my video look grainy even when I have lights turned on?**
-If your video looks grainy (digital noise), it means your camera's sensor is literally starving for light. Even if a room looks bright to your human eyes, cameras require vastly more light to operate cleanly. You must physically move your light source much closer to your face. The closer a light source is, the exponentially brighter it becomes, which allows your camera to lower its ISO setting and instantly eliminate the digital grain.
-
----
-
-**Ready to stop stressing over expensive gear and start actually growing your channel?** 
-Now that your lighting looks highly professional and cinematic, it is time to optimize your content for the algorithm. Make sure your video actually gets clicked by running your ideas through our [YouTube Title Generator](/youtube-title-generator), and lock in viewer attention with our high-retention [YouTube Hook Generator](/youtube-hook-generator). Lights, camera, action!
 `
 };

@@ -4,9 +4,14 @@ import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import DescriptionGeneratorClient from '@/components/tools/DescriptionGeneratorClient';
 export const metadata: Metadata = {
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Description Generator for Education',
+    description: 'Free AI YouTube description generator for education channels. Create keyword-rich descriptions for lectures, tutorials, and courses.',
+  },
   title: 'YouTube Description Generator for Education',
   description:
-    'Free AI-powered YouTube description generator for education channels. Create structured, keyword-rich descriptions for lectures, tutorials, exam prep, and online courses. Boost SEO and student engagement.',
+    'Free AI YouTube description generator for education channels. Create keyword-rich descriptions for lectures, tutorials, and courses.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-description-generator-for-education'),
   },
@@ -173,9 +178,7 @@ export default function EducationDescriptionLandingPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Description Generator for <span className="text-gradient">Education</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> YouTube Description Generator for Education </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Build clear, SEO-optimized descriptions for educational videos with topic summaries, learning outcomes, timestamps, and calls to action. Built for educators.
           </p>

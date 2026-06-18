@@ -105,9 +105,7 @@ Pacing is the rhythm at which you deliver information. Too fast, and viewers fee
 **Cut ruthlessly**: Watch your finished video and ask yourself for every single sentence: "Does this NEED to be here?" If the answer is no, cut it. A tight 8-minute video will always outperform a bloated 15-minute video with the same information.
 
 
-## Frequently Asked Questions
-
-### What is considered a good audience retention rate on YouTube?
+## What is considered a good audience retention rate on YouTube?
 For a 10-minute video, maintaining 50% or higher average percentage viewed is excellent. For longer videos (20+ minutes), 35-45% is strong. But remember, YouTube also weighs absolute watch time - so a 20-minute video with 40% retention (8 minutes AVD) often outperforms a 5-minute video with 70% retention (3.5 minutes AVD) in the algorithm.
 
 ### How do I read the audience retention graph in YouTube Studio?

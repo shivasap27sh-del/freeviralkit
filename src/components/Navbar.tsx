@@ -30,7 +30,17 @@ const toolsDropdown = [
   { href: '/creator-gear', label: 'Creator Gear & Tools' },
   { href: '/tools/youtube-title-generator-for-gaming', label: 'Gaming Titles' },
   { href: '/tools/youtube-title-generator-for-vlogs', label: 'Vlog Titles' },
+  { href: '/tools/youtube-title-generator-for-tech', label: 'Tech Titles' },
+  { href: '/tools/youtube-title-generator-for-beauty', label: 'Beauty Titles' },
+  { href: '/tools/youtube-title-generator-for-cooking', label: 'Cooking Titles' },
+  { href: '/tools/youtube-title-generator-for-fitness', label: 'Fitness Titles' },
+  { href: '/tools/youtube-title-generator-for-travel', label: 'Travel Titles' },
+  { href: '/tools/youtube-title-generator-for-music', label: 'Music Titles' },
   { href: '/tools/youtube-description-generator-for-education', label: 'Education Descriptions' },
+  { href: '/tools/youtube-description-generator-for-tech', label: 'Tech Descriptions' },
+  { href: '/tools/youtube-tags-generator-for-gaming', label: 'Gaming Tags' },
+  { href: '/tools/youtube-hashtag-generator-for-shorts', label: 'Shorts Hashtags' },
+  { href: '/tools/youtube-channel-name-generator-for-gaming', label: 'Gaming Channel Names' },
 ];
 
 export default function Navbar() {

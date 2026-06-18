@@ -4,9 +4,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 export const metadata: Metadata = {
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Title Generator for Travel Vlogs',
+    description: 'Free AI YouTube title generator for travel channels. Engaging titles for destination guides, budget travel, and adventure vlogs.',
+  },
   title: 'YouTube Title Generator for Travel Vlogs',
   description:
-    'Free AI-powered YouTube title generator for travel channels. Create engaging titles for destination guides, budget travel, solo travel, food travel, and adventure vlogs that boost clicks and views.',
+    'Free AI YouTube title generator for travel channels. Engaging titles for destination guides, budget travel, and adventure vlogs.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-travel'),
   },
@@ -159,9 +164,7 @@ export default function TravelTitleLandingPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Title Generator for <span className="text-gradient">Travel</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> YouTube Title Generator for Travel </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Create engaging titles for destination guides, budget travel, solo adventures, and food travel vlogs. Optimized for clicks, powered by AI.
           </p>

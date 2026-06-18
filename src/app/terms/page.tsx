@@ -152,7 +152,7 @@ export default function TermsOfServicePage() {
         </p>
         <p>
           <strong>FreeViralKit</strong><br />
-          Email: legal@freeviralkit.com<br />
+          Email: support@freeviralkit.com<br />
         </p>
       </div>
     </main>

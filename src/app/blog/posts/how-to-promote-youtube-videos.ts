@@ -129,9 +129,7 @@ Add a simple call-to-action in every video description: "Get my free [relevant r
 Even with 50 email subscribers, you have 50 people you can notify every time you upload. Those 50 views, likes, and comments within the first hour send powerful signals to the algorithm.
 
 
-## Frequently Asked Questions
-
-### How long does it take for YouTube promotion to show results?
+## How long does it take for YouTube promotion to show results?
 Most creators see measurable improvements within 30 to 60 days of consistent promotion. The key word is "consistent." Posting one Reddit comment and one Instagram story will not move the needle. Committing to a daily promotion routine across multiple channels creates compounding effects that become visible within a month.
 
 ### Should I promote every video I upload?

@@ -6,7 +6,12 @@ import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Thumbnail Idea Generator - CTR Boost | FreeViralKit',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free YouTube Thumbnail Idea Generator',
+    description: 'Generate high-CTR YouTube thumbnail concepts and ideas instantly. Get psychological visual layouts and text overlays to maximize clicks.',
+  },
+  title: 'Free YouTube Thumbnail Idea Generator',
   description: 'Generate high-CTR YouTube thumbnail concepts and ideas instantly. Get psychological visual layouts and text overlays to maximize clicks.',
   openGraph: {
     title: 'YouTube Thumbnail Idea Generator - Maximize CTR',
@@ -80,9 +85,7 @@ export default function ThumbnailGeneratorPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-amber-500 bg-amber-500/10 border border-amber-500/20 mb-6 uppercase tracking-wider">
             <ImageIcon className="w-4 h-4" /> AI Thumbnail Concepts
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white">
-            Free YouTube Thumbnail Idea Generator — <span className="text-gradient">Maximize Your CTR</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white"> Free YouTube Thumbnail Idea Generator — Maximize Your CTR </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             The best thumbnails tell a visual story and invoke curiosity. Enter your video topic, and our AI will generate 3 proven thumbnail concepts, including the exact text overlay to use.
           </p>
@@ -109,9 +112,7 @@ export default function ThumbnailGeneratorPage() {
             </div>
           </div>
 
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-          </div>
 
           {/* Article Section 2 */}
           <div className="glass-card rounded-2xl p-8 border-t-4 border-t-amber-500">
@@ -164,9 +165,7 @@ export default function ThumbnailGeneratorPage() {
             </div>
           </div>
 
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
           {/* Article Section 4 */}
           <div>

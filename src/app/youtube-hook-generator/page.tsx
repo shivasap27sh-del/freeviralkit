@@ -2,11 +2,16 @@ import type { Metadata } from 'next';
 import HookGeneratorClient from '@/components/tools/HookGeneratorClient';
 import { Target, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
+
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Hook Generator - AI Script Hooks | FreeViralKit',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free YouTube Hook Generator — AI Hooks',
+    description: 'Generate high-retention YouTube video hooks instantly with our free AI tool. Hook your viewers in the first 5 seconds to increase watch time and views.',
+  },
+  title: 'Free YouTube Hook Generator — AI Hooks',
   description: 'Generate high-retention YouTube video hooks instantly with our free AI tool. Hook your viewers in the first 5 seconds to increase watch time and views.',
   openGraph: {
     title: 'YouTube Hook Generator - Get 5 AI Script Hooks Free',
@@ -80,9 +85,7 @@ export default function HookGeneratorPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-rose-500 bg-rose-500/10 border border-rose-500/20 mb-6 uppercase tracking-wider">
             <Target className="w-4 h-4" /> AI Hook Generator
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white">
-            Free YouTube Hook Generator — <span className="text-gradient">Grab Attention Instantly</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white"> Free YouTube Hook Generator — Grab Attention Instantly </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             The first 5 seconds of your video determine if viewers stay or scroll away. Enter your video topic and generate 5 highly engaging, retention-optimized script hooks instantly.
           </p>
@@ -101,9 +104,7 @@ export default function HookGeneratorPage() {
                 We have all experienced this incredibly frustrating scenario: you spend hours, sometimes days, researching a topic. You spend another hour designing the absolutely perfect, highly clickable thumbnail, and crafting a killer title that demands attention. You hit publish, and people are actually clicking. Your Click-Through Rate (CTR) looks amazing. But when you check your analytics a day later, the Audience Retention graph looks like a catastrophic cliff dive. Everyone is leaving in the first 30 seconds. All that effort, completely wasted because of one missing element: a strong video hook.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <p>
                 The harsh psychological truth about modern internet consumption? When someone clicks your video thumbnail, they haven&apos;t actually decided to watch your video yet. They have merely decided to <em>sample</em> it. Their finger is literally hovering over the back button, or they are already eyeing the suggested videos in the sidebar. If you do not immediately validate exactly why they clicked and give them an overwhelming, compelling reason to stay within the first 5 to 10 seconds, they are gone forever. 
@@ -112,9 +113,7 @@ export default function HookGeneratorPage() {
                 And this is where the YouTube algorithm is merciless. Once the algorithm sees a pattern of people clicking your video and immediately ditching it, it concludes that your video is either low quality or clickbait. It immediately stops pushing it to new viewers. The initial 30-second retention metric is arguably the single most important metric on the entire platform. 
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <p>
                 That is exactly what a professionally scripted hook fixes. It grabs the viewer by the collar immediately, forcefully opens a &quot;curiosity loop,&quot; and makes an ironclad promise that the payoff at the end of the video is entirely worth their precious time. Our <strong className="text-slate-900 dark:text-white">free YouTube hook generator</strong> is built directly upon the exact same neuro-linguistic formulas and psychological triggers that top-tier creators use to keep millions of people glued to the screen from the very first frame.

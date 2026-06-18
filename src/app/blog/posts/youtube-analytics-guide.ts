@@ -148,9 +148,7 @@ Improving your click rates is the natural next step once you understand analytic
 
 
 
-## Frequently Asked Questions
-
-### Which YouTube analytics metric is most important?
+## Which YouTube analytics metric is most important?
 Average View Duration (AVD) and Click-Through Rate (CTR) are the two most important metrics.
 
 ### What does a flat retention graph mean?

@@ -3,14 +3,19 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import HashtagGeneratorClient from '@/components/tools/HashtagGeneratorClient';
 import { Hash } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
+
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Hashtag Generator — Trending Hashtags for More Views',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free AI YouTube Hashtag Generator',
+    description: 'Generate trending YouTube hashtags instantly with our free AI hashtag generator. Get 15+ niche-specific hashtags ranked by traffic potential.',
+  },
+  title: 'Free AI YouTube Hashtag Generator',
   description:
-    'Generate trending YouTube hashtags instantly with our free AI hashtag generator. Get 15+ niche-specific hashtags ranked by traffic potential — no signup required.',
+    'Generate trending YouTube hashtags instantly with our free AI hashtag generator. Get 15+ niche-specific hashtags ranked by traffic potential.',
   openGraph: {
-    title: 'Free YouTube Hashtag Generator — Trending Hashtags for More Views',
+    title: 'Free YouTube Hashtag Generator — Trending Tags',
     description:
       'Generate trending YouTube hashtags instantly. Get 15+ niche-specific hashtags ranked by traffic potential — completely free.',
     url: buildAbsoluteUrl('/youtube-hashtag-generator'),
@@ -98,9 +103,7 @@ export default function HashtagGeneratorPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-pink-400 bg-pink-400/10 border border-pink-400/20 mb-6 uppercase tracking-wider">
             <Hash className="w-4 h-4" /> AI Hashtag Generator
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            Free YouTube Hashtag Generator — <span className="text-gradient">Trending Hashtags Instantly</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> Free YouTube Hashtag Generator — Trending Hashtags Instantly </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             Generate trending YouTube hashtags instantly with our free AI hashtag generator. Enter your video topic and get 15+ niche-specific hashtags ranked by traffic potential — completely free, no account required.
           </p>
@@ -112,16 +115,14 @@ export default function HashtagGeneratorPage() {
         <section className="mt-16 space-y-12">
           <div>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-white">
-              Understanding YouTube Hashtags and Why They Matter in 2024
+              Understanding YouTube Hashtags and Why They Matter in 2026
             </h2>
             <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-6 text-lg">
               <p>
                 YouTube hashtags are one of the most underutilized discovery tools on the platform today. While the vast majority of creators pour all their energy into perfecting their titles, tweaking their thumbnails, and stuffing backend tags, hashtags remain a critical yet frequently ignored piece of the optimization puzzle. They offer an entirely unique advantage: they create <strong className="text-slate-900 dark:text-white">clickable, browsable topic pages</strong> that viewers actively explore when looking for specific content or trends. When someone clicks a hashtag on any video, they immediately land on a curated feed of all videos utilizing that exact hashtag. Your video could easily be among them, acting as a powerful secondary entry point to your channel.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <p>
                 To fully grasp why this is important, we must look at how YouTube organizes its massive library. With over 800 million videos currently hosted on the platform and millions more uploaded every single day, accurately categorizing content and helping viewers find what they actually want to watch is a monumental engineering challenge. Hashtags solve a piece of this puzzle by creating hyper-specific, topic-level groupings that cut across channel size, subscriber counts, and even upload dates. A relatively small, undiscovered channel using the right hashtag strategy can suddenly find their video sitting right alongside uploads from mega-creators with millions of subscribers. It levels the playing field in a way that standard search engine optimization sometimes struggles to achieve.
@@ -148,9 +149,7 @@ export default function HashtagGeneratorPage() {
                 Broad hashtags include massive, universally understood terms like #Cooking, #Gaming, #Fitness, or #Vlog. These terms naturally possess astronomical search volumes, sometimes numbering in the tens of millions of queries per month. Including them exposes your video to the widest possible theoretical audience. However, because they are so broad, the competition is extraordinarily fierce. If you only use broad hashtags, your video will be instantly buried under millions of other uploads. The correct approach is to use exactly 2 or 3 broad hashtags per video simply to cast a wide net and signal the general genre of your content to the algorithm, but you should never rely on them as your primary driver of traffic.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
                 Niche Hashtags for Targeted, High-Retention Discovery

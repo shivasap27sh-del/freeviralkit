@@ -4,7 +4,7 @@ export const post: BlogPost = {
   slug: "youtube-replacing-netflix-for-gen-z",
   title: "Why YouTube is Officially Replacing Netflix for Gen Z (2026 Data)",
   description: "The era of traditional streaming is dying. Discover why 2026 data shows Gen Z is abandoning Netflix for YouTube, and how creators can capitalize on this massive shift.",
-  date: new Date().toISOString(),
+  date: '2026-06-05T00:00:00.000Z',
   readTime: "7 min read",
   category: "YouTube Algorithm",
   tags: ["Industry Trends", "Gen Z", "Future of YouTube"],

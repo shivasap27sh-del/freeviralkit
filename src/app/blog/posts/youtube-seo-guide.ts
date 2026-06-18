@@ -80,9 +80,7 @@ Go to your YouTube Studio analytics and check your traffic sources precisely 48 
 
 By continuously auditing these three core metrics, you remove sheer luck from the equation entirely and guarantee your channel's long-term, sustainable growth.
 
-## Frequently Asked Questions
-
-### Does changing the video file name before uploading actually impact SEO?
+## Does changing the video file name before uploading actually impact SEO?
 Yes, while it is a relatively minor ranking signal, it remains a highly recommended best practice among top creators. Naming your raw, exported video file "how-to-edit-gaming-videos-davinci.mp4" before you upload provides the YouTube crawler with one extra layer of relevant metadata, compared to uploading a file generically named "final_render_v5_new.mp4". 
 
 ### How long does it usually take to see tangible results from YouTube SEO?

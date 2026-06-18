@@ -124,9 +124,7 @@ Playlists are amazing for raising AVD, but you must know how to hook viewers fir
 
 
 
-## Frequently Asked Questions
-
-### Do playlists help with YouTube SEO?
+## Do playlists help with YouTube SEO?
 Yes. Playlists can rank in search results, and they encourage autoplay which increases session watch time.
 
 ### How many videos should be in a playlist?

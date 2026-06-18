@@ -4,7 +4,7 @@ export const post: BlogPost = {
   slug: "does-changing-youtube-video-title-ruin-algorithm",
   title: "Does Changing a YouTube Video Title Ruin the Algorithm? (2026 Data)",
   description: "Are you afraid to change a poorly performing video title? We analyze the 2026 YouTube algorithm to find out if changing titles hurts or helps your views.",
-  date: new Date().toISOString(),
+  date: '2026-05-22T00:00:00.000Z',
   readTime: "8 min read",
   category: "YouTube Algorithm",
   tags: ["YouTube Titles", "Algorithm Myths", "A/B Testing"],
@@ -93,23 +93,5 @@ And don't forget your tags! When you pivot the title's angle, make sure to updat
 The YouTube algorithm is not a vindictive boss waiting to fire you for making a typo. It is a highly sophisticated machine learning model trying to match viewers with videos they will enjoy.
 
 If your video is failing, the viewers are rejecting the packaging. Changing the packaging is the most logical, data-driven decision you can make. Stop staring at the 10/10 ranking in despair, pivot the title, and get back to creating.
-
-
-## Frequently Asked Questions (FAQs)
-
-**Does changing a YouTube title reset the views to zero?**
-No. Changing a video title, description, or thumbnail does not delete any views, watch time, or revenue the video has already generated. All historical data remains intact.
-
-**How many times can I change a YouTube video title?**
-There is no strict limit enforced by YouTube. However, changing it more than 3 or 4 times in a single day makes it impossible to gather accurate Click-Through Rate (CTR) data for each variation. Give each new title at least 2 to 4 hours to gather impression data before changing it again.
-
-**Will changing the title hurt my YouTube Search ranking?**
-If you remove the primary keyword from your title, your Search ranking for that specific keyword will drop. If your video is currently getting 80% of its traffic from YouTube Search, you should NOT remove the core keywords. Instead, focus on making the surrounding words more compelling.
-
-**Should I change the thumbnail when I change the title?**
-Yes, ideally. The title and thumbnail work as a pair to create a "Curiosity Gap." If you change the title to a completely different psychological angle, the original thumbnail might no longer make sense. A/B testing both simultaneously usually yields the best results.
-
-**Does YouTube notify subscribers again if I change the title?**
-No. Subscribers only receive the initial bell notification and subscription feed push when the video is first published. Changing the title later will not trigger a second notification. It only affects how the video appears on the Home Page and in Search results.
-  `
+`
 };

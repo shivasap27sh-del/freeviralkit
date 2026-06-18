@@ -4,7 +4,7 @@ export const post: BlogPost = {
   slug: "youtube-shorts-algorithm-explained-2026",
   title: "The YouTube Shorts Algorithm Explained (2026 Update)",
   description: "Stop guessing how the Shorts feed works. We break down the exact metrics the 2026 YouTube Shorts algorithm uses to decide if your video goes viral or dies at 400 views.",
-  date: new Date().toISOString(),
+  date: '2026-06-07T00:00:00.000Z',
   readTime: "7 min read",
   category: "YouTube Algorithm",
   tags: ["YouTube Shorts", "Algorithm Guide", "Viral Growth"],

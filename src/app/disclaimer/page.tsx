@@ -1,11 +1,23 @@
 import type { Metadata } from 'next';
+import { buildAbsoluteUrl } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Disclaimer | FreeViralKit',
   description: 'Earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit.',
+  openGraph: {
+    title: 'Disclaimer | FreeViralKit',
+    description: 'Earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit.',
+    url: buildAbsoluteUrl('/disclaimer'),
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disclaimer | FreeViralKit',
+    description: 'Earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit.',
+  },
   alternates: {
-    canonical: 'https://freeviralkit.com/disclaimer',
+    canonical: buildAbsoluteUrl('/disclaimer'),
   },
   robots: {
     index: true,

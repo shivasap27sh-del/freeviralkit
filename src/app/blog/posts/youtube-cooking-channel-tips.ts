@@ -113,9 +113,7 @@ After watching hundreds of cooking channels grow (and stall), here are the patte
 4. **Overly long intros** - If you spend 2 minutes talking about your day before showing any food, viewers will leave. Hook them in the first 5 seconds.
 
 
-## Frequently Asked Questions
-
-### Do I need to show my face in cooking videos?
+## Do I need to show my face in cooking videos?
 No, but it helps significantly. Channels that show the creator's face tend to build stronger subscriber loyalty because viewers form a personal connection. However, many successful cooking channels (like Peaceful Cuisine) use only hand-and-ingredients shots with ambient audio. If you are camera-shy, start with hands-only and introduce your face gradually.
 
 ### How long should a cooking video be?

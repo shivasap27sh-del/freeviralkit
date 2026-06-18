@@ -4,9 +4,14 @@ import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 export const metadata: Metadata = {
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Title Generator for Vlogs',
+    description: 'Free AI YouTube title generator for vloggers. Click-worthy titles for daily vlogs, travel, lifestyle, and personal stories.',
+  },
   title: 'YouTube Title Generator for Vlogs',
   description:
-    'Free AI-powered YouTube title generator for vloggers. Create click-worthy vlog titles for daily life, travel vlogs, lifestyle content, routines, and personal stories. Boost your vlog CTR.',
+    'Free AI YouTube title generator for vloggers. Click-worthy titles for daily vlogs, travel, lifestyle, and personal stories.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-vlogs'),
   },
@@ -163,9 +168,7 @@ export default function VlogTitleLandingPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Title Generator for <span className="text-gradient">Vlogs</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> YouTube Title Generator for Vlogs </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Make relatable, click-worthy vlog titles for daily routines, travel experiences, lifestyle content, and personal stories. Powered by AI, built for vloggers.
           </p>

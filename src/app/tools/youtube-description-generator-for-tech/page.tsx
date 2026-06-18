@@ -5,9 +5,14 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import DescriptionGeneratorClient from '@/components/tools/DescriptionGeneratorClient';
 
 export const metadata: Metadata = {
-  title: 'YouTube Description Generator for Tech Videos',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Description Generator for Tech',
+    description: 'Free AI YouTube description generator for tech channels. SEO-optimized descriptions for reviews, unboxings, comparisons, and tutorials.',
+  },
+  title: 'YouTube Description Generator for Tech',
   description:
-    'Free AI-powered YouTube description generator for tech channels. Create SEO-optimized descriptions for product reviews, unboxings, comparisons, tutorials, and tech news videos.',
+    'Free AI YouTube description generator for tech channels. SEO-optimized descriptions for reviews, unboxings, comparisons, and tutorials.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-description-generator-for-tech'),
   },
@@ -164,9 +169,7 @@ export default function TechDescriptionLandingPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Description Generator for <span className="text-gradient">Tech</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> YouTube Description Generator for Tech </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Create structured, SEO-optimized descriptions for product reviews, unboxings, comparisons, and tech tutorials. Powered by AI, always free.
           </p>

@@ -4,9 +4,14 @@ import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 export const metadata: Metadata = {
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Title Generator for Cooking',
+    description: 'Free AI YouTube title generator for cooking channels. Click-worthy titles for recipes, ASMR cooking, mukbang, and meal prep.',
+  },
   title: 'YouTube Title Generator for Cooking',
   description:
-    'Free AI-powered YouTube title generator for cooking and recipe channels. Create click-worthy titles for recipe videos, ASMR cooking, mukbang, meal prep, and food challenges. Boost CTR instantly.',
+    'Free AI YouTube title generator for cooking channels. Click-worthy titles for recipes, ASMR cooking, mukbang, and meal prep.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-cooking'),
   },
@@ -160,9 +165,7 @@ export default function CookingTitleLandingPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Title Generator for <span className="text-gradient">Cooking</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> YouTube Title Generator for Cooking </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Generate mouthwatering titles for recipe tutorials, ASMR cooking, mukbang, meal prep, and food challenge videos. Powered by AI, built for food creators.
           </p>

@@ -112,27 +112,5 @@ Pin the best, most thoughtful comments to the top of your videos. Reply to your 
 Keep creating. Keep hitting publish. Do not let unhappy strangers silence your voice.
 
 ---
-
-## Frequently Asked Questions
-
-**Do dislikes and hate comments boost the YouTube algorithm?**
-Yes, technically they do. The YouTube algorithm operates on engagement. It cannot differentiate between a "good" comment and a "bad" comment; it only sees that a viewer was engaged enough to type words on their keyboard. Therefore, a hate comment mathematically boosts your engagement metrics. Let the trolls boost your video in the algorithm while you laugh your way to the bank.
-
-**Should I disable comments entirely if the hate gets too bad?**
-Disabling comments should be your absolute last resort. Comments are the lifeblood of a YouTube community and a massive driver of algorithmic engagement. If you disable comments, you punish your loyal fans and destroy your video's ability to rank in search. Instead of disabling comments, rely heavily on the "Hide user from channel" feature and aggressive blocked word filters.
-
-**Can I get in trouble for blocking too many people?**
-No. YouTube gives you these moderation tools specifically so you can use them. There is no limit to the number of users you can hide from your channel, and there is no algorithmic penalty for aggressively curating your comment section. It is your digital property; protect it fiercely.
-
-**Why did YouTube remove the public dislike counter?**
-YouTube officially removed the public dislike counter in 2021 specifically to combat targeted harassment campaigns and "dislike mobs" aimed at smaller creators. While you can still see the dislikes privately in your YouTube Studio analytics, hiding them publicly removes the psychological weapon that trolls used to try and publicly shame creators.
-
-**What should I do if a troll starts stalking me across other social media platforms?**
-If a troll escalates from leaving mean comments on YouTube to actively harassing you on Twitter, Instagram, or via email, you must immediately block them on all platforms. Do not engage. If the harassment includes legitimate threats of physical violence or doxxing, document everything with screenshots and report the user to the respective platform safety teams immediately.
-
----
-
-**Ready to start focusing on the audience that actually matters?** 
-Stop letting trolls drain your energy. Focus on growing your loyal fanbase by optimizing your metadata perfectly. Use our free [YouTube Channel Name Generator](/youtube-channel-name-generator) to establish a bulletproof brand, and lock in your new audience using our [YouTube Script Hook Generator](/youtube-hook-generator). Keep building!
 `
 };

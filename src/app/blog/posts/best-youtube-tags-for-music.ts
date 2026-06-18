@@ -139,9 +139,7 @@ After analyzing hundreds of music channels, here are the mistakes I see repeated
 For a comprehensive overview of how hashtags complement your tag strategy, check out our [YouTube hashtag strategy guide](/blog/youtube-hashtag-strategy).
 
 
-## Frequently Asked Questions
-
-### How many tags should I use on a music video?
+## How many tags should I use on a music video?
 Use all the space YouTube gives you - up to 500 characters total. For most music videos, this translates to 12 - 20 tags. Start with your most important keyword-rich tags (artist name, song name, genre) and fill the remaining space with mood, comparison, and long-tail discovery tags.
 
 ### Should I use the same tags on every video?

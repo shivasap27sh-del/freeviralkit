@@ -86,11 +86,7 @@ export const metadata: Metadata = {
         google: siteConfig.googleVerificationCode,
       }
     : undefined,
-  other: siteConfig.adsensePublisherId
-    ? {
-        'google-adsense-account': siteConfig.adsensePublisherId,
-      }
-    : undefined,
+
 };
 
 // JSON-LD structured data
@@ -132,8 +128,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
-        <meta name="google-adsense-account" content="ca-pub-7893678534155164" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7893678534155164" crossOrigin="anonymous"></script>
+
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
@@ -199,7 +194,7 @@ export default function RootLayout({
         <noscript>
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`https://mc.yandex.ru/watch/${YANDEX_ID}`} style={{ position: 'absolute', left: '-9999px' }} alt="" />
+            <img src={`https://mc.yandex.ru/watch/${YANDEX_ID}`} style={{ position: 'absolute', left: '-9999px' }} alt="Analytics tracking pixel" />
           </div>
         </noscript>
         {/* Background animation */}

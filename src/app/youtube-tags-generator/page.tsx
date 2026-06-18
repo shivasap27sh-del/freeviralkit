@@ -1,14 +1,19 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+
 import { buildAbsoluteUrl } from '@/lib/site';
 import TagsGeneratorClient from '@/components/tools/TagsGeneratorClient';
 import { Tag } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Tag Generator — Get 20+ SEO Tags Instantly',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free AI YouTube Tag Generator — 20+ Tags',
+    description: 'Generate 20+ relevant, SEO-optimized YouTube tags instantly with our free AI tag generator. Copy-paste ready for YouTube Studio.',
+  },
+  title: 'Free AI YouTube Tag Generator — 20+ Tags',
   description:
-    'Generate 20-25 highly relevant, SEO-optimized YouTube tags instantly with our free AI tag generator. Formatted perfectly for YouTube Studio.',
+    'Generate 20+ relevant, SEO-optimized YouTube tags instantly with our free AI tag generator. Copy-paste ready for YouTube Studio.',
   openGraph: {
     title: 'Free YouTube Tag Generator — Get 20+ SEO Tags Instantly',
     description:
@@ -92,9 +97,7 @@ export default function TagsGeneratorPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 mb-6 uppercase tracking-wider">
             <Tag className="w-4 h-4" /> AI Tag Generator
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            Free YouTube Tag Generator — <span className="text-gradient">Get 20+ SEO Tags Instantly</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> Free YouTube Tag Generator — Get 20+ SEO Tags Instantly </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             The best free YouTube tag generator powered by AI. Enter your video topic and instantly get highly relevant, SEO-optimized tags formatted perfectly for YouTube Studio. No account needed, completely free.
           </p>
@@ -113,9 +116,7 @@ export default function TagsGeneratorPage() {
                 In the ever-evolving landscape of YouTube SEO, there is a persistent myth that tags no longer matter. While it is true that YouTube&apos;s algorithm has become incredibly sophisticated at understanding video content through audio analysis and machine learning, <strong className="text-slate-900 dark:text-white">tags remain a fundamental piece of your video&apos;s metadata</strong>. They serve as a direct communication line between you and the YouTube search algorithm, providing strict categorization that helps the system confirm what your video is truly about.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <p>
                 When you use a <strong className="text-slate-900 dark:text-white">free YouTube tag generator</strong>, you are essentially building a bridge of vocabulary. Viewers use specific phrases, slang, or even misspelled words when searching for content. If those specific terms aren&apos;t in your title or description, tags are your safety net. They ensure your video surfaces for the exact terms your audience is typing, capturing search traffic that would otherwise go to competitors who took the time to optimize their tag boxes.
@@ -124,9 +125,7 @@ export default function TagsGeneratorPage() {
                 Beyond direct search, tags are a primary signal for the &quot;Suggested Videos&quot; algorithm. Have you ever wondered why certain videos always appear next to each other in the sidebar? It&apos;s often because they share a high percentage of overlapping tags. By using highly targeted, relevant tags, you signal to YouTube that your video belongs alongside the top-performing content in your niche, opening the door to passive, algorithmic traffic that scales without you having to actively promote the video.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
             </div>
           </div>
@@ -199,9 +198,7 @@ export default function TagsGeneratorPage() {
                 Brainstorming 20-25 highly relevant tags manually for every video is tedious and prone to bias. You might miss obvious variations or waste characters on tags that have zero search volume. An <strong className="text-slate-900 dark:text-white">AI YouTube tags generator</strong> solves this by instantly analyzing your core topic and cross-referencing it with known search patterns and algorithmic preferences. It takes the emotional guesswork out of your SEO strategy.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <p>
                 Our tool doesn&apos;t just spit out random words. It generates a cohesive list that includes the primary long-tail phrases, secondary variations, and necessary context tags — all formatted perfectly with commas so you can copy and paste them directly into YouTube Studio with a single click. This saves you 10-15 minutes of SEO research per upload, allowing you to focus on what actually matters: creating better content that retains the audience once the algorithm brings them to your channel.

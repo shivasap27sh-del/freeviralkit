@@ -199,12 +199,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...blogUrls,
-    {
-      url: buildAbsoluteUrl('/contact'),
-      lastModified: new Date('2026-05-10'),
-      changeFrequency: 'yearly' as const,
-      priority: 0.5,
-    },
+    
     {
       url: buildAbsoluteUrl('/privacy-policy'),
       lastModified: new Date('2026-06-04'),

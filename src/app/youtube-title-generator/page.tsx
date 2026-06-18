@@ -3,14 +3,19 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
+
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Title Generator — AI-Powered Viral Titles for More Clicks',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free AI YouTube Title Generator',
+    description: 'Generate 10 viral, SEO-optimized YouTube titles instantly with our free AI title generator. Boost CTR and rank higher — no signup required.',
+  },
+  title: 'Free AI YouTube Title Generator',
   description:
-    'Generate 10 viral, SEO-optimized YouTube titles instantly with our free AI title generator. Boost CTR, rank higher in search, and grow your channel — no signup required.',
+    'Generate 10 viral, SEO-optimized YouTube titles instantly with our free AI title generator. Boost CTR and rank higher — no signup required.',
   openGraph: {
-    title: 'Free YouTube Title Generator — AI-Powered Viral Titles for More Clicks',
+    title: 'Free YouTube Title Generator — AI Viral Titles',
     description:
       'Generate 10 viral, SEO-optimized YouTube titles instantly. Boost CTR, rank higher, and grow your channel — no signup required.',
     url: buildAbsoluteUrl('/youtube-title-generator'),
@@ -98,9 +103,7 @@ export default function TitleGeneratorPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-purple-400 bg-purple-400/10 border border-purple-400/20 mb-6 uppercase tracking-wider">
             <Sparkles className="w-4 h-4" /> AI Title Generator
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            Free YouTube <span className="text-gradient">Title Generator</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> Free YouTube Title Generator </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             Generate 10 viral, SEO-optimized YouTube titles with emojis and hashtags. Powered by AI — crafted for every niche.
           </p>
@@ -127,9 +130,7 @@ export default function TitleGeneratorPage() {
             </div>
           </div>
 
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-          </div>
 
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
@@ -166,9 +167,7 @@ export default function TitleGeneratorPage() {
             </div>
           </div>
 
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">

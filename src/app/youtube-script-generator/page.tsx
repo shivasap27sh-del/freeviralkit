@@ -5,11 +5,16 @@ import { FileText } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 export const metadata: Metadata = {
-  title: 'Free YouTube Script Generator — AI Video Outline Maker',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free YouTube Script Generator',
+    description: 'Generate structured, high-retention YouTube video script outlines instantly. Get hook scripts, B-roll cues, and CTA placements tailored to your niche.',
+  },
+  title: 'Free YouTube Script Generator',
   description:
     'Generate structured, high-retention YouTube video script outlines instantly. Get hook scripts, B-roll cues, and CTA placements tailored to your niche.',
   openGraph: {
-    title: 'Free YouTube Script Generator — AI Video Outline Maker',
+    title: 'Free YouTube Script Generator',
     description:
       'Generate structured, high-retention YouTube video script outlines instantly. Get hook scripts, B-roll cues, and CTA placements.',
     url: buildAbsoluteUrl('/youtube-script-generator'),
@@ -87,9 +92,7 @@ export default function ScriptGeneratorPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-purple-400 bg-purple-400/10 border border-purple-400/20 mb-6 uppercase tracking-wider">
             <FileText className="w-4 h-4" /> AI Script Outline Writer
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            Free YouTube <span className="text-gradient">Video Script Outline Generator</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> Free YouTube Video Script Outline Generator </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             Generate structured, high-retention script outlines for your videos. Complete with hook lines, B-roll recommendations, and loops.
           </p>
@@ -105,8 +108,7 @@ export default function ScriptGeneratorPage() {
               <p>
                 The biggest difference between an amateur YouTube channel that struggles to get 100 views and a professional channel driving millions of impressions isn&apos;t the camera gear, the lighting, or the editing software — it is entirely based on the underlying structure of the videos. When inexperienced creators turn on the camera and simply "wing it," the final result is almost universally rambling, repetitive, and horribly paced. On a platform where the algorithm relentlessly, ruthlessly measures <strong className="text-slate-900 dark:text-white">Audience Retention</strong> and <strong className="text-slate-900 dark:text-white">Average View Duration (AVD)</strong>, a poorly paced, unstructured video is an absolute death sentence for your organic reach.
               </p>
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-              </div>
+
               <p>
                 Writing a script — or at the very least, a highly detailed bullet-point outline — solves this structural problem before you even hit record. It forces you to organize your thoughts logically, aggressively trim the fat, and consciously design specific moments that continually re-engage the viewer&apos;s attention. By using a <strong className="text-slate-900 dark:text-white">free YouTube script generator</strong>, you completely bypass the intimidating paralysis of the blank page. Instead, you instantly receive a proven, high-retention framework mathematically tailored to your specific video topic.
               </p>
@@ -129,9 +131,7 @@ export default function ScriptGeneratorPage() {
               <p>
                 The first 15 seconds of your video dictate the algorithmic success of the entire upload. Viewers click your thumbnail with a specific, fragile expectation. Your hook must immediately, aggressively validate that expectation. If your title is &quot;How to Fix a Leaky Faucet in 3 Minutes,&quot; do not spend 30 seconds introducing yourself or playing a loud, animated 3D logo sequence. Start the video by immediately showing the leaky faucet, looking at the camera, and saying, &quot;This leak is costing you $100 a month in water bills, and I am going to show you exactly how to fix it in the next 3 minutes using one tool.&quot; Establish the stakes, make the promise, and move on.
               </p>
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
               <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white pt-4">
                 2. The Body & Aggressive Visual Pacing
               </h3>

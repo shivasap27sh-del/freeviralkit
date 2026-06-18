@@ -123,9 +123,7 @@ Look for the "spikes" and the "dips."
 
 Mastering your script outline is arguably the highest ROI (Return on Investment) skill you can possibly learn on YouTube. Beautiful, cinematic lighting won't save a boring story, but a gripping, emotionally resonant, high-retention story can easily overcome bad lighting and a cheap microphone. Focus relentlessly on the structure, respect the viewer's time like it is sacred, and watch your channel explode.
 
-## Frequently Asked Questions (FAQ)
-
-### 1. Does this script outline formula work for all YouTube niches, or just educational content?
+## 1. Does this script outline formula work for all YouTube niches, or just educational content?
 This outline is deeply rooted in human psychology and storytelling, meaning it works universally across almost all niches. Whether you are creating a gaming let's play, a daily vlog, a finance tutorial, or a tech review, the core principles remain the same: you must hook the viewer, establish stakes, deliver value through open loops, and transition them to another video without saying goodbye. The implementation might look slightly different (e.g., a gaming hook might be an intense clip of a boss fight), but the underlying structure is identical.
 
 ### 2. I struggle to memorize scripts. Should I read word-for-word from a teleprompter?

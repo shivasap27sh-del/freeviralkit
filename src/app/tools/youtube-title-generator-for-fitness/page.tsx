@@ -4,9 +4,14 @@ import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 export const metadata: Metadata = {
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Title Generator for Fitness',
+    description: 'Free AI YouTube title generator for fitness channels. Viral titles for workouts, transformations, nutrition tips, and gym content.',
+  },
   title: 'YouTube Title Generator for Fitness',
   description:
-    'Free AI-powered YouTube title generator for fitness and health channels. Create viral titles for workout routines, transformation videos, nutrition tips, and gym challenges. Boost CTR and views instantly.',
+    'Free AI YouTube title generator for fitness channels. Viral titles for workouts, transformations, nutrition tips, and gym content.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-fitness'),
   },
@@ -160,9 +165,7 @@ export default function FitnessTitleLandingPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Title Generator for <span className="text-gradient">Fitness</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> YouTube Title Generator for Fitness </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Generate high-CTR titles for workout routines, body transformations, nutrition guides, and gym challenge videos. Powered by AI, built for fitness creators.
           </p>

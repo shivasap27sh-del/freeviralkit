@@ -6,11 +6,16 @@ import { Zap } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Shorts Idea Generator — Viral Hook & Script Maker',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free YouTube Shorts Idea Generator',
+    description: 'Generate viral YouTube Shorts ideas instantly. Get complete concepts with 3-second hooks, B-roll visual cues, and voiceover scripts tailored to your niche.',
+  },
+  title: 'Free YouTube Shorts Idea Generator',
   description:
     'Generate viral YouTube Shorts ideas instantly. Get complete concepts with 3-second hooks, B-roll visual cues, and voiceover scripts tailored to your niche.',
   openGraph: {
-    title: 'Free YouTube Shorts Idea Generator — Viral Hook & Script Maker',
+    title: 'Free YouTube Shorts Idea Generator',
     description:
       'Generate viral YouTube Shorts ideas instantly. Get complete concepts with 3-second hooks, B-roll visual cues, and voiceover scripts.',
     url: buildAbsoluteUrl('/youtube-shorts-idea-generator'),
@@ -93,9 +98,7 @@ export default function ShortsIdeaGeneratorPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-pink-400 bg-pink-400/10 border border-pink-400/20 mb-6 uppercase tracking-wider">
             <Zap className="w-4 h-4" /> AI Shorts Idea Generator
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            Free YouTube <span className="text-gradient">Shorts Idea Generator</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> Free YouTube Shorts Idea Generator </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             Generate 5 viral, high-retention concepts for YouTube Shorts and Reels. Get hook scripts, visual cues, and voiceover outlines instantly.
           </p>
@@ -114,9 +117,7 @@ export default function ShortsIdeaGeneratorPage() {
                 Creating a YouTube Short is not simply about taking a 10-minute horizontal video, chopping it down to 60 seconds, and cropping it vertically. The psychology of a viewer scrolling the Shorts Feed is fundamentally different from a viewer browsing the YouTube homepage. In the Shorts Feed, viewers are in a highly impatient, dopamine-driven state. If your video does not hook them immediately, they will swipe away in literally less than a second. The environment is aggressively competitive, meaning every frame of your video must earn the viewer&apos;s continued attention.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <p>
                 Because the margin for error is so small, <strong className="text-slate-900 dark:text-white">ideation and scripting are the most critical phases of Shorts production</strong>. You cannot afford to ramble, you cannot have a slow intro, and your visuals must constantly stimulate the viewer&apos;s eye. A long-form video can survive a boring 30-second segment if the overall payoff is good, but a Short will instantly die in the algorithm if engagement dips for even 2 seconds. The creator&apos;s job shifts from merely providing information to engineering a sequence of micro-engagements.
@@ -125,9 +126,7 @@ export default function ShortsIdeaGeneratorPage() {
                 Using a <strong className="text-slate-900 dark:text-white">free YouTube Shorts idea generator</strong> allows you to bypass creator&apos;s block and instantly access frameworks that are proven to work on the platform. Our AI doesn&apos;t just give you a vague topic (like &quot;talk about finance&quot;); it provides a complete, actionable concept broken down into the three essential components of a viral Short: The Hook, The Visuals, and The Script. By starting with a proven structural framework, you eliminate the guesswork and dramatically increase your chances of triggering the algorithmic multiplier effect that turns 1,000 views into 1,000,000.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
             </div>
           </div>
 
@@ -187,9 +186,7 @@ export default function ShortsIdeaGeneratorPage() {
                 If you are struggling to come up with ideas, you can prompt our generator with specific proven formats. The platform moves fast, but certain psychological triggers consistently perform well across almost all niches. Here are the most consistently successful archetypes for YouTube Shorts:
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <ul className="space-y-6 mt-6">
                 <li className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50">

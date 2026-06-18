@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   return {
-    title: `${post.title} Blog`,
+    title: post.title,
     description: post.description,
     keywords: post.tags.join(', '),
     openGraph: {
@@ -247,21 +247,23 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 glass-card rounded-2xl p-8 text-center">
-          <h3 className="font-display text-2xl font-bold mb-3">
-            Ready to <span className="text-gradient">Boost</span> Your Videos?
-          </h3>
-          <p className="text-slate-600 dark:text-slate-400 mb-6">
-            Generate SEO-optimized titles, descriptions, hashtags, and tags in seconds.
-          </p>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 btn-primary rounded-xl px-8 py-4 font-semibold text-lg"
-          >
-            Try FreeViralKit Free →
-          </Link>
-        </div>
+        {/* CTA (Only show on ~50% of posts to reduce spam signals) */}
+        {post.slug.length % 2 === 0 && (
+          <div className="mt-12 glass-card rounded-2xl p-8 text-center">
+            <h3 className="font-display text-2xl font-bold mb-3">
+              Ready to <span className="text-gradient">Boost</span> Your Videos?
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-6">
+              Generate SEO-optimized titles, descriptions, hashtags, and tags in seconds.
+            </p>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 btn-primary rounded-xl px-8 py-4 font-semibold text-lg"
+            >
+              Try FreeViralKit Free →
+            </Link>
+          </div>
+        )}
 
         {/* Related Posts */}
         <div className="mt-12">

@@ -4,7 +4,7 @@ export const post: BlogPost = {
   slug: "youtube-shorts-bubble-bursting",
   title: "The 'Shorts Bubble' is Bursting: Why Long-Form Video is Making a Comeback",
   description: "Are you relying entirely on YouTube Shorts for your growth? Discover why 2026 data shows a massive shift back to long-form content, and how to pivot before your channel dies.",
-  date: new Date().toISOString(),
+  date: '2026-06-09T00:00:00.000Z',
   readTime: "8 min read",
   category: "YouTube Algorithm",
   tags: ["YouTube Shorts", "Algorithm Trends", "Long Form Video"],
@@ -75,23 +75,5 @@ It's simply not true. The exact same teenager who swipes past a boring Short in 
 They have attention. You just have to earn it. 
 
 Stop treating your audience like goldfish. Respect their intelligence. Tell a better story, provide deeper utility, and embrace the return of long-form content.
-
-
-## Frequently Asked Questions (FAQs)
-
-**Is YouTube getting rid of Shorts in 2026?**
-No, YouTube is heavily invested in the Shorts platform and it will remain a core feature of the app forever. The "bubble bursting" refers to the creator strategy of relying *exclusively* on Shorts for revenue and deep audience connection, which is proving to be unsustainable.
-
-**Can long-form videos go viral as fast as Shorts?**
-It is rare. Shorts are designed for immediate, explosive reach (often peaking and dying within 48 hours). Long-form videos act like a snowball. They may start slow, but through Browse Features and Search SEO, a great long-form video can gain hundreds of views every single day for five years, ultimately vastly outperforming a Short in total watch time.
-
-**Should I make a separate channel just for my Shorts?**
-In 2026, it is no longer recommended. YouTube has successfully integrated the two formats on the backend. When a viewer watches your Short, the algorithm is now smart enough to recommend your long-form videos to them on the Home Page. Keeping both formats on one channel creates a powerful synergy.
-
-**How long should my long-form videos be?**
-There is no universal perfect length; the video should be exactly as long as it takes to provide immense value without any filler. However, data shows that videos crossing the 15 to 20-minute mark often see a higher Average View Duration percentage and trigger significantly more mid-roll ad placements, vastly increasing your RPM.
-
-**Do I need a separate thumbnail strategy for long-form?**
-Yes! Shorts do not use thumbnails in the swipe feed. Long-form videos rely entirely on the Click-Through Rate (CTR) of your thumbnail and title to get views. You must spend a significant amount of time designing a clean, high-contrast thumbnail that creates a "Curiosity Gap" to succeed in long-form.
-  `
+`
 };

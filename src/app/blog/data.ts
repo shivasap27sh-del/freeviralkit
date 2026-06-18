@@ -44,7 +44,6 @@ import { post as youtubeTechReviewSeo } from './posts/youtube-tech-review-seo';
 import { post as howToGetYoutubeMonetizedFast } from './posts/how-to-get-youtube-monetized-fast';
 import { post as youtubeFitnessChannelGuide } from './posts/youtube-fitness-channel-guide';
 import { post as youtubeTravelVlogTips } from './posts/youtube-travel-vlog-tips';
-import { post as freeviralkitVsVidiqVsTubebuddy } from './posts/freeviralkit-vs-vidiq-vs-tubebuddy';
 import { post as youtubeBeautyChannelSeo } from './posts/youtube-beauty-channel-seo';
 import { post as youtubeCollaborationStrategy } from './posts/youtube-collaboration-strategy';
 import { post as youtubeShortsLoopStrategy } from './posts/youtube-shorts-loop-strategy';
@@ -146,7 +145,6 @@ const rawBlogPosts: BlogPost[] = [
   howToGetYoutubeMonetizedFast,
   youtubeFitnessChannelGuide,
   youtubeTravelVlogTips,
-  freeviralkitVsVidiqVsTubebuddy,
   youtubeBeautyChannelSeo,
   youtubeCollaborationStrategy,
   youtubeShortsLoopStrategy,

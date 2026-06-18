@@ -6,13 +6,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'FreeViralKit — Free AI YouTube SEO Optimizer & Title Generator',
+  title: 'Free AI YouTube SEO & Title Generator',
   description:
-    'The ultimate free YouTube SEO tool. Generate viral titles, optimized descriptions, trending hashtags, and YouTube tags instantly. No signup required.',
+    'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required.',
   openGraph: {
-    title: 'FreeViralKit — Free AI YouTube SEO Optimizer & Title Generator',
+    title: 'FreeViralKit — Free AI YouTube SEO & Title Tool',
     description:
-      'The ultimate free YouTube SEO tool. Generate viral titles, optimized descriptions, trending hashtags, and YouTube tags instantly. No signup required.',
+      'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required.',
     url: buildAbsoluteUrl('/'),
     type: 'website',
   },
@@ -90,9 +90,7 @@ export default function Home() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 mb-6 uppercase tracking-wider">
             <span className="pulse-dot" /> YouTube SEO Optimizer
           </div>
-          <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
-            Get Your Full YouTube <br /><span className="text-gradient">SEO Package in 10 Seconds</span> — Free
-          </h1>
+          <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6"> Get Your Full YouTube SEO Package in 10 Seconds — Free </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-8">
             Enter your video topic — get 10 SEO-optimized titles with emojis &amp; hashtags.
             Pick one to unlock your description, hashtags &amp; tags.

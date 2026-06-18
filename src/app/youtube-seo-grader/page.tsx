@@ -1,12 +1,17 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+
 import SEOGraderClient from '@/components/tools/SEOGraderClient';
 import { Activity, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Free YouTube SEO Checker & Grader | FreeViralKit',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free YouTube SEO Checker & Grader',
+    description: 'Analyze your YouTube video title, description, and tags. Get an instant SEO score out of 100 with actionable feedback to rank higher on YouTube.',
+  },
+  title: 'Free YouTube SEO Checker & Grader',
   description: 'Analyze your YouTube video title, description, and tags. Get an instant SEO score out of 100 with actionable feedback to rank higher on YouTube.',
   openGraph: {
     title: 'YouTube SEO Checker & Grader - Get Your Score',
@@ -80,9 +85,7 @@ export default function SEOGraderPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-cyan-500 bg-cyan-500/10 border border-cyan-500/20 mb-6 uppercase tracking-wider">
             <Activity className="w-4 h-4" /> SEO Score Grader
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white">
-            Free YouTube SEO Checker — <span className="text-gradient">Grade Your Video</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white"> Free YouTube SEO Checker — Grade Your Video </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             Paste your video's title, description, and tags to see how well it's optimized for the YouTube algorithm. Get an instant score and actionable feedback.
           </p>
@@ -101,9 +104,7 @@ export default function SEOGraderPage() {
                 Uploading a video to YouTube without optimizing its metadata is like writing a bestselling novel and giving it a blank cover. The YouTube algorithm is a machine; it cannot &quot;watch&quot; your video to understand what it is about. It relies entirely on the text data you provide—your title, description, and tags—to categorize your content and decide who to serve it to. When you take the time to run your video through a dedicated grader, you ensure that you are sending the right signals directly to the search engine.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <p>
                 Our <strong>YouTube SEO Checker</strong> acts as an automated auditor for your video metadata. It analyzes the synergy between all your text elements to ensure you are sending clear, consistent signals to the search algorithm. If your metadata is disjointed or missing key elements, your video will be buried under thousands of competitors. A proper evaluation checks whether your target keyword appears in all the right places, ensuring maximum discoverability. The algorithm requires definitive context, and a well-optimized set of metadata provides exactly that context.
@@ -112,9 +113,7 @@ export default function SEOGraderPage() {
                 By using this tool before you hit &quot;Publish&quot;, you can catch costly SEO mistakes (like a title that is too long, or missing target keywords in your description) and fix them instantly, giving your video the best possible chance to rank on page one. It is not just about rankings, however. A strong SEO score correlates directly with higher Click-Through Rates (CTR) because optimized titles and descriptions naturally read better to human audiences. When viewers see exactly what they searched for presented clearly in your title, they are far more likely to click.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <p>
                 Moreover, checking your SEO score helps you understand your competitors&apos; strategies. If your niche is highly saturated, the difference between getting 100 views and 100,000 views often comes down to marginal gains in search optimization. The grader breaks down the critical components that make up a successful metadata package, empowering you to adjust your text until you hit the optimal threshold for algorithmic distribution. You wouldn&apos;t launch a product without testing it first; similarly, you shouldn&apos;t launch a video without evaluating its foundational SEO structure.
@@ -184,9 +183,7 @@ export default function SEOGraderPage() {
                 If you scored below a 70, don&apos;t panic. A low score simply means your metadata is not currently aligned with YouTube&apos;s best practices. The fix is usually straightforward and highly systematic. The most common reason for a low score is a lack of <strong>Keyword Consistency</strong>. This means you are sending mixed signals to the algorithm about what your video is actually covering.
               </p>
 
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
               <p>
                 For example, if your title is &quot;How to Build a Gaming PC&quot;, but your description only talks about &quot;computer parts&quot; and your tags are completely unrelated, the algorithm gets confused. It isn&apos;t sure if the video is a tutorial, a product review, or a vlog. To fix this, you must identify your absolute primary keyword phrase (e.g., &quot;Build a Gaming PC&quot;) and ensure it appears naturally in your Title, in the very first sentence of your Description, and as your very first Tag. This &quot;Holy Trinity&quot; of keyword placement is the fastest way to boost your score straight into the green zone.

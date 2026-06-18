@@ -4,14 +4,19 @@ import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import HashtagGeneratorClient from '@/components/tools/HashtagGeneratorClient';
 export const metadata: Metadata = {
-  title: 'YouTube Shorts Hashtag Generator | Free Viral Hashtags — FreeViralKit',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Shorts Hashtag Generator',
+    description: 'Free AI hashtag generator for YouTube Shorts. Find trending, viral hashtags that boost Shorts visibility and grow your channel.',
+  },
+  title: 'YouTube Shorts Hashtag Generator',
   description:
-    'Free AI-powered hashtag generator built for YouTube Shorts. Find trending, viral hashtags that boost Shorts visibility, reach the Shorts shelf, and grow your channel fast.',
+    'Free AI hashtag generator for YouTube Shorts. Find trending, viral hashtags that boost Shorts visibility and grow your channel.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-hashtag-generator-for-shorts'),
   },
   openGraph: {
-    title: 'YouTube Shorts Hashtag Generator | Free Viral Hashtags — FreeViralKit',
+    title: 'YouTube Shorts Hashtag Generator — Free AI Tool',
     description:
       'Generate trending hashtags specifically optimized for YouTube Shorts. Reach more viewers, land on the Shorts shelf, and go viral.',
     type: 'website',
@@ -158,9 +163,7 @@ export default function ShortsHashtagLandingPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         {/* Hero */}
         <section className="text-center mb-12">
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            YouTube Hashtag Generator for <span className="text-gradient">Shorts</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> YouTube Hashtag Generator for Shorts </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-6">
             Find the perfect trending hashtags to get your Shorts on the shelf, boost impressions, and go viral. AI-powered, always free.
           </p>

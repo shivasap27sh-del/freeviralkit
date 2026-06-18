@@ -147,9 +147,7 @@ If you are trying to optimize your YouTube channel to start capturing this lucra
 
 ---
 
-## Frequently Asked Questions
-
-### Does TikTok's Creator Rewards Program penalize you for going viral?
+## Does TikTok's Creator Rewards Program penalize you for going viral?
 No, it doesn't arbitrarily penalize virality, but it strictly filters for "Qualified Views." If your video goes viral but the average watch time is only 3 seconds, or a large portion of the views are deemed inauthentic by their automated systems, you won't get paid for those views. This strict filtering makes viral payouts often seem lower than creators expect.
 
 ### Can I monetize the exact same video on both YouTube and TikTok?

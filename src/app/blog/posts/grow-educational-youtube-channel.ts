@@ -94,9 +94,7 @@ The most successful educational channels do not just teach - they build communit
 **Use pinned comments strategically**: Pin a comment with additional resources, links to related videos, or a question that sparks discussion. A good pinned comment can boost engagement metrics significantly. For tips on writing effective pinned comments, read our guide on [YouTube pinned comment formulas](/blog/youtube-pinned-comment-formula).
 
 
-## Frequently Asked Questions
-
-### Do I need professional teaching credentials to start an educational channel?
+## Do I need professional teaching credentials to start an educational channel?
 No. Many of YouTube's most successful educational creators are self-taught enthusiasts, not credentialed professionals. What matters is your ability to explain concepts clearly and accurately. Viewers care about the quality of your teaching, not the letters after your name. That said, always be transparent about your qualifications and never present yourself as an expert in areas where you lack genuine knowledge.
 
 ### How long should educational YouTube videos be?

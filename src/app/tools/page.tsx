@@ -23,16 +23,21 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free YouTube SEO Tools & Niche Generators',
+    description: 'Free YouTube SEO tools: generate viral titles, hashtags, tags, descriptions, and channel names. Boost your channel growth instantly.',
+  },
   title: 'Free YouTube SEO Tools & Niche Generators',
   description:
-    'Boost your channel growth with our free suite of YouTube SEO tools. Generate viral titles, trending hashtags, search-optimized tags, descriptions, channel names, and more.',
+    'Free YouTube SEO tools: generate viral titles, hashtags, tags, descriptions, and channel names. Boost your channel growth instantly.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools'),
   },
   openGraph: {
     title: 'Free YouTube SEO Tools & Niche Generators',
     description:
-      'Explore our full suite of free YouTube SEO generators and niche-specific tools to optimize your videos and rank #1.',
+      'Free YouTube SEO generators and niche-specific tools to optimize your videos and rank higher.',
     type: 'website',
     url: buildAbsoluteUrl('/tools'),
   },
@@ -263,9 +268,7 @@ export default function ToolsPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 mb-6 uppercase tracking-wider">
             <Sparkles className="w-4 h-4 animate-pulse" /> Complete SEO Suite
           </div>
-          <h1 className="font-display text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6 text-slate-900 dark:text-white">
-            YouTube SEO <br /><span className="text-gradient">Tools &amp; Generators</span>
-          </h1>
+          <h1 className="font-display text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6 text-slate-900 dark:text-white"> YouTube SEO Tools &amp; Generators </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             Explore our suite of free generators designed to optimize your metadata, find trending keywords, and boost channel growth.
           </p>

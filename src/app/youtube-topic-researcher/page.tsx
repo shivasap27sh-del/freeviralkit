@@ -6,13 +6,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Free YouTube Niche & Topic Researcher — Find Low Competition Keywords',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free YouTube Topic & Niche Researcher',
+    description: 'Analyze search demand and competition for your YouTube niche. Discover high-potential, low-competition video topics to rank and grow fast.',
+  },
+  title: 'Free YouTube Topic & Niche Researcher',
   description:
-    'Analyze search demand and competition levels for your YouTube niche. Discover high-potential, low-competition video topics to rank easily and grow your channel.',
+    'Analyze search demand and competition for your YouTube niche. Discover high-potential, low-competition video topics to rank and grow fast.',
   openGraph: {
-    title: 'Free YouTube Niche & Topic Researcher — Find Low Competition Keywords',
+    title: 'Free YouTube Topic & Niche Researcher',
     description:
-      'Analyze search demand and competition levels for your YouTube niche. Discover high-potential, low-competition video topics to rank easily.',
+      'Analyze search demand and competition for your YouTube niche. Find low-competition video topics to rank and grow fast.',
     url: buildAbsoluteUrl('/youtube-topic-researcher'),
     type: 'website',
   },
@@ -93,9 +98,7 @@ export default function TopicResearcherPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-purple-400 bg-purple-400/10 border border-purple-400/20 mb-6 uppercase tracking-wider">
             <Search className="w-4 h-4" /> AI Niche Researcher
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            Free YouTube <span className="text-gradient">Niche & Topic Researcher</span>
-          </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> Free YouTube Niche & Topic Researcher </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             Analyze search demand and competition levels for your niche, and unlock high-potential video topics to rank easily.
           </p>
@@ -122,9 +125,7 @@ export default function TopicResearcherPage() {
             </div>
           </div>
 
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-          </div>
 
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
@@ -158,9 +159,7 @@ export default function TopicResearcherPage() {
             </div>
           </div>
 
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
 
-              </div>
 
           <div>
             <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
@@ -266,6 +265,19 @@ export default function TopicResearcherPage() {
               <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Does this topic align tightly with the rest of your channel&apos;s niche?</span></li>
               <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" /><span className="dark:text-slate-300">Is this a long-tail keyword rather than a broad, generic category?</span></li>
             </ul>
+          </div>
+
+          {/* Related Tools CTA */}
+          <div className="glass-card rounded-2xl p-6 text-center mt-12 mb-12">
+            <p className="text-slate-600 dark:text-slate-400 mb-4">Need the full SEO package? Get titles + descriptions + hashtags + tags all at once.</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/" className="inline-flex items-center gap-2 btn-primary rounded-xl px-6 py-3 font-semibold">
+                Try Full SEO Optimizer →
+              </Link>
+              <Link href="/youtube-title-generator" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-purple-400/40 transition-colors">
+                Title Generator
+              </Link>
+            </div>
           </div>
 
           {/* FAQ Section */}

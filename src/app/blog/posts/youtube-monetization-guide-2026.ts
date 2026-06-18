@@ -137,9 +137,7 @@ Targeting high CPM topics is key for monetization. Check out our research on [Hi
 
 
 
-## Frequently Asked Questions
-
-### How many views do I need to make money on YouTube?
+## How many views do I need to make money on YouTube?
 It depends on CPM. If your RPM is $10, you will make $1,000 for every 100,000 views.
 
 ### Can I monetize copyrighted music?

@@ -28,9 +28,7 @@ export default function ContactPage() {
         <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-purple-500 bg-purple-500/10 border border-purple-500/20 mb-6 uppercase tracking-wider backdrop-blur-sm">
           <MessageSquare className="w-4 h-4" /> Reach Out
         </div>
-        <h1 className="font-display text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6 text-slate-900 dark:text-white">
-          Let's <span className="text-gradient">Talk</span>
-        </h1>
+        <h1 className="font-display text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6 text-slate-900 dark:text-white"> Let's Talk </h1>
         <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
           Have a question, suggestion, or want to collaborate? We'd love to hear from you. Fill out the form below and we'll get back to you shortly.
         </p>

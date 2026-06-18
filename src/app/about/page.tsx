@@ -4,9 +4,9 @@ import { Zap, Target, Shield, Users, Sparkles, ArrowRight, GitFork, ExternalLink
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'About FreeViralKit — Free AI YouTube SEO Tool',
+  title: 'About FreeViralKit — Our Mission',
   description:
-    'FreeViralKit is built by Shiva Srivastava, a Computer Science engineer and full-stack developer from India. Learn about the mission to make professional YouTube SEO tools free for every creator.',
+    'FreeViralKit is built by Shiva Srivastava, a CS engineer from India. Our mission: make pro YouTube SEO tools free for every creator.',
   openGraph: {
     title: 'About FreeViralKit — Free AI YouTube SEO Tool',
     description:
@@ -159,7 +159,7 @@ const techStack = [
 ];
 
 const stats = [
-  { value: '50,000+', label: 'Titles Generated' },
+  { value: '500+', label: 'Active Users' },
   { value: '100%', label: 'Free — No Signup Required' },
   { value: '<5s', label: 'AI Generation Speed' },
   { value: '11+', label: 'SEO Tools in One Place' },
@@ -182,9 +182,7 @@ export default function AboutPage() {
           <h1
             id="about-heading"
             className="font-display text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6"
-          >
-            Helping Creators <span className="text-gradient">Go Viral</span>
-          </h1>
+          > Helping Creators Go Viral </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
             FreeViralKit is a free, AI-powered YouTube SEO tool that generates optimized titles,
             descriptions, hashtags, and tags — everything you need to rank higher and grow faster,
