@@ -41,3 +41,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 *.pdf
+
+# scripts and unrelated files
+*.py
+*.sh
+*.ps1
+*.bat
