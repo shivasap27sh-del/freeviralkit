@@ -63,7 +63,8 @@ export const metadata: Metadata = {
     title: 'FreeViralKit — Free AI YouTube SEO Optimizer',
     description:
       'Generate viral YouTube titles, descriptions, hashtags & tags with AI. Free forever.',
-    creator: siteConfig.xHandle,
+    creator: siteConfig.xHandle || '@FreeViralKit',
+    site: siteConfig.xHandle || '@FreeViralKit',
     images: [buildAbsoluteUrl('/banner.png')],
   },
   robots: {
@@ -193,14 +194,14 @@ export default function RootLayout({
             });
           `}
         </Script>
+      </head>
+      <body className="antialiased">
         <noscript>
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={`https://mc.yandex.ru/watch/${YANDEX_ID}`} style={{ position: 'absolute', left: '-9999px' }} alt="" />
           </div>
         </noscript>
-      </head>
-      <body className="antialiased">
         {/* Background animation */}
         <div className="bg-animation">
           <div className="bg-orb bg-orb-1" />

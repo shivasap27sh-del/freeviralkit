@@ -1,5 +1,7 @@
 'use client';
 
+import { useId } from 'react';
+
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
   showText?: boolean;
@@ -42,6 +44,7 @@ export default function Logo({
   };
 
   const svgSize = svgSizes[size];
+  const uniqueId = useId();
 
   return (
     <div className={`flex items-center gap-2.5 group ${className}`}>
@@ -54,19 +57,19 @@ export default function Logo({
           height={svgSize}
           viewBox="0 0 64 64"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.w3.org/2000/svg"
           aria-label="FreeViralKit butterfly logo"
         >
           <defs>
-            <linearGradient id="butterfly-grad-left" x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient id={`${uniqueId}-grad-left`} x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#8b5cf6" />
               <stop offset="100%" stopColor="#a855f7" />
             </linearGradient>
-            <linearGradient id="butterfly-grad-right" x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient id={`${uniqueId}-grad-right`} x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#ec4899" />
               <stop offset="100%" stopColor="#f472b6" />
             </linearGradient>
-            <linearGradient id="butterfly-body" x1="0%" y1="0%" x2="0%" y2="100%">
+            <linearGradient id={`${uniqueId}-body`} x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#7c3aed" />
               <stop offset="100%" stopColor="#db2777" />
             </linearGradient>
@@ -74,29 +77,29 @@ export default function Logo({
           {/* Left upper wing */}
           <path
             d="M30 28C26 16 16 8 10 10C4 12 6 22 12 28C16 32 24 32 30 30Z"
-            fill="url(#butterfly-grad-left)"
+            fill={`url(#${uniqueId}-grad-left)`}
             opacity="0.9"
           />
           {/* Left lower wing */}
           <path
             d="M30 34C24 36 14 38 10 46C8 52 14 56 20 50C24 46 28 38 30 34Z"
-            fill="url(#butterfly-grad-left)"
+            fill={`url(#${uniqueId}-grad-left)`}
             opacity="0.7"
           />
           {/* Right upper wing */}
           <path
             d="M34 28C38 16 48 8 54 10C60 12 58 22 52 28C48 32 40 32 34 30Z"
-            fill="url(#butterfly-grad-right)"
+            fill={`url(#${uniqueId}-grad-right)`}
             opacity="0.9"
           />
           {/* Right lower wing */}
           <path
             d="M34 34C40 36 50 38 54 46C56 52 50 56 44 50C40 46 36 38 34 34Z"
-            fill="url(#butterfly-grad-right)"
+            fill={`url(#${uniqueId}-grad-right)`}
             opacity="0.7"
           />
           {/* Body */}
-          <ellipse cx="32" cy="32" rx="2.5" ry="12" fill="url(#butterfly-body)" />
+          <ellipse cx="32" cy="32" rx="2.5" ry="12" fill={`url(#${uniqueId}-body)`} />
           {/* Antennae */}
           <path
             d="M31 20C28 14 24 10 22 8"
@@ -136,8 +139,7 @@ export default function Logo({
           </span>
           {showTagline && (
             <span
-              className={`${taglineSizes[size]} font-semibold pl-0.5 leading-none text-[#e91e7e] dark:text-pink-400`}
-              style={{ fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif' }}
+              className={`tracking-widest opacity-80 italic font-serif ${taglineSizes[size]} pl-0.5 leading-none text-[#e91e7e] dark:text-pink-400`}
             >
               Since 2026
             </span>
