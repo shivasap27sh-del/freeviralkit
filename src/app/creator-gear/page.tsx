@@ -5,6 +5,11 @@ import { Camera, Mic, Sparkles, Video, ExternalLink, Settings, BookOpen, Heart, 
 export const metadata: Metadata = {
   title: 'YouTube Creator Gear & Setup Guide (2026)',
   description: 'Best microphones, cameras, lighting, and software for YouTube creators. Tested gear for vlogging, streaming, and studio setups.',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Creator Gear & Setup Guide (2026)',
+    description: 'Best microphones, cameras, lighting, and software for YouTube creators. Tested gear for vlogging, streaming, and studio setups.',
+  },
   openGraph: {
     title: 'YouTube Creator Gear & Setup Guide (2026)',
     description: 'Best microphones, cameras, lighting, and software for YouTube creators. Tested gear for vlogging and streaming.',

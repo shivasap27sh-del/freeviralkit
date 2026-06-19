@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "recover-dying-youtube-channel",
-  title: "How to Revive a Dying YouTube Channel (When Views Hit Zero)",
-  description: "Is your YouTube channel dying? Learn how to fix dead subscribers, re-engage the algorithm, and successfully pivot a stagnant channel back to growth in 2026.",
+  title: "How to Revive a Dying YouTube Channel",
+  description: "Is your YouTube channel dying? Learn how to fix dead subscribers, re-engage the algorithm, and successfully pivot a stagnant channel back to growth.",
   content: `## The Day My Analytics Flatlined
 
 I stared at the screen, refreshing the page, hoping it was a glitch. It wasn't. 

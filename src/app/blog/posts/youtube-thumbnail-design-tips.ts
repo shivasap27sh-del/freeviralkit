@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-thumbnail-design-tips",
-  title: "How to Design YouTube Thumbnails That Get Clicks (2026 Guide)",
-  description: "Learn the exact thumbnail design principles that top creators use to boost their CTR. Color psychology, text rules, face expressions, and the tools you need to make thumbnails that actually convert.",
+  title: "Design YouTube Thumbnails That Get Clicks",
+  description: "Learn the thumbnail design principles that top creators use to boost CTR. Discover color psychology, text rules, and facial expressions that convert.",
   "content": `## Your Thumbnail Is Your Billboard. Most Creators Treat It Like an Afterthought.
 
 ![Digital design canvas screen](https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=800&auto=format&fit=crop)

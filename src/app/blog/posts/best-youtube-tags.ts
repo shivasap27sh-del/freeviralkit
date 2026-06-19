@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "best-youtube-tags",
-  title: "How to Find the Best YouTube Tags in 2026 (+ Free Tag Generator)",
+  title: "How to Find the Best YouTube Tags in 2026",
   description: "Discover how to find and use the best YouTube tags to boost your video rankings. Includes strategies, examples, and a free AI tag generator tool.",
   content: `## The Night I Realized I Was Doing It All Wrong
 

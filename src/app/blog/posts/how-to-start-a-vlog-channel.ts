@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "how-to-start-a-vlog-channel",
-  title: "Vlog Channel Growth Hacks: How to Start Vlogging in 2026",
-  description: "Vlogging is one of the hardest niches to break into. Here is the framework for starting a vlog channel in 2026 that people will actually want to watch from day one.",
+  title: "How to Start Vlogging in 2026: Growth Hacks",
+  description: "Vlogging is one of the hardest niches to break into. Here is the framework for starting a vlog channel in 2026 that viewers will actually want to watch.",
   content: `## The Crushing Reality of My First Vlog (And Why You Are Probably Failing Too)
 
 I can still vividly remember the crushing, suffocating weight of my very first "real" vlog. I had convinced myself that in order to be successful, I needed the best equipment possible. So, I impulsively spent nearly $2,000 on a massive mirrorless camera, a bulky, fluffy microphone that looked like a dead cat, and a heavy GorillaPod that literally left deep bruises on my knuckles by the end of the day. 

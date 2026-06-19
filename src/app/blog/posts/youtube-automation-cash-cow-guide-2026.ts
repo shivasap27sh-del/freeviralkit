@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: 'youtube-automation-cash-cow-guide-2026',
-  title: 'How to Start a YouTube Automation Channel (Cash Cow Guide 2026)',
+  title: 'Start a YouTube Automation Channel (2026)',
   description: 'Learn the exact step-by-step blueprint to build a highly profitable YouTube automation cash cow channel in 2026 using AI tools without showing your face.',
   publishDate: '2026-06-07',
   date: '2026-06-07',

@@ -4,6 +4,11 @@ import { buildAbsoluteUrl } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Terms of Service | FreeViralKit',
   description: 'Read the FreeViralKit Terms of Service governing the use of our free YouTube SEO tools, AI content generators, and platform.',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service | FreeViralKit',
+    description: 'Read the FreeViralKit Terms of Service governing the use of our free YouTube SEO tools, AI content generators, and platform.',
+  },
   openGraph: {
     title: 'Terms of Service | FreeViralKit',
     description: 'Read the FreeViralKit Terms of Service governing the use of our free YouTube SEO tools, AI content generators, and platform.',

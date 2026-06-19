@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "faceless-youtube-channel-guide",
-  title: "How to Start a Highly Profitable Faceless YouTube Channel in 2026",
-  description: "Want to grow a successful YouTube channel without ever showing your face? Discover the most profitable faceless niches, production workflows, and monetization strategies for anonymous creators.",
+  title: "Start a Faceless YouTube Channel in 2026",
+  description: "Grow a successful YouTube channel without showing your face. Discover profitable faceless niches, production workflows, and monetization strategies.",
   content: `## The Day I Realized I Didn't Need to Be on Camera
 
 For two years, I desperately wanted to start a YouTube channel, but I was paralyzed by the thought of being on camera. I hated how my voice sounded on recordings. I didn't have a aesthetic backdrop. I worried about what my coworkers would think if they stumbled across my videos.

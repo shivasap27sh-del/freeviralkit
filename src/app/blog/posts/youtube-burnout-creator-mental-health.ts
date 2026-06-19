@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-burnout-creator-mental-health",
-  title: "Avoiding Creator Burnout: Mental Health for YouTubers",
+  title: "Avoiding Creator Burnout & Mental Health",
   description: "Are you a slave to the Sunday upload schedule? Learn how to detach your self-worth from view counts, batch content, and survive YouTube burnout.",
   date: "2026-06-17",
   readTime: "7 min read",

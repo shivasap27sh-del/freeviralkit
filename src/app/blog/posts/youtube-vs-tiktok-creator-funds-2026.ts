@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-vs-tiktok-creator-funds-2026",
-  title: "YouTube vs TikTok Creator Funds: Which Pays More in 2026?",
+  title: "YouTube vs TikTok Creator Funds 2026",
   description: "Comparing the YouTube Partner Program and TikTok Creator Rewards Program in 2026. Discover real RPM data, exact requirements, and which platform pays more.",
   content: `## The Day I Realized My 1 Million Views Were Worth Exactly $23.14
 

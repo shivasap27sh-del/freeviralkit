@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: 'best-free-ai-tools-for-youtubers',
-  title: '7 Best Free AI Tools for YouTube Creators to Go Viral (2026)',
-  description: 'Discover the top 7 completely free AI tools that will save you hundreds of hours on YouTube, from thumbnail generation to script writing and SEO optimization.',
+  title: '7 Free AI Tools for YouTube Creators (2026)',
+  description: 'Discover the top 7 free AI tools that will save you hours on YouTube, from thumbnail generation to script writing and SEO optimization.',
   publishDate: '2026-06-07',
   date: '2026-06-07',
   readTime: '7 min read',

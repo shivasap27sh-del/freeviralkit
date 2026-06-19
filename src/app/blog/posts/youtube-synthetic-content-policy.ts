@@ -3,7 +3,7 @@ import { BlogPost } from '../data';
 export const post: BlogPost = {
   slug: "youtube-synthetic-content-policy",
   title: "YouTube's New AI Policy: How to Avoid the 'Synthetic Content' Ban in 2026",
-  description: "YouTube has introduced brutal new penalties for undisclosed AI-generated videos. Here is exactly what the 'Synthetic Content' policy means, what you must disclose, and how to safely use AI to grow your channel without getting shadowbanned.",
+  description: "YouTube has introduced brutal new penalties for undisclosed AI-generated videos. Here is exactly what the new synthetic content policy means for you.'Synthetic Content' policy means, what you must disclose, and how to safely use AI to grow your channel without getting shadowbanned.",
   content: `## The Email That Terrified Thousands of Creators
 
 Last Tuesday, I got a frantic message from a creator friend of mine. He runs a wildly successful historical documentary channel with over 400,000 subscribers. His niche requires massive amounts of B-roll and voiceover, and like many smart creators in 2026, he had heavily integrated AI into his workflow to keep up with his upload schedule.

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: '%s | FreeViralKit',
   },
   description:
-    'Free AI YouTube SEO tool — generate viral titles, descriptions, hashtags & tags. Boost views and rankings instantly.',
+    'Free AI YouTube SEO tool. Generate viral titles, descriptions, hashtags & tags. Boost your video views and rankings instantly.',
   keywords: [
     'youtube seo tool',
     'youtube title generator',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: 'FreeViralKit',
     title: 'FreeViralKit — Free AI YouTube SEO Optimizer',
     description:
-      'Generate viral YouTube titles, descriptions, hashtags & tags with AI. 100% free YouTube SEO tool.',
+      'Free AI YouTube SEO tool. Generate viral titles, descriptions, hashtags & tags. Boost your video views and rankings instantly.',
     images: [
       {
         url: buildAbsoluteUrl('/banner.png'),
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'FreeViralKit — Free AI YouTube SEO Optimizer',
     description:
-      'Generate viral YouTube titles, descriptions, hashtags & tags with AI. Free forever.',
+      'Free AI YouTube SEO tool. Generate viral titles, descriptions, hashtags & tags. Boost your video views and rankings instantly.',
     creator: siteConfig.xHandle || '@FreeViralKit',
     site: siteConfig.xHandle || '@FreeViralKit',
     images: [buildAbsoluteUrl('/banner.png')],
@@ -100,7 +100,7 @@ const jsonLd = {
       applicationCategory: 'UtilitiesApplication',
       operatingSystem: 'Web',
       description:
-        'Free AI-powered YouTube SEO tool for generating optimized titles, descriptions, hashtags, and tags.',
+        'Free AI YouTube SEO tool. Generate viral titles, descriptions, hashtags & tags. Boost your video views and rankings instantly.',
       offers: {
         '@type': 'Offer',
         price: '0',
@@ -115,7 +115,7 @@ const jsonLd = {
       '@type': 'Organization',
       name: 'FreeViralKit',
       url: buildAbsoluteUrl('/'),
-      description: 'Free AI YouTube SEO optimization tool',
+      description: 'Free AI YouTube SEO tool. Generate viral titles, descriptions, hashtags & tags. Boost your video views and rankings instantly.',
     },
   ],
 };
@@ -194,7 +194,7 @@ export default function RootLayout({
         <noscript>
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`https://mc.yandex.ru/watch/${YANDEX_ID}`} style={{ position: 'absolute', left: '-9999px' }} alt="Analytics tracking pixel" />
+            <img src={`https://mc.yandex.ru/watch/${YANDEX_ID}`} style={{ position: 'absolute', left: '-9999px' }} alt="Analytics tracking pixel" width="1" height="1" loading="lazy" />
           </div>
         </noscript>
         {/* Background animation */}

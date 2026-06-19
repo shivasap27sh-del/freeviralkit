@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-community-tab-strategy",
-  title: "The Ultimate YouTube Community Tab Strategy for Explosive Growth",
-  description: "Stop ignoring the Community Tab. Learn how top creators use polls, images, and text posts to bypass the algorithm, engage subscribers, and drive massive views to old videos.",
+  title: "YouTube Community Tab Strategy for Growth",
+  description: "Stop ignoring the Community Tab. Learn how creators use polls, images, and text posts to bypass the algorithm, engage subs, and drive views to old videos.",
   content: `## The Feature I Ignored for Two Years
 
 For the first two years of my YouTube journey, I treated the platform like a one-way street. I uploaded a video, stared at the analytics, and waited until it was time to upload the next one. 

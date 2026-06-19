@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-titles-that-get-clicks",
-  title: "How to Write YouTube Titles That Actually Get Clicks (2026 Guide)",
+  title: "Write YouTube Titles That Get Clicks 2026",
   description: "Learn the psychology behind clickable YouTube titles. 12 proven title formulas that top creators use to get millions of clicks without clickbait.",
   content: `## The Night I Almost Deleted My Channel
 

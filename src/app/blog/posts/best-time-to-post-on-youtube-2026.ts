@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "best-time-to-post-on-youtube-2026",
-  title: "When is the Best Time to Post on YouTube in 2026? (Data Revealed)",
+  title: "Best Time to Post on YouTube in 2026",
   description: "Are you publishing videos at the wrong time of day? We analyzed the 2026 algorithm to find out exactly when you should hit publish to maximize views.",
   date: '2026-05-20T00:00:00.000Z',
   readTime: "6 min read",

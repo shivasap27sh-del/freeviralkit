@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "increase-youtube-audience-retention",
-  title: "Double Your YouTube Watch Time: The Retention Playbook for 2026",
-  description: "Average view duration is the metric that makes or breaks YouTube channels. Learn the exact scripting, pacing, and editing strategies that top creators use to keep viewers watching until the very last second.",
+  title: "Double Watch Time: Retention Playbook 2026",
+  description: "Average view duration makes or breaks channels. Learn scripting, pacing, and editing strategies top creators use to keep viewers watching to the end.",
   content: `## The Video That Taught Me Everything About Retention
 
 I still remember the moment that changed how I think about YouTube forever. I had just uploaded what I thought was my best video - 15 minutes of carefully researched content about a topic I was genuinely passionate about. The thumbnail was beautiful. The title was optimized. Everything looked perfect.

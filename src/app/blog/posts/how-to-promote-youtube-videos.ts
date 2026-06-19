@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "how-to-promote-youtube-videos",
-  title: "How to Promote YouTube Videos Without Paying for Ads: 9 Strategies That Actually Work",
-  description: "Stop waiting for the algorithm to notice you. These 9 proven promotion strategies will drive real views, subscribers, and watch time to your YouTube videos - completely free, no paid ads required.",
+  title: "How to Promote YouTube Videos for Free",
+  description: "Stop waiting for the algorithm. These 9 proven promotion strategies will drive real views, subscribers, and watch time to your videos without paid ads.",
   content: `## I Spent 6 Months Uploading Into the Void
 
 There is a special kind of loneliness that comes with being a small YouTube creator. You spend hours researching, scripting, filming, editing, and uploading a video. You write the perfect title. You design a beautiful thumbnail. You hit publish.
@@ -124,7 +124,7 @@ Create playlists organized by topic, difficulty level, or series order. Name you
 
 Start collecting email addresses from day one. An email list is the only audience you truly own - unlike YouTube subscribers, email subscribers cannot be taken away by algorithm changes.
 
-Add a simple call-to-action in every video description: "Get my free [relevant resource] - [link to simple landing page]." The resource should be directly related to your video topic - a checklist, template, cheat sheet, or mini-guide.
+Add a simple call-to-action in every video description: "Stop waiting for the algorithm. These 9 proven promotion strategies will drive real views, subscribers, and watch time to your videos without paid ads." The resource should be directly related to your video topic - a checklist, template, cheat sheet, or mini-guide.
 
 Even with 50 email subscribers, you have 50 people you can notify every time you upload. Those 50 views, likes, and comments within the first hour send powerful signals to the algorithm.
 

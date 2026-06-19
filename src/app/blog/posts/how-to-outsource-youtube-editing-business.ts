@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "how-to-outsource-youtube-editing-business",
-  title: "Outsource YouTube Editing: How to Hire & Scale Your Channel",
+  title: "Outsource YouTube Editing & Scale Channels",
   description: "Stop spending 15 hours per video on the timeline. Learn how to outsource your YouTube editing, find reliable freelancers, and scale your channel's revenue.",
   content: `## The Night I Almost Quit YouTube
 

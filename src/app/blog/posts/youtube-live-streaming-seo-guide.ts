@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-live-streaming-seo-guide",
-  title: "Mastering YouTube Live Streams: SEO, Settings, and Monetization in 2026",
-  description: "Struggling to get viewers on your YouTube live streams? Learn the ultimate 2026 blueprint for live stream SEO, optimal OBS settings, and maximizing monetization.",
+  title: "YouTube Live Streams: SEO & Settings 2026",
+  description: "Struggling to get viewers on your live streams? Learn the ultimate blueprint for live stream SEO, optimal OBS settings, and maximizing monetization.",
   content: `## The Night My Channel Almost Died Live on Screen
 
 I will never forget the sinking feeling in my stomach on a rainy Tuesday night in late 2024. I had spent three weeks hyping up a "massive live event" to my modest audience of 12,000 subscribers. I bought a new microphone, spent hours setting up my background lighting, and nervously poured myself a cup of coffee right before hitting the "Go Live" button on OBS. 

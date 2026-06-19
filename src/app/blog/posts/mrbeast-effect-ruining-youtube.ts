@@ -3,7 +3,7 @@ import { BlogPost } from '../data';
 export const post: BlogPost = {
   slug: "mrbeast-effect-ruining-youtube",
   title: "The 'MrBeast Effect' is Ruining YouTube: How Small Channels Can Survive in 2026",
-  description: "Are you burning out trying to edit like MrBeast? Discover why the hyper-edited retention strategy is destroying small creators and what you should do instead.",
+  description: "Are you burning out trying to edit like MrBeast? Discover why the hyper-edited retention strategy hurts small creators and what you should do instead.",
   date: '2026-06-01T00:00:00.000Z',
   readTime: "9 min read",
   category: "Growth Strategy",

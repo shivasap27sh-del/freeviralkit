@@ -71,9 +71,9 @@ export default function ChapterGeneratorClient() {
             </div>
             
             <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-2xl p-5 mt-6">
-              <h4 className="font-display font-semibold text-indigo-500 mb-1 flex items-center gap-1.5">
+              <h3 className="font-display font-semibold text-indigo-500 mb-1 flex items-center gap-1.5">
                 <Clock className="w-4 h-4" /> How to Use These Chapters
-              </h4>
+              </h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 Copy and paste the list above directly into your YouTube video description. YouTube requires the first chapter to be exactly <strong>00:00</strong> and for there to be at least 3 chapters in ascending order for them to display on the video timeline.
               </p>

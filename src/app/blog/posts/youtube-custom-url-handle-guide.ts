@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-custom-url-handle-guide",
-  title: "The Ultimate Guide to YouTube Handles and Custom URLs",
+  title: "Ultimate Guide to YouTube Handles & URLs",
   description: "Your channel name and handle are your digital real estate. Here is how to pick the perfect handle, rebrand your old channel, and secure your identity.",
   date: "2026-06-17",
   readTime: "7 min read",

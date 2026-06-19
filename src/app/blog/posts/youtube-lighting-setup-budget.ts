@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-lighting-setup-budget",
-  title: "How to Light Your YouTube Videos on a $50 Budget",
-  description: "You don't need a $500 professional lighting kit. Discover how to use bounce boards, window light, and $50 hardware store gear to look cinematic on camera.",
+  title: "Light Your YouTube Videos on a $50 Budget",
+  description: "You don't need a $500 lighting kit. Discover how to use bounce boards, window light, and $50 hardware store gear to look cinematic on camera.",
   date: "2026-06-17",
   readTime: "7 min read",
   category: "Creator Tools",

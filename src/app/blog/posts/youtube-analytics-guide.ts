@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-analytics-guide",
-  title: "YouTube Analytics Explained: The Only Metrics That Actually Matter in 2026",
-  description: "Stop obsessing over subscriber counts. Here are the 5 YouTube analytics metrics that actually drive growth, how to read them, and a 30-day audit routine to turn data into more views.",
+  title: "YouTube Analytics: Metrics That Matter 2026",
+  description: "Stop obsessing over sub counts. Here are the 5 YouTube analytics metrics that actually drive growth, and a 30-day audit routine to get more views.",
   "content": `## You Are Probably Looking at the Wrong Numbers
 
 ![Data analysis charts analytics screen](https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=800&auto=format&fit=crop)

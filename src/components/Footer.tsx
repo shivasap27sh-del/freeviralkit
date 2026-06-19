@@ -53,6 +53,7 @@ export default function Footer() {
                   alt="FreeViralKit - 10x your YouTube views with AI-generated titles &amp; SEO | Product Hunt"
                   width="86"
                   height="32"
+                  loading="lazy"
                   className="w-[86px] h-[32px]"
                 />
               </a>

@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "best-youtube-tags-for-gaming",
-  title: "Best YouTube Tags for Gaming Videos in 2026 (Copy & Paste)",
+  title: "Best YouTube Tags for Gaming Videos in 2026",
   description: "The ultimate list of YouTube tags for gaming videos. Copy-paste ready tags for Minecraft, Fortnite, GTA, Roblox, and every gaming niche.",
   content: `## The Day I Deleted My 100th Gaming Video
 

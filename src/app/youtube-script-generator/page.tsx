@@ -4,6 +4,7 @@ import ScriptGeneratorPageClient from '@/components/tools/ScriptGeneratorPageCli
 import { FileText } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import RelatedTools from '@/components/RelatedTools';
 export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',

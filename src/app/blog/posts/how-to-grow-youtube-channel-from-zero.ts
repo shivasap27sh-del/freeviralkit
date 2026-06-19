@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "how-to-grow-youtube-channel-from-zero",
-  title: "How to Grow a YouTube Channel From 0 Subscribers in 2026",
+  title: "Grow a YouTube Channel From 0 Subs in 2026",
   description: "A realistic, no-BS guide to growing your YouTube channel from scratch. No paid ads, no shortcuts. just the strategies that actually work for new creators.",
   content: `## The Day I Stared at the Flatline
 

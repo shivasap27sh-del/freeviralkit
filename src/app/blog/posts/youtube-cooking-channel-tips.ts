@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-cooking-channel-tips",
-  title: "How to Start a Cooking YouTube Channel in 2026: The Complete Guide",
-  description: "Everything you need to start a successful cooking YouTube channel in 2026 - from kitchen setup and filming gear to recipe video structure, SEO, and growing your first 1,000 subscribers.",
+  title: "Start a Cooking YouTube Channel in 2026",
+  description: "Everything you need to start a successful cooking channel in 2026 - from kitchen setup and filming gear to recipe video structure and YouTube SEO.",
   content: `## Why 2026 Is the Best Time to Start a Cooking Channel
 
 I started filming recipe videos in my tiny apartment kitchen back in 2022. My first video - a basic chicken stir-fry - got 23 views in its first week. I had terrible lighting, my audio was just the built-in camera mic picking up the exhaust fan, and I had no idea what SEO even meant. Fast forward to today, and food content is one of the highest-performing niches on YouTube. According to YouTube's own Culture & Trends report, **cooking and recipe content saw a 45% increase in watch time** between 2023 and 2025. The appetite (pun intended) for food videos is not slowing down.

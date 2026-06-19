@@ -3,6 +3,7 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import HashtagGeneratorClient from '@/components/tools/HashtagGeneratorClient';
 import { Hash } from 'lucide-react';
 import Link from 'next/link';
+import RelatedTools from '@/components/RelatedTools';
 
 
 export const metadata: Metadata = {
@@ -306,6 +307,8 @@ export default function HashtagGeneratorPage() {
               </Link>
             </div>
           </div>
+
+          <RelatedTools currentToolPath="/youtube-hashtag-generator" />
         </section>
       </main>
     </>

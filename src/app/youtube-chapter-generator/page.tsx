@@ -4,6 +4,7 @@ import { Clock, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
+import RelatedTools from '@/components/RelatedTools';
 
 export const metadata: Metadata = {
   twitter: {

@@ -3,7 +3,7 @@ import { BlogPost } from '../data';
 export const post: BlogPost = {
   slug: "youtube-shorts-bubble-bursting",
   title: "The 'Shorts Bubble' is Bursting: Why Long-Form Video is Making a Comeback",
-  description: "Are you relying entirely on YouTube Shorts for your growth? Discover why 2026 data shows a massive shift back to long-form content, and how to pivot before your channel dies.",
+  description: "Are you relying entirely on YouTube Shorts for your growth? Discover why data shows a shift back to long-form content, and how to pivot accordingly.",
   date: '2026-06-09T00:00:00.000Z',
   readTime: "8 min read",
   category: "YouTube Algorithm",

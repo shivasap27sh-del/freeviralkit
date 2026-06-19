@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: Props) {
                   dangerouslySetInnerHTML={{
                     __html: item
                       .replace(/^(?:-\s*|\*\s+|❌\s*|✅\s*)/, '')
-                      .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="rounded-xl my-6 w-full max-h-[400px] object-cover border border-slate-200 dark:border-slate-800" />')
+                      .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" width="800" height="400" loading="lazy" class="rounded-xl my-6 w-full max-h-[400px] object-cover border border-slate-200 dark:border-slate-800" />')
                       .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white">$1</strong>')
                       .replace(/\*(.*?)\*/g, '<em>$1</em>')
                       .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-purple-500 hover:text-purple-600 underline underline-offset-2">$1</a>')
@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: Props) {
             className="text-slate-700 dark:text-slate-300 leading-relaxed my-4 whitespace-pre-wrap"
             dangerouslySetInnerHTML={{
               __html: trimmed
-                .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="rounded-xl my-6 w-full max-h-[400px] object-cover border border-slate-200 dark:border-slate-800" />')
+                .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" width="800" height="400" loading="lazy" class="rounded-xl my-6 w-full max-h-[400px] object-cover border border-slate-200 dark:border-slate-800" />')
                 .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white">$1</strong>')
                 .replace(/\*(.*?)\*/g, '<em>$1</em>')
                 .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-purple-500 hover:text-purple-600 underline underline-offset-2">$1</a>')
@@ -238,9 +238,9 @@ export default async function BlogPostPage({ params }: Props) {
             S
           </div>
           <div>
-            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-2 text-center sm:text-left">
+            <h2 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-2 text-center sm:text-left">
               Shiva
-            </h3>
+            </h2>
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed text-center sm:text-left">
               Shiva is a YouTube growth expert and the creator of FreeViralKit. With years of experience decoding the YouTube algorithm, Shiva builds free AI tools to help creators optimize their metadata, rank higher in search results, and turn their passion into a full-time career.
             </p>

@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-monetization-guide-2026",
-  title: "YouTube Monetization in 2026: How to Actually Make Money on YouTube",
-  description: "A no-fluff guide to making real money on YouTube in 2026 - from YPP requirements and ad revenue to sponsorships, affiliate links, and the niches that pay the most.",
+  title: "Make Real Money on YouTube in 2026",
+  description: "A no-fluff guide to making real money on YouTube in 2026 from YPP requirements and ad revenue to sponsorships, affiliate links, and top-paying niches.",
   "content": `## Let's Talk About the Money
 
 ![Dollar cash layout money monetization](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop)

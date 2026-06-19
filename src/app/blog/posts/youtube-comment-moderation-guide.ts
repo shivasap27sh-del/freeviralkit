@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-comment-moderation-guide",
-  title: "How to Deal with Hate Comments and Trolls on YouTube",
-  description: "Getting your first hateful comment is terrifying, but it actually means the algorithm is working. Learn how to protect your mental health and moderate trolls effectively.",
+  title: "Deal with Hate Comments & Trolls on YouTube",
+  description: "Getting hateful comments means the algorithm is working. Learn how to protect your mental health and moderate trolls effectively on your channel.",
   date: "2026-06-17",
   readTime: "7 min read",
   category: "Creator Tools",

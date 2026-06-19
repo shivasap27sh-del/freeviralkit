@@ -122,7 +122,7 @@ Do not wait for your video to get views before you pin a comment. The very first
 When viewers reply to your pinned comment, do not just ignore them. Hit the heart icon and reply back. Why? Because when you heart a comment, YouTube sends a push notification directly to that viewer's phone. This often brings them back to your video for a second viewing session, which the algorithm absolutely loves. It shows high retention and returning viewers.
 
 ### 3. Keep Links Clean and Trustworthy
-Never use long, ugly, complicated affiliate links that look like spam. If your link looks like \`http://www.randomsite.com/affiliate=12345&track=xyz\`, people will be afraid to click it. Use clean, direct domains. If you must use a long link, use a link shortener to make it look professional. Trust is paramount when driving external traffic.
+Never use long, ugly, complicated affiliate links that look like spam. If your link looks like \`https://example.com/affiliate\`, people will be afraid to click it. Use clean, direct domains. If you must use a long link, use a link shortener to make it look professional. Trust is paramount when driving external traffic.
 
 ### 4. Update the Pin Over Time
 Your pinned comment is not set in stone. If you launch a new product six months after the video goes live, go back to your top-performing videos and update their pinned comments to point to the new product. It is free, ongoing promotion on your best real estate.

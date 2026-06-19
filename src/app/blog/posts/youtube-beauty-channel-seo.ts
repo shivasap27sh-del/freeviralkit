@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-beauty-channel-seo",
-  title: "YouTube Beauty Channel SEO: How to Rank Makeup Tutorials in 2026",
-  description: "Learn how to rank your makeup tutorials and beauty videos on YouTube. This guide covers beauty keyword research, title formulas for GRWM and tutorials, hashtag strategy, and description optimization.",
+  title: "YouTube Beauty Channel SEO Strategies 2026",
+  description: "Learn how to rank your makeup tutorials and beauty videos. This guide covers beauty keyword research, title formulas, and description optimization.",
   content: `## Why Most Beauty Videos Never Get Found
 
 I started my beauty channel in late 2023 with a GRWM video that I thought was genuinely good. My blending was smooth, the lighting was flattering, and I even had background music that matched the aesthetic. I titled it "My Everyday Makeup Look" and uploaded it with a two-line description and zero hashtags.

@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "how-youtube-algorithm-works",
-  title: "How the YouTube Algorithm Actually Works in 2026 (Explained Simply)",
-  description: "Stop guessing and start understanding. Here is a plain-English breakdown of every system behind the YouTube algorithm - Search, Suggested, Home, and Shorts - plus the exact metrics that decide whether your video takes off or dies.",
+  title: "How the YouTube Algorithm Works in 2026",
+  description: "A plain-English breakdown of every system behind the YouTube algorithm including Search, Suggested, Home, and Shorts, plus the exact metrics that matter.",
   "content": `## The YouTube Algorithm Is Not One Thing
 
 ![Algorithm network connection connections](https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop)

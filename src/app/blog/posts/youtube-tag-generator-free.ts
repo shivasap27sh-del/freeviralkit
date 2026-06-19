@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-tag-generator-free",
-  title: "YouTube Tag Generator Free - Get 20+ SEO Tags Instantly (2026)",
-  description: "Stop wasting hours typing tags manually. Learn how to use a free YouTube tag generator to get highly optimized, copy-paste SEO tags for your videos instantly.",
+  title: "Free YouTube Tag Generator: Get SEO Tags",
+  description: "Stop wasting hours typing tags manually. Learn how to use a free YouTube tag generator to get highly optimized, copy-paste SEO tags for videos instantly.",
   content: `## The Night I Almost Quit YouTube Over "Tags"
 
 I remember staring at my screen at 3:00 AM, my eyes burning from the harsh blue light. I had just finished editing what I thought was my masterpiece - a 15-minute documentary-style video about the history of speedrunning. 

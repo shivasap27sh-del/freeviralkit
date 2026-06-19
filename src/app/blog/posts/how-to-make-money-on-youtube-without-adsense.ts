@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "how-to-make-money-on-youtube-without-adsense",
-  title: "How to Make Money on YouTube Without AdSense (5 Proven Methods)",
+  title: "Make Money on YouTube Without AdSense",
   description: "Don't wait for 1,000 subscribers to start earning. Discover 5 highly profitable ways to make money on YouTube without the Partner Program in 2026.",
   date: '2026-06-01T00:00:00.000Z',
   readTime: "8 min read",

@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-video-podcast-strategy-2026",
-  title: "YouTube Podcast Strategy: How to Rank Video Podcasts in 2026",
-  description: "Struggling to get listeners on Spotify and Apple? Discover the exact YouTube video podcast strategy for 2026 that turns zero listeners into thousands of loyal viewers using algorithms, shorts, and visual storytelling.",
+  title: "YouTube Podcast Strategy to Rank in 2026",
+  description: "Struggling to get listeners on Spotify? Discover the YouTube video podcast strategy that turns zero listeners into loyal viewers using visual storytelling.",
   date: "2026-06-11",
   readTime: "12 min read",
   category: "Growth",

@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "how-to-find-youtube-niche",
-  title: "Best YouTube Niche 2026: How to Find a Profitable Channel Topic That Actually Fits You",
-  description: "Struggling to choose a YouTube channel topic? Use our proven 3-step validation framework to find a highly profitable, low-competition niche that aligns with your passions and pays real money.",
+  title: "Best YouTube Niches 2026: Find Your Topic",
+  description: "Struggling to choose a YouTube topic? Use our 3-step validation framework to find a highly profitable, low-competition niche that fits your passion.",
   content: `## The Night I Almost Started the Wrong Channel
 
 Let me tell you about the biggest mistake I almost made. It was 11 PM on a Tuesday, and I had just watched a video about how finance YouTube channels earn $30 per 1,000 views. My eyes went wide. I grabbed a notebook and started planning a personal finance channel.

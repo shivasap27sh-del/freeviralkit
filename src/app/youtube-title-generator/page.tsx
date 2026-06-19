@@ -3,6 +3,7 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import RelatedTools from '@/components/RelatedTools';
 
 
 export const metadata: Metadata = {
@@ -279,6 +280,8 @@ export default function TitleGeneratorPage() {
             </div>
           </div>
 
+
+          <RelatedTools currentToolPath="/youtube-title-generator" />
         </section>
       </main>
     </>

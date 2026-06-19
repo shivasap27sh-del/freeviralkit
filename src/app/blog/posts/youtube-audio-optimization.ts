@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-audio-optimization",
-  title: "Why Bad Audio is Killing Your YouTube Channel (And How to Fix It Cheaply)",
-  description: "Viewers will watch bad video, but they will instantly click away from bad audio. Learn professional YouTube audio optimization techniques and budget mic setups to drastically improve retention.",
+  title: "Fix Bad Audio to Save Your YouTube Channel",
+  description: "Viewers will watch bad video, but instantly click away from bad audio. Learn professional YouTube audio optimization techniques to improve retention.",
   content: `## The $2,000 Mistake I Made on Day One
 
 When I decided to take YouTube seriously, I did what every amateur does: I obsessed over the camera. I spent three months saving up $2,000 to buy a mirrorless 4K camera and a beautiful portrait lens with a blurry background. I was convinced that cinematic visuals were the secret to blowing up.

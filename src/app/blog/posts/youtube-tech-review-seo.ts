@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-tech-review-seo",
-  title: "How to SEO Optimize Tech Review Videos for Maximum Views",
-  description: "Learn the exact SEO strategies that help tech review videos rank on YouTube and Google. Covers keyword research, title formulas, description optimization, and comparison keywords for tech channels.",
+  title: "SEO Optimize Tech Review Videos for Views",
+  description: "Learn the exact SEO strategies that help tech review videos rank on YouTube and Google. Covers keyword research, title formulas, and description tips.",
   content: `## The Tech Review SEO Advantage Most Creators Ignore
 
 Tech reviews are one of the few YouTube niches where **search traffic** consistently outperforms browse and suggested traffic. Think about it: when someone is considering buying a new phone, laptop, or gadget, what do they do? They go to YouTube and search *"iPhone 17 review," "best budget laptop 2026,"* or *"Galaxy S26 vs iPhone 17 camera test."*

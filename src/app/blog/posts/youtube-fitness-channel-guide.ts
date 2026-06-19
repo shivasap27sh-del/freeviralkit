@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-fitness-channel-guide",
-  title: "How to Grow a Fitness YouTube Channel: Complete Beginner Guide",
-  description: "Ready to launch a fitness YouTube channel? This beginner guide covers filming workouts, transformation content, SEO strategy, and sponsorship tips to grow your gym channel fast in 2026.",
+  title: "Grow a Fitness YouTube Channel: Full Guide",
+  description: "Ready to launch a fitness channel? This guide covers filming workouts, transformation content, SEO strategy, and sponsorships to grow your gym channel.",
   content: `## Why Fitness Is One of the Best YouTube Niches in 2026
 
 I remember uploading my first workout video three years ago. I filmed it in my garage with a phone propped against a dumbbell. The lighting was terrible, my form explanations were awkward, and the audio echoed off concrete walls. That video got 14 views in a week.

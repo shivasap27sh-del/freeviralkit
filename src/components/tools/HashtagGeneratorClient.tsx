@@ -111,9 +111,9 @@ export default function HashtagGeneratorClient({ niche }: HashtagGeneratorClient
 
             {/* Pro Tip */}
             <div className="bg-pink-500/10 border border-pink-500/20 rounded-2xl p-5">
-              <h4 className="font-display font-semibold text-pink-600 mb-1 flex items-center gap-1.5">
+              <h3 className="font-display font-semibold text-pink-600 mb-1 flex items-center gap-1.5">
                 💡 Pro Tip: Place Top 3 in Description
-              </h4>
+              </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Always copy and place your top 3 hashtags at the very bottom of your video description. YouTube automatically displays these first 3 hashtags clickable directly above your video title, driving traffic from hashtag searches.
               </p>

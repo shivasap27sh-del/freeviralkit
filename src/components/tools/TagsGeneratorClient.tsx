@@ -116,9 +116,9 @@ export default function TagsGeneratorClient({ niche }: TagsGeneratorClientProps)
 
             {/* Pro Tip */}
             <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-2xl p-5">
-              <h4 className="font-display font-semibold text-cyan-500 mb-1 flex items-center gap-1.5">
+              <h3 className="font-display font-semibold text-cyan-500 mb-1 flex items-center gap-1.5">
                 💡 Pro Tip: Tag Priority Order
-              </h4>
+              </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Put your main target focus keyword as the first tag. YouTube weighs early tags slightly higher in search categorization. Keep tags relevant and avoid generic words.
               </p>

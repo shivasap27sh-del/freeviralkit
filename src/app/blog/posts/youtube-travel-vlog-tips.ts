@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-travel-vlog-tips",
-  title: "Travel Vlogging in 2026: Equipment, Editing, and SEO Tips That Work",
-  description: "Planning to start a travel vlog? This guide covers the best portable equipment, storytelling techniques, filming in public, and travel SEO strategies to grow your channel in 2026.",
+  title: "Travel Vlogging 2026: SEO & Equipment Tips",
+  description: "Planning to start a travel vlog? This guide covers the best portable equipment, storytelling techniques, public filming, and travel SEO strategies.",
   content: `## The Reality of Travel Vlogging Nobody Talks About
 
 I filmed my first travel vlog on a trip to Lisbon in 2023. I had a brand-new GoPro, a naive amount of enthusiasm, and absolutely zero plan for what I was actually going to say on camera. The result was 40 minutes of shaky footage of cobblestone streets, random food close-ups, and mumbled narration that even I did not want to watch back.

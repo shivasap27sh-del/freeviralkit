@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-shorts-viral-secrets",
-  title: "YouTube Shorts Algorithm Hacks: Go Viral with Short-Form Video in 2026",
-  description: "Discover the exact structure, hooks, and editing secrets used by viral Shorts creators in 2026 to beat the algorithm, hold viewer attention, and turn quick views into loyal subscribers.",
+  title: "YouTube Shorts Hacks: Go Viral in 2026",
+  description: "Discover the structure, hooks, and editing secrets used by viral Shorts creators in 2026 to beat the algorithm, hold attention, and gain loyal subscribers.",
   content: `## I Uploaded 200 Shorts Before One Finally Went Viral
 
 I want to be honest with you about something most creators will never admit: going viral on YouTube Shorts is not about luck. It is about understanding a completely different algorithm than the one that powers long-form YouTube.

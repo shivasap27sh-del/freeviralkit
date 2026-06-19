@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-first-100-subscribers",
-  title: "The Exact Strategy to Get Your First 100 YouTube Subscribers",
-  description: "Stop refreshing your zero subscriber count. Learn the emotional mindset shift and actionable tactics needed to escape the void and build your first loyal audience.",
+  title: "Strategy to Get Your First 100 Subscribers",
+  description: "Stop refreshing your zero subscriber count. Learn the mindset shift and actionable tactics needed to escape the void and build your first loyal audience.",
   date: "2026-06-17",
   readTime: "7 min read",
   category: "YouTube Strategy",

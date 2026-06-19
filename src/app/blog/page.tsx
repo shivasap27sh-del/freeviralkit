@@ -11,6 +11,11 @@ const POSTS_PER_PAGE = 10;
 export const metadata: Metadata = {
   title: 'YouTube SEO Blog — Tips & Guides',
   description: 'Expert YouTube SEO tips, guides, and strategies to grow your channel. Learn about tags, hashtags, descriptions, titles, and more.',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube SEO Blog — Tips & Guides',
+    description: 'Expert YouTube SEO tips, guides, and strategies to grow your channel. Learn about tags, hashtags, descriptions, titles, and more.',
+  },
   openGraph: {
     title: 'YouTube SEO Blog — Tips, Guides & Strategies',
     description: 'Expert YouTube SEO tips and strategies to grow your channel faster.',

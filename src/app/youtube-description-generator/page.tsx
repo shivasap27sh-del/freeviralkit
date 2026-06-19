@@ -3,6 +3,7 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import DescriptionGeneratorClient from '@/components/tools/DescriptionGeneratorClient';
 import { AlignLeft } from 'lucide-react';
 import Link from 'next/link';
+import RelatedTools from '@/components/RelatedTools';
 
 
 export const metadata: Metadata = {

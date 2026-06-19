@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "do-youtube-hashtags-actually-help",
-  title: "YouTube Hashtags: Do They Actually Help? (Data-Backed Answer)",
+  title: "Do YouTube Hashtags Actually Help? (Data)",
   description: "We analyzed whether YouTube hashtags actually increase views and discoverability. Here is what the data shows and how to use them correctly.",
   "content": `## Falling Down the SEO Rabbit Hole
 

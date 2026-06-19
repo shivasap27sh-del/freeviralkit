@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "grow-educational-youtube-channel",
-  title: "How to Grow an Educational YouTube Channel: The Complete 2026 Blueprint",
-  description: "Educational YouTube channels have the highest RPM on the platform, but growing one requires a completely different strategy than entertainment. Learn the exact framework for building a profitable education channel from scratch.",
+  title: "How to Grow an Educational YouTube Channel",
+  description: "Educational channels have high RPMs, but growing them requires a different strategy. Learn the framework for building a profitable education channel.",
   content: `## The Teacher Who Accidentally Built a Six-Figure YouTube Channel
 
 Maria was a high school chemistry teacher earning $42,000 a year. During COVID lockdowns, she started filming simple chemistry explanations on her phone and uploading them for her students. No fancy equipment. No editing. Just a whiteboard, a marker, and her natural ability to explain complex concepts in simple language.

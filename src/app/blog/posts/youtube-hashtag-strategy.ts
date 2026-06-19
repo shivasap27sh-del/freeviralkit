@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-hashtag-strategy",
-  title: "YouTube Hashtag Strategy: How to Use Hashtags to Get More Views",
+  title: "YouTube Hashtags: Strategy for More Views",
   description: "Learn the exact hashtag strategy that top YouTubers use to increase discoverability. Includes the best hashtags for every niche in 2026.",
   content: `## How I Accidentally Shadowbanned My Own Channel
 

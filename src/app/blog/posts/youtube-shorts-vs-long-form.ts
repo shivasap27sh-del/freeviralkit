@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-shorts-vs-long-form",
-  title: "YouTube Shorts vs Long-Form: Which Grows Your Channel Faster in 2026?",
-  description: "A data-backed comparison of YouTube Shorts vs long-form videos for channel growth in 2026. We break down retention, monetization, subscriber quality, and the algorithm's treatment of each format.",
+  title: "Shorts vs Long-Form: Which is Best in 2026?",
+  description: "A data-backed comparison of YouTube Shorts vs long-form videos for channel growth. We break down retention, monetization, subscribers, and the algorithm.'s treatment of each format.",
   content: `## The Format War Every Creator Is Fighting
 
 If you have spent any time in YouTube creator communities this year, you have heard the debate: should you focus on Shorts or long-form? Some creators swear that Shorts are the fastest path to 100K subscribers. Others argue that Shorts subscribers are "empty calories" - they inflate your count but never watch your real content.

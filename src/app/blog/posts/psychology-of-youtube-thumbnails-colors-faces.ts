@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "psychology-of-youtube-thumbnails-colors-faces",
-  title: "The Psychology of YouTube Thumbnails: Colors, Faces, and Click-Through Rates",
-  description: "Discover the hidden psychological triggers behind viral YouTube thumbnails. Learn how color theory, facial expressions, and visual hierarchy directly manipulate click-through rates.",
+  title: "Psychology of YouTube Thumbnails Explained",
+  description: "Discover the hidden psychological triggers behind viral thumbnails. Learn how color theory and facial expressions directly manipulate click-through rates.",
   content: `## The Thumbnail That Saved My YouTube Career
 
 When I published what I thought was my absolute masterpiece—a 20-minute documentary-style video that took me 40 grueling hours to edit—I was terrified, but excited. I had poured my entire soul into the project. I uploaded it at 9 AM on a Saturday, expecting a flood of views, comments, and new subscribers. 

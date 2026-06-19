@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "faceless-youtube-channel-ideas",
-  title: "15 Faceless YouTube Channel Ideas That Make Money Without Showing Your Face (2026)",
-  description: "Want to be a YouTuber but hate being on camera? Discover the most profitable faceless YouTube channel ideas that generate high RPMs and passive income in 2026.",
+  title: "15 Profitable Faceless Channel Ideas (2026)",
+  description: "Want to be a YouTuber but hate being on camera? Discover profitable faceless YouTube channel ideas that generate high RPMs and passive income in 2026.",
   date: '2026-05-25T00:00:00.000Z',
   readTime: "8 min read",
   category: "Monetization",

@@ -8,11 +8,16 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'Free AI YouTube SEO & Title Generator',
   description:
-    'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required.',
+    'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required to boost your channel.',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free AI YouTube SEO & Title Generator',
+    description: 'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required to boost your channel.',
+  },
   openGraph: {
     title: 'FreeViralKit — Free AI YouTube SEO & Title Tool',
     description:
-      'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required.',
+      'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required to boost your channel.',
     url: buildAbsoluteUrl('/'),
     type: 'website',
   },

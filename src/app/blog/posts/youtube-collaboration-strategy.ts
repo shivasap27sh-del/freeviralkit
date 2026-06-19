@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-collaboration-strategy",
-  title: "YouTube Collaboration Strategy: How to Find and Pitch Collabs That Grow Your Channel",
-  description: "Learn how to find the right YouTube collab partners, write outreach pitches that get responses, cross-promote effectively, and measure the results of your collaborations.",
+  title: "YouTube Collab Strategy to Grow Faster",
+  description: "Learn how to find the right YouTube collab partners, write outreach pitches that get responses, cross-promote, and measure the results of collaborations.",
   content: `## The Collaboration That Changed My Channel
 
 In March 2024, my YouTube channel was stuck at 1,800 subscribers. I had been uploading consistently for eight months, my SEO was decent, and my content quality was improving with every video. But growth had flatlined. I was getting the same 200-400 views per video, and the subscriber count barely moved.

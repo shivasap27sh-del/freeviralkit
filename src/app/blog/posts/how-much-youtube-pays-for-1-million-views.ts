@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "how-much-youtube-pays-for-1-million-views",
-  title: "How Much Does YouTube Pay for 1 Million Views in 2026? (Real Data)",
+  title: "YouTube Pay for 1 Million Views in 2026",
   description: "Stop guessing about creator income. We break down the exact AdSense payouts for 1 million views across Gaming, Finance, Vlogging, and Shorts in 2026.",
   date: '2026-05-27T00:00:00.000Z',
   readTime: "8 min read",

@@ -88,18 +88,18 @@ export default function ThumbnailGeneratorClient() {
                     {/* Visual Idea */}
                     <div className="flex-1 space-y-4">
                       <div>
-                        <h4 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white mb-2">
+                        <h3 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white mb-2">
                           <ImageIcon className="w-5 h-5 text-amber-500" /> Visual Layout
-                        </h4>
+                        </h3>
                         <p className="text-slate-600 dark:text-slate-400 leading-relaxed bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
                           {concept.visual}
                         </p>
                       </div>
                       
                       <div>
-                        <h4 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white mb-2">
+                        <h3 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white mb-2">
                           <MessageSquare className="w-5 h-5 text-blue-500" /> Text Overlay
-                        </h4>
+                        </h3>
                         <div className="inline-block bg-slate-900 dark:bg-black text-white font-black text-2xl tracking-tight px-4 py-2 rounded-lg transform -rotate-2 border border-slate-700">
                           {concept.textOverlay}
                         </div>

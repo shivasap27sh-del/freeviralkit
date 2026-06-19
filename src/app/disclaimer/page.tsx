@@ -4,17 +4,17 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Disclaimer | FreeViralKit',
-  description: 'Earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit.',
+  description: 'Read the earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit. Understand our content policies and guarantees.',
   openGraph: {
     title: 'Disclaimer | FreeViralKit',
-    description: 'Earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit.',
+    description: 'Read the earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit. Understand our content policies and guarantees.',
     url: buildAbsoluteUrl('/disclaimer'),
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Disclaimer | FreeViralKit',
-    description: 'Earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit.',
+    description: 'Read the earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit. Understand our content policies and guarantees.',
   },
   alternates: {
     canonical: buildAbsoluteUrl('/disclaimer'),

@@ -201,7 +201,7 @@ export default function ScriptGeneratorPageClient() {
                 <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 flex gap-3.5">
                   <MessageSquare className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Spoken Script (Hook)</h4>
+                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Spoken Script (Hook)</h3>
                     <p className="text-sm font-bold text-slate-800 italic leading-relaxed">&ldquo;{renderFormattedText(outline.hook)}&rdquo;</p>
                   </div>
                 </div>
@@ -219,9 +219,9 @@ export default function ScriptGeneratorPageClient() {
                       {/* Timeline dot */}
                       <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 border-4 border-white" />
                       <div className="flex justify-between items-start gap-4 mb-2">
-                        <h4 className="font-display font-semibold text-slate-800 dark:text-slate-100 text-sm">
+                        <h3 className="font-display font-semibold text-slate-800 dark:text-slate-100 text-sm">
                           Section #{idx + 1}
-                        </h4>
+                        </h3>
                         <button onClick={() => copy(item, `body-${idx}`)} className="text-xs text-slate-400 hover:text-slate-600 cursor-pointer">
                           {copiedStates[`body-${idx}`] ? 'Copied!' : 'Copy'}
                         </button>
@@ -274,9 +274,9 @@ export default function ScriptGeneratorPageClient() {
 
             {/* Pro Tip */}
             <div className="bg-purple-500/10 border border-purple-500/20 rounded-2xl p-5 mt-6">
-              <h4 className="font-display font-semibold text-purple-400 mb-1 flex items-center gap-1.5">
+              <h3 className="font-display font-semibold text-purple-400 mb-1 flex items-center gap-1.5">
                 💡 Retaining Viewer Attention
-              </h4>
+              </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Aim to change B-roll clips, show on-screen text graphics, or change camera angles every **3 to 5 seconds** in the body segment. Front-load your main value proposition right after the hook to maximize retention before the first CTA marker.
               </p>

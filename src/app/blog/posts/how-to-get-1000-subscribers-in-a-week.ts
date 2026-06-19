@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "how-to-get-1000-subscribers-in-a-week",
-  title: "How to Get 1000 Subscribers on YouTube in a Week (2026 Strategy)",
-  description: "Struggling to reach the monetization threshold? Here is the exact, step-by-step strategy to get 1,000 YouTube subscribers in 7 days without cheating the algorithm.",
+  title: "Get 1000 Subscribers on YouTube in a Week",
+  description: "Struggling to reach the monetization threshold? Here is the exact, step-by-step strategy to get 1,000 YouTube subscribers in 7 days the right way.",
   date: '2026-05-29T00:00:00.000Z',
   readTime: "9 min read",
   category: "Growth Strategy",

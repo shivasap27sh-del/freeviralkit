@@ -4,6 +4,7 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import TagsGeneratorClient from '@/components/tools/TagsGeneratorClient';
 import { Tag } from 'lucide-react';
 import Link from 'next/link';
+import RelatedTools from '@/components/RelatedTools';
 
 export const metadata: Metadata = {
   twitter: {

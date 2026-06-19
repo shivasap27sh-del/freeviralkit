@@ -4,6 +4,7 @@ import TopicResearcherPageClient from '@/components/tools/TopicResearcherPageCli
 import { Search } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import RelatedTools from '@/components/RelatedTools';
 
 export const metadata: Metadata = {
   twitter: {
@@ -302,6 +303,8 @@ export default function TopicResearcherPage() {
               ))}
             </div>
           </div>
+
+          <RelatedTools currentToolPath="/youtube-topic-researcher" />
         </section>
       </main>
     </>

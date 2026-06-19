@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "does-changing-youtube-video-title-ruin-algorithm",
-  title: "Does Changing a YouTube Video Title Ruin the Algorithm? (2026 Data)",
+  title: "Does Changing Titles Ruin the Algorithm?",
   description: "Are you afraid to change a poorly performing video title? We analyze the 2026 YouTube algorithm to find out if changing titles hurts or helps your views.",
   date: '2026-05-22T00:00:00.000Z',
   readTime: "8 min read",

@@ -4,6 +4,7 @@ import ChannelNameGeneratorClient from '@/components/tools/ChannelNameGeneratorC
 import { User } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import RelatedTools from '@/components/RelatedTools';
 
 export const metadata: Metadata = {
   twitter: {
@@ -326,6 +327,8 @@ export default function ChannelNameGeneratorPage() {
               </Link>
             </div>
           </div>
+
+          <RelatedTools currentToolPath="/youtube-channel-name-generator" />
         </section>
       </main>
     </>

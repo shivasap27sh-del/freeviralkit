@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "why-demonetized-youtube-channels-fail",
-  title: "We Analyzed 1,000 Demonetized YouTube Channels: Here is Why They Failed",
-  description: "Terrified of losing your AdSense? We analyzed a dataset of 1,000 banned or demonetized channels in 2026 to reveal the exact AI mistakes that trigger YouTube's penalties.",
+  title: "Why Demonetized YouTube Channels Failed",
+  description: "Terrified of losing your AdSense? We analyzed a dataset of 1,000 banned or demonetized channels to reveal the mistakes that trigger YouTube penalties.'s penalties.",
   date: '2026-06-03T00:00:00.000Z',
   readTime: "8 min read",
   category: "Monetization",

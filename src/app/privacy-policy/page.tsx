@@ -4,6 +4,11 @@ import { buildAbsoluteUrl } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Privacy Policy | FreeViralKit',
   description: 'Read the FreeViralKit Privacy Policy to understand how we collect, use, and protect your data while using our YouTube SEO tools.',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | FreeViralKit',
+    description: 'Read the FreeViralKit Privacy Policy to understand how we collect, use, and protect your data while using our YouTube SEO tools.',
+  },
   openGraph: {
     title: 'Privacy Policy | FreeViralKit',
     description: 'Read the FreeViralKit Privacy Policy to understand how we collect, use, and protect your data while using our YouTube SEO tools.',

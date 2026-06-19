@@ -2,8 +2,8 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-sponsorships-small-channels",
-  title: "How to Get YouTube Sponsorships with Under 10,000 Subscribers",
-  description: "Think you need a massive audience to get brand deals? Learn the exact pitch strategy and metrics small YouTube channels use to secure lucrative sponsorships in 2026.",
+  title: "Get YouTube Sponsorships Under 10k Subs",
+  description: "Think you need a massive audience to get brand deals? Learn the exact pitch strategy and metrics small channels use to secure lucrative sponsorships.",
   content: `## The Email I Almost Sent to the Trash
 
 When I had just 3,200 subscribers, I received an email from a software company asking about "collaboration opportunities." My first instinct was to delete it. I assumed it was spam. Why would a real brand want to sponsor my tiny channel when there were creators in my niche with half a million subscribers?

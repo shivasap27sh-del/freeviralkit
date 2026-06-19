@@ -130,6 +130,7 @@ export default function Navbar() {
               alt="FreeViralKit - Product Hunt"
               width="86"
               height="32"
+              loading="lazy"
               className="w-[86px] h-[32px]"
             />
           </a>
@@ -162,6 +163,7 @@ export default function Navbar() {
               alt="FreeViralKit - Product Hunt"
               width="86"
               height="32"
+              loading="lazy"
               className="w-[86px] h-[32px]"
             />
           </a>

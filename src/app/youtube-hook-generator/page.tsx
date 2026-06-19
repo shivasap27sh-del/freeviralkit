@@ -4,6 +4,7 @@ import { Target, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
 import { buildAbsoluteUrl } from '@/lib/site';
+import RelatedTools from '@/components/RelatedTools';
 
 export const metadata: Metadata = {
   twitter: {

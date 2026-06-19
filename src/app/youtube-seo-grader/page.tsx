@@ -4,6 +4,7 @@ import SEOGraderClient from '@/components/tools/SEOGraderClient';
 import { Activity, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
+import RelatedTools from '@/components/RelatedTools';
 
 export const metadata: Metadata = {
   twitter: {
@@ -235,6 +236,8 @@ export default function SEOGraderPage() {
               </Link>
             </div>
           </div>
+
+          <RelatedTools currentToolPath="/youtube-seo-grader" />
         </section>
       </main>
     </>

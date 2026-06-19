@@ -2,7 +2,7 @@ import { BlogPost } from '../data';
 
 export const post: BlogPost = {
   slug: "youtube-description-tips",
-  title: "7 YouTube Description Tips That Actually Boost Views (2026)",
+  title: "7 YouTube Description Tips for More Views",
   description: "Master the art of writing YouTube descriptions that rank in search and convert viewers into subscribers. 7 proven tips with real examples.",
   "content": `## The Fatal Mistake I Made on Every Single Upload
 
