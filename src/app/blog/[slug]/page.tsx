@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getPublishedPosts, getPublishedPostBySlug, getPostBySlug, getAllSlugs } from '../data';
+import { getPublishedPosts, getPublishedPostBySlug, getPostBySlug, getAllSlugs, getRelatedPosts } from '../data';
 import { Calendar, Clock, ArrowLeft, Tag, User } from 'lucide-react';
 
 
@@ -269,9 +269,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="mt-12">
           <h3 className="font-display text-xl font-bold mb-6">More Articles</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {getPublishedPosts()
-              .filter((p) => p.slug !== post.slug)
-              .slice(0, 2)
+            {getRelatedPosts(post.slug, 4)
               .map((related) => (
                 <Link
                   key={related.slug}

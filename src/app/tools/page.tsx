@@ -276,9 +276,12 @@ export default function ToolsPage() {
 
         {/* Core Tools Section */}
         <section className="mb-16">
-          <h2 className="font-display text-2xl font-bold mb-8 flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white">
-            <Sparkles className="w-5 h-5 text-purple-400" /> Core SEO Tools
-          </h2>
+          <div className="flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-800 mb-8">
+            <Sparkles className="w-5 h-5 text-purple-400" />
+            <h2 className="font-display text-2xl font-bold text-slate-900 dark:text-white">
+              Core SEO Tools
+            </h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {coreTools.map((tool) => {
               const Icon = tool.icon;
@@ -310,9 +313,12 @@ export default function ToolsPage() {
 
         {/* Niche-Specific Tools Section */}
         <section className="mb-16">
-          <h2 className="font-display text-2xl font-bold mb-8 flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white">
-            <Gamepad2 className="w-5 h-5 text-purple-400" /> Niche-Specific Generators
-          </h2>
+          <div className="flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-800 mb-8">
+            <Gamepad2 className="w-5 h-5 text-purple-400" />
+            <h2 className="font-display text-2xl font-bold text-slate-900 dark:text-white">
+              Niche-Specific Generators
+            </h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {nicheTools.map((tool) => {
               const Icon = tool.icon;

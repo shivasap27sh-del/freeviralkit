@@ -423,6 +423,16 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Legal Links (SEO Fix for "Same Anchor" issue) */}
+        <section className="glass-card rounded-2xl p-8 md:p-10 mb-12">
+          <h2 className="font-display text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+            Our Legal Commitments
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            At FreeViralKit, we are committed to transparency and user privacy. Before using our tools, we encourage you to review our <Link href="/terms" className="text-purple-500 hover:text-purple-600 transition-colors underline underline-offset-2">terms of service agreement</Link>, which outlines the rules for using our platform. We also value your data security, so please read our <Link href="/privacy-policy" className="text-purple-500 hover:text-purple-600 transition-colors underline underline-offset-2">complete privacy practices</Link> to understand how we protect your information. Lastly, you can find our <Link href="/disclaimer" className="text-purple-500 hover:text-purple-600 transition-colors underline underline-offset-2">general disclaimer notice</Link> regarding the use of AI-generated content.
+          </p>
+        </section>
+
         {/* FAQ Section */}
         <section className="glass-card rounded-2xl p-8 md:p-10 mb-12" aria-labelledby="faq-heading">
           <h2 id="faq-heading" className="font-display text-2xl font-bold mb-6">
@@ -440,9 +450,10 @@ export default function AboutPage() {
 
         {/* CTA */}
         <section className="text-center" aria-label="Call to action">
-          <h2 className="font-display text-2xl font-bold mb-4">
+          <div aria-hidden="true" className="font-display text-2xl font-bold mb-4">
             Ready to <span className="text-gradient">Supercharge</span> Your Channel?
-          </h2>
+          </div>
+          <h2 className="sr-only">Ready to Supercharge Your Channel?</h2>
           <p className="text-slate-600 mb-6">
             Start generating optimized SEO content for your videos — it&apos;s free, always.
           </p>

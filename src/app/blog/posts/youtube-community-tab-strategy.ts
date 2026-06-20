@@ -99,7 +99,7 @@ Generally, no. Old polls and posts act as an archive of your channel's community
 
 A viewer watches your video and leaves. A community member watches your video, votes on your poll, answers your questions, and waits eagerly for your next upload. The Community Tab is the bridge between those two states.
 
-To maximize the impact of your Community Tab strategy, you need to ensure the videos you are linking to are perfectly optimized. Use our free [YouTube Description Generator](/youtube-description-generator) to craft compelling metadata, and our [YouTube Pinned Comment Formula](/youtube-pinned-comment-formula) tool to keep the engagement flowing once they click through to the video.
+To maximize the impact of your Community Tab strategy, you need to ensure the videos you are linking to are perfectly optimized. Use our free [YouTube Description Generator](/youtube-description-generator) to craft compelling metadata, and our [YouTube Pinned Comment Formula](/blog/youtube-pinned-comment-formula) tool to keep the engagement flowing once they click through to the video.
 
 Start today. Go to your Community Tab right now and post a simple image poll related to your niche. You will be shocked by how many people are waiting to interact with you.`,
   date: "2026-06-01",

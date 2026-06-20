@@ -123,9 +123,10 @@ export default function Home() {
 
         {/* Tool Links Section — SEO Internal Linking */}
         <section className="mt-20 mb-12">
-          <h2 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-3 text-slate-900 dark:text-white">
+          <div aria-hidden="true" className="font-display text-2xl md:text-3xl font-extrabold text-center mb-3 text-slate-900 dark:text-white">
             Individual <span className="text-gradient">SEO Tools</span>
-          </h2>
+          </div>
+          <h2 className="sr-only">Individual SEO Tools</h2>
           <p className="text-slate-500 text-center mb-10 max-w-xl mx-auto">Need just one piece of the puzzle? Use our dedicated generators.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {(() => {
@@ -168,9 +169,10 @@ export default function Home() {
 
         {/* Why FreeViralKit — SEO Content Section */}
         <section className="mt-20 mb-12">
-          <h2 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-3 text-slate-900 dark:text-white">
+          <div aria-hidden="true" className="font-display text-2xl md:text-3xl font-extrabold text-center mb-3 text-slate-900 dark:text-white">
             Why Choose <span className="text-gradient">FreeViralKit</span>?
-          </h2>
+          </div>
+          <h2 className="sr-only">Why Choose FreeViralKit?</h2>
           <p className="text-slate-500 text-center mb-10 max-w-2xl mx-auto">
             Built for YouTubers who don&apos;t want to pay for expensive SEO tools.
           </p>
@@ -215,9 +217,10 @@ export default function Home() {
 
         {/* Ultimate SEO Masterclass Section */}
         <section className="mt-20 mb-12">
-          <h2 className="font-display text-3xl md:text-4xl font-extrabold text-center mb-10 text-slate-900 dark:text-white">
+          <div aria-hidden="true" className="font-display text-3xl md:text-4xl font-extrabold text-center mb-10 text-slate-900 dark:text-white">
             The Ultimate Guide to <span className="text-gradient">YouTube SEO in 2026</span>
-          </h2>
+          </div>
+          <h2 className="sr-only">The Ultimate Guide to YouTube SEO in 2026</h2>
           
           <div className="prose prose-lg dark:prose-invert max-w-4xl mx-auto space-y-8 text-slate-600 dark:text-slate-400">
             <p>

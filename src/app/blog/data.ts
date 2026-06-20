@@ -211,3 +211,19 @@ export function getAllSlugs(): string[] {
 export function getPublishedSlugs(): string[] {
   return getPublishedPosts().map((post) => post.slug);
 }
+
+export function getRelatedPosts(currentSlug: string, count: number = 3): BlogPost[] {
+  const published = getPublishedPosts();
+  const currentPost = published.find(p => p.slug === currentSlug);
+  if (!currentPost) return published.filter(p => p.slug !== currentSlug).slice(0, count);
+
+  const scoredPosts = published
+    .filter(p => p.slug !== currentSlug)
+    .map(p => {
+      const overlap = p.tags.filter(t => currentPost.tags.includes(t)).length;
+      return { post: p, score: overlap };
+    })
+    .sort((a, b) => b.score - a.score);
+
+  return scoredPosts.slice(0, count).map(sp => sp.post);
+}
