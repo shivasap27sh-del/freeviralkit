@@ -193,8 +193,6 @@ export default function GamingChannelNameLandingPage() {
               <p>
                 In the highly competitive world of gaming content creation, your YouTube channel name isn&apos;t just a label; it&apos;s your entire brand identity. Whether you are aiming to be the next biggest Minecraft let&apos;s player, a top-tier Valorant esports professional, or a cozy Stardew Valley streamer, the right name can drastically impact your click-through rates (CTR) and initial viewer retention. The algorithm might push your thumbnail, but your channel name provides the context.
               </p>
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-              </div>
               <h3 className="text-xl font-semibold mt-8 mb-4 text-slate-900">Why Memorability Trumps Complexity</h3>
               <p>
                 A common mistake new gamers make is overcomplicating their handles. You might think &quot;Xx_Dark_Assassin_xX_99&quot; sounds cool, but it is notoriously difficult to remember and even harder to type into a search bar. The most successful creators—think PewDiePie, Markiplier, Jacksepticeye, or Ninja—all share one trait: their names are distinct, pronounceable, and free of unnecessary clutter. A strong gaming channel name should be catchy enough to be remembered after a single glance at a crowded comment section.

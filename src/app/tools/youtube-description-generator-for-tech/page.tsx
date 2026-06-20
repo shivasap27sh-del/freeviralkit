@@ -197,11 +197,6 @@ export default function TechDescriptionLandingPage() {
               <p>
                 The tech niche on YouTube is a completely different beast compared to vlogs or gaming. Your viewers are not just looking for entertainment; they are looking for buying advice, technical specifications, and detailed comparisons. Before dropping $1,000 on a new smartphone or $2,000 on a custom PC build, viewers use YouTube as a search engine. Your video description is the critical metadata that signals to the YouTube algorithm that your review, unboxing, or tutorial is the definitive answer to their search query.
               </p>
-
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-
-              </div>
-
               <h3 className="text-xl font-semibold mt-8 mb-4 text-slate-900">Dominating Search with Exact Model Numbers</h3>
               <p>
                 In the tech niche, &quot;close enough&quot; doesn&apos;t cut it for search. A viewer isn&apos;t just searching for &quot;best laptop.&quot; They are searching for &quot;M3 Max MacBook Pro 16 inch 64GB RAM review.&quot; If your description only says, &quot;Here is my review of the new Apple laptop,&quot; you will completely lose the SEO battle to creators who explicitly list out the exact hardware configurations.

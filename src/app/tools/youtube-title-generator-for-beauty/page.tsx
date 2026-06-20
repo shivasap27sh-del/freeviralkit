@@ -193,8 +193,6 @@ export default function BeautyTitleLandingPage() {
             <p>
               Unlike gaming or tech, where viewers are often looking for objective facts or walkthroughs, beauty content is deeply personal, aspirational, and emotional. Viewers are searching for transformations, honest opinions, and relatable struggles. A great beauty title doesn&apos;t just describe what happens in the video; it promises an experience, a solution, or a revelation. Understanding this subtle difference is the key to elevating your channel from a hobbyist level to a professional brand.
             </p>
-            <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 shadow-xl">
-            </div>
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               The Power of the &quot;Curiosity Gap&quot;
             </h3>

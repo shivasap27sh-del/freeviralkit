@@ -240,8 +240,6 @@ export default function VlogTitleLandingPage() {
               <p>
                 Of all the formats on YouTube, the daily lifestyle vlog is perhaps the hardest nut to crack for a new creator. If a viewer wants to fix their sink, they will search for a plumbing tutorial. If they want to buy a camera, they will search for a tech review. But nobody goes to the YouTube search bar and types, &quot;I want to watch a random stranger go to the grocery store and drink coffee.&quot; Because vlogs inherently lack direct search intent, relying purely on traditional SEO won&apos;t work. Instead, vloggers must rely on Browse Features and the Recommended feed. To dominate these traffic sources, your vlog titles must be a masterclass in human psychology, relatability, and curiosity.
               </p>
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-              </div>
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 The Death of the &quot;Day in the Life&quot; Format
               </h3>
@@ -260,9 +258,6 @@ export default function VlogTitleLandingPage() {
               <p>
                 Instead, manufacture an arc: &quot;Deep Cleaning My Depression Room (Extreme Makeover)&quot; or &quot;The Sunday Reset Routine That Saved My Week.&quot; Now, cleaning isn&apos;t just a chore; it is a mental health journey or a productivity hack. You are promising the viewer a transformation. They get to watch a messy room become clean, which is deeply satisfying, while also learning your routine. The title sells the emotional payoff, not just the physical action.
               </p>
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-
-              </div>
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 The Power of First-Person Vulnerability
               </h3>

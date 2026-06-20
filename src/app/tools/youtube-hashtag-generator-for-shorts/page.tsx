@@ -192,8 +192,6 @@ export default function ShortsHashtagLandingPage() {
             <p>
               The architecture of the YouTube Shorts algorithm is fundamentally different from traditional, long-form YouTube search and discovery. Long-form video discovery relies heavily on search intent, browse features, and session time. In contrast, the Shorts feed operates on a rapid-fire, high-volume recommendation engine that acts much like a slot machine. When you publish a new Short, YouTube doesn&apos;t immediately push it to a million people. Instead, it pushes it to a small, targeted &quot;seed audience.&quot; This is where hashtags perform their most vital function.
             </p>
-            <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 shadow-xl">
-            </div>
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               The Seed Audience Phase: Why Context is King
             </h3>

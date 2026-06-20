@@ -200,8 +200,6 @@ export default function FitnessTitleLandingPage() {
               </p>
             </div>
           </div>
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-          </div>
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               Understanding Viewer Intent in the Fitness Niche
@@ -234,9 +232,6 @@ export default function FitnessTitleLandingPage() {
             </div>
           </div>
           {/* Video Embed */}
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-
-              </div>
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               Building Trust Through Authentic Titles

@@ -194,8 +194,6 @@ export default function GamingTagsLandingPage() {
             <p>
               Many creators mistakenly believe that tags are a relic of the past, but in the gaming niche, they serve a very specific and powerful purpose. When a viewer is deep down the rabbit hole of an RPG walkthrough or searching for specific high-level competitive strategies in an FPS, they often use highly specific, long-tail search queries. Tags help bridge the gap between what the viewer is typing into the search bar and the content you have created. They provide the context that the algorithm needs to confidently serve your video as the solution to the viewer&apos;s query.
             </p>
-            <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 shadow-xl">
-            </div>
             <h3 className="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">
               Understanding the Gaming Video Lifecycle
             </h3>

@@ -205,8 +205,6 @@ export default function EducationDescriptionLandingPage() {
               <p>
                 In the educational niche on YouTube, your video description acts as a highly detailed syllabus for the algorithm and your viewers. Unlike entertainment content where viewers click based on curiosity, educational content is almost entirely search-driven. Students, professionals, and lifelong learners come to YouTube with a specific problem: &quot;How to balance chemical equations,&quot; &quot;Beginner Python tutorial,&quot; or &quot;IELTS writing task 2 structure.&quot; Your description is the critical metadata that signals to YouTube that your video holds the exact answer.
               </p>
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-              </div>
               <h3 className="text-xl font-semibold mt-8 mb-4 text-slate-900">Why Evergreen Content Requires Deep SEO</h3>
               <p>
                 Educational content is the epitome of &quot;evergreen&quot; content. A video explaining the Pythagorean theorem will be just as relevant ten years from now as it is today. However, to maintain a consistent flow of passive views over years, your on-page SEO must be flawless. While the title catches the click, the description sustains the ranking.

@@ -237,8 +237,6 @@ export default function MusicTitleLandingPage() {
               <p>
                 Navigating the YouTube algorithm as a musician, producer, or singer-songwriter can often feel like playing to an empty room. You spend countless hours mixing your tracks, mastering the audio, setting up the perfect lighting, and editing your performance. Yet, when you finally hit publish, the video barely gets any views. Why does this happen? The harsh reality of YouTube is that your music&apos;s quality does not matter if people never click on your video in the first place. Your title is the billboard for your music. If that billboard isn&apos;t compelling, people will drive right past it.
               </p>
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-              </div>
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Why Standard Titles Destroy Your Discoverability
               </h3>
@@ -257,9 +255,6 @@ export default function MusicTitleLandingPage() {
               <p>
                 If you are an instrumentalist, the formula is the same. &quot;Classical Pianist Hears Bohemian Rhapsody for the First Time&quot; creates an irresistible information gap. Viewers who love Queen want to see how a trained classical musician reacts to their favorite song. The title clearly defines the character (Classical Pianist), the subject (Bohemian Rhapsody), and the hook (First Time).
               </p>
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-
-              </div>
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 SEO Strategies for Music Producers and Beatmakers
               </h3>

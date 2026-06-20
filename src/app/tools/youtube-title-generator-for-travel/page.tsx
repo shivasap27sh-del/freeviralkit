@@ -236,8 +236,6 @@ export default function TravelTitleLandingPage() {
               <p>
                 The travel vlogging niche is a visual feast. Creators spend thousands of dollars on drones, mirrorless cameras, and plane tickets to capture breathtaking cinematic sequences of remote beaches, bustling cityscapes, and towering mountains. But here is the brutal reality of YouTube: the algorithm cannot see your beautiful 4K drone footage. The algorithm can only read data. If your title fails to communicate the value of your video, all that expensive footage will sit unwatched. Mastering the art of travel video titles is the only way to ensure your adventures actually find an audience.
               </p>
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-              </div>
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Why Chronological Titles Ruin Your Channel
               </h3>
@@ -256,9 +254,6 @@ export default function TravelTitleLandingPage() {
               <p>
                 Compare &quot;Traveling Around Japan&quot; to &quot;How I Survived 14 Days in Japan on $50 a Day.&quot; The second title is magnetic. It presents a seemingly impossible challenge (Japan is known for being expensive) and promises to reveal the secret of how to do it. Numbers provide concrete anchors. &quot;48 Hours in Paris,&quot; &quot;Top 5 Hidden Gems in Bali,&quot; or &quot;The $10 Street Food Tour of Bangkok.&quot; Specificity breeds curiosity and trust.
               </p>
-              <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-
-              </div>
               <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">
                 Leveraging the &quot;Expectation vs Reality&quot; Angle
               </h3>

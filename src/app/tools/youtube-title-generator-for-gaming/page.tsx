@@ -200,8 +200,6 @@ export default function GamingTitleLandingPage() {
               </p>
             </div>
           </div>
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-          </div>
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               Escaping the &quot;Part 1&quot; Let&apos;s Play Trap
@@ -228,9 +226,6 @@ export default function GamingTitleLandingPage() {
             </div>
           </div>
           {/* Video Embed */}
-          <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-
-              </div>
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h2 className="font-display text-2xl font-semibold mb-6">
               High-Concept Challenges: The New Meta
