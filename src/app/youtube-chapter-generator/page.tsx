@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Chapter Generator',
     description: 'Automatically generate YouTube video chapters and timestamps from your script or outline. Boost your video SEO with our free AI tool.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free YouTube Chapter Generator',
   description: 'Automatically generate YouTube video chapters and timestamps from your script or outline. Boost your video SEO with our free AI tool.',
@@ -19,6 +20,14 @@ export const metadata: Metadata = {
     description: 'Boost your video SEO! Automatically generate YouTube video chapters and timestamps from your script or outline.',
     type: 'website',
     url: buildAbsoluteUrl('/youtube-chapter-generator'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-chapter-generator'),

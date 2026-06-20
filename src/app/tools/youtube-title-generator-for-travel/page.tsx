@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Title Generator for Travel Vlogs',
     description: 'Free AI YouTube title generator for travel channels. Engaging titles for destination guides, budget travel, and adventure vlogs.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Title Generator for Travel Vlogs',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate travel vlog titles that get clicks and rank in search. Destination guides, budget tips, solo travel stories — all optimized by AI.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-title-generator-for-travel'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'travel youtube title',

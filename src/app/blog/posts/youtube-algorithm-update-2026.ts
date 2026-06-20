@@ -3,7 +3,7 @@ import { BlogPost } from '../data';
 export const post: BlogPost = {
   slug: "youtube-algorithm-update-2026",
   title: "The 2026 YouTube Algorithm Update: Why 'Watch Time' No Longer Matters",
-  description: "YouTube has overhauled its algorithm in 2026. If you're obsessing over Watch Time and CTR, you're behind. Here is the new metric that drives views.",
+  description: "YouTube has overhauled its algorithm in 2026. If you're obsessing over Watch Time and CTR, you're behind. Here is the new metric that drives views.'re obsessing over Watch Time and CTR, you're behind. Here is the new metric that drives views.",
   content: `## The Day My Best Video Died
 
 Six months ago, I uploaded what I thought was my masterpiece. It was a 22-minute documentary-style video that I spent four weeks researching, writing, and editing. When I hit publish, the initial metrics were incredible. The Click-Through Rate (CTR) was a massive 12%. The Average View Duration (AVD) was an unprecedented 14 minutes. 

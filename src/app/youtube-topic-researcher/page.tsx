@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Topic & Niche Researcher',
     description: 'Analyze search demand and competition for your YouTube niche. Discover high-potential, low-competition video topics to rank and grow fast.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free YouTube Topic & Niche Researcher',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Analyze search demand and competition for your YouTube niche. Find low-competition video topics to rank and grow fast.',
     url: buildAbsoluteUrl('/youtube-topic-researcher'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-topic-researcher'),

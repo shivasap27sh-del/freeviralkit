@@ -1,3 +1,4 @@
+import { buildAbsoluteUrl } from '@/lib/site';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getPublishedPosts } from './data';
@@ -15,12 +16,21 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube SEO Blog — Tips & Guides',
     description: 'Expert YouTube SEO tips, guides, and strategies to grow your channel. Learn about tags, hashtags, descriptions, titles, and more.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'YouTube SEO Blog — Tips, Guides & Strategies',
     description: 'Expert YouTube SEO tips and strategies to grow your channel faster.',
     type: 'website',
     url: 'https://freeviralkit.com/blog',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://freeviralkit.com/blog',

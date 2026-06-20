@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free AI YouTube Hashtag Generator',
     description: 'Generate trending YouTube hashtags instantly with our free AI hashtag generator. Get 15+ niche-specific hashtags ranked by traffic potential.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free AI YouTube Hashtag Generator',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate trending YouTube hashtags instantly. Get 15+ niche-specific hashtags ranked by traffic potential — completely free.',
     url: buildAbsoluteUrl('/youtube-hashtag-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-hashtag-generator'),

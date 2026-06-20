@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About FreeViralKit — Our Mission',
     description: 'FreeViralKit is built by Shiva Srivastava, a CS engineer from India. Our mission: make pro YouTube SEO tools free for every creator.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'About FreeViralKit — Free AI YouTube SEO Tool',
@@ -18,6 +19,14 @@ export const metadata: Metadata = {
       'Learn about FreeViralKit and our mission to help YouTube creators grow faster with AI-powered SEO optimization. Built by Shiva Srivastava.',
     type: 'website',
     url: buildAbsoluteUrl('/about'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/about'),

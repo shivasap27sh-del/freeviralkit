@@ -8,12 +8,21 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Terms of Service | FreeViralKit',
     description: 'Read the FreeViralKit Terms of Service governing the use of our free YouTube SEO tools, AI content generators, and platform.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'Terms of Service | FreeViralKit',
     description: 'Read the FreeViralKit Terms of Service governing the use of our free YouTube SEO tools, AI content generators, and platform.',
     url: buildAbsoluteUrl('/terms'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/terms'),

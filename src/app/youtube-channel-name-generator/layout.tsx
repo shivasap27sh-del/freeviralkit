@@ -9,12 +9,21 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Channel Name Generator (AI)',
     description: 'Generate 15 catchy, memorable, and SEO-friendly YouTube channel names in seconds. Get modern and brandable name ideas using our free AI generator.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'Free YouTube Channel Name Generator (AI)',
     description: 'Generate 15 catchy, memorable, and SEO-friendly YouTube channel names in seconds. Get modern and brandable name ideas using our free AI generator.',
     url: buildAbsoluteUrl('/youtube-channel-name-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: { canonical: buildAbsoluteUrl('/youtube-channel-name-generator') },
 };

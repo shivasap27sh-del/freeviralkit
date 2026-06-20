@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Shorts Idea Generator',
     description: 'Generate viral YouTube Shorts ideas instantly. Get complete concepts with 3-second hooks, B-roll visual cues, and voiceover scripts tailored to your niche.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free YouTube Shorts Idea Generator',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate viral YouTube Shorts ideas instantly. Get complete concepts with 3-second hooks, B-roll visual cues, and voiceover scripts.',
     url: buildAbsoluteUrl('/youtube-shorts-idea-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-shorts-idea-generator'),

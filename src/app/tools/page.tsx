@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube SEO Tools & Niche Generators',
     description: 'Free YouTube SEO tools: generate viral titles, hashtags, tags, descriptions, and channel names. Boost your channel growth instantly.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free YouTube SEO Tools & Niche Generators',
   description:
@@ -40,6 +41,14 @@ export const metadata: Metadata = {
       'Free YouTube SEO generators and niche-specific tools to optimize your videos and rank higher.',
     type: 'website',
     url: buildAbsoluteUrl('/tools'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
 };
 

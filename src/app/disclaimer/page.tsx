@@ -10,11 +10,20 @@ export const metadata: Metadata = {
     description: 'Read the earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit. Understand our content policies and guarantees.',
     url: buildAbsoluteUrl('/disclaimer'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Disclaimer | FreeViralKit',
     description: 'Read the earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit. Understand our content policies and guarantees.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/disclaimer'),

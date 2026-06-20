@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free AI YouTube SEO & Title Generator',
     description: 'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required to boost your channel.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'FreeViralKit — Free AI YouTube SEO & Title Tool',
@@ -20,6 +21,14 @@ export const metadata: Metadata = {
       'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required to boost your channel.',
     url: buildAbsoluteUrl('/'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/'),

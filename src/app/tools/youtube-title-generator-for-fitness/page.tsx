@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Title Generator for Fitness',
     description: 'Free AI YouTube title generator for fitness channels. Viral titles for workouts, transformations, nutrition tips, and gym content.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Title Generator for Fitness',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate fitness YouTube titles that improve CTR and discoverability. Free AI tool for fitness creators and personal trainers.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-title-generator-for-fitness'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'fitness youtube title',

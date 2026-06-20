@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Channel Name Generator',
     description: 'Generate creative, memorable YouTube channel names instantly with our free AI generator. Get 15+ ideas tailored to your niche and audience.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free YouTube Channel Name Generator',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate creative, memorable YouTube channel names instantly. Get 15+ ideas tailored to your niche and audience.',
     url: buildAbsoluteUrl('/youtube-channel-name-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-channel-name-generator'),

@@ -3,7 +3,7 @@ import { BlogPost } from '../data';
 export const post: BlogPost = {
   slug: "how-to-get-youtube-monetized-fast",
   title: "Get YouTube Monetized Fast: 2026 Roadmap",
-  description: "A realistic roadmap to getting YouTube monetized in 2026. Covers the 1k sub and 4k watch hour thresholds, content planning, and timeline expectations.",
+  description: "A realistic roadmap to getting YouTube monetized in 2026. Covers the 1k subscriber and 4k watch hour thresholds, content planning, and timeline expectations.",
   content: `## Let Me Be Honest About "Fast"
 
 Every article about **YouTube monetization 2026** promises you can get monetized in 30 days. Let me give you the honest truth: for most creators starting from zero, getting monetized takes 3 - 8 months of consistent, strategic effort. Some do it faster; many take longer. The creators who fail are not the ones who lack talent - they are the ones who set unrealistic expectations, get frustrated at month two, and quit.

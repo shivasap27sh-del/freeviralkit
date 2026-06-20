@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Title Generator for Cooking',
     description: 'Free AI YouTube title generator for cooking channels. Click-worthy titles for recipes, ASMR cooking, mukbang, and meal prep.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Title Generator for Cooking',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate cooking YouTube titles that improve CTR and discoverability. Free AI tool for food creators.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-title-generator-for-cooking'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'cooking youtube title',

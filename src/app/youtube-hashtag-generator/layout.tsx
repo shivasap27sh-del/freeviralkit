@@ -9,12 +9,21 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Hashtag Generator — AI-Powered',
     description: 'Free YouTube hashtag generator — find trending hashtags for any niche in seconds. The first 3 appear above your video title. No signup, 100% free forever.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'Free YouTube Hashtag Generator — AI-Powered',
     description: 'Free YouTube hashtag generator — find trending hashtags for any niche in seconds. The first 3 appear above your video title. No signup, 100% free forever.',
     url: buildAbsoluteUrl('/youtube-hashtag-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: { canonical: buildAbsoluteUrl('/youtube-hashtag-generator') },
 };

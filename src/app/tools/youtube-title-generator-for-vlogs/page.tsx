@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Title Generator for Vlogs',
     description: 'Free AI YouTube title generator for vloggers. Click-worthy titles for daily vlogs, travel, lifestyle, and personal stories.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Title Generator for Vlogs',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate vlog-focused YouTube title ideas that attract clicks naturally. Free AI tool for vloggers.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-title-generator-for-vlogs'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'youtube title generator vlogs',

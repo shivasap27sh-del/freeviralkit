@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Shorts Hashtag Generator',
     description: 'Free AI hashtag generator for YouTube Shorts. Find trending, viral hashtags that boost Shorts visibility and grow your channel.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Shorts Hashtag Generator',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate trending hashtags specifically optimized for YouTube Shorts. Reach more viewers, land on the Shorts shelf, and go viral.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-hashtag-generator-for-shorts'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'shorts hashtags',

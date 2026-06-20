@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
@@ -190,7 +191,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="antialiased">
+      <body className="antialiased overflow-x-hidden">
         <noscript>
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Script Generator',
     description: 'Generate structured, high-retention YouTube video script outlines instantly. Get hook scripts, B-roll cues, and CTA placements tailored to your niche.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free YouTube Script Generator',
   description:
@@ -20,6 +21,14 @@ export const metadata: Metadata = {
       'Generate structured, high-retention YouTube video script outlines instantly. Get hook scripts, B-roll cues, and CTA placements.',
     url: buildAbsoluteUrl('/youtube-script-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-script-generator'),

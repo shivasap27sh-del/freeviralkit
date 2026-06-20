@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Title Generator for Beauty & Makeup',
     description: 'Free AI YouTube title generator for beauty channels. Viral titles for GRWM, skincare, makeup tutorials, and transformations.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Title Generator for Beauty & Makeup',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate beauty YouTube titles that get clicks and views. GRWM, tutorials, reviews, skincare, and transformations — optimized by AI.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-title-generator-for-beauty'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'beauty youtube title',

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free AI YouTube Title Generator',
     description: 'Generate 10 viral, SEO-optimized YouTube titles instantly with our free AI title generator. Boost CTR and rank higher — no signup required.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free AI YouTube Title Generator',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate 10 viral, SEO-optimized YouTube titles instantly. Boost CTR, rank higher, and grow your channel — no signup required.',
     url: buildAbsoluteUrl('/youtube-title-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-title-generator'),

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free AI YouTube Description Generator',
     description: 'Generate SEO-optimized YouTube descriptions with keyword placement, timestamps, and CTAs instantly. Free AI description generator.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free AI YouTube Description Generator',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate SEO-optimized YouTube descriptions with proper keyword placement, timestamps, and calls-to-action instantly.',
     url: buildAbsoluteUrl('/youtube-description-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-description-generator'),

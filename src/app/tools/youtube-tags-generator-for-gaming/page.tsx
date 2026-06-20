@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Tags Generator for Gaming',
     description: 'Free AI YouTube tags generator for gaming. Optimized tags for FPS, RPG, Minecraft, GTA, Fortnite, and more. Boost discoverability.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Tags Generator for Gaming',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate gaming-specific YouTube tags that improve search rankings and discoverability. Free AI tool for gaming creators.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-tags-generator-for-gaming'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'gaming youtube tags',

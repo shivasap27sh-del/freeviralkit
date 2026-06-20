@@ -47,3 +47,7 @@ next-env.d.ts
 *.sh
 *.ps1
 *.bat
+scripts/
+seo_issues.json
+tsc_errors.txt
+lighthouse.json

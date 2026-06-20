@@ -4,17 +4,26 @@ import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Contact Us — FreeViralKit',
-  description: 'Have questions, feedback, or partnership inquiries? Get in touch with the FreeViralKit team.',
+  description: 'Have questions, feedback, or partnership inquiries? Get in touch with the FreeViralKit team for prompt support and assistance.',
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Us — FreeViralKit',
-    description: 'Have questions, feedback, or partnership inquiries? Get in touch with the FreeViralKit team.',
+    description: 'Have questions, feedback, or partnership inquiries? Get in touch with the FreeViralKit team for prompt support and assistance.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'Contact Us — FreeViralKit',
-    description: 'Get in touch with the FreeViralKit team for support, feedback, or partnerships.',
+    description: 'Have questions, feedback, or partnership inquiries? Get in touch with the FreeViralKit team for prompt support and assistance.',
     type: 'website',
     url: buildAbsoluteUrl('/contact'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/contact'),

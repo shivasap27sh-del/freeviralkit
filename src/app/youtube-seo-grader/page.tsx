@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube SEO Checker & Grader',
     description: 'Analyze your YouTube video title, description, and tags. Get an instant SEO score out of 100 with actionable feedback to rank higher on YouTube.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free YouTube SEO Checker & Grader',
   description: 'Analyze your YouTube video title, description, and tags. Get an instant SEO score out of 100 with actionable feedback to rank higher on YouTube.',
@@ -19,6 +20,14 @@ export const metadata: Metadata = {
     description: 'Stop guessing your SEO. Get an instant score out of 100 on your YouTube video metadata, plus actionable tips to rank higher.',
     type: 'website',
     url: buildAbsoluteUrl('/youtube-seo-grader'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-seo-grader'),

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Title Generator for Music',
     description: 'Free AI YouTube title generator for music channels. Viral titles for covers, beat making, album reviews, and music production.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Title Generator for Music',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate music YouTube titles that improve CTR and discoverability. Free AI tool for musicians and music creators.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-title-generator-for-music'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'music youtube title',

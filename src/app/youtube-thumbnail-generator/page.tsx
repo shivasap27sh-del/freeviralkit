@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Thumbnail Idea Generator',
     description: 'Generate high-CTR YouTube thumbnail concepts and ideas instantly. Get psychological visual layouts and text overlays to maximize clicks.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free YouTube Thumbnail Idea Generator',
   description: 'Generate high-CTR YouTube thumbnail concepts and ideas instantly. Get psychological visual layouts and text overlays to maximize clicks.',
@@ -19,6 +20,14 @@ export const metadata: Metadata = {
     description: 'Stop guessing what makes a good thumbnail. Get 3 high-converting visual concepts based on psychology and contrast.',
     type: 'website',
     url: buildAbsoluteUrl('/youtube-thumbnail-generator'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-thumbnail-generator'),

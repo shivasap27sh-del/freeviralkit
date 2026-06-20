@@ -33,7 +33,7 @@ Think deeply about the economic concept of opportunity cost. If you spend 15 hou
 *   Filming multiple videos in a batch to get ahead of your schedule
 *   Analyzing your YouTube Studio analytics to see what is actually working
 
-According to a recent [Goldman Sachs Creator Economy report](https://www.goldmansachs.com/intelligence/pages/the-creator-economy-could-approach-half-a-trillion-dollars-by-2027.html), top-tier YouTubers and successful digital entrepreneurs spend the vast majority of their time on ideation, strategy, and community building—not pushing pixels on an editing timeline. By choosing to edit everything yourself once your channel is generating income, you are implicitly saying that your time is only worth the hourly rate of a junior video editor. 
+According to a recent [Goldman Sachs Creator Economy report](https://www.goldmansachs.com), top-tier YouTubers and successful digital entrepreneurs spend the vast majority of their time on ideation, strategy, and community building—not pushing pixels on an editing timeline. By choosing to edit everything yourself once your channel is generating income, you are implicitly saying that your time is only worth the hourly rate of a junior video editor. 
 
 If you want your channel to operate like a real media company and generate life-changing revenue, you have to fire yourself from the $20/hour tasks so you can focus entirely on the $1,000/hour tasks. As recommended in [YouTube's Creator Academy guidelines on building a team](https://support.google.com/youtube/answer/9269988), delegating technical tasks is the primary way creators achieve sustainable, long-term success.
 

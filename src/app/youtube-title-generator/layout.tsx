@@ -9,12 +9,21 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Title Generator — AI-Powered',
     description: 'Generate 10 viral, SEO-optimized YouTube titles with emojis and hashtags. Free AI title generator for every niche — gaming, tech, cooking, vlogs, and more.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'Free YouTube Title Generator — AI-Powered',
     description: 'Generate 10 viral YouTube titles with AI. Free, instant, and optimized for every niche.',
     url: buildAbsoluteUrl('/youtube-title-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: { canonical: buildAbsoluteUrl('/youtube-title-generator') },
 };

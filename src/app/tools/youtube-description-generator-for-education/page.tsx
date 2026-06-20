@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Description Generator for Education',
     description: 'Free AI YouTube description generator for education channels. Create keyword-rich descriptions for lectures, tutorials, and courses.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Description Generator for Education',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Create education-focused YouTube descriptions that rank in search. Free AI tool for educators and online course creators.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-description-generator-for-education'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'youtube description generator education',

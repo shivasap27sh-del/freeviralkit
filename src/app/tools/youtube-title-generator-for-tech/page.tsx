@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Title Generator for Tech',
     description: 'Free AI YouTube title generator for tech channels. Click-worthy titles for reviews, unboxings, comparisons, and tutorials.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Title Generator for Tech',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate tech YouTube titles that improve CTR and discoverability. Free AI tool for tech reviewers and creators.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-title-generator-for-tech'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'tech youtube title',

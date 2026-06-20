@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Hook Generator — AI Hooks',
     description: 'Generate high-retention YouTube video hooks instantly with our free AI tool. Hook your viewers in the first 5 seconds to increase watch time and views.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free YouTube Hook Generator — AI Hooks',
   description: 'Generate high-retention YouTube video hooks instantly with our free AI tool. Hook your viewers in the first 5 seconds to increase watch time and views.',
@@ -19,6 +20,14 @@ export const metadata: Metadata = {
     description: 'Keep your viewers watching! Generate high-retention YouTube video hooks instantly with our free AI tool.',
     type: 'website',
     url: buildAbsoluteUrl('/youtube-hook-generator'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-hook-generator'),

@@ -8,12 +8,21 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Privacy Policy | FreeViralKit',
     description: 'Read the FreeViralKit Privacy Policy to understand how we collect, use, and protect your data while using our YouTube SEO tools.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'Privacy Policy | FreeViralKit',
     description: 'Read the FreeViralKit Privacy Policy to understand how we collect, use, and protect your data while using our YouTube SEO tools.',
     url: buildAbsoluteUrl('/privacy-policy'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/privacy-policy'),

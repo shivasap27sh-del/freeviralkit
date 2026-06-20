@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Title Generator for Gaming',
     description: 'Free AI YouTube title generator for gaming. Create click-worthy titles for walkthroughs, reviews, Minecraft, GTA, and more.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Title Generator for Gaming',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate gaming YouTube titles that improve CTR and discoverability. Free AI tool for gaming creators.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-title-generator-for-gaming'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'youtube title generator gaming',

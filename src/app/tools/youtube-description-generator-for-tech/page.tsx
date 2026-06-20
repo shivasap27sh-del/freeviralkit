@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Description Generator for Tech',
     description: 'Free AI YouTube description generator for tech channels. SEO-optimized descriptions for reviews, unboxings, comparisons, and tutorials.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Description Generator for Tech',
   description:
@@ -22,6 +23,14 @@ export const metadata: Metadata = {
       'Generate structured, SEO-friendly descriptions for tech YouTube videos. Cover specs, timestamps, affiliate links, and CTAs — all free.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-description-generator-for-tech'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'tech video description',

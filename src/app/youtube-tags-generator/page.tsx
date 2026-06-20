@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free AI YouTube Tag Generator — 20+ Tags',
     description: 'Generate 20+ relevant, SEO-optimized YouTube tags instantly with our free AI tag generator. Copy-paste ready for YouTube Studio.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'Free AI YouTube Tag Generator — 20+ Tags',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate 20-25 highly relevant, SEO-optimized YouTube tags instantly. The best free YouTube tag generator powered by AI.',
     url: buildAbsoluteUrl('/youtube-tags-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-tags-generator'),

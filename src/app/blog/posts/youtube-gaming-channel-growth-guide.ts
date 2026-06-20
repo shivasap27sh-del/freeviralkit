@@ -3,7 +3,7 @@ import { BlogPost } from '../data';
 export const post: BlogPost = {
   slug: "youtube-gaming-channel-growth-guide",
   title: "Grow a YouTube Gaming Channel in 2026",
-  description: "Starting a gaming channel in 2026? Here is the straight truth about what it takes to grow, get views, and stand out in YouTube's most saturated niche.",
+  description: "Starting a gaming channel in 2026? Here is the straight truth about what it takes to grow, get views, and stand out in YouTube's most saturated niche.'s most saturated niche.",
   content: `## I Spent Three Years Screaming Into The Void
 
 I spent three years convinced the YouTube algorithm hated my guts. I would come home from my exhausting day job, immediately sit at my desk, boot up Minecraft or Valorant, and hit record on OBS. I would play for three solid hours, mildly commentating on my own gameplay. Then, I would lazily chop the dead air off the beginning and end, slap a generic title like *"Minecraft Survival Part 47"* on it, and hit publish. I did this literally hundreds of times without missing a beat, assuming my big break was just one upload away.

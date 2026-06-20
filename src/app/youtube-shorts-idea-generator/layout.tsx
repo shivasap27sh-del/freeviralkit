@@ -9,12 +9,21 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free YouTube Shorts Idea Generator (AI)',
     description: 'Generate viral YouTube Shorts concepts and outlines in seconds. Get punchy hooks, visual B-roll cues, and voiceover scripts with our free AI tool.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'Free YouTube Shorts Idea Generator (AI)',
     description: 'Generate viral YouTube Shorts concepts and outlines in seconds. Get punchy hooks, visual B-roll cues, and voiceover scripts with our free AI tool.',
     url: buildAbsoluteUrl('/youtube-shorts-idea-generator'),
     type: 'website',
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   alternates: { canonical: buildAbsoluteUrl('/youtube-shorts-idea-generator') },
 };

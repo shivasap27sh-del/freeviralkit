@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'YouTube Channel Name Generator for Gaming',
     description: 'Free AI gaming channel name generator. Get unique, brandable name ideas — clan-style, streamer names, funny gamer tags, and more.',
+    images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Channel Name Generator for Gaming',
   description:
@@ -21,6 +22,14 @@ export const metadata: Metadata = {
       'Generate unique gaming YouTube channel names instantly. Clan-style, streamer, brand, and funny name ideas — all free.',
     type: 'website',
     url: buildAbsoluteUrl('/tools/youtube-channel-name-generator-for-gaming'),
+    images: [
+      {
+        url: buildAbsoluteUrl('/banner.png'),
+        width: 1200,
+        height: 630,
+        alt: 'FreeViralKit',
+      },
+    ],
   },
   keywords: [
     'gaming channel name',
