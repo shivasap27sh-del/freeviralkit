@@ -85,8 +85,12 @@ import { post as youtubeCommentModerationGuide } from './posts/youtube-comment-m
 import { post as youtubeLightingSetupBudget } from './posts/youtube-lighting-setup-budget';
 import { post as youtubeBurnoutCreatorMentalHealth } from './posts/youtube-burnout-creator-mental-health';
 import { post as youtubeCustomUrlHandleGuide } from './posts/youtube-custom-url-handle-guide';
+import { post as youtubeAnalyticsMetricsGuide } from './posts/youtube-analytics-metrics-guide';
+import { post as youtubeAudienceRetentionStrategy } from './posts/youtube-audience-retention-strategy';
 
 const rawBlogPosts: BlogPost[] = [
+  youtubeAnalyticsMetricsGuide,
+  youtubeAudienceRetentionStrategy,
   youtubeFirst100Subscribers,
   youtubeCommentModerationGuide,
   youtubeLightingSetupBudget,
