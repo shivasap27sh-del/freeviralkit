@@ -95,13 +95,19 @@ const faqJsonLd = {
 const softwareJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'App',
+  name: 'FreeViralKit',
+  url: 'https://freeviralkit.com',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Any',
+  description: 'Free AI YouTube SEO tool. Generate viral titles, descriptions, hashtags & tags. Boost your video views and rankings instantly.',
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Shiva',
   },
 };
 

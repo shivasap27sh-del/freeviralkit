@@ -117,6 +117,22 @@ const jsonLd = {
       name: 'FreeViralKit',
       url: buildAbsoluteUrl('/'),
       description: 'Free AI YouTube SEO tool. Generate viral titles, descriptions, hashtags & tags. Boost your video views and rankings instantly.',
+      logo: {
+        '@type': 'ImageObject',
+        url: buildAbsoluteUrl('/logo.png'),
+        width: 512,
+        height: 512,
+      },
+      sameAs: [
+        'https://twitter.com/FreeViralKit',
+        'https://github.com/shivasap27sh-del',
+        'https://www.producthunt.com/products/freeviralkit',
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        url: buildAbsoluteUrl('/contact'),
+      },
     },
   ],
 };
