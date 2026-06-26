@@ -140,28 +140,34 @@ export default async function BlogPostPage({ params }: Props) {
     });
   };
 
-  // JSON-LD structured data for the article
+  // JSON-LD structured data for the blog post — using BlogPosting (more specific than Article)
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
     author: {
       '@type': 'Person',
       name: 'Shiva',
+      url: 'https://freeviralkit.com/about',
     },
     publisher: {
       '@type': 'Organization',
       name: 'FreeViralKit',
       url: 'https://freeviralkit.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://freeviralkit.com/logo.png',
+      },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `https://freeviralkit.com/blog/${post.slug}`,
     },
     keywords: post.tags.join(', '),
+    articleSection: post.category,
   };
 
   return (

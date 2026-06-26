@@ -25,11 +25,19 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { page } = await params;
+  const pageNum = parseInt(page, 10);
   return {
-    title: `Blog Page ${page} — FreeViralKit`,
-    description: `Read page ${page} of our YouTube SEO and growth guides.`,
+    title: `YouTube SEO Blog — Page ${pageNum} | FreeViralKit`,
+    description: `Browse page ${pageNum} of FreeViralKit's YouTube SEO guides, tips, and strategies to grow your channel faster.`,
     alternates: {
-      canonical: `https://freeviralkit.com/blog/page/${page}`,
+      // Each pagination page has its own canonical to avoid duplicate content
+      canonical: `https://freeviralkit.com/blog/page/${pageNum}`,
+    },
+    // Noindex pagination pages — individual blog posts are already in the sitemap.
+    // This prevents Google wasting crawl budget on listing pages that have no unique content.
+    robots: {
+      index: false,
+      follow: true, // Still follow links so Google discovers individual posts
     },
   };
 }
