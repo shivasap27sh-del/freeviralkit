@@ -315,10 +315,28 @@
 .bg-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  /* Reduced from 100px — visually same but significantly cheaper for GPU */
+  filter: blur(60px);
   opacity: 0.4;
   animation: orbFloat 20s ease-in-out infinite;
   will-change: transform;
+  /* Contain repaints to this element */
+  contain: layout style;
+}
+
+/* Disable heavy animations on low-end devices and mobile */
+@media (max-width: 768px) {
+  .bg-orb {
+    animation: none;
+    filter: blur(40px);
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-orb {
+    animation: none;
+  }
 }
 
 .bg-orb-1 {
