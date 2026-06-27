@@ -18,8 +18,7 @@ A few weeks later, a veteran YouTube strategist looked at my channel for five mi
 
 That conversation changed everything. Within six months, my channel tripled in size. The algorithm didn't change; my understanding of it did.
 
-![Screenshot of my YouTube analytics dashboard showing a massive upward trend](/images/analytics_dashboard_growth.png)
-*(My analytics after I stopped obsessing over vanity metrics).*
+![YouTube analytics dashboard showing CTR and watch time metrics on a laptop screen](https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop)
 
 ## The Vanity Metric Trap
 

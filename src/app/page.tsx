@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { buildAbsoluteUrl } from '@/lib/site';
 import HomePageClient from '@/components/tools/HomePageClient';
-import { Wand2, AlignLeft, Search, User, Zap, Tag, Hash, Laptop, ArrowRight } from 'lucide-react';
+import { Wand2, AlignLeft, Search, User, Zap, Tag, Hash, Laptop, ArrowRight, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getPublishedPosts } from '@/app/blog/data';
 
 export const metadata: Metadata = {
   title: 'Free AI YouTube SEO & Title Generator',
@@ -316,6 +317,54 @@ export default function Home() {
             </p>
           </div>
         </section>
+
+        {/* Latest Blog Posts — internal links prevent orphan URLs for new posts */}
+        {(() => {
+          const latestPosts = getPublishedPosts().slice(0, 4);
+          return (
+            <section className="mt-20 mb-12">
+              <div className="flex items-center justify-between mb-8">
+                <div>
+                  <h2 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white">
+                    Latest from the <span className="text-gradient">Blog</span>
+                  </h2>
+                  <p className="text-slate-500 text-sm mt-1">YouTube growth tips & strategies</p>
+                </div>
+                <Link
+                  href="/blog"
+                  className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  View all posts <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {latestPosts.map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="glass-card rounded-2xl p-5 group hover:border-purple-500/30 transition-all flex flex-col gap-2"
+                  >
+                    <span className="text-xs font-semibold text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded-full w-fit border border-purple-400/20">
+                      {post.category}
+                    </span>
+                    <h3 className="font-display text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors leading-snug">
+                      {post.title}
+                    </h3>
+                    <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">{post.description}</p>
+                    <div className="flex items-center gap-1 text-xs font-semibold text-purple-400 group-hover:text-purple-300 transition-colors mt-auto pt-1">
+                      Read more <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <div className="text-center mt-6 sm:hidden">
+                <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-purple-400">
+                  View all blog posts <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </section>
+          );
+        })()}
 
         {/* FAQ Section for SEO */}
         <section className="mt-12 mb-8">
