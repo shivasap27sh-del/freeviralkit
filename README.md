@@ -1,5 +1,7 @@
 # FreeViralKit 🚀 (AdSense Approved Edition)
 
+<a href="https://wired.business" target="_blank"><img src="https://wired.business/badge0-white.svg" alt="Featured on Wired Business" width="200" height="54"></a> <a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" width="200" height="54"></a>
+
 FreeViralKit is a massive, highly-authoritative YouTube SEO educational hub and utility platform built with Next.js and Groq AI. It provides 26 completely unique, specialized YouTube growth tools—each packed with **1,500+ words of deep-dive expert content** designed explicitly to pass Google AdSense's strict "Low Value Content" checks.
 
 ## Key Features

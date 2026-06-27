@@ -69,7 +69,7 @@ const jsonLd = {
       '@type': 'Organization',
       name: 'FreeViralKit',
       url: buildAbsoluteUrl('/'),
-      logo: buildAbsoluteUrl('/icon.png'),
+      logo: buildAbsoluteUrl('/logo.png'),
       description: 'Free AI-powered YouTube SEO tools designed to help creators grow their channels by generating optimized titles, descriptions, and tags.',
       founder: {
         '@type': 'Person',

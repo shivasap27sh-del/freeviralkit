@@ -18,7 +18,6 @@ The next morning, a client gave me a harsh wake-up call: *"You aren't a YouTuber
 
 Two weeks later, I hired my first freelance video editor. Suddenly, I had my weekends back. My video output doubled without any extra stress, and within three months, my channel's revenue had tripled. 
 
-![Screenshot of a timeline editing process](/images/timeline_crash_placeholder.png)
 *(The exact Premiere Pro timeline that made me outsource my editing).*
 
 ## Why Editing is the Ultimate Growth Bottleneck

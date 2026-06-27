@@ -1,222 +1,78 @@
 import type { MetadataRoute } from 'next';
-import { blogPosts, getPublishedSlugs } from './blog/data';
+import { getPublishedSlugs } from './blog/data';
 import { buildAbsoluteUrl } from '@/lib/site';
+import { getSourceLastModifiedDates } from '@/lib/source-history';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const blogSlugs = getPublishedSlugs();
+type SitemapEntryDefinition = {
+  path: string;
+  sourceFiles: readonly string[];
+  changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'];
+  priority: number;
+};
 
-  // Use the actual publish date from each post so Google can trust lastModified
-  const blogUrls = blogSlugs.map((slug) => {
-    const post = blogPosts.find((p) => p.slug === slug);
-    return {
-      url: buildAbsoluteUrl(`/blog/${slug}`),
-      lastModified: new Date(post?.date ?? '2026-05-01'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    };
+const staticEntries = [
+  { path: '/', sourceFiles: ['src/app/page.tsx'], changeFrequency: 'weekly', priority: 1.0 },
+  { path: '/youtube-title-generator', sourceFiles: ['src/app/youtube-title-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-hashtag-generator', sourceFiles: ['src/app/youtube-hashtag-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-tags-generator', sourceFiles: ['src/app/youtube-tags-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-description-generator', sourceFiles: ['src/app/youtube-description-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-channel-name-generator', sourceFiles: ['src/app/youtube-channel-name-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-shorts-idea-generator', sourceFiles: ['src/app/youtube-shorts-idea-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-script-generator', sourceFiles: ['src/app/youtube-script-generator/page.tsx'], changeFrequency: 'weekly', priority: 0.95 },
+  { path: '/youtube-topic-researcher', sourceFiles: ['src/app/youtube-topic-researcher/page.tsx'], changeFrequency: 'weekly', priority: 0.95 },
+  { path: '/youtube-hook-generator', sourceFiles: ['src/app/youtube-hook-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-chapter-generator', sourceFiles: ['src/app/youtube-chapter-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-thumbnail-generator', sourceFiles: ['src/app/youtube-thumbnail-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-seo-grader', sourceFiles: ['src/app/youtube-seo-grader/page.tsx'], changeFrequency: 'weekly', priority: 0.95 },
+  { path: '/creator-gear', sourceFiles: ['src/app/creator-gear/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools', sourceFiles: ['src/app/tools/page.tsx'], changeFrequency: 'monthly', priority: 0.85 },
+  { path: '/tools/youtube-title-generator-for-gaming', sourceFiles: ['src/app/tools/youtube-title-generator-for-gaming/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-title-generator-for-vlogs', sourceFiles: ['src/app/tools/youtube-title-generator-for-vlogs/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-description-generator-for-education', sourceFiles: ['src/app/tools/youtube-description-generator-for-education/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-title-generator-for-cooking', sourceFiles: ['src/app/tools/youtube-title-generator-for-cooking/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-title-generator-for-music', sourceFiles: ['src/app/tools/youtube-title-generator-for-music/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-title-generator-for-tech', sourceFiles: ['src/app/tools/youtube-title-generator-for-tech/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-title-generator-for-fitness', sourceFiles: ['src/app/tools/youtube-title-generator-for-fitness/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-tags-generator-for-gaming', sourceFiles: ['src/app/tools/youtube-tags-generator-for-gaming/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-hashtag-generator-for-shorts', sourceFiles: ['src/app/tools/youtube-hashtag-generator-for-shorts/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-description-generator-for-tech', sourceFiles: ['src/app/tools/youtube-description-generator-for-tech/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-channel-name-generator-for-gaming', sourceFiles: ['src/app/tools/youtube-channel-name-generator-for-gaming/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-title-generator-for-travel', sourceFiles: ['src/app/tools/youtube-title-generator-for-travel/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-title-generator-for-beauty', sourceFiles: ['src/app/tools/youtube-title-generator-for-beauty/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/about', sourceFiles: ['src/app/about/page.tsx'], changeFrequency: 'yearly', priority: 0.8 },
+  { path: '/contact', sourceFiles: ['src/app/contact/page.tsx'], changeFrequency: 'yearly', priority: 0.4 },
+  { path: '/blog', sourceFiles: ['src/app/blog/page.tsx', 'src/app/blog/data.ts'], changeFrequency: 'weekly', priority: 0.9 },
+  { path: '/privacy-policy', sourceFiles: ['src/app/privacy-policy/page.tsx'], changeFrequency: 'yearly', priority: 0.3 },
+  { path: '/terms', sourceFiles: ['src/app/terms/page.tsx'], changeFrequency: 'yearly', priority: 0.3 },
+  { path: '/disclaimer', sourceFiles: ['src/app/disclaimer/page.tsx'], changeFrequency: 'yearly', priority: 0.3 },
+] as const satisfies readonly SitemapEntryDefinition[];
+
+function getLatestSourceDate(sourceFiles: readonly string[], sourceDates: ReadonlyMap<string, Date>): Date {
+  const timestamps = sourceFiles.map((sourceFile) => {
+    const sourceDate = sourceDates.get(sourceFile);
+    if (!sourceDate) {
+      throw new Error(`Missing sitemap source date for ${sourceFile}.`);
+    }
+    return sourceDate.getTime();
   });
 
-  return [
-    {
-      url: buildAbsoluteUrl('/'),
-      lastModified: new Date('2026-05-17'),
-      changeFrequency: 'weekly' as const,
-      priority: 1.0,
-    },
-    // Dedicated tool pages — HIGH priority for SEO
-    {
-      url: buildAbsoluteUrl('/youtube-title-generator'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-hashtag-generator'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-tags-generator'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-description-generator'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-channel-name-generator'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-shorts-idea-generator'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-script-generator'),
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-topic-researcher'),
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-hook-generator'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-chapter-generator'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-thumbnail-generator'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/youtube-seo-grader'),
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.95,
-    },
-    {
-      url: buildAbsoluteUrl('/creator-gear'),
-      lastModified: new Date('2026-05-28'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-title-generator-for-gaming'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-title-generator-for-vlogs'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-description-generator-for-education'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-title-generator-for-cooking'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-title-generator-for-music'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-title-generator-for-tech'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-title-generator-for-fitness'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-tags-generator-for-gaming'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-hashtag-generator-for-shorts'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-description-generator-for-tech'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-channel-name-generator-for-gaming'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-title-generator-for-travel'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/tools/youtube-title-generator-for-beauty'),
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: buildAbsoluteUrl('/about'),
-      lastModified: new Date('2026-05-10'),
-      changeFrequency: 'yearly' as const,
-      priority: 0.8,
-    },
-    {
-      url: buildAbsoluteUrl('/blog'),
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    ...blogUrls,
-    
-    {
-      url: buildAbsoluteUrl('/privacy-policy'),
-      lastModified: new Date(),
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
-    },
-    {
-      url: buildAbsoluteUrl('/terms'),
-      lastModified: new Date(),
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
-    },
-    {
-      url: buildAbsoluteUrl('/disclaimer'),
-      lastModified: new Date('2026-05-10'),
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
-    },
-  ];
+  return new Date(Math.max(...timestamps));
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const blogEntries = getPublishedSlugs().map((slug) => ({
+    path: `/blog/${slug}`,
+    sourceFiles: [`src/app/blog/posts/${slug}.ts`],
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+  const sitemapEntries = [...staticEntries, ...blogEntries];
+  const sourceDates = getSourceLastModifiedDates(sitemapEntries.flatMap((entry) => entry.sourceFiles));
+
+  return sitemapEntries.map((entry) => ({
+    url: buildAbsoluteUrl(entry.path),
+    lastModified: getLatestSourceDate(entry.sourceFiles, sourceDates),
+    changeFrequency: entry.changeFrequency,
+    priority: entry.priority,
+  }));
 }

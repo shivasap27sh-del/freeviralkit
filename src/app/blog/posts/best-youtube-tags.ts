@@ -16,7 +16,6 @@ Desperate, I turned to the magical solution all the "growth gurus" preached abou
 
 The result? Still exactly three views. 
 
-![Screenshot showing 3 views on a video](/images/3_views_analytics.png)
 *(My painful reality check).*
 
 That was the moment it clicked for me: treating tags like a magic spell is a rookie mistake. Tags will never save a bad video with a terrible thumbnail. 

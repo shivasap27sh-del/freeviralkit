@@ -18,7 +18,6 @@ The result? It was dreadful. It sounded like a corporate robot who had never wat
 
 But over the last two years, I finally cracked the code. You *can* use AI to co-write your scripts, brainstorm ideas, and structure your videos. You just have to know how to prompt it.
 
-![Screenshot of a successful AI script prompt in ChatGPT](/images/chatgpt_script_prompt.png)
 *(My exact prompt structure for human-sounding AI scripts).*
 
 ## Why Most AI Scripts Fail the "Camera Test"

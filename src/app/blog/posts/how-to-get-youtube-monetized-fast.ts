@@ -14,7 +14,6 @@ The creators who fail are not the ones who lack talent. They are the ones who se
 
 I got my first channel monetized in about five months. My second channel took exactly three months because I had already learned what works. In this guide, I'm going to give you the exact roadmap I followed to hit the **YouTube Partner Program**.
 
-![Screenshot of a YouTube monetization approval email](/images/monetization_approval.png)
 *(The best email you can receive as a creator).*
 
 ## Phase 1: Foundation (Weeks 1 - 2)

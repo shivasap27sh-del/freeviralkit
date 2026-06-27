@@ -12,7 +12,6 @@ Shorts are weird. They play by completely different rules than regular YouTube v
 
 I've watched creators with 500K subscribers post Shorts that get 200 views. I've also seen brand new channels post a single Short that hits 2 million. The Shorts algorithm is its own beast, and if you want to win, you need to understand how it thinks.
 
-![Screenshot of vertical mobile gameplay representing shorts](/images/shorts_mobile_view.png)
 *(Shorts require an entirely different approach to SEO).*
 
 ## The Shorts Algorithm Is NOT the YouTube Algorithm

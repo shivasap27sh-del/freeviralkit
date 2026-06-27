@@ -18,7 +18,6 @@ A few months later, I met a creator pulling in $2,000 in Super Chats per stream 
 
 I fixed my settings, and my next stream peaked at 480 concurrent viewers and pulled in $450 in Super Chats in under two hours. Here is my exact blueprint.
 
-![Screenshot of a YouTube Live Stream dashboard with high viewer counts](/images/livestream_dashboard_growth.png)
 *(My live stream dashboard after fixing my OBS and SEO settings).*
 
 ## 1. The Pre-Stream SEO Blueprint

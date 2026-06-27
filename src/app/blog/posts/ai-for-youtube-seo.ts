@@ -24,7 +24,6 @@ I decided to run an experiment. I took a brand new YouTube Short and used raw, c
 
 The result? Total failure.
 
-![My YouTube Short analytics flatlining at 72 views](/images/shorts_72_views.png)
 *(My actual YouTube Studio analytics. The Short completely flatlined at exactly 72 views and never recovered).*
 
 When you use raw, unoptimized AI output, you run into three massive problems that kill your channel:
