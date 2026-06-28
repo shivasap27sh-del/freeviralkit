@@ -5,6 +5,7 @@ import TagsGeneratorClient from '@/components/tools/TagsGeneratorClient';
 import { Tag } from 'lucide-react';
 import Link from 'next/link';
 import RelatedTools from '@/components/RelatedTools';
+import LatestBlogPosts from '@/components/LatestBlogPosts';
 
 export const metadata: Metadata = {
   twitter: {
@@ -335,6 +336,9 @@ export default function TagsGeneratorPage() {
               </Link>
             </div>
           </div>
+
+          <LatestBlogPosts />
+          <RelatedTools currentToolPath="/youtube-tags-generator" />
         </section>
       </main>
     </>

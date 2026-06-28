@@ -4,6 +4,7 @@ import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import RelatedTools from '@/components/RelatedTools';
+import LatestBlogPosts from '@/components/LatestBlogPosts';
 
 
 export const metadata: Metadata = {
@@ -308,6 +309,8 @@ export default function TitleGeneratorPage() {
           </div>
 
 
+
+          <LatestBlogPosts />
           <RelatedTools currentToolPath="/youtube-title-generator" />
         </section>
       </main>

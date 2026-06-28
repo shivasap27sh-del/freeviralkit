@@ -5,6 +5,7 @@ import ShortsIdeaGeneratorPageClient from '@/components/tools/ShortsIdeaGenerato
 import { Zap } from 'lucide-react';
 import Link from 'next/link';
 import RelatedTools from '@/components/RelatedTools';
+import LatestBlogPosts from '@/components/LatestBlogPosts';
 
 export const metadata: Metadata = {
   twitter: {
@@ -332,6 +333,8 @@ export default function ShortsIdeaGeneratorPage() {
             </div>
           </div>
 
+
+          <LatestBlogPosts />
           <RelatedTools currentToolPath="/youtube-shorts-idea-generator" />
         </section>
       </main>

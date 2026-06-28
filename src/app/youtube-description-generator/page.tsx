@@ -3,6 +3,7 @@ import { buildAbsoluteUrl } from '@/lib/site';
 import DescriptionGeneratorClient from '@/components/tools/DescriptionGeneratorClient';
 import { AlignLeft } from 'lucide-react';
 import Link from 'next/link';
+import LatestBlogPosts from '@/components/LatestBlogPosts';
 import RelatedTools from '@/components/RelatedTools';
 
 
@@ -336,6 +337,9 @@ export default function DescriptionGeneratorPage() {
               </Link>
             </div>
           </div>
+
+          <LatestBlogPosts />
+          <RelatedTools currentToolPath="/youtube-description-generator" />
         </section>
       </main>
     </>

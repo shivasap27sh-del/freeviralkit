@@ -4,6 +4,7 @@ import HashtagGeneratorClient from '@/components/tools/HashtagGeneratorClient';
 import { Hash } from 'lucide-react';
 import Link from 'next/link';
 import RelatedTools from '@/components/RelatedTools';
+import LatestBlogPosts from '@/components/LatestBlogPosts';
 
 
 export const metadata: Metadata = {
@@ -335,6 +336,8 @@ export default function HashtagGeneratorPage() {
             </div>
           </div>
 
+
+          <LatestBlogPosts />
           <RelatedTools currentToolPath="/youtube-hashtag-generator" />
         </section>
       </main>
