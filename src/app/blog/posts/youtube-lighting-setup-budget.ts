@@ -22,7 +22,7 @@ Lighting is not just about making the scene brighter; it is about physically scu
 
 You do not need to spend hundreds of dollars on massive professional softboxes or high-end RGB tube lights. Today, I am going to show you exactly how to build a stunning, professional-grade YouTube lighting setup using absolute basic physics, window light, and less than $50 worth of gear from your local hardware store.
 
-![A content creator adjusting a budget ring light and camera setup in their bedroom studio](https://images.unsplash.com/photo-1595991209266-5af5e0192df4?q=80&w=1200&auto=format&fit=crop)
+![A content creator adjusting a budget ring light and camera setup in their bedroom studio](https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop)
 
 ## The Physics of Cinematic Lighting: Soft vs. Hard Light
 
