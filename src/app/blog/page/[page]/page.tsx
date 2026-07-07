@@ -12,7 +12,7 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const publishedPosts = getPublishedPosts();
+  const publishedPosts = await getPublishedPosts();
   const totalPages = Math.ceil(publishedPosts.length / POSTS_PER_PAGE);
   
   // We only generate params for page 2 and onwards, since page 1 is the main /blog route
@@ -50,7 +50,7 @@ export default async function BlogPaginationPage({ params }: Props) {
     notFound();
   }
 
-  const publishedPosts = getPublishedPosts();
+  const publishedPosts = await getPublishedPosts();
   const totalPages = Math.ceil(publishedPosts.length / POSTS_PER_PAGE);
 
   if (currentPage > totalPages) {

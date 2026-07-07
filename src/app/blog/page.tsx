@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
-  const publishedPosts = getPublishedPosts();
+export default async function BlogPage() {
+  const publishedPosts = await getPublishedPosts();
   const totalPages = Math.ceil(publishedPosts.length / POSTS_PER_PAGE);
   const currentPosts = publishedPosts.slice(0, POSTS_PER_PAGE);
 

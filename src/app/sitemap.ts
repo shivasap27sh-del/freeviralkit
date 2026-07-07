@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { getPublishedSlugs } from './blog/data';
+import { getPublishedPosts } from './blog/data';
 import { buildAbsoluteUrl } from '@/lib/site';
 import { getSourceLastModifiedDates } from '@/lib/source-history';
 
@@ -59,19 +59,23 @@ function getLatestSourceDate(sourceFiles: readonly string[], sourceDates: Readon
   return new Date(Math.max(...timestamps));
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const blogEntries = getPublishedSlugs().map((slug) => ({
-    path: `/blog/${slug}`,
-    sourceFiles: [`src/app/blog/posts/${slug}.ts`],
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const publishedPosts = await getPublishedPosts();
+  
+  const blogEntries = publishedPosts.map((post) => ({
+    path: `/blog/${post.slug}`,
+    sourceFiles: [], // No longer rely on local files for blog posts
     changeFrequency: 'monthly' as const,
     priority: 0.7,
+    lastModified: new Date(post.date), // Use DB date
   }));
+  
   const sitemapEntries = [...staticEntries, ...blogEntries];
   const sourceDates = getSourceLastModifiedDates(sitemapEntries.flatMap((entry) => entry.sourceFiles));
 
   return sitemapEntries.map((entry) => ({
     url: buildAbsoluteUrl(entry.path),
-    lastModified: getLatestSourceDate(entry.sourceFiles, sourceDates),
+    lastModified: ('lastModified' in entry ? entry.lastModified : undefined) || getLatestSourceDate(entry.sourceFiles, sourceDates),
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
   }));

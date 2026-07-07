@@ -2,8 +2,9 @@ import Link from 'next/link';
 import { getPublishedPosts } from '@/app/blog/data';
 import { ArrowRight, BookOpen } from 'lucide-react';
 
-export default function LatestBlogPosts() {
-  const posts = getPublishedPosts().slice(0, 4);
+export default async function LatestBlogPosts() {
+  const publishedPosts = await getPublishedPosts();
+  const posts = publishedPosts.slice(0, 4);
 
   if (!posts.length) return null;
 

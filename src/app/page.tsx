@@ -112,7 +112,8 @@ const softwareJsonLd = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const publishedPosts = await getPublishedPosts();
   return (
     <>
       <script
@@ -320,7 +321,7 @@ export default function Home() {
 
         {/* Latest Blog Posts — internal links prevent orphan URLs for new posts */}
         {(() => {
-          const latestPosts = getPublishedPosts().slice(0, 4);
+          const latestPosts = publishedPosts.slice(0, 4);
           return (
             <section className="mt-20 mb-12">
               <div className="flex items-center justify-between mb-8">

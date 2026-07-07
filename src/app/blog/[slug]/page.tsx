@@ -11,12 +11,13 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) return {};
 
   return {
@@ -54,8 +55,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   // Use published check — returns 404 for scheduled posts that aren't live yet
-  const post = getPublishedPostBySlug(slug);
+  const post = await getPublishedPostBySlug(slug);
   if (!post) notFound();
+  const relatedPosts = await getRelatedPosts(post.slug, 4);
 
   // Simple markdown-to-HTML
   const renderContent = (content: string) => {
@@ -275,8 +277,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="mt-12">
           <h3 className="font-display text-xl font-bold mb-6">More Articles</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {getRelatedPosts(post.slug, 4)
-              .map((related) => (
+            {relatedPosts.map((related) => (
                 <Link
                   key={related.slug}
                   href={`/blog/${related.slug}`}

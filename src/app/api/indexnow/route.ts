@@ -16,7 +16,8 @@ export async function GET(request: Request) {
 
   try {
     // Get the dynamic list of current published URLs from the sitemap
-    const urls = sitemap().map((item) => item.url);
+    const sitemapData = await sitemap();
+    const urls = sitemapData.map((item) => item.url);
 
     const body = {
       host: 'freeviralkit.com',
