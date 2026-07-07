@@ -12,7 +12,11 @@ export interface BlogPost {
   tags: string[];
 }
 
-const XATA_URL = process.env.XATA_URL || 'postgresql://xata:f0dfQQat5CHXPRbaXe09CVlIyxg75HQZYXyCpHqFHIqWu3gxlJagNlXZ695jfNOf@vcav7p6jfh2sv44idd3q6uhd74.us-east-1.xata.tech/xata?sslmode=require';
+const rawUrl = process.env.XATA_URL || 'postgresql://xata:f0dfQQat5CHXPRbaXe09CVlIyxg75HQZYXyCpHqFHIqWu3gxlJagNlXZ695jfNOf@vcav7p6jfh2sv44idd3q6uhd74.us-east-1.xata.tech/xata';
+// Append uselibpqcompat to silence pg v8.x security warnings
+const XATA_URL = rawUrl.includes('?') 
+  ? (rawUrl.includes('uselibpqcompat') ? rawUrl : `${rawUrl}&uselibpqcompat=true`)
+  : `${rawUrl}?sslmode=require&uselibpqcompat=true`;
 
 // Ensure we only create a single connection pool in development
 const globalForPg = global as unknown as { pool: Pool };
