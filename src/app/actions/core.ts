@@ -141,6 +141,19 @@ export async function generateWithFallback(
 ): Promise<string> {
   const errors: string[] = [];
 
+  // Inject SAFETY_INSTRUCTION into the system prompt (or first message)
+  const safeMessages = [...messages];
+  const systemMsgIndex = safeMessages.findIndex(m => m.role === 'system');
+  if (systemMsgIndex !== -1) {
+    safeMessages[systemMsgIndex] = {
+      ...safeMessages[systemMsgIndex],
+      content: safeMessages[systemMsgIndex].content + SAFETY_INSTRUCTION
+    };
+  } else {
+    // If no system prompt, add one
+    safeMessages.unshift({ role: 'system', content: SAFETY_INSTRUCTION });
+  }
+
   for (const provider of providers) {
     // Check Circuit Breaker: If this provider recently failed, skip it instantly to save time
     const timeoutUntil = providerTimeouts.get(provider.name) || 0;
@@ -152,14 +165,26 @@ export async function generateWithFallback(
     try {
       console.log(`[AI] Routing request to ${provider.name}...`);
       const result = await withTimeout(
-        provider.generate(messages, options),
+        provider.generate(safeMessages, options),
         15000,
         provider.name
       );
+      
+      const safetyCheck = filterAIOutput(result);
+      if (!safetyCheck.safe) {
+        throw new Error('CONTENT_SAFETY: ' + (safetyCheck.reason || 'Output flagged by content filter'));
+      }
+      
       console.log(`[AI] ✅ Success via ${provider.name}`);
-      return result;
+      return safetyCheck.filtered;
     } catch (error) {
       const msg = error instanceof Error ? error.message : String(error);
+      
+      // If it's a content safety error, throw it immediately (do not retry other providers)
+      if (msg.startsWith('CONTENT_SAFETY:')) {
+        throw new Error(msg.replace('CONTENT_SAFETY: ', ''));
+      }
+      
       console.warn(`[AI] ❌ ${provider.name} failed: ${msg}`);
       errors.push(`${provider.name}: ${msg}`);
       
@@ -201,6 +226,9 @@ export async function checkRateLimit(limit = 10, windowMs = 60 * 1000): Promise<
 }
 
 // ======= Input Sanitization =======
+import { checkInputSafety, filterAIOutput, sanitizeOutput, SAFETY_INSTRUCTION } from '@/lib/content-safety';
+export { checkInputSafety, filterAIOutput, sanitizeOutput, SAFETY_INSTRUCTION };
+
 export function sanitizeInput(input: string, maxLength = 200): string {
   if (typeof input !== 'string') return '';
   let trimmed = input.trim();
@@ -208,6 +236,12 @@ export function sanitizeInput(input: string, maxLength = 200): string {
     trimmed = trimmed.substring(0, maxLength);
   }
   trimmed = trimmed.replace(/[\u0000-\u001F\u007F-\u009F]/g, '');
+
+  const safetyCheck = checkInputSafety(trimmed);
+  if (!safetyCheck.safe) {
+    throw new Error('CONTENT_SAFETY: ' + (safetyCheck.reason || 'Input flagged by content filter'));
+  }
+
   return trimmed;
 }
 

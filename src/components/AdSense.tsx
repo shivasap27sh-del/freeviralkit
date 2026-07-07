@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { siteConfig } from '@/lib/site';
+import { useConsent } from '@/components/ConsentProvider';
 
 const ADSENSE_PUB_ID = siteConfig.adsensePublisherId;
 
@@ -26,7 +27,8 @@ export function AdUnit({
   className?: string;
   style?: React.CSSProperties;
 }) {
-  const canRenderRealAd = hasRealPubId && isSlotConfigured(slot);
+  const { consent } = useConsent();
+  const canRenderRealAd = hasRealPubId && isSlotConfigured(slot) && consent?.advertising;
 
   useEffect(() => {
     if (!canRenderRealAd) return;
@@ -42,7 +44,7 @@ export function AdUnit({
   }, [canRenderRealAd]);
 
   if (!canRenderRealAd) {
-    // Return null to avoid rendering empty placeholders when ad slots are not set (e.g. when using Auto Ads)
+    // Return null to avoid rendering empty placeholders when ad slots are not set or consent is denied
     return null;
   }
 
@@ -64,7 +66,8 @@ export function AdUnit({
  * In-content ad that blends between sections.
  */
 export function InContentAd({ slot, className = '' }: { slot: string; className?: string }) {
-  const canRender = hasRealPubId && isSlotConfigured(slot);
+  const { consent } = useConsent();
+  const canRender = hasRealPubId && isSlotConfigured(slot) && consent?.advertising;
   if (!canRender) return null;
 
   return (
@@ -79,7 +82,8 @@ export function InContentAd({ slot, className = '' }: { slot: string; className?
  * Banner ad for header/footer areas.
  */
 export function BannerAd({ slot, className = '' }: { slot: string; className?: string }) {
-  const canRender = hasRealPubId && isSlotConfigured(slot);
+  const { consent } = useConsent();
+  const canRender = hasRealPubId && isSlotConfigured(slot) && consent?.advertising;
   if (!canRender) return null;
 
   return (
@@ -92,10 +96,12 @@ export function BannerAd({ slot, className = '' }: { slot: string; className?: s
 
 /**
  * AdSense head script — inject into layout.
+ * NOTE: With ConsentGatedScripts, this is no longer used directly in layout, 
+ * but kept for backward compatibility if used elsewhere.
  */
 export function AdSenseScript() {
-  if (!hasRealPubId) {
-    // Don't load AdSense script if no real pub ID is set
+  const { consent } = useConsent();
+  if (!hasRealPubId || !consent?.advertising) {
     return null;
   }
 

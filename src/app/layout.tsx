@@ -4,13 +4,11 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
+import { ConsentProvider } from '@/components/ConsentProvider';
+import ConsentGatedScripts from '@/components/ConsentGatedScripts';
 import { buildAbsoluteUrl, getBaseUrl, siteConfig } from '@/lib/site';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import Script from 'next/script';
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-3301BDE5MC';
-const YANDEX_ID = process.env.NEXT_PUBLIC_YANDEX_ID || '109255325';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
@@ -146,7 +144,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
-
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
@@ -171,63 +168,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://mc.yandex.ru" />
-        {/* AdSense loaded afterInteractive — NOT blocking LCP */}
-        <Script
-          id="adsense-script"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7893678534155164"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
         />
-        {/* Google Analytics */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', '${GA_ID}');
-          `}
-        </Script>
-
-        {/* Yandex.Metrika counter */}
-        <Script id="yandex-metrika" strategy="afterInteractive">
-          {`
-            (function(m,e,t,r,i,k,a){
-                m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-                m[i].l=1*new Date();
-                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=${YANDEX_ID}', 'ym');
-
-            ym(${YANDEX_ID}, 'init', {
-                ssr:true, 
-                webvisor:true, 
-                clickmap:true, 
-                ecommerce:"dataLayer", 
-                referrer: document.referrer, 
-                url: location.href, 
-                accurateTrackBounce:true, 
-                trackLinks:true
-            });
-          `}
-        </Script>
       </head>
       <body className="antialiased overflow-x-hidden">
-        <noscript>
-          <div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`https://mc.yandex.ru/watch/${YANDEX_ID}`} style={{ position: 'absolute', left: '-9999px' }} alt="Analytics tracking pixel" width="1" height="1" loading="lazy" />
-          </div>
-        </noscript>
         {/* Background animation */}
         <div className="bg-animation">
           <div className="bg-orb bg-orb-1" />
@@ -236,10 +182,13 @@ export default function RootLayout({
           <div className="bg-grid" />
         </div>
 
-        <Navbar />
-        {children}
-        <CookieBanner />
-        <Footer />
+        <ConsentProvider>
+          <ConsentGatedScripts />
+          <Navbar />
+          {children}
+          <CookieBanner />
+          <Footer />
+        </ConsentProvider>
         <Analytics />
         <SpeedInsights />
       </body>

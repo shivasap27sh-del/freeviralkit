@@ -162,7 +162,7 @@ export default function Footer() {
               <span className="text-purple-400 font-semibold">Shiva</span>
             </p>
             <span className="hidden md:inline text-slate-300 dark:text-slate-700">|</span>
-            <div className="flex gap-4 text-sm text-slate-500">
+            <div className="flex flex-wrap gap-4 text-sm text-slate-500 justify-center">
               <Link href="/privacy-policy" className="hover:text-purple-400 transition-colors">
                 Privacy Policy
               </Link>
@@ -172,6 +172,7 @@ export default function Footer() {
               <Link href="/disclaimer" className="hover:text-purple-400 transition-colors">
                 Disclaimer
               </Link>
+              <FooterCookieSettings />
             </div>
           </div>
           <p className="text-gray-600 dark:text-gray-500 text-xs text-center md:text-right">
@@ -180,5 +181,15 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+import { useConsent } from '@/components/ConsentProvider';
+function FooterCookieSettings() {
+  const { openBanner } = useConsent();
+  return (
+    <button onClick={openBanner} className="hover:text-purple-400 transition-colors bg-transparent border-none p-0 cursor-pointer text-sm">
+      Cookie Settings
+    </button>
   );
 }

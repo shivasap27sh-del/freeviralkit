@@ -96,6 +96,7 @@ export function sanitizeOutput(text: string): string {
  * Returns the sanitized text if safe, or an error if blocked.
  */
 export function filterAIOutput(text: string): SafetyResult {
+  if (typeof text !== 'string') return { safe: true, filtered: text };
   // First sanitize
   const sanitized = sanitizeOutput(text);
   
