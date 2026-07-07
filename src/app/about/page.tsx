@@ -173,7 +173,7 @@ const techStack = [
 ];
 
 const stats = [
-  { value: '500+', label: 'Active Users' },
+  { value: 'Growing', label: 'Creator Community' },
   { value: '100%', label: 'Free — No Signup Required' },
   { value: '<5s', label: 'AI Generation Speed' },
   { value: '11+', label: 'SEO Tools in One Place' },
@@ -231,10 +231,11 @@ export default function AboutPage() {
             knowledge to optimize their metadata.
           </p>
           <p className="text-slate-700 leading-relaxed mb-4">
-            Worse still, most YouTube optimization tools on the market charge $20–$50 per month for 
+            Worse still, most YouTube optimization tools on the market charge expensive monthly subscriptions for 
+
             features that are functionally basic. FreeViralKit was built to disrupt this model. 
             By leveraging cutting-edge AI through Groq&apos;s lightning-fast inference engine, we
-            provide instant, high-quality YouTube optimization that rivals or exceeds expensive paid tools —
+            provide instant, high-quality YouTube optimization that provides a compelling free alternative to paid tools —
             completely free, with no account required.
           </p>
           <p className="text-slate-700 leading-relaxed mb-4">
@@ -324,9 +325,9 @@ export default function AboutPage() {
                 building production applications with Next.js, React, TypeScript, and Node.js.
               </p>
               <p className="text-slate-700 leading-relaxed mb-3">
-                I built FreeViralKit after seeing creators pay $30–50/month for YouTube SEO tools
-                that should be free. With 450+ LeetCode problems solved and 2 production apps
-                deployed with 99%+ uptime, I applied those engineering skills to build something
+                I built FreeViralKit after seeing creators pay expensive monthly subscriptions for YouTube SEO tools
+                that should be free. With strong problem-solving skills and 2 production apps
+                deployed and actively maintained, I applied those engineering skills to build something
                 fast, reliable, and genuinely useful.
               </p>
               <p className="text-slate-700 leading-relaxed">

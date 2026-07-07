@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   },
   description:
     'Free AI YouTube SEO tool. Generate viral titles, descriptions, hashtags & tags. Boost your video views and rankings instantly.',
+  icons: {
+    icon: '/icon.svg',
+  },
   keywords: [
     'youtube seo tool',
     'youtube title generator',

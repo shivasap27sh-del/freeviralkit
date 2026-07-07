@@ -59,7 +59,7 @@ const homepageFaqs = [
   },
   {
     q: 'Will these tags and titles help me rank?',
-    a: 'Yes — our AI generates content following YouTube SEO best practices: proper keyword placement, optimal character counts, and trending formats. Many creators see improved search rankings within days of optimizing their metadata.',
+    a: 'Yes — our AI generates content following YouTube SEO best practices: proper keyword placement, optimal character counts, and trending formats. Optimized metadata helps YouTube\'s algorithm understand your content better, which can improve discoverability over time.',
   },
   {
     q: 'Can I use FreeViralKit for YouTube Shorts?',
@@ -148,7 +148,7 @@ export default async function Home() {
               ))}
             </div>
             <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
-              Trusted by <strong className="text-slate-900 dark:text-white">10,000+</strong> creators to generate viral titles
+              Used by <strong className="text-slate-900 dark:text-white">creators worldwide</strong> to generate optimized titles
             </div>
           </div>
         </section>
