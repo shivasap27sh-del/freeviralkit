@@ -12,7 +12,10 @@ export interface BlogPost {
   tags: string[];
 }
 
-const rawUrl = process.env.XATA_URL || 'postgresql://xata:f0dfQQat5CHXPRbaXe09CVlIyxg75HQZYXyCpHqFHIqWu3gxlJagNlXZ695jfNOf@vcav7p6jfh2sv44idd3q6uhd74.us-east-1.xata.tech/xata';
+const rawUrl = process.env.XATA_URL;
+if (!rawUrl) {
+  throw new Error('XATA_URL environment variable is required. Set it in .env.local or your deployment environment.');
+}
 // Append uselibpqcompat to silence pg v8.x security warnings
 const XATA_URL = rawUrl.includes('?') 
   ? (rawUrl.includes('uselibpqcompat') ? rawUrl : `${rawUrl}&uselibpqcompat=true`)
