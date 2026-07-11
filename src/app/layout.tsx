@@ -22,7 +22,11 @@ export const metadata: Metadata = {
   description:
     'Free AI YouTube SEO tool. Generate viral titles, descriptions, hashtags & tags. Boost your video views and rankings instantly.',
   icons: {
-    icon: '/icon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-touch-icon.png',
   },
   keywords: [
     'youtube seo tool',
@@ -78,15 +82,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: buildAbsoluteUrl('/'),
-  },
+  // canonical is defined per-page in each page.tsx to avoid duplicate tags
   verification: siteConfig.googleVerificationCode
     ? {
         google: siteConfig.googleVerificationCode,
       }
     : undefined,
-
 };
 
 // JSON-LD structured data
@@ -174,6 +175,15 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased overflow-x-hidden">
+        {/* Accessible fallback when JavaScript is disabled */}
+        <noscript>
+          <div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'sans-serif', background: '#0f172a', color: '#f8fafc', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div>
+              <h1>FreeViralKit</h1>
+              <p>Please enable JavaScript in your browser to use FreeViralKit&apos;s AI-powered YouTube SEO tools.</p>
+            </div>
+          </div>
+        </noscript>
         {/* Background animation */}
         <div className="bg-animation">
           <div className="bg-orb bg-orb-1" />

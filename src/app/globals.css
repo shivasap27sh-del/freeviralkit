@@ -320,6 +320,8 @@
   opacity: 0.4;
   animation: orbFloat 20s ease-in-out infinite;
   will-change: transform;
+  /* Force GPU compositing on Safari/iOS which sometimes ignores will-change */
+  transform: translateZ(0);
   /* Contain repaints to this element */
   contain: layout style;
 }

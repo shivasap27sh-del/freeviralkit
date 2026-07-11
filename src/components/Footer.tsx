@@ -102,7 +102,7 @@ export default function Footer() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1223625&theme=light&size=small"
+                src={`https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1223625&theme=${typeof document !== 'undefined' && document.documentElement.classList.contains('dark') ? 'dark' : 'light'}&size=small`}
                 alt="FreeViralKit - 10x your YouTube views with AI-generated titles &amp; SEO | Product Hunt"
                 width="86"
                 height="32"
