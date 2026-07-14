@@ -11,6 +11,7 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
+    "duck-duck-scrape": "^2.2.7",
     "framer-motion": "^12.38.0",
     "googleapis": "^173.0.0",
     "groq-sdk": "^1.1.2",

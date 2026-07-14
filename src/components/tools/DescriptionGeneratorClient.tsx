@@ -30,6 +30,8 @@ export default function DescriptionGeneratorClient({ niche }: DescriptionGenerat
     setIsGenerating(false);
   };
 
+  const stripMarkdown = (text: string) => text.replace(/\*\*(.*?)\*\*/g, '$1');
+
   const copy = async (text: string, key: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -147,7 +149,7 @@ export default function DescriptionGeneratorClient({ niche }: DescriptionGenerat
                   <RotateCcw className="w-3.5 h-3.5" /> Regenerate
                 </button>
               </div>
-              <button onClick={() => copy(description, 'desc')} className="copy-btn cursor-pointer">
+              <button onClick={() => copy(stripMarkdown(description), 'desc')} className="copy-btn cursor-pointer">
                 {copiedStates['desc'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600 dark:text-slate-400" /> Copy Description</>}
               </button>
             </div>

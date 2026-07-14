@@ -45,6 +45,8 @@ export default function HomePageClient() {
     setIsGeneratingDetails(false);
   };
 
+  const stripMarkdown = (text: string) => text.replace(/\*\*(.*?)\*\*/g, '$1');
+
   const copy = async (text: string, key: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -55,7 +57,9 @@ export default function HomePageClient() {
 
   const copyFullPackage = () => {
     if (!details || !selectedTitle) return;
-    const full = `TITLE:\n${selectedTitle}\n\nDESCRIPTION:\n${details.description}\n\nHASHTAGS:\n${details.hashtags.join(' ')}\n\nTAGS:\n${details.tags.join(', ')}\n\nPINNED COMMENT:\n${details.pinnedComment}`;
+    const cleanDesc = stripMarkdown(details.description);
+    const cleanPinned = stripMarkdown(details.pinnedComment);
+    const full = `TITLE:\n${selectedTitle}\n\nDESCRIPTION:\n${cleanDesc}\n\nHASHTAGS:\n${details.hashtags.join(' ')}\n\nTAGS:\n${details.tags.join(', ')}\n\nPINNED COMMENT:\n${cleanPinned}`;
     copy(full, 'full-package');
   };
 
@@ -226,7 +230,7 @@ export default function HomePageClient() {
                         <span className="text-xs text-slate-500">{details.description.split(/\s+/).length} words</span>
                       </div>
                     </div>
-                    <button onClick={() => copy(details.description, 'desc')} className="copy-btn cursor-pointer">
+                    <button onClick={() => copy(stripMarkdown(details.description), 'desc')} className="copy-btn cursor-pointer">
                       {copiedStates['desc'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy</>}
                     </button>
                   </div>

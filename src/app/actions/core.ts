@@ -196,6 +196,63 @@ export async function generateWithFallback(
   throw new Error(`All AI providers failed:\n${errors.join('\n')}`);
 }
 
+// ======= Real-Time Web Context via Tavily Search API =======
+// Uses Tavily to fetch current info about a topic and synthesize a short answer.
+// This gives our generators awareness of trending movies, current events, latest news, etc.
+// Falls back gracefully — returns "" if Tavily is unavailable, so generation still works.
+
+export async function searchGroundedContext(topic: string): Promise<string> {
+  const apiKey = process.env.TAVILY_API_KEY;
+  if (!apiKey) {
+    console.log('[Search] No Tavily API key configured, skipping web context');
+    return '';
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+
+  try {
+    console.log(`[Search] Fetching web context for: "${topic}"`);
+    const response = await fetch('https://api.tavily.com/search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        api_key: apiKey,
+        query: `What is currently known and trending about: "${topic}"? Please include specific names, cast, controversies, or facts if applicable.`,
+        search_depth: 'basic',
+        include_answer: true,
+        max_results: 3
+      }),
+      signal: controller.signal,
+      cache: 'no-store',
+    });
+
+    clearTimeout(timeout);
+
+    if (!response.ok) {
+      const errText = await response.text().catch(() => '');
+      console.warn(`[Search] Tavily search failed (${response.status}): ${errText.slice(0, 100)}`);
+      return '';
+    }
+
+    const data = await response.json();
+    const text = data.answer || data.results?.map((r: any) => r.content).join('\n') || '';
+
+    if (!text || text.trim().length < 10) {
+      console.log('[Search] No specific web context found');
+      return '';
+    }
+
+    console.log(`[Search] ✅ Got web context (${text.length} chars)`);
+    return text.trim();
+  } catch (error) {
+    clearTimeout(timeout);
+    const msg = error instanceof Error ? error.message : String(error);
+    console.warn(`[Search] Web context unavailable: ${msg}`);
+    return '';
+  }
+}
+
 // ======= Rate Limiting System =======
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
 

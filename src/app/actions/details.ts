@@ -1,15 +1,16 @@
 'use server';
 
-import { checkRateLimit, generateWithFallback, sanitizeInput } from './core';
+import { checkRateLimit, generateWithFallback, sanitizeInput, searchGroundedContext } from './core';
 import { generateTagsOnly } from './tags';
 import { generateHashtagsOnly } from './hashtags';
 import { generateDescriptionOnly } from './descriptions';
 
-async function generatePinnedComment(title: string): Promise<string> {
+async function generatePinnedComment(title: string, webContext?: string): Promise<string> {
   const text = await generateWithFallback([
     {
       role: 'system',
-      content: 'You are a YouTube engagement expert. You write pinned comments that drive replies and boost watch time.'
+      content: `You are a YouTube engagement expert. You write pinned comments that drive replies and boost watch time.
+${webContext ? `\nCURRENT CONTEXT about this topic:\n${webContext}` : ''}`
     },
     {
       role: 'user',
@@ -48,11 +49,14 @@ export async function generateDetails(
       return { success: false, error: `Rate limit exceeded. Please wait ${rateLimit.retryAfter} seconds.` };
     }
 
+    // Fetch web context ONCE and share it with all sub-generators
+    const webContext = await searchGroundedContext(sanitizedTitle);
+
     const [tagsResult, hashtagsResult, descriptionResult, pinnedComment] = await Promise.all([
-      generateTagsOnly(sanitizedTitle, excludeTags),
-      generateHashtagsOnly(sanitizedTitle, excludeHashtags),
-      generateDescriptionOnly(sanitizedTitle, excludeDescription),
-      generatePinnedComment(sanitizedTitle),
+      generateTagsOnly(sanitizedTitle, excludeTags, undefined, webContext),
+      generateHashtagsOnly(sanitizedTitle, excludeHashtags, undefined, webContext),
+      generateDescriptionOnly(sanitizedTitle, excludeDescription, undefined, webContext),
+      generatePinnedComment(sanitizedTitle, webContext),
     ]);
 
     return {
