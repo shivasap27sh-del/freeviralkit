@@ -61,7 +61,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Email</h3>
-                  <a href="mailto:support@freeviralkit.com" className="text-slate-500 dark:text-slate-400 text-sm hover:text-purple-500 transition-colors">support@freeviralkit.com</a>
+                  <a href="mailto:shivasap27sh@gmail.com" className="text-slate-500 dark:text-slate-400 text-sm hover:text-purple-500 transition-colors">shivasap27sh@gmail.com</a>
                 </div>
               </div>
 

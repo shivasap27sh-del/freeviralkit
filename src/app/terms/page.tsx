@@ -166,7 +166,7 @@ export default function TermsOfServicePage() {
         </p>
         <p>
           <strong>FreeViralKit</strong><br />
-          Email: support@freeviralkit.com<br />
+          Email: shivasap27sh@gmail.com<br />
         </p>
       </div>
     </main>

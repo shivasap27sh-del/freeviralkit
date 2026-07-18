@@ -151,7 +151,7 @@ export default function PrivacyPolicyPage() {
         </ul>
 
         <p>
-          To exercise any of these rights, please contact us at support@freeviralkit.com. Please note that because we do not require accounts, we may not be able to identify specific data associated with you based merely on an email request, but we will do our best to assist you in compliance with applicable laws.
+          To exercise any of these rights, please contact us at shivasap27sh@gmail.com. Please note that because we do not require accounts, we may not be able to identify specific data associated with you based merely on an email request, but we will do our best to assist you in compliance with applicable laws.
         </p>
 
         <h2>8. Children's Privacy</h2>
@@ -174,7 +174,7 @@ export default function PrivacyPolicyPage() {
           If you have any questions, comments, or concerns about this Privacy Policy or our privacy practices, please contact us at:
         </p>
         <p>
-          <strong>Email:</strong> support@freeviralkit.com<br />
+          <strong>Email:</strong> shivasap27sh@gmail.com<br />
           <strong>Website:</strong> www.freeviralkit.com/contact
         </p>
       </div>
