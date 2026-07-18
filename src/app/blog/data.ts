@@ -12,18 +12,18 @@ export interface BlogPost {
   tags: string[];
 }
 
-const rawUrl = process.env.XATA_URL;
+const rawUrl = process.env.DATABASE_URL;
 if (!rawUrl) {
-  throw new Error('XATA_URL environment variable is required. Set it in .env.local or your deployment environment.');
+  throw new Error('DATABASE_URL environment variable is required. Set it in .env.local or your deployment environment.');
 }
-// Append uselibpqcompat to silence pg v8.x security warnings
-const XATA_URL = rawUrl.includes('?') 
+// Append uselibpqcompat to silence pg v8.x security warnings if not already present
+const DB_URL = rawUrl.includes('?') 
   ? (rawUrl.includes('uselibpqcompat') ? rawUrl : `${rawUrl}&uselibpqcompat=true`)
   : `${rawUrl}?sslmode=require&uselibpqcompat=true`;
 
 // Ensure we only create a single connection pool in development
 const globalForPg = global as unknown as { pool: Pool };
-export const pool = globalForPg.pool || new Pool({ connectionString: XATA_URL });
+export const pool = globalForPg.pool || new Pool({ connectionString: DB_URL });
 if (process.env.NODE_ENV !== 'production') globalForPg.pool = pool;
 
 function mapRowToBlogPost(row: any): BlogPost {
