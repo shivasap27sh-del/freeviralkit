@@ -20,6 +20,7 @@ import {
   Compass,
   Palette,
   Clapperboard,
+  Search,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -131,6 +132,20 @@ const coreTools = [
     description: 'Analyze your title, description, and tags together and get an instant SEO score out of 100.',
     icon: AlignLeft,
     color: 'blue',
+  },
+  {
+    href: '/youtube-script-generator',
+    title: 'YouTube Script Generator',
+    description: 'Generate structured, high-retention video script outlines and B-roll visual cues.',
+    icon: AlignLeft,
+    color: 'pink',
+  },
+  {
+    href: '/youtube-topic-researcher',
+    title: 'YouTube Niche & Topic Researcher',
+    description: 'Analyze search volume and competitor difficulty to find high-potential topics.',
+    icon: Search,
+    color: 'cyan',
   },
 ];
 
