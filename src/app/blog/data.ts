@@ -44,7 +44,7 @@ export async function getPublishedPosts(): Promise<BlogPost[]> {
   try {
     const { rows } = await pool.query(`
       SELECT * FROM posts 
-      WHERE publish_date IS NULL OR publish_date <= CURRENT_DATE::text
+      WHERE publish_date IS NULL OR publish_date <= NOW()
       ORDER BY date DESC 
       LIMIT 1000;
     `);
@@ -60,7 +60,7 @@ export async function getPublishedPostBySlug(slug: string): Promise<BlogPost | u
     const { rows } = await pool.query(`
       SELECT * FROM posts 
       WHERE slug = $1 
-      AND (publish_date IS NULL OR publish_date <= CURRENT_DATE::text)
+      AND (publish_date IS NULL OR publish_date <= NOW())
       LIMIT 1;
     `, [slug]);
     if (rows.length === 0) return undefined;
@@ -96,7 +96,7 @@ export async function getPublishedSlugs(): Promise<string[]> {
   try {
     const { rows } = await pool.query(`
       SELECT slug FROM posts 
-      WHERE publish_date IS NULL OR publish_date <= CURRENT_DATE::text
+      WHERE publish_date IS NULL OR publish_date <= NOW()
       LIMIT 1000;
     `);
     return rows.map(r => r.slug);
@@ -115,7 +115,7 @@ export async function getRelatedPosts(currentSlug: string, count = 3): Promise<B
     const { rows } = await pool.query(`
       SELECT * FROM posts 
       WHERE slug != $1 AND category = $2
-      AND (publish_date IS NULL OR publish_date <= CURRENT_DATE::text)
+      AND (publish_date IS NULL OR publish_date <= NOW())
       ORDER BY date DESC 
       LIMIT $3;
     `, [currentSlug, current.category, count]);
@@ -126,7 +126,7 @@ export async function getRelatedPosts(currentSlug: string, count = 3): Promise<B
       const { rows: fallbackRows } = await pool.query(`
         SELECT * FROM posts 
         WHERE slug != $1 AND slug != ALL($2::text[])
-        AND (publish_date IS NULL OR publish_date <= CURRENT_DATE::text)
+        AND (publish_date IS NULL OR publish_date <= NOW())
         ORDER BY date DESC 
         LIMIT $3;
       `, [currentSlug, related.map(r => r.slug).length > 0 ? related.map(r => r.slug) : [''], count - related.length]);
