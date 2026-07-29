@@ -13,18 +13,18 @@ export interface BlogPost {
 }
 
 const rawUrl = process.env.DATABASE_URL;
-if (!rawUrl) {
-  throw new Error('DATABASE_URL environment variable is required. Set it in .env.local or your deployment environment.');
+let DB_URL = '';
+if (rawUrl) {
+  DB_URL = rawUrl.includes('?') 
+    ? (rawUrl.includes('uselibpqcompat') ? rawUrl : `${rawUrl}&uselibpqcompat=true`)
+    : `${rawUrl}?sslmode=require&uselibpqcompat=true`;
+} else {
+  console.warn('[Database] DATABASE_URL is not defined. Database queries will return empty fallbacks.');
 }
-// Append uselibpqcompat to silence pg v8.x security warnings if not already present
-const DB_URL = rawUrl.includes('?') 
-  ? (rawUrl.includes('uselibpqcompat') ? rawUrl : `${rawUrl}&uselibpqcompat=true`)
-  : `${rawUrl}?sslmode=require&uselibpqcompat=true`;
 
-// Ensure we only create a single connection pool in development
-const globalForPg = global as unknown as { pool: Pool };
-export const pool = globalForPg.pool || new Pool({ connectionString: DB_URL });
-if (process.env.NODE_ENV !== 'production') globalForPg.pool = pool;
+const globalForPg = global as unknown as { pool: Pool | null };
+export const pool: Pool | null = rawUrl ? (globalForPg.pool || new Pool({ connectionString: DB_URL })) : null;
+if (process.env.NODE_ENV !== 'production' && pool) globalForPg.pool = pool;
 
 function mapRowToBlogPost(row: any): BlogPost {
   return {
@@ -41,6 +41,7 @@ function mapRowToBlogPost(row: any): BlogPost {
 }
 
 export async function getPublishedPosts(): Promise<BlogPost[]> {
+  if (!pool) return [];
   try {
     const { rows } = await pool.query(`
       SELECT * FROM posts 
@@ -50,12 +51,13 @@ export async function getPublishedPosts(): Promise<BlogPost[]> {
     `);
     return rows.map(mapRowToBlogPost);
   } catch (error) {
-    console.error('Xata getPublishedPosts error:', error);
+    console.error('getPublishedPosts error:', error);
     return [];
   }
 }
 
 export async function getPublishedPostBySlug(slug: string): Promise<BlogPost | undefined> {
+  if (!pool) return undefined;
   try {
     const { rows } = await pool.query(`
       SELECT * FROM posts 
@@ -72,27 +74,30 @@ export async function getPublishedPostBySlug(slug: string): Promise<BlogPost | u
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | undefined> {
+  if (!pool) return undefined;
   try {
     const { rows } = await pool.query('SELECT * FROM posts WHERE slug = $1 LIMIT 1;', [slug]);
     if (rows.length === 0) return undefined;
     return mapRowToBlogPost(rows[0]);
   } catch (error) {
-    console.error('Xata getPostBySlug error:', error);
+    console.error('getPostBySlug error:', error);
     return undefined;
   }
 }
 
 export async function getAllSlugs(): Promise<string[]> {
+  if (!pool) return [];
   try {
     const { rows } = await pool.query('SELECT slug FROM posts LIMIT 1000;');
     return rows.map(r => r.slug);
   } catch (error) {
-    console.error('Xata getAllSlugs error:', error);
+    console.error('getAllSlugs error:', error);
     return [];
   }
 }
 
 export async function getPublishedSlugs(): Promise<string[]> {
+  if (!pool) return [];
   try {
     const { rows } = await pool.query(`
       SELECT slug FROM posts 
@@ -101,12 +106,13 @@ export async function getPublishedSlugs(): Promise<string[]> {
     `);
     return rows.map(r => r.slug);
   } catch (error) {
-    console.error('Xata getPublishedSlugs error:', error);
+    console.error('getPublishedSlugs error:', error);
     return [];
   }
 }
 
 export async function getRelatedPosts(currentSlug: string, count = 3): Promise<BlogPost[]> {
+  if (!pool) return [];
   try {
     // Basic related logic: same category, not current post, ordered by date
     const current = await getPostBySlug(currentSlug);
@@ -136,7 +142,7 @@ export async function getRelatedPosts(currentSlug: string, count = 3): Promise<B
     
     return related;
   } catch (error) {
-    console.error('Xata getRelatedPosts error:', error);
+    console.error('getRelatedPosts error:', error);
     return [];
   }
 }

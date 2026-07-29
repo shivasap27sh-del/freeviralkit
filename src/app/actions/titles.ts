@@ -1,79 +1,53 @@
 'use server';
 
-import { checkRateLimit, generateWithFallback, safeParseJsonArray, sanitizeInput, searchGroundedContext } from './core';
+import { executeAIGeneration, safeParseJsonArray } from './core';
 
 export async function generateTitles(topic: string, excludeTitles: string[] = [], niche?: string) {
-  try {
-    const sanitizedTopic = sanitizeInput(topic);
-    if (!sanitizedTopic) {
-      return { success: false, error: 'Topic cannot be empty.' };
-    }
+  const result = await executeAIGeneration({
+    topic,
+    excludeItems: excludeTitles,
+    systemPrompt: (webContext) => `<role>
+You are a elite YouTube algorithm analyst who has spent 8 years studying what makes creators click.
+You understand the deep psychology of click-through rate (CTR) and high-retention title mechanics.
+</role>
 
-    const rateLimit = await checkRateLimit();
-    if (!rateLimit.allowed) {
-      return { success: false, error: `Rate limit exceeded. Please wait ${rateLimit.retryAfter} seconds.` };
-    }
+<context>
+${niche ? `Niche Focus: "${niche}". Use insider terminology, community slang, and targeted references.` : 'General YouTube Audience.'}
+${webContext ? `Current Real-World Trends:\n${webContext}` : ''}
+</context>
 
-    const sanitizedExcludes = Array.isArray(excludeTitles) 
-      ? excludeTitles.map(t => sanitizeInput(t)).filter(Boolean)
-      : [];
-
-    // Fetch real-time web context about the topic (current movies, trends, news, etc.)
-    const webContext = await searchGroundedContext(sanitizedTopic);
-
-    const responseText = await generateWithFallback([
-      {
-        role: 'system',
-        content: `You are not a "YouTube title generator." You are a creator who has spent 8 years studying what makes people STOP scrolling and click. You've analyzed thousands of viral videos across every niche and you understand the deep psychology of clickthrough rate.
-
-Your core belief: Every great title exploits ONE specific psychological trigger. Generic titles die. Specific titles win. The more a title sounds like it was written by a REAL person with a REAL opinion, the better it performs.
-
-You know these psychological hooks inside-out:
+<psychological_hooks>
 • CURIOSITY GAP — create a gap between what the viewer knows and what they desperately want to know
 • EXTREME SPECIFICITY — use exact numbers, names, timeframes ("I spent 347 hours testing...")
 • CONTRARIAN TAKE — challenge something the audience assumes is true
-• IDENTITY HOOK — make the viewer feel personally called out ("Every guitarist does this wrong")
+• IDENTITY HOOK — make the viewer feel personally called out
 • PATTERN INTERRUPT — break expected YouTube title format entirely
-• STORY HOOK — imply a narrative arc with stakes ("The day I almost lost everything")
-• AUTHORITY FLEX — establish credibility through experience ("After 10,000 client sessions...")
-• COMPARISON TENSION — pit two things against each other unexpectedly
-• TIME PRESSURE — urgency without being spammy ("before they patch this", "while it still works")
-• RESULT REVEAL — lead with the outcome, not the process ("$0 to $12K/mo — here's the system")
-${niche ? `\nCRITICAL: You are writing for the "${niche}" niche. Use insider terminology, community slang, and references that ONLY someone deep in ${niche} would know. An outsider reading these titles should feel slightly confused — that's how you know they're targeted enough.` : ''}
-${webContext ? `\nCURRENT REAL-WORLD CONTEXT (use this for specific, timely references — names, details, trending angles):\n${webContext}` : ''}`
-      },
-      {
-        role: 'user',
-        content: `Generate exactly 10 YouTube video titles for: "${sanitizedTopic}"
+• STORY HOOK — imply a narrative arc with stakes
+• RESULT REVEAL — lead with the outcome, not the process
+</psychological_hooks>`,
+    
+    userPrompt: (context, excludes) => `<instruction>
+Generate exactly 10 high-CTR YouTube video titles for topic: "${topic}"
+</instruction>
 
-ABSOLUTE REQUIREMENTS:
-- Each title MUST use a DIFFERENT psychological hook from the list above. Never repeat the same hook type.
-- Every title must pass the "scroll test": would a REAL person stop mid-scroll to click this?
-- Titles must sound like a human with genuine enthusiasm or strong opinion wrote them — NOT an AI template
-- Mix lengths naturally: some punchy (25-40 chars), some detailed (50-70 chars)
-- Use emojis SPARINGLY — max 1 emoji on max 3 titles. Most titles should have ZERO emojis.
-- HASHTAGS ARE IMPORTANT FOR SEO: Add 1-2 relevant niche-specific hashtags at the END of 5-6 titles. Use hashtags that real viewers search (e.g. #GamingSetup, #BudgetMeals, #HomeWorkout). The remaining 4-5 titles should be clean with NO hashtags for a punchy viral feel.
+<rules>
+- Each title MUST use a different psychological hook.
+- Sound like a genuine human creator with strong opinions — NOT an AI template.
+- Hashes: Include 1-2 relevant hashtags at the end of 5-6 titles (e.g. #Tech, #Gaming). Keep remaining titles clean.
+- Ban List: Do not use "You Won't Believe", "Shocking Truth", "Ultimate Guide", "Game Changer".
+${excludes.length > 0 ? `- Do NOT repeat previous titles: ${JSON.stringify(excludes)}` : ''}
+</rules>
 
-HARD BANNED (never use these or anything similar):
-"You Won't Believe", "Shocking Truth", "Game Changer", "Mind Blowing", "Changes Everything",
-"What They Don't Tell You", "Nobody Talks About", "Is It Worth It", "The Real Reason",
-"Stop Doing This", "Don't Make This Mistake", "Why I Stopped", "The Truth About",
-"Watch Before You", "This Is Why", "Here's Why", "I Was Wrong About",
-"Everything You Need to Know", "The Ultimate Guide", "Complete Breakdown"
+<output_format>
+Return ONLY a valid JSON array of 10 title strings. Example:
+["Title 1 #Hashtag", "Title 2", "Title 3 #Niche"]
+</output_format>
+[Seed: ${Math.random().toString(36).substring(2, 10)}]`,
+    options: { temperature: 0.9, maxTokens: 800 },
+    parseResponse: safeParseJsonArray
+  });
 
-ALSO BANNED: Starting 3+ titles the same way. Using "..." at the end of more than 1 title. Putting ALL CAPS words in more than 2 titles.
-
-${sanitizedExcludes.length > 0 ? `NEVER repeat or rephrase any of these previous titles: ${JSON.stringify(sanitizedExcludes)}` : ''}
-
-Return ONLY a JSON array of 10 strings. No explanation, no markdown, no numbering.
-[Seed: ${Math.random().toString(36).substring(2, 10)}]`
-      }
-    ], { temperature: 0.9, maxTokens: 800 });
-
-    const titles = safeParseJsonArray(responseText);
-    return { success: true, titles: Array.isArray(titles) ? titles : [] };
-  } catch (error) {
-    console.error('Error generating titles:', error);
-    return { success: false, error: error instanceof Error ? error.message : 'Failed to generate titles.' };
-  }
+  return result.success && result.data
+    ? { success: true, titles: result.data }
+    : { success: false, error: result.error || 'Failed to generate titles.' };
 }

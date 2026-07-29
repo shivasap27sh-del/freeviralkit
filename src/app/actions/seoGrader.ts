@@ -1,6 +1,6 @@
 'use server';
 
-import { generateWithFallback, checkRateLimit, sanitizeInput } from './core';
+import { executeAIGeneration, sanitizeInput } from './core';
 
 export interface SEOResult {
   score: number;
@@ -11,19 +11,14 @@ export interface SEOResult {
 }
 
 export async function gradeVideoSEO(title: string, description: string, tags: string) {
-  try {
-    const rateLimit = await checkRateLimit();
-    if (!rateLimit.allowed) {
-      return { success: false, error: `Rate limit exceeded. Try again in ${rateLimit.retryAfter} seconds.` };
-    }
+  const cleanDesc = sanitizeInput(description, 5000);
+  const cleanTags = sanitizeInput(tags, 1000);
 
-    const cleanTitle = sanitizeInput(title, 200);
-    const cleanDesc = sanitizeInput(description, 5000);
-    const cleanTags = sanitizeInput(tags, 1000);
+  if (!title.trim() && !cleanDesc) return { success: false, error: 'Please enter at least a title and description.' };
 
-    if (!cleanTitle && !cleanDesc) return { success: false, error: 'Please enter at least a title and description.' };
-
-    const systemPrompt = `You are an elite YouTube SEO algorithm analyst.
+  const result = await executeAIGeneration({
+    topic: title,
+    systemPrompt: () => `You are an elite YouTube SEO algorithm analyst.
 Your job is to analyze a user's YouTube Video Title, Description, and Tags together, and grade how well they are optimized for YouTube Search and Click-Through Rate.
 
 Rules for evaluation:
@@ -40,37 +35,29 @@ You MUST return ONLY a valid JSON object with the following structure:
   "recommendations": ["<actionable tip 1>", "<actionable tip 2>"]
 }
 
-Do not include any markdown formatting like \`\`\`json outside the structure. Return raw JSON.`;
-
-    const userPrompt = `Grade the following YouTube metadata:
-Title: ${cleanTitle}
-Description: ${cleanDesc || '(No description provided)'}
-Tags: ${cleanTags || '(No tags provided)'}`;
-
-    const text = await generateWithFallback(
-      [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt }
-      ],
-      { temperature: 0.3, maxTokens: 1000 }
-    );
-
-    let result: SEOResult | null = null;
-    try {
-      const clean = text.replace(/```json/g, '').replace(/```/g, '').trim();
-      result = JSON.parse(clean);
-    } catch (e) {
-      console.error('Failed to parse SEO grader JSON:', e);
-      return { success: false, error: 'Failed to parse the SEO grade.' };
-    }
+Do not include any markdown formatting like \`\`\`json outside the structure. Return raw JSON.`,
     
-    if (!result || typeof result.score !== 'number') {
-      return { success: false, error: 'Failed to generate SEO grade. Please try again.' };
+    userPrompt: () => `Grade the following YouTube metadata:
+Title: ${title}
+Description: ${cleanDesc || '(No description provided)'}
+Tags: ${cleanTags || '(No tags provided)'}`,
+    options: { temperature: 0.3, maxTokens: 1000 },
+    parseResponse: (text) => {
+      let clean = text.replace(/```json/g, '').replace(/```/g, '').trim();
+      const firstBrace = clean.indexOf('{');
+      const lastBrace = clean.lastIndexOf('}');
+      if (firstBrace !== -1 && lastBrace > firstBrace) {
+        clean = clean.substring(firstBrace, lastBrace + 1);
+      }
+      const parsed = JSON.parse(clean);
+      if (!parsed || typeof parsed.score !== 'number') {
+        throw new Error('Failed to parse SEO grade.');
+      }
+      return parsed as SEOResult;
     }
+  });
 
-    return { success: true, result };
-  } catch (error) {
-    console.error('Error in gradeVideoSEO:', error);
-    return { success: false, error: 'An unexpected error occurred while grading SEO.' };
-  }
+  return result.success && result.data
+    ? { success: true, result: result.data }
+    : { success: false, error: result.error || 'Failed to grade SEO.' };
 }

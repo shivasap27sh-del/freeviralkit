@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import { generateTagsOnly } from '@/app/actions/tags';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Tag, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw } from 'lucide-react';
-import ErrorBanner from '@/components/ErrorBanner';
+import { Copy, CheckCircle2, RotateCcw, Tag } from 'lucide-react';
+import ToolWorkspace from './ToolWorkspace';
 
 interface TagsGeneratorClientProps {
   niche?: string;
@@ -45,40 +45,19 @@ export default function TagsGeneratorClient({ niche }: TagsGeneratorClientProps)
   };
 
   return (
-    <>
-      <div className="glass-card rounded-2xl p-6 md:p-8 mb-8">
-        <div className="relative mb-4">
-          <input type="text" value={topic} onChange={e => setTopic(e.target.value)}
-            placeholder={niche ? `Enter your ${niche} video topic or title...` : "Enter your video topic or title (e.g. how to code in javascript, diy projects...)"}
-            className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
-            onKeyDown={e => e.key === 'Enter' && handleGenerate()} />
-        </div>
-
-        {/* Clickable Examples */}
-        <div className="flex flex-wrap items-center gap-2 mb-6">
-          <span className="text-xs text-slate-500 font-medium">Examples:</span>
-          {getExamples().map(ex => (
-            <button
-              key={ex}
-              onClick={() => {
-                setTopic(ex);
-                handleGenerate(ex);
-              }}
-              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-950 hover:bg-slate-200 transition-all cursor-pointer"
-            >
-              {ex}
-            </button>
-          ))}
-        </div>
-
-        <button onClick={() => handleGenerate()} disabled={!topic.trim() || isGenerating}
-          className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2 cursor-pointer">
-          {isGenerating ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating Tags...</> : <><Sparkles className="w-5 h-5" /> Generate Tags</>}
-        </button>
-      </div>
-
-      <ErrorBanner error={error} onClear={() => setError(null)} />
-
+    <ToolWorkspace
+      topic={topic}
+      setTopic={setTopic}
+      placeholder={niche ? `Enter your ${niche} video topic or title...` : "Enter your video topic or title (e.g. how to code in javascript, diy projects...)"}
+      examples={getExamples()}
+      isGenerating={isGenerating}
+      onGenerate={handleGenerate}
+      error={error}
+      onClearError={() => setError(null)}
+      buttonText="Generate Tags"
+      generatingText="Generating Tags..."
+      icon={<Tag className="w-5 h-5" />}
+    >
       <AnimatePresence>
         {tags.length > 0 && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
@@ -113,12 +92,9 @@ export default function TagsGeneratorClient({ niche }: TagsGeneratorClientProps)
                 </motion.button>
               ))}
             </div>
-
             {/* Pro Tip */}
             <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-2xl p-5">
-              <h3 className="font-display font-semibold text-cyan-500 mb-1 flex items-center gap-1.5">
-                💡 Pro Tip: Tag Priority Order
-              </h3>
+              <h3 className="font-display font-semibold text-cyan-500 mb-1 flex items-center gap-1.5">💡 Pro Tip: Tag Priority Order</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Put your main target focus keyword as the first tag. YouTube weighs early tags slightly higher in search categorization. Keep tags relevant and avoid generic words.
               </p>
@@ -126,6 +102,6 @@ export default function TagsGeneratorClient({ niche }: TagsGeneratorClientProps)
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </ToolWorkspace>
   );
 }

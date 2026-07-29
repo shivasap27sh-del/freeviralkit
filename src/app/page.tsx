@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getPublishedPosts } from '@/app/blog/data';
 
+export const revalidate = 3600; // Cache on Vercel Edge CDN for 1 hour with SWR background revalidation
+
 export const metadata: Metadata = {
   title: 'Free AI YouTube SEO & Title Generator',
   description:

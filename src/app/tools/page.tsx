@@ -23,6 +23,8 @@ import {
   Search,
 } from 'lucide-react';
 
+export const revalidate = 3600; // Cache on Vercel Edge CDN for 1 hour with SWR background revalidation
+
 export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',

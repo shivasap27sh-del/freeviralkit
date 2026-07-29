@@ -1,28 +1,13 @@
 'use server';
 
-import { checkRateLimit, generateWithFallback, sanitizeInput, searchGroundedContext } from './core';
+import { executeAIGeneration } from './core';
 
 export async function generateDescriptionOnly(topic: string, excludeDescription = '', niche?: string, webContext?: string) {
-  try {
-    const sanitizedTopic = sanitizeInput(topic);
-    if (!sanitizedTopic) {
-      return { success: false, error: 'Topic cannot be empty.' };
-    }
-
-    const rateLimit = await checkRateLimit();
-    if (!rateLimit.allowed) {
-      return { success: false, error: `Rate limit exceeded. Please wait ${rateLimit.retryAfter} seconds.` };
-    }
-
-    const sanitizedExclude = sanitizeInput(excludeDescription, 1000);
-
-    // Use provided web context or fetch fresh context for standalone usage
-    const context = webContext ?? await searchGroundedContext(sanitizedTopic);
-
-    const description = await generateWithFallback([
-      {
-        role: 'system',
-        content: `You are a YouTube creator who writes descriptions that actually GET READ and drive action. You know that 90% of YouTube descriptions are copy-paste garbage with the same emoji CTAs and keyword stuffing — and you're the opposite.
+  const result = await executeAIGeneration({
+    topic,
+    excludeItems: excludeDescription ? [excludeDescription] : [],
+    overrideWebContext: webContext,
+    systemPrompt: (context) => `You are a YouTube creator who writes descriptions that actually GET READ and drive action. You know that 90% of YouTube descriptions are copy-paste garbage with the same emoji CTAs and keyword stuffing — and you're the opposite.
 
 You understand the anatomy of a high-performing YouTube description:
 • FIRST 150 CHARACTERS are EVERYTHING — this is what shows in search results and above the "Show More" fold. You front-load the hook and primary keyword here.
@@ -38,11 +23,9 @@ FORMAT D — QUESTION OPENER: Start with a provocative question the viewer is al
 
 You pick the format that best matches the video topic — you NEVER default to the same structure twice.
 ${niche ? `CRITICAL: Write as someone deeply embedded in the "${niche}" niche. Use the tone, vocabulary, and cultural references that ${niche} creators naturally use. Match the energy of the community.` : ''}
-${context ? `\nCURRENT REAL-WORLD CONTEXT (use specific facts, names, and details from this to write an informed description):\n${context}` : ''}`
-      },
-      {
-        role: 'user',
-        content: `Write a YouTube description for: "${sanitizedTopic}"
+${(webContext ?? context) ? `\nCURRENT REAL-WORLD CONTEXT (use specific facts, names, and details from this to write an informed description):\n${webContext ?? context}` : ''}`,
+    
+    userPrompt: (context, excludes) => `Write a YouTube description for: "${topic}"
 
 STRUCTURE (pick the best FORMAT from your training — DO NOT always use the same one):
 1. HOOK (first 150 chars): A compelling opening that includes the primary keyword naturally. This MUST make someone want to click "Show More"
@@ -58,16 +41,15 @@ ABSOLUTE RULES:
 - Front-load the most important keyword in the FIRST sentence
 - Sound like a real creator talking to their audience, not an SEO robot
 - Use line breaks for readability — no giant walls of text
-${sanitizedExclude ? `- Write a COMPLETELY different description structure and angle compared to this previous version: "${sanitizedExclude.slice(0, 300)}..."` : ''}
+${excludes.length > 0 ? `- Write a COMPLETELY different description structure and angle compared to this previous version: "${excludes[0].slice(0, 300)}..."` : ''}
 
 Return ONLY the description as plain text. No JSON, no markdown formatting.
-[Seed: ${Math.random().toString(36).substring(2, 10)}]`
-      }
-    ], { temperature: 0.8, maxTokens: 600 });
+[Seed: ${Math.random().toString(36).substring(2, 10)}]`,
+    options: { temperature: 0.8, maxTokens: 600 },
+    parseResponse: (text) => text.trim()
+  });
 
-    return { success: true, description };
-  } catch (error) {
-    console.error('Error generating description:', error);
-    return { success: false, error: error instanceof Error ? error.message : 'Failed to generate description.' };
-  }
+  return result.success && result.data
+    ? { success: true, description: result.data }
+    : { success: false, error: result.error || 'Failed to generate description.' };
 }

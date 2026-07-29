@@ -1,6 +1,6 @@
 'use server';
 
-import { generateWithFallback, checkRateLimit, sanitizeInput } from './core';
+import { executeAIGeneration } from './core';
 
 export interface ThumbnailConcept {
   visual: string;
@@ -9,16 +9,9 @@ export interface ThumbnailConcept {
 }
 
 export async function generateThumbnailConcepts(topic: string) {
-  try {
-    const rateLimit = await checkRateLimit();
-    if (!rateLimit.allowed) {
-      return { success: false, error: `Rate limit exceeded. Try again in ${rateLimit.retryAfter} seconds.` };
-    }
-
-    const cleanTopic = sanitizeInput(topic);
-    if (!cleanTopic) return { success: false, error: 'Please enter a valid video topic.' };
-
-    const systemPrompt = `You are a top-tier YouTube thumbnail designer and CTR (Click-Through Rate) expert.
+  const result = await executeAIGeneration({
+    topic,
+    systemPrompt: () => `You are a top-tier YouTube thumbnail designer and CTR (Click-Through Rate) expert.
 Your job is to generate 3 high-converting thumbnail concepts for a given video topic.
 Do NOT just describe a generic image. Give specific, psychological, and high-contrast concepts that provoke curiosity.
 Each concept must have:
@@ -35,34 +28,21 @@ Example output:
     "textOverlay": "I WAS WRONG.",
     "whyItWorks": "The contrast creates a visual story of transformation, while the text opens a curiosity loop."
   }
-]`;
-
-    const userPrompt = `Generate 3 thumbnail concepts for the video topic: "${cleanTopic}"`;
-
-    const text = await generateWithFallback(
-      [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt }
-      ],
-      { temperature: 0.7, maxTokens: 800 }
-    );
-
-    let concepts: ThumbnailConcept[] = [];
-    try {
-      const clean = text.replace(/```json/g, '').replace(/```/g, '').trim();
-      concepts = JSON.parse(clean);
-    } catch (e) {
-      console.error('Failed to parse thumbnail concepts JSON:', e);
-      return { success: false, error: 'Failed to parse generated concepts.' };
-    }
+]`,
     
-    if (!concepts || concepts.length === 0) {
-      return { success: false, error: 'Failed to generate concepts. Please try again.' };
+    userPrompt: () => `Generate 3 thumbnail concepts for the video topic: "${topic}"`,
+    options: { temperature: 0.7, maxTokens: 800 },
+    parseResponse: (text) => {
+      const clean = text.replace(/```json/g, '').replace(/```/g, '').trim();
+      const parsed = JSON.parse(clean);
+      if (!Array.isArray(parsed) || parsed.length === 0) {
+        throw new Error('AI returned empty or malformed concepts.');
+      }
+      return parsed as ThumbnailConcept[];
     }
+  });
 
-    return { success: true, concepts };
-  } catch (error) {
-    console.error('Error in generateThumbnailConcepts:', error);
-    return { success: false, error: 'An unexpected error occurred while generating concepts.' };
-  }
+  return result.success && result.data
+    ? { success: true, concepts: result.data }
+    : { success: false, error: result.error || 'Failed to generate concepts.' };
 }

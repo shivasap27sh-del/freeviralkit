@@ -1,20 +1,16 @@
 'use server';
 
-import { checkRateLimit, generateWithFallback, sanitizeInput, searchGroundedContext } from './core';
+import { checkRateLimit, executeAIGeneration, sanitizeInput, searchGroundedContext } from './core';
 import { generateTagsOnly } from './tags';
 import { generateHashtagsOnly } from './hashtags';
 import { generateDescriptionOnly } from './descriptions';
 
 async function generatePinnedComment(title: string, webContext?: string): Promise<string> {
-  const text = await generateWithFallback([
-    {
-      role: 'system',
-      content: `You are a YouTube engagement expert. You write pinned comments that drive replies and boost watch time.
-${webContext ? `\nCURRENT CONTEXT about this topic:\n${webContext}` : ''}`
-    },
-    {
-      role: 'user',
-      content: `Write a pinned comment for a YouTube video titled: "${title}"
+  const result = await executeAIGeneration({
+    topic: title,
+    systemPrompt: () => `You are a YouTube engagement expert. You write pinned comments that drive replies and boost watch time.
+${webContext ? `\nCURRENT CONTEXT about this topic:\n${webContext}` : ''}`,
+    userPrompt: () => `Write a pinned comment for a YouTube video titled: "${title}"
  
 RULES:
 - Start with a hook or question that makes people REPLY
@@ -26,10 +22,11 @@ RULES:
 - Do NOT say "pin this" or "pinned comment"
  
 Return ONLY the comment as plain text.
-[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`
-    }
-  ], { temperature: 0.8, maxTokens: 200 });
-  return text;
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
+    options: { temperature: 0.8, maxTokens: 200 },
+    parseResponse: (text) => text.trim()
+  });
+  return result.success && result.data ? result.data : '';
 }
 
 export async function generateDetails(
@@ -63,7 +60,7 @@ export async function generateDetails(
       success: true,
       details: {
         description: descriptionResult.description || '',
-        hashtags: tagsResult.success && 'hashtags' in hashtagsResult ? (hashtagsResult as any).hashtags : [],
+        hashtags: hashtagsResult.success && 'hashtags' in hashtagsResult ? (hashtagsResult as any).hashtags : [],
         tags: tagsResult.success && 'tags' in tagsResult ? (tagsResult as any).tags : [],
         pinnedComment,
       },

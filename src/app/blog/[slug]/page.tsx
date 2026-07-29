@@ -6,6 +6,8 @@ import { Calendar, Clock, ArrowLeft, Tag, User } from 'lucide-react';
 
 
 
+export const revalidate = 3600; // Cache on Vercel Edge CDN for 1 hour with SWR background revalidation
+
 type Props = {
   params: Promise<{ slug: string }>;
 };

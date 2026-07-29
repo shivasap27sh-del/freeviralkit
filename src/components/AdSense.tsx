@@ -49,7 +49,7 @@ export function AdUnit({
   }
 
   return (
-    <div className={`ad-container ${className}`} style={{ textAlign: 'center', overflow: 'hidden', ...style }}>
+    <div className={`ad-container ${className}`} style={{ textAlign: 'center', overflow: 'hidden', minHeight: style.minHeight || '90px', ...style }}>
       <ins
         className="adsbygoogle"
         style={{ display: 'block', ...style }}

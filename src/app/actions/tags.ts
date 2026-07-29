@@ -1,30 +1,13 @@
 'use server';
 
-import { checkRateLimit, generateWithFallback, safeParseJsonArray, sanitizeInput, searchGroundedContext } from './core';
+import { executeAIGeneration, safeParseJsonArray } from './core';
 
 export async function generateTagsOnly(topic: string, excludeTags: string[] = [], niche?: string, webContext?: string) {
-  try {
-    const sanitizedTopic = sanitizeInput(topic);
-    if (!sanitizedTopic) {
-      return { success: false, error: 'Topic cannot be empty.' };
-    }
-
-    const rateLimit = await checkRateLimit();
-    if (!rateLimit.allowed) {
-      return { success: false, error: `Rate limit exceeded. Please wait ${rateLimit.retryAfter} seconds.` };
-    }
-
-    const sanitizedExcludes = Array.isArray(excludeTags) 
-      ? excludeTags.map(t => sanitizeInput(t)).filter(Boolean)
-      : [];
-
-    // Use provided web context or fetch fresh context for standalone usage
-    const context = webContext ?? await searchGroundedContext(sanitizedTopic);
-
-    const text = await generateWithFallback([
-      {
-        role: 'system',
-        content: `You are a YouTube SEO specialist who understands that tags are YouTube's SECONDARY discovery signal (after title and description), but they still matter for two critical things: helping YouTube understand the EXACT topic of a video, and surfacing the video in "suggested videos" alongside related content.
+  const result = await executeAIGeneration({
+    topic,
+    excludeItems: excludeTags,
+    overrideWebContext: webContext,
+    systemPrompt: (context) => `You are a YouTube SEO specialist who understands that tags are YouTube's SECONDARY discovery signal (after title and description), but they still matter for two critical things: helping YouTube understand the EXACT topic of a video, and surfacing the video in "suggested videos" alongside related content.
 
 You know the difference between tags that waste the 500-character limit and tags that actually drive impressions:
 • EXACT MATCH — the precise phrase a viewer would type into YouTube search
@@ -36,11 +19,9 @@ You know the difference between tags that waste the 500-character limit and tags
 
 You NEVER waste characters on generic filler tags that don't help YouTube understand the video.
 ${niche ? `CRITICAL: You are working within the "${niche}" niche. Use terminology, brand names, tools, and jargon specific to ${niche} that real ${niche} enthusiasts would search for.` : ''}
-${context ? `\nCURRENT REAL-WORLD CONTEXT (use real names, products, and search terms people are using right now):\n${context}` : ''}`
-      },
-      {
-        role: 'user',
-        content: `Generate 15-20 YouTube tags for: "${sanitizedTopic}"
+${(webContext ?? context) ? `\nCURRENT REAL-WORLD CONTEXT (use real names, products, and search terms people are using right now):\n${webContext ?? context}` : ''}`,
+    
+    userPrompt: (context, excludes) => `Generate 15-20 YouTube tags for: "${topic}"
 
 REQUIREMENTS:
 - Tags 1-6: EXACT SEARCH QUERIES — the precise phrases someone would type to find this video
@@ -55,17 +36,15 @@ RULES:
 - NEVER include these useless filler tags: "viral", "trending", "fyp", "for you", "must watch", "best video"
 - Only include "shorts" or "youtube shorts" if the topic is explicitly about short-form content
 - Each tag must answer: "Would a real person type this into YouTube search?"
-${sanitizedExcludes.length > 0 ? `- DO NOT repeat any of these previous tags: ${JSON.stringify(sanitizedExcludes)}` : ''}
+${excludes.length > 0 ? `- DO NOT repeat any of these previous tags: ${JSON.stringify(excludes)}` : ''}
 
 Return ONLY a JSON array of strings. No markdown, no explanation.
-[Seed: ${Math.random().toString(36).substring(2, 10)}]`
-      }
-    ], { temperature: 0.8, maxTokens: 500 });
+[Seed: ${Math.random().toString(36).substring(2, 10)}]`,
+    options: { temperature: 0.8, maxTokens: 500 },
+    parseResponse: safeParseJsonArray
+  });
 
-    const tags = safeParseJsonArray(text);
-    return { success: true, tags: Array.isArray(tags) ? tags : [] };
-  } catch (error) {
-    console.error('Error generating tags:', error);
-    return { success: false, error: error instanceof Error ? error.message : 'Failed to generate tags.' };
-  }
+  return result.success && result.data
+    ? { success: true, tags: result.data }
+    : { success: false, error: result.error || 'Failed to generate tags.' };
 }
