@@ -59,7 +59,7 @@ export default function ChapterGeneratorClient() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-4 mb-8">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
               <h2 className="font-display text-xl font-semibold">Your Video Chapters</h2>
-              <button onClick={() => copy(formattedText, 'all-chapters')} className="copy-btn cursor-pointer">
+              <button onClick={() => copy(formattedText, 'all-chapters')} aria-label="Copy all chapters" className="copy-btn cursor-pointer">
                 {copiedStates['all-chapters'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600 dark:text-slate-400" /> Copy All for YouTube</>}
               </button>
             </div>

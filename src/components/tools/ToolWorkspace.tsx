@@ -33,15 +33,15 @@ export default function ToolWorkspace({
 }: ToolWorkspaceProps) {
   return (
     <>
-      <div className="glass-card rounded-2xl p-6 md:p-8 mb-8">
+      <form onSubmit={(e) => { e.preventDefault(); onGenerate(); }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
         <div className="relative mb-4">
           <input
             type="text"
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
             placeholder={placeholder}
+            aria-label="Enter your video topic"
             className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
-            onKeyDown={(e) => e.key === 'Enter' && onGenerate()}
           />
         </div>
 
@@ -52,6 +52,7 @@ export default function ToolWorkspace({
             {examples.map((ex) => (
               <button
                 key={ex}
+                type="button"
                 onClick={() => {
                   setTopic(ex);
                   onGenerate(ex);
@@ -66,6 +67,7 @@ export default function ToolWorkspace({
 
         {/* Generate Button */}
         <button
+          type="submit"
           onClick={() => onGenerate()}
           disabled={!topic.trim() || isGenerating}
           className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2 cursor-pointer"
@@ -80,7 +82,7 @@ export default function ToolWorkspace({
             </>
           )}
         </button>
-      </div>
+      </form>
 
       <ErrorBanner error={error} onClear={onClearError} />
 

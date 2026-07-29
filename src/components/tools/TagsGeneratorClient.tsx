@@ -64,11 +64,11 @@ export default function TagsGeneratorClient({ niche }: TagsGeneratorClientProps)
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
               <div className="flex items-center gap-3">
                 <h2 className="font-display text-xl font-semibold">🏷️ Your Tags</h2>
-                <button onClick={() => handleGenerate(undefined, true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer">
+                <button onClick={() => handleGenerate(undefined, true)} aria-label="Regenerate tags" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-sm text-slate-600 hover:text-slate-900 transition-colors cursor-pointer">
                   <RotateCcw className="w-3.5 h-3.5" /> Regenerate
                 </button>
               </div>
-              <button onClick={() => copy(tags.join(', '), 'all-tags')} className="copy-btn cursor-pointer">
+              <button onClick={() => copy(tags.join(', '), 'all-tags')} aria-label="Copy all tags" className="copy-btn cursor-pointer">
                 {copiedStates['all-tags'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy All</>}
               </button>
             </div>
@@ -87,6 +87,7 @@ export default function TagsGeneratorClient({ niche }: TagsGeneratorClientProps)
               {tags.map((tag, idx) => (
                 <motion.button key={idx} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: idx * 0.03 }}
                   onClick={() => copy(tag, `tag-${idx}`)}
+                  aria-label="Copy tag"
                   className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-500 text-sm font-medium hover:bg-cyan-500/20 hover:scale-105 transition-all cursor-pointer">
                   {copiedStates[`tag-${idx}`] ? <span className="text-green-400">✓</span> : tag}
                 </motion.button>

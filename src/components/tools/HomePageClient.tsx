@@ -230,7 +230,7 @@ export default function HomePageClient() {
                         <span className="text-xs text-slate-500">{details.description.split(/\s+/).length} words</span>
                       </div>
                     </div>
-                    <button onClick={() => copy(stripMarkdown(details.description), 'desc')} className="copy-btn cursor-pointer">
+                    <button onClick={() => copy(stripMarkdown(details.description), 'desc')} className="copy-btn cursor-pointer" aria-label="Copy description">
                       {copiedStates['desc'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy</>}
                     </button>
                   </div>
@@ -251,7 +251,7 @@ export default function HomePageClient() {
                         <span className="text-xs text-slate-500">⭐ First 3 appear above your video title</span>
                       </div>
                     </div>
-                    <button onClick={() => copy(details.hashtags.join(' '), 'hash')} className="copy-btn cursor-pointer">
+                    <button onClick={() => copy(details.hashtags.join(' '), 'hash')} className="copy-btn cursor-pointer" aria-label="Copy hashtags">
                       {copiedStates['hash'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy All</>}
                     </button>
                   </div>
@@ -280,7 +280,7 @@ export default function HomePageClient() {
                         <span className="text-xs text-slate-500">Paste in YouTube Studio → Tags</span>
                       </div>
                     </div>
-                    <button onClick={() => copy(details.tags.join(', '), 'tags')} className="copy-btn cursor-pointer">
+                    <button onClick={() => copy(details.tags.join(', '), 'tags')} className="copy-btn cursor-pointer" aria-label="Copy tags">
                       {copiedStates['tags'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy All</>}
                     </button>
                   </div>
@@ -319,7 +319,7 @@ export default function HomePageClient() {
                           <span className="text-xs text-slate-500">Pin this to boost engagement</span>
                         </div>
                       </div>
-                      <button onClick={() => copy(details.pinnedComment, 'pinned')} className="copy-btn cursor-pointer">
+                      <button onClick={() => copy(details.pinnedComment, 'pinned')} className="copy-btn cursor-pointer" aria-label="Copy pinned comment">
                         {copiedStates['pinned'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy</>}
                       </button>
                     </div>

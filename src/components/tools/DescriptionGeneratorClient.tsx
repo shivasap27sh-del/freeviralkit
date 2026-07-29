@@ -149,7 +149,7 @@ export default function DescriptionGeneratorClient({ niche }: DescriptionGenerat
                   <RotateCcw className="w-3.5 h-3.5" /> Regenerate
                 </button>
               </div>
-              <button onClick={() => copy(stripMarkdown(description), 'desc')} className="copy-btn cursor-pointer">
+              <button onClick={() => copy(stripMarkdown(description), 'desc')} aria-label="Copy description" className="copy-btn cursor-pointer">
                 {copiedStates['desc'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600 dark:text-slate-400" /> Copy Description</>}
               </button>
             </div>

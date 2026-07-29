@@ -90,7 +90,7 @@ export default function HashtagGeneratorClient({ niche }: HashtagGeneratorClient
                   <RotateCcw className="w-3.5 h-3.5" /> Regenerate
                 </button>
               </div>
-              <button onClick={() => copy(hashtags.join(' '), 'all-ht')} className="copy-btn cursor-pointer">
+              <button onClick={() => copy(hashtags.join(' '), 'all-ht')} aria-label="Copy all hashtags" className="copy-btn cursor-pointer">
                 {copiedStates['all-ht'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600" /> Copy All</>}
               </button>
             </div>

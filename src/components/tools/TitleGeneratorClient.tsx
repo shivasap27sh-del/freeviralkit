@@ -88,18 +88,18 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
 
   return (
     <>
-      <div className="glass-card rounded-2xl p-6 md:p-8 mb-8">
+      <form onSubmit={(e) => { e.preventDefault(); handleGenerate(); }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
         <div className="relative mb-4">
           <input type="text" value={topic} onChange={e => setTopic(e.target.value)}
             placeholder={niche ? `Enter your ${niche} video topic...` : "Enter your video topic (e.g. how to edit videos, fitness routine, gaming tips...)"}
-            className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
-            onKeyDown={e => e.key === 'Enter' && handleGenerate()} />
+            aria-label="Enter your video topic"
+            className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg" />
         </div>
-        <button onClick={() => handleGenerate(false)} disabled={!topic.trim() || isGenerating}
+        <button type="submit" onClick={() => handleGenerate(false)} disabled={!topic.trim() || isGenerating}
           className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2 cursor-pointer">
           {isGenerating ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating Titles...</> : <><Wand2 className="w-5 h-5" /> Generate 10 Titles</>}
         </button>
-      </div>
+      </form>
 
       {error && (
         <div className="bg-red-500/10 border border-red-500/20 text-red-500 rounded-xl p-4 mb-8 flex items-center gap-3">
@@ -155,6 +155,7 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
                         e.stopPropagation();
                         copy(title, `title-${idx}`);
                       }}
+                      aria-label="Copy title"
                       className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 shrink-0 cursor-pointer"
                     >
                       {copiedStates[`title-${idx}`] ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-slate-500 dark:text-slate-400" />}
@@ -162,7 +163,7 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
                   </motion.div>
                 ))}
 
-                <button onClick={() => copy(titles.join('n'), 'all-titles')} className="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer">
+                <button onClick={() => copy(titles.join('\n'), 'all-titles')} aria-label="Copy all titles" className="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer">
                   {copiedStates['all-titles'] ? '✓ All Titles Copied!' : 'Copy All Titles'}
                 </button>
               </div>

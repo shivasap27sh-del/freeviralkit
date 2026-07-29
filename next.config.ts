@@ -41,6 +41,11 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  // Serve modern image formats for smaller payloads
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
+
   // Disable powered-by header (tiny optimization)
   poweredByHeader: false,
 };
