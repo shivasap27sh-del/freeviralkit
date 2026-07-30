@@ -9,21 +9,7 @@ export default function Loading() {
       <div className="max-w-2xl w-full">
         {/* Animated loading indicator */}
         <div className="flex items-center justify-center gap-3 mb-10">
-          <div className="flex gap-1.5">
-            <span
-              className="w-2.5 h-2.5 rounded-full bg-purple-500"
-              style={{ animation: 'pulse 1.2s ease-in-out infinite' }}
-            />
-            <span
-              className="w-2.5 h-2.5 rounded-full bg-pink-500"
-              style={{ animation: 'pulse 1.2s ease-in-out 0.2s infinite' }}
-            />
-            <span
-              className="w-2.5 h-2.5 rounded-full bg-cyan-500"
-              style={{ animation: 'pulse 1.2s ease-in-out 0.4s infinite' }}
-            />
-          </div>
-          <span className="text-sm font-medium text-slate-500">Loading...</span>
+        <div className="flex gap-1.5" role="status" aria-label="Loading">
         </div>
 
         {/* Content skeleton */}

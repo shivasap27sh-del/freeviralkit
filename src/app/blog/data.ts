@@ -1,4 +1,5 @@
 import { Pool } from 'pg';
+import { unstable_cache } from 'next/cache';
 
 export interface BlogPost {
   slug: string;
@@ -189,7 +190,13 @@ function mapRowToBlogPost(row: any): BlogPost {
   };
 }
 
-export async function getPublishedPosts(): Promise<BlogPost[]> {
+// --- Cached data functions ---
+// Wrapping raw pg queries with unstable_cache lets Next.js prerender blog pages
+// at build time (ISR). Without this, async DB calls make pages dynamic, causing
+// the Suspense loading.tsx fallback ("Loading…") to appear in the initial HTML
+// shell that crawlers receive — hurting SEO.
+
+const _getPublishedPosts = async (): Promise<BlogPost[]> => {
   if (!pool) return FALLBACK_POSTS;
   try {
     const { rows } = await pool.query(`
@@ -204,9 +211,15 @@ export async function getPublishedPosts(): Promise<BlogPost[]> {
     console.error('getPublishedPosts DB error:', error);
     return FALLBACK_POSTS;
   }
-}
+};
 
-export async function getPublishedPostBySlug(slug: string): Promise<BlogPost | undefined> {
+export const getPublishedPosts = unstable_cache(
+  _getPublishedPosts,
+  ['blog-published-posts'],
+  { tags: ['blog-posts'], revalidate: 3600 }
+);
+
+const _getPublishedPostBySlug = async (slug: string): Promise<BlogPost | undefined> => {
   if (pool) {
     try {
       const { rows } = await pool.query(`
@@ -221,9 +234,15 @@ export async function getPublishedPostBySlug(slug: string): Promise<BlogPost | u
     }
   }
   return FALLBACK_POSTS.find(p => p.slug === slug);
-}
+};
 
-export async function getPostBySlug(slug: string): Promise<BlogPost | undefined> {
+export const getPublishedPostBySlug = unstable_cache(
+  _getPublishedPostBySlug,
+  ['blog-published-post-by-slug'],
+  { tags: ['blog-posts'], revalidate: 3600 }
+);
+
+const _getPostBySlug = async (slug: string): Promise<BlogPost | undefined> => {
   if (pool) {
     try {
       const { rows } = await pool.query('SELECT * FROM posts WHERE slug = $1 LIMIT 1;', [slug]);
@@ -233,9 +252,15 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | undefined>
     }
   }
   return FALLBACK_POSTS.find(p => p.slug === slug);
-}
+};
 
-export async function getAllSlugs(): Promise<string[]> {
+export const getPostBySlug = unstable_cache(
+  _getPostBySlug,
+  ['blog-post-by-slug'],
+  { tags: ['blog-posts'], revalidate: 3600 }
+);
+
+const _getAllSlugs = async (): Promise<string[]> => {
   if (pool) {
     try {
       const { rows } = await pool.query('SELECT slug FROM posts LIMIT 1000;');
@@ -245,9 +270,15 @@ export async function getAllSlugs(): Promise<string[]> {
     }
   }
   return FALLBACK_POSTS.map(p => p.slug);
-}
+};
 
-export async function getPublishedSlugs(): Promise<string[]> {
+export const getAllSlugs = unstable_cache(
+  _getAllSlugs,
+  ['blog-all-slugs'],
+  { tags: ['blog-posts'], revalidate: 3600 }
+);
+
+const _getPublishedSlugs = async (): Promise<string[]> => {
   if (pool) {
     try {
       const { rows } = await pool.query(`
@@ -261,7 +292,13 @@ export async function getPublishedSlugs(): Promise<string[]> {
     }
   }
   return FALLBACK_POSTS.map(p => p.slug);
-}
+};
+
+export const getPublishedSlugs = unstable_cache(
+  _getPublishedSlugs,
+  ['blog-published-slugs'],
+  { tags: ['blog-posts'], revalidate: 3600 }
+);
 
 export async function getRelatedPosts(currentSlug: string, count = 3): Promise<BlogPost[]> {
   const allPosts = await getPublishedPosts();
