@@ -2,14 +2,28 @@
  * Global loading skeleton for Next.js App Router.
  * Displayed automatically during route transitions (client-side navigation).
  * Uses the existing shimmer animation from globals.css for consistency.
+ * NOTE: No visible text here — crawlers must never index "Loading..." as page content.
  */
 export default function Loading() {
   return (
     <main className="min-h-[60vh] flex items-center justify-center px-4 py-16">
       <div className="max-w-2xl w-full">
-        {/* Animated loading indicator */}
+        {/* Animated loading indicator — dots only, no indexable text */}
         <div className="flex items-center justify-center gap-3 mb-10">
-        <div className="flex gap-1.5" role="status" aria-label="Loading">
+          <div className="flex gap-1.5" role="status" aria-label="Loading">
+            <span
+              className="w-2.5 h-2.5 rounded-full bg-purple-500"
+              style={{ animation: 'pulse 1.2s ease-in-out infinite' }}
+            />
+            <span
+              className="w-2.5 h-2.5 rounded-full bg-pink-500"
+              style={{ animation: 'pulse 1.2s ease-in-out 0.2s infinite' }}
+            />
+            <span
+              className="w-2.5 h-2.5 rounded-full bg-cyan-500"
+              style={{ animation: 'pulse 1.2s ease-in-out 0.4s infinite' }}
+            />
+          </div>
         </div>
 
         {/* Content skeleton */}
@@ -31,3 +45,4 @@ export default function Loading() {
     </main>
   );
 }
+
