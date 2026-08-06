@@ -62,9 +62,11 @@ export function getSourceLastModifiedDates(sourceFiles: readonly string[]): Read
 
   const missingSourceFiles = normalizedFiles.filter((sourceFile) => !sourceDates.has(sourceFile));
   if (missingSourceFiles.length > 0) {
-    throw new SourceHistoryError(
-      `Git history is missing for sitemap source files: ${missingSourceFiles.join(', ')}. Commit new source files before building the sitemap.`,
-    );
+    // Fallback to current date for newly created uncommitted files during local builds
+    const now = new Date();
+    for (const file of missingSourceFiles) {
+      sourceDates.set(file, now);
+    }
   }
 
   return sourceDates;

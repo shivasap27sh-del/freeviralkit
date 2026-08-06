@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { generateTitles } from '@/app/actions/titles';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Wand2, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, Eye, Award, Check, AlertTriangle } from 'lucide-react';
+import { Wand2, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, Eye, Award, Check, AlertTriangle, Film, Globe, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
 interface TitleGeneratorClientProps {
   niche?: string;
@@ -88,6 +89,23 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
 
   return (
     <>
+      {/* Real-Time Movie AI Tool Banner */}
+      <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-indigo-900/40 via-purple-900/40 to-slate-900/40 border border-indigo-500/20 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <span className="p-2 rounded-xl bg-indigo-500/20 text-indigo-300">🎬</span>
+          <div className="text-sm">
+            <span className="font-semibold text-white">Making a video about a real movie, news, or release? </span>
+            <span className="text-slate-300">Try our Real-Time AI Generator for live plot facts, tags & descriptions.</span>
+          </div>
+        </div>
+        <Link
+          href="/youtube-realtime-title-generator"
+          className="shrink-0 px-4 py-2 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center gap-1.5"
+        >
+          Real-Time Movie Tool ⚡ <ExternalLink className="w-3.5 h-3.5" />
+        </Link>
+      </div>
+
       <form onSubmit={(e) => { e.preventDefault(); handleGenerate(); }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
         <div className="relative mb-4">
           <input type="text" value={topic} onChange={e => setTopic(e.target.value)}
