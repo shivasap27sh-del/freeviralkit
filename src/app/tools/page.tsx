@@ -66,6 +66,13 @@ const colorMap = {
 
 const coreTools = [
   {
+    href: '/youtube-realtime-title-generator',
+    title: 'Real-Time Movie & Live AI Generator ⚡',
+    description: 'Fetch live real-world movie plot facts, cast info, and trending news to generate accurate titles, tags & descriptions.',
+    icon: Clapperboard,
+    color: 'purple',
+  },
+  {
     href: '/youtube-title-generator',
     title: 'YouTube Title Generator',
     description: 'Get 10 viral, click-worthy, and SEO-optimized video titles in seconds.',
