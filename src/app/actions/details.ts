@@ -46,8 +46,8 @@ export async function generateDetails(
       return { success: false, error: `Rate limit exceeded. Please wait ${rateLimit.retryAfter} seconds.` };
     }
 
-    // Fetch web context ONCE and share it with all sub-generators
-    const webContext = await searchGroundedContext(sanitizedTitle);
+    // Pure AI generation without Tavily web search overhead for homepage
+    const webContext = '';
 
     const [tagsResult, hashtagsResult, descriptionResult, pinnedComment] = await Promise.all([
       generateTagsOnly(sanitizedTitle, excludeTags, undefined, webContext),

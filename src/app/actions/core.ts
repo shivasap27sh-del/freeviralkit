@@ -581,7 +581,7 @@ export async function executeAIGeneration<T>({
       ? excludeItems.map(t => sanitizeInput(t)).filter(Boolean)
       : [];
 
-    const webContext = overrideWebContext !== undefined ? overrideWebContext : await searchGroundedContext(sanitizedTopic);
+    const webContext = overrideWebContext !== undefined ? overrideWebContext : '';
 
     const finalSystemPrompt = typeof systemPrompt === 'function' ? systemPrompt(webContext) : systemPrompt;
     const finalUserPrompt = typeof userPrompt === 'function' ? userPrompt(webContext, sanitizedExcludes) : userPrompt;
