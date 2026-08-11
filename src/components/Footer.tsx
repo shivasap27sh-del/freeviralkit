@@ -144,6 +144,22 @@ export default function Footer() {
             </a>
           </div>
           <div className="hover:scale-105 transition-transform duration-200 inline-flex">
+            <a
+              href="https://mediapronet.com/?utm_source=freeviralkit.com&utm_medium=badge"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://mediapronet.com/api/badge?style=classic"
+                alt="Browse us on MEDIAPRONET"
+                height="54"
+                loading="lazy"
+                className="h-[54px] w-auto"
+              />
+            </a>
+          </div>
+          <div className="hover:scale-105 transition-transform duration-200 inline-flex">
             <a href="https://twelve.tools" target="_blank" rel="noopener noreferrer">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" width="200" height="54" loading="lazy" />
