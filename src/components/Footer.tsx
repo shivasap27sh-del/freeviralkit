@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Logo from '@/components/Logo';
+import { useState, useEffect } from 'react';
 
 const footerLinks = {
   Product: [
@@ -29,6 +30,12 @@ const footerLinks = {
 };
 
 export default function Footer() {
+  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>('light');
+
+  useEffect(() => {
+    setCurrentTheme(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  }, []);
+
   return (
     <footer className="relative z-10 border-t border-slate-200 dark:border-slate-800 mt-16">
       <div className="container mx-auto px-6 max-w-6xl py-12">
@@ -102,7 +109,7 @@ export default function Footer() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1223625&theme=${typeof document !== 'undefined' && document.documentElement.classList.contains('dark') ? 'dark' : 'light'}&size=small`}
+                src={`https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1223625&theme=${currentTheme}&size=small`}
                 alt="FreeViralKit - 10x your YouTube views with AI-generated titles &amp; SEO | Product Hunt"
                 width="86"
                 height="32"

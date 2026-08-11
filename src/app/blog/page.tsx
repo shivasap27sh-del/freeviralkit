@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'YouTube SEO Blog — Tips, Guides & Strategies',
     description: 'Expert YouTube SEO tips and strategies to grow your channel faster.',
     type: 'website',
-    url: 'https://freeviralkit.com/blog',
+    url: buildAbsoluteUrl('/blog'),
     images: [
       {
         url: buildAbsoluteUrl('/banner.png'),
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://freeviralkit.com/blog',
+    canonical: buildAbsoluteUrl('/blog'),
   },
 };
 
@@ -92,7 +92,7 @@ export default async function BlogPage() {
                   year: 'numeric',
                 })}
               </div>
-              <div className="flex items-center gap-1 text-sm text-purple-400 font-medium group-hover:gap-2 transition-all">
+              <div className="flex items-center gap-1 text-sm text-purple-400 font-medium group-hover:gap-2 transition-all duration-300">
                 Read More <ArrowRight className="w-4 h-4" />
               </div>
             </div>

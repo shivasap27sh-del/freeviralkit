@@ -30,13 +30,49 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+  {
+    q: 'Is FreeViralKit really free?',
+    a: 'Yes! FreeViralKit is 100% free to use. No signup, no credit card, no hidden fees.',
+  },
+  {
+    q: 'How does the AI generate titles?',
+    a: 'We use advanced language models trained on millions of successful YouTube titles and SEO patterns to predict high-CTR combinations.',
+  },
+  {
+    q: 'Can I use FreeViralKit for any YouTube niche?',
+    a: 'Absolutely. Our AI auto-detects your niche and generates content optimized for gaming, tech, cooking, vlogs, education, and more.',
+  },
+  {
+    q: 'How do I report a bug or suggest a feature?',
+    a: 'Use the contact form above and select the appropriate topic. We read every single message and actively implement user feedback.',
+  },
+];
+
+const pageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
+
 export default function ContactPage() {
   return (
     <main className="container mx-auto px-6 py-12 max-w-5xl relative z-10 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }}
+      />
       {/* Hero */}
       <section className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-purple-500 bg-purple-500/10 border border-purple-500/20 mb-6 uppercase tracking-wider backdrop-blur-sm">
-          <MessageSquare className="w-4 h-4" /> Reach Out
+          <MessageSquare className="w-4 h-4" aria-hidden="true" /> Reach Out
         </div>
         <h1 className="font-display text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6 text-slate-900 dark:text-white"> Let's Talk </h1>
         <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
@@ -57,7 +93,7 @@ export default function ContactPage() {
             <div className="space-y-8 relative z-10">
               <div className="flex items-start gap-4 group">
                 <div className="w-12 h-12 shrink-0 rounded-2xl bg-white dark:bg-slate-800 text-purple-500 flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-700 group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Email</h3>
@@ -67,7 +103,7 @@ export default function ContactPage() {
 
               <div className="flex items-start gap-4 group">
                 <div className="w-12 h-12 shrink-0 rounded-2xl bg-white dark:bg-slate-800 text-blue-500 flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-700 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -79,7 +115,7 @@ export default function ContactPage() {
 
               <div className="flex items-start gap-4 group">
                 <div className="w-12 h-12 shrink-0 rounded-2xl bg-white dark:bg-slate-800 text-emerald-500 flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-700 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                   </svg>
                 </div>
@@ -147,7 +183,7 @@ export default function ContactPage() {
                   <option value="Advertising">Advertising Inquiry</option>
                 </select>
                 <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
@@ -171,7 +207,7 @@ export default function ContactPage() {
                 type="submit"
                 className="w-full btn-primary rounded-xl py-4 font-bold text-lg flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
               >
-                <Mail className="w-5 h-5" /> Send Message
+                <Mail className="w-5 h-5" aria-hidden="true" /> Send Message
               </button>
             </div>
           </form>
@@ -184,36 +220,24 @@ export default function ContactPage() {
           <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-white mb-4">Frequently Asked Questions</h2>
           <p className="text-slate-500 dark:text-slate-400">Find quick answers to common questions.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            {
-              q: 'Is FreeViralKit really free?',
-              a: 'Yes! FreeViralKit is 100% free to use. No signup, no credit card, no hidden fees.',
-            },
-            {
-              q: 'How does the AI generate titles?',
-              a: 'We use advanced language models trained on millions of successful YouTube titles and SEO patterns to predict high-CTR combinations.',
-            },
-            {
-              q: 'Can I use FreeViralKit for any YouTube niche?',
-              a: 'Absolutely. Our AI auto-detects your niche and generates content optimized for gaming, tech, cooking, vlogs, education, and more.',
-            },
-            {
-              q: 'How do I report a bug or suggest a feature?',
-              a: 'Use the contact form above and select the appropriate topic. We read every single message and actively implement user feedback.',
-            },
-          ].map((faq, i) => (
-            <div key={i} className="glass-card rounded-2xl p-6 border border-slate-200/50 dark:border-slate-700/50 hover:-translate-y-1 transition-transform duration-300">
-              <div className="flex gap-4">
-                <div className="w-8 h-8 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center shrink-0 mt-1">
-                  <span className="font-bold text-sm">Q</span>
+        <div className="space-y-4 max-w-3xl mx-auto">
+          {faqs.map((faq, i) => (
+            <details key={i} className="group glass-card rounded-2xl border border-slate-200/50 dark:border-slate-700/50 [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-display text-lg font-bold text-slate-900 dark:text-white">
+                <div className="flex gap-4 items-center">
+                  <div className="w-8 h-8 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center shrink-0">
+                    <span className="font-bold text-sm">Q</span>
+                  </div>
+                  {faq.q}
                 </div>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{faq.a}</p>
-                </div>
+                <span className="transition group-open:rotate-180">
+                  <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 pt-0 ml-12">
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{faq.a}</p>
               </div>
-            </div>
+            </details>
           ))}
         </div>
       </section>

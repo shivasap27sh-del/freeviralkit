@@ -86,8 +86,10 @@ export default function ToolWorkspace({
 
       <ErrorBanner error={error} onClear={onClearError} />
 
-      {/* Render children/output slot */}
-      {children}
+      {/* Render children/output slot with aria-live accessibility */}
+      <div aria-live="polite" aria-busy={isGenerating}>
+        {children}
+      </div>
     </>
   );
 }

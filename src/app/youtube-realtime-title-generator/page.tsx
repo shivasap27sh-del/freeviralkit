@@ -98,24 +98,24 @@ const softwareJsonLd = {
 
 export default function RealTimeTitleGeneratorPage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-200">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }} />
 
       <div className="max-w-4xl mx-auto space-y-12">
         {/* Page Header */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-700 dark:text-purple-300 text-xs font-semibold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
             Live Search & Real-World Facts Powered
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Real-Time Movie & Live Topic <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-purple-400 via-indigo-300 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-emerald-600 dark:from-purple-400 dark:via-indigo-300 dark:to-emerald-400 bg-clip-text text-transparent">
               YouTube AI Generator
             </span>
           </h1>
-          <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             Generate accurate viral titles, Studio search tags, hashtags, and SEO descriptions for real-world movies, trailers, and trending news using live fact context.
           </p>
         </div>
@@ -124,13 +124,13 @@ export default function RealTimeTitleGeneratorPage() {
         <RealTimeGeneratorClient />
 
         {/* FAQ Section */}
-        <section className="glass-card rounded-2xl p-6 md:p-8 space-y-6 border border-slate-800 bg-slate-900/40">
-          <h2 className="text-2xl font-bold text-white tracking-tight">Frequently Asked Questions</h2>
+        <section className="glass-card rounded-2xl p-6 md:p-8 space-y-6 border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/40 shadow-lg backdrop-blur-xl">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Frequently Asked Questions</h2>
           <div className="grid gap-6">
             {faqItems.map((faq, i) => (
-              <div key={i} className="space-y-2 border-b border-slate-800/80 pb-4 last:border-0 last:pb-0">
-                <h3 className="text-base font-semibold text-purple-300">{faq.question}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{faq.answer}</p>
+              <div key={i} className="space-y-2 border-b border-slate-200 dark:border-slate-800/80 pb-4 last:border-0 last:pb-0">
+                <h3 className="text-base font-semibold text-purple-700 dark:text-purple-300">{faq.question}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>

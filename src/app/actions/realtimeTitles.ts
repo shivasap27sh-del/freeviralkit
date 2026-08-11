@@ -76,15 +76,41 @@ Return ONLY valid JSON.`,
       options: { temperature: 0.7, maxTokens: 1000 },
       parseResponse: (text) => {
         try {
-          const clean = text.replace(/```json/g, '').replace(/```/g, '').trim();
-          const parsed = JSON.parse(clean);
-          return {
-            hashtags: Array.isArray(parsed.hashtags) ? parsed.hashtags : [],
-            tags: Array.isArray(parsed.tags) ? parsed.tags : [],
-            description: typeof parsed.description === 'string' ? parsed.description : '',
-          };
-        } catch {
-          return { hashtags: [], tags: [], description: text };
+          // Robust extraction of JSON substring starting from first '{' to last '}'
+          const firstBrace = text.indexOf('{');
+          const lastBrace = text.lastIndexOf('}');
+          if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+            const jsonStr = text.substring(firstBrace, lastBrace + 1);
+            const parsed = JSON.parse(jsonStr);
+            return {
+              hashtags: Array.isArray(parsed.hashtags) ? parsed.hashtags.map(String) : [],
+              tags: Array.isArray(parsed.tags) ? parsed.tags.map(String) : [],
+              description: typeof parsed.description === 'string' ? parsed.description : '',
+            };
+          }
+          throw new Error('No JSON object boundaries found in AI response');
+        } catch (err) {
+          console.warn('[realtimeTitles] JSON parse failed, running regex fallback extractor...', err);
+
+          // Fallback 1: Extract description string via regex
+          const descMatch = text.match(/"description"\s*:\s*"([\s\S]*?)"(?=\s*,\s*"|\s*\})/);
+          const description = descMatch
+            ? descMatch[1].replace(/\\n/g, '\n').replace(/\\"/g, '"')
+            : text.replace(/^---/g, '').replace(/```[a-z]*/g, '').trim();
+
+          // Fallback 2: Extract hashtags array via regex
+          const hashtagsMatch = text.match(/"hashtags"\s*:\s*\[([\s\S]*?)\]/);
+          const hashtags = hashtagsMatch
+            ? (hashtagsMatch[1].match(/"([^"]+)"/g) || []).map((s) => s.replace(/"/g, ''))
+            : (text.match(/#[A-Za-z0-9_]+/g) || []);
+
+          // Fallback 3: Extract tags array via regex
+          const tagsMatch = text.match(/"tags"\s*:\s*\[([\s\S]*?)\]/);
+          const tags = tagsMatch
+            ? (tagsMatch[1].match(/"([^"]+)"/g) || []).map((s) => s.replace(/"/g, ''))
+            : (topic ? [topic.toLowerCase(), `${topic.toLowerCase()} review`, `${topic.toLowerCase()} trailer`, `${topic.toLowerCase()} plot`] : []);
+
+          return { hashtags, tags, description };
         }
       },
     });

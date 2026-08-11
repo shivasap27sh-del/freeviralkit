@@ -3,6 +3,8 @@ import { headers } from 'next/headers';
 import { Redis } from '@upstash/redis';
 import crypto from 'node:crypto';
 
+const log = (...args: unknown[]) => { if (process.env.NODE_ENV !== 'production') console.log(...args); };
+
 // ======= Multi-AI Provider System with Automatic Fallback =======
 
 interface ChatMessage { role: 'system' | 'user'; content: string; }
@@ -71,7 +73,7 @@ const groqProvider: AIProvider = {
             new Promise<null>((_, r) => setTimeout(() => r(new Error()), 400))
           ]);
           if (isBlocked) {
-            console.log(`[Groq] Key #${currentIndex} is currently blocked, skipping.`);
+            log(`[Groq] Key #${currentIndex} is currently blocked, skipping.`);
             continue;
           }
         }
@@ -80,7 +82,7 @@ const groqProvider: AIProvider = {
       }
 
       try {
-        console.log(`[Groq] Attempting generation with key index #${currentIndex}...`);
+        log(`[Groq] Attempting generation with key index #${currentIndex}...`);
         const completion = await client.chat.completions.create({
           messages,
           model: 'llama-3.3-70b-versatile',
@@ -88,18 +90,18 @@ const groqProvider: AIProvider = {
           max_completion_tokens: options.maxTokens,
             });
         return completion.choices[0]?.message?.content || '';
-      } catch (error: any) {
+      } catch (error: unknown) {
         const msg = error instanceof Error ? error.message : String(error);
         console.warn(`[Groq] Key #${currentIndex} failed: ${msg}`);
         errors.push(`Key #${currentIndex}: ${msg}`);
 
         // If it's a rate limit error (429), block it in Redis
-        if (msg.includes('429') || msg.toLowerCase().includes('rate limit') || error?.status === 429) {
+        if (msg.includes('429') || msg.toLowerCase().includes('rate limit') || (error as { status?: number })?.status === 429) {
           try {
             const redis = getRedisClient();
             if (redis) {
               await redis.set(`groq:blocked:${currentIndex}`, '1', { ex: 30 });
-              console.log(`[Groq] 🚫 Blocked Key #${currentIndex} in Redis for 30 seconds.`);
+              log(`[Groq] 🚫 Blocked Key #${currentIndex} in Redis for 30 seconds.`);
             }
           } catch (e) {
             // Ignore Redis errors
@@ -170,7 +172,7 @@ function createOpenAICompatibleProvider(
               new Promise<null>((_, r) => setTimeout(() => r(new Error()), 400))
             ]);
             if (isBlocked) {
-              console.log(`[${name}] Key #${currentIndex} is blocked, skipping.`);
+              log(`[${name}] Key #${currentIndex} is blocked, skipping.`);
               continue;
             }
           }
@@ -179,7 +181,7 @@ function createOpenAICompatibleProvider(
         }
 
         try {
-          console.log(`[${name}] Attempting generation with key index #${currentIndex}...`);
+          log(`[${name}] Attempting generation with key index #${currentIndex}...`);
           const response = await fetch(baseUrl, {
             method: 'POST',
             headers: {
@@ -204,18 +206,18 @@ function createOpenAICompatibleProvider(
           const content = data.choices?.[0]?.message?.content;
           if (!content) throw new Error(`Returned empty response`);
           return content;
-        } catch (error: any) {
+        } catch (error: unknown) {
           const msg = error instanceof Error ? error.message : String(error);
           console.warn(`[${name}] Key #${currentIndex} failed: ${msg}`);
           errors.push(`Key #${currentIndex}: ${msg}`);
 
           // If rate limit (429), block it in Redis
-          if (msg.includes('429') || msg.toLowerCase().includes('rate limit') || error?.status === 429) {
+          if (msg.includes('429') || msg.toLowerCase().includes('rate limit') || (error instanceof Object && 'status' in error && (error as { status: number }).status === 429)) {
             try {
               const redis = getRedisClient();
               if (redis) {
                 await redis.set(`blocked:${cleanName}:${currentIndex}`, '1', { ex: 30 });
-                console.log(`[${name}] 🚫 Blocked Key #${currentIndex} in Redis for 30 seconds.`);
+                log(`[${name}] 🚫 Blocked Key #${currentIndex} in Redis for 30 seconds.`);
               }
             } catch (e) {
               // Ignore Redis errors
@@ -310,12 +312,12 @@ export async function generateWithFallback(
     // Check Circuit Breaker: If this provider recently failed, skip it instantly to save time
     const timeoutUntil = providerTimeouts.get(provider.name) || 0;
     if (Date.now() < timeoutUntil) {
-      console.log(`[AI] ⚡ Skipping ${provider.name} (Circuit Breaker active for ${Math.round((timeoutUntil - Date.now()) / 1000)}s)`);
+      log(`[AI] ⚡ Skipping ${provider.name} (Circuit Breaker active for ${Math.round((timeoutUntil - Date.now()) / 1000)}s)`);
       continue;
     }
 
     try {
-      console.log(`[AI] Routing request to ${provider.name}...`);
+      log(`[AI] Routing request to ${provider.name}...`);
       const result = await withTimeout(
         provider.generate(safeMessages, options),
         15000,
@@ -327,7 +329,7 @@ export async function generateWithFallback(
         throw new Error('CONTENT_SAFETY: ' + (safetyCheck.reason || 'Output flagged by content filter'));
       }
       
-      console.log(`[AI] ✅ Success via ${provider.name}`);
+      log(`[AI] ✅ Success via ${provider.name}`);
       return safetyCheck.filtered;
     } catch (error) {
       const msg = error instanceof Error ? error.message : String(error);
@@ -354,18 +356,28 @@ export async function generateWithFallback(
 // Falls back gracefully — returns "" if Tavily is unavailable, so generation still works.
 
 const searchContextCache = new Map<string, { text: string; exp: number }>();
+const SEARCH_CACHE_MAX_SIZE = 500;
+if (typeof setInterval !== 'undefined') {
+  setInterval(() => {
+    const now = Date.now();
+    for (const [key, val] of searchContextCache) {
+      if (now > val.exp) searchContextCache.delete(key);
+    }
+    if (searchContextCache.size > SEARCH_CACHE_MAX_SIZE) searchContextCache.clear();
+  }, 120_000);
+}
 
 export async function searchGroundedContext(topic: string): Promise<string> {
   const apiKey = process.env.TAVILY_API_KEY;
   if (!apiKey) {
-    console.log('[Search] No Tavily API key configured, skipping web context');
+    log('[Search] No Tavily API key configured, skipping web context');
     return '';
   }
 
   const cleanTopic = topic.trim().toLowerCase();
   const cached = searchContextCache.get(cleanTopic);
   if (cached && Date.now() < cached.exp) {
-    console.log(`[Search] ⚡ Cache HIT for web context: "${topic.slice(0, 30)}..."`);
+    log(`[Search] ⚡ Cache HIT for web context: "${topic.slice(0, 30)}..."`);
     return cached.text;
   }
 
@@ -373,7 +385,7 @@ export async function searchGroundedContext(topic: string): Promise<string> {
   const timeout = setTimeout(() => controller.abort(), 8000);
 
   try {
-    console.log(`[Search] Fetching web context for: "${topic}"`);
+    log(`[Search] Fetching web context for: "${topic}"`);
     const response = await fetch('https://api.tavily.com/search', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -397,12 +409,12 @@ export async function searchGroundedContext(topic: string): Promise<string> {
     }
 
     const data = await response.json();
-    const text = data.answer || data.results?.map((r: any) => r.content).join('\n') || '';
+    const text = data.answer || data.results?.map((r: { content?: string }) => r.content).join('\n') || '';
 
     const resultText = (!text || text.trim().length < 10) ? '' : text.trim();
     searchContextCache.set(cleanTopic, { text: resultText, exp: Date.now() + 5 * 60 * 1000 });
 
-    if (resultText) console.log(`[Search] ✅ Got web context (${resultText.length} chars)`);
+    if (resultText) log(`[Search] ✅ Got web context (${resultText.length} chars)`);
     return resultText;
   } catch (error) {
     clearTimeout(timeout);
@@ -414,6 +426,18 @@ export async function searchGroundedContext(topic: string): Promise<string> {
 
 // ======= Rate Limiting System =======
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_MAX_SIZE = 10000;
+// Periodic cleanup of expired rate limit entries
+if (typeof setInterval !== 'undefined') {
+  setInterval(() => {
+    const now = Date.now();
+    for (const [key, val] of rateLimitStore) {
+      if (now > val.resetTime) rateLimitStore.delete(key);
+    }
+    // Hard cap to prevent unbounded growth
+    if (rateLimitStore.size > RATE_LIMIT_MAX_SIZE) rateLimitStore.clear();
+  }, 60_000);
+}
 const isDev = process.env.NODE_ENV === 'development';
 const rateLimitTimeoutMs = isDev ? 3000 : 800;
 const cacheTimeoutMs = isDev ? 2000 : 400;
@@ -492,7 +516,7 @@ async function checkRedisRateLimit(ip: string, limit: number, windowMs: number):
     const errorStr = String(error);
     if (errorStr.includes('403') || errorStr.includes('quota') || errorStr.includes('Forbidden') || errorStr.includes('ECONNREFUSED')) {
       redisDegradedUntil = Date.now() + 5 * 60 * 1000;
-      console.log('[Redis] ⚠️ Redis marked as degraded for 5 minutes.');
+      log('[Redis] ⚠️ Redis marked as degraded for 5 minutes.');
     }
     return null;
   }
@@ -598,7 +622,7 @@ export async function executeAIGeneration<T>({
         ]);
 
         if (cached) {
-          console.log('[Cache] ⚡ Cache HIT! Verifying content safety on cached response...');
+          log('[Cache] ⚡ Cache HIT! Verifying content safety on cached response...');
           const safetyCheck = filterAIOutput(cached);
           if (!safetyCheck.safe) {
             console.warn('[Cache] ⚠️ Cached response failed post-safety audit. Deleting poisoned key.');
@@ -614,7 +638,7 @@ export async function executeAIGeneration<T>({
     }
 
     // Cache Miss -> Live Generation
-    console.log('[Cache] ❄️ Cache Miss. Executing live AI generation...');
+    log('[Cache] ❄️ Cache Miss. Executing live AI generation...');
     const responseText = await generateWithFallback([
       { role: 'system', content: finalSystemPrompt },
       { role: 'user', content: finalUserPrompt }
@@ -700,7 +724,7 @@ export function safeParseChannelNames(text: string) {
   } catch (e) {
     console.error('Failed to parse channel names JSON:', e);
     try {
-      const result: any = { catchy: [], seo: [], brandable: [], shorts: [] };
+      const result: Record<string, string[]> = { catchy: [], seo: [], brandable: [], shorts: [] };
       const categories = ['catchy', 'seo', 'brandable', 'shorts'];
       for (const cat of categories) {
         const regex = new RegExp(`"${cat}"\\s*:\\s*\\[([\\s\\S]*?)\\]`, 'i');
@@ -727,12 +751,15 @@ export function safeParseShortsIdeas(text: string) {
     const clean = text.replace(/```json/g, '').replace(/```/g, '').trim();
     const data = JSON.parse(clean);
     if (!Array.isArray(data)) return [];
-    return data.map((item: any) => ({
-      title: typeof item.title === 'string' ? item.title.replace(/\*/g, '').trim() : '',
-      hook: typeof item.hook === 'string' ? item.hook.replace(/\*/g, '').trim() : '',
-      visuals: typeof item.visuals === 'string' ? item.visuals.replace(/\*/g, '').trim() : '',
-      audio: typeof item.audio === 'string' ? item.audio.replace(/\*/g, '').trim() : '',
-    }));
+    return data.map((item: unknown) => {
+      const obj = typeof item === 'object' && item !== null ? (item as Record<string, unknown>) : {};
+      return {
+        title: typeof obj.title === 'string' ? obj.title.replace(/\*/g, '').trim() : '',
+        hook: typeof obj.hook === 'string' ? obj.hook.replace(/\*/g, '').trim() : '',
+        visuals: typeof obj.visuals === 'string' ? obj.visuals.replace(/\*/g, '').trim() : '',
+        audio: typeof obj.audio === 'string' ? obj.audio.replace(/\*/g, '').trim() : '',
+      };
+    });
   } catch (e) {
     console.error('Failed to parse Shorts ideas JSON:', e);
     return [];

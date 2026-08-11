@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '@/components/Logo';
 
 const navLinks = [
@@ -80,10 +81,10 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 py-3 backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800">
+    <header className="sticky top-0 z-50 py-3 backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800/80 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
       <div className="container mx-auto px-6 max-w-6xl flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group" aria-label="FreeViralKit Home">
+        <Link href="/" className="flex items-center gap-3 group active:scale-[0.96] transition-transform duration-75 ease-out" aria-label="FreeViralKit Home">
           <Logo size="md" />
         </Link>
 
@@ -93,7 +94,7 @@ export default function Navbar() {
             <div key={link.href} className="relative group" onMouseEnter={() => link.label === 'Tools' && setToolsOpen(true)} onMouseLeave={() => link.label === 'Tools' && setToolsOpen(false)}>
               <Link
                 href={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all inline-block ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all inline-block active:scale-[0.96] duration-75 ease-out ${
                   pathname === link.href || (link.label === 'Tools' && pathname.startsWith('/youtube-'))
                     ? 'text-slate-900 dark:text-white bg-slate-200 dark:bg-slate-800'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -101,17 +102,27 @@ export default function Navbar() {
               >
                 {link.label}
               </Link>
-              {/* Dropdown Menu */}
+              {/* Dropdown Menu - Interruptible Apple Spring Physics */}
               {link.label === 'Tools' && (
-                <div className={`absolute top-full left-0 pt-2 w-[480px] transition-all duration-200 ${toolsOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
-                  <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl overflow-hidden grid grid-cols-2 p-2 gap-1">
-                    {toolsDropdown.map(tool => (
-                      <Link key={tool.href} href={tool.href} className="px-3 py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-lg line-clamp-1" title={tool.label}>
-                        {tool.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+                <AnimatePresence>
+                  {toolsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                      transition={{ type: 'spring', bounce: 0, duration: 0.3 }}
+                      className="absolute top-full left-0 pt-2 w-[480px] z-50 pointer-events-auto"
+                    >
+                      <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-slate-200 dark:border-slate-800 rounded-xl shadow-2xl overflow-hidden grid grid-cols-2 p-2 gap-1 shadow-purple-500/5">
+                        {toolsDropdown.map(tool => (
+                          <Link key={tool.href} href={tool.href} className="px-3 py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 active:scale-[0.98] transition-all rounded-lg line-clamp-1" title={tool.label}>
+                            {tool.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               )}
             </div>
           ))}
@@ -122,7 +133,7 @@ export default function Navbar() {
             href="https://www.producthunt.com/products/freeviralkit?utm_source=badge-follow&utm_medium=badge&utm_campaign=badge-freeviralkit"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-3 hover:scale-105 transition-transform duration-200 inline-flex items-center shrink-0"
+            className="ml-3 hover:scale-105 active:scale-[0.96] transition-transform duration-150 inline-flex items-center shrink-0"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -136,7 +147,7 @@ export default function Navbar() {
           </a>
           <button
             onClick={toggleTheme}
-            className="ml-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center cursor-pointer"
+            className="ml-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 active:scale-[0.92] transition-all duration-75 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center cursor-pointer"
             aria-label="Toggle Theme"
           >
             {!mounted ? (
@@ -155,7 +166,7 @@ export default function Navbar() {
             href="https://www.producthunt.com/products/freeviralkit?utm_source=badge-follow&utm_medium=badge&utm_campaign=badge-freeviralkit"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:scale-105 transition-transform duration-200 inline-flex items-center shrink-0"
+            className="hover:scale-105 active:scale-[0.96] transition-transform duration-150 inline-flex items-center shrink-0"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -169,7 +180,7 @@ export default function Navbar() {
           </a>
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center cursor-pointer"
+            className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 active:scale-[0.92] transition-all duration-75 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center cursor-pointer"
             aria-label="Toggle Theme"
           >
             {!mounted ? (
@@ -181,7 +192,7 @@ export default function Navbar() {
             )}
           </button>
           <button
-            className="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300 flex items-center justify-center"
+            className="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 active:scale-[0.92] transition-all duration-75 text-slate-700 dark:text-slate-300 flex items-center justify-center"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -191,36 +202,44 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Nav */}
-      {mobileOpen && (
-        <div className="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl">
-          <nav className="container mx-auto px-6 py-4 flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <div key={link.href} className="flex flex-col">
-                <Link
-                  href={link.href}
-                  onClick={() => link.label !== 'Tools' && setMobileOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-all ${
-                    pathname === link.href
-                      ? 'text-slate-900 dark:text-white bg-slate-200 dark:bg-slate-800'
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-                {link.label === 'Tools' && (
-                  <div className="flex flex-col ml-4 mt-1 border-l border-slate-200 dark:border-slate-700 pl-2">
-                    {toolsDropdown.map(tool => (
-                      <Link key={tool.href} href={tool.href} onClick={() => setMobileOpen(false)} className="px-4 py-2 text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
-                        {tool.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
-        </div>
-      )}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ type: 'spring', bounce: 0, duration: 0.3 }}
+            className="md:hidden overflow-hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl"
+          >
+            <nav className="container mx-auto px-6 py-4 flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <div key={link.href} className="flex flex-col">
+                  <Link
+                    href={link.href}
+                    onClick={() => link.label !== 'Tools' && setMobileOpen(false)}
+                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-all active:scale-[0.98] ${
+                      pathname === link.href
+                        ? 'text-slate-900 dark:text-white bg-slate-200 dark:bg-slate-800'
+                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                  {link.label === 'Tools' && (
+                    <div className="flex flex-col ml-4 mt-1 border-l border-slate-200 dark:border-slate-700 pl-2">
+                      {toolsDropdown.map(tool => (
+                        <Link key={tool.href} href={tool.href} onClick={() => setMobileOpen(false)} className="px-4 py-2 text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white active:scale-[0.98] transition-all">
+                          {tool.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

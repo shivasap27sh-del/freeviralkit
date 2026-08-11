@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getPublishedPosts, getPublishedPostBySlug, getPostBySlug, getAllSlugs, getRelatedPosts } from '../data';
+import { buildAbsoluteUrl } from '@/lib/site';
 import { Calendar, Clock, ArrowLeft, Tag, User } from 'lucide-react';
 
 
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       type: 'article',
       publishedTime: post.date,
-      url: `https://freeviralkit.com/blog/${post.slug}`,
+      url: buildAbsoluteUrl(`/blog/${post.slug}`),
       tags: post.tags,
       images: [
         {
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [`https://og.tailgraph.com/og?fontFamily=Inter&title=${encodeURIComponent(post.title)}&text=${encodeURIComponent(post.description.substring(0, 120) + '...')}&bg=1e293b&titleColor=ffffff&textColor=cbd5e1`],
     },
     alternates: {
-      canonical: `https://freeviralkit.com/blog/${post.slug}`,
+      canonical: buildAbsoluteUrl(`/blog/${post.slug}`),
     },
   };
 }
@@ -165,20 +166,20 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       '@type': 'Person',
       name: 'Shiva',
-      url: 'https://freeviralkit.com/about',
+      url: buildAbsoluteUrl('/about'),
     },
     publisher: {
       '@type': 'Organization',
       name: 'FreeViralKit',
-      url: 'https://freeviralkit.com',
+      url: buildAbsoluteUrl('/'),
       logo: {
         '@type': 'ImageObject',
-        url: 'https://freeviralkit.com/logo.png',
+        url: buildAbsoluteUrl('/logo.png'),
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://freeviralkit.com/blog/${post.slug}`,
+      '@id': buildAbsoluteUrl(`/blog/${post.slug}`),
     },
     keywords: post.tags.join(', '),
     articleSection: post.category,

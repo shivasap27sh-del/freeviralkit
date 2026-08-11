@@ -177,6 +177,13 @@ export const pool: Pool | null = rawUrl ? (globalForPg.pool || new Pool({ connec
 if (process.env.NODE_ENV !== 'production' && pool) globalForPg.pool = pool;
 
 function mapRowToBlogPost(row: any): BlogPost {
+  let tags = [];
+  try {
+    tags = typeof row.tags === 'string' ? JSON.parse(row.tags) : (Array.isArray(row.tags) ? row.tags : []);
+  } catch (e) {
+    tags = [];
+  }
+
   return {
     slug: row.slug || '',
     title: row.title || '',
@@ -186,7 +193,7 @@ function mapRowToBlogPost(row: any): BlogPost {
     publishDate: row.publish_date ? new Date(row.publish_date).toISOString() : undefined,
     readTime: row.read_time || '5 min read',
     category: row.category || 'YouTube SEO',
-    tags: typeof row.tags === 'string' ? row.tags.split(',') : (row.tags || []),
+    tags,
   };
 }
 

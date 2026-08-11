@@ -35,12 +35,12 @@ export default function NotFound() {
         </h1>
 
         {/* Heading */}
-        <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+        <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-3">
           Page not found
         </h2>
 
         {/* Description */}
-        <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-md mx-auto">
+        <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-8 max-w-md mx-auto">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
           Try one of our popular tools below.
         </p>
@@ -58,7 +58,7 @@ export default function NotFound() {
         <div className="glass-card rounded-2xl p-6 text-left">
           <div className="flex items-center gap-2 mb-4">
             <Search className="w-4 h-4 text-purple-400" />
-            <h3 className="font-display font-semibold text-slate-900 text-sm">
+            <h3 className="font-display font-semibold text-slate-900 dark:text-white text-sm">
               Popular Tools
             </h3>
           </div>
@@ -67,11 +67,11 @@ export default function NotFound() {
               <Link
                 key={tool.href}
                 href={tool.href}
-                className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"
+                className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group"
               >
                 <span className="flex items-center gap-3">
                   <span className="text-lg" role="img" aria-hidden="true">{tool.emoji}</span>
-                  <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors">
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                     {tool.name}
                   </span>
                 </span>

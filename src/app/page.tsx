@@ -279,7 +279,7 @@ export default async function Home() {
             </ul>
 
             <div className="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-              <Image src="/images/seo_dashboard.png" alt="YouTube Growth Analytics Dashboard" width={1200} height={630} className="w-full h-auto object-cover" />
+              <Image src="/images/seo_dashboard.webp" alt="YouTube Growth Analytics Dashboard" width={1200} height={630} className="w-full h-auto object-cover" />
             </div>
 
             <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mt-12 mb-4">

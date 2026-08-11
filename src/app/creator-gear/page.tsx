@@ -43,7 +43,7 @@ type GearItem = {
 
 type GearCategory = {
   title: string;
-  icon: any;
+  icon: React.ElementType;
   categoryDesc: string;
   items: GearItem[];
 };
@@ -367,7 +367,7 @@ export default function CreatorGearPage() {
         {/* Hero */}
         <section className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-purple-400 bg-purple-400/10 border border-purple-400/20 mb-6 uppercase tracking-wider">
-            <Heart className="w-4 h-4 text-purple-400" /> Creator Gear & Resources
+            <Heart className="w-4 h-4 text-purple-400" aria-hidden="true" /> Creator Gear & Resources
           </div>
           <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white"> Ultimate YouTube Creator Equipment & Tools </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
@@ -378,7 +378,7 @@ export default function CreatorGearPage() {
         {/* Buyer's Guide - E-E-A-T Section */}
         <section className="glass-card rounded-2xl p-8 md:p-10 mb-12" aria-labelledby="buyers-guide-heading">
           <div className="flex items-center gap-3 mb-6">
-            <BookOpen className="w-6 h-6 text-purple-500" />
+            <BookOpen className="w-6 h-6 text-purple-500" aria-hidden="true" />
             <h2 id="buyers-guide-heading" className="font-display text-2xl font-bold text-slate-800 dark:text-slate-100">
               How to Choose Your Creator Gear (Buyer&apos;s Guide)
             </h2>
@@ -408,7 +408,7 @@ export default function CreatorGearPage() {
                 <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
-                      <Icon className="w-5 h-5" />
+                      <Icon className="w-5 h-5" aria-hidden="true" />
                     </div>
                     <h2 className="font-display text-2xl font-bold text-slate-800 dark:text-slate-100">
                       {cat.title}
@@ -429,7 +429,7 @@ export default function CreatorGearPage() {
                     >
                       {item.popular && (
                         <span className="absolute -top-3 left-6 bg-purple-500 text-white text-[10px] uppercase tracking-wider font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
-                          <Sparkles className="w-3 h-3" /> Recommended
+                          <Sparkles className="w-3 h-3" aria-hidden="true" /> Recommended
                         </span>
                       )}
 
@@ -456,7 +456,7 @@ export default function CreatorGearPage() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-xs font-bold text-purple-400 group-hover:text-purple-300 transition-colors"
                         >
-                          Check Price <ExternalLink className="w-3.5 h-3.5" />
+                          Check Price <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
                         </a>
                       </div>
                     </div>
@@ -470,7 +470,7 @@ export default function CreatorGearPage() {
         {/* FAQ Section */}
         <section className="glass-card rounded-2xl p-8 md:p-10 mt-12" aria-labelledby="gear-faq-heading">
           <div className="flex items-center gap-3 mb-6">
-            <HelpCircle className="w-6 h-6 text-purple-500" />
+            <HelpCircle className="w-6 h-6 text-purple-500" aria-hidden="true" />
             <h2 id="gear-faq-heading" className="font-display text-2xl font-bold text-slate-800 dark:text-slate-100">
               Frequently Asked Questions About Creator Gear
             </h2>

@@ -41,7 +41,7 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
   };
 
   const charColor = (len: number) =>
-    len >= 50 && len <= 70 ? 'text-green-400' : len < 50 ? 'text-yellow-400' : 'text-red-400';
+    len >= 50 && len <= 70 ? 'text-green-600 dark:text-green-400' : len < 50 ? 'text-yellow-600 dark:text-yellow-400' : 'text-red-600 dark:text-red-400';
 
   const analyzeTitle = (titleText: string) => {
     let score = 50;
@@ -90,17 +90,17 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
   return (
     <>
       {/* Real-Time Movie AI Tool Banner */}
-      <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-indigo-900/40 via-purple-900/40 to-slate-900/40 border border-indigo-500/20 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50/80 dark:from-indigo-950/80 dark:via-purple-950/80 dark:to-slate-900/80 border border-indigo-200/80 dark:border-indigo-500/30 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="p-2 rounded-xl bg-indigo-500/20 text-indigo-300">🎬</span>
+          <span className="p-2.5 rounded-xl bg-indigo-100 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 shrink-0 font-bold">🎬</span>
           <div className="text-sm">
-            <span className="font-semibold text-white">Making a video about a real movie, news, or release? </span>
-            <span className="text-slate-300">Try our Real-Time AI Generator for live plot facts, tags & descriptions.</span>
+            <span className="font-semibold text-slate-900 dark:text-white">Making a video about a real movie, news, or release? </span>
+            <span className="text-slate-600 dark:text-slate-300">Try our Real-Time AI Generator for live plot facts, tags & descriptions.</span>
           </div>
         </div>
         <Link
           href="/youtube-realtime-title-generator"
-          className="shrink-0 px-4 py-2 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center gap-1.5"
+          className="shrink-0 px-4 py-2.5 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white active:scale-[0.96] transition-all shadow-md shadow-indigo-600/20 flex items-center gap-1.5"
         >
           Real-Time Movie Tool ⚡ <ExternalLink className="w-3.5 h-3.5" />
         </Link>
@@ -128,10 +128,15 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
 
       <AnimatePresence>
         {titles.length > 0 && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6 mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 16, scale: 0.99 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ type: 'spring', bounce: 0, duration: 0.35 }}
+            className="space-y-6 mb-8 origin-top"
+          >
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <h2 className="font-display text-xl font-semibold">Your Generated Titles</h2>
-              <button onClick={() => handleGenerate(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">
+              <button onClick={() => handleGenerate(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white active:scale-[0.95] transition-all duration-75 cursor-pointer">
                 <RotateCcw className="w-3.5 h-3.5" /> Regenerate
               </button>
             </div>
@@ -142,12 +147,12 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
                 {titles.map((title, idx) => (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.04 }}
+                    transition={{ type: 'spring', bounce: 0, duration: 0.25, delay: idx * 0.03 }}
                     onClick={() => setSelectedIdx(idx)}
-                    className={`bg-white dark:bg-slate-900 border dark:border-slate-800 rounded-xl p-4 flex items-start gap-3 group transition-all cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 ${
-                      selectedIdx === idx ? 'border-purple-500 ring-1 ring-purple-500/30 dark:ring-purple-500/40' : 'border-slate-200 dark:border-slate-800'
+                    className={`bg-white dark:bg-slate-900 border dark:border-slate-800 rounded-xl p-4 flex items-start gap-3 group transition-all duration-75 cursor-pointer active:scale-[0.98] hover:bg-slate-50 dark:hover:bg-slate-800/50 ${
+                      selectedIdx === idx ? 'border-purple-500 ring-1 ring-purple-500/30 dark:ring-purple-500/40 shadow-md' : 'border-slate-200 dark:border-slate-800'
                     }`}
                   >
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold ${
@@ -174,14 +179,14 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
                         copy(title, `title-${idx}`);
                       }}
                       aria-label="Copy title"
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 shrink-0 cursor-pointer"
+                      className="opacity-0 group-hover:opacity-100 active:scale-[0.92] transition-all duration-75 p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 shrink-0 cursor-pointer"
                     >
                       {copiedStates[`title-${idx}`] ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-slate-500 dark:text-slate-400" />}
                     </button>
                   </motion.div>
                 ))}
 
-                <button onClick={() => copy(titles.join('\n'), 'all-titles')} aria-label="Copy all titles" className="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer">
+                <button onClick={() => copy(titles.join('\n'), 'all-titles')} aria-label="Copy all titles" className="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 active:scale-[0.97] transition-all duration-75 cursor-pointer">
                   {copiedStates['all-titles'] ? '✓ All Titles Copied!' : 'Copy All Titles'}
                 </button>
               </div>

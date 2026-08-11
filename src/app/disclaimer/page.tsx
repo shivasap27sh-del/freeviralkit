@@ -35,8 +35,25 @@ export const metadata: Metadata = {
 };
 
 export default function DisclaimerPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Disclaimer | FreeViralKit',
+    url: buildAbsoluteUrl('/disclaimer'),
+    description: 'Read the earnings disclaimer, affiliate disclosure, and liability information for FreeViralKit. Understand our content policies and guarantees.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'FreeViralKit',
+    },
+  };
+
   return (
-    <main className="container mx-auto px-6 py-12 max-w-3xl relative z-10 min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="container mx-auto px-6 py-12 max-w-3xl relative z-10 min-h-screen">
       <h1 className="font-display text-4xl font-extrabold mb-8 text-slate-900 dark:text-white">
         Disclaimer
       </h1>
@@ -103,5 +120,6 @@ export default function DisclaimerPage() {
         </p>
       </div>
     </main>
+    </>
   );
 }

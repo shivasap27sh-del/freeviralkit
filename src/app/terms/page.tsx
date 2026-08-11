@@ -30,8 +30,25 @@ export const metadata: Metadata = {
 };
 
 export default function TermsOfServicePage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Terms of Service | FreeViralKit',
+    url: buildAbsoluteUrl('/terms'),
+    description: 'Read the FreeViralKit Terms of Service governing the use of our free YouTube SEO tools, AI content generators, and platform.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'FreeViralKit',
+    },
+  };
+
   return (
-    <main className="container mx-auto px-6 py-16 max-w-4xl min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="container mx-auto px-6 py-16 max-w-4xl min-h-screen">
       <div className="mb-12">
         <h1 className="font-display text-4xl md:text-5xl font-extrabold mb-4 text-slate-900 dark:text-white">Terms of Service</h1>
         <p className="text-slate-500">Last Updated: June 4, 2026</p>
@@ -170,5 +187,6 @@ export default function TermsOfServicePage() {
         </p>
       </div>
     </main>
+    </>
   );
 }

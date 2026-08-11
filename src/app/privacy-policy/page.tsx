@@ -30,8 +30,25 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Privacy Policy | FreeViralKit',
+    url: buildAbsoluteUrl('/privacy-policy'),
+    description: 'Read the FreeViralKit Privacy Policy to understand how we collect, use, and protect your data while using our YouTube SEO tools.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'FreeViralKit',
+    },
+  };
+
   return (
-    <main className="container mx-auto px-6 py-16 max-w-4xl min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="container mx-auto px-6 py-16 max-w-4xl min-h-screen">
       <div className="mb-12">
         <h1 className="font-display text-4xl md:text-5xl font-extrabold mb-4 text-slate-900 dark:text-white">Privacy Policy</h1>
         <p className="text-slate-500">Last Updated: June 4, 2026</p>
@@ -179,5 +196,6 @@ export default function PrivacyPolicyPage() {
         </p>
       </div>
     </main>
+    </>
   );
 }
