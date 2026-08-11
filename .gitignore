@@ -46,8 +46,13 @@ next-env.d.ts
 *.py
 *.sh
 *.ps1
-*.bat
 scripts/
 seo_issues.json
 tsc_errors.txt
 lighthouse.json
+
+# task tracking and agent plans
+task.md
+implementation_plan.md
+
+
