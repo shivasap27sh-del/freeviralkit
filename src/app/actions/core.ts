@@ -682,15 +682,19 @@ export function sanitizeInput(input: string, maxLength = 200): string {
 }
 
 // ======= Robust JSON Parser Wrappers =======
-export function safeParseJsonArray(text: string): string[] {
+export function safeParseJsonArray(text: unknown): string[] {
+  if (Array.isArray(text)) {
+    return text.map(String);
+  }
+  const str = typeof text === 'string' ? text : String(text || '');
   try {
-    const clean = text.replace(/```json/g, '').replace(/```/g, '').trim();
+    const clean = str.replace(/```json/g, '').replace(/```/g, '').trim();
     const parsed = JSON.parse(clean);
-    return Array.isArray(parsed) ? parsed : [];
+    return Array.isArray(parsed) ? parsed.map(String) : [];
   } catch (e) {
     console.error('Failed to parse JSON array from AI response, trying regex extraction:', e);
     const matches: string[] = [];
-    const cleanText = text.replace(/```json/g, '').replace(/```/g, '').trim();
+    const cleanText = str.replace(/```json/g, '').replace(/```/g, '').trim();
     const doubleQuoteMatches = cleanText.match(/"([^"\\]*(?:\\.[^"\\]*)*)"/g);
     if (doubleQuoteMatches) {
       for (const m of doubleQuoteMatches) {
@@ -702,7 +706,7 @@ export function safeParseJsonArray(text: string): string[] {
     }
     if (matches.length > 0) return matches.slice(0, 30);
     
-    return text.split('\n')
+    return str.split('\n')
       .map(line => line.replace(/^[-*\d.\s]+/, '').trim())
       .filter(line => line.length > 0);
   }
