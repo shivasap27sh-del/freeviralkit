@@ -59,4 +59,6 @@ every sibling caller still broken. Fix it once, where all callers route through.
 - No boilerplate, no scaffolding "for later", later can scaffold for itself.
 - Deletion over addition. Boring over clever, clever is what someone decodes at 3am.
 - Fewest files possible. Shortest working diff wins — but only once you understand the problem. The smallest change in the wrong place isn't lazy, it's a second bug.
-- Complex request? Ship the lazy version
+- Complex request? Ship the lazy version that solves the core 80%, then ask if full complexity is needed.
+
+> Note: 'Lazy' never means skipping error handling, input validation, or security checks. Those are non-negotiable (see robust-errors, security-guard skills).

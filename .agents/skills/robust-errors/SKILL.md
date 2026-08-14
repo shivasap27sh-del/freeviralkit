@@ -10,7 +10,7 @@ license: MIT
 
 # Robust Errors
 
-You are a senior engineer who builds crash-proof applications. Every database query, network request, and JSON parse can fail. You must handle failures explicitly and recover gracefully.
+Enforces crash-proof error handling, type-safe catch blocks, graceful UI recovery, and standardized error responses across server actions and APIs.
 
 ## Principles
 
@@ -21,30 +21,42 @@ You are a senior engineer who builds crash-proof applications. Every database qu
 
 ## Rules & Checklists
 
-### 1. Type-Safe Catch Blocks
-- Avoid `catch (error: any)`. Use `catch (error: unknown)` with explicit guards:
+### 1. Type-Safe Catch Blocks & Navigation Guards
+- Avoid `catch (error: any)`. Use `catch (error: unknown)` with explicit guards.
+- **Next.js Navigation Guard**: In Server Action / Route Handler catch blocks, MUST check and re-throw Next.js navigation errors (`redirect()`, `notFound()`):
   ```ts
-  try {
-    // async work
-  } catch (error: unknown) {
-    const msg = error instanceof Error ? error.message : String(error);
-    const isStatusError = error instanceof Object && 'status' in error && (error as { status: number }).status === 429;
-    console.error('Action failed:', msg);
-  }
+  import { isRedirectError } from 'next/dist/client/components/redirect';
+  import { isNotFoundError } from 'next/dist/client/components/not-found';
+
+  // In catch block:
+  if (isRedirectError(error)) throw error;
+  if (isNotFoundError(error)) throw error;
   ```
 
-### 2. Graceful API & Action Responses
-- Ensure all Server Actions and endpoints return a standardized JSON structure on failure:
+### 2. Graceful API & Server Action Responses (`useActionState`)
+- Server Actions should return typed results compatible with `useActionState`:
   ```ts
-  try {
-    const data = await doAction();
-    return { success: true, data };
-  } catch (error: unknown) {
-    console.error('Action failed:', error);
-    return { 
-      success: false, 
-      error: error instanceof Error ? error.message : 'An unexpected error occurred.' 
-    };
+  // Server Actions should return typed results:
+  type ActionResult<T> = 
+    | { success: true; data: T } 
+    | { success: false; error: string; code?: 'RATE_LIMIT' | 'AUTH' | 'NETWORK' | 'VALIDATION' };
+  ```
+- Standardized implementation:
+  ```ts
+  export async function doServerAction(prevState: unknown, formData: FormData): Promise<ActionResult<Data>> {
+    try {
+      const data = await doAction(formData);
+      return { success: true, data };
+    } catch (error: unknown) {
+      if (isRedirectError(error)) throw error;
+      if (isNotFoundError(error)) throw error;
+      console.error('Action failed:', error);
+      return { 
+        success: false, 
+        error: error instanceof Error ? error.message : 'An unexpected error occurred.',
+        code: 'VALIDATION'
+      };
+    }
   }
   ```
 
@@ -59,3 +71,6 @@ You are a senior engineer who builds crash-proof applications. Every database qu
 ### 5. Safe JSON Parsing
 - Never run `JSON.parse(text)` directly on AI or user outputs without wrapping it in a `try/catch` block.
 - Provide fallback regex or default structures when parsed JSON fails validation checks.
+
+### 6. Production Error Logging
+- Send production errors to a centralized logging/monitoring service (`console.error` minimum baseline; Sentry or LogFlare optional for crash reporting and breadcrumbs).

@@ -45,3 +45,36 @@ You are a security-focused systems engineer. Every input is untrusted. Every ext
 ### 5. Secrets Protection
 - **Environment Variables**: Never hardcode API keys, database URLs, or signing keys.
 - **No Console Logs**: Strip `console.log(process.env.SECRET)` or statements logging raw API responses containing key variables.
+
+### 6. Schema Validation (Zod/Valibot)
+- All Server Action inputs MUST be validated with `schema.safeParse()` before any processing.
+- All API route request bodies MUST be validated before use.
+- Return structured errors on failure:
+  ```ts
+  const result = schema.safeParse(input);
+  if (!result.success) return { success: false, error: 'Invalid input' };
+  ```
+
+### 7. CSRF Protection
+- Next.js 15 has built-in CSRF protection for Server Actions — ensure it is not disabled.
+- For custom API routes, verify the `Origin` header matches the expected domain before processing mutations.
+
+### 8. SSRF Prevention
+- **Whitelist Domains**: Only allow `youtube.com`, `googleapis.com`, `i.ytimg.com` for server-side fetches.
+- **Block Private IPs**: Reject URLs resolving to `127.0.0.1`, `10.x.x.x`, `172.16-31.x.x`, `192.168.x.x`.
+- Validate and parse URLs with `new URL()` before passing to `fetch()`.
+
+### 9. AI Prompt Injection Defense
+- **Never** pass raw user input (video titles, descriptions, tags) directly into LLM system prompts.
+- Sanitize user-provided content before sending to AI providers (strip control chars, limit length).
+- Use delimiters to separate user content from instructions:
+  ```ts
+  const prompt = `Generate tags for:\n<user_input>\n${sanitized}\n</user_input>`;
+  ```
+
+### 10. Content Security Policy (CSP)
+- Set CSP headers allowing YouTube embeds. Add in `next.config.js` or `middleware.ts`:
+  ```ts
+  headers: [{ key: 'Content-Security-Policy', value: "frame-src 'self' https://www.youtube.com; script-src 'self'" }]
+  ```
+- Block inline scripts and unsafe-eval in production.

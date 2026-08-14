@@ -11,11 +11,13 @@ This skill brings Context7's version-accurate documentation verification to all 
 
 ### 1. Live Doc Verification
 - **Never guess API signatures for external libraries.** When writing or modifying code involving external frameworks/packages (e.g. Next.js App Router, Upstash Redis, QStash, Tailwind CSS, React 19, Supabase):
+  - Always check `node_modules/next/dist/docs/` for Next.js documentation before searching the web.
   - Execute a quick `search_web` query for official docs or current API signatures if any ambiguity exists.
   - Verify that proposed method calls (e.g. `qstash.publishJSON`, `next/navigation` hooks, Upstash SDK methods) match the current installed version.
 
 ### 2. Version Awareness
 - Check `package.json` to identify the exact installed version of target dependencies before generating code.
+- In Next.js 15+, params, searchParams, cookies(), and headers() return Promises that MUST be awaited. Verify this pattern before using these APIs.
 - Never mix deprecated syntax (e.g. Next.js Pages router APIs inside App Router `app/` directory) with current version requirements.
 
 ### 3. Preventing Hallucinations & Stale Patterns

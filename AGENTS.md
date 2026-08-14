@@ -12,6 +12,13 @@ This version has breaking changes — APIs, conventions, and file structure may 
 # Repository Settings
 - **Git Remote Push URL:** Always commit and push changes for this project to `https://github.com/shivasap27sh-del/freeviralkit`.
 
+# Always-On Superpower Mindset Rules (Mandatory on Every Task)
+1. **Minimalist Senior Builder (`ponytail`):** Default to standard library, YAGNI, native platform features, single lines, and shortest diff. Never over-engineer, add boilerplate, or create unrequested abstractions.
+2. **Forensic Root-Cause Debugger (`root-cause-detective`):** When diagnosing bugs/errors: ZERO code edits during investigation. Formulate 2-3 hypotheses, gather binary proof, and apply a surgical 1-point fix at the root cause. Never blind-patch or stack failed edits.
+3. **Anti-Entropy Code Cleaner (`simplify`):** Max 1 level of nesting (use guard clauses/early returns), derived state over `useEffect` sync, single source of truth for utilities, and aim for net-negative line diffs.
+4. **Verification Oracle (`tdd-iron-loop`):** Never declare a bug fix, parser, or logic change complete without automated test proof. Follow Red-Green-Refactor to guarantee zero regressions.
+5. **Type Invariant Shield (`impossible-states`):** Eliminate boolean soup with discriminated unions (`{ status: 'idle' } | { status: 'loading' } | { status: 'success'; data } | { status: 'error'; message }`), exhaustive matching with `never`, and zero state desyncs.
+
 # Agent Workflow Rules
 - **Planning Mode Requirement:** Always create a detailed plan before implementing anything.
 - **Permission Required:** For major changes, ask for explicit user permission to implement the plan before taking action. For very small changes, proceed directly. For creating new files, evaluate if it fits the architecture before doing so without permission.
@@ -23,3 +30,4 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **Proactive Self-Documentation:** Whenever creating a new file or writing a complex function, automatically add brief, clear comments explaining *why* the code does what it does. If it's a major feature, update the `README.md` so documentation stays current.
 - **Aesthetics & UI Priority:** If touching the frontend, always prioritize modern, premium aesthetics (good typography, smooth hover effects, harmonious colors). Never settle for a basic or generic-looking user interface.
 - **Vercel Env Sync Reminder & Deployment Freeze**: AdSense approval is currently pending. DO NOT push to Git/Vercel until the user explicitly requests it. Whenever pushing to Git in the future, ALWAYS remind Shiva to sync all `.env.local` variables (including `QSTASH_*`, `UPSTASH_*`, `DATABASE_URL`, API keys) into the Vercel Dashboard environment settings.
+

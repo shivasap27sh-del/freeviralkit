@@ -1,6 +1,6 @@
 ---
 name: vercel-react-best-practices
-description: React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.
+description: React 19 and Next.js 15 (App Router) performance optimization guidelines from Vercel Engineering. Use when writing, reviewing, or refactoring React/Next.js code. Triggers on tasks involving React components, Server/Client Components, data fetching, form actions, bundle optimization, or performance improvements.
 license: MIT
 metadata:
   author: vercel
@@ -9,13 +9,16 @@ metadata:
 
 # Vercel React Best Practices
 
-Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Contains 70 rules across 8 categories, prioritized by impact to guide automated refactoring and code generation.
+Comprehensive performance optimization guide for React 19 and Next.js 15 (App Router only) applications. Contains 70+ rules across 8 categories, prioritized by impact. Includes React 19 Form Actions and Next.js 15 patterns.
+
+> **App Router only** — this project does NOT use the Pages Router. Never generate `getServerSideProps`, `getStaticProps`, `getStaticPaths`, or `pages/` directory patterns.
 
 ## When to Apply
 
 Reference these guidelines when:
-- Writing new React components or Next.js pages
-- Implementing data fetching (client or server-side)
+- Writing new React components (Server or Client)
+- Implementing data fetching or Server Actions
+- Building forms with React 19 Form Actions
 - Reviewing code for performance issues
 - Refactoring existing React/Next.js code
 - Optimizing bundle size or load times
@@ -32,6 +35,82 @@ Reference these guidelines when:
 | 6 | Rendering Performance | MEDIUM | `rendering-` |
 | 7 | JavaScript Performance | LOW-MEDIUM | `js-` |
 | 8 | Advanced Patterns | LOW | `advanced-` |
+
+## React 19 Form Actions
+
+When building forms, use the React 19 form primitives:
+
+- **`useActionState`** — Manages form state + pending + error from a Server Action:
+  ```tsx
+  'use client';
+  import { useActionState } from 'react';
+  import { submitForm } from './actions'; // 'use server' file
+  const [state, formAction, isPending] = useActionState(submitForm, initialState);
+  return <form action={formAction}>…</form>;
+  ```
+- **`useFormStatus`** — Read pending state inside a form (must be a child of `<form>`):
+  ```tsx
+  import { useFormStatus } from 'react-dom';
+  function SubmitButton() {
+    const { pending } = useFormStatus();
+    return <button disabled={pending}>{pending ? 'Saving…' : 'Save'}</button>;
+  }
+  ```
+- **`useOptimistic`** — Show optimistic UI while the action runs:
+  ```tsx
+  const [optimisticItems, addOptimistic] = useOptimistic(items, (state, newItem) => [...state, newItem]);
+  ```
+- **`'use server'` directive** — Mark async functions as Server Actions. Place at top of file or top of function body:
+  ```ts
+  'use server';
+  export async function createItem(formData: FormData) { /* DB write */ }
+  ```
+
+## Next.js 15 Patterns
+
+### Async Request APIs (Breaking Change)
+
+In Next.js 15, `params`, `searchParams`, `cookies()`, `headers()`, and `draftMode()` are now **async** and return Promises:
+
+```tsx
+// ✅ Next.js 15 — await params
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+}
+
+// ✅ cookies() and headers() are async
+import { cookies, headers } from 'next/headers';
+const cookieStore = await cookies();
+const headersList = await headers();
+```
+
+### `'use cache'` Directive & Cache APIs
+
+Replace manual `unstable_cache` with the `'use cache'` directive:
+
+```tsx
+'use cache';
+import { cacheLife, cacheTag } from 'next/cache';
+
+export async function getProducts() {
+  cacheLife('hours');    // 'seconds' | 'minutes' | 'hours' | 'days' | 'weeks' | 'max'
+  cacheTag('products');
+  return db.query('SELECT * FROM products');
+}
+```
+
+### `after()` API
+
+Use `after()` for non-blocking post-response work (logging, analytics):
+
+```tsx
+import { after } from 'next/server';
+export default async function Page() {
+  const data = await fetchData();
+  after(() => { logAnalytics({ page: '/dashboard' }); });
+  return <Dashboard data={data} />;
+}
+```
 
 ## Quick Reference
 
@@ -99,7 +178,7 @@ Reference these guidelines when:
 - `rendering-svg-precision` - Reduce SVG coordinate precision
 - `rendering-hydration-no-flicker` - Use inline script for client-only data
 - `rendering-hydration-suppress-warning` - Suppress expected mismatches
-- `rendering-activity` - Use Activity component for show/hide
+- `rendering-activity` - Use Activity component for show/hide ⚠️ **React canary only — not stable**
 - `rendering-conditional-render` - Use ternary, not && for conditionals
 - `rendering-usetransition-loading` - Prefer useTransition for loading state
 - `rendering-resource-hints` - Use React DOM resource hints for preloading
@@ -124,7 +203,7 @@ Reference these guidelines when:
 
 ### 8. Advanced Patterns (LOW)
 
-- `advanced-effect-event-deps` - Don't put `useEffectEvent` results in effect deps
+- `advanced-effect-event-deps` - Don't put `useEffectEvent` results in effect deps ⚠️ **React canary only — not stable**
 - `advanced-event-handler-refs` - Store event handlers in refs
 - `advanced-init-once` - Initialize app once per app load
 - `advanced-use-latest` - useLatest for stable callback refs
