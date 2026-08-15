@@ -29,6 +29,9 @@ const toolsDropdown = [
   { href: '/youtube-thumbnail-generator', label: 'Thumbnail Idea Generator' },
   { href: '/youtube-seo-grader', label: 'SEO Score Grader' },
   { href: '/creator-gear', label: 'Creator Gear & Tools' },
+  { href: '/tools/youtube-title-generator-for-anime', label: 'Anime Titles ⚔️' },
+  { href: '/tools/youtube-title-generator-for-asmr', label: 'ASMR Titles 🎧' },
+  { href: '/tools/youtube-title-generator-for-faceless-channels', label: 'Faceless Channels 💼' },
   { href: '/tools/youtube-title-generator-for-gaming', label: 'Gaming Titles' },
   { href: '/tools/youtube-title-generator-for-vlogs', label: 'Vlog Titles' },
   { href: '/tools/youtube-title-generator-for-tech', label: 'Tech Titles' },
@@ -52,17 +55,14 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const localTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (localTheme === 'dark' || (!localTheme && systemPrefersDark)) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme('dark');
       document.documentElement.classList.add('dark');
     } else {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme('light');
       document.documentElement.classList.remove('dark');
     }

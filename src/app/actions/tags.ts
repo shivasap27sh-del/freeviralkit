@@ -2,46 +2,53 @@
 
 import { executeAIGeneration, safeParseJsonArray } from './core';
 
-export async function generateTagsOnly(topic: string, excludeTags: string[] = [], niche?: string, webContext?: string) {
+export async function generateTagsOnly(
+  topic: string,
+  excludeTags: string[] = [],
+  niche?: string,
+  webContext?: string
+) {
   const result = await executeAIGeneration({
     topic,
     excludeItems: excludeTags,
     overrideWebContext: webContext,
-    systemPrompt: (context) => `You are a YouTube SEO specialist who understands that tags are YouTube's SECONDARY discovery signal (after title and description), but they still matter for two critical things: helping YouTube understand the EXACT topic of a video, and surfacing the video in "suggested videos" alongside related content.
+    systemPrompt: (context) => `<role>
+You are an expert YouTube metadata engineer who specializes in search optimization and suggested-video algorithm placement.
+You understand how YouTube's search neural network connects exact user queries, voice searches, and related ecosystem tags.
+</role>
 
-You know the difference between tags that waste the 500-character limit and tags that actually drive impressions:
-• EXACT MATCH — the precise phrase a viewer would type into YouTube search
-• QUESTION FORMAT — "how to...", "why does...", "what is the best...", "can you..." — these match voice search and search suggestions
-• COMPARISON/VS — "X vs Y", "X or Y", "X alternative" — these capture high-intent viewers actively deciding
-• LONG-TAIL — 4-6 word phrases with low competition but real search volume
-• RELATED TOPIC — tags from the broader topic ecosystem that help YouTube place this video in the right "suggested" lanes
-• MISSPELLING VARIANTS — common misspellings of key terms that real people actually type
+<context>
+${niche ? `Niche Focus: "${niche}". Use genuine insider keywords and search phrases specific to ${niche}.` : 'General YouTube Audience.'}
+${(webContext ?? context) ? `Current Trending Context:\n${webContext ?? context}` : ''}
+</context>`,
 
-You NEVER waste characters on generic filler tags that don't help YouTube understand the video.
-${niche ? `CRITICAL: You are working within the "${niche}" niche. Use terminology, brand names, tools, and jargon specific to ${niche} that real ${niche} enthusiasts would search for.` : ''}
-${(webContext ?? context) ? `\nCURRENT REAL-WORLD CONTEXT (use real names, products, and search terms people are using right now):\n${webContext ?? context}` : ''}`,
-    
-    userPrompt: (context, excludes) => `Generate 15-20 YouTube tags for: "${topic}"
+    userPrompt: (context, excludes) => `<instruction>
+Generate 16-20 high-performing YouTube search tags for: "${topic}"
+</instruction>
 
-REQUIREMENTS:
-- Tags 1-6: EXACT SEARCH QUERIES — the precise phrases someone would type to find this video
-- Tags 7-10: QUESTION FORMAT — natural questions real people ask ("how to...", "why does...", "is it worth...")
-- Tags 11-14: RELATED/ADJACENT TOPICS — broader topics for "suggested videos" placement
-- Tags 15-20: LONG-TAIL & COMPARISON — ultra-specific phrases + "X vs Y", "best X for Y"
+<tag_structure>
+Follow this 4-tier discovery structure:
+1. Tags 1-5 (EXACT SEARCH PHRASES): The highest-volume exact search terms people type for this video.
+2. Tags 6-10 (VOICE & QUESTION SEARCHES): Question queries matching voice search ("how to...", "why is...", "is it worth it...").
+3. Tags 11-15 (ADJACENT SUGGESTED TAGS): Broader category tags that place this video next to top competitor videos in the "Up Next" sidebar.
+4. Tags 16-20 (LONG-TAIL & MISSPELLINGS): Ultra-specific multi-word phrases and common keyword misspellings.
+</tag_structure>
 
-RULES:
-- All lowercase, NO # symbols
-- Vary length naturally: 1-2 word tags + 3-4 word phrases + full question-format searches
-- CRITICAL: The TOTAL character count of ALL tags combined (including commas and spaces between them) MUST be UNDER 480 characters. Count carefully. If adding another tag would push past 480, STOP. YouTube's hard limit is 500 and users need room.
-- NEVER include these useless filler tags: "viral", "trending", "fyp", "for you", "must watch", "best video"
-- Only include "shorts" or "youtube shorts" if the topic is explicitly about short-form content
-- Each tag must answer: "Would a real person type this into YouTube search?"
-${excludes.length > 0 ? `- DO NOT repeat any of these previous tags: ${JSON.stringify(excludes)}` : ''}
+<strict_rules>
+- TOTAL CHARACTER LIMIT: The total length of ALL tags combined (including commas and spaces) MUST BE UNDER 480 CHARACTERS. (YouTube has a strict 500-character ceiling).
+- All lowercase. No # hashtag symbols.
+- BANNED FILLER: Never include useless spam tags like "viral", "trending", "fyp", "best video", "youtube".
+- Only include "shorts" if the topic specifically targets short-form content.
+${excludes.length > 0 ? `- DO NOT repeat any of these previously generated tags: ${JSON.stringify(excludes)}` : ''}
+</strict_rules>
 
-Return ONLY a JSON array of strings. No markdown, no explanation.
-[Seed: ${Math.random().toString(36).substring(2, 10)}]`,
-    options: { temperature: 0.8, maxTokens: 500 },
-    parseResponse: safeParseJsonArray
+<output_format>
+Return ONLY a valid JSON array of strings.
+["tag one", "tag two", "how to do something"]
+</output_format>
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
+    options: { temperature: 0.75, maxTokens: 600 },
+    parseResponse: safeParseJsonArray,
   });
 
   return result.success && result.data

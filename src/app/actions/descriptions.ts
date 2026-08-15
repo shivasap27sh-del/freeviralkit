@@ -2,51 +2,71 @@
 
 import { executeAIGeneration } from './core';
 
-export async function generateDescriptionOnly(topic: string, excludeDescription = '', niche?: string, webContext?: string) {
+export async function generateDescriptionOnly(
+  topic: string,
+  excludeDescription = '',
+  niche?: string,
+  webContext?: string
+) {
   const result = await executeAIGeneration({
     topic,
     excludeItems: excludeDescription ? [excludeDescription] : [],
     overrideWebContext: webContext,
-    systemPrompt: (context) => `You are a YouTube creator who writes descriptions that actually GET READ and drive action. You know that 90% of YouTube descriptions are copy-paste garbage with the same emoji CTAs and keyword stuffing — and you're the opposite.
+    systemPrompt: (context) => `<role>
+You are an expert YouTube SEO copywriter who structures descriptions for top creators.
+You understand that YouTube descriptions serve two masters:
+1. YouTube's SEO Algorithm (crawling the first 150 characters for search keyword ranking)
+2. Human Viewers (looking for timestamps, affiliate links, resources, and clarity)
+</role>
 
-You understand the anatomy of a high-performing YouTube description:
-• FIRST 150 CHARACTERS are EVERYTHING — this is what shows in search results and above the "Show More" fold. You front-load the hook and primary keyword here.
-• The body should provide GENUINE VALUE — timestamps, context, key takeaways — not filler
-• CTAs should feel natural and conversational, NOT a robotic emoji bullet list
-• Hashtags are placed strategically, not dumped at the end in a block
+<context>
+${niche ? `Niche Focus: "${niche}". Speak with the authentic voice, slang, and perspective of a dedicated ${niche} creator.` : 'General YouTube Audience.'}
+${(webContext ?? context) ? `Current Real-World Facts & News:\n${webContext ?? context}` : ''}
+</context>`,
 
-You rotate between different description FORMATS to keep things fresh:
-FORMAT A — STORY HOOK: Open with a compelling mini-story or personal angle, then deliver value
-FORMAT B — VALUE STACK: Lead with "In this video you'll learn:" followed by specific bullet points with real takeaways
-FORMAT C — CONTEXT SETTER: Give background/context that makes the viewer appreciate the video more
-FORMAT D — QUESTION OPENER: Start with a provocative question the viewer is already thinking, then tease the answer
+    userPrompt: (context, excludes) => `<instruction>
+Write a complete, high-converting YouTube Studio-ready description for: "${topic}"
+</instruction>
 
-You pick the format that best matches the video topic — you NEVER default to the same structure twice.
-${niche ? `CRITICAL: Write as someone deeply embedded in the "${niche}" niche. Use the tone, vocabulary, and cultural references that ${niche} creators naturally use. Match the energy of the community.` : ''}
-${(webContext ?? context) ? `\nCURRENT REAL-WORLD CONTEXT (use specific facts, names, and details from this to write an informed description):\n${webContext ?? context}` : ''}`,
-    
-    userPrompt: (context, excludes) => `Write a YouTube description for: "${topic}"
+<required_structure>
+Follow this exact 5-part YouTube Studio layout:
 
-STRUCTURE (pick the best FORMAT from your training — DO NOT always use the same one):
-1. HOOK (first 150 chars): A compelling opening that includes the primary keyword naturally. This MUST make someone want to click "Show More"
-2. BODY (100-150 words): Genuine context, key points, or story that adds value. Weave in secondary keywords naturally — NO keyword stuffing
-3. CTA: ONE natural call-to-action woven into the flow — NOT a separate section with emoji bullets. Write it like a human, not a template. Vary between asking for comments, subscribes, shares, or likes based on what fits the content.
-4. HASHTAGS: 3-5 relevant niche hashtags at the bottom. These should be the same quality as a standalone hashtag generator would produce.
+1. THE SEARCH SNIPPET (First 150 characters):
+A punchy 1-2 sentence hook containing the primary keyword. This is what displays above the "Show More" fold in search results.
 
-ABSOLUTE RULES:
-- Total under 250 words
-- NEVER use this format: "👍 LIKE | 💬 COMMENT | 🔔 SUBSCRIBE" — this is spam that viewers skip
-- NEVER use bold markdown (no ** symbols anywhere in your output)
-- NEVER start with "Welcome to..." or "In today's video..."  
-- Front-load the most important keyword in the FIRST sentence
-- Sound like a real creator talking to their audience, not an SEO robot
-- Use line breaks for readability — no giant walls of text
-${excludes.length > 0 ? `- Write a COMPLETELY different description structure and angle compared to this previous version: "${excludes[0].slice(0, 300)}..."` : ''}
+2. VIDEO SUMMARY & KEY TAKEAWAYS (2-3 short paragraphs):
+Genuine context explaining what the viewer will learn or experience. Weave in 2-3 natural secondary keywords smoothly.
 
-Return ONLY the description as plain text. No JSON, no markdown formatting.
-[Seed: ${Math.random().toString(36).substring(2, 10)}]`,
-    options: { temperature: 0.8, maxTokens: 600 },
-    parseResponse: (text) => text.trim()
+3. TIMESTAMPS / CHAPTERS:
+Provide 4-6 clean chapter timestamp placeholders matching this format:
+0:00 Intro & Overview
+1:15 Step 1: The Foundation
+3:30 The Secret Strategy
+5:45 Common Mistakes to Avoid
+7:20 Final Verdict
+
+4. RESOURCES & SOCIALS:
+Include a clean placeholder block for creators to paste their links:
+📌 Connect with me:
+• Subscribe: [Channel Link]
+• Twitter/X: [Handle]
+• Discord: [Community Link]
+
+5. STRATEGIC HASHTAGS:
+Place exactly 3-5 relevant niche hashtags at the bottom (e.g. #YouTubeSEO #CreatorEconomy #TechTips).
+</required_structure>
+
+<strict_rules>
+- Output PLAIN TEXT ONLY. Never use bold markdown (no ** symbols anywhere in output).
+- Never start with cliché openings like "Welcome to my channel" or "In today's video".
+- Sound like a genuine, passionate creator having a real conversation with their community.
+- Keep total length between 180 and 280 words for optimal readability.
+${excludes.length > 0 ? `- Write a COMPLETELY different angle and structure compared to: "${excludes[0].slice(0, 200)}..."` : ''}
+</strict_rules>
+
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
+    options: { temperature: 0.8, maxTokens: 800 },
+    parseResponse: (text) => text.replace(/\*\*/g, '').trim(),
   });
 
   return result.success && result.data

@@ -1,7 +1,8 @@
-import crypto from 'node:crypto';
 import { generateWithFallback } from '@/lib/ai/providers';
 import { getRedisClient, checkRateLimit } from '@/lib/ai/rateLimiter';
 import { searchGroundedContext } from '@/lib/ai/webGrounding';
+import { generateCacheKey, getCachedAIResponse, setCachedAIResponse } from '@/lib/ai/cache';
+import { sanitizeAndValidateInput, sanitizeStringArray } from '@/lib/ai/validation';
 import {
   safeParseJsonArray,
   safeParseChannelNames,
@@ -29,6 +30,8 @@ export {
   sanitizeOutput,
   SAFETY_INSTRUCTION,
   generateWithFallback,
+  sanitizeAndValidateInput,
+  sanitizeStringArray,
 };
 export type { ChannelNamesResult, ShortsIdea };
 
@@ -36,32 +39,8 @@ const log = (...args: unknown[]) => {
   if (process.env.NODE_ENV !== 'production') console.log(...args);
 };
 
-const isDev = process.env.NODE_ENV === 'development';
-const cacheTimeoutMs = isDev ? 2000 : 400;
-
 export function sanitizeInput(input: string, maxLength = 200): string {
-  if (typeof input !== 'string') return '';
-  let trimmed = input.trim();
-  if (trimmed.length > maxLength) {
-    trimmed = trimmed.substring(0, maxLength);
-  }
-  trimmed = trimmed.replace(/[\u0000-\u001F\u007F-\u009F]/g, '');
-
-  const safetyCheck = checkInputSafety(trimmed);
-  if (!safetyCheck.safe) {
-    throw new Error('CONTENT_SAFETY: ' + (safetyCheck.reason || 'Input flagged by content filter'));
-  }
-
-  return trimmed;
-}
-
-function generateCacheKey(systemPrompt: string, userPrompt: string): string {
-  const hash = crypto
-    .createHash('sha256')
-    .update(systemPrompt + '||' + userPrompt)
-    .digest('hex')
-    .slice(0, 32);
-  return `cache:gen:${hash}`;
+  return sanitizeAndValidateInput(input, maxLength, 'Topic');
 }
 
 export interface ExecuteAIOptions<T> {
@@ -75,12 +54,12 @@ export interface ExecuteAIOptions<T> {
 }
 
 export type ExecuteAIResult<T> =
-  | { success: true; data: T; error?: never }
-  | { success: false; error: string; data?: never };
+  | { success: true; data: T; cached?: boolean; latencyMs?: number; error?: never }
+  | { success: false; error: string; data?: never; retryAfter?: number };
 
 /**
- * Universal Server Action AI Orchestrator
- * Handles input sanitization, rate-limiting, distributed caching, LLM execution, and safety audits.
+ * Modern Universal Server Action AI Orchestrator
+ * Coordinates rate-limiting, multi-tier distributed caching, AI provider pool failover, and safety audits.
  */
 export async function executeAIGeneration<T>({
   topic,
@@ -91,59 +70,47 @@ export async function executeAIGeneration<T>({
   parseResponse,
   overrideWebContext,
 }: ExecuteAIOptions<T>): Promise<ExecuteAIResult<T>> {
-  try {
-    const sanitizedTopic = sanitizeInput(topic);
-    if (!sanitizedTopic) {
-      return { success: false, error: 'Topic cannot be empty.' };
-    }
+  const startTime = Date.now();
 
+  try {
+    // 1. Validate and sanitize input
+    const sanitizedTopic = sanitizeAndValidateInput(topic, 250, 'Topic');
+    const sanitizedExcludes = sanitizeStringArray(excludeItems, 50, 150);
+
+    // 2. Distributed Sliding-Window Rate Limit Check
     const rateLimit = await checkRateLimit();
     if (!rateLimit.allowed) {
       return {
         success: false,
-        error: `Rate limit exceeded. Please wait ${rateLimit.retryAfter} seconds.`,
+        error: `Rate limit reached. Please wait ${rateLimit.retryAfter} seconds.`,
+        retryAfter: rateLimit.retryAfter,
       };
     }
 
-    const sanitizedExcludes = Array.isArray(excludeItems)
-      ? excludeItems.map((t) => sanitizeInput(t)).filter(Boolean)
-      : [];
-
+    // 3. Resolve prompts and web context
     const webContext = overrideWebContext !== undefined ? overrideWebContext : '';
     const finalSystemPrompt =
       typeof systemPrompt === 'function' ? systemPrompt(webContext) : systemPrompt;
     const finalUserPrompt =
       typeof userPrompt === 'function' ? userPrompt(webContext, sanitizedExcludes) : userPrompt;
 
-    // Cache Check
-    const redis = getRedisClient();
-    let cacheKey = '';
-    if (redis) {
-      try {
-        cacheKey = generateCacheKey(finalSystemPrompt, finalUserPrompt);
-        const cached = await Promise.race([
-          redis.get<string>(cacheKey),
-          new Promise<null>((_, r) => setTimeout(() => r(new Error()), cacheTimeoutMs)),
-        ]);
+    // 4. Multi-Tier Cache Check (L1 Memory + L2 Redis)
+    const cacheKey = generateCacheKey(finalSystemPrompt, finalUserPrompt);
+    const cachedResponse = await getCachedAIResponse(cacheKey);
 
-        if (cached) {
-          log('[Cache] ⚡ Cache HIT! Verifying content safety on cached response...');
-          const safetyCheck = filterAIOutput(cached);
-          if (!safetyCheck.safe) {
-            console.warn('[Cache] ⚠️ Cached response failed post-safety audit. Deleting poisoned key.');
-            redis.del(cacheKey).catch(() => {});
-          } else {
-            const parsed = parseResponse(safetyCheck.filtered);
-            return { success: true, data: parsed };
-          }
-        }
-      } catch (err) {
-        console.warn('[Cache] Lookup bypassed or timed out:', err);
-      }
+    if (cachedResponse) {
+      log(`[Orchestrator] ⚡ Multi-Tier Cache HIT (${Date.now() - startTime}ms)`);
+      const parsed = parseResponse(cachedResponse);
+      return {
+        success: true,
+        data: parsed,
+        cached: true,
+        latencyMs: Date.now() - startTime,
+      };
     }
 
-    // Live Generation
-    log('[Cache] ❄️ Cache Miss. Executing live AI generation...');
+    // 5. Live Multi-Provider AI Inference with Fallback
+    log('[Orchestrator] ❄️ Cache Miss. Executing live multi-AI inference pool...');
     const responseText = await generateWithFallback(
       [
         { role: 'system', content: finalSystemPrompt },
@@ -152,21 +119,32 @@ export async function executeAIGeneration<T>({
       options
     );
 
-    // Save in Cache (Fire-and-forget 24-hour expiration)
-    if (redis && cacheKey) {
-      redis.set(cacheKey, responseText, { ex: 86400 }).catch((err) => {
-        console.error('[Cache] Failed to write cache entry:', err);
-      });
-    }
+    // 6. Asynchronous Cache Population (24-hour TTL)
+    setCachedAIResponse(cacheKey, responseText, 86400).catch((err) => {
+      console.warn('[Orchestrator] Cache write error:', err?.message || err);
+    });
 
     const parsed = parseResponse(responseText);
-    return { success: true, data: parsed };
+    return {
+      success: true,
+      data: parsed,
+      cached: false,
+      latencyMs: Date.now() - startTime,
+    };
   } catch (error) {
-    console.error('[Action] executeAIGeneration error:', error);
+    const message = error instanceof Error ? error.message : 'An unexpected error occurred.';
+    console.error('[Orchestrator] Error during generation:', message);
+
+    if (message.startsWith('CONTENT_SAFETY:')) {
+      return {
+        success: false,
+        error: 'Your topic contains terms that violate content safety policies. Please try a different query.',
+      };
+    }
+
     return {
       success: false,
-      error:
-        error instanceof Error ? error.message : 'An unexpected error occurred during generation.',
+      error: message,
     };
   }
 }

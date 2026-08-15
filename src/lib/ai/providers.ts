@@ -1,10 +1,9 @@
 import Groq from 'groq-sdk';
-import { getRedisClient } from './rateLimiter';
 import { filterAIOutput, SAFETY_INSTRUCTION } from '@/lib/content-safety';
 
 /**
- * Multi-AI Provider Pool with Dynamic Fallback & Circuit Breaker
- * Providers: Groq (Primary) -> NVIDIA NIM -> OpenRouter -> Google Gemini -> Cerebras -> Together AI
+ * Multi-AI Provider Pool with Dynamic Fallback & Zero-Latency Key Rotation
+ * Providers: Groq (Primary) -> Cerebras -> Google Gemini -> OpenRouter -> NVIDIA NIM -> Together AI
  */
 
 const log = (...args: unknown[]) => {
@@ -24,8 +23,13 @@ export interface GenerateOptions {
 export interface AIProvider {
   name: string;
   isConfigured: boolean;
+  timeoutMs: number;
   generate(messages: ChatMessage[], options: GenerateOptions): Promise<string>;
 }
+
+// In-memory key rotation counters for 0ms overhead
+let globalGroqIndex = 0;
+const providerKeyIndices = new Map<string, number>();
 
 // --- Provider 1: Groq (Primary - Ultra-Fast Llama-3.3 70B) ---
 const groqApiKeys: string[] = [];
@@ -53,46 +57,17 @@ const groqClients = groqApiKeys.map(
 const groqProvider: AIProvider = {
   name: 'Groq',
   isConfigured: groqClients.length > 0,
+  timeoutMs: 10000, // 10 seconds production timeout
   async generate(messages, options) {
     if (groqClients.length === 0) throw new Error('Groq not configured');
 
-    let startIndex = 0;
-    try {
-      const redis = getRedisClient();
-      if (redis) {
-        const rawIndex = await Promise.race([
-          redis.incr('global:groq_index'),
-          new Promise<number>((_, r) => setTimeout(() => r(new Error()), 400)),
-        ]);
-        startIndex = rawIndex % groqClients.length;
-      } else {
-        startIndex = Math.floor(Math.random() * groqClients.length);
-      }
-    } catch {
-      startIndex = Math.floor(Math.random() * groqClients.length);
-    }
+    const startIndex = globalGroqIndex % groqClients.length;
+    globalGroqIndex++;
 
     const errors: string[] = [];
     for (let i = 0; i < groqClients.length; i++) {
       const currentIndex = (startIndex + i) % groqClients.length;
       const client = groqClients[currentIndex];
-
-      // Check if key is temporarily rate-limited in Redis
-      try {
-        const redis = getRedisClient();
-        if (redis) {
-          const isBlocked = await Promise.race([
-            redis.get(`groq:blocked:${currentIndex}`),
-            new Promise<null>((_, r) => setTimeout(() => r(new Error()), 400)),
-          ]);
-          if (isBlocked) {
-            log(`[Groq] Key #${currentIndex} is currently blocked, skipping.`);
-            continue;
-          }
-        }
-      } catch {
-        // Bypass blocked check on Redis timeout
-      }
 
       try {
         log(`[Groq] Attempting generation with key index #${currentIndex}...`);
@@ -102,28 +77,13 @@ const groqProvider: AIProvider = {
           temperature: options.temperature,
           max_completion_tokens: options.maxTokens,
         });
-        return completion.choices[0]?.message?.content || '';
+        const text = completion.choices[0]?.message?.content || '';
+        if (!text) throw new Error('Empty response from Groq');
+        return text;
       } catch (error: unknown) {
         const msg = error instanceof Error ? error.message : String(error);
         console.warn(`[Groq] Key #${currentIndex} failed: ${msg}`);
         errors.push(`Key #${currentIndex}: ${msg}`);
-
-        // If rate limit (429), block this specific key for 30s in Redis
-        if (
-          msg.includes('429') ||
-          msg.toLowerCase().includes('rate limit') ||
-          (error as { status?: number })?.status === 429
-        ) {
-          try {
-            const redis = getRedisClient();
-            if (redis) {
-              await redis.set(`groq:blocked:${currentIndex}`, '1', { ex: 30 });
-              log(`[Groq] 🚫 Blocked Key #${currentIndex} in Redis for 30 seconds.`);
-            }
-          } catch {
-            // Ignore Redis errors
-          }
-        }
       }
     }
 
@@ -136,7 +96,8 @@ function createOpenAICompatibleProvider(
   name: string,
   envKey: string,
   baseUrl: string,
-  model: string
+  model: string,
+  timeoutMs = 8000
 ): AIProvider {
   const apiKeys: string[] = [];
   const baseKeyVal = process.env[envKey];
@@ -154,50 +115,24 @@ function createOpenAICompatibleProvider(
   return {
     name,
     isConfigured: apiKeys.length > 0,
+    timeoutMs,
     async generate(messages, options) {
       if (apiKeys.length === 0) throw new Error(`${name} not configured`);
 
-      const cleanName = name.replace(/\s+/g, '_').toLowerCase();
-      let startIndex = 0;
-      try {
-        const redis = getRedisClient();
-        if (redis) {
-          const rawIndex = await Promise.race([
-            redis.incr(`global:index:${cleanName}`),
-            new Promise<number>((_, r) => setTimeout(() => r(new Error()), 400)),
-          ]);
-          startIndex = rawIndex % apiKeys.length;
-        } else {
-          startIndex = Math.floor(Math.random() * apiKeys.length);
-        }
-      } catch {
-        startIndex = Math.floor(Math.random() * apiKeys.length);
-      }
+      const currentIndexRaw = providerKeyIndices.get(name) || 0;
+      const startIndex = currentIndexRaw % apiKeys.length;
+      providerKeyIndices.set(name, startIndex + 1);
 
       const errors: string[] = [];
       for (let i = 0; i < apiKeys.length; i++) {
         const currentIndex = (startIndex + i) % apiKeys.length;
         const apiKey = apiKeys[currentIndex];
 
-        // Check if key is blocked in Redis
-        try {
-          const redis = getRedisClient();
-          if (redis) {
-            const isBlocked = await Promise.race([
-              redis.get(`blocked:${cleanName}:${currentIndex}`),
-              new Promise<null>((_, r) => setTimeout(() => r(new Error()), 400)),
-            ]);
-            if (isBlocked) {
-              log(`[${name}] Key #${currentIndex} is blocked, skipping.`);
-              continue;
-            }
-          }
-        } catch {
-          // Bypass blocked check on connection error
-        }
-
         try {
           log(`[${name}] Attempting generation with key index #${currentIndex}...`);
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), timeoutMs - 500);
+
           const response = await fetch(baseUrl, {
             method: 'POST',
             headers: {
@@ -210,8 +145,11 @@ function createOpenAICompatibleProvider(
               temperature: options.temperature,
               max_tokens: options.maxTokens,
             }),
+            signal: controller.signal,
             cache: 'no-store',
           });
+
+          clearTimeout(timeout);
 
           if (!response.ok) {
             const errText = await response.text().catch(() => response.statusText);
@@ -226,22 +164,6 @@ function createOpenAICompatibleProvider(
           const msg = error instanceof Error ? error.message : String(error);
           console.warn(`[${name}] Key #${currentIndex} failed: ${msg}`);
           errors.push(`Key #${currentIndex}: ${msg}`);
-
-          if (
-            msg.includes('429') ||
-            msg.toLowerCase().includes('rate limit') ||
-            (error instanceof Object && 'status' in error && (error as { status: number }).status === 429)
-          ) {
-            try {
-              const redis = getRedisClient();
-              if (redis) {
-                await redis.set(`blocked:${cleanName}:${currentIndex}`, '1', { ex: 30 });
-                log(`[${name}] 🚫 Blocked Key #${currentIndex} in Redis for 30 seconds.`);
-              }
-            } catch {
-              // Ignore Redis errors
-            }
-          }
         }
       }
 
@@ -250,48 +172,92 @@ function createOpenAICompatibleProvider(
   };
 }
 
-// Fallback Provider instances
-const geminiProvider = createOpenAICompatibleProvider(
-  'Google Gemini',
-  'GEMINI_API_KEY',
-  'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions',
-  'gemini-2.0-flash'
-);
+// Native Google Gemini Provider
+const geminiApiKey = process.env.GEMINI_API_KEY;
+const geminiProvider: AIProvider = {
+  name: 'Google Gemini',
+  isConfigured: !!geminiApiKey,
+  timeoutMs: 8000,
+  async generate(messages, options) {
+    if (!geminiApiKey) throw new Error('Google Gemini not configured');
 
-const nvidiaProvider = createOpenAICompatibleProvider(
-  'NVIDIA NIM',
-  'NVIDIA_API_KEY',
-  'https://integrate.api.nvidia.com/v1/chat/completions',
-  'meta/llama-3.3-70b-instruct'
-);
+    const contents = messages.map((m) => ({
+      role: m.role === 'system' ? 'user' : m.role,
+      parts: [{ text: m.content }],
+    }));
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 7500);
+
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent?key=${geminiApiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents,
+          generationConfig: {
+            maxOutputTokens: options.maxTokens,
+            temperature: options.temperature,
+          },
+        }),
+        signal: controller.signal,
+        cache: 'no-store',
+      }
+    );
+
+    clearTimeout(timeout);
+
+    if (!response.ok) {
+      const errText = await response.text().catch(() => response.statusText);
+      throw new Error(`Gemini API error ${response.status}: ${errText}`);
+    }
+
+    const data = await response.json();
+    const content = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!content) throw new Error('Gemini returned empty response');
+    return content;
+  },
+};
 
 const cerebrasProvider = createOpenAICompatibleProvider(
   'Cerebras',
   'CEREBRAS_API_KEY',
   'https://api.cerebras.ai/v1/chat/completions',
-  'gemma-4-31b'
-);
-
-const togetherProvider = createOpenAICompatibleProvider(
-  'Together AI',
-  'TOGETHER_API_KEY',
-  'https://api.together.xyz/v1/chat/completions',
-  'meta-llama/Llama-3.3-70B-Instruct-Turbo'
+  'gemma-4-31b',
+  8000
 );
 
 const openRouterProvider = createOpenAICompatibleProvider(
   'OpenRouter',
   'OPENROUTER_API_KEY',
   'https://openrouter.ai/api/v1/chat/completions',
-  'openrouter/free'
+  'google/gemma-4-26b-a4b-it:free',
+  8000
+);
+
+const nvidiaProvider = createOpenAICompatibleProvider(
+  'NVIDIA NIM',
+  'NVIDIA_API_KEY',
+  'https://integrate.api.nvidia.com/v1/chat/completions',
+  'meta/llama-3.3-70b-instruct',
+  10000
+);
+
+const togetherProvider = createOpenAICompatibleProvider(
+  'Together AI',
+  'TOGETHER_API_KEY',
+  'https://api.together.xyz/v1/chat/completions',
+  'meta-llama/Llama-3.3-70B-Instruct-Turbo',
+  8000
 );
 
 export const providers: AIProvider[] = [
   groqProvider,
-  nvidiaProvider,
-  openRouterProvider,
-  geminiProvider,
   cerebrasProvider,
+  geminiProvider,
+  openRouterProvider,
+  nvidiaProvider,
   togetherProvider,
 ].filter((p) => p.isConfigured);
 
@@ -339,7 +305,11 @@ export async function generateWithFallback(
 
     try {
       log(`[AI] Routing request to ${provider.name}...`);
-      const result = await withTimeout(provider.generate(safeMessages, options), 15000, provider.name);
+      const result = await withTimeout(
+        provider.generate(safeMessages, options),
+        provider.timeoutMs || 8000,
+        provider.name
+      );
 
       const safetyCheck = filterAIOutput(result);
       if (!safetyCheck.safe) {

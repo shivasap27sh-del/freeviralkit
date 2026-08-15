@@ -5,33 +5,46 @@ import { executeAIGeneration } from './core';
 export async function researchTopic(niche: string) {
   const result = await executeAIGeneration({
     topic: niche,
-    systemPrompt: () => 'You are a YouTube search strategist and keyword researcher who identifies trending, high-traffic topics.',
-    userPrompt: () => `Perform niche research for the topic or niche: "${niche}".
-     
-    Identify:
-    - **volume**: Search volume indicator ("High", "Medium", or "Low")
-    - **competition**: Competition indicator ("High", "Medium", or "Low")
-    - **ideas**: A list of 5 trending, specific video titles that creators should make right now to stand out, along with a 1-sentence explanation of why it will perform well.
+    systemPrompt: () => `<role>
+You are an expert YouTube market analyst and niche monetization strategist.
+You identify high-opportunity search vacuums where audience demand is surging but high-quality creator supply is low.
+</role>`,
 
-    Return ONLY a valid JSON object matching this structure:
+    userPrompt: () => `<instruction>
+Perform an in-depth topic & market opportunity analysis for the niche: "${niche}"
+</instruction>
+
+<analysis_requirements>
+1. "volume": Overall search interest level ("High", "Medium", or "Low").
+2. "competition": Competitor saturation level ("High", "Medium", or "Low").
+3. "ideas": Exactly 5 breakout video concepts that target underserved search queries. For each idea:
+   - "title": High-CTR video title (45-65 characters).
+   - "reason": Clear strategic rationale explaining the audience search intent and monetization potential (e.g. High AdSense RPM, Affiliate buyer intent, or viral mass appeal).
+</analysis_requirements>
+
+<output_format>
+Return ONLY a valid JSON object:
+{
+  "volume": "High",
+  "competition": "Medium",
+  "ideas": [
     {
-      "volume": "High",
-      "competition": "Medium",
-      "ideas": [
-        { "title": "video title 1", "reason": "why it ranks" },
-        { "title": "video title 2", "reason": "why it ranks" },
-        { "title": "video title 3", "reason": "why it ranks" },
-        { "title": "video title 4", "reason": "why it ranks" },
-        { "title": "video title 5", "reason": "why it ranks" }
-      ]
+      "title": "5 Best Budget Mics for YouTube in 2026",
+      "reason": "High commercial purchase intent with top affiliate commission conversion rates."
+    },
+    {
+      "title": "Why 90% of Beginner Channels Fail in Month 1",
+      "reason": "Captures high-volume problem-aware searches with strong viewer retention."
     }
-    Do not include any explanation or markdown formatting.
-    [Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
+  ]
+}
+</output_format>
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
     options: { temperature: 0.8, maxTokens: 800 },
     parseResponse: (text) => {
       const clean = text.replace(/```json/g, '').replace(/```/g, '').trim();
       return JSON.parse(clean);
-    }
+    },
   });
 
   return result.success && result.data

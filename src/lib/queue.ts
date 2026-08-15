@@ -2,7 +2,7 @@ import { Redis } from '@upstash/redis';
 
 export type JobStatus = 'pending' | 'processing' | 'completed' | 'failed';
 
-export interface JobRecord<T = any> {
+export interface JobRecord<T = unknown> {
   id: string;
   type: string;
   status: JobStatus;
@@ -46,7 +46,7 @@ export async function createJob(type: string): Promise<string> {
 /**
  * Retrieves the current status and payload of a queue job.
  */
-export async function getJobStatus<T = any>(id: string): Promise<JobRecord<T> | null> {
+export async function getJobStatus<T = unknown>(id: string): Promise<JobRecord<T> | null> {
   const redis = getRedis();
   if (!redis) return null;
 
@@ -57,7 +57,7 @@ export async function getJobStatus<T = any>(id: string): Promise<JobRecord<T> | 
       return JSON.parse(raw) as JobRecord<T>;
     }
     return raw as JobRecord<T>;
-  } catch (e) {
+  } catch {
     return null;
   }
 }
@@ -65,7 +65,7 @@ export async function getJobStatus<T = any>(id: string): Promise<JobRecord<T> | 
 /**
  * Updates a job's status and result in Redis.
  */
-export async function updateJob<T = any>(
+export async function updateJob<T = unknown>(
   id: string,
   status: JobStatus,
   result?: T,
@@ -80,7 +80,7 @@ export async function updateJob<T = any>(
       id,
       type: existing?.type || 'unknown',
       status,
-      result: result !== undefined ? result : existing?.result,
+      result: result !== undefined ? result : (existing?.result as T),
       error: error !== undefined ? error : existing?.error,
       createdAt: existing?.createdAt || Date.now(),
     };
@@ -93,7 +93,7 @@ export async function updateJob<T = any>(
 /**
  * Publishes a task message to Upstash QStash endpoint.
  */
-export async function publishQStashMessage(destinationUrl: string, payload: any): Promise<boolean> {
+export async function publishQStashMessage(destinationUrl: string, payload: Record<string, unknown>): Promise<boolean> {
   const token = process.env.QSTASH_TOKEN;
   const baseUrl = process.env.QSTASH_URL || 'https://qstash-us-east-1.upstash.io';
   if (!token) return false;

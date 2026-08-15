@@ -95,7 +95,20 @@ export default function HookGeneratorClient() {
                 className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:border-purple-300 dark:hover:border-purple-500/50 transition-all flex gap-4"
               >
                 <div className="flex-1">
-                  <p className="text-slate-800 dark:text-slate-200 font-medium text-lg leading-relaxed">{hook}</p>
+                  {(() => {
+                    const match = hook.match(/^\[VISUAL:\s*([^\]]+)\]\s*([\s\S]*)$/i);
+                    if (match) {
+                      return (
+                        <>
+                          <div className="mb-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-600 dark:text-purple-400 text-xs font-semibold border border-purple-500/20">
+                            🎬 Visual: {match[1].trim()}
+                          </div>
+                          <p className="text-slate-800 dark:text-slate-200 font-medium text-lg leading-relaxed">{match[2].trim()}</p>
+                        </>
+                      );
+                    }
+                    return <p className="text-slate-800 dark:text-slate-200 font-medium text-lg leading-relaxed">{hook.replace(/^["']|["']$/g, '')}</p>;
+                  })()}
                 </div>
                 <button
                   onClick={() => copy(hook, `hook-${idx}`)}

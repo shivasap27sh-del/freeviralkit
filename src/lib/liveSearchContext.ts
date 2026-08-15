@@ -47,8 +47,8 @@ export async function fetchRealTimeContext(query: string): Promise<RealTimeConte
       clearTimeout(timeout);
 
       if (response.ok) {
-        const data = await response.json();
-        const summary = data.answer || data.results?.map((r: any) => r.content).filter(Boolean).join('\n') || '';
+        const data = (await response.json()) as { answer?: string; results?: Array<{ content?: string; url?: string }> };
+        const summary = data.answer || data.results?.map((r) => r.content).filter(Boolean).join('\n') || '';
         if (summary) {
           return {
             query: cleanQuery,

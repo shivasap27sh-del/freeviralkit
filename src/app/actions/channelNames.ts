@@ -2,49 +2,61 @@
 
 import { executeAIGeneration, safeParseChannelNames } from './core';
 
-export async function generateChannelNames(keyword: string, style = 'default', excludeNames: string[] = [], niche?: string) {
+export async function generateChannelNames(
+  keyword: string,
+  style = 'default',
+  excludeNames: string[] = [],
+  niche?: string
+) {
   let styleInstruction = '';
   if (style === 'creative') {
-    styleInstruction = 'Emphasize high creativity, unique wordplay, abstract concepts, and metaphors. Avoid simple keywords.';
+    styleInstruction = 'Emphasize high creativity, unique wordplay, abstract concepts, and metaphors.';
   } else if (style === 'punny') {
-    styleInstruction = 'Make the names funny, clever, and include witty puns or humorous wordplay related to the topic.';
+    styleInstruction = 'Make the names funny, witty, clever, and include memorable wordplay.';
   } else if (style === 'corporate') {
-    styleInstruction = 'Make the names clean, professional, authority-driven, and trustworthy, suitable for a business or educational brand.';
+    styleInstruction = 'Make the names authoritative, clean, professional, and agency/media-grade.';
   } else {
-    styleInstruction = 'Keep a balanced mix of clever, modern, SEO-friendly, and brandable channel name suggestions.';
+    styleInstruction = 'Provide a balanced mix of modern, catchy, brandable, and SEO-friendly creator names.';
   }
 
   const result = await executeAIGeneration({
     topic: keyword,
     excludeItems: excludeNames,
-    systemPrompt: () => `You are a YouTube branding expert who helps creators choose catchy, memorable, and SEO-friendly channel names.
-${niche ? `CRITICAL RULE: Your focus is SPECIFICALLY on the "${niche}" niche. Ensure all names are perfectly tailored to this audience.` : ''}`,
-    
-    userPrompt: (context, excludes) => `Generate 15 creative YouTube channel name ideas for the keyword or niche: "${keyword}".
-     
-    STYLE/VIBE FOCUS: ${styleInstruction}
+    systemPrompt: () => `<role>
+You are an expert YouTube branding agency director who names top channels and media companies.
+You understand channel name psychology: names must be easy to spell, under 15 characters, roll off the tongue, and make attractive @handles on YouTube and social platforms.
+</role>
+${niche ? `Niche Focus: "${niche}". Incorporate genuine culture and terminology from the ${niche} community.` : ''}`,
 
-    Group them into exactly 4 categories:
-    - "catchy" (Modern, clever, and easy to remember - 4 ideas)
-    - "seo" (Includes relevant keywords for search ranking - 4 ideas)
-    - "brandable" (Unique, short, and punchy single-word or abstract names - 4 ideas)
-    - "shorts" (Simple, short, and energetic names for a Shorts channel - 3 ideas)
+    userPrompt: (context, excludes) => `<instruction>
+Generate 15 standout YouTube channel names for the keyword/niche: "${keyword}".
+Style Directive: ${styleInstruction}
+</instruction>
 
-    RULES:
-    - Keep names clean, professional, and easy to pronounce
-    - No numbers or special characters unless it fits perfectly
-    - Return ONLY a valid JSON object matching this structure:
-    {
-      "catchy": ["name1", "name2", "name3", "name4"],
-      "seo": ["name1", "name2", "name3", "name4"],
-      "brandable": ["name1", "name2", "name3", "name4"],
-      "shorts": ["name1", "name2", "name3"]
-    }
-    ${excludes.length > 0 ? `- DO NOT generate any of these previous names under any category: ${JSON.stringify(excludes)}` : ''}
-    Do not include any explanation or markdown formatting.
-    [Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
-    options: { temperature: 0.8, maxTokens: 400 },
-    parseResponse: safeParseChannelNames
+<channel_categories>
+Group the names into exactly 4 categories:
+1. "catchy": 4 Modern, memorable, and magnetic channel names.
+2. "seo": 4 Search-optimized names that clearly communicate topic authority.
+3. "brandable": 4 Unique, 1-2 word abstract brand names (like "Veritasium", "LinusTech", "Kurzgesagt").
+4. "shorts": 3 Short, punchy names perfect for a vertical Shorts/Reels brand.
+</channel_categories>
+
+<strict_rules>
+- MAXIMUM 15 CHARACTERS per name whenever possible.
+- Avoid random numbers, hyphens, or awkward symbols.
+- Must be easily pronounceable in under 1 second.
+- Return ONLY a valid JSON object matching the schema:
+{
+  "catchy": ["Name 1", "Name 2", "Name 3", "Name 4"],
+  "seo": ["Name 1", "Name 2", "Name 3", "Name 4"],
+  "brandable": ["Name 1", "Name 2", "Name 3", "Name 4"],
+  "shorts": ["Name 1", "Name 2", "Name 3"]
+}
+${excludes.length > 0 ? `- DO NOT repeat previous names: ${JSON.stringify(excludes)}` : ''}
+</strict_rules>
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
+    options: { temperature: 0.85, maxTokens: 500 },
+    parseResponse: safeParseChannelNames,
   });
 
   return result.success && result.data

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 /**
  * Root-level error boundary for Next.js App Router.
@@ -108,7 +109,7 @@ export default function GlobalError({
           </button>
 
           {/* Home link */}
-          <a
+          <Link
             href="/"
             style={{
               color: '#94a3b8',
@@ -118,7 +119,7 @@ export default function GlobalError({
             }}
           >
             Go to Homepage
-          </a>
+          </Link>
 
           {error.digest && (
             <p

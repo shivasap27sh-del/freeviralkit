@@ -17,36 +17,55 @@ export async function gradeVideoSEO(title: string, description: string, tags: st
   if (!title.trim() && !cleanDesc) return { success: false, error: 'Please enter at least a title and description.' };
 
   const result = await executeAIGeneration({
-    topic: title,
-    systemPrompt: () => `You are an elite YouTube SEO algorithm analyst.
-Your job is to analyze a user's YouTube Video Title, Description, and Tags together, and grade how well they are optimized for YouTube Search and Click-Through Rate.
+    topic: title || cleanDesc.slice(0, 50),
+    systemPrompt: () => `<role>
+You are a senior YouTube SEO auditor and search ranking engineer.
+You evaluate Video Metadata across 4 critical ranking factors:
+1. Title CTR Potential & Mobile Length (Sweet spot: 45-65 characters)
+2. Description Search Snippet (Keywords in first 150 characters)
+3. User Retention Signals (Timestamps/Chapters present)
+4. Cross-Metadata Keyword Synergy (Alignment between Title, Description, and Tags)
+</role>`,
 
-Rules for evaluation:
-- Title: Is it engaging? Is the keyword near the front? Is it under 70 characters?
-- Description: Does the first 2 lines (above the fold) hook the viewer and contain the main keyword? Are there timestamps/chapters? Are there relevant links?
-- Tags: Are they relevant? (Note: Tags matter less now, but misspellings or broad tags can hurt).
+    userPrompt: () => `<instruction>
+Audit and grade the following YouTube video metadata package:
+Title: "${title}"
+Description: "${cleanDesc || '(None provided)'}"
+Tags: "${cleanTags || '(None provided)'}"
+</instruction>
 
-You MUST return ONLY a valid JSON object with the following structure:
+<scoring_rubric>
+- Score 90-100: Flawless mobile-optimized title, keyword-rich first 150 chars in description, chapters included, synergistic tags.
+- Score 70-89: Good metadata but missing timestamps, slightly too long title, or weak CTA.
+- Score <70: Severely truncated title (>70 chars), empty description, keyword stuffing, or misaligned tags.
+</scoring_rubric>
+
+<output_format>
+Return ONLY a valid JSON object matching this schema:
 {
-  "score": <number from 0 to 100>,
-  "verdict": "<A short 1-sentence summary of the overall SEO health>",
-  "strengths": ["<strength 1>", "<strength 2>"],
-  "weaknesses": ["<weakness 1>", "<weakness 2>"],
-  "recommendations": ["<actionable tip 1>", "<actionable tip 2>"]
+  "score": 85,
+  "verdict": "Strong keyword foundations, but title is 72 characters and will get cut off on smartphones.",
+  "strengths": [
+    "Primary keyword is placed directly in the first sentence of the description.",
+    "Includes relevant community hashtags."
+  ],
+  "weaknesses": [
+    "Title exceeds 65 characters (risk of mobile truncation).",
+    "Missing timestamp chapters for Google Key Moments."
+  ],
+  "recommendations": [
+    "Shorten title to: 'How to Build a Fast PC in 2026 (Beginner Guide)'",
+    "Add 4-5 chapter timestamps starting with 00:00 Intro."
+  ]
 }
-
-Do not include any markdown formatting like \`\`\`json outside the structure. Return raw JSON.`,
-    
-    userPrompt: () => `Grade the following YouTube metadata:
-Title: ${title}
-Description: ${cleanDesc || '(No description provided)'}
-Tags: ${cleanTags || '(No tags provided)'}`,
-    options: { temperature: 0.3, maxTokens: 1000 },
+</output_format>
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
+    options: { temperature: 0.2, maxTokens: 800 },
     parseResponse: (text) => {
       let clean = text.replace(/```json/g, '').replace(/```/g, '').trim();
       const firstBrace = clean.indexOf('{');
       const lastBrace = clean.lastIndexOf('}');
-      if (firstBrace !== -1 && lastBrace > firstBrace) {
+      if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
         clean = clean.substring(firstBrace, lastBrace + 1);
       }
       const parsed = JSON.parse(clean);
@@ -54,7 +73,7 @@ Tags: ${cleanTags || '(No tags provided)'}`,
         throw new Error('Failed to parse SEO grade.');
       }
       return parsed as SEOResult;
-    }
+    },
   });
 
   return result.success && result.data

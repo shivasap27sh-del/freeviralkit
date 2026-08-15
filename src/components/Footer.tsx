@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Logo from '@/components/Logo';
 import { useState, useEffect } from 'react';
+import { useConsent } from '@/components/ConsentProvider';
 
 const footerLinks = {
   Product: [
@@ -19,13 +20,12 @@ const footerLinks = {
     { href: '/youtube-hashtag-generator', label: 'Hashtag Generator' },
     { href: '/youtube-seo-grader', label: 'SEO Score Grader' },
   ],
-  'Advanced AI Tools': [
-    { href: '/youtube-script-generator', label: 'AI Script Outline' },
-    { href: '/youtube-topic-researcher', label: 'AI Niche Researcher' },
-    { href: '/youtube-hook-generator', label: 'Video Hook Generator' },
-    { href: '/youtube-chapter-generator', label: 'Chapter Generator' },
-    { href: '/youtube-thumbnail-generator', label: 'Thumbnail Ideas' },
-    { href: '/creator-gear', label: 'Creator Gear & Tools' },
+  'Niche Studios': [
+    { href: '/tools/youtube-title-generator-for-anime', label: 'Anime Title Generator' },
+    { href: '/tools/youtube-title-generator-for-asmr', label: 'ASMR Title Generator' },
+    { href: '/tools/youtube-title-generator-for-faceless-channels', label: 'Faceless Automation' },
+    { href: '/tools/youtube-title-generator-for-gaming', label: 'Gaming Title Generator' },
+    { href: '/tools/youtube-title-generator-for-tech', label: 'Tech Title Generator' },
   ],
 };
 
@@ -239,7 +239,6 @@ export default function Footer() {
   );
 }
 
-import { useConsent } from '@/components/ConsentProvider';
 function FooterCookieSettings() {
   const { openBanner } = useConsent();
   return (

@@ -250,6 +250,27 @@ const nicheTools = [
     icon: Clapperboard,
     color: 'purple',
   },
+  {
+    href: '/tools/youtube-title-generator-for-anime',
+    title: 'YouTube Title Generator for Anime',
+    description: 'Create viral anime review, episode reaction, power scaling, and seasonal tier list titles.',
+    icon: Sparkles,
+    color: 'pink',
+  },
+  {
+    href: '/tools/youtube-title-generator-for-asmr',
+    title: 'YouTube Title Generator for ASMR',
+    description: 'Generate relaxing ASMR titles formatted with sensory trigger tags and sleep keywords.',
+    icon: Music,
+    color: 'purple',
+  },
+  {
+    href: '/tools/youtube-title-generator-for-faceless-channels',
+    title: 'YouTube Title Generator for Faceless Channels',
+    description: 'Create high-RPM documentary titles for business exposés, true crime, and video essays.',
+    icon: User,
+    color: 'green',
+  },
 ];
 
 const faqItems = [

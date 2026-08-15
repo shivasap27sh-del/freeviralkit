@@ -6,20 +6,41 @@ export async function generateHooks(topic: string, exclude: string[] = []) {
   const result = await executeAIGeneration({
     topic,
     excludeItems: exclude,
-    systemPrompt: () => `You are an expert YouTube scriptwriter specializing in high-retention video hooks.
-Your job is to generate 5 powerful hooks (the first 5-10 seconds of a video script) for the given topic.
-Each hook must use a different psychological trigger (e.g., Curiosity, Shock, Story, Problem/Agitation, Direct Value).
-Keep each hook punchy, engaging, and under 50 words.
+    systemPrompt: () => `<role>
+You are an elite YouTube script doctor and retention consultant specializing in the critical First 5-8 Seconds of YouTube videos.
+You understand that 70% of audience drop-off happens within the first 10 seconds. Your hooks combine a VISUAL ACTION with a SPOKEN STATEMENT that creates an immediate cognitive curiosity loop.
+</role>`,
 
-Return ONLY a valid JSON array of 5 strings. No markdown formatting, no explanations.
-${exclude.length > 0 ? `DO NOT generate any of the following hooks, come up with completely new ones: ${exclude.join(' | ')}` : ''}
+    userPrompt: () => `<instruction>
+Generate 5 high-retention YouTube video hooks for topic: "${topic}"
+</instruction>
 
-Example output:
-["Did you know that 99% of creators are making this one fatal mistake? Let me show you how to fix it in 60 seconds.", "I spent 30 days doing X, and the results absolutely shocked me.", "This is the secret strategy that [Big YouTuber] used to gain 1 million subscribers."]`,
-    
-    userPrompt: () => `Generate 5 hooks for the YouTube video topic: "${topic}"`,
-    options: { temperature: 0.8, maxTokens: 800 },
-    parseResponse: safeParseJsonArray
+<hook_framework>
+Every hook must deliver both the Visual Cue and Spoken Audio:
+1. THE SHOCK PROOF HOOK: Show a staggering result, chart, or failed experiment right away.
+2. THE COMMON LIE / CONTRARIAN HOOK: Expose advice that 99% of people get wrong.
+3. THE HIGH-STAKES STORY HOOK: Drop the viewer directly in the middle of a tense moment.
+4. THE 60-SECOND PROMISE HOOK: Clear, actionable transformation promised with no fluff.
+5. THE PATTERN INTERRUPT HOOK: Break the standard YouTube pacing entirely with an unexpected question.
+</hook_framework>
+
+<strict_rules>
+- Format each hook as: "[VISUAL: Description of what to show on screen] Spoken words creator says directly into the camera."
+- Spoken words must be under 40 words (takes 4-7 seconds to speak).
+- Sound like an energetic, captivating human creator — NOT a corporate narrator.
+${exclude.length > 0 ? `- DO NOT repeat previous hooks: ${JSON.stringify(exclude)}` : ''}
+</strict_rules>
+
+<output_format>
+Return ONLY a valid JSON array of 5 strings.
+[
+  "[VISUAL: Holding a completely destroyed hard drive] If you have ever backed up your files like this, you have less than 48 hours before losing everything.",
+  "[VISUAL: Quick cut showing a 0 to $10,000 dashboard graph] I spent 30 days testing the most viral advice on YouTube, and here is what happened."
+]
+</output_format>
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
+    options: { temperature: 0.85, maxTokens: 800 },
+    parseResponse: safeParseJsonArray,
   });
 
   return result.success && result.data

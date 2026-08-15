@@ -2,7 +2,7 @@
 
 import { getJobStatus, JobRecord } from '@/lib/queue';
 
-export async function checkQueueJobStatus<T = any>(jobId: string): Promise<{ success: boolean; job?: JobRecord<T>; error?: string }> {
+export async function checkQueueJobStatus<T = unknown>(jobId: string): Promise<{ success: boolean; job?: JobRecord<T>; error?: string }> {
   if (!jobId || typeof jobId !== 'string') {
     return { success: false, error: 'Invalid Job ID' };
   }

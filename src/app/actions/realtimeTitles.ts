@@ -30,7 +30,7 @@ export async function generateRealTimeYouTubePackage(
       ? `REAL-WORLD FACTS & PLOT SUMMARY (${liveContext.source.toUpperCase()}):
 Topic/Title: ${liveContext.title || liveContext.query}
 Summary: ${liveContext.summary}`
-      : `TOPIC: "${topic}". Note: Use general trending film/entertainment knowledge and creator viral hooks.`;
+      : `TOPIC: "${topic}". Note: Ground output with verified release details, cast, and authentic entertainment knowledge.`;
 
     // 2. Generate 10 High-CTR Real-World Titles using live context
     const titlesResult = await executeAIGeneration({
@@ -38,24 +38,31 @@ Summary: ${liveContext.summary}`
       excludeItems: excludeTitles,
       overrideWebContext: contextText,
       systemPrompt: (webContext) => `<role>
-You are an expert YouTube algorithm strategist specializing in real-world movies, entertainment news, trailers, and viral pop culture trends.
-You understand how to craft titles that leverage REAL movie facts, plot twists, character names, and viral curiosity gaps.
+You are an elite YouTube pop culture and film analyst who writes titles for movie breakdown, trailer reaction, and ending-explained videos.
+You anchor every title to VERIFIED plot facts, confirmed cast/directors, and psychological curiosity hooks.
 </role>
 
 <context>
 Niche: ${niche}
 ${webContext}
-</context>
+</context>`,
 
-<rules>
-- Use REAL facts, character names, release details, or plot angles from the provided context.
-- Craft titles for reaction videos, plot breakdowns, ending explained, hidden details, and official-style trailer reviews.
-- Sound like a passionate movie critic or pop culture creator.
-- Include 1-2 relevant trending hashtags at the end of 4-5 titles (e.g. #Horror #Movies2026).
-${excludeTitles.length > 0 ? `- Do NOT repeat previous titles: ${JSON.stringify(excludeTitles)}` : ''}
-</rules>`,
-      userPrompt: () => `Generate exactly 10 viral YouTube titles for topic/movie: "${topic}".
-Return ONLY a valid JSON array of 10 title strings.`,
+      userPrompt: () => `<instruction>
+Generate exactly 10 high-CTR YouTube titles for the film/topic: "${topic}"
+</instruction>
+
+<strict_rules>
+- CRITICAL LENGTH: Each title MUST be between 45 and 65 characters long (no mobile feed cutoff).
+- Incorporate specific real-world facts from the context (character names, plot hooks, release mysteries, ending theories).
+- Format angles: 2 Ending Explained / Theories, 2 Hidden Details / Easter Eggs, 2 Honest Reaction / Review, 2 Breakdown / Timeline, 2 Contrarian Takes.
+- Include 1-2 trending hashtags at the end of 4-5 titles (e.g. #MovieReview, #FilmTheory).
+${excludeTitles.length > 0 ? `- DO NOT repeat previous titles: ${JSON.stringify(excludeTitles)}` : ''}
+</strict_rules>
+
+<output_format>
+Return ONLY a valid JSON array of 10 title strings.
+</output_format>
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
       options: { temperature: 0.85, maxTokens: 800 },
       parseResponse: safeParseJsonArray,
     });
@@ -64,19 +71,29 @@ Return ONLY a valid JSON array of 10 title strings.`,
     const extrasResult = await executeAIGeneration({
       topic,
       overrideWebContext: contextText,
-      systemPrompt: (webContext) => `<role>You are a YouTube SEO expert for movies and trending topics.</role>
+      systemPrompt: (webContext) => `<role>You are a YouTube film metadata specialist.</role>
 <context>${webContext}</context>`,
-      userPrompt: () => `For YouTube topic/movie "${topic}", return a valid JSON object with 3 keys:
+      userPrompt: () => `<instruction>
+For the film/topic "${topic}", generate a complete metadata package as a JSON object with keys "hashtags", "tags", and "description".
+</instruction>
+
+<rules>
+- "hashtags": Array of 12-15 relevant #CamelCase movie hashtags (top 3 must be high-volume pillars).
+- "tags": Array of 16-20 lowercase search tags for YouTube studio (under 480 total characters combined).
+- "description": Plain text 2-3 paragraph YouTube Studio description incorporating genuine plot context, timestamp placeholders (0:00 Intro, 1:45 Plot Breakdown, 5:10 Ending Explained), and a call to action. NO bold markdown (**).
+</rules>
+
+<output_format>
 {
-  "hashtags": ["#Hashtag1", "#Hashtag2", ...], (12-15 hashtags)
-  "tags": ["tag 1", "tag 2", ...], (20-25 tags for YouTube studio)
-  "description": "Engaging 2-paragraph YouTube video description incorporating real plot details, call-to-action, timestamps placeholder, and SEO keywords."
+  "hashtags": ["#MovieName", "#EndingExplained", "#FilmReview"],
+  "tags": ["movie name review", "movie name ending explained", "movie name plot analysis"],
+  "description": "The complete breakdown of..."
 }
-Return ONLY valid JSON.`,
+</output_format>
+[Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
       options: { temperature: 0.7, maxTokens: 1000 },
       parseResponse: (text) => {
         try {
-          // Robust extraction of JSON substring starting from first '{' to last '}'
           const firstBrace = text.indexOf('{');
           const lastBrace = text.lastIndexOf('}');
           if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
@@ -85,26 +102,21 @@ Return ONLY valid JSON.`,
             return {
               hashtags: Array.isArray(parsed.hashtags) ? parsed.hashtags.map(String) : [],
               tags: Array.isArray(parsed.tags) ? parsed.tags.map(String) : [],
-              description: typeof parsed.description === 'string' ? parsed.description : '',
+              description: typeof parsed.description === 'string' ? parsed.description.replace(/\*\*/g, '').trim() : '',
             };
           }
           throw new Error('No JSON object boundaries found in AI response');
-        } catch (err) {
-          console.warn('[realtimeTitles] JSON parse failed, running regex fallback extractor...', err);
-
-          // Fallback 1: Extract description string via regex
+        } catch {
           const descMatch = text.match(/"description"\s*:\s*"([\s\S]*?)"(?=\s*,\s*"|\s*\})/);
           const description = descMatch
-            ? descMatch[1].replace(/\\n/g, '\n').replace(/\\"/g, '"')
-            : text.replace(/^---/g, '').replace(/```[a-z]*/g, '').trim();
+            ? descMatch[1].replace(/\\n/g, '\n').replace(/\\"/g, '"').replace(/\*\*/g, '')
+            : text.replace(/^---/g, '').replace(/```[a-z]*/g, '').replace(/\*\*/g, '').trim();
 
-          // Fallback 2: Extract hashtags array via regex
           const hashtagsMatch = text.match(/"hashtags"\s*:\s*\[([\s\S]*?)\]/);
           const hashtags = hashtagsMatch
             ? (hashtagsMatch[1].match(/"([^"]+)"/g) || []).map((s) => s.replace(/"/g, ''))
             : (text.match(/#[A-Za-z0-9_]+/g) || []);
 
-          // Fallback 3: Extract tags array via regex
           const tagsMatch = text.match(/"tags"\s*:\s*\[([\s\S]*?)\]/);
           const tags = tagsMatch
             ? (tagsMatch[1].match(/"([^"]+)"/g) || []).map((s) => s.replace(/"/g, ''))

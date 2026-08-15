@@ -146,7 +146,7 @@ export default function ShortsIdeaGeneratorPageClient() {
                       <div className="my-auto text-center px-2 py-4 bg-black/60 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg">
                         <p className="text-xs font-semibold text-pink-400 uppercase tracking-widest mb-1">First 3s Hook</p>
                         <p className="text-sm font-black text-white leading-snug drop-shadow-md">
-                          &ldquo;{idea.hook.replace(/\*/g, '')}&rdquo;
+                          &ldquo;{idea.hook.replace(/\*/g, '').replace(/^["'“”\[\]]+|["'“”\[\]]+$/g, '').replace(/\[VISUAL:.*?\]/gi, '').trim()}&rdquo;
                         </p>
                       </div>
 

@@ -1,6 +1,6 @@
 'use server';
 
-import { checkRateLimit, executeAIGeneration, sanitizeInput, searchGroundedContext } from './core';
+import { checkRateLimit, executeAIGeneration, sanitizeInput } from './core';
 import { generateTagsOnly } from './tags';
 import { generateHashtagsOnly } from './hashtags';
 import { generateDescriptionOnly } from './descriptions';
@@ -8,23 +8,28 @@ import { generateDescriptionOnly } from './descriptions';
 async function generatePinnedComment(title: string, webContext?: string): Promise<string> {
   const result = await executeAIGeneration({
     topic: title,
-    systemPrompt: () => `You are a YouTube engagement expert. You write pinned comments that drive replies and boost watch time.
-${webContext ? `\nCURRENT CONTEXT about this topic:\n${webContext}` : ''}`,
-    userPrompt: () => `Write a pinned comment for a YouTube video titled: "${title}"
- 
-RULES:
-- Start with a hook or question that makes people REPLY
-- Keep it 2-4 lines max
-- Match the niche tone
-- Include a call-to-action
-- Use 1-2 relevant emojis
-- Feel authentic, like the creator wrote it
-- Do NOT say "pin this" or "pinned comment"
- 
-Return ONLY the comment as plain text.
+    systemPrompt: () => `<role>
+You are a YouTube community strategist who writes high-engagement pinned comments.
+Your goal is to spark an immediate discussion thread, invite viewer opinions, and increase comment velocity (which triggers YouTube's recommendation algorithm).
+</role>
+${webContext ? `\nContext: ${webContext}` : ''}`,
+
+    userPrompt: () => `<instruction>
+Write an authentic, highly engaging pinned comment for a YouTube video titled: "${title}"
+</instruction>
+
+<rules>
+- Open with a thought-provoking, polarizing, or open-ended question that compels viewers to reply.
+- Length: Exactly 2-3 short, punchy lines.
+- Include 1-2 natural emojis (e.g. 👇, 💬, 🚀).
+- End with a friendly, conversational invitation (e.g. "Be honest 👇", "What would you have done? Let me know below").
+- Sound like the creator speaking directly from their heart — NOT a bot.
+- NEVER use phrases like "Pin this" or "Here is my pinned comment".
+</rules>
+
 [Variation Seed: ${Math.random().toString(36).substring(2, 10)}]`,
-    options: { temperature: 0.8, maxTokens: 200 },
-    parseResponse: (text) => text.trim()
+    options: { temperature: 0.85, maxTokens: 250 },
+    parseResponse: (text) => text.replace(/\*\*/g, '').trim(),
   });
   return result.success && result.data ? result.data : '';
 }
@@ -46,7 +51,6 @@ export async function generateDetails(
       return { success: false, error: `Rate limit exceeded. Please wait ${rateLimit.retryAfter} seconds.` };
     }
 
-    // Pure AI generation without Tavily web search overhead for homepage
     const webContext = '';
 
     const [tagsResult, hashtagsResult, descriptionResult, pinnedComment] = await Promise.all([
@@ -60,8 +64,8 @@ export async function generateDetails(
       success: true,
       details: {
         description: descriptionResult.description || '',
-        hashtags: hashtagsResult.success && 'hashtags' in hashtagsResult ? (hashtagsResult as any).hashtags : [],
-        tags: tagsResult.success && 'tags' in tagsResult ? (tagsResult as any).tags : [],
+        hashtags: hashtagsResult.success && 'hashtags' in hashtagsResult && Array.isArray(hashtagsResult.hashtags) ? hashtagsResult.hashtags : [],
+        tags: tagsResult.success && 'tags' in tagsResult && Array.isArray(tagsResult.tags) ? tagsResult.tags : [],
         pinnedComment,
       },
     };

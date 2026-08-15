@@ -13,6 +13,9 @@ export default function RelatedTools({ currentToolPath }: { currentToolPath?: st
     { href: '/youtube-script-generator', label: 'Script Generator' },
     { href: '/youtube-thumbnail-generator', label: 'Thumbnail Ideas' },
     { href: '/youtube-hook-generator', label: 'Hook Generator' },
+    { href: '/tools/youtube-title-generator-for-anime', label: 'Anime Titles ⚔️' },
+    { href: '/tools/youtube-title-generator-for-asmr', label: 'ASMR Titles 🎧' },
+    { href: '/tools/youtube-title-generator-for-faceless-channels', label: 'Faceless Channels 💼' },
   ];
 
   // Filter out the current tool so we don't link to the current page

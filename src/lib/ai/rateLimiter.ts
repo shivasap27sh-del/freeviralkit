@@ -68,9 +68,9 @@ export async function checkRedisRateLimit(
     const currentKey = `ratelimit:${ip}:${currentWindow}`;
     const previousKey = `ratelimit:${ip}:${previousWindow}`;
 
-    // Race Redis commands with an 800ms network timeout
+    // Race Redis commands with a 250ms network timeout
     const timeoutPromise = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error('Redis request timed out')), rateLimitTimeoutMs)
+      setTimeout(() => reject(new Error('Redis timeout')), rateLimitTimeoutMs)
     );
 
     const fetchPromise = Promise.all([
@@ -92,16 +92,10 @@ export async function checkRedisRateLimit(
 
     // Increment current usage
     const incrPromise = redis.incr(currentKey);
-    const newCount = await Promise.race([incrPromise, timeoutPromise]);
-
-    if (newCount === 1) {
-      // Fire-and-forget expire to prevent block latency
-      redis.expire(currentKey, 120).catch((err) => console.error('[Redis] Expire failed:', err));
-    }
+    await Promise.race([incrPromise, timeoutPromise]).catch(() => {});
 
     return { allowed: true };
   } catch (error) {
-    console.warn('[Redis] Rate limit check failed or timed out. Falling back to local memory:', error);
     const errorStr = String(error);
     if (
       errorStr.includes('403') ||
