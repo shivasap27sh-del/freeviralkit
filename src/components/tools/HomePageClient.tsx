@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { generateTitles } from '@/app/actions/titles';
 import { generateDetails } from '@/app/actions/details';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Wand2, Video, Copy, CheckCircle2, ChevronRight, Hash, Tag, AlignLeft,
+  Wand2, Video, Copy, CheckCircle2, ChevronRight, ChevronDown, Hash, Tag, AlignLeft,
   Loader2, Sparkles, RotateCcw, Zap, Package, MessageCircle, AlertTriangle, ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
@@ -22,6 +22,7 @@ export default function HomePageClient() {
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
   const [error, setError] = useState<string | null>(null);
   const [showDebug, setShowDebug] = useState(false);
+  const detailsSectionRef = useRef<HTMLDivElement>(null);
 
   const handleGenerateTitles = async (isRegenerate = false) => {
     if (!topic.trim()) return;
@@ -40,6 +41,16 @@ export default function HomePageClient() {
     setIsGeneratingDetails(true);
     setError(null);
     setDetails(null);
+
+    // Smoothly scroll down to the SEO package section with sticky navbar offset
+    setTimeout(() => {
+      if (detailsSectionRef.current) {
+        const yOffset = -80;
+        const y = detailsSectionRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 80);
+
     const result = await generateDetails(title);
     if (result.success && result.details) setDetails(result.details);
     else setError(result.error || 'Failed to generate details');
@@ -161,9 +172,14 @@ export default function HomePageClient() {
         {titles.length > 0 && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-2xl p-6 md:p-8 mb-8">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
-              <div className="flex items-center gap-3">
-                <div className="step-badge step-badge-blue"><Video className="w-5 h-5" /></div>
-                <h2 className="font-display text-xl font-semibold text-slate-900 dark:text-white">2. Pick Your Title</h2>
+              <div className="flex items-start gap-3">
+                <div className="step-badge step-badge-blue shrink-0"><Video className="w-5 h-5" /></div>
+                <div>
+                  <h2 className="font-display text-xl font-semibold text-slate-900 dark:text-white">2. Pick Your Title</h2>
+                  <p className="text-xs sm:text-sm text-purple-600 dark:text-purple-400 font-medium flex items-center gap-1.5 mt-0.5">
+                    <Sparkles className="w-3.5 h-3.5 shrink-0 animate-pulse" /> Click any title below to generate description, tags &amp; hashtags
+                  </p>
+                </div>
               </div>
               <button onClick={() => handleGenerateTitles(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">
                 <RotateCcw className="w-3.5 h-3.5" /> Regenerate
@@ -185,8 +201,8 @@ export default function HomePageClient() {
                         : selectedTitle === title ? <CheckCircle2 className="w-3.5 h-3.5" /> : idx + 1}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[1.02rem] leading-snug text-slate-800 dark:text-slate-100">{title}</p>
-                      <div className="flex items-center gap-2 mt-1">
+                      <p className="text-[1.02rem] leading-snug text-slate-800 dark:text-slate-100 font-medium">{title}</p>
+                      <div className="flex flex-wrap items-center gap-2 mt-1.5">
                         <span className={`text-xs font-mono ${charColor(title.length)}`}>{title.length} chars</span>
                         {idx < 5 ? (
                           <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/20">SEO</span>
@@ -194,6 +210,19 @@ export default function HomePageClient() {
                           <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-orange-500/15 text-orange-400 border border-orange-500/20">VIRAL</span>
                         ) : (
                           <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-pink-500/15 text-pink-400 border border-pink-500/20">TRENDING</span>
+                        )}
+                        {selectedTitle === title && isGeneratingDetails ? (
+                          <span className="text-[11px] font-semibold text-purple-600 dark:text-purple-400 flex items-center gap-1">
+                            <Loader2 className="w-3 h-3 animate-spin" /> Generating description, tags &amp; hashtags...
+                          </span>
+                        ) : selectedTitle === title && details ? (
+                          <span className="text-[11px] font-semibold text-green-600 dark:text-green-400 flex items-center gap-1">
+                            <CheckCircle2 className="w-3 h-3" /> SEO Package Generated Below ↓
+                          </span>
+                        ) : (
+                          <span className="text-[11px] font-medium text-slate-500 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors flex items-center gap-1">
+                            Click to generate description, tags &amp; hashtags <ChevronDown className="w-3 h-3 transition-transform group-hover:translate-y-0.5" />
+                          </span>
                         )}
                       </div>
                     </div>
@@ -213,7 +242,13 @@ export default function HomePageClient() {
       {/* Step 3: SEO Package */}
       <AnimatePresence>
         {(details || (isGeneratingDetails && selectedTitle)) && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
+          <motion.div
+            ref={detailsSectionRef}
+            id="seo-package-section"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-6 scroll-mt-24"
+          >
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3 min-w-0 w-full">
                 <div className="step-badge step-badge-green shrink-0"><Zap className="w-5 h-5" /></div>
