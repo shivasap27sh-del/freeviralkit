@@ -16,6 +16,7 @@ const navLinks = [
 ];
 
 const toolsDropdown = [
+  { href: '/youtube-ab-test-generator', label: '3-Way A/B Test Pack ⚡' },
   { href: '/youtube-title-generator', label: 'Title Generator' },
   { href: '/youtube-hashtag-generator', label: 'Hashtag Generator' },
   { href: '/youtube-tags-generator', label: 'Tags Generator' },

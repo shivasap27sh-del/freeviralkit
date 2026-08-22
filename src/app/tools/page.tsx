@@ -66,6 +66,13 @@ const colorMap = {
 
 const coreTools = [
   {
+    href: '/youtube-ab-test-generator',
+    title: '3-Way A/B Test Pack Generator ⚡',
+    description: 'Generate 3 strategic packaging variants (Title + Thumbnail Text) for YouTube Studio’s native Test & Compare.',
+    icon: Wand2,
+    color: 'pink',
+  },
+  {
     href: '/youtube-realtime-title-generator',
     title: 'Real-Time Movie & Live AI Generator ⚡',
     description: 'Fetch live real-world movie plot facts, cast info, and trending news to generate accurate titles, tags & descriptions.',
