@@ -20,6 +20,7 @@ import {
   Terminal,
   Layers,
   Zap,
+  X,
 } from 'lucide-react';
 import ErrorBanner from '@/components/ErrorBanner';
 
@@ -206,9 +207,9 @@ export default function AITechStudioClient() {
               <button
                 type="button"
                 onClick={() => setUploadedImage(null)}
-                className="px-3 py-2 rounded-xl text-xs font-semibold border border-red-500/30 bg-red-500/10 text-red-400 cursor-pointer"
+                className="inline-flex items-center gap-1 px-3 py-2 rounded-xl text-xs font-semibold border border-red-500/30 bg-red-500/10 hover:bg-red-500/20 text-red-500 dark:text-red-400 cursor-pointer"
               >
-                Reset
+                <X className="w-3.5 h-3.5" /> Remove Image
               </button>
             )}
 
@@ -244,20 +245,34 @@ export default function AITechStudioClient() {
           }`}
         >
           {/* Phone Top Header */}
-          <div className={`flex items-center justify-between text-[11px] font-mono mb-3 px-2 font-bold ${feedTheme === 'dark' ? 'text-slate-400' : 'text-slate-700'}`}>
+          <div className={`flex items-center justify-between text-[11px] font-mono mb-3 px-2 font-black ${feedTheme === 'dark' ? 'text-slate-400' : 'text-slate-800'}`}>
             <span>9:41</span>
-            <div className="w-16 h-3 rounded-full bg-slate-700/60 mx-auto" />
+            <div className={`w-16 h-3 rounded-full mx-auto ${feedTheme === 'dark' ? 'bg-slate-700/60' : 'bg-slate-300'}`} />
             <span>5G 🔋</span>
           </div>
 
           {/* YouTube Video Card */}
-          <div className={`rounded-2xl overflow-hidden border transition-all duration-200 ${feedTheme === 'dark' ? 'bg-[#181818] border-slate-800' : 'bg-white border-slate-300 shadow-md'}`}>
+          <div className={`rounded-2xl overflow-hidden border transition-all duration-200 ${feedTheme === 'dark' ? 'bg-[#181818] border-slate-800 text-white' : 'bg-white border-slate-300 text-slate-900 shadow-md'}`}>
             {/* 16:9 Tech Terminal Thumbnail */}
-            <div className="relative aspect-video w-full bg-slate-800 overflow-hidden flex items-center justify-center">
+            <div className="relative aspect-video w-full bg-slate-800 overflow-hidden flex items-center justify-center group">
               {uploadedImage ? (
                 <div className="relative w-full h-full">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={uploadedImage} alt="Tech Thumbnail" className="w-full h-full object-cover" />
+                  
+                  {/* Floating Remove Button On Image */}
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setUploadedImage(null);
+                    }}
+                    className="absolute top-2 right-2 z-20 p-1.5 rounded-full bg-black/80 hover:bg-red-600 text-white transition-colors cursor-pointer shadow-lg"
+                    title="Remove Image"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-center p-3">
                     <h4 className="text-base md:text-xl font-black text-white tracking-wider drop-shadow-xl font-display uppercase px-3 py-1 rounded-lg bg-black/60 border border-cyan-500/40">
                       {currentOverlay}
@@ -295,12 +310,24 @@ export default function AITechStudioClient() {
             </div>
           </div>
 
-          {/* Length & Retention Meter */}
-          <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
-            <span className={feedTheme === 'dark' ? 'text-slate-300' : 'text-slate-800 font-semibold'}>
-              Length: <span className="font-bold text-cyan-400">{charLength} / 65</span> chars
+          {/* High-Contrast Length & Retention Meter */}
+          <div className={`mt-4 pt-3 border-t flex items-center justify-between text-xs font-mono ${feedTheme === 'dark' ? 'border-slate-800 text-slate-300' : 'border-slate-300 text-slate-900 font-bold'}`}>
+            <span>
+              Length:{' '}
+              <span className={`px-1.5 py-0.5 rounded font-black ${feedTheme === 'dark' ? 'text-cyan-400 bg-slate-900' : 'text-slate-950 bg-slate-200 border border-slate-300'}`}>
+                {charLength} / 65
+              </span>{' '}
+              chars
             </span>
-            <span className={`px-2.5 py-0.5 rounded-full font-bold text-[10px] ${isMobileSafe ? 'text-cyan-400 bg-cyan-500/10 border border-cyan-500/30' : 'text-amber-400 bg-amber-500/10 border border-amber-500/30'}`}>
+            <span className={`px-2.5 py-0.5 rounded-full font-bold text-[10px] ${
+              isMobileSafe
+                ? feedTheme === 'dark'
+                  ? 'text-cyan-400 bg-cyan-500/10 border border-cyan-500/30'
+                  : 'text-cyan-950 bg-cyan-100 border border-cyan-300'
+                : feedTheme === 'dark'
+                ? 'text-amber-400 bg-amber-500/10 border border-amber-500/30'
+                : 'text-amber-950 bg-amber-100 border border-amber-300'
+            }`}>
               {isMobileSafe ? '🟢 Mobile Safe • 85% Retention Score' : '🟡 May Truncate'}
             </span>
           </div>

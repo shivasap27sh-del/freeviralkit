@@ -1,7 +1,7 @@
 'use client';
 
 import { type RefObject } from 'react';
-import { Smartphone, Upload, Sun, Moon } from 'lucide-react';
+import { Smartphone, Upload, Sun, Moon, X } from 'lucide-react';
 import { type ABTestVariant } from './types';
 
 interface MobileFeedSimulatorProps {
@@ -177,6 +177,20 @@ export default function MobileFeedSimulator({
                   alt={`Uploaded Thumbnail ${activeVariantId}`}
                   className="w-full h-full object-cover"
                 />
+                
+                {/* Floating Remove Button On Image */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onRemoveImage(activeVariantId);
+                  }}
+                  className="absolute top-2 right-2 z-20 p-1.5 rounded-full bg-black/80 hover:bg-red-600 text-white transition-colors cursor-pointer shadow-lg"
+                  title="Remove Image"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+
                 {/* Dynamic Text Overlay on Uploaded Image */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-center p-3">
                   <h4 className="text-base md:text-xl font-extrabold text-white tracking-wider drop-shadow-xl font-display uppercase px-3 py-1 rounded-lg bg-black/60 border border-white/30 backdrop-blur-xs">
