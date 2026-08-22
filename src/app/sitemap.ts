@@ -44,6 +44,8 @@ const staticEntries = [
   { path: '/tools/youtube-title-generator-for-anime', sourceFiles: ['src/app/tools/youtube-title-generator-for-anime/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
   { path: '/tools/youtube-title-generator-for-asmr', sourceFiles: ['src/app/tools/youtube-title-generator-for-asmr/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
   { path: '/tools/youtube-title-generator-for-faceless-channels', sourceFiles: ['src/app/tools/youtube-title-generator-for-faceless-channels/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-title-generator-for-finance', sourceFiles: ['src/app/tools/youtube-title-generator-for-finance/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/tools/youtube-title-generator-for-ai-and-tech', sourceFiles: ['src/app/tools/youtube-title-generator-for-ai-and-tech/page.tsx'], changeFrequency: 'monthly', priority: 0.9 },
   { path: '/about', sourceFiles: ['src/app/about/page.tsx'], changeFrequency: 'yearly', priority: 0.8 },
   { path: '/contact', sourceFiles: ['src/app/contact/page.tsx'], changeFrequency: 'yearly', priority: 0.4 },
   { path: '/blog', sourceFiles: ['src/app/blog/page.tsx', 'src/app/blog/data.ts'], changeFrequency: 'weekly', priority: 0.9 },

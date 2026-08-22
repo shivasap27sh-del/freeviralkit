@@ -22,11 +22,12 @@ const footerLinks = {
     { href: '/youtube-seo-grader', label: 'SEO Score Grader' },
   ],
   'Niche Studios': [
+    { href: '/tools/youtube-title-generator-for-finance', label: 'Finance & Wealth' },
+    { href: '/tools/youtube-title-generator-for-ai-and-tech', label: 'AI & Tech Tools' },
     { href: '/tools/youtube-title-generator-for-anime', label: 'Anime Title Generator' },
     { href: '/tools/youtube-title-generator-for-asmr', label: 'ASMR Title Generator' },
     { href: '/tools/youtube-title-generator-for-faceless-channels', label: 'Faceless Automation' },
     { href: '/tools/youtube-title-generator-for-gaming', label: 'Gaming Title Generator' },
-    { href: '/tools/youtube-title-generator-for-tech', label: 'Tech Title Generator' },
   ],
 };
 

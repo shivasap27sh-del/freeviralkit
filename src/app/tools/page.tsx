@@ -278,6 +278,20 @@ const nicheTools = [
     icon: User,
     color: 'green',
   },
+  {
+    href: '/tools/youtube-title-generator-for-finance',
+    title: 'YouTube Title Generator for Finance & Wealth',
+    description: 'Generate high-RPM investing, crypto, dividend, and wealth titles ($15-$50+ AdSense RPM).',
+    icon: Sparkles,
+    color: 'green',
+  },
+  {
+    href: '/tools/youtube-title-generator-for-ai-and-tech',
+    title: 'YouTube Title Generator for AI & Tech',
+    description: 'Create zero-fluff, high-CTR titles for AI agents, developer tools, coding, and software reviews.',
+    icon: Cpu,
+    color: 'cyan',
+  },
 ];
 
 const faqItems = [

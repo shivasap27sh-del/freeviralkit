@@ -93,7 +93,71 @@ function getNicheStrategy(niche?: string): NicheStrategy {
     };
   }
 
-  // 4. DEFAULT HIGH-CONVERTING CREATOR STRATEGY
+  // 4. BESPOKE STRATEGY: Personal Finance, Wealth & Crypto ($15-$50+ RPM)
+  if (
+    lowerNiche.includes('finance') ||
+    lowerNiche.includes('wealth') ||
+    lowerNiche.includes('money') ||
+    lowerNiche.includes('crypto') ||
+    lowerNiche.includes('investing') ||
+    lowerNiche.includes('stock')
+  ) {
+    return {
+      role: `You are an elite Wealth Strategist and Financial Media Director (in the style of Graham Stephan, Andrei Jikh, Ali Abdaal, and Meet Kevin). You know macroeconomic cycles, compounding math, asymmetrical risk/reward, and high-RPM YouTube finance audience psychology.`,
+      framework: `Personal finance titles must lead with real dollar figures, asymmetrical math, wealth traps, or economic shifts to maximize ultra-high RPM ($15-$50+) advertiser placement.`,
+      archetypes: [
+        `ASYMMETRICAL WEALTH & COMPOUNDING (2 titles): "How to Invest $1,000 in 2026 (The Compound Interest Math)", "The $10,000/mo Dividend Portfolio Blueprint"`,
+        `WEALTH TRAPS & MIDDLE-CLASS PENALTIES (2 titles): "The 5 Money Traps Keeping You Broke (Stop Buying These)", "Why Most People Go Broke Trying to Look Rich"`,
+        `MARKET CYCLES & ECONOMIC SHIFTS (2 titles): "What the 2026 Fed Rate Cut Means for Your Money", "The Real Estate Market is Shifting: What to Buy Now"`,
+        `PASSIVE INCOME & CASH FLOW SYSTEMS (2 titles): "7 Realistic Passive Income Streams to Build in 2026", "How I Built a $5,000/Month Cash Flow Engine"`,
+        `BEHAVIORAL PSYCHOLOGY & HIGH-CONVICTION (2 titles): "The Psychology of Money: Habits That Build Real Wealth", "Why High Earners Still Live Paycheck to Paycheck"`
+      ],
+      rules: [
+        `Include exact dollar benchmarks ($1,000, $10K/mo, $100K) or specific percentage yields.`,
+        `Never make illegal financial guarantees; focus on principles, data, and behavioral frameworks.`,
+        `Front-load high-commercial intent keywords: "Invest", "Passive Income", "Dividend", "Wealth", "Money".`
+      ],
+      examples: [
+        `How to Invest $1,000 in 2026 (Step-by-Step Blueprint) #Finance`,
+        `The 5 Money Traps Keeping the Middle Class Broke in 2026`,
+        `How I Built a $10,000/Month Dividend Portfolio (The Math)`
+      ]
+    };
+  }
+
+  // 5. BESPOKE STRATEGY: AI Tools, Automation & Software Engineering
+  if (
+    lowerNiche.includes('ai') ||
+    lowerNiche.includes('tech') ||
+    lowerNiche.includes('automation') ||
+    lowerNiche.includes('coding') ||
+    lowerNiche.includes('developer') ||
+    lowerNiche.includes('software')
+  ) {
+    return {
+      role: `You are an elite AI Architect and Tech Media Producer (in the style of Fireship, Matt Wolfe, NetworkChuck, and Wes Roth). You know LLMs, Agentic AI, developer tooling, automation workflows, and zero-fluff software reviews.`,
+      framework: `AI & Tech titles must emphasize concrete tool capability, speed benchmarks, autonomous workflows, or developer productivity shifts.`,
+      archetypes: [
+        `AUTONOMOUS AGENTS & WORKFLOWS (2 titles): "I Built an Autonomous AI Agent in 10 Minutes (No Code)", "How AI Agents Are Replacing Traditional SaaS Tools"`,
+        `ZERO-FLUFF BENCHMARK REVIEWS (2 titles): "OpenAI o3 vs DeepSeek R1 vs Claude 3.7: The Brutal Truth", "The Best Free AI Tools for Creators in 2026"`,
+        `PRODUCTIVITY & LEVERAGE BREAKTHROUGHS (2 titles): "How 1 Developer Built a $20k/mo App Using AI in 48 Hours", "The 5 AI Automation Workflows Every Solo Creator Needs"`,
+        `CODING & DEV REVOLUTIONS (2 titles): "Why Cursor AI Changed Software Engineering Forever", "How to Build Full-Stack Web Apps with Agentic AI"`,
+        `FUTURE IMPACT & REALISTIC PROJECTIONS (2 titles): "The AI Shift That Will Kill Boring Work by 2027", "How to Future-Proof Your Tech Career Against AI"`
+      ],
+      rules: [
+        `Mention the specific tool name or breakthrough model (e.g. Claude 3.7, DeepSeek, Cursor, OpenAI, Agentic AI) in the title.`,
+        `Keep pacing punchy, fast, and high-density with zero boring corporate jargon.`,
+        `Use active engineering verbs: "Built", "Replaced", "Benchmarked", "Automated", "Tested".`
+      ],
+      examples: [
+        `I Built an Autonomous AI Agent in 10 Minutes (No Code) #AI`,
+        `Cursor AI vs Windsurf: The Brutal Coding Benchmark Test`,
+        `The 7 Free AI Tools You Should Actually Be Using in 2026 #Tech`
+      ]
+    };
+  }
+
+  // 6. DEFAULT HIGH-CONVERTING CREATOR STRATEGY
   return {
     role: `You are an elite YouTube algorithm consultant and title strategist with 10+ years of experience studying CTR psychology and search indexing for top creators like MrBeast, Ali Abdaal, and MKBHD.`,
     framework: `Titles must trigger curiosity loops, challenge assumptions, and communicate high value in the first 3 words.`,
@@ -145,7 +209,7 @@ ${niche ? `Niche Audience: "${niche}"` : ''}
 <strict_rules>
 - CRITICAL LENGTH: Each title MUST be between 45 and 65 characters long. (This guarantees zero mobile feed truncation).
 ${strategy.rules.map((r) => `- ${r}`).join('\n')}
-- BAN LIST: NEVER use these robotic AI clichés:
+- BAN LIST: NEVER use these cheap robotic AI clichés:
   * "The Ultimate Guide"
   * "Mastering the Art"
   * "A Comprehensive Breakdown"
@@ -153,6 +217,20 @@ ${strategy.rules.map((r) => `- ${r}`).join('\n')}
   * "In-Depth Deep Dive"
   * "You Won't Believe"
   * "Shocking Truth"
+  * "The Secret"
+  * "Secret Algorithm Trigger"
+  * "Nobody Tells You"
+  * "In Exactly 30 Days"
+  * "In 30 Days"
+  * "Stop Doing This"
+  * "Stop Using"
+  * "Hidden Truth"
+  * "The Real Reason"
+  * "The Truth About"
+  * "Fast Growth"
+  * "You Are Wrong"
+  * "They Hate This"
+- TONE: Sound like a world-class creator with strong opinions, empirical data, and concrete nouns — NEVER a corporate AI bot.
 - HASHTAGS: Attach 1-2 clean hashtags to 4-5 titles only (e.g. #Shorts, #${niche?.split(' ')[0] || 'YouTube'}). Keep remaining titles clean.
 ${excludes.length > 0 ? `- DO NOT repeat previous titles: ${JSON.stringify(excludes)}` : ''}
 </strict_rules>

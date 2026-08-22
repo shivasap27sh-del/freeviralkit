@@ -30,6 +30,8 @@ const toolsDropdown = [
   { href: '/youtube-thumbnail-generator', label: 'Thumbnail Idea Generator' },
   { href: '/youtube-seo-grader', label: 'SEO Score Grader' },
   { href: '/creator-gear', label: 'Creator Gear & Tools' },
+  { href: '/tools/youtube-title-generator-for-finance', label: 'Finance & Wealth 💰' },
+  { href: '/tools/youtube-title-generator-for-ai-and-tech', label: 'AI Tools & Tech ⚡' },
   { href: '/tools/youtube-title-generator-for-anime', label: 'Anime Titles ⚔️' },
   { href: '/tools/youtube-title-generator-for-asmr', label: 'ASMR Titles 🎧' },
   { href: '/tools/youtube-title-generator-for-faceless-channels', label: 'Faceless Channels 💼' },
