@@ -1,7 +1,14 @@
 import { generateWithFallback } from '@/lib/ai/providers';
 import { getRedisClient, checkRateLimit } from '@/lib/ai/rateLimiter';
 import { searchGroundedContext } from '@/lib/ai/webGrounding';
-import { generateCacheKey, getCachedAIResponse, setCachedAIResponse } from '@/lib/ai/cache';
+import {
+  generateSemanticCacheKey,
+  generateCacheKey,
+  getCachedAIResponse,
+  setCachedAIResponse,
+  executeSingleFlight,
+  calculateAdaptiveTTL,
+} from '@/lib/ai/cache';
 import { sanitizeAndValidateInput, sanitizeStringArray } from '@/lib/ai/validation';
 import {
   safeParseJsonArray,
@@ -94,12 +101,12 @@ export async function executeAIGeneration<T>({
     const finalUserPrompt =
       typeof userPrompt === 'function' ? userPrompt(webContext, sanitizedExcludes) : userPrompt;
 
-    // 4. Multi-Tier Cache Check (L1 Memory + L2 Redis)
-    const cacheKey = generateCacheKey(finalSystemPrompt, finalUserPrompt);
+    // 4. Multi-Tier Semantic Cache Check (L1 Memory + L2 Redis)
+    const cacheKey = generateSemanticCacheKey(finalSystemPrompt, finalUserPrompt, sanitizedTopic);
     const cachedResponse = await getCachedAIResponse(cacheKey);
 
     if (cachedResponse) {
-      log(`[Orchestrator] ⚡ Multi-Tier Cache HIT (${Date.now() - startTime}ms)`);
+      log(`[Orchestrator] ⚡ Multi-Tier Semantic Cache HIT (${Date.now() - startTime}ms)`);
       const parsed = parseResponse(cachedResponse);
       return {
         success: true,
@@ -109,19 +116,24 @@ export async function executeAIGeneration<T>({
       };
     }
 
-    // 5. Live Multi-Provider AI Inference with Fallback
-    log('[Orchestrator] ❄️ Cache Miss. Executing live multi-AI inference pool...');
-    const responseText = await generateWithFallback(
-      [
-        { role: 'system', content: finalSystemPrompt },
-        { role: 'user', content: finalUserPrompt },
-      ],
-      options
-    );
+    // 5. Live Multi-Provider AI Inference with Single-Flight Mutex (Thundering Herd Guard)
+    log('[Orchestrator] ❄️ Cache Miss. Executing Single-Flight multi-AI inference pool...');
+    const responseText = await executeSingleFlight(cacheKey, async () => {
+      const generated = await generateWithFallback(
+        [
+          { role: 'system', content: finalSystemPrompt },
+          { role: 'user', content: finalUserPrompt },
+        ],
+        options
+      );
 
-    // 6. Asynchronous Cache Population (24-hour TTL)
-    setCachedAIResponse(cacheKey, responseText, 86400).catch((err) => {
-      console.warn('[Orchestrator] Cache write error:', err?.message || err);
+      // Asynchronous Cache Population with Adaptive TTL
+      const ttlSeconds = calculateAdaptiveTTL(sanitizedTopic, overrideWebContext !== undefined);
+      setCachedAIResponse(cacheKey, generated, ttlSeconds).catch((err) => {
+        console.warn('[Orchestrator] Cache write error:', err?.message || err);
+      });
+
+      return generated;
     });
 
     const parsed = parseResponse(responseText);

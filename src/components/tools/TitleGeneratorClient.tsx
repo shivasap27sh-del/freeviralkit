@@ -5,6 +5,7 @@ import { generateTitles } from '@/app/actions/titles';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Wand2, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw, Eye, Award, Check, AlertTriangle, Film, Globe, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import ErrorBanner from '@/components/ErrorBanner';
 
 interface TitleGeneratorClientProps {
   niche?: string;
@@ -119,12 +120,11 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
         </button>
       </form>
 
-      {error && (
-        <div className="bg-red-500/10 border border-red-500/20 text-red-500 rounded-xl p-4 mb-8 flex items-center gap-3">
-          <AlertTriangle className="w-5 h-5" />
-          <p>{error}</p>
-        </div>
-      )}
+      <ErrorBanner
+        error={error}
+        onClear={() => setError(null)}
+        onRetry={() => handleGenerate(false)}
+      />
 
       <AnimatePresence>
         {titles.length > 0 && (

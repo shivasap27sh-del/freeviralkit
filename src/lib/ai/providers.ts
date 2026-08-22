@@ -270,8 +270,7 @@ function withTimeout<T>(promise: Promise<T>, ms: number, providerName: string): 
   ]);
 }
 
-// Circuit Breaker tracker: Timestamp (ms) until a failing provider can be retried
-const providerTimeouts = new Map<string, number>();
+import { circuitBreaker } from './circuitBreaker';
 
 export async function generateWithFallback(
   messages: ChatMessage[],
@@ -292,14 +291,10 @@ export async function generateWithFallback(
   }
 
   for (const provider of providers) {
-    // Check Circuit Breaker
-    const timeoutUntil = providerTimeouts.get(provider.name) || 0;
-    if (Date.now() < timeoutUntil) {
-      log(
-        `[AI] ⚡ Skipping ${provider.name} (Circuit Breaker active for ${Math.round(
-          (timeoutUntil - Date.now()) / 1000
-        )}s)`
-      );
+    // Check Circuit Breaker State (CLOSED -> healthy; OPEN -> skip; HALF_OPEN -> test probe)
+    if (!circuitBreaker.canExecute(provider.name)) {
+      const cooldownSecs = circuitBreaker.getRemainingCooldown(provider.name);
+      log(`[AI] ⚡ Skipping ${provider.name} (Circuit Breaker OPEN - Cooldown: ${cooldownSecs}s)`);
       continue;
     }
 
@@ -316,6 +311,8 @@ export async function generateWithFallback(
         throw new Error('CONTENT_SAFETY: ' + (safetyCheck.reason || 'Output flagged by content filter'));
       }
 
+      // Record success in Circuit Breaker
+      circuitBreaker.recordSuccess(provider.name);
       log(`[AI] ✅ Success via ${provider.name}`);
       return safetyCheck.filtered;
     } catch (error) {
@@ -329,8 +326,8 @@ export async function generateWithFallback(
       console.warn(`[AI] ❌ ${provider.name} failed: ${msg}`);
       errors.push(`${provider.name}: ${msg}`);
 
-      // Activate Circuit Breaker: 60s cooldown for failing provider
-      providerTimeouts.set(provider.name, Date.now() + 60000);
+      // Record failure in Circuit Breaker (Trips to OPEN if threshold reached)
+      circuitBreaker.recordFailure(provider.name, error);
     }
   }
 

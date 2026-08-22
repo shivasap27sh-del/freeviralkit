@@ -9,6 +9,7 @@ import {
   Loader2, Sparkles, RotateCcw, Zap, Package, MessageCircle, AlertTriangle, ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
+import ErrorBanner from '@/components/ErrorBanner';
 
 type Details = { description: string; hashtags: string[]; tags: string[]; pinnedComment: string };
 
@@ -130,27 +131,14 @@ export default function HomePageClient() {
         </button>
       </div>
 
-      {error && (
-        <div className="bg-red-500/10 border border-red-500/20 rounded-2xl p-5 mb-8">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-            <div className="flex-1">
-              <h3 className="font-display font-semibold text-red-400 mb-1">AI Generation Error</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                The AI system encountered an issue while generating content. Please try again.
-              </p>
-              <button onClick={() => setShowDebug(!showDebug)} className="text-xs text-red-400/80 hover:text-red-400 underline mt-3 block cursor-pointer">
-                {showDebug ? 'Hide Technical Details' : 'Show Technical Details'}
-              </button>
-              {showDebug && (
-                <pre className="mt-3 p-4 bg-slate-900 text-red-300 rounded-xl text-xs font-mono whitespace-pre-wrap leading-normal border border-slate-800">
-                  {error}
-                </pre>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+      <ErrorBanner
+        error={error}
+        onClear={() => setError(null)}
+        onRetry={() => {
+          if (selectedTitle) handleSelectTitle(selectedTitle);
+          else handleGenerateTitles(false);
+        }}
+      />
 
       {/* Skeleton */}
       <AnimatePresence>
