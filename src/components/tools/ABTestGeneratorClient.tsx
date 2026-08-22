@@ -327,7 +327,7 @@ Generated with FreeViralKit.com (100% Free YouTube SEO)`;
                 </div>
 
                 {/* Feed Controls: Dark/Light Mode + Upload Thumbnail */}
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <input
                     type="file"
                     ref={fileInputRef}
@@ -337,38 +337,91 @@ Generated with FreeViralKit.com (100% Free YouTube SEO)`;
                   />
                   <button
                     onClick={() => fileInputRef.current?.click()}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors cursor-pointer shadow-sm"
                   >
                     <Upload className="w-3.5 h-3.5" />
                     {uploadedImage ? 'Change Image' : 'Upload Thumbnail'}
                   </button>
 
-                  <button
-                    onClick={() => setFeedTheme((p) => (p === 'dark' ? 'light' : 'dark'))}
-                    className="p-2 rounded-xl border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors cursor-pointer"
-                    title="Toggle Feed Theme"
-                  >
-                    {feedTheme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-400" />}
-                  </button>
+                  {/* Clear Light / Dark Mode Toggle Pill */}
+                  <div className="inline-flex rounded-xl p-1 bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
+                    <button
+                      type="button"
+                      onClick={() => setFeedTheme('light')}
+                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                        feedTheme === 'light'
+                          ? 'bg-white text-slate-900 shadow-sm font-bold'
+                          : 'text-slate-500 hover:text-slate-800 dark:text-slate-400'
+                      }`}
+                    >
+                      <Sun className="w-3.5 h-3.5 text-amber-500" />
+                      Light
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setFeedTheme('dark')}
+                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                        feedTheme === 'dark'
+                          ? 'bg-slate-950 text-white shadow-sm font-bold'
+                          : 'text-slate-500 hover:text-slate-800 dark:text-slate-400'
+                      }`}
+                    >
+                      <Moon className="w-3.5 h-3.5 text-indigo-400" />
+                      Dark
+                    </button>
+                  </div>
                 </div>
               </div>
 
-              {/* SIMULATED MOBILE PHONE CARD */}
-              <div className="max-w-md mx-auto rounded-3xl p-4 md:p-5 border border-slate-700 shadow-2xl transition-colors bg-slate-950 text-white">
-                {/* Phone Top Status Header */}
-                <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-3 px-1">
-                  <span>9:41</span>
+              {/* SIMULATED MOBILE PHONE CHASSIS */}
+              <div
+                className={`max-w-md mx-auto rounded-[2.5rem] p-4 md:p-5 border-4 shadow-2xl transition-all duration-300 ${
+                  feedTheme === 'dark'
+                    ? 'bg-[#0f0f0f] border-slate-800 text-white shadow-purple-950/20'
+                    : 'bg-[#f9f9f9] border-slate-300 text-slate-900 shadow-slate-400/20'
+                }`}
+              >
+                {/* Phone Notch & Top Status Header */}
+                <div
+                  className={`flex items-center justify-between text-[11px] font-mono mb-3 px-2 transition-colors ${
+                    feedTheme === 'dark' ? 'text-slate-400' : 'text-slate-600'
+                  }`}
+                >
+                  <span className="font-bold">9:41</span>
+                  {/* Speaker / Camera Notch */}
+                  <div className="w-16 h-3 rounded-full bg-slate-800/80 border border-slate-700/50 mx-auto" />
                   <div className="flex items-center gap-1.5">
                     <span>5G</span>
-                    <div className="w-4 h-2 rounded-sm border border-slate-400 bg-slate-300" />
+                    <div
+                      className={`w-4 h-2 rounded-sm border ${
+                        feedTheme === 'dark'
+                          ? 'border-slate-400 bg-slate-300'
+                          : 'border-slate-600 bg-slate-700'
+                      }`}
+                    />
                   </div>
+                </div>
+
+                {/* Simulated YouTube Search Bar Header */}
+                <div
+                  className={`flex items-center justify-between px-3 py-2 rounded-full mb-3 text-xs transition-colors border ${
+                    feedTheme === 'dark'
+                      ? 'bg-[#222222] border-slate-800 text-slate-300'
+                      : 'bg-white border-slate-200 text-slate-700 shadow-sm'
+                  }`}
+                >
+                  <span className="flex items-center gap-2 text-xs truncate">
+                    <span className="w-2 h-2 rounded-full bg-red-600 inline-block"></span>
+                    <span className="opacity-75">{topic || 'YouTube Search'}</span>
+                  </span>
+                  <span className="text-[10px] font-mono uppercase opacity-60">Search</span>
                 </div>
 
                 {/* Video Card Container inside simulated feed */}
                 <div
-                  className={`rounded-2xl overflow-hidden border transition-colors ${
+                  className={`rounded-2xl overflow-hidden border transition-all duration-200 ${
                     feedTheme === 'dark'
-                      ? 'bg-slate-900/90 border-slate-800 text-white'
+                      ? 'bg-[#181818] border-slate-800/80 text-white'
                       : 'bg-white border-slate-200 text-slate-900 shadow-md'
                   }`}
                 >
@@ -392,9 +445,9 @@ Generated with FreeViralKit.com (100% Free YouTube SEO)`;
                         } flex flex-col items-center justify-center p-4 text-center`}
                       >
                         <span className="text-[10px] text-white/60 font-mono uppercase tracking-widest mb-1">
-                          Generated Mockup
+                          Thumbnail Preview
                         </span>
-                        <h4 className="text-xl md:text-2xl font-extrabold text-white tracking-wider drop-shadow-md font-display uppercase px-2 py-1 rounded bg-black/40 border border-white/20">
+                        <h4 className="text-xl md:text-2xl font-extrabold text-white tracking-wider drop-shadow-md font-display uppercase px-3 py-1.5 rounded-lg bg-black/50 border border-white/20">
                           {activeVariant?.thumbnailText || 'WATCH THIS'}
                         </h4>
                       </div>
@@ -415,12 +468,20 @@ Generated with FreeViralKit.com (100% Free YouTube SEO)`;
 
                     <div className="flex-1 min-w-0">
                       {/* Title with Character Length Inspection */}
-                      <p className={`text-sm font-semibold leading-snug line-clamp-2 ${feedTheme === 'dark' ? 'text-slate-100' : 'text-slate-900'}`}>
+                      <p
+                        className={`text-sm font-semibold leading-snug line-clamp-2 transition-colors ${
+                          feedTheme === 'dark' ? 'text-white' : 'text-slate-900'
+                        }`}
+                      >
                         {activeVariant?.title}
                       </p>
 
                       {/* Channel Name & Stats */}
-                      <p className={`text-xs mt-1 ${feedTheme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+                      <p
+                        className={`text-xs mt-1 transition-colors ${
+                          feedTheme === 'dark' ? 'text-slate-400' : 'text-slate-500'
+                        }`}
+                      >
                         FreeViralKit Creator • 248K views • 2 days ago
                       </p>
                     </div>
@@ -428,11 +489,27 @@ Generated with FreeViralKit.com (100% Free YouTube SEO)`;
                 </div>
 
                 {/* Mobile Truncation & Health Gauge */}
-                <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
-                  <span className="text-slate-400">
-                    Length: <span className="text-white font-bold">{charLength} / 65</span> chars
+                <div
+                  className={`mt-4 pt-3 border-t flex items-center justify-between text-xs font-mono transition-colors ${
+                    feedTheme === 'dark'
+                      ? 'border-slate-800 text-slate-400'
+                      : 'border-slate-200 text-slate-600'
+                  }`}
+                >
+                  <span>
+                    Length:{' '}
+                    <span className={`font-bold ${feedTheme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+                      {charLength} / 65
+                    </span>{' '}
+                    chars
                   </span>
-                  <span className={`px-2 py-0.5 rounded-full font-bold text-[10px] ${isMobileSafe ? 'text-emerald-400 bg-emerald-500/10 border border-emerald-500/20' : 'text-amber-400 bg-amber-500/10 border border-amber-500/20'}`}>
+                  <span
+                    className={`px-2 py-0.5 rounded-full font-bold text-[10px] ${
+                      isMobileSafe
+                        ? 'text-emerald-500 bg-emerald-500/10 border border-emerald-500/20'
+                        : 'text-amber-500 bg-amber-500/10 border border-amber-500/20'
+                    }`}
+                  >
                     {isMobileSafe ? '🟢 100% Mobile Feed Safe' : '🟡 May Truncate on Small Screens'}
                   </span>
                 </div>
