@@ -1,6 +1,6 @@
 'use server';
 
-import { executeAIGeneration, safeParseJsonArray } from './core';
+import { executeAIGeneration } from './core';
 
 export interface ABTestVariant {
   id: 'A' | 'B' | 'C';
@@ -17,7 +17,6 @@ export interface ABTestResult {
 
 function parseABTestResponse(rawText: string): ABTestVariant[] {
   try {
-    // Extract JSON array between [ and ]
     const jsonMatch = rawText.match(/\[[\s\S]*\]/);
     if (!jsonMatch) throw new Error('No JSON array found in response');
 
@@ -27,45 +26,44 @@ function parseABTestResponse(rawText: string): ABTestVariant[] {
     const accents: ('indigo' | 'rose' | 'emerald')[] = ['indigo', 'rose', 'emerald'];
     const ids: ('A' | 'B' | 'C')[] = ['A', 'B', 'C'];
     const defaultStrategies = [
-      'Curiosity Gap & Unresolved Mystery',
-      'Contrarian / Challenge & Shock',
-      'Transformation, Numbers & Direct Value',
+      'Empirical Investigation & The Information Gap',
+      'Friction, Retention Trap & The Fatal Flaw',
+      'Asymmetrical Advantage & Breakthrough Blueprint',
     ];
 
     return parsed.slice(0, 3).map((item, idx) => ({
       id: ids[idx] || 'A',
       strategy: typeof item.strategy === 'string' && item.strategy.trim() ? item.strategy.trim() : defaultStrategies[idx],
       title: typeof item.title === 'string' ? item.title.trim().replace(/^["']|["']$/g, '') : 'Optimized YouTube Video Title',
-      thumbnailText: typeof item.thumbnailText === 'string' ? item.thumbnailText.trim().toUpperCase().replace(/^["']|["']$/g, '') : 'WATCH THIS',
+      thumbnailText: typeof item.thumbnailText === 'string' ? item.thumbnailText.trim().toUpperCase().replace(/^["']|["']$/g, '') : 'THE TRUTH',
       visualConcept: typeof item.visualConcept === 'string' ? item.visualConcept.trim() : 'High-contrast visual with expressive subject and clean background.',
       colorAccent: accents[idx] || 'indigo',
     }));
   } catch (error) {
     console.warn('[ABTestParser] Fallback parsing triggered:', error);
-    // Graceful fallback
     return [
       {
         id: 'A',
-        strategy: 'Curiosity Gap & Information Gap',
-        title: 'The Hidden Truth About This Topic Nobody Tells You',
-        thumbnailText: 'THE SECRET',
-        visualConcept: 'Close-up subject with intrigued expression pointing to a glowing question mark element.',
+        strategy: 'Empirical Investigation & The Information Gap',
+        title: 'I Analyzed 1,000 Viral Videos (The Math Behind 10M Views)',
+        thumbnailText: 'THE MATH',
+        visualConcept: 'Dark studio with creator holding transparent tablet displaying rising data points in electric violet rim lighting.',
         colorAccent: 'indigo',
       },
       {
         id: 'B',
-        strategy: 'Contrarian Statement & Reversal',
-        title: 'Why Everything You Know About This Is Completely Wrong',
-        thumbnailText: 'STOP DOING THIS',
-        visualConcept: 'High-contrast red split screen comparing bad outdated method vs breakthrough technique.',
+        strategy: 'Friction, Retention Trap & The Fatal Flaw',
+        title: 'The 2-Second Retention Mistake Killing 80% of Videos',
+        thumbnailText: 'SWIPED AWAY',
+        visualConcept: 'Split screen showing viewer thumb swiping away with bright red retention drop curve vs flat green hold line.',
         colorAccent: 'rose',
       },
       {
         id: 'C',
-        strategy: 'Direct Transformation & Metric Proof',
-        title: 'How I Mastered This in 30 Days (Step-by-Step Blueprint)',
-        thumbnailText: 'IN 30 DAYS',
-        visualConcept: 'Clear before/after transformation graph with clean bold typography and confident creator pose.',
+        strategy: 'Asymmetrical Advantage & Breakthrough Blueprint',
+        title: 'How 1 Strategic Upload Outperformed 100 Previous Videos',
+        thumbnailText: '1 VS 100',
+        visualConcept: 'Creator analyzing glowing gold analytics chart with dramatic cinematic lighting and clean upward exponential curve.',
         colorAccent: 'emerald',
       },
     ];
@@ -77,24 +75,38 @@ export async function generateABTestPack(topic: string, excludeTitles: string[] 
     topic,
     excludeItems: excludeTitles,
     systemPrompt: (webContext) => `<role>
-You are an elite YouTube Packaging Director and A/B Testing Specialist with 10+ years optimizing videos for YouTube Studio's native "Test & Compare" (3-Way A/B Testing) system.
-You engineer 3 completely distinct strategic packaging angles (Title + Thumbnail Text + Visual Concept) that maximize Watch-Time Share and Click-Through Rate (CTR).
+You are the world's most elite YouTube Packaging Director and A/B Testing Strategist (trained on packaging frameworks used by MrBeast, Veritasium, MagnatesMedia, Coffeezilla, and Ali Abdaal).
+You engineer 3 completely distinct, masterclass-level packaging combinations (Title + 2-3 Word Thumbnail Text + Visual Composition) designed specifically to maximize Watch-Time Share and high-CTR organic velocity in YouTube Studio's native "Test & Compare" tool.
 </role>
 
-<rules>
-- You MUST generate exactly 3 variants:
-  1. VARIANT A (Curiosity & Mystery): Opens an irresistible information gap.
-  2. VARIANT B (Contrarian & Shock): Challenges common assumptions or warns viewers.
-  3. VARIANT C (Transformation & Proof): Focuses on tangible metrics, fast results, or transformation.
-- TITLES: Must be strictly between 45 and 65 characters (guarantees zero mobile truncation).
-- THUMBNAIL TEXT: Exactly 2 to 4 bold, ALL-CAPS words that complement the title without repeating it word-for-word.
-- VISUAL CONCEPT: A vivid, 1-sentence description of the visual scene, lighting, contrast, and subject expression.
-- BAN LIST: Never use "Ultimate Guide", "Mastering the Art", "Game Changer", or "Shocking Truth".
-</rules>
+<elite_packaging_standards>
+1. VARIANT A (Empirical Investigation & The Information Gap):
+   - Opens an irresistible curiosity gap grounded in real experimentation, empirical data, or first-person testing.
+   - Example styles: "I Tested [Action] for 100 Days (Here Is What Happened)", "The Math Behind [Topic]'s 10M View Explosion", "We Spent $10,000 Testing [Topic] So You Don't Have To".
+   - Thumbnail Text: 1 to 3 words of intense tension (e.g. "IT WORKED?", "THE MATH", "I TESTED IT").
+
+2. VARIANT B (Friction, Retention Trap & The Fatal Flaw):
+   - Focuses on the microscopic bottleneck, counterintuitive error, or invisible penalty holding viewers back.
+   - Example styles: "The 2-Second Mistake Causing 80% of Viewers to Swipe Away", "Why 90% of [Topic] Fails at the 30-Second Mark", "The Expensive Mistake Ruining Your [Topic]".
+   - Thumbnail Text: 1 to 3 urgent, emotional words (e.g. "SWIPED AWAY", "FATAL FLAW", "TOO LATE?").
+
+3. VARIANT C (Asymmetrical Advantage & Breakthrough Blueprint):
+   - Positions a high-leverage mechanism or non-obvious framework that outperforms brute force.
+   - Example styles: "How 1 Strategic Upload Outperformed 100 Previous Videos", "The Unfair Advantage Small Creators Have in [Topic]", "How to Scale [Topic] with Zero Budget".
+   - Thumbnail Text: 1 to 3 punchy words (e.g. "OUTSMARTED", "UNFAIR", "1 VS 100").
+</elite_packaging_standards>
+
+<strict_rules>
+- TITLES: Must be strictly between 45 and 65 characters (enforces zero mobile truncation in YouTube iOS/Android apps).
+- THUMBNAIL TEXT: Exactly 1 to 3 bold, high-tension ALL-CAPS words that complement the title without repeating it.
+- NEVER USE BANNED AI CLICHÉS:
+  * BANNED: "The Secret", "Algorithm Trigger", "Nobody Tells You", "In Exactly 30 Days", "In 30 Days", "Stop Doing This", "Stop Using", "Hidden Truth", "The Truth About", "Mastering the Art", "Ultimate Guide", "Game Changer", "Shocking Truth", "You Are Wrong", "They Hate This", "Fast Growth".
+- TONE: High conviction, authentic, sharp, and data-backed. No cheap clickbait without substance.
+</strict_rules>
 ${webContext ? `<context>\n${webContext}\n</context>` : ''}`,
 
     userPrompt: (context, excludes) => `<instruction>
-Generate a 3-Way YouTube Studio A/B Test Pack for the topic: "${topic}"
+Engineer a 3-Way YouTube Studio A/B Test Pack for this topic: "${topic}"
 </instruction>
 
 <output_format>
@@ -102,24 +114,24 @@ Return ONLY a valid JSON array of 3 variant objects matching this exact structur
 [
   {
     "id": "A",
-    "strategy": "Curiosity Gap & Unresolved Mystery",
-    "title": "The Hidden Strategy Behind 1M Subscribers",
-    "thumbnailText": "HE HID THIS",
-    "visualConcept": "Intrigued creator pointing at a glowing blurred document on desk with dramatic rim lighting."
+    "strategy": "Empirical Investigation & The Information Gap",
+    "title": "I Analyzed 1,000 Viral Videos (The Math Behind 10M Views)",
+    "thumbnailText": "THE MATH",
+    "visualConcept": "Dark studio with creator holding transparent tablet displaying rising data points in electric violet rim lighting."
   },
   {
     "id": "B",
-    "strategy": "Contrarian & Challenge",
-    "title": "Why 99% of Small Creators Fail in Month 1",
-    "thumbnailText": "DO NOT DO THIS",
-    "visualConcept": "Split screen comparing deleted YouTube channel with red X vs verified badge with green glow."
+    "strategy": "Friction, Retention Trap & The Fatal Flaw",
+    "title": "The 2-Second Retention Mistake Killing 80% of Videos",
+    "thumbnailText": "SWIPED AWAY",
+    "visualConcept": "Split screen showing viewer thumb swiping away with bright red retention drop curve vs flat green hold line."
   },
   {
     "id": "C",
-    "strategy": "Transformation & Metric Proof",
-    "title": "How to Get 10,000 Views in 14 Days (Step-by-Step)",
-    "thumbnailText": "0 TO 10K",
-    "visualConcept": "Dramatic upward green analytics curve with clean bold numbers and energetic smiling face."
+    "strategy": "Asymmetrical Advantage & Breakthrough Blueprint",
+    "title": "How 1 Strategic Upload Outperformed 100 Previous Videos",
+    "thumbnailText": "1 VS 100",
+    "visualConcept": "Creator analyzing glowing gold analytics chart with dramatic cinematic lighting and clean upward exponential curve."
   }
 ]
 </output_format>
