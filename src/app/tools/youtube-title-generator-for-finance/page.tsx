@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { buildAbsoluteUrl } from '@/lib/site';
 import NicheStudioLayout, { type NicheFramework, type NicheCaseStudy, type NicheFAQ } from '@/components/tools/niche/NicheStudioLayout';
+import FinanceStudioClient from '@/components/tools/niche/FinanceStudioClient';
 
 export const metadata: Metadata = {
   twitter: {
@@ -162,6 +163,7 @@ export default function FinanceTitleGeneratorPage() {
         description="Engineer high-conviction, mathematically grounded titles for investing, real estate, crypto, and passive income designed to capture high-paying financial advertisers."
         niche="finance"
         currentToolPath="/tools/youtube-title-generator-for-finance"
+        customWorkspace={<FinanceStudioClient />}
         frameworksTitle="The 4 High-RPM Packaging Frameworks for Finance Creators"
         frameworksSubtitle="How elite financial creators maximize both organic Click-Through Rate and high-CPM advertiser monetization."
         frameworks={financialFrameworks}

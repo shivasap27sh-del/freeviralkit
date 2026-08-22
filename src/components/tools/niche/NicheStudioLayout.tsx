@@ -31,6 +31,7 @@ export interface NicheStudioLayoutProps {
   description: string;
   niche: string;
   currentToolPath: string;
+  customWorkspace?: React.ReactNode;
   frameworksTitle: string;
   frameworksSubtitle: string;
   frameworks: NicheFramework[];
@@ -47,6 +48,7 @@ export default function NicheStudioLayout({
   description,
   niche,
   currentToolPath,
+  customWorkspace,
   frameworksTitle,
   frameworksSubtitle,
   frameworks,
@@ -71,7 +73,7 @@ export default function NicheStudioLayout({
 
       {/* 2. Interactive Tool Workspace */}
       <div className="mb-16">
-        <TitleGeneratorClient niche={niche} />
+        {customWorkspace ? customWorkspace : <TitleGeneratorClient niche={niche} />}
       </div>
 
       {/* 3. Deep Dive: Packaging Frameworks */}

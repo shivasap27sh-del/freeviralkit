@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { buildAbsoluteUrl } from '@/lib/site';
 import NicheStudioLayout, { type NicheFramework, type NicheCaseStudy, type NicheFAQ } from '@/components/tools/niche/NicheStudioLayout';
+import AITechStudioClient from '@/components/tools/niche/AITechStudioClient';
 
 export const metadata: Metadata = {
   twitter: {
@@ -162,6 +163,7 @@ export default function AITitleGeneratorPage() {
         description="Engineer high-density, zero-fluff titles for AI agent workflows, software benchmarks, coding tutorials, and developer tool reviews."
         niche="ai-and-tech"
         currentToolPath="/tools/youtube-title-generator-for-ai-and-tech"
+        customWorkspace={<AITechStudioClient />}
         frameworksTitle="The 4 High-Velocity Packaging Frameworks for Tech Creators"
         frameworksSubtitle="How leading tech and AI essayists cut through algorithm noise and command massive developer attention."
         frameworks={aiFrameworks}
