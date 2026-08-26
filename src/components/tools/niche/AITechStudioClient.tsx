@@ -32,8 +32,8 @@ const TECH_MODES = [
 ];
 
 export default function AITechStudioClient() {
-  const [topic, setTopic] = useState('I Built an Autonomous AI Agent in 10 Minutes (No Code)');
-  const [activeMode, setActiveMode] = useState('agents');
+  const [topic, setTopic] = useState('');
+  const [activeMode, setActiveMode] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [titles, setTitles] = useState<string[]>([
     'I Built an Autonomous AI Agent in 10 Minutes (No Code)',

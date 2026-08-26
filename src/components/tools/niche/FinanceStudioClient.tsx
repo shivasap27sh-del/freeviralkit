@@ -32,8 +32,8 @@ const FINANCE_MODES = [
 ];
 
 export default function FinanceStudioClient() {
-  const [topic, setTopic] = useState('How to Invest $1,000 in 2026 (Step-by-Step Blueprint)');
-  const [activeMode, setActiveMode] = useState('compounding');
+  const [topic, setTopic] = useState('');
+  const [activeMode, setActiveMode] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [titles, setTitles] = useState<string[]>([
     'How to Invest $1,000 in 2026 (The Compound Interest Math)',
