@@ -18,6 +18,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 3. **Anti-Entropy Code Cleaner (`simplify`):** Max 1 level of nesting (use guard clauses/early returns), derived state over `useEffect` sync, single source of truth for utilities, and aim for net-negative line diffs.
 4. **Verification Oracle (`tdd-iron-loop`):** Never declare a bug fix, parser, or logic change complete without automated test proof. Follow Red-Green-Refactor to guarantee zero regressions.
 5. **Type Invariant Shield (`impossible-states`):** Eliminate boolean soup with discriminated unions (`{ status: 'idle' } | { status: 'loading' } | { status: 'success'; data } | { status: 'error'; message }`), exhaustive matching with `never`, and zero state desyncs.
+6. **Design Taste & Anti-Slop (`design-taste-frontend`):** Ban generic 3-card clones, predictable centered hero traps, and robotic AI copy. Enforce layout diversity (4+ layout families per page), tactile spring motion, obsidian glass depth, and pre-flight contrast audits.
 
 # Agent Workflow Rules
 - **Planning Mode Requirement:** Always create a detailed plan before implementing anything.
