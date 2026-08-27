@@ -248,6 +248,62 @@ const geminiProvider: AIProvider = {
   },
 };
 
+const cfAccountId = (process.env.CLOUDFLARE_ACCOUNT_ID || '').replace(/['"]/g, '').trim();
+const cfApiToken = (process.env.CLOUDFLARE_API_TOKEN || '').replace(/['"]/g, '').trim();
+
+const cloudflareProvider: AIProvider = {
+  name: 'Cloudflare Workers AI',
+  isConfigured: Boolean(cfAccountId && cfApiToken),
+  timeoutMs: 6000,
+  async generate(messages, options) {
+    if (!cfAccountId || !cfApiToken) throw new Error('Cloudflare Workers AI not configured');
+
+    const models = [
+      '@cf/openai/gpt-oss-20b',
+      '@cf/meta/llama-3.2-1b-instruct',
+      '@cf/zai-org/glm-4.7-flash',
+      '@cf/meta/llama-3.2-3b-instruct',
+      '@cf/deepseek-ai/deepseek-r1-distill-qwen-32b',
+    ];
+
+    let lastErr = '';
+    for (const model of models) {
+      try {
+        const response = await fetch(
+          `https://api.cloudflare.com/client/v4/accounts/${cfAccountId}/ai/v1/chat/completions`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${cfApiToken}`,
+            },
+            body: JSON.stringify({
+              model,
+              messages,
+              max_tokens: options.maxTokens,
+              temperature: options.temperature,
+            }),
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          let content = data.choices?.[0]?.message?.content || '';
+          if (content.includes('</think>')) {
+            content = content.split('</think>')[1].trim();
+          }
+          if (content) return content;
+        } else {
+          lastErr = await response.text();
+        }
+      } catch (err: unknown) {
+        lastErr = err instanceof Error ? err.message : String(err);
+      }
+    }
+    throw new Error(`Cloudflare all models failed: ${lastErr}`);
+  },
+};
+
 const cerebrasProvider = createOpenAICompatibleProvider(
   'Cerebras',
   'CEREBRAS_API_KEY',
@@ -268,7 +324,7 @@ const nvidiaProvider = createOpenAICompatibleProvider(
   'NVIDIA NIM',
   'NVIDIA_API_KEY',
   'https://integrate.api.nvidia.com/v1/chat/completions',
-  'meta/llama-3.3-70b-instruct',
+  'nvidia/nemotron-3-super-120b-a12b',
   10000
 );
 
@@ -281,12 +337,13 @@ const togetherProvider = createOpenAICompatibleProvider(
 );
 
 export const providers: AIProvider[] = [
-  groqProvider,      // 1. Groq LPUs (qwen/qwen3.8-27b @ 600ms)
-  geminiProvider,    // 2. Google Gemini 3.6 Flash (~800ms)
-  openRouterProvider,// 3. OpenRouter Free Pool
-  cerebrasProvider,  // 4. Cerebras
-  togetherProvider,  // 5. Together AI
-  nvidiaProvider,    // 6. NVIDIA NIM
+  groqProvider,         // 1. Groq LPUs (qwen/qwen3.8-27b @ 600ms with Hedged Race)
+  geminiProvider,       // 2. Google Gemini 3.6 Flash (~800ms)
+  cloudflareProvider,   // 3. Cloudflare Global Edge (10,000 Free Req/Day @ 624ms)
+  openRouterProvider,   // 4. OpenRouter Free Pool
+  cerebrasProvider,     // 5. Cerebras
+  togetherProvider,     // 6. Together AI
+  nvidiaProvider,       // 7. NVIDIA NIM
 ].filter((p) => p.isConfigured);
 
 function withTimeout<T>(promise: Promise<T>, ms: number, providerName: string): Promise<T> {
