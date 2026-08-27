@@ -20,15 +20,16 @@ export default function HookGeneratorClient() {
   const [teleprompterHook, setTeleprompterHook] = useState<HookPackage | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const handleGenerate = async (overrideTopic?: string) => {
-    const inputTopic = (overrideTopic !== undefined ? overrideTopic : topic).trim();
+  const handleGenerate = async (customTopic?: string, customAngle?: string) => {
+    const inputTopic = (customTopic !== undefined ? customTopic : topic).trim();
     if (!inputTopic) return;
 
     setIsGenerating(true);
     setError(null);
 
+    const activeAngle = customAngle !== undefined ? customAngle : activeArchetype;
     const excludes = packages.map((p) => p.summary);
-    const result = await generateHooks(inputTopic, excludes);
+    const result = await generateHooks(inputTopic, activeAngle || undefined, excludes);
 
     if (result.success && result.packages && result.packages.length > 0) {
       setPackages(result.packages);
@@ -40,10 +41,12 @@ export default function HookGeneratorClient() {
   };
 
   const onSelectArchetype = (archetype: HookArchetypeConfig) => {
-    setActiveArchetype(archetype.id);
-    const combinedTopic = topic ? `${topic} (${archetype.prompt})` : archetype.prompt;
-    setTopic(combinedTopic);
-    handleGenerate(combinedTopic);
+    setActiveArchetype(archetype.label);
+    const targetTopic = topic.trim() || 'Building an AI app in 2026';
+    if (!topic.trim()) {
+      setTopic(targetTopic);
+    }
+    handleGenerate(targetTopic, archetype.label);
   };
 
   return (

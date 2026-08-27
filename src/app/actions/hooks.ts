@@ -7,9 +7,16 @@ interface GenerateHooksResponse {
   packages: HookPackage[];
 }
 
-export async function generateHooks(topic: string, excludeSummaries: string[] = []) {
+export async function generateHooks(
+  topic: string,
+  angle?: string,
+  excludeSummaries: string[] = []
+) {
+  const cleanTopic = topic.trim();
+  const cleanAngle = (angle || '').trim();
+
   const result = await executeAIGeneration<GenerateHooksResponse>({
-    topic,
+    topic: cleanAngle ? `${cleanTopic} [Angle: ${cleanAngle}]` : cleanTopic,
     excludeItems: excludeSummaries,
     systemPrompt: () => `<role>
 You are an elite YouTube retention architect and master script doctor (in the style of MrBeast, Paddy Galloway, and George Blackman).
@@ -25,7 +32,7 @@ Every 30-second hook must be broken into 4 chronological beats:
 </framework>`,
 
     userPrompt: (context, excludes) => `<instruction>
-Generate 3 distinct, high-retention 30-second Hook Packages for the YouTube video topic: "${topic}"
+Generate 3 distinct, high-retention 30-second Hook Packages for the YouTube video topic: "${cleanTopic}"${cleanAngle ? ` using the psychological angle: "${cleanAngle}"` : ''}.
 </instruction>
 
 <strict_rules>
