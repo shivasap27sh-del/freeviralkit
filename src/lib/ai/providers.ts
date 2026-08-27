@@ -71,15 +71,23 @@ const groqProvider: AIProvider = {
 
       try {
         log(`[Groq] Attempting generation with key index #${currentIndex}...`);
-        const completion = await client.chat.completions.create({
-          messages,
-          model: 'llama-3.3-70b-versatile',
-          temperature: options.temperature,
-          max_completion_tokens: options.maxTokens,
-        });
-        const text = completion.choices[0]?.message?.content || '';
-        if (!text) throw new Error('Empty response from Groq');
-        return text;
+        const models = ['qwen/qwen3.8-27b', 'openai/gpt-oss-120b', 'openai/gpt-oss-20b'];
+        let lastErr = '';
+        for (const model of models) {
+          try {
+            const completion = await client.chat.completions.create({
+              messages,
+              model,
+              temperature: options.temperature,
+              max_completion_tokens: options.maxTokens,
+            });
+            const text = completion.choices[0]?.message?.content || '';
+            if (text) return text;
+          } catch (mErr: unknown) {
+            lastErr = mErr instanceof Error ? mErr.message : String(mErr);
+          }
+        }
+        throw new Error(lastErr || 'All Groq models failed');
       } catch (error: unknown) {
         const msg = error instanceof Error ? error.message : String(error);
         console.warn(`[Groq] Key #${currentIndex} failed: ${msg}`);
@@ -177,7 +185,7 @@ const geminiApiKey = process.env.GEMINI_API_KEY;
 const geminiProvider: AIProvider = {
   name: 'Google Gemini',
   isConfigured: !!geminiApiKey,
-  timeoutMs: 8000,
+  timeoutMs: 12000,
   async generate(messages, options) {
     if (!geminiApiKey) throw new Error('Google Gemini not configured');
 
@@ -187,10 +195,10 @@ const geminiProvider: AIProvider = {
     }));
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 7500);
+    const timeout = setTimeout(() => controller.abort(), 11500);
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent?key=${geminiApiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${geminiApiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -232,8 +240,8 @@ const openRouterProvider = createOpenAICompatibleProvider(
   'OpenRouter',
   'OPENROUTER_API_KEY',
   'https://openrouter.ai/api/v1/chat/completions',
-  'google/gemma-4-26b-a4b-it:free',
-  8000
+  'meta-llama/llama-3.3-70b-instruct:free',
+  10000
 );
 
 const nvidiaProvider = createOpenAICompatibleProvider(

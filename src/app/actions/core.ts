@@ -14,6 +14,7 @@ import {
   safeParseJsonArray,
   safeParseChannelNames,
   safeParseShortsIdeas,
+  safeParseJsonObject,
   type ChannelNamesResult,
   type ShortsIdea,
 } from '@/lib/ai/parsers';
@@ -32,6 +33,7 @@ export {
   safeParseJsonArray,
   safeParseChannelNames,
   safeParseShortsIdeas,
+  safeParseJsonObject,
   checkInputSafety,
   filterAIOutput,
   sanitizeOutput,

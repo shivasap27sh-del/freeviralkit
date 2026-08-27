@@ -233,6 +233,8 @@ export default function HookGeneratorPage() {
               Try Full Script Generator →
             </Link>
           </div>
+
+          <RelatedTools currentToolPath="/youtube-hook-generator" />
         </section>
       </main>
     </>

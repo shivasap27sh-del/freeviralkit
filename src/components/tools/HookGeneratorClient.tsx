@@ -2,125 +2,137 @@
 
 import { useState } from 'react';
 import { generateHooks } from '@/app/actions/hooks';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Copy, CheckCircle2, Loader2, Sparkles, RotateCcw } from 'lucide-react';
+import { type HookPackage, type HookArchetypeConfig } from './hooks/types';
+import HookArchetypeSelector from './hooks/HookArchetypeSelector';
+import HookRetentionWaveform from './hooks/HookRetentionWaveform';
+import HookTimelineScrubber from './hooks/HookTimelineScrubber';
+import HookVariantCards from './hooks/HookVariantCards';
+import HookTeleprompterModal from './hooks/HookTeleprompterModal';
 import ErrorBanner from '@/components/ErrorBanner';
+import { Loader2, Sparkles, RotateCcw } from 'lucide-react';
 
 export default function HookGeneratorClient() {
   const [topic, setTopic] = useState('');
+  const [activeArchetype, setActiveArchetype] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
-  const [hooks, setHooks] = useState<string[]>([]);
-  const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
+  const [packages, setPackages] = useState<HookPackage[]>([]);
+  const [selectedHook, setSelectedHook] = useState<HookPackage | null>(null);
+  const [teleprompterHook, setTeleprompterHook] = useState<HookPackage | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const handleGenerate = async (val?: string, isRegenerate = false) => {
-    const inputVal = val !== undefined ? val : topic;
-    if (!inputVal.trim()) return;
+  const handleGenerate = async (overrideTopic?: string) => {
+    const inputTopic = (overrideTopic !== undefined ? overrideTopic : topic).trim();
+    if (!inputTopic) return;
+
     setIsGenerating(true);
-    const exclude = isRegenerate ? hooks : [];
-    setHooks([]);
     setError(null);
-    const result = await generateHooks(inputVal, exclude);
-    if (result.success && result.hooks) setHooks(result.hooks);
-    else setError(result.error || 'Failed to generate hooks');
+
+    const excludes = packages.map((p) => p.summary);
+    const result = await generateHooks(inputTopic, excludes);
+
+    if (result.success && result.packages && result.packages.length > 0) {
+      setPackages(result.packages);
+      setSelectedHook(result.packages[0]);
+    } else {
+      setError(result.error || 'Failed to generate retention hooks.');
+    }
     setIsGenerating(false);
   };
 
-  const copy = async (text: string, key: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedStates(p => ({ ...p, [key]: true }));
-      setTimeout(() => setCopiedStates(p => ({ ...p, [key]: false })), 2000);
-    } catch (err) { console.error('Failed to copy', err); }
+  const onSelectArchetype = (archetype: HookArchetypeConfig) => {
+    setActiveArchetype(archetype.id);
+    const combinedTopic = topic ? `${topic} (${archetype.prompt})` : archetype.prompt;
+    setTopic(combinedTopic);
+    handleGenerate(combinedTopic);
   };
 
-  const examples = ['Why you should learn Rust in 2026', 'My morning routine as a millionaire', 'How to fix back pain fast'];
-
   return (
-    <>
-      <div className="glass-card rounded-2xl p-6 md:p-8 mb-8">
+    <div className="space-y-8">
+      {/* Search Bar & Cockpit Controls */}
+      <div className="glass-card rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-800 shadow-xl">
         <div className="relative mb-4">
-          <input type="text" value={topic} onChange={e => setTopic(e.target.value)}
-            placeholder="Enter your video topic (e.g., how to code in javascript, diy room decor...)"
-            className="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-lg"
-            onKeyDown={e => e.key === 'Enter' && handleGenerate()} />
+          <input
+            type="text"
+            value={topic}
+            onChange={(e) => setTopic(e.target.value)}
+            placeholder="Enter your video topic (e.g., how to code in javascript, building an AI agent...)"
+            className="w-full bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-2xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all text-base md:text-lg font-medium"
+            onKeyDown={(e) => e.key === 'Enter' && handleGenerate()}
+          />
         </div>
 
-        {/* Clickable Examples */}
-        <div className="flex flex-wrap items-center gap-2 mb-6">
-          <span className="text-xs text-slate-500 font-medium">Examples:</span>
-          {examples.map(ex => (
-            <button
-              key={ex}
-              onClick={() => {
-                setTopic(ex);
-                handleGenerate(ex);
-              }}
-              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer"
-            >
-              {ex}
-            </button>
-          ))}
-        </div>
+        {/* Archetype Quick Selectors */}
+        <HookArchetypeSelector
+          activeArchetypeId={activeArchetype}
+          onSelectArchetype={onSelectArchetype}
+        />
 
-        <button onClick={() => handleGenerate()} disabled={!topic.trim() || isGenerating}
-          className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2 cursor-pointer">
-          {isGenerating ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating Hooks...</> : <><Sparkles className="w-5 h-5" /> Generate Hooks</>}
+        {/* Generate Button */}
+        <button
+          type="button"
+          onClick={() => handleGenerate()}
+          disabled={!topic.trim() || isGenerating}
+          className="w-full btn-primary rounded-2xl py-4 font-bold text-base md:text-lg flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-purple-600/20 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {isGenerating ? (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin" />
+              Engineering 30-Second Retention Deck...
+            </>
+          ) : (
+            <>
+              <Sparkles className="w-5 h-5" />
+              Generate 30-Second Retention Hook Cockpit
+            </>
+          )}
         </button>
       </div>
 
       <ErrorBanner error={error} onClear={() => setError(null)} />
 
-      <AnimatePresence>
-        {hooks.length > 0 && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-4 mb-8">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-2">
-              <h2 className="font-display text-xl font-semibold">Your Video Hooks</h2>
-              <div className="flex gap-2">
-                <button onClick={() => handleGenerate(undefined, true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer">
-                  <RotateCcw className="w-3.5 h-3.5" /> Regenerate
-                </button>
-                <button onClick={() => copy(hooks.join('\n\n'), 'all-hooks')} aria-label="Copy all hooks" className="copy-btn cursor-pointer">
-                  {copiedStates['all-hooks'] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-600 dark:text-slate-400" /> Copy All</>}
-                </button>
-              </div>
-            </div>
+      {/* Generated Cockpit Workspace */}
+      {packages.length > 0 && selectedHook && (
+        <div className="space-y-8 animate-in fade-in duration-300">
+          {/* Header Toolbar */}
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <h2 className="font-display text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white">
+              🎬 30-Second Multi-Track Production Cockpit
+            </h2>
+            <button
+              type="button"
+              onClick={() => handleGenerate()}
+              disabled={isGenerating}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-purple-500/15 hover:text-purple-600 transition-colors cursor-pointer border border-slate-200 dark:border-slate-700"
+            >
+              <RotateCcw className="w-3.5 h-3.5" /> Regenerate Decks
+            </button>
+          </div>
 
-            {hooks.map((hook, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:border-purple-300 dark:hover:border-purple-500/50 transition-all flex gap-4"
-              >
-                <div className="flex-1">
-                  {(() => {
-                    const match = hook.match(/^\[VISUAL:\s*([^\]]+)\]\s*([\s\S]*)$/i);
-                    if (match) {
-                      return (
-                        <>
-                          <div className="mb-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-600 dark:text-purple-400 text-xs font-semibold border border-purple-500/20">
-                            🎬 Visual: {match[1].trim()}
-                          </div>
-                          <p className="text-slate-800 dark:text-slate-200 font-medium text-lg leading-relaxed">{match[2].trim()}</p>
-                        </>
-                      );
-                    }
-                    return <p className="text-slate-800 dark:text-slate-200 font-medium text-lg leading-relaxed">{hook.replace(/^["']|["']$/g, '')}</p>;
-                  })()}
-                </div>
-                <button
-                  onClick={() => copy(hook, `hook-${idx}`)}
-                  className="p-2 h-fit rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors cursor-pointer shrink-0"
-                >
-                  {copiedStates[`hook-${idx}`] ? <CheckCircle2 className="w-5 h-5 text-green-400" /> : <Copy className="w-5 h-5" />}
-                </button>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+          {/* Top Live Retention Visualizer & 30s Timeline Scrubber */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-4">
+              <HookRetentionWaveform score={selectedHook.predictedRetention} />
+            </div>
+            <div className="lg:col-span-8">
+              <HookTimelineScrubber timeline={selectedHook.timeline} />
+            </div>
+          </div>
+
+          {/* 3D Hook Card Deck */}
+          <HookVariantCards
+            packages={packages}
+            selectedHookId={selectedHook.id}
+            onSelectHook={(pkg) => setSelectedHook(pkg)}
+            onOpenTeleprompter={(pkg) => setTeleprompterHook(pkg)}
+          />
+        </div>
+      )}
+
+      {/* Fullscreen Teleprompter Modal */}
+      <HookTeleprompterModal
+        pkg={teleprompterHook}
+        onClose={() => setTeleprompterHook(null)}
+      />
+    </div>
   );
 }

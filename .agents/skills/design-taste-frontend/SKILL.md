@@ -113,3 +113,38 @@ Before declaring any task done, verify:
 2. **Layout Diversity**: At least 4 distinct layout families on the page.
 3. **No Slop**: Zero 3-card copies, zero wrapped buttons, zero unstyled inputs.
 4. **Mobile Stability**: Declared mobile collapse with `min-h-[100dvh]` (never `h-screen`).
+5. **Accessibility on Dark Presets**: If using Section 6 palette, verify slate-300 body text meets 4.5:1 contrast against card backgrounds.
+
+---
+
+## 6. DARK PREMIUM PRESET (Conditional — Activate Only When Design Read Says "dark tech" / "premium" / "glassy")
+
+> **NOT a default.** This preset fires ONLY when the brief inference (Section 0) explicitly reads as dark-mode premium, obsidian-glass, or "dark tech" aesthetic. It does NOT override the LILA RULE — indigo/violet is the preset's accent, not every project's accent.
+
+### 6.1 Obsidian Glassmorphism Palette
+| Token | Value | Usage |
+|-------|-------|-------|
+| Base Background | `#090d16` / `#030712` | Page `bg` |
+| Card / Container | `rgba(15, 23, 42, 0.65)` + `backdrop-filter: blur(20px)` | Floating panels |
+| Hairline Border | `1px solid rgba(255, 255, 255, 0.08)` | Default card edge |
+| Border Hover | `rgba(99, 102, 241, 0.4)` | Interactive card hover |
+| Primary Accent | `linear-gradient(135deg, #4f46e5, #7c3aed)` | CTAs, active states |
+| Success | `#10b981` / `#34d399` | Matched / positive |
+| Alert | `#f43f5e` / `#fb7185` | Errors / warnings |
+
+### 6.2 Dark Typography Hierarchy
+- **Headers:** Bold, `tracking-tight`, crisp white `#f8fafc`
+- **Body:** Slate-300 `#cbd5e1` for readability on dark backgrounds
+- **Micro-labels:** `text-[10px] uppercase font-semibold tracking-wider` in Slate-400 `#94a3b8`
+
+### 6.3 Tactile Physics (Spring Easing)
+- **Button active press:** `transform: translateY(1px) scale(0.98)`
+- **Toast / Modal overlays:** `cubic-bezier(0.16, 1, 0.3, 1)` (spring-like ease-out)
+- **Card hover elevation:** Subtle glow matching accent color at 20% opacity
+
+### 6.4 SVG Score Gauges
+- Render scores as circular SVG arc gauges with color-coded gradients:
+  - Red (`#f43f5e`) for < 50
+  - Amber (`#f59e0b`) for 50–75
+  - Emerald (`#10b981`) for > 75
+- Use pill-shaped badges: semi-transparent tinted backgrounds + matched 1px hairline borders

@@ -142,3 +142,43 @@ export function safeParseShortsIdeas(text: string): ShortsIdea[] {
 
   return [];
 }
+
+export function safeParseJsonObject<T = unknown>(text: string): T | null {
+  if (!text) return null;
+  const clean = text.replace(/```json/gi, '').replace(/```/g, '').trim();
+
+  const firstBrace = clean.indexOf('{');
+  const lastBrace = clean.lastIndexOf('}');
+  if (firstBrace !== -1) {
+    // 1. Try exact substring
+    if (lastBrace > firstBrace) {
+      try {
+        const parsed = JSON.parse(clean.substring(firstBrace, lastBrace + 1));
+        if (parsed && typeof parsed === 'object') return parsed as T;
+      } catch {
+        // Fall through to auto-repair
+      }
+    }
+
+    // 2. Truncation repair: auto-close open arrays/objects
+    const candidate = clean.substring(firstBrace);
+    const closers = ['}]}', ']}', '}', '"]}', '"}]}'];
+    for (const suffix of closers) {
+      try {
+        // Try trimming back to last comma or brace and appending suffix
+        const lastComma = candidate.lastIndexOf(',');
+        if (lastComma > 0) {
+          const repaired = candidate.substring(0, lastComma) + suffix;
+          const parsed = JSON.parse(repaired);
+          if (parsed && typeof parsed === 'object') return parsed as T;
+        }
+      } catch {
+        // Continue trying suffixes
+      }
+    }
+  }
+  return null;
+}
+
+
+
