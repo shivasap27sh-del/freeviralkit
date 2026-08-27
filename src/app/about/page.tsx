@@ -75,7 +75,7 @@ const jsonLd = {
         '@type': 'Person',
         name: 'Shiva Srivastava',
       },
-      foundingDate: '2024',
+      foundingDate: '2026',
     },
     {
       '@type': 'Person',

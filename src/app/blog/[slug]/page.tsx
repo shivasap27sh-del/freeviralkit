@@ -253,18 +253,37 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Author Bio */}
-        <div className="mt-12 p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-          <div className="w-20 h-20 shrink-0 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white font-display font-bold text-2xl shadow-lg">
-            S
+        {/* Author Bio & E-E-A-T Credentials */}
+        <div className="mt-12 p-6 md:p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+          <div className="w-20 h-20 shrink-0 rounded-2xl bg-gradient-to-br from-purple-500 via-indigo-500 to-cyan-500 flex items-center justify-center text-white font-display font-bold text-2xl shadow-lg shadow-purple-500/20">
+            SS
           </div>
-          <div>
-            <h2 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-2 text-center sm:text-left">
-              Shiva
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed text-center sm:text-left">
-              Shiva is a YouTube growth expert and the creator of FreeViralKit. With years of experience decoding the YouTube algorithm, Shiva builds free AI tools to help creators optimize their metadata, rank higher in search results, and turn their passion into a full-time career.
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-wrap items-center gap-2 mb-1 justify-center sm:justify-start">
+              <h2 className="font-display text-xl font-bold text-slate-900 dark:text-white">
+                Shiva Srivastava
+              </h2>
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 flex items-center gap-1">
+                ✓ Verified Creator &amp; Engineer
+              </span>
+            </div>
+            <p className="text-xs text-purple-600 dark:text-purple-400 font-medium mb-3 text-center sm:text-left">
+              B.Tech Computer Science | Creator of FreeViralKit
             </p>
+            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed text-center sm:text-left mb-4">
+              Shiva is a software engineer and YouTube growth researcher who built FreeViralKit to democratize YouTube SEO. All guides on FreeViralKit are independently researched, tested on real creator channels, and updated to reflect the latest YouTube algorithm and recommendation system changes.
+            </p>
+            <div className="flex flex-wrap gap-4 text-xs font-semibold justify-center sm:justify-start text-slate-600 dark:text-slate-400">
+              <Link href="/about" className="text-purple-600 dark:text-purple-400 hover:underline">
+                About the Author →
+              </Link>
+              <a href="https://linkedin.com/in/shiva-srivastava" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                LinkedIn ↗
+              </a>
+              <a href="https://github.com/shivasap27sh-del" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                GitHub ↗
+              </a>
+            </div>
           </div>
         </div>
 
