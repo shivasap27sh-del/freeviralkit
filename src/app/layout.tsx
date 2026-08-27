@@ -89,6 +89,9 @@ export const metadata: Metadata = {
         google: siteConfig.googleVerificationCode,
       }
     : undefined,
+  other: {
+    'google-adsense-account': 'ca-pub-7893678534155164',
+  },
 };
 
 // JSON-LD structured data
@@ -146,6 +149,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
+        {/* Google AdSense Official Site Verification & Auto-Ads Tag */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7893678534155164"
+          crossOrigin="anonymous"
+        />
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{

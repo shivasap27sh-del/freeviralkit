@@ -14,19 +14,6 @@ const ADSENSE_PUB_ID = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID || 'ca-pub-7893678
 export default function ConsentGatedScripts() {
   const { consent } = useConsent();
   const gaLoaded = useRef(false);
-  const adsenseLoaded = useRef(false);
-
-  // Load Google AdSense script tag on mount (Required for Google AdSense Site Review & Crawler verification)
-  useEffect(() => {
-    if (adsenseLoaded.current) return;
-    adsenseLoaded.current = true;
-
-    const adsenseScript = document.createElement('script');
-    adsenseScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUB_ID}`;
-    adsenseScript.async = true;
-    adsenseScript.crossOrigin = 'anonymous';
-    document.head.appendChild(adsenseScript);
-  }, []);
 
   // Load Google Analytics when analytics consent is granted
   useEffect(() => {
