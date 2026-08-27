@@ -57,45 +57,65 @@ const groqClients = groqApiKeys.map(
 const groqProvider: AIProvider = {
   name: 'Groq',
   isConfigured: groqClients.length > 0,
-  timeoutMs: 10000, // 10 seconds production timeout
+  timeoutMs: 5000, // 5s low-latency timeout
   async generate(messages, options) {
     if (groqClients.length === 0) throw new Error('Groq not configured');
 
     const startIndex = globalGroqIndex % groqClients.length;
     globalGroqIndex++;
 
-    const errors: string[] = [];
-    for (let i = 0; i < groqClients.length; i++) {
-      const currentIndex = (startIndex + i) % groqClients.length;
-      const client = groqClients[currentIndex];
-
-      try {
-        log(`[Groq] Attempting generation with key index #${currentIndex}...`);
-        const models = ['qwen/qwen3.8-27b', 'openai/gpt-oss-120b', 'openai/gpt-oss-20b'];
-        let lastErr = '';
-        for (const model of models) {
-          try {
-            const completion = await client.chat.completions.create({
-              messages,
-              model,
-              temperature: options.temperature,
-              max_completion_tokens: options.maxTokens,
-            });
-            const text = completion.choices[0]?.message?.content || '';
-            if (text) return text;
-          } catch (mErr: unknown) {
-            lastErr = mErr instanceof Error ? mErr.message : String(mErr);
-          }
+    // Helper to attempt generation on a single client
+    const tryClient = async (clientIndex: number): Promise<string> => {
+      const client = groqClients[clientIndex];
+      const models = ['qwen/qwen3.8-27b', 'openai/gpt-oss-120b', 'openai/gpt-oss-20b'];
+      let lastErr = '';
+      for (const model of models) {
+        try {
+          const completion = await client.chat.completions.create({
+            messages,
+            model,
+            temperature: options.temperature,
+            max_completion_tokens: options.maxTokens,
+          });
+          const text = completion.choices[0]?.message?.content || '';
+          if (text) return text;
+        } catch (mErr: unknown) {
+          lastErr = mErr instanceof Error ? mErr.message : String(mErr);
         }
-        throw new Error(lastErr || 'All Groq models failed');
-      } catch (error: unknown) {
-        const msg = error instanceof Error ? error.message : String(error);
-        console.warn(`[Groq] Key #${currentIndex} failed: ${msg}`);
-        errors.push(`Key #${currentIndex}: ${msg}`);
       }
+      throw new Error(lastErr || `Groq key #${clientIndex} all models failed`);
+    };
+
+    // If multiple keys exist: Use Hedged Request (speculative race if primary exceeds 650ms)
+    if (groqClients.length > 1) {
+      const primaryIndex = startIndex;
+      const secondaryIndex = (startIndex + 1) % groqClients.length;
+
+      const primaryPromise = tryClient(primaryIndex);
+
+      // Hedged speculative backup launched if primary takes > 650ms
+      const hedgedPromise = new Promise<string>((resolve, reject) => {
+        const timer = setTimeout(() => {
+          log(`[Groq] ⚡ Hedged Request triggered on Key #${secondaryIndex} (>650ms speculative race)`);
+          tryClient(secondaryIndex).then(resolve).catch(reject);
+        }, 650);
+
+        primaryPromise
+          .then((res) => {
+            clearTimeout(timer);
+            resolve(res);
+          })
+          .catch((err) => {
+            clearTimeout(timer);
+            // If primary failed immediately before 650ms, run secondary immediately
+            tryClient(secondaryIndex).then(resolve).catch(reject);
+          });
+      });
+
+      return await Promise.race([primaryPromise, hedgedPromise]);
     }
 
-    throw new Error(`All Groq keys failed:\n${errors.join('\n')}`);
+    return await tryClient(startIndex);
   },
 };
 
@@ -261,12 +281,12 @@ const togetherProvider = createOpenAICompatibleProvider(
 );
 
 export const providers: AIProvider[] = [
-  groqProvider,
-  cerebrasProvider,
-  geminiProvider,
-  openRouterProvider,
-  nvidiaProvider,
-  togetherProvider,
+  groqProvider,      // 1. Groq LPUs (qwen/qwen3.8-27b @ 600ms)
+  geminiProvider,    // 2. Google Gemini 3.6 Flash (~800ms)
+  openRouterProvider,// 3. OpenRouter Free Pool
+  cerebrasProvider,  // 4. Cerebras
+  togetherProvider,  // 5. Together AI
+  nvidiaProvider,    // 6. NVIDIA NIM
 ].filter((p) => p.isConfigured);
 
 function withTimeout<T>(promise: Promise<T>, ms: number, providerName: string): Promise<T> {
