@@ -41,18 +41,39 @@ export default function HookGeneratorClient() {
   };
 
   const onSelectArchetype = (archetype: HookArchetypeConfig) => {
-    setActiveArchetype(archetype.label);
+    const nextId = activeArchetype === archetype.id ? null : archetype.id;
+    setActiveArchetype(nextId);
     const targetTopic = topic.trim() || 'Building an AI app in 2026';
     if (!topic.trim()) {
       setTopic(targetTopic);
     }
-    handleGenerate(targetTopic, archetype.label);
+    handleGenerate(targetTopic, nextId ? archetype.label : undefined);
   };
 
   return (
     <div className="space-y-8">
       {/* Search Bar & Cockpit Controls */}
       <div className="glass-card rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-800 shadow-xl">
+        {/* Active Angle Strategy Indicator */}
+        {activeArchetype && (
+          <div className="flex items-center gap-2 mb-3 animate-in fade-in slide-in-from-top-1 duration-200">
+            <span className="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">
+              Active Strategy:
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-purple-500/15 border border-purple-500/30 text-purple-600 dark:text-purple-300">
+              <span>{HOOK_ARCHETYPES.find((a) => a.id === activeArchetype)?.label}</span>
+              <button
+                type="button"
+                onClick={() => setActiveArchetype(null)}
+                className="ml-1 text-slate-400 hover:text-red-400 font-bold transition-colors cursor-pointer"
+                title="Clear angle filter"
+              >
+                ✕
+              </button>
+            </span>
+          </div>
+        )}
+
         <div className="relative mb-4">
           <input
             type="text"

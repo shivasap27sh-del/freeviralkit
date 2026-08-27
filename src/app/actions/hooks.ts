@@ -9,11 +9,19 @@ interface GenerateHooksResponse {
 
 export async function generateHooks(
   topic: string,
-  angle?: string,
-  excludeSummaries: string[] = []
+  angleOrExcludes?: string | string[],
+  maybeExcludes: string[] = []
 ) {
-  const cleanTopic = topic.trim();
-  const cleanAngle = (angle || '').trim();
+  const cleanTopic = typeof topic === 'string' ? topic.trim() : String(topic || '').trim();
+  let cleanAngle = '';
+  let excludeSummaries: string[] = [];
+
+  if (Array.isArray(angleOrExcludes)) {
+    excludeSummaries = angleOrExcludes;
+  } else if (typeof angleOrExcludes === 'string') {
+    cleanAngle = angleOrExcludes.trim();
+    excludeSummaries = Array.isArray(maybeExcludes) ? maybeExcludes : [];
+  }
 
   const result = await executeAIGeneration<GenerateHooksResponse>({
     topic: cleanAngle ? `${cleanTopic} [Angle: ${cleanAngle}]` : cleanTopic,
