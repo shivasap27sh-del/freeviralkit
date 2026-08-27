@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { generateHooks } from '@/app/actions/hooks';
-import { type HookPackage, type HookArchetypeConfig } from './hooks/types';
+import { HOOK_ARCHETYPES, type HookPackage, type HookArchetypeConfig } from './hooks/types';
 import HookArchetypeSelector from './hooks/HookArchetypeSelector';
 import HookRetentionWaveform from './hooks/HookRetentionWaveform';
 import HookTimelineScrubber from './hooks/HookTimelineScrubber';
