@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getPublishedPosts } from '../../data';
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
 import Pagination from '@/components/Pagination';
+import { buildAbsoluteUrl } from '@/lib/site';
 
 const POSTS_PER_PAGE = 10;
 
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `Browse page ${pageNum} of FreeViralKit's YouTube SEO guides, tips, and strategies to grow your channel faster.`,
     alternates: {
       // Each pagination page has its own canonical to avoid duplicate content
-      canonical: `https://freeviralkit.com/blog/page/${pageNum}`,
+      canonical: buildAbsoluteUrl(`/blog/page/${pageNum}`),
     },
     // Noindex pagination pages — individual blog posts are already in the sitemap.
     // This prevents Google wasting crawl budget on listing pages that have no unique content.

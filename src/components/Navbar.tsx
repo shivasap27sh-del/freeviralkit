@@ -17,6 +17,7 @@ const navLinks = [
 
 const toolsDropdown = [
   { href: '/youtube-ab-test-generator', label: '3-Way A/B Test Pack ⚡' },
+  { href: '/youtube-realtime-title-generator', label: 'Real-Time Movie & Live AI 🎬' },
   { href: '/youtube-title-generator', label: 'Title Generator' },
   { href: '/youtube-hashtag-generator', label: 'Hashtag Generator' },
   { href: '/youtube-tags-generator', label: 'Tags Generator' },
@@ -59,15 +60,20 @@ export default function Navbar() {
 
   useEffect(() => {
     setMounted(true);
-    const localTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (localTheme === 'dark' || (!localTheme && systemPrefersDark)) {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     } else {
-      setTheme('light');
-      document.documentElement.classList.remove('dark');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
+      if (prefersDark) {
+        document.documentElement.classList.add('dark');
+      }
     }
   }, []);
 
@@ -98,7 +104,7 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all inline-block active:scale-[0.96] duration-75 ease-out ${
-                  pathname === link.href || (link.label === 'Tools' && pathname.startsWith('/youtube-'))
+                  pathname === link.href || (link.label === 'Tools' && (pathname.startsWith('/youtube-') || pathname.startsWith('/tools/')))
                     ? 'text-slate-900 dark:text-white bg-slate-200 dark:bg-slate-800'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}

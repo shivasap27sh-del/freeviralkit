@@ -83,7 +83,7 @@ export const aboutFaqs = [
   {
     question: 'Why did you build FreeViralKit?',
     answer:
-      "I noticed a frustrating trend in the creator economy: basic metadata optimization tools were locked behind expensive monthly subscriptions ($20-$50/mo). I believe understanding the YouTube algorithm shouldn't be a luxury reserved for massive channels. I built FreeViralKit to democratize access to top-tier SEO tools so independent creators can compete on a level playing field.",
+      "I noticed a frustrating trend in the creator economy: basic metadata optimization tools were locked behind expensive monthly subscriptions. I believe understanding the YouTube algorithm shouldn't be a luxury reserved for massive channels. I built FreeViralKit to democratize access to top-tier SEO tools so independent creators can compete on a level playing field.",
   },
   {
     question: 'Are my video ideas kept private?',

@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-touch-icon.png',
   },
+  manifest: '/manifest.webmanifest',
   keywords: [
     'youtube seo tool',
     'youtube title generator',
