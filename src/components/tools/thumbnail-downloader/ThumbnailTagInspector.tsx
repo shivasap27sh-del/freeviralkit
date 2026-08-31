@@ -36,30 +36,30 @@ export function ThumbnailTagInspector({ tags, channelName }: ThumbnailTagInspect
 
   if (!tags || tags.length === 0) {
     return (
-      <div className="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 text-center text-slate-400 text-sm">
+      <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 p-6 text-center text-slate-500 dark:text-slate-400 text-sm">
         No hidden keywords or tags found on this video.
       </div>
     );
   }
 
   return (
-    <div className="glass-card rounded-3xl p-6 md:p-8 border border-blue-500/20 bg-slate-900/90 shadow-2xl backdrop-blur-xl space-y-6">
+    <div className="glass-card rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 shadow-xl dark:shadow-2xl backdrop-blur-xl space-y-6">
       {/* Header & Copy All */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-blue-500/10 text-cyan-400 border border-blue-500/30 uppercase">
+            <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-blue-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-200 dark:border-blue-500/30 uppercase">
               Tag Inspector
             </span>
-            <span className={`text-xs font-mono font-semibold ${totalChars <= 500 ? 'text-emerald-400' : 'text-rose-400'}`}>
+            <span className={`text-xs font-mono font-semibold ${totalChars <= 500 ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
               ({totalChars}/500 chars)
             </span>
           </div>
-          <h3 className="text-lg md:text-xl font-bold text-white mt-1.5">
+          <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mt-1.5">
             Extracted YouTube Studio Tags ({tags.length})
           </h3>
           {channelName && (
-            <p className="text-xs text-slate-400 mt-0.5">Target channel: <span className="text-white font-medium">{channelName}</span></p>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Target channel: <span className="text-slate-900 dark:text-white font-medium">{channelName}</span></p>
           )}
         </div>
 
@@ -84,13 +84,13 @@ export function ThumbnailTagInspector({ tags, channelName }: ThumbnailTagInspect
               onClick={() => handleCopySingle(tag, idx)}
               className={`px-3.5 py-2 rounded-xl text-xs font-medium border transition-all flex items-center gap-1.5 cursor-pointer ${
                 isCopied
-                  ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300'
-                  : 'bg-slate-950/80 hover:bg-blue-500/10 border-slate-800 text-slate-300 hover:border-blue-500/40 hover:text-white'
+                  ? 'bg-emerald-50 dark:bg-emerald-500/20 border-emerald-500 text-emerald-700 dark:text-emerald-300'
+                  : 'bg-slate-50 dark:bg-slate-950/80 hover:bg-cyan-50 dark:hover:bg-blue-500/10 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-cyan-300 dark:hover:border-blue-500/40 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <Hash className="w-3 h-3 text-cyan-400/60" />
+              <Hash className="w-3 h-3 text-cyan-600 dark:text-cyan-400/60" />
               <span>{tag}</span>
-              {isCopied && <Check className="w-3 h-3 text-emerald-400" />}
+              {isCopied && <Check className="w-3 h-3 text-emerald-500 dark:text-emerald-400" />}
             </button>
           );
         })}

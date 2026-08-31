@@ -4,40 +4,42 @@ export interface ThumbnailResolution {
   quality: string;
   dimensions: string;
   badge: string;
+  isBest?: boolean;
   fileNameSuffix: string;
 }
 
 export const thumbnailResolutions: ThumbnailResolution[] = [
   {
-    id: 'maxres',
-    name: 'Maximum Resolution (4K / 1080p)',
-    quality: 'Ultra HD 1080p / 4K',
-    dimensions: '1280 × 720 px',
-    badge: '4K Ultra HD',
+    id: '4k',
+    name: '4K / 2K Ultra HD',
+    quality: 'Original Master (Uncompressed)',
+    dimensions: '3840×2160 / 1920×1080 px',
+    badge: '★ BEST QUALITY',
+    isBest: true,
     fileNameSuffix: 'maxresdefault',
   },
   {
-    id: 'hq',
-    name: 'High Quality (HQ 720p)',
+    id: '1080p',
+    name: '1080p Full HD',
+    quality: 'High Definition',
+    dimensions: '1920 × 1080 px',
+    badge: '1080p Full HD',
+    fileNameSuffix: 'maxresdefault',
+  },
+  {
+    id: '720p',
+    name: '720p HD Quality',
     quality: 'Standard YouTube HD',
-    dimensions: '480 × 360 px',
+    dimensions: '1280 × 720 px',
     badge: '720p HD',
     fileNameSuffix: 'hqdefault',
   },
   {
-    id: 'mq',
-    name: 'Medium Quality (480p)',
-    quality: 'Compressed Web View',
-    dimensions: '320 × 180 px',
-    badge: '480p Web',
-    fileNameSuffix: 'mqdefault',
-  },
-  {
-    id: 'sd',
-    name: 'Standard Definition (SD)',
-    quality: 'Mobile Thumbnail',
+    id: '480p',
+    name: '480p SD Quality',
+    quality: 'Compressed Mobile',
     dimensions: '640 × 480 px',
-    badge: 'SD Mobile',
+    badge: '480p SD',
     fileNameSuffix: 'sddefault',
   },
 ];
@@ -60,7 +62,7 @@ export const thumbnailFaqs = [
     a: 'YouTube requires a strict 16:9 aspect ratio, a minimum resolution of 1280x720 pixels (under 2MB), and standard JPG, PNG, or WebP formats. Using 1280x720 or 1920x1080 ensures your thumbnail remains crystal-clear across smart TVs, retina mobile displays, and desktop feeds.',
   },
   {
-    q: 'Is it legal to download and inspect competitor thumbnails?',
-    a: 'Yes. Downloading public video thumbnails for competitor analysis, graphic design inspiration, storyboard mockups, and academic research falls under Fair Use. However, directly re-uploading another creator\'s copyrighted artwork to your channel is prohibited.',
+    q: 'Can I download thumbnails from YouTube Shorts?',
+    a: 'Yes. FreeViralKit supports both standard long-form YouTube videos and vertical Shorts. Simply paste the Shorts URL (e.g. `youtube.com/shorts/VIDEO_ID`) and the tool will extract the high-resolution master thumbnail and keywords immediately.',
   },
 ];

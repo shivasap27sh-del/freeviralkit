@@ -6,7 +6,7 @@ import { MoneyMonetizationGuide } from '@/components/tools/money-calculator/Mone
 import { MoneyMasterclassSection } from '@/components/tools/money-calculator/MoneyMasterclassSection';
 import { MoneyFaqSection } from '@/components/tools/money-calculator/MoneyFaqSection';
 import { moneyCalculatorFaqs } from '@/data/moneyCalculatorData';
-import { DollarSign, Sparkles } from 'lucide-react';
+import { DollarSign } from 'lucide-react';
 
 export const revalidate = 3600;
 
@@ -72,33 +72,33 @@ export default function YouTubeMoneyCalculatorPage() {
       />
 
       <main className="container mx-auto px-4 py-8 max-w-5xl space-y-20">
-        {/* Gamer Hero Section */}
+        {/* Dual-Theme Hero Section */}
         <section className="text-center max-w-3xl mx-auto space-y-4 pt-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold bg-blue-500/10 border border-blue-500/30 text-cyan-400">
-            <DollarSign className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold bg-cyan-50 dark:bg-blue-500/10 border border-cyan-200 dark:border-blue-500/30 text-cyan-700 dark:text-cyan-400">
+            <DollarSign className="w-3.5 h-3.5 text-cyan-500 animate-pulse" />
             <span>2026 YouTube Creator Revenue Simulator</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
             YouTube Money &amp; <span className="gradient-text">RPM Calculator</span>
           </h1>
-          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
             Estimate your daily, monthly, and annual creator revenue using real 2026 YouTube niche RPM rates, audience geography multipliers, and brand deal projections.
           </p>
         </section>
 
-        {/* Main Client Tool Cockpit */}
+        {/* 1. Main Client Tool Cockpit */}
         <MoneyCalculatorClient />
 
-        {/* 2026 Niche RPM Benchmark Table */}
+        {/* 2. 2026 Niche RPM Benchmark Table */}
         <MoneyNicheBenchmarkTable />
 
-        {/* YPP Thresholds & CPM vs RPM Guide */}
+        {/* 3. YPP Thresholds & CPM vs RPM Guide */}
         <MoneyMonetizationGuide />
 
-        {/* E-E-A-T High-Value Monetization Masterclass */}
+        {/* 4. E-E-A-T High-Value Monetization Masterclass */}
         <MoneyMasterclassSection />
 
-        {/* FAQs Accordion at the very bottom */}
+        {/* 5. FAQs Accordion */}
         <MoneyFaqSection />
       </main>
     </>

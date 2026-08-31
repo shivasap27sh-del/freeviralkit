@@ -73,16 +73,16 @@ export default function YouTubeThumbnailDownloaderPage() {
       />
 
       <main className="container mx-auto px-4 py-8 max-w-5xl space-y-20">
-        {/* Gamer Hero Section */}
+        {/* Dual-Theme Hero Section */}
         <section className="text-center max-w-3xl mx-auto space-y-4 pt-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold bg-blue-500/10 border border-blue-500/30 text-cyan-400">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold bg-cyan-50 dark:bg-blue-500/10 border border-cyan-200 dark:border-blue-500/30 text-cyan-700 dark:text-cyan-400">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-500 animate-pulse" />
             <span>High-Speed 4K Master Thumbnail &amp; Tag Extractor</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
             YouTube Thumbnail Downloader &amp; <span className="gradient-text">Tag Extractor</span>
           </h1>
-          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
             Download full-resolution 4K, 1080p, and 720p thumbnails instantly. Extract hidden video ranking tags and keywords with zero API wait time.
           </p>
         </section>
@@ -102,7 +102,7 @@ export default function YouTubeThumbnailDownloaderPage() {
         {/* 5. Reverse-Engineering Masterclass Guide */}
         <ThumbnailMasterclassSection />
 
-        {/* 6. Structured FAQs Accordion (AT THE VERY BOTTOM) */}
+        {/* 6. Structured FAQs Accordion */}
         <ThumbnailFaqSection />
       </main>
     </>

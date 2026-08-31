@@ -34,19 +34,19 @@ export function ThumbnailDownloaderClient() {
 
   return (
     <div className="w-full space-y-8">
-      {/* Gamer Dark Input Cockpit */}
+      {/* Dual-Theme Input Cockpit */}
       <form
         onSubmit={(e) => {
           e.preventDefault();
           handleExtract();
         }}
-        className="glass-card rounded-3xl p-6 md:p-8 border border-blue-500/20 bg-slate-900/90 shadow-2xl backdrop-blur-xl space-y-4"
+        className="glass-card rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 shadow-xl dark:shadow-2xl backdrop-blur-xl space-y-4"
       >
         <div className="flex items-center justify-between">
-          <label className="text-sm font-bold text-white flex items-center gap-2">
-            <ImageIcon className="w-4 h-4 text-cyan-400" /> Enter YouTube Video or Shorts URL
+          <label className="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+            <ImageIcon className="w-4 h-4 text-cyan-600 dark:text-cyan-400" /> Enter YouTube Video or Shorts URL
           </label>
-          <span className="text-[11px] font-mono font-bold px-3 py-0.5 rounded-full bg-blue-500/10 text-cyan-400 border border-blue-500/30">
+          <span className="text-[11px] font-mono font-bold px-3 py-0.5 rounded-full bg-cyan-50 dark:bg-blue-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-200 dark:border-blue-500/30">
             ⚡ 0.05s Direct CDN Extraction
           </span>
         </div>
@@ -58,7 +58,7 @@ export function ThumbnailDownloaderClient() {
               value={urlInput}
               onChange={(e) => setUrlInput(e.target.value)}
               placeholder="e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ or youtu.be/..."
-              className="w-full px-5 py-4 rounded-2xl border border-slate-800 bg-slate-950 text-white placeholder:text-slate-500 font-medium text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all shadow-inner"
+              className="w-full px-5 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 font-medium text-sm sm:text-base outline-none focus:border-cyan-500 dark:focus:border-blue-500 focus:ring-1 focus:ring-cyan-500 transition-all shadow-inner"
             />
           </div>
 
@@ -80,7 +80,7 @@ export function ThumbnailDownloaderClient() {
         </div>
 
         {/* Quick Demo Pill */}
-        <div className="flex items-center gap-2 text-xs text-slate-400">
+        <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
           <span>Try popular example:</span>
           <button
             type="button"
@@ -89,7 +89,7 @@ export function ThumbnailDownloaderClient() {
               setUrlInput(ex);
               handleExtract(ex);
             }}
-            className="text-cyan-400 hover:underline font-mono"
+            className="text-cyan-600 dark:text-cyan-400 hover:underline font-mono"
           >
             Rick Astley (Classic 4K)
           </button>
@@ -98,8 +98,8 @@ export function ThumbnailDownloaderClient() {
 
       {/* Error Alert */}
       {error && (
-        <div className="p-4 rounded-2xl border border-rose-500/30 bg-rose-950/30 text-rose-200 text-xs sm:text-sm font-bold flex items-center gap-2">
-          <AlertCircle className="w-4 h-4 shrink-0 text-rose-400" />
+        <div className="p-4 rounded-2xl border border-rose-200 dark:border-rose-500/30 bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-200 text-xs sm:text-sm font-bold flex items-center gap-2">
+          <AlertCircle className="w-4 h-4 shrink-0 text-rose-500 dark:text-rose-400" />
           <span>{error}</span>
         </div>
       )}
