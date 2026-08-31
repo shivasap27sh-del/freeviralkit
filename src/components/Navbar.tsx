@@ -15,7 +15,20 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ];
 
-const toolsMegaMenu = {
+interface MegaMenuItem {
+  href: string;
+  label: string;
+  badge?: string;
+}
+
+interface MegaMenuGroup {
+  category: string;
+  icon: React.ComponentType<{ className?: string }>;
+  color: string;
+  tools: MegaMenuItem[];
+}
+
+const toolsMegaMenu: Record<string, MegaMenuGroup> = {
   flagship: {
     category: '⚡ Flagship & SEO',
     icon: Sparkles,
