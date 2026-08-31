@@ -7,7 +7,7 @@ export async function HomeBlogShowcase() {
   const latestPosts = allPosts.slice(0, 6);
 
   return (
-    <section className="mt-20 mb-12">
+    <section className="space-y-8">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold text-purple-400 bg-purple-400/10 border border-purple-400/20 mb-2 uppercase tracking-wider">

@@ -79,7 +79,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
       />
 
-      <main className="container mx-auto px-4 py-6 max-w-6xl space-y-12">
+      <main className="container mx-auto px-4 py-8 max-w-6xl space-y-20">
         {/* Flagship Hero & Value Prop */}
         <HomeHero />
 
