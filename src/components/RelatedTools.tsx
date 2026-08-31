@@ -5,6 +5,8 @@ import Link from 'next/link';
 export default function RelatedTools({ currentToolPath }: { currentToolPath?: string }) {
   const tools = [
     { href: '/', label: 'Full SEO Optimizer' },
+    { href: '/youtube-thumbnail-downloader', label: 'Thumbnail Downloader ⚡' },
+    { href: '/youtube-money-calculator', label: 'Money & RPM Calculator 💰' },
     { href: '/youtube-ab-test-generator', label: '3-Way A/B Test Pack ⚡' },
     { href: '/youtube-realtime-title-generator', label: 'Movie & Live AI Tool ⚡' },
     { href: '/youtube-title-generator', label: 'Title Generator' },

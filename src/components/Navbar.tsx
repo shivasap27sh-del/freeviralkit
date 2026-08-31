@@ -16,6 +16,8 @@ const navLinks = [
 ];
 
 const toolsDropdown = [
+  { href: '/youtube-thumbnail-downloader', label: 'Thumbnail Downloader & Tags 🖼️' },
+  { href: '/youtube-money-calculator', label: 'YouTube Money & RPM Calculator 💰' },
   { href: '/youtube-ab-test-generator', label: '3-Way A/B Test Pack ⚡' },
   { href: '/youtube-realtime-title-generator', label: 'Real-Time Movie & Live AI 🎬' },
   { href: '/youtube-title-generator', label: 'Title Generator' },
