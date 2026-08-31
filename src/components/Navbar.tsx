@@ -16,8 +16,8 @@ const navLinks = [
 ];
 
 const toolsDropdown = [
-  { href: '/youtube-thumbnail-downloader', label: 'Thumbnail Downloader & Tags 🖼️' },
-  { href: '/youtube-money-calculator', label: 'YouTube Money & RPM Calculator 💰' },
+  { href: '/youtube-thumbnail-downloader', label: 'Thumbnail Downloader ⚡' },
+  { href: '/youtube-money-calculator', label: 'Money / RPM Calculator 💰' },
   { href: '/youtube-ab-test-generator', label: '3-Way A/B Test Pack ⚡' },
   { href: '/youtube-realtime-title-generator', label: 'Real-Time Movie & Live AI 🎬' },
   { href: '/youtube-title-generator', label: 'Title Generator' },
@@ -122,11 +122,11 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 6, scale: 0.98 }}
                       transition={{ type: 'spring', bounce: 0, duration: 0.3 }}
-                      className="absolute top-full left-0 pt-2 w-[480px] z-50 pointer-events-auto"
+                      className="absolute top-full left-0 pt-2 w-[540px] z-50 pointer-events-auto"
                     >
                       <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-slate-200 dark:border-slate-800 rounded-xl shadow-2xl overflow-hidden grid grid-cols-2 p-2 gap-1 shadow-purple-500/5">
                         {toolsDropdown.map(tool => (
-                          <Link key={tool.href} href={tool.href} className="px-3 py-2.5 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 active:scale-[0.98] transition-all rounded-lg line-clamp-1" title={tool.label}>
+                          <Link key={tool.href} href={tool.href} className="px-3 py-2 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 active:scale-[0.98] transition-all rounded-lg truncate whitespace-nowrap" title={tool.label}>
                             {tool.label}
                           </Link>
                         ))}
