@@ -13,6 +13,8 @@ type SitemapEntryDefinition = {
 const staticEntries = [
   { path: '/', sourceFiles: ['src/app/page.tsx'], changeFrequency: 'weekly', priority: 1.0 },
   { path: '/youtube-ab-test-generator', sourceFiles: ['src/app/youtube-ab-test-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-thumbnail-downloader', sourceFiles: ['src/app/youtube-thumbnail-downloader/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
+  { path: '/youtube-money-calculator', sourceFiles: ['src/app/youtube-money-calculator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
   { path: '/youtube-title-generator', sourceFiles: ['src/app/youtube-title-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
   { path: '/youtube-realtime-title-generator', sourceFiles: ['src/app/youtube-realtime-title-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },
   { path: '/youtube-hashtag-generator', sourceFiles: ['src/app/youtube-hashtag-generator/page.tsx'], changeFrequency: 'monthly', priority: 0.95 },

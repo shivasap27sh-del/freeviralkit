@@ -149,7 +149,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
-      <head>
+      <head suppressHydrationWarning>
         {/* Google AdSense Official Site Verification & Auto-Ads Tag */}
         <script
           async
@@ -195,12 +195,11 @@ export default function RootLayout({
             </div>
           </div>
         </noscript>
-        {/* Background animation */}
+        {/* Background ambient lighting */}
         <div className="bg-animation">
           <div className="bg-orb bg-orb-1" />
           <div className="bg-orb bg-orb-2" />
           <div className="bg-orb bg-orb-3" />
-          <div className="bg-grid" />
         </div>
 
         <ConsentProvider>

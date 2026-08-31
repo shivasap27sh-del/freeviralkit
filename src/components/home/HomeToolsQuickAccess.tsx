@@ -114,11 +114,11 @@ export function HomeToolsQuickAccess() {
           </div>
           <div className="space-y-2">
             {[
+              { href: '/youtube-thumbnail-downloader', title: 'Thumbnail & Tag Downloader ⚡', desc: '4K image & hidden tag extractor', icon: Tag },
               { href: '/youtube-title-generator', title: 'YouTube Title Generator', desc: '10 high-CTR search titles', icon: Wand2 },
               { href: '/youtube-tags-generator', title: 'YouTube Tags Generator', desc: 'Under 500 characters limit', icon: Tag },
               { href: '/youtube-description-generator', title: 'Description Generator', desc: 'Dynamic templates & CTAs', icon: AlignLeft },
               { href: '/youtube-hashtag-generator', title: 'Hashtag Generator', desc: 'Trending search tags', icon: Hash },
-              { href: '/youtube-topic-researcher', title: 'Niche Topic Researcher', desc: 'Volume & competition check', icon: Search },
             ].map((item) => {
               const ItemIcon = item.icon;
               return (
@@ -189,6 +189,7 @@ export function HomeToolsQuickAccess() {
           </div>
           <div className="space-y-2">
             {[
+              { href: '/youtube-money-calculator', title: 'YouTube Money & RPM Calculator ⚡', desc: 'Real 2026 niche income simulator', icon: User },
               { href: '/youtube-thumbnail-generator', title: 'Thumbnail Concept Generator', desc: 'Visual psychological hooks', icon: Wand2 },
               { href: '/youtube-channel-name-generator', title: 'Channel Name Generator', desc: 'Brandable niche channel names', icon: User },
               { href: '/youtube-seo-grader', title: 'YouTube SEO Score Grader', desc: 'Audit score out of 100', icon: AlignLeft },

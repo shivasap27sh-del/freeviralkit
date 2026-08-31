@@ -14,6 +14,8 @@ const footerLinks = {
     { href: '/contact', label: 'Contact' },
   ],
   'Metadata Generators': [
+    { href: '/youtube-thumbnail-downloader', label: 'Thumbnail Downloader ⚡' },
+    { href: '/youtube-money-calculator', label: 'YouTube Money Calculator ⚡' },
     { href: '/youtube-ab-test-generator', label: '3-Way A/B Test Pack' },
     { href: '/youtube-title-generator', label: 'Title Generator' },
     { href: '/youtube-description-generator', label: 'Description Generator' },

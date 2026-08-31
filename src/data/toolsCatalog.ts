@@ -17,6 +17,8 @@ import {
   Clapperboard,
   Search,
   Sparkles,
+  Image as ImageIcon,
+  DollarSign,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -45,6 +47,22 @@ export const coreTools: ToolItem[] = [
     icon: Clapperboard,
     color: 'purple',
     badge: 'LIVE',
+  },
+  {
+    href: '/youtube-thumbnail-downloader',
+    title: 'YouTube Thumbnail Downloader & Tag Extractor ⚡',
+    description: 'Download full-resolution 4K, 1080p thumbnails and extract hidden video ranking tags in 0.05 seconds.',
+    icon: ImageIcon,
+    color: 'orange',
+    badge: '500k+ Mo',
+  },
+  {
+    href: '/youtube-money-calculator',
+    title: 'YouTube Money & RPM Revenue Calculator ⚡',
+    description: 'Interactive daily views slider with 2026 niche RPM rates, geographic multipliers, and brand deal income estimates.',
+    icon: DollarSign,
+    color: 'green',
+    badge: '300k+ Mo',
   },
   {
     href: '/youtube-title-generator',
