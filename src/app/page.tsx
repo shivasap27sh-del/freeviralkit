@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { buildAbsoluteUrl } from '@/lib/site';
 import HomePageClient from '@/components/tools/HomePageClient';
 import { homepageFaqs } from '@/data/homeData';
+import { HomeHero } from '@/components/home/HomeHero';
 import { HomeToolsQuickAccess } from '@/components/home/HomeToolsQuickAccess';
 import { HomeSeoMasterclass } from '@/components/home/HomeSeoMasterclass';
 import { HomeBlogShowcase } from '@/components/home/HomeBlogShowcase';
@@ -78,7 +79,10 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
       />
 
-      <main className="container mx-auto px-4 py-8 max-w-6xl">
+      <main className="container mx-auto px-4 py-6 max-w-6xl space-y-12">
+        {/* Flagship Hero & Value Prop */}
+        <HomeHero />
+
         {/* Flagship Generator Client Interactive Cockpit */}
         <HomePageClient />
 
