@@ -63,11 +63,15 @@ export default function YouTubeMoneyCalculatorPage() {
   return (
     <>
       <script
+        id="schema-money-calc"
         type="application/ld+json"
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <script
+        id="schema-money-faq"
         type="application/ld+json"
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 

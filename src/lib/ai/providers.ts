@@ -3,21 +3,13 @@ import { type AIProvider, type ChatMessage, type GenerateOptions } from './provi
 import { groqProvider } from './providers/groq';
 import { geminiProvider } from './providers/gemini';
 import { cloudflareProvider } from './providers/cloudflare';
-import { createOpenAICompatibleProvider } from './providers/factory';
+import { openRouterProvider } from './providers/openrouter';
 
 export * from './providers/types';
 
 const log = (...args: unknown[]) => {
   if (process.env.NODE_ENV !== 'production') console.log(...args);
 };
-
-const openRouterProvider = createOpenAICompatibleProvider(
-  'OpenRouter',
-  'OPENROUTER_API_KEY',
-  'https://openrouter.ai/api/v1/chat/completions',
-  'meta-llama/llama-3.3-70b-instruct:free',
-  12000
-);
 
 export const providers: AIProvider[] = [
   groqProvider,

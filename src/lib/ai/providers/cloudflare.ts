@@ -11,10 +11,10 @@ export const cloudflareProvider: AIProvider = {
     if (!cfAccountId || !cfApiToken) throw new Error('Cloudflare Workers AI not configured');
 
     const models = [
-      '@cf/openai/gpt-oss-20b',
-      '@cf/meta/llama-3.2-1b-instruct',
-      '@cf/zai-org/glm-4.7-flash',
       '@cf/meta/llama-3.2-3b-instruct',
+      '@cf/meta/llama-3.2-1b-instruct',
+      '@cf/openai/gpt-oss-20b',
+      '@cf/zai-org/glm-4.7-flash',
       '@cf/deepseek-ai/deepseek-r1-distill-qwen-32b',
     ];
 
@@ -40,11 +40,12 @@ export const cloudflareProvider: AIProvider = {
 
         if (response.ok) {
           const data = await response.json();
-          let content = data.choices?.[0]?.message?.content || '';
+          const choice = data.choices?.[0]?.message;
+          let content = choice?.content || choice?.reasoning_content || choice?.reasoning || '';
           if (content.includes('</think>')) {
             content = content.split('</think>')[1].trim();
           }
-          if (content) return content;
+          if (content.trim()) return content.trim();
         } else {
           lastErr = await response.text();
         }

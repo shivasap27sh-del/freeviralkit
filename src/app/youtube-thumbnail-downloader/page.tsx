@@ -64,11 +64,15 @@ export default function YouTubeThumbnailDownloaderPage() {
   return (
     <>
       <script
+        id="schema-thumb-app"
         type="application/ld+json"
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <script
+        id="schema-thumb-faq"
         type="application/ld+json"
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 

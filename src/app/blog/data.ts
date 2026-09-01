@@ -96,8 +96,8 @@ const _getPublishedPosts = async (): Promise<BlogPost[]> => {
 
 export const getPublishedPosts = unstable_cache(
   _getPublishedPosts,
-  ['blog-published-posts-v3'],
-  { tags: ['blog-posts'], revalidate: 3600 }
+  ['blog-published-posts-v10'],
+  { tags: ['blog-posts'], revalidate: process.env.NODE_ENV === 'development' ? 1 : 3600 }
 );
 
 const _getPublishedPostBySlug = async (rawSlug: string): Promise<BlogPost | undefined> => {
@@ -120,8 +120,8 @@ const _getPublishedPostBySlug = async (rawSlug: string): Promise<BlogPost | unde
 
 export const getPublishedPostBySlug = unstable_cache(
   _getPublishedPostBySlug,
-  ['blog-published-post-by-slug-v3'],
-  { tags: ['blog-posts'], revalidate: 3600 }
+  ['blog-published-post-by-slug-v10'],
+  { tags: ['blog-posts'], revalidate: process.env.NODE_ENV === 'development' ? 1 : 3600 }
 );
 
 const _getPostBySlug = async (rawSlug: string): Promise<BlogPost | undefined> => {
@@ -138,8 +138,8 @@ const _getPostBySlug = async (rawSlug: string): Promise<BlogPost | undefined> =>
 
 export const getPostBySlug = unstable_cache(
   _getPostBySlug,
-  ['blog-post-by-slug-v3'],
-  { tags: ['blog-posts'], revalidate: 3600 }
+  ['blog-post-by-slug-v10'],
+  { tags: ['blog-posts'], revalidate: process.env.NODE_ENV === 'development' ? 1 : 3600 }
 );
 
 const _getAllSlugs = async (): Promise<string[]> => {
@@ -156,8 +156,8 @@ const _getAllSlugs = async (): Promise<string[]> => {
 
 export const getAllSlugs = unstable_cache(
   _getAllSlugs,
-  ['blog-all-slugs-v3'],
-  { tags: ['blog-posts'], revalidate: 3600 }
+  ['blog-all-slugs-v10'],
+  { tags: ['blog-posts'], revalidate: process.env.NODE_ENV === 'development' ? 1 : 3600 }
 );
 
 const _getPublishedSlugs = async (): Promise<string[]> => {
@@ -178,8 +178,8 @@ const _getPublishedSlugs = async (): Promise<string[]> => {
 
 export const getPublishedSlugs = unstable_cache(
   _getPublishedSlugs,
-  ['blog-published-slugs-v3'],
-  { tags: ['blog-posts'], revalidate: 3600 }
+  ['blog-published-slugs-v10'],
+  { tags: ['blog-posts'], revalidate: process.env.NODE_ENV === 'development' ? 1 : 3600 }
 );
 
 export async function getRelatedPosts(currentSlug: string, count = 4): Promise<BlogPost[]> {
