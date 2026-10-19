@@ -5,13 +5,15 @@ import { generateTagsOnly } from '@/app/actions/tags';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Copy, CheckCircle2, RotateCcw, Tag } from 'lucide-react';
 import ToolWorkspace from './ToolWorkspace';
+import CreatorPipelineBar from './CreatorPipelineBar';
 
 interface TagsGeneratorClientProps {
   niche?: string;
+  initialTopic?: string;
 }
 
-export default function TagsGeneratorClient({ niche }: TagsGeneratorClientProps) {
-  const [topic, setTopic] = useState('');
+export default function TagsGeneratorClient({ niche, initialTopic }: TagsGeneratorClientProps) {
+  const [topic, setTopic] = useState(initialTopic || '');
   const [isGenerating, setIsGenerating] = useState(false);
   const [tags, setTags] = useState<string[]>([]);
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
@@ -94,12 +96,19 @@ export default function TagsGeneratorClient({ niche }: TagsGeneratorClientProps)
               ))}
             </div>
             {/* Pro Tip */}
-            <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-2xl p-5">
+            <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-2xl p-5 mb-6">
               <h3 className="font-display font-semibold text-cyan-500 mb-1 flex items-center gap-1.5">💡 Pro Tip: Tag Priority Order</h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 Put your main target focus keyword as the first tag. YouTube weighs early tags slightly higher in search categorization. Keep tags relevant and avoid generic words.
               </p>
             </div>
+
+            {/* Publishing Workflow Pipeline */}
+            <CreatorPipelineBar
+              currentStep="metadata"
+              currentTool="youtube-tags-generator"
+              topic={topic}
+            />
           </motion.div>
         )}
       </AnimatePresence>

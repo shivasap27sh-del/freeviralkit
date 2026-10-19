@@ -3,9 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import HashtagGeneratorClient from '@/components/tools/HashtagGeneratorClient';
+import NicheHubSwitcher from '@/components/tools/niche/NicheHubSwitcher';
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {
@@ -181,6 +182,7 @@ export default function ShortsHashtagLandingPage() {
             Find the perfect trending hashtags to get your Shorts on the shelf, boost impressions, and go viral. AI-powered, always free.
           </p>
           <div className="text-left mt-8">
+            <NicheHubSwitcher currentNiche="shorts" />
             <HashtagGeneratorClient niche="shorts" />
           </div>
         </section>

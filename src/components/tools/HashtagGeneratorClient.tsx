@@ -5,13 +5,15 @@ import { generateHashtagsOnly } from '@/app/actions/hashtags';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Hash, Copy, CheckCircle2, Loader2, Sparkles, RotateCcw } from 'lucide-react';
 import ErrorBanner from '@/components/ErrorBanner';
+import CreatorPipelineBar from './CreatorPipelineBar';
 
 interface HashtagGeneratorClientProps {
   niche?: string;
+  initialTopic?: string;
 }
 
-export default function HashtagGeneratorClient({ niche }: HashtagGeneratorClientProps) {
-  const [topic, setTopic] = useState('');
+export default function HashtagGeneratorClient({ niche, initialTopic }: HashtagGeneratorClientProps) {
+  const [topic, setTopic] = useState(initialTopic || '');
   const [isGenerating, setIsGenerating] = useState(false);
   const [hashtags, setHashtags] = useState<string[]>([]);
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
@@ -110,7 +112,7 @@ export default function HashtagGeneratorClient({ niche }: HashtagGeneratorClient
             </div>
 
             {/* Pro Tip */}
-            <div className="bg-pink-500/10 border border-pink-500/20 rounded-2xl p-5">
+            <div className="bg-pink-500/10 border border-pink-500/20 rounded-2xl p-5 mb-6">
               <h3 className="font-display font-semibold text-pink-600 mb-1 flex items-center gap-1.5">
                 💡 Pro Tip: Place Top 3 in Description
               </h3>
@@ -118,6 +120,13 @@ export default function HashtagGeneratorClient({ niche }: HashtagGeneratorClient
                 Always copy and place your top 3 hashtags at the very bottom of your video description. YouTube automatically displays these first 3 hashtags clickable directly above your video title, driving traffic from hashtag searches.
               </p>
             </div>
+
+            {/* Publishing Workflow Pipeline */}
+            <CreatorPipelineBar
+              currentStep="metadata"
+              currentTool="youtube-hashtag-generator"
+              topic={topic}
+            />
           </motion.div>
         )}
       </AnimatePresence>

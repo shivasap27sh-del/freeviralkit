@@ -3,9 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import ChannelNameGeneratorClient from '@/components/tools/ChannelNameGeneratorClient';
+import NicheHubSwitcher from '@/components/tools/niche/NicheHubSwitcher';
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {
@@ -184,6 +185,7 @@ export default function GamingChannelNameLandingPage() {
             Generate unique, brandable gaming channel names instantly. Clan-style, streamer handles, professional esports brands, and creator tags tuned for YouTube discovery.
           </p>
           <div className="text-left mt-8">
+            <NicheHubSwitcher currentNiche="gaming" />
             <ChannelNameGeneratorClient niche="gaming" />
           </div>
         </section>

@@ -5,7 +5,7 @@ import AITechStudioClient from '@/components/tools/niche/AITechStudioClient';
 
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {

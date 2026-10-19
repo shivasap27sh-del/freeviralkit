@@ -114,7 +114,15 @@ const softwareJsonLd = {
   },
 };
 
-export default function HashtagGeneratorPage() {
+interface PageProps {
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function HashtagGeneratorPage({ searchParams }: PageProps) {
+  const resolvedParams = await searchParams;
+  const rawTopic = resolvedParams?.topic;
+  const topic = typeof rawTopic === 'string' ? rawTopic : Array.isArray(rawTopic) ? rawTopic[0] : undefined;
+
   return (
     <>
       <script
@@ -138,7 +146,7 @@ export default function HashtagGeneratorPage() {
           </p>
         </section>
 
-        <HashtagGeneratorClient />
+        <HashtagGeneratorClient initialTopic={topic} />
 
         {/* Educational Content */}
         <section className="mt-16 space-y-12">
@@ -338,7 +346,7 @@ export default function HashtagGeneratorPage() {
 
 
           <LatestBlogPosts />
-          <RelatedTools currentToolPath="/youtube-hashtag-generator" />
+          <RelatedTools currentToolPath="/youtube-hashtag-generator" topic={topic} />
         </section>
       </main>
     </>

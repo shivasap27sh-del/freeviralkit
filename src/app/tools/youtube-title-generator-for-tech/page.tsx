@@ -3,9 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
+import NicheHubSwitcher from '@/components/tools/niche/NicheHubSwitcher';
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {
@@ -183,6 +184,7 @@ export default function TechTitleLandingPage() {
             Generate high-CTR titles for product reviews, unboxing videos, tech comparisons, and how-to tutorials. Built specifically for tech creators.
           </p>
           <div className="text-left mt-8">
+            <NicheHubSwitcher currentNiche="tech" />
             <TitleGeneratorClient niche="tech" />
           </div>
         </section>

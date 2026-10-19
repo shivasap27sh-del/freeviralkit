@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Mail, MessageSquare } from 'lucide-react';
+import Link from 'next/link';
+import { Mail, MessageSquare, ArrowRight } from 'lucide-react';
 import { buildAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -239,6 +240,27 @@ export default function ContactPage() {
               </div>
             </details>
           ))}
+        </div>
+      </section>
+
+      {/* Retention CTA Banner */}
+      <section
+        className="mt-16 glass-card rounded-3xl py-10 px-6 md:px-12 text-center relative overflow-hidden border border-slate-200/80 dark:border-slate-800"
+        aria-label="Creator tools navigation"
+      >
+        <div className="absolute top-0 right-1/2 translate-x-1/2 -mt-12 w-64 h-32 bg-purple-500/10 dark:bg-purple-500/15 blur-3xl rounded-full pointer-events-none" />
+        <div className="relative z-10 max-w-xl mx-auto space-y-4">
+          <p className="text-slate-700 dark:text-slate-300 text-base md:text-lg font-medium">
+            Looking to grow your channel while waiting for a reply?
+          </p>
+          <div>
+            <Link
+              href="/tools"
+              className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base hover:shadow-lg hover:shadow-red-500/25 active:scale-[0.98] transition-all"
+            >
+              Explore Free Creator Tools <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </main>

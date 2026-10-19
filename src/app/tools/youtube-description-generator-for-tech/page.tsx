@@ -3,10 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import DescriptionGeneratorClient from '@/components/tools/DescriptionGeneratorClient';
+import NicheHubSwitcher from '@/components/tools/niche/NicheHubSwitcher';
 
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {
@@ -187,6 +188,7 @@ export default function TechDescriptionLandingPage() {
             Create structured, SEO-optimized descriptions for product reviews, unboxings, comparisons, and tech tutorials. Formatted with timestamps and affiliate blocks, always free.
           </p>
           <div className="text-left mt-8">
+            <NicheHubSwitcher currentNiche="tech" />
             <DescriptionGeneratorClient niche="tech" />
           </div>
         </section>

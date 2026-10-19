@@ -3,9 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
+import NicheHubSwitcher from '@/components/tools/niche/NicheHubSwitcher';
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {
@@ -183,6 +184,7 @@ export default function FitnessTitleLandingPage() {
             Generate high-CTR titles for workout routines, body transformations, nutrition guides, and gym challenge videos. Built specifically for fitness creators.
           </p>
           <div className="text-left mt-8">
+            <NicheHubSwitcher currentNiche="fitness" />
             <TitleGeneratorClient niche="fitness" />
           </div>
         </section>

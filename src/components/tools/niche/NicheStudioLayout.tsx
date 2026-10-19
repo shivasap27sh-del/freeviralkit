@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
 import RelatedTools from '@/components/RelatedTools';
+import NicheHubSwitcher from './NicheHubSwitcher';
 
 export interface NicheFramework {
   archetype: string;
@@ -73,6 +74,7 @@ export default function NicheStudioLayout({
 
       {/* 2. Interactive Tool Workspace */}
       <div className="mb-16">
+        <NicheHubSwitcher currentNiche={niche} currentToolPath={currentToolPath} />
         {customWorkspace ? customWorkspace : <TitleGeneratorClient niche={niche} />}
       </div>
 
@@ -95,7 +97,7 @@ export default function NicheStudioLayout({
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-mono uppercase font-bold text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-full border border-purple-500/20">
+                  <span className="text-xs font-mono uppercase font-bold text-red-500 dark:text-red-400 bg-red-500/10 px-2.5 py-1 rounded-full border border-red-500/20">
                     {fw.badge}
                   </span>
                 </div>
@@ -136,7 +138,7 @@ export default function NicheStudioLayout({
               <h3 className="font-display text-base font-bold text-slate-900 dark:text-white mb-1">
                 {cs.creator}
               </h3>
-              <span className="text-xs font-mono text-purple-400 block mb-3 font-semibold">
+              <span className="text-xs font-mono text-red-500 dark:text-red-400 block mb-3 font-semibold">
                 {cs.focus}
               </span>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -173,7 +175,7 @@ export default function NicheStudioLayout({
       <RelatedTools currentToolPath={currentToolPath} />
 
       {/* 7. Bottom A/B Test Simulator CTA */}
-      <section className="text-center bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-500/10 border border-purple-500/20 rounded-3xl p-8 mt-12">
+      <section className="text-center bg-gradient-to-r from-red-500/10 via-rose-500/10 to-red-500/10 border border-red-500/20 rounded-3xl p-8 mt-12">
         <h2 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2">
           Want to A/B Test Your Packaging in Real Time?
         </h2>
@@ -182,7 +184,7 @@ export default function NicheStudioLayout({
         </p>
         <Link
           href="/youtube-ab-test-generator"
-          className="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white shadow-lg shadow-purple-500/20"
+          className="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white shadow-lg shadow-red-500/20"
         >
           Launch 3-Way A/B Test Simulator ⚡
         </Link>

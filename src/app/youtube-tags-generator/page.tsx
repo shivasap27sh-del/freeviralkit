@@ -108,7 +108,15 @@ const softwareJsonLd = {
   },
 };
 
-export default function TagsGeneratorPage() {
+interface PageProps {
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function TagsGeneratorPage({ searchParams }: PageProps) {
+  const resolvedParams = await searchParams;
+  const rawTopic = resolvedParams?.topic;
+  const topic = typeof rawTopic === 'string' ? rawTopic : Array.isArray(rawTopic) ? rawTopic[0] : undefined;
+
   return (
     <>
       <script
@@ -131,7 +139,7 @@ export default function TagsGeneratorPage() {
           </p>
         </section>
 
-        <TagsGeneratorClient />
+        <TagsGeneratorClient initialTopic={topic} />
 
         {/* Educational Content */}
         <section className="mt-16 space-y-12">
@@ -338,7 +346,7 @@ export default function TagsGeneratorPage() {
           </div>
 
           <LatestBlogPosts />
-          <RelatedTools currentToolPath="/youtube-tags-generator" />
+          <RelatedTools currentToolPath="/youtube-tags-generator" topic={topic} />
         </section>
       </main>
     </>

@@ -3,9 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
+import NicheHubSwitcher from '@/components/tools/niche/NicheHubSwitcher';
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {
@@ -182,6 +183,7 @@ export default function BeautyTitleLandingPage() {
             Create high-CTR titles for GRWM, makeup tutorials, skincare routines, product reviews, and transformation videos. Optimized for search and suggested feeds, always free.
           </p>
           <div className="text-left mt-8">
+            <NicheHubSwitcher currentNiche="beauty" />
             <TitleGeneratorClient niche="beauty" />
           </div>
         </section>

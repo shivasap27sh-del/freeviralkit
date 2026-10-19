@@ -3,9 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TagsGeneratorClient from '@/components/tools/TagsGeneratorClient';
+import NicheHubSwitcher from '@/components/tools/niche/NicheHubSwitcher';
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {
@@ -183,6 +184,7 @@ export default function GamingTagsLandingPage() {
             Generate optimized tags for FPS, RPG, mobile gaming, streaming, and every genre. Maximize discoverability with AI-powered gaming tags.
           </p>
           <div className="text-left mt-8">
+            <NicheHubSwitcher currentNiche="gaming" />
             <TagsGeneratorClient niche="gaming" />
           </div>
         </section>

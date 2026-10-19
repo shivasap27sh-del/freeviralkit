@@ -9,6 +9,7 @@ import { HomeTitleList } from './home/HomeTitleList';
 import { HomeDetailsPackage, type DetailsData } from './home/HomeDetailsPackage';
 import { HomeYouTubePreview } from './home/HomeYouTubePreview';
 import { useToast } from '@/components/ToastProvider';
+import CreatorPipelineBar from './CreatorPipelineBar';
 
 export default function HomePageClient() {
   const [topic, setTopic] = useState('');
@@ -213,14 +214,23 @@ export default function HomePageClient() {
 
       {/* Step 2: Complete SEO Details Package */}
       {details && selectedTitle && (
-        <HomeDetailsPackage
-          selectedTitle={selectedTitle}
-          details={details}
-          copiedStates={copiedStates}
-          onCopy={copy}
-          onCopyFullPackage={copyFullPackage}
-          detailsRef={detailsSectionRef}
-        />
+        <>
+          <HomeDetailsPackage
+            selectedTitle={selectedTitle}
+            details={details}
+            copiedStates={copiedStates}
+            onCopy={copy}
+            onCopyFullPackage={copyFullPackage}
+            detailsRef={detailsSectionRef}
+          />
+
+          {/* Publishing Workflow Pipeline */}
+          <CreatorPipelineBar
+            currentStep="packaging"
+            currentTool="youtube-title-generator"
+            topic={selectedTitle || topic}
+          />
+        </>
       )}
     </div>
   );

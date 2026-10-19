@@ -5,7 +5,7 @@ import FinanceStudioClient from '@/components/tools/niche/FinanceStudioClient';
 
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {

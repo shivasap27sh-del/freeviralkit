@@ -19,13 +19,15 @@ import {
 import ErrorBanner from '@/components/ErrorBanner';
 import { useToast } from '@/components/ToastProvider';
 import { CharacterLimitGauge } from './CharacterLimitGauge';
+import CreatorPipelineBar from './CreatorPipelineBar';
 
 interface DescriptionGeneratorClientProps {
   niche?: string;
+  initialTopic?: string;
 }
 
-export default function DescriptionGeneratorClient({ niche }: DescriptionGeneratorClientProps) {
-  const [topic, setTopic] = useState('');
+export default function DescriptionGeneratorClient({ niche, initialTopic }: DescriptionGeneratorClientProps) {
+  const [topic, setTopic] = useState(initialTopic || '');
   const [isGenerating, setIsGenerating] = useState(false);
   const [description, setDescription] = useState('');
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
@@ -326,7 +328,7 @@ export default function DescriptionGeneratorClient({ niche }: DescriptionGenerat
             </div>
 
             {/* Pro Tip */}
-            <div className="bg-green-500/10 border border-green-500/20 rounded-2xl p-5">
+            <div className="bg-green-500/10 border border-green-500/20 rounded-2xl p-5 mb-6">
               <h4 className="font-display font-semibold text-green-400 mb-1 flex items-center gap-1.5">
                 💡 Pro Tip: First 2 Lines Matter Most
               </h4>
@@ -334,6 +336,13 @@ export default function DescriptionGeneratorClient({ niche }: DescriptionGenerat
                 Front-load your primary focus keyword in the first two lines of your description. These first 150 characters are shown as a preview snippet in YouTube search results, directly impacting your video CTR.
               </p>
             </div>
+
+            {/* Publishing Workflow Pipeline */}
+            <CreatorPipelineBar
+              currentStep="metadata"
+              currentTool="youtube-description-generator"
+              topic={topic}
+            />
           </motion.div>
         )}
       </AnimatePresence>

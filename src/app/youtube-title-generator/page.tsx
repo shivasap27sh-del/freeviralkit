@@ -116,7 +116,15 @@ const softwareJsonLd = {
   },
 };
 
-export default function TitleGeneratorPage() {
+interface PageProps {
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function TitleGeneratorPage({ searchParams }: PageProps) {
+  const resolvedParams = await searchParams;
+  const rawTopic = resolvedParams?.topic;
+  const topic = typeof rawTopic === 'string' ? rawTopic : Array.isArray(rawTopic) ? rawTopic[0] : undefined;
+
   return (
     <>
       <script
@@ -140,7 +148,7 @@ export default function TitleGeneratorPage() {
           </p>
         </section>
 
-        <TitleGeneratorClient />
+        <TitleGeneratorClient initialTopic={topic} />
 
         {/* Educational Content */}
         <section className="mt-16 space-y-10">
@@ -313,7 +321,7 @@ export default function TitleGeneratorPage() {
 
 
           <LatestBlogPosts />
-          <RelatedTools currentToolPath="/youtube-title-generator" />
+          <RelatedTools currentToolPath="/youtube-title-generator" topic={topic} />
         </section>
       </main>
     </>

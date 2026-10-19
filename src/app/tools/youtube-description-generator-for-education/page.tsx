@@ -3,9 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import DescriptionGeneratorClient from '@/components/tools/DescriptionGeneratorClient';
+import NicheHubSwitcher from '@/components/tools/niche/NicheHubSwitcher';
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {
@@ -196,6 +197,7 @@ export default function EducationDescriptionLandingPage() {
             Build clear, SEO-optimized descriptions for educational videos with topic summaries, learning outcomes, timestamps, and calls to action. Built for educators.
           </p>
           <div className="text-left mt-8">
+            <NicheHubSwitcher currentNiche="education" />
             <DescriptionGeneratorClient niche="education" />
           </div>
         </section>

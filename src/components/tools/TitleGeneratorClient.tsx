@@ -6,13 +6,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Wand2, Copy, CheckCircle2, Loader2, RotateCcw, Eye, Award, Check, AlertTriangle } from 'lucide-react';
 import ErrorBanner from '@/components/ErrorBanner';
 import { useToast } from '@/components/ToastProvider';
+import CreatorPipelineBar from './CreatorPipelineBar';
 
 interface TitleGeneratorClientProps {
   niche?: string;
+  initialTopic?: string;
 }
 
-export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProps) {
-  const [topic, setTopic] = useState('');
+export default function TitleGeneratorClient({ niche, initialTopic }: TitleGeneratorClientProps) {
+  const [topic, setTopic] = useState(initialTopic || '');
   const [isGenerating, setIsGenerating] = useState(false);
   const [titles, setTitles] = useState<string[]>([]);
   const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>({});
@@ -47,25 +49,28 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
   };
 
   const charColor = (len: number) =>
-    len >= 50 && len <= 70 ? 'text-green-600 dark:text-green-400' : len < 50 ? 'text-yellow-600 dark:text-yellow-400' : 'text-red-600 dark:text-red-400';
+    len >= 30 && len <= 70 ? 'text-green-600 dark:text-green-400' : len > 80 ? 'text-red-600 dark:text-red-400' : 'text-yellow-600 dark:text-yellow-400';
 
   const analyzeTitle = (titleText: string) => {
     let score = 50;
     const len = titleText.length;
     const checks = {
-      length: { passed: false, text: 'Keep length between 50-70 characters', color: 'text-slate-500 dark:text-slate-400' },
+      length: { passed: false, text: 'Aim for 30-70 characters', color: 'text-slate-500 dark:text-slate-400' },
       emoji: { passed: false, text: 'Add 1-2 emojis to stand out visually', color: 'text-slate-500 dark:text-slate-400' },
       number: { passed: false, text: 'Include a number (e.g. 2026, 5 Steps) for higher CTR', color: 'text-slate-500 dark:text-slate-400' },
       powerWord: { passed: false, text: 'Use a curiosity-inducing power word (e.g., Secret, Easy, Best)', color: 'text-slate-500 dark:text-slate-400' },
     };
 
-    if (len >= 50 && len <= 70) {
+    if (len >= 30 && len <= 70) {
       score += 15;
-      checks.length = { passed: true, text: 'Perfect title length (50-70 chars)', color: 'text-green-400' };
+      checks.length = { passed: true, text: 'Solid title length for YouTube', color: 'text-green-400' };
+    } else if (len > 80) {
+      checks.length = { passed: false, text: 'May get cut off in search feeds', color: 'text-red-400' };
     } else if (len > 70) {
-      checks.length = { passed: false, text: 'Too long (will be truncated in search feeds)', color: 'text-red-400' };
+      score += 10;
+      checks.length = { passed: true, text: 'Slightly long but usually fine', color: 'text-green-400' };
     } else {
-      checks.length = { passed: false, text: 'Too short (underuse of keywords)', color: 'text-yellow-400' };
+      checks.length = { passed: false, text: 'Very short — consider adding keywords', color: 'text-yellow-400' };
     }
 
     const emojiRegex = /[\p{Emoji_Presentation}\p{Extended_Pictographic}]/u;
@@ -274,6 +279,13 @@ export default function TitleGeneratorClient({ niche }: TitleGeneratorClientProp
                 </div>
               </div>
             </div>
+
+            {/* Publishing Workflow Pipeline */}
+            <CreatorPipelineBar
+              currentStep="packaging"
+              currentTool="youtube-title-generator"
+              topic={topic}
+            />
           </motion.div>
         )}
       </AnimatePresence>

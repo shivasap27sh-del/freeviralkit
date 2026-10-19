@@ -406,25 +406,28 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Contextual Viral Tools CTA Banner */}
-        <div className="mt-12 rounded-3xl p-8 md:p-10 border border-cyan-300 dark:border-cyan-500/30 bg-gradient-to-br from-blue-50 via-cyan-50/40 to-white dark:from-blue-950/40 dark:via-slate-900/90 dark:to-slate-900/90 shadow-xl text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20 uppercase">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-500" />
-            <span>Multi-AI Creator Growth Studio</span>
-          </div>
-          <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-            Ready to <span className="gradient-text">Dominate YouTube SEO</span> in 2026?
-          </h3>
-          <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto text-sm sm:text-base">
-            Generate 4K master thumbnails, calculate niche RPMs, brainstorm viral hooks, and optimize video tags in seconds.
-          </p>
-          <div>
-            <Link
-              href="/tools"
-              className="inline-flex items-center gap-2 py-3.5 px-8 rounded-2xl font-bold text-sm sm:text-base bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 active:scale-[0.98] text-white border border-blue-400/30 shadow-lg shadow-blue-600/25 transition-all cursor-pointer"
-            >
-              Explore All 30+ Free Tools →
-            </Link>
+        {/* Prominent Contextual Action CTA Card */}
+        <div className="mt-12 glass-card rounded-3xl p-8 md:p-10 border border-slate-200/80 dark:border-slate-800 shadow-xl text-center space-y-4 relative overflow-hidden">
+          <div className="absolute top-0 right-1/2 translate-x-1/2 -mt-12 w-64 h-32 bg-red-500/10 dark:bg-red-500/15 blur-3xl rounded-full pointer-events-none" />
+          <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 uppercase">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>AI Growth Studio</span>
+            </div>
+            <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              Put These Insights Into Action
+            </h3>
+            <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+              Generate SEO-optimized titles, tags, and descriptions calibrated for the YouTube algorithm.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/"
+                className="btn-primary inline-flex items-center gap-2 py-3.5 px-8 rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-red-500/25 active:scale-[0.98] transition-all cursor-pointer"
+              >
+                Open Free YouTube Studio →
+              </Link>
+            </div>
           </div>
         </div>
 

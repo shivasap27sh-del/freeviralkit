@@ -109,7 +109,15 @@ const softwareJsonLd = {
   },
 };
 
-export default function DescriptionGeneratorPage() {
+interface PageProps {
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function DescriptionGeneratorPage({ searchParams }: PageProps) {
+  const resolvedParams = await searchParams;
+  const rawTopic = resolvedParams?.topic;
+  const topic = typeof rawTopic === 'string' ? rawTopic : Array.isArray(rawTopic) ? rawTopic[0] : undefined;
+
   return (
     <>
       <script
@@ -132,7 +140,7 @@ export default function DescriptionGeneratorPage() {
           </p>
         </section>
 
-        <DescriptionGeneratorClient />
+        <DescriptionGeneratorClient initialTopic={topic} />
 
         {/* Educational Content */}
         <section className="mt-16 space-y-12">
@@ -339,7 +347,7 @@ export default function DescriptionGeneratorPage() {
           </div>
 
           <LatestBlogPosts />
-          <RelatedTools currentToolPath="/youtube-description-generator" />
+          <RelatedTools currentToolPath="/youtube-description-generator" topic={topic} />
         </section>
       </main>
     </>

@@ -3,9 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
+import NicheHubSwitcher from '@/components/tools/niche/NicheHubSwitcher';
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {
@@ -182,6 +183,7 @@ export default function TravelTitleLandingPage() {
             Create engaging titles for destination guides, budget travel, solo adventures, and food travel vlogs. Optimized for maximum search discoverability and clicks.
           </p>
           <div className="text-left mt-8">
+            <NicheHubSwitcher currentNiche="travel" />
             <TitleGeneratorClient niche="travel" />
           </div>
         </section>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Sparkles } from 'lucide-react';
 import { buildAbsoluteUrl } from '@/lib/site';
 import { aboutStats, aboutFaqs } from '@/data/aboutData';
@@ -155,6 +156,39 @@ export default function AboutPage() {
 
         {/* FAQ Section */}
         <AboutFaqSection />
+
+        {/* Studio Launch CTA Banner */}
+        <section
+          className="glass-card rounded-3xl py-12 px-6 md:px-12 text-center mt-12 relative overflow-hidden border border-slate-200/80 dark:border-slate-800"
+          aria-labelledby="cta-heading"
+        >
+          <div className="absolute top-0 right-1/2 translate-x-1/2 -mt-12 w-64 h-32 bg-red-500/10 dark:bg-red-500/15 blur-3xl rounded-full pointer-events-none" />
+          <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+            <h2
+              id="cta-heading"
+              className="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white"
+            >
+              Ready to optimize your YouTube channel?
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed">
+              No signup, no credit card, 100% free forever. Start generating viral titles, descriptions, and tags in seconds.
+            </p>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/"
+                className="btn-primary w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-base inline-flex items-center justify-center gap-2 shadow-lg shadow-red-500/20 active:scale-[0.98] transition-all"
+              >
+                Launch SEO Studio
+              </Link>
+              <Link
+                href="/tools"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-base inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 transition-colors"
+              >
+                Browse All Tools
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );

@@ -3,9 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { buildAbsoluteUrl } from '@/lib/site';
 import TitleGeneratorClient from '@/components/tools/TitleGeneratorClient';
+import NicheHubSwitcher from '@/components/tools/niche/NicheHubSwitcher';
 export const metadata: Metadata = {
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   twitter: {
@@ -183,6 +184,7 @@ export default function CookingTitleLandingPage() {
             Generate mouthwatering titles for recipe tutorials, ASMR cooking, mukbang, meal prep, and food challenge videos. Built specifically for food creators.
           </p>
           <div className="text-left mt-8">
+            <NicheHubSwitcher currentNiche="cooking" />
             <TitleGeneratorClient niche="cooking" />
           </div>
         </section>
