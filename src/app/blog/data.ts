@@ -111,7 +111,7 @@ const _getPublishedPosts = async (): Promise<BlogPost[]> => {
 
 export const getPublishedPosts = unstable_cache(
   _getPublishedPosts,
-  ['blog-published-posts-v13'],
+  ['blog-published-posts-v14'],
   { tags: ['blog-posts'], revalidate: process.env.NODE_ENV === 'development' ? 1 : 3600 }
 );
 
@@ -138,7 +138,7 @@ const _getPublishedPostBySlug = async (rawSlug: string): Promise<BlogPost | unde
 
 export const getPublishedPostBySlug = unstable_cache(
   _getPublishedPostBySlug,
-  ['blog-published-post-by-slug-v13'],
+  ['blog-published-post-by-slug-v14'],
   { tags: ['blog-posts'], revalidate: process.env.NODE_ENV === 'development' ? 1 : 3600 }
 );
 
@@ -158,7 +158,7 @@ const _getPostBySlug = async (rawSlug: string): Promise<BlogPost | undefined> =>
 
 export const getPostBySlug = unstable_cache(
   _getPostBySlug,
-  ['blog-post-by-slug-v13'],
+  ['blog-post-by-slug-v14'],
   { tags: ['blog-posts'], revalidate: process.env.NODE_ENV === 'development' ? 1 : 3600 }
 );
 
@@ -178,7 +178,7 @@ const _getAllSlugs = async (): Promise<string[]> => {
 
 export const getAllSlugs = unstable_cache(
   _getAllSlugs,
-  ['blog-all-slugs-v13'],
+  ['blog-all-slugs-v14'],
   { tags: ['blog-posts'], revalidate: process.env.NODE_ENV === 'development' ? 1 : 3600 }
 );
 
@@ -202,7 +202,7 @@ const _getPublishedSlugs = async (): Promise<string[]> => {
 
 export const getPublishedSlugs = unstable_cache(
   _getPublishedSlugs,
-  ['blog-published-slugs-v13'],
+  ['blog-published-slugs-v14'],
   { tags: ['blog-posts'], revalidate: process.env.NODE_ENV === 'development' ? 1 : 3600 }
 );
 

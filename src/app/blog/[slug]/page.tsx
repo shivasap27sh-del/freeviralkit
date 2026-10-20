@@ -234,7 +234,7 @@ export default async function BlogPostPage({ params }: Props) {
                       .replace(/^(?:-\s*|\*\s+|❌\s*|✅\s*)/, '')
                       .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" width="1200" height="630" loading="lazy" decoding="async" class="rounded-2xl my-6 w-full max-h-[440px] object-cover border border-slate-200 dark:border-slate-800 block shadow-lg" />')
                       .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white font-bold">$1</strong>')
-                      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                      .replace(/\*([^*\n]+)\*/g, '<em class="italic">$1</em>')
                       .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-cyan-600 dark:text-cyan-400 font-bold hover:underline">$1</a>')
                       .replace(/`(.*?)`/g, '<code class="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-cyan-600 dark:text-cyan-400 text-xs font-mono">$1</code>'),
                   }}
@@ -243,6 +243,57 @@ export default async function BlogPostPage({ params }: Props) {
             ))}
           </ul>
         );
+      }
+
+      // 8b. Lists (Ordered 1., 2., 3.)
+      if (/^\d+\.\s/.test(trimmed)) {
+        const items = trimmed.split('\n').map(item => item.trim()).filter(Boolean);
+        return (
+          <ol key={i} className="space-y-3 my-6 list-decimal list-inside text-slate-700 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
+            {items.map((item, j) => (
+              <li key={j} className="pl-1 leading-relaxed">
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: item
+                      .replace(/^\d+\.\s*/, '')
+                      .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" width="1200" height="630" loading="lazy" decoding="async" class="rounded-2xl my-6 w-full max-h-[440px] object-cover border border-slate-200 dark:border-slate-800 block shadow-lg" />')
+                      .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white font-bold">$1</strong>')
+                      .replace(/\*([^*\n]+)\*/g, '<em class="italic">$1</em>')
+                      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-cyan-600 dark:text-cyan-400 font-bold hover:underline">$1</a>')
+                      .replace(/`(.*?)`/g, '<code class="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-cyan-600 dark:text-cyan-400 text-xs font-mono">$1</code>'),
+                  }}
+                />
+              </li>
+            ))}
+          </ol>
+        );
+      }
+
+      // 8c. Standalone Image
+      if (trimmed.startsWith('![') && trimmed.endsWith(')')) {
+        const match = trimmed.match(/^!\[(.*?)\]\((.*?)\)$/);
+        if (match) {
+          const alt = match[1];
+          const src = match[2];
+          return (
+            <figure key={i} className="my-8">
+              <img
+                src={src}
+                alt={alt}
+                width={1200}
+                height={630}
+                loading="lazy"
+                decoding="async"
+                className="rounded-2xl w-full max-h-[460px] object-cover border border-slate-200 dark:border-slate-800 shadow-xl"
+              />
+              {alt && (
+                <figcaption className="text-center text-xs text-slate-500 dark:text-slate-400 mt-2 font-mono">
+                  {alt}
+                </figcaption>
+              )}
+            </figure>
+          );
+        }
       }
 
       // 9. Standard Paragraph
@@ -254,7 +305,7 @@ export default async function BlogPostPage({ params }: Props) {
               __html: trimmed
                 .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" width="1200" height="630" loading="lazy" decoding="async" class="rounded-2xl my-6 w-full max-h-[440px] object-cover border border-slate-200 dark:border-slate-800 block shadow-lg" />')
                 .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white font-bold">$1</strong>')
-                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/\*([^*\n]+)\*/g, '<em class="italic">$1</em>')
                 .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-cyan-600 dark:text-cyan-400 font-bold hover:underline">$1</a>')
                 .replace(/`(.*?)`/g, '<code class="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-cyan-600 dark:text-cyan-400 text-xs font-mono">$1</code>'),
             }}
