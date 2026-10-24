@@ -152,6 +152,10 @@ export default function Footer() {
                 <span style={{ fontSize: '9px', color: '#878C79' }}>REVIEWED ✓</span>
               </span>
             </a>
+            <a href="https://launchator.com" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://launchator.com/badge/light" alt="Featured on Launchator" width="200" height="54" loading="lazy" className="h-7 w-auto" />
+            </a>
             <a href="https://www.tinystartups.com/startup/freeviralkit" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
               Tiny Startups ↗
             </a>
