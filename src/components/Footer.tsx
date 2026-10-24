@@ -143,6 +143,15 @@ export default function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://toolroots.com/badge.svg" alt="Featured on ToolRoots" width="181" height="32" loading="lazy" className="h-7 w-auto" />
             </a>
+            <a href="https://launched.tools/tools/freeviralkit" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform shrink-0 inline-flex items-center gap-2 rounded-[10px] px-2.5 py-1 text-decoration-none" style={{ background: '#15170F', border: '1px solid #D4D7C9', fontFamily: 'sans-serif' }}>
+              <span className="inline-flex items-center justify-center shrink-0 rounded-[6px]" style={{ width: '20px', height: '20px', background: '#C6F94E' }}>
+                <svg width="12" height="12" viewBox="128 120 264 264" aria-hidden="true"><path d="M214 120 L392 120 L392 298 Z" fill="#15170F" /><path d="M156 356 L322 190" stroke="#15170F" strokeWidth="78" fill="none" /></svg>
+              </span>
+              <span className="flex flex-col leading-tight text-left">
+                <span style={{ fontWeight: 700, fontSize: '11px', color: '#F5F6F0' }}>Featured on launched.tools</span>
+                <span style={{ fontSize: '9px', color: '#878C79' }}>REVIEWED ✓</span>
+              </span>
+            </a>
             <a href="https://www.tinystartups.com/startup/freeviralkit" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
               Tiny Startups ↗
             </a>
