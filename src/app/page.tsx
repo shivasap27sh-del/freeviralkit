@@ -13,18 +13,18 @@ export const revalidate = 3600; // Cache on Vercel Edge CDN for 1 hour with SWR 
 export const metadata: Metadata = {
   title: 'Free AI YouTube SEO & Title Generator',
   description:
-    'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required to boost your channel.',
+    'FreeViralKit is a free YouTube SEO generator for creators. Generate viral titles, descriptions, hashtags, 500-character tag packages, and pinned comments instantly with no signup required.',
   twitter: {
     card: 'summary_large_image',
     title: 'Free AI YouTube SEO & Title Generator',
     description:
-      'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required to boost your channel.',
+      'FreeViralKit is a free YouTube SEO generator for creators. Generate viral titles, descriptions, hashtags, 500-character tag packages, and pinned comments instantly with no signup required.',
     images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {
     title: 'FreeViralKit - Free AI YouTube SEO & Title Tool',
     description:
-      'Free YouTube SEO tool. Generate viral titles, descriptions, hashtags, and tags instantly. No signup required to boost your channel.',
+      'FreeViralKit is a free YouTube SEO generator for creators. Generate viral titles, descriptions, hashtags, 500-character tag packages, and pinned comments instantly with no signup required.',
     url: buildAbsoluteUrl('/'),
     type: 'website',
     images: [

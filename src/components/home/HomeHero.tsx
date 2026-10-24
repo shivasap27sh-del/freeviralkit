@@ -5,7 +5,7 @@ export function HomeHero() {
     <section className="relative text-center pt-1 pb-2 space-y-4 overflow-hidden">
       {/* Clean Eyebrow Badge */}
       <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 text-slate-600 dark:text-zinc-400">
-        Free YouTube SEO Toolkit
+        Free YouTube SEO Generator for Creators
       </div>
 
       {/* Main Headline */}
@@ -17,7 +17,7 @@ export function HomeHero() {
           </span>
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
-          Generate 10 high-CTR title variations, keyword-packed descriptions, 500-character tag packages, and pinned comments in 3 seconds.
+          FreeViralKit is a free YouTube SEO generator for creators. Generate 10 high-CTR titles, optimized descriptions, 500-character tag packages, hashtags, and pinned comments in seconds.
         </p>
       </div>
 

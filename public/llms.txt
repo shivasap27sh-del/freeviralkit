@@ -1,0 +1,41 @@
+# FreeViralKit
+
+> Free YouTube title, tag and description generator for creators
+
+FreeViralKit is a free YouTube SEO toolkit built for creators who want high-performing video metadata without paying for expensive subscriptions. Users enter a video topic to instantly generate 10 high-CTR title variations, a keyword-focused description, hashtags, a tag package engineered for YouTube's 500-character limit, and a pinned engagement comment. 100% free with no account, login, or subscription required.
+
+## Main Tools
+
+- [Homepage & All-in-One Generator](https://freeviralkit.com/): Generate titles, description, tags, hashtags, and a pinned comment from a single video topic.
+- [YouTube Title Generator](https://freeviralkit.com/youtube-title-generator): 10 search-optimized, high-CTR title ideas.
+- [YouTube Tags Generator](https://freeviralkit.com/youtube-tags-generator): Copy-ready tag package strictly under YouTube Studio's 500-character ceiling.
+- [YouTube Description Generator](https://freeviralkit.com/youtube-description-generator): Structured descriptions with chapter placeholders and call-to-actions.
+- [YouTube Hashtag Generator](https://freeviralkit.com/youtube-hashtag-generator): Trending hashtags to boost browse and search impressions.
+- [YouTube Chapter Generator](https://freeviralkit.com/youtube-chapter-generator): Timestamped video chapters formatted for Google Key Moments.
+- [YouTube A/B Test Pack Generator](https://freeviralkit.com/youtube-ab-test-generator): 3 strategic title and thumbnail text variants for YouTube Studio Test and Compare.
+- [YouTube Hook Generator](https://freeviralkit.com/youtube-hook-generator): 30-second retention hooks to maximize audience retention.
+- [YouTube SEO Score Grader](https://freeviralkit.com/youtube-seo-grader): Free audit tool scoring title and tag strength out of 100.
+- [All Creator Tools Hub](https://freeviralkit.com/tools): Complete suite of 82+ specialized niche generators for gaming, tech, cooking, finance, and education.
+
+## Pricing and Access
+
+- 100% Free
+- No credit card required
+- No account or signup required
+- Zero subscription tiers or paywalls
+
+## Technical Specifications
+
+- YouTube Studio compliance: Tag packages are formatted with comma separation and constrained strictly under the 500-character limit.
+- Title variations: Generates 10 distinct title formulas (question, curiosity gap, authority, and listicle styles).
+- Output package: Includes titles, descriptions, tags, hashtags, and pinned comment in a single click.
+
+## Directory Listings and Launch References
+
+- [FreeViralKit on Launchator](https://launchator.com/p/freeviralkit): Official listing, upvotes, and reviews
+- [FreeViralKit on Product Hunt](https://www.producthunt.com/products/freeviralkit): Product launch profile and community discussion
+- [FreeViralKit on Bunny Directory](https://bunny.directory/product/free-ai-youtube-seo-and-title-generat): Verified creator tools listing and review
+- [FreeViralKit on Launched Tools](https://launched.tools/tools/freeviralkit): Verified creator tool review
+- [FreeViralKit on ToolRoots](https://toolroots.com/p/freeviralkit): Creator tools directory listing
+- [FreeViralKit on Tiny Startups](https://www.tinystartups.com/startup/freeviralkit): Startup profile
+- [FreeViralKit on Launch Llama](https://tools.launchllama.co/products/freeviralkit): Featured tools listing
