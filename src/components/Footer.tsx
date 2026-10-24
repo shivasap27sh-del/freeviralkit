@@ -139,6 +139,14 @@ export default function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://www.directree.io/badge/directree-badge-lightmode.svg" alt="Verified on directree" width="200" height="37" loading="lazy" className="h-7 w-auto" />
             </a>
+            <a href="https://toolroots.com/p/freeviralkit" target="_blank" rel="noopener noreferrer" title="Featured on ToolRoots" className="hover:scale-105 transition-transform">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://toolroots.com/badge.svg" alt="Featured on ToolRoots" width="181" height="32" loading="lazy" className="h-7 w-auto" />
+            </a>
+            <a href="https://turbo0.com/item/freeviralkit" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://img.turbo0.com/badge-listed-dark.svg" alt="Listed on Turbo0" width="180" height="54" loading="lazy" className="h-7 w-auto" />
+            </a>
             <a href="https://www.tinystartups.com/startup/freeviralkit" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
               Tiny Startups ↗
             </a>
