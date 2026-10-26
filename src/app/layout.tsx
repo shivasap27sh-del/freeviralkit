@@ -98,6 +98,7 @@ export const metadata: Metadata = {
       'directree-verify=598ea56db92aa6d9e23bdb9895b408de',
       '598ea56db92aa6d9e23bdb9895b408de',
     ],
+    'prodlaunchpad-verify': 'fcd3b3d3ccc5888c6602ab39f8f21a7b',
   },
 };
 
