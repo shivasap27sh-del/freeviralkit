@@ -64,7 +64,7 @@ export default function ThumbnailGeneratorClient() {
 
         <button onClick={() => handleGenerate()} disabled={!topic.trim() || isGenerating}
           className="w-full btn-primary rounded-xl py-4 font-semibold text-lg flex items-center justify-center gap-2 cursor-pointer">
-          {isGenerating ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating Concepts...</> : <><Sparkles className="w-5 h-5" /> Generate Thumbnail Ideas</>}
+          {isGenerating ? <><Loader2 className="w-5 h-5 animate-spin" /> Generating Concepts...</> : <><Sparkles className="w-5 h-5" /> Generate Thumbnail Text & Ideas</>}
         </button>
       </div>
 
@@ -103,12 +103,20 @@ export default function ThumbnailGeneratorClient() {
                         </p>
                       </div>
 
-                      {/* Text Overlay Box */}
-                      <div className="bg-slate-950/90 border border-yellow-400/40 backdrop-blur-sm p-3 rounded-lg text-center transform -rotate-1 shadow-lg">
-                        <span className="font-black text-lg sm:text-xl md:text-2xl text-yellow-300 tracking-tight uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                      {/* Text Overlay Box - Click to copy text */}
+                      <button
+                        type="button"
+                        onClick={() => copy(concept.textOverlay, `text-${idx}`)}
+                        className="w-full bg-slate-950/90 hover:bg-black border border-yellow-400/40 hover:border-yellow-400/80 backdrop-blur-sm p-3 rounded-lg text-center transform -rotate-1 shadow-lg transition-all cursor-pointer group/text"
+                        title="Click to copy thumbnail text"
+                      >
+                        <span className="font-black text-lg sm:text-xl md:text-2xl text-yellow-300 tracking-tight uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] block">
                           &ldquo;{concept.textOverlay}&rdquo;
                         </span>
-                      </div>
+                        <span className="text-[10px] text-yellow-400/80 font-mono mt-1 inline-flex items-center gap-1">
+                          {copiedStates[`text-${idx}`] ? '✓ Copied text!' : 'Click to copy text'}
+                        </span>
+                      </button>
                     </div>
 
                     {/* Psychology Details & Actions */}
@@ -129,18 +137,24 @@ export default function ThumbnailGeneratorClient() {
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
+                        <button
+                          onClick={() => copy(concept.textOverlay, `text-btn-${idx}`)}
+                          className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-yellow-400/10 hover:bg-yellow-400/20 border border-yellow-400/30 text-yellow-600 dark:text-yellow-300 transition-colors cursor-pointer text-xs font-semibold"
+                        >
+                          {copiedStates[`text-btn-${idx}`] ? <><CheckCircle2 className="w-3.5 h-3.5 text-yellow-400" /> Copied!</> : <><Copy className="w-3.5 h-3.5" /> Copy Text</>}
+                        </button>
                         <button
                           onClick={() => copy(`Visual Concept: ${concept.visual}\nText Overlay: "${concept.textOverlay}"\nPsychology: ${concept.whyItWorks}`, `concept-${idx}`)}
-                          className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors cursor-pointer text-xs font-semibold"
+                          className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors cursor-pointer text-xs font-semibold"
                         >
-                          {copiedStates[`concept-${idx}`] ? <><CheckCircle2 className="w-4 h-4 text-green-500" /> Copied!</> : <><Copy className="w-4 h-4" /> Copy Concept</>}
+                          {copiedStates[`concept-${idx}`] ? <><CheckCircle2 className="w-3.5 h-3.5 text-green-500" /> Copied!</> : <><Copy className="w-3.5 h-3.5" /> Full Concept</>}
                         </button>
                         <button
                           onClick={() => copy(`YouTube Thumbnail Image Prompt: ${concept.visual}, cinematic lighting, 8k resolution, photorealistic, bold text overlay: "${concept.textOverlay}"`, `prompt-${idx}`)}
-                          className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-400 transition-colors cursor-pointer text-xs font-semibold"
+                          className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-400 transition-colors cursor-pointer text-xs font-semibold"
                         >
-                          {copiedStates[`prompt-${idx}`] ? <><CheckCircle2 className="w-4 h-4 text-green-400" /> Copied!</> : <><Sparkles className="w-4 h-4 text-amber-400" /> Copy AI Image Prompt</>}
+                          {copiedStates[`prompt-${idx}`] ? <><CheckCircle2 className="w-3.5 h-3.5 text-green-400" /> Copied!</> : <><Sparkles className="w-3.5 h-3.5 text-amber-400" /> Image Prompt</>}
                         </button>
                       </div>
                     </div>

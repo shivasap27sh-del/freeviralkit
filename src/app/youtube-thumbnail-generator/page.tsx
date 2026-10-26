@@ -9,15 +9,15 @@ import RelatedTools from '@/components/RelatedTools';
 export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
-    title: 'Free YouTube Thumbnail Idea Generator',
-    description: 'Generate high-CTR YouTube thumbnail concepts and ideas instantly. Get psychological visual layouts and text overlays to maximize clicks.',
+    title: 'Free YouTube Thumbnail Text & Concept Generator (High-CTR)',
+    description: 'Free YouTube thumbnail text and concept generator. Generate punchy 2-4 word high-CTR text overlays and visual composition layouts to maximize clicks.',
     images: [buildAbsoluteUrl('/banner.png')],
   },
-  title: 'Free YouTube Thumbnail Idea Generator',
-  description: 'Generate high-CTR YouTube thumbnail concepts and ideas instantly. Get psychological visual layouts and text overlays to maximize clicks.',
+  title: 'Free YouTube Thumbnail Text & Concept Generator (High-CTR)',
+  description: 'Free YouTube thumbnail text and concept generator. Generate punchy 2-4 word high-CTR text overlays and visual composition layouts to maximize clicks.',
   openGraph: {
-    title: 'YouTube Thumbnail Idea Generator - Maximize CTR',
-    description: 'Stop guessing what makes a good thumbnail. Get 3 high-converting visual concepts based on psychology and contrast.',
+    title: 'Free YouTube Thumbnail Text & Concept Generator (High-CTR)',
+    description: 'Generate 3 high-converting 2-4 word thumbnail text hooks and visual concepts based on psychology and contrast to maximize clicks.',
     type: 'website',
     url: buildAbsoluteUrl('/youtube-thumbnail-generator'),
     images: [
@@ -33,6 +33,10 @@ export const metadata: Metadata = {
     canonical: buildAbsoluteUrl('/youtube-thumbnail-generator'),
   },
   keywords: [
+    'youtube thumbnail text generator',
+    'thumbnail text generator',
+    'youtube thumbnail text ideas',
+    'thumbnail text overlay',
     'youtube thumbnail generator',
     'youtube thumbnail ideas',
     'thumbnail maker ideas',
@@ -44,6 +48,10 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
+  {
+    question: 'What makes a great thumbnail text hook for YouTube?',
+    answer: 'A great thumbnail text hook is short (2 to 4 words), written in bold high-contrast font, and creates an emotional or curiosity gap with your title. It should never repeat the title. For example, if your title is "10 Productivity Apps That Changed My Life", your thumbnail text should say "ONLY 3 WORK" or "DELETED THEM ALL".',
+  },
   {
     question: 'Why is my YouTube thumbnail so important?',
     answer: 'Your thumbnail is the very first thing a viewer sees when scrolling through YouTube. Even if your video is a masterpiece, if the thumbnail fails to catch their eye and invoke curiosity, they will not click. A strong thumbnail directly increases your Click-Through Rate (CTR), which tells the YouTube algorithm to push your video to more people.',
@@ -93,11 +101,11 @@ export default function ThumbnailGeneratorPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl relative z-10 min-h-screen">
         <section className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-amber-500 bg-amber-500/10 border border-amber-500/20 mb-6 uppercase tracking-wider">
-            <ImageIcon className="w-4 h-4" /> AI Thumbnail Concepts
+            <ImageIcon className="w-4 h-4" /> AI Thumbnail Text & Concepts
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white"> Free YouTube Thumbnail Idea Generator - Maximize Your CTR </h1>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white"> Free YouTube Thumbnail Text & Concept Generator </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-            The best thumbnails tell a visual story and invoke curiosity. Enter your video topic, and our AI will generate 3 proven thumbnail concepts, including the exact text overlay to use.
+            The best thumbnails tell a visual story and invoke curiosity. Enter your video topic, and our AI will generate 3 proven thumbnail concepts, including the exact high-CTR text overlay to use.
           </p>
         </section>
 
