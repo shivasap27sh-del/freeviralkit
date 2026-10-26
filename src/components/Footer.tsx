@@ -163,6 +163,10 @@ export default function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://launchaf.com/api/badge/light?v=launchaf-blue-2026-2" alt="Featured on LaunchAF" width="200" height="56" loading="lazy" className="h-7 w-auto" />
             </a>
+            <a href="https://prodlaunchpad.com/product/freeviralkit" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://prodlaunchpad.com/badges/prodlaunchpad-badge-dark.svg" alt="Featured on ProdLaunchPad" width="200" height="54" loading="lazy" className="h-7 w-auto" />
+            </a>
             <a href="https://bunny.directory/product/free-ai-youtube-seo-and-title-generat" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://bunny.directory/product/free-ai-youtube-seo-and-title-generat/badge.svg?theme=dark" alt="Free AI YouTube SEO and Title Generator on Bunny Directory" width="200" height="50" loading="lazy" className="h-7 w-auto" />
