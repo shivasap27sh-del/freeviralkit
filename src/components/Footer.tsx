@@ -159,6 +159,10 @@ export default function Footer() {
             <a href="https://www.tinystartups.com/startup/freeviralkit" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
               Tiny Startups ↗
             </a>
+            <a href="https://launchaf.com/" target="_blank" rel="noopener noreferrer" data-launchaf-badge="true" className="hover:scale-105 transition-transform">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://launchaf.com/api/badge/light?v=launchaf-blue-2026-2" alt="Featured on LaunchAF" width="200" height="56" loading="lazy" className="h-7 w-auto" />
+            </a>
             <a href="https://bunny.directory/product/free-ai-youtube-seo-and-title-generat" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://bunny.directory/product/free-ai-youtube-seo-and-title-generat/badge.svg?theme=dark" alt="Free AI YouTube SEO and Title Generator on Bunny Directory" width="200" height="50" loading="lazy" className="h-7 w-auto" />
