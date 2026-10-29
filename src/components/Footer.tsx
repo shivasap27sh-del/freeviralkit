@@ -171,6 +171,10 @@ export default function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://dodolaunch.com/badge/freeviralkit?theme=light" alt="Freeviralkit on DodoLaunch" width="200" height="54" loading="lazy" className="h-7 w-auto" />
             </a>
+            <a href="https://askaiforit.com/tools/freeviralkit" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://askaiforit.com/badges/badge-3-dark.svg" alt="Listed on Ask AI For It" width="150" height="44" loading="lazy" className="h-7 w-auto" />
+            </a>
             <a href="https://bunny.directory/product/free-ai-youtube-seo-and-title-generat" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://bunny.directory/product/free-ai-youtube-seo-and-title-generat/badge.svg?theme=dark" alt="Free AI YouTube SEO and Title Generator on Bunny Directory" width="200" height="50" loading="lazy" className="h-7 w-auto" />
