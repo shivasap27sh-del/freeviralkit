@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'YouTube Title Generator for Faceless Channels | FreeViralKit',
-    description: 'Free AI YouTube title generator for faceless automation channels and video essayists. Generate high-RPM titles for business, true crime, tech, and history documentaries.',
+    description: 'Free AI YouTube title generator for faceless automation channels. Create high-RPM titles for business, true crime, tech, and documentary essays.',
     images: [buildAbsoluteUrl('/banner.png')],
   },
   title: 'YouTube Title Generator for Faceless Channels - High RPM Titles',

@@ -201,7 +201,7 @@ export default function ChannelNameGeneratorPage() {
                 3. The Brandable Abstract (e.g., Smosh, Vevo, Dude Perfect)
               </h3>
               <p>
-                These names are often made-up words or unique combinations of words that don&apos;t necessarily describe the content. They require more work initially to build brand recognition, but once established, they become incredibly powerful and highly protectable as trademarks. They are also ideal if you plan to build a team of creators rather than relying on a single host. If you ever plan to sell your media company, an abstract brand name makes the transition seamless.
+                These names are often made-up words or unique combinations of words that don&apos;t necessarily describe the content. They require more work initially to build brand recognition, but once established, they become incredibly powerful and highly protectable as trademarks. They are also ideal if you plan to build a team of creators rather than relying on a single host. If you ever plan to sell your media company, an abstract brand name ensures a frictionless transition.
               </p>
 
               <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white pt-2">

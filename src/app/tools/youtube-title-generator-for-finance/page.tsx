@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'YouTube Title Generator for Personal Finance & Wealth Creators | FreeViralKit',
+    title: 'YouTube Title Generator for Personal Finance | FreeViralKit',
     description: 'Generate high-RPM, click-worthy YouTube titles for personal finance, investing, crypto, dividend portfolios, and side hustles. 100% free with live CTR grading.',
     images: [buildAbsoluteUrl('/banner.png')],
   },
-  title: 'YouTube Title Generator for Personal Finance & Wealth (High RPM) | FreeViralKit',
+  title: 'YouTube Title Generator for Personal Finance | FreeViralKit',
   description:
-    'Free AI YouTube Title Generator for Personal Finance, Crypto & Wealth Creators. Generate high-CTR titles engineered for high $15-$50+ AdSense RPM with zero mobile truncation.',
+    'Free AI YouTube Title Generator for Personal Finance & Wealth. Generate high-CTR, high-RPM titles for investing, real estate, and financial channels.',
   alternates: {
     canonical: buildAbsoluteUrl('/tools/youtube-title-generator-for-finance'),
   },
   openGraph: {
-    title: 'YouTube Title Generator for Personal Finance & Wealth (High RPM)',
+    title: 'YouTube Title Generator for Personal Finance | FreeViralKit',
     description:
       'Engineered for personal finance, investing, real estate, and passive income creators. Generate high-CTR titles designed for $15-$50+ AdSense RPM.',
     type: 'website',

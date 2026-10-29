@@ -59,7 +59,7 @@ export default function ToolsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="max-w-6xl mx-auto space-y-16 py-8">
+      <main className="max-w-6xl mx-auto space-y-16 py-8">
         {/* Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
@@ -86,7 +86,7 @@ export default function ToolsPage() {
 
         {/* FAQ Section */}
         <ToolsFaqAccordion />
-      </div>
+      </main>
     </>
   );
 }

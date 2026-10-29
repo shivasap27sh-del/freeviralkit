@@ -7,13 +7,13 @@ import RelatedTools from '@/components/RelatedTools';
 export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
-    title: 'YouTube 3-Way A/B Test Pack Generator & Packaging Simulator | FreeViralKit',
+    title: 'YouTube 3-Way A/B Test Pack Generator | FreeViralKit',
     description: 'Free AI YouTube A/B Test Pack Generator for YouTube Studio Test & Compare. Generate 3 distinct title & thumbnail variants with live mobile feed simulation.',
     images: [buildAbsoluteUrl('/banner.png')],
   },
-  title: 'YouTube 3-Way A/B Test Pack Generator - YouTube Studio Test & Compare Tool',
+  title: 'YouTube 3-Way A/B Test Pack Generator | FreeViralKit',
   description:
-    'Free AI YouTube A/B Test Pack Generator. Create 3 distinct strategic title & thumbnail combinations formatted for YouTube Studio Test & Compare with live mobile feed simulation.',
+    'Free AI YouTube A/B Test Pack Generator. Create 3 strategic title & thumbnail combinations for YouTube Studio Test & Compare with live mobile feed simulation.',
   alternates: {
     canonical: buildAbsoluteUrl('/youtube-ab-test-generator'),
   },

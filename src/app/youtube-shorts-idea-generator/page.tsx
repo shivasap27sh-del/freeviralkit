@@ -200,7 +200,7 @@ export default function ShortsIdeaGeneratorPage() {
                   Your voiceover must be aggressively edited. Remove all &quot;ums,&quot; &quot;ahs,&quot; and pauses for breath. Speak slightly faster and with more energy than you would in a normal conversation. The script must be completely devoid of fluff - deliver the value you promised in the hook as quickly and densely as possible. If a word doesn&apos;t move the story forward, delete it.
                 </p>
                 <p>
-                  Furthermore, the ending of your script is almost as important as the beginning. Instead of a traditional sign-off (&quot;Thanks for watching, please subscribe!&quot;), you should design the end of the script to seamlessly loop back into the hook. A perfect loop creates a seamless transition that tricks the viewer into watching the first 3-5 seconds again, which pushes your Average View Duration over 100%-a massive signal to the algorithm.
+                  Furthermore, the ending of your script is almost as important as the beginning. Instead of a traditional sign-off (&quot;Thanks for watching, please subscribe!&quot;), design the end of the script to cycle directly back into the hook. A continuous loop creates a fluid cycle that catches the viewer watching the first 3-5 seconds again, which pushes your Average View Duration over 100%-a massive signal to the algorithm.
                 </p>
               </div>
             </div>

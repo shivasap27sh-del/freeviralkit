@@ -68,7 +68,7 @@ export default function CreatorGearPage() {
             Ultimate YouTube Creator Equipment & Tools
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-            We test and recommend the best microphones, cameras, lighting, and software to help you elevate your content quality and optimize your workflow.
+            We test and recommend the best microphones, cameras, lighting, and software to help you sharpen your production quality and streamline your workflow.
           </p>
         </section>
 

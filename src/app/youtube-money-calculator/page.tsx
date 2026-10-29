@@ -13,12 +13,12 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: 'Free YouTube Money & RPM Calculator (2026 Earnings)',
   description:
-    'Calculate your estimated YouTube channel earnings. Interactive daily views slider, 2026 niche RPM rates, audience geography multipliers, and brand deal income estimates.',
+    'Calculate estimated YouTube channel earnings. Interactive daily views slider, 2026 niche RPM rates, geography multipliers, and sponsorship estimates.',
   twitter: {
     card: 'summary_large_image',
     title: 'Free YouTube Money & RPM Calculator (2026 Earnings)',
     description:
-      'Calculate your estimated YouTube channel earnings. Interactive daily views slider, 2026 niche RPM rates, audience geography multipliers, and brand deal income estimates.',
+      'Calculate estimated YouTube channel earnings. Interactive daily views slider, 2026 niche RPM rates, geography multipliers, and sponsorship estimates.',
     images: [buildAbsoluteUrl('/banner.png')],
   },
   openGraph: {

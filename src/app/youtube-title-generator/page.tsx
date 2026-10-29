@@ -138,16 +138,37 @@ export default async function TitleGeneratorPage({ searchParams }: PageProps) {
 
       <main className="container mx-auto px-6 py-12 max-w-5xl relative z-10 min-h-screen">
         {/* Hero */}
-        <section className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-mono font-medium text-slate-300 bg-zinc-900 border border-zinc-800 mb-6 uppercase tracking-wider">
-            <Wand2 className="w-3.5 h-3.5 text-red-500" /> Title Packaging Architecture
+        <section className="text-center mb-12 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-slate-700 dark:text-zinc-300 bg-slate-100 dark:bg-zinc-900 border border-slate-200/80 dark:border-zinc-800 shadow-xs">
+            <Wand2 className="w-3.5 h-3.5 text-red-500 animate-pulse" />
+            <span>YouTube Studio Verified • 2026 CTR Engine</span>
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4"> Free YouTube Title Generator </h1>
-          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-            Generate 10 high-CTR, SEO-optimized YouTube titles engineered for search discovery and suggested feeds. Tuned for every creator niche.
-          </p>
-        </section>
 
+          <div className="max-w-3xl mx-auto space-y-3">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black text-slate-950 dark:text-white tracking-tight md:tracking-[-0.03em] leading-[1.1]">
+              Free AI YouTube{' '}
+              <span className="bg-gradient-to-r from-red-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
+                Title Generator
+              </span>
+            </h1>
+            <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+              Generate 10 high-CTR video titles engineered for Browse, Search, and Suggested Feeds. Front-load keywords with zero mobile cutoff.
+            </p>
+          </div>
+
+          {/* Quick Value Trust Chips */}
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-medium text-slate-600 dark:text-slate-400 pt-1">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-zinc-900/80 border border-slate-200 dark:border-zinc-800/80">
+              ⚡ 10 Titles in 3 Seconds
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-zinc-900/80 border border-slate-200 dark:border-zinc-800/80">
+              📱 Mobile Truncation Safe-Zone
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-zinc-900/80 border border-slate-200 dark:border-zinc-800/80">
+              🎯 Algorithmic CTR Scored
+            </span>
+          </div>
+        </section>
         <TitleGeneratorClient initialTopic={topic} />
 
         {/* Educational Content */}
